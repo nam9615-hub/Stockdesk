@@ -17,6 +17,12 @@ function collectTitles(obj, out) {
     }
   }
 }
+async function yahooNews(ticker, n = 5) {
+  try {
+    const j = await (await fetch(`https://query1.finance.yahoo.com/v1/finance/search?q=${encodeURIComponent(ticker)}&newsCount=${n}&quotesCount=0`, UA)).json();
+    return (j.news || []).map((x) => x.title).filter(Boolean).slice(0, n);
+  } catch { return []; }
+}
 async function naverNews(code, n = 3) {
   const out = [];
   try { collectTitles(await (await fetch(`https://m.stock.naver.com/api/news/stock/${code}?pageSize=${n + 3}`, UA)).json(), out); } catch {}
@@ -96,7 +102,7 @@ async function gatherUS() {
 
 /* ── 프롬프트 ── */
 const newsPrompt = (label, ticker, ctx) =>
-  `너는 한국 주식 애널리스트다. '${label}'(${ticker})의 최근 뉴스·실적·업황을 분석해라.${ctx ? `\n\n[수집된 실제 뉴스 헤드라인]\n${ctx}` : ""}\n제공된 헤드라인을 근거로 판단하고, 확실하지 않은 내용은 지어내지 마라. 반드시 아래 JSON만 출력(마크다운 금지): {"sentiment": 정수(-100~100, 악재 음수·호재 양수), "mood": "시장·수급 분위기 한 줄(한국어)", "headlines": [{"t":"뉴스 요약 한 줄","s":"+ 또는 - 또는 0"}] (최대 4개), "summary": "투자 관점 종합 2문장(한국어)"}`;
+  `너는 글로벌 주식 애널리스트다. '${label}'(${ticker})의 국내외 최근 뉴스·실적·업황을 분석해라.${ctx ? `\n\n[수집된 실제 뉴스 헤드라인]\n${ctx}` : ""}\n제공된 헤드라인을 근거로 판단하고, 확실하지 않은 내용은 지어내지 마라. 반드시 아래 JSON만 출력(마크다운 금지): {"sentiment": 정수(-100~100, 악재 음수·호재 양수), "mood": "시장·수급 분위기 한 줄(한국어)", "headlines": [{"t":"뉴스 요약 한 줄","s":"+ 또는 - 또는 0"}] (최대 4개), "summary": "투자 관점 종합 2문장(한국어)"}`;
 const picksKRPrompt = (data) =>
   `너는 한국 주식 스윙 트레이더(2~4주 보유)다. 아래는 오늘 상승률·거래량 상위 후보 종목과 각 종목의 실제 최신 뉴스다.\n\n[후보 데이터]\n${data}\n\n임무: 단순 급등 추격이 아니라, 뉴스 재료의 '지속 가능성'과 스윙 관점 매력도 기준으로 후보 중 3개만 선별해라. 급등만 하고 재료가 없는 종목은 제외해라. 반드시 아래 JSON만 출력(마크다운 금지): {"brief":"오늘 시장 브리핑 2~3문장(한국어)","picks":[{"name":"종목명","ticker":"6자리코드.KS","score":0~100 정수(스윙 매력도),"reason":"선정 근거 2문장 — 왜 재료가 지속될 수 있는지","catalyst":"핵심 재료 한 줄","risk":"주의점 한 줄"}],"day_picks":[{"name":"종목명","ticker":"6자리코드.KS","score":0~100 정수(당일 모멘텀 강도),"target_pct":정수(당일 현실적 목표 상승률 %, 2~10),"reason":"단타 사유 한 줄 — 수급·모멘텀·재료 중심","risk":"주의 한 줄"}]} picks 정확히 3개(스윙), day_picks 정확히 3개(당일 단타·장중 청산 전제·가급적 스윙과 다른 종목), 모두 반드시 후보 목록 안의 종목만.`;
 const picksUSPrompt = (data) =>
@@ -115,14 +121,19 @@ export default async function handler(req, res) {
   try {
     if (kind === "news") {
       const titles = code ? await naverNews(code, 5) : [];
+      const glob = await yahooNews(ticker, 5);
       let filings = [];
       try {
         const fj = await (await fetch(`https://${req.headers.host}/api/filings?ticker=${encodeURIComponent(ticker)}`)).json();
         filings = fj.items || [];
       } catch {}
       const filingCtx = filings.length ? `\n\n[최근 공시·제출서류]\n${filings.map((f) => `${f.date} ${f.title}`).join("\n")}` : "";
-      const ctx = titles.join("\n") + filingCtx;
-      const extra = (filings.length ? `\n공시가 있으면 각 공시의 주가 영향(호재/악재/중립)을 판단해 headlines와 summary에 반영하라. 유상증자·전환사채·감자·소송은 특히 주의 깊게 평가하라.` : "") + learn;
+      const parts = [];
+      if (titles.length) parts.push("[국내 뉴스 헤드라인]\n" + titles.join("\n"));
+      if (glob.length) parts.push("[해외·영문 뉴스 헤드라인]\n" + glob.join("\n"));
+      const ctx = parts.join("\n\n") + filingCtx;
+      const extra = "\n국내와 해외 헤드라인을 모두 고려하되, 답변은 반드시 한국어로 하라."
+        + (filings.length ? `\n공시가 있으면 각 공시의 주가 영향(호재/악재/중립)을 판단해 headlines와 summary에 반영하라. 유상증자·전환사채·감자·소송은 특히 주의 깊게 평가하라.` : "") + learn;
       if (claudeKey) return res.status(200).json(await callClaude(claudeKey, newsPrompt(label, ticker, ctx) + extra));
       if (geminiKey) return res.status(200).json(await gemini(geminiKey, newsPrompt(label, ticker, ctx) + extra));
       // 키워드 무료 모드
