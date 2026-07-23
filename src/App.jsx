@@ -1123,8 +1123,9 @@ async function evalVerdicts() {
   if (changed) vhSave(h);
   return h;
 }
-function guideStats(h) {
-  const ev = h.filter((p) => p.r5 != null && p.tone !== "hold");
+const marketOf = (t) => (/\.(KS|KQ)$/i.test(String(t || "")) ? "KR" : "US");
+function guideStats(h, market) {
+  const ev = h.filter((p) => p.r5 != null && p.tone !== "hold" && (!market || marketOf(p.ticker) === market));
   if (ev.length < 3) return null;
   const ok = ev.filter((p) => (p.tone === "buy" ? p.r5 > 0 : p.r5 < 0)).length;
   return { n: ev.length, acc: Math.round((ok / ev.length) * 100) };
@@ -1143,16 +1144,16 @@ async function loadServerHist() {
   } catch {}
   return null;
 }
-const reviewLoad = () => { try { return JSON.parse(localStorage.getItem("sd_review") || "null"); } catch { return null; } };
-const reviewSave = (r) => { try { localStorage.setItem("sd_review", JSON.stringify(r)); } catch {} };
-function buildReviewStr(h, v) {
+const reviewLoad = () => { try { return JSON.parse(localStorage.getItem("sd_review2") || "{}"); } catch { return {}; } };
+const reviewSave = (r) => { try { localStorage.setItem("sd_review2", JSON.stringify(r)); } catch {} };
+function buildReviewStr(h, v, market) {
   const lines = [];
-  h.flatMap((e) => e.picks.map((p) => ({ ...p, date: e.date }))).filter((p) => p.r1 != null).slice(-14).forEach((p) => {
+  h.filter((e) => e.market === market).flatMap((e) => e.picks.map((p) => ({ ...p, date: e.date }))).filter((p) => p.r1 != null).slice(-14).forEach((p) => {
     lines.push(p.kind === "day"
       ? `[단타] ${p.date} ${p.name}: 목표+${p.target}% ${p.hit ? "적중" : "미달"}, 당일 ${p.r1}%`
       : `[스윙] ${p.date} ${p.name}: 1일 ${p.r1}% / 5일 ${p.r5 ?? "?"}% / 20일 ${p.r20 ?? "?"}%`);
   });
-  v.filter((p) => p.r5 != null).slice(-8).forEach((p) => {
+  v.filter((p) => p.r5 != null && marketOf(p.ticker) === market).slice(-8).forEach((p) => {
     lines.push(`[가이드] ${p.date} ${p.name}: ${p.tone === "buy" ? "매수" : p.tone === "sell" ? "매도" : "관망"} 판정 → 5일 ${p.r5}%`);
   });
   return lines.join("\n");
@@ -1160,10 +1161,10 @@ function buildReviewStr(h, v) {
 async function fullHistoryStrA(market) {
   const h = mergeHist(await loadServerHist(), histLoad());
   const parts = [perfSummary(h.length !== undefined ? h : histLoad(), market), daySummary(h, market)];
-  const rv = reviewLoad();
-  if (rv?.data?.lessons?.length) parts.push(`과거 복기에서 얻은 교훈: ${rv.data.lessons.join(" / ")}. 이 교훈을 이번 판단에 반드시 반영해 종합 점수를 높여라.`);
-  const gs = guideStats(vhLoad());
-  if (gs) parts.push(`개별 종목 매수/매도 가이드의 5일 적중률: ${gs.acc}% (${gs.n}건).`);
+  const rv = reviewLoad()[market];
+  if (rv?.data?.lessons?.length) parts.push(`이 시장(${market === "KR" ? "국내" : "미국"})의 과거 복기 교훈: ${rv.data.lessons.join(" / ")}. 이 교훈을 이번 판단에 반드시 반영해 종합 점수를 높여라.`);
+  const gs = guideStats(vhLoad(), market);
+  if (gs) parts.push(`이 시장 개별 가이드의 5일 적중률: ${gs.acc}% (${gs.n}건).`);
   return parts.filter(Boolean).join(" ");
 }
 function fullHistoryStr(market) {
@@ -1191,44 +1192,50 @@ function TrackRecord({ refreshKey }) {
       ]);
       const h = mergeHist(sh, lh);
       setHist(h); setVh(v);
-      const graded = h.flatMap((e) => e.picks).filter((p) => p.r1 != null).length + v.filter((p) => p.r1 != null).length;
-      if (graded >= 5) {
-        const today = new Date().toISOString().slice(0, 10);
-        const cached = reviewLoad();
-        if (cached && cached.date === today) { setReview(cached.data); return; }
+      const today = new Date().toISOString().slice(0, 10);
+      const store = reviewLoad();
+      const out = {};
+      for (const m of ["KR", "US"]) {
+        const graded = h.filter((e) => e.market === m).flatMap((e) => e.picks).filter((p) => p.r1 != null).length
+          + v.filter((p) => p.r1 != null && marketOf(p.ticker) === m).length;
+        if (graded < 5) continue;
+        if (store[m] && store[m].date === today) { out[m] = store[m].data; continue; }
         try {
           setRevLoading(true);
-          const j = await callAI({ kind: "review", history: buildReviewStr(h, v) });
-          reviewSave({ date: today, data: j });
-          setReview(j);
+          const j = await callAI({ kind: "review", history: `[${m === "KR" ? "국내" : "미국"} 시장 성적]\n` + buildReviewStr(h, v, m) });
+          store[m] = { date: today, data: j };
+          reviewSave(store);
+          out[m] = j;
         } catch {}
-        setRevLoading(false);
       }
+      setRevLoading(false);
+      setReview(out);
     })();
   }, [refreshKey]);
-  const gs = guideStats(vh);
   if (!hist || !hist.length) return null;
   const all = hist.flatMap((e) => e.picks.map((p) => ({ ...p, date: e.date, market: e.market })));
   const swing = all.filter((p) => p.kind !== "day");
   const day = all.filter((p) => p.kind === "day");
   const rc = (v) => (v == null || isNaN(v) ? T.faint : v > 0 ? T.buy : v < 0 ? T.sell : T.sub);
-  const sEv = swing.filter((p) => p.r1 != null);
-  const s5 = swing.filter((p) => p.r5 != null);
-  const winRate = s5.length ? Math.round((s5.filter((p) => p.r5 > 0).length / s5.length) * 100) : null;
-  const avg = (k) => { const v = sEv.filter((p) => p[k] != null); return v.length ? (v.reduce((s, p) => s + p[k], 0) / v.length).toFixed(1) : null; };
-  const dEv = day.filter((p) => p.r1 != null);
-  const hitRate = dEv.length ? Math.round((dEv.filter((p) => p.hit).length / dEv.length) * 100) : null;
-  const dAvg = dEv.length ? (dEv.reduce((s, p) => s + p.r1, 0) / dEv.length).toFixed(1) : null;
-  const comps = [];
-  if (winRate != null) comps.push(winRate);
-  if (hitRate != null) comps.push(hitRate);
-  if (gs) comps.push(gs.acc);
-  const total = comps.length ? Math.round(comps.reduce((a, b) => a + b, 0) / comps.length) : null;
+  const statsFor = (m) => {
+    const sw = swing.filter((p) => p.market === m), dy = day.filter((p) => p.market === m);
+    const s5 = sw.filter((p) => p.r5 != null);
+    const winRate = s5.length ? Math.round((s5.filter((p) => p.r5 > 0).length / s5.length) * 100) : null;
+    const sEv = sw.filter((p) => p.r1 != null);
+    const avg = (k) => { const v = sEv.filter((p) => p[k] != null); return v.length ? (v.reduce((s, p) => s + p[k], 0) / v.length).toFixed(1) : null; };
+    const dEv = dy.filter((p) => p.r1 != null);
+    const hitRate = dEv.length ? Math.round((dEv.filter((p) => p.hit).length / dEv.length) * 100) : null;
+    const dAvg = dEv.length ? (dEv.reduce((s, p) => s + p.r1, 0) / dEv.length).toFixed(1) : null;
+    const g = guideStats(vh, m);
+    const comps = [winRate, hitRate, g && g.acc].filter((x) => x != null);
+    return { winRate, avg, hitRate, dAvg, g, sEvN: sEv.length, dEvN: dEv.length, total: comps.length ? Math.round(comps.reduce((a, b) => a + b, 0) / comps.length) : null };
+  };
+  const K = statsFor("KR"), U = statsFor("US");
   const secT = { fontFamily: T.mono, fontSize: 11, letterSpacing: "0.22em", margin: "14px 0 8px" };
   const Row = ({ p, dayMode }) => (
     <div style={{ display: "flex", gap: 8, padding: "8px 0", borderBottom: `1px dashed ${T.line}`, fontSize: 12.5, alignItems: "center" }}>
       <span style={{ color: T.faint, fontFamily: T.mono, fontSize: 10.5, minWidth: 44 }}>{p.date.slice(5)}</span>
-      <span style={{ flex: 1, color: T.ink, fontWeight: 600, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{p.name}</span>
+      <span style={{ flex: 1, color: T.ink, fontWeight: 600, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{p.market === "KR" ? "🇰🇷 " : "🇺🇸 "}{p.name}</span>
       <span style={{ fontFamily: T.mono, color: rc(p.r1), minWidth: 46, textAlign: "right" }}>{p.r1 != null ? `${p.r1 > 0 ? "+" : ""}${p.r1}%` : "채점전"}</span>
       {dayMode ? (
         <span style={{ fontFamily: T.mono, color: p.hit == null ? T.faint : p.hit ? T.buy : T.sell, minWidth: 92, textAlign: "right" }}>
@@ -1247,31 +1254,31 @@ function TrackRecord({ refreshKey }) {
       <div onClick={() => setOpen(!open)} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", cursor: "pointer", gap: 10 }}>
         <span style={{ fontFamily: T.mono, fontSize: 11, letterSpacing: "0.3em", color: T.info }}>TRACK RECORD · AI 추천 성적표</span>
         <span style={{ fontFamily: T.mono, fontSize: 13, color: T.sub, whiteSpace: "nowrap" }}>
-          {total != null ? (
-            <><b style={{ fontFamily: T.serif, fontSize: 21, color: total >= 50 ? T.info : T.sell }}>{total}</b><span style={{ color: T.faint }}>/100</span></>
-          ) : "집계 전"} {open ? "▴" : "▾"}
+          {K.total != null && <span>🇰🇷 <b style={{ fontFamily: T.serif, fontSize: 18, color: K.total >= 50 ? T.info : T.sell }}>{K.total}</b></span>}
+          {U.total != null && <span style={{ marginLeft: 8 }}>🇺🇸 <b style={{ fontFamily: T.serif, fontSize: 18, color: U.total >= 50 ? T.info : T.sell }}>{U.total}</b></span>}
+          {K.total == null && U.total == null && "집계 전"} {open ? "▴" : "▾"}
         </span>
       </div>
       {!open && (
         <div style={{ fontFamily: T.mono, fontSize: 11, color: T.faint, marginTop: 6 }}>
-          {total != null
-            ? `${winRate != null ? `스윙 ${winRate}` : ""}${hitRate != null ? ` · 단타 ${hitRate}` : ""}${gs ? ` · 가이드 ${gs.acc}` : ""} — 탭하면 상세`
-            : `기록 ${all.length}건 · 첫 채점부터 점수 집계 — 탭하면 상세`}
+          {K.total != null || U.total != null ? "시장별 종합 점수 (스윙·단타·가이드 평균) — 탭하면 상세" : `기록 ${all.length}건 · 첫 채점부터 시장별 점수 집계 — 탭하면 상세`}
         </div>
       )}
       {open && (<>
       {swing.length > 0 && (
         <>
           <div style={{ ...secT, color: T.buy }}>스윙 추천</div>
-          {sEv.length === 0 ? (
+          {K.sEvN + U.sEvN === 0 ? (
             <div style={{ color: T.sub, fontSize: 12.5, marginBottom: 4 }}>기록 {swing.length}건 — 다음 거래일부터 채점됩니다</div>
           ) : (
-            <div style={{ display: "flex", gap: 16, fontFamily: T.mono, flexWrap: "wrap", marginBottom: 4 }}>
-              {winRate != null && <div><div style={{ fontSize: 10.5, color: T.sub }}>5일 승률</div><div style={{ fontSize: 19, fontWeight: 800, color: winRate >= 50 ? T.buy : T.sell }}>{winRate}%</div></div>}
-              <div><div style={{ fontSize: 10.5, color: T.sub }}>평균 1일</div><div style={{ fontSize: 16, fontWeight: 700, color: rc(+avg("r1")) }}>{avg("r1")}%</div></div>
-              <div><div style={{ fontSize: 10.5, color: T.sub }}>평균 5일</div><div style={{ fontSize: 16, fontWeight: 700, color: rc(+avg("r5")) }}>{avg("r5") ?? "—"}%</div></div>
-              <div><div style={{ fontSize: 10.5, color: T.sub }}>평균 20일</div><div style={{ fontSize: 16, fontWeight: 700, color: rc(+avg("r20")) }}>{avg("r20") ?? "—"}%</div></div>
-            </div>
+            [["🇰🇷", K], ["🇺🇸", U]].map(([f, S]) => S.sEvN > 0 && (
+              <div key={f} style={{ fontFamily: T.mono, fontSize: 12.5, color: T.sub, marginBottom: 5 }}>
+                {f} {S.winRate != null ? <>승률 <b style={{ color: S.winRate >= 50 ? T.buy : T.sell }}>{S.winRate}%</b></> : "승률 —"}
+                {" · 1일 "}<b style={{ color: rc(+S.avg("r1")) }}>{S.avg("r1") ?? "—"}%</b>
+                {" · 5일 "}<b style={{ color: rc(+S.avg("r5")) }}>{S.avg("r5") ?? "—"}%</b>
+                {" · 20일 "}<b style={{ color: rc(+S.avg("r20")) }}>{S.avg("r20") ?? "—"}%</b>
+              </div>
+            ))
           )}
           {[...swing].reverse().slice(0, 6).map((p, i) => <Row key={"s" + i} p={p} />)}
         </>
@@ -1279,37 +1286,40 @@ function TrackRecord({ refreshKey }) {
       {day.length > 0 && (
         <>
           <div style={{ ...secT, color: T.sell }}>⚡ 당일 단타</div>
-          {dEv.length === 0 ? (
+          {K.dEvN + U.dEvN === 0 ? (
             <div style={{ color: T.sub, fontSize: 12.5, marginBottom: 4 }}>기록 {day.length}건 — 당일 장 마감 후 채점됩니다</div>
           ) : (
-            <div style={{ display: "flex", gap: 16, fontFamily: T.mono, marginBottom: 4 }}>
-              <div><div style={{ fontSize: 10.5, color: T.sub }}>목표가 적중률</div><div style={{ fontSize: 19, fontWeight: 800, color: hitRate >= 50 ? T.buy : T.sell }}>{hitRate}%</div></div>
-              <div><div style={{ fontSize: 10.5, color: T.sub }}>평균 당일</div><div style={{ fontSize: 16, fontWeight: 700, color: rc(+dAvg) }}>{dAvg}%</div></div>
-            </div>
+            [["🇰🇷", K], ["🇺🇸", U]].map(([f, S]) => S.dEvN > 0 && (
+              <div key={f} style={{ fontFamily: T.mono, fontSize: 12.5, color: T.sub, marginBottom: 5 }}>
+                {f} 목표 적중 <b style={{ color: S.hitRate >= 50 ? T.buy : T.sell }}>{S.hitRate}%</b> · 평균 당일 <b style={{ color: rc(+S.dAvg) }}>{S.dAvg}%</b>
+              </div>
+            ))
           )}
           {[...day].reverse().slice(0, 6).map((p, i) => <Row key={"d" + i} p={p} dayMode />)}
         </>
       )}
-      {gs && (
+      {(K.g || U.g) && (
         <div style={{ fontFamily: T.mono, fontSize: 12.5, color: T.sub, marginTop: 10 }}>
-          개별 가이드 적중률(5일): <b style={{ color: gs.acc >= 50 ? T.buy : T.sell }}>{gs.acc}%</b> ({gs.n}건)
+          가이드 적중률(5일):
+          {K.g && <> 🇰🇷 <b style={{ color: K.g.acc >= 50 ? T.buy : T.sell }}>{K.g.acc}%</b>({K.g.n})</>}
+          {U.g && <> 🇺🇸 <b style={{ color: U.g.acc >= 50 ? T.buy : T.sell }}>{U.g.acc}%</b>({U.g.n})</>}
         </div>
       )}
       {revLoading && <div style={{ color: T.sub, fontSize: 12.5, marginTop: 12 }}>🎓 AI 코치가 성적을 복기하는 중…</div>}
-      {review && review.comment && (
-        <div style={{ marginTop: 14, background: T.card2, borderRadius: 12, padding: 13 }}>
-          <div style={{ fontFamily: T.mono, fontSize: 11, color: T.warn, letterSpacing: "0.22em", marginBottom: 8 }}>🎓 AI 코치 · 정성 평가</div>
-          <div style={{ fontSize: 13.5, color: T.ink, lineHeight: 1.7 }}>{review.comment}</div>
-          {(review.lessons || []).map((l, i) => (
+      {review && ["KR", "US"].map((m) => review[m] && review[m].comment && (
+        <div key={m} style={{ marginTop: 14, background: T.card2, borderRadius: 12, padding: 13 }}>
+          <div style={{ fontFamily: T.mono, fontSize: 11, color: T.warn, letterSpacing: "0.22em", marginBottom: 8 }}>🎓 AI 코치 · {m === "KR" ? "🇰🇷 국내장" : "🇺🇸 미국장"} 정성 평가</div>
+          <div style={{ fontSize: 13.5, color: T.ink, lineHeight: 1.7 }}>{review[m].comment}</div>
+          {(review[m].lessons || []).map((l, i) => (
             <div key={i} style={{ fontSize: 12.5, color: T.sub, lineHeight: 1.7, marginTop: i === 0 ? 8 : 2 }}>· {l}</div>
           ))}
-          {review.focus && (
+          {review[m].focus && (
             <div style={{ marginTop: 10, borderLeft: `3px solid ${T.info}`, paddingLeft: 10, fontSize: 12.5, color: T.info, lineHeight: 1.6 }}>
-              다음 집중 개선: {review.focus}
+              다음 집중 개선: {review[m].focus}
             </div>
           )}
         </div>
-      )}
+      ))}
       <div style={{ fontSize: 11.5, color: T.info, marginTop: 10, lineHeight: 1.6 }}>
         🧠 성적과 코치 교훈은 다음 분석·추천에 자동 반영되어 종합 점수를 스스로 끌어올리도록 설계되어 있습니다.
       </div>
@@ -1500,7 +1510,7 @@ export default function App() {
   const r = result;
   const vc = r ? toneColor(r.verdict.tone) : T.buy;
   const nAdj = newsAdjOf(news);
-  const gsNow = useMemo(() => guideStats(vhLoad()), [result]);
+  const gsNow = useMemo(() => (r ? guideStats(vhLoad(), marketOf(r.ticker)) : null), [result]);
   const selfAdj = gsNow && gsNow.n >= 10 ? (gsNow.acc < 45 ? -5 : gsNow.acc >= 60 ? 3 : 0) : 0;
   const regAdj = r?.regime?.adj || 0;
   const finalScore = r ? Math.max(0, Math.min(100, r.composite + nAdj + regAdj + selfAdj)) : 0;
