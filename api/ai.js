@@ -62,10 +62,11 @@ async function callClaude(key, prompt) {
   if (!m) throw new Error("응답 해석 실패");
   return JSON.parse(m[0]);
 }
-async function callGemini(key, prompt, useSearch) {
-  const body = { contents: [{ parts: [{ text: prompt }] }], generationConfig: { temperature: 0.4, maxOutputTokens: 2048 } };
+const GEM_MODELS = ["gemini-3.5-flash-lite", "gemini-3.1-flash-lite", "gemini-3.5-flash"]; // 무료 등급 우선
+async function callGemini(key, model, prompt, useSearch) {
+  const body = { contents: [{ parts: [{ text: prompt }] }], generationConfig: { maxOutputTokens: 8192 } };
   if (useSearch) body.tools = [{ google_search: {} }];
-  const r = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent?key=${key}`, {
+  const r = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${key}`, {
     method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body),
   });
   const j = await r.json();
@@ -76,8 +77,14 @@ async function callGemini(key, prompt, useSearch) {
   return JSON.parse(m[0]);
 }
 async function gemini(key, prompt) {
-  try { return await callGemini(key, prompt, true); }    // 웹검색 그라운딩 시도
-  catch { return await callGemini(key, prompt, false); } // 실패 시 제공 데이터만으로
+  let lastErr = null;
+  for (const model of GEM_MODELS) {
+    for (const useSearch of [true, false]) {
+      try { return await callGemini(key, model, prompt, useSearch); }
+      catch (e) { lastErr = e; if (/quota|exceeded|not found|no longer available/i.test(e.message)) break; }
+    }
+  }
+  throw lastErr || new Error("Gemini 호출 실패");
 }
 
 /* ── 프롬프트 ── */
@@ -117,7 +124,7 @@ export default async function handler(req, res) {
         return res.status(200).json({ brief: "AI 키가 없습니다. GEMINI_API_KEY(구글 무료 키)를 Vercel 환경변수에 등록하면 실제 뉴스 기반 AI 선별 추천이 활성화됩니다. aistudio.google.com에서 카드 등록 없이 발급 가능합니다.", picks: [] });
       }
       if (claudeKey) return res.status(200).json(await callClaude(claudeKey, picksUSPrompt));
-      if (geminiKey) return res.status(200).json(await callGemini(geminiKey, picksUSPrompt, true));
+      if (geminiKey) return res.status(200).json(await gemini(geminiKey, picksUSPrompt));
       return res.status(200).json({ brief: "미국장 프리픽은 AI 키 등록 시 활성화됩니다 (GEMINI_API_KEY 무료 발급 가능).", picks: [] });
     }
     return res.status(400).json({ error: "kind는 news 또는 picks" });
