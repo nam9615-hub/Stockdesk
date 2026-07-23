@@ -200,7 +200,7 @@ function parseCSV(text) {
 }
 
 /* ========== 종합 분석 엔진 ========== */
-function analyze(data, avgPrice) {
+function analyze(data, avgPrice, qty = 0) {
   const close = data.map((d) => d.close);
   const high = data.map((d) => d.high);
   const low = data.map((d) => d.low);
@@ -359,7 +359,7 @@ function analyze(data, avgPrice) {
   if (avgPrice > 0) {
     const pl = ((price - avgPrice) / avgPrice) * 100;
     position = {
-      avg: avgPrice, pl,
+      avg: avgPrice, qty, pl,
       stopFromAvg: Math.round(avgPrice * 0.93),
       note: pl >= 15 ? "수익권 — 1차 구간부터 분할 익절 + 트레일링 스탑" : pl >= 0 ? "본전 상회 — 손절선을 평단 위로 올려 무손실 관리" : pl > -7 ? "손실권 — 손절 기준(-7%) 접근 여부 점검" : "손절 기준 이탈 — 원칙적 대응 필요",
     };
@@ -851,63 +851,164 @@ function riskList(r, filings) {
   return out;
 }
 
-function SummaryView({ r, news, newsLoading, finalScore, nAdj, regAdj, selfAdj, filings, inWl, toggleWl }) {
-  const bw = bigWord(r, finalScore);
-  const risks = riskList(r, filings).slice(0, 3);
-  const rowS = { display: "flex", gap: 10, padding: "8px 0", borderBottom: `1px dashed ${T.line}`, fontSize: 13.5, alignItems: "baseline" };
-  const lbl = { fontFamily: T.mono, fontSize: 11, color: T.faint, minWidth: 64 };
+function decideAction(r, finalScore) {
+  const pos = r.position;
+  const inZone = r.zones[0] && r.price >= r.zones[0].lo;
+  if (!pos) {
+    if (r.trendLabel === "하락" || (r.regime && r.regime.tone === "sell" && finalScore < 55))
+      return { act: "신규 진입 금지", pct: 0, tone: "sell", why: "시장·종목이 하락 국면 — 반등 확인 전 진입은 손익비가 불리합니다.", inval: "일봉 종가가 20일선 위로 복귀하고 시장 국면이 회복되면 관망으로 변경." };
+    if (r.heat >= 80 || inZone)
+      return { act: "진입 보류 · 과열 대기", pct: 0, tone: "warn", why: `단기 과열(과열도 ${r.heat}) — 추격 진입은 되돌림 위험이 큽니다.`, inval: `거래량을 동반해 ${r.zones[0] ? fmt(r.zones[0].hi) + "원을" : "저항을"} 돌파하면 돌파매수 관점으로 변경.` };
+    if (finalScore >= 80)
+      return { act: "1차 30% 진입", pct: 30, tone: "buy", why: `${r.trendLabel} 추세 + 눌림 + 지지 확인 — 진입 조건이 충족되었습니다.`, inval: `종가가 ${fmt(r.stop)}원을 이탈하면 의견 철회.` };
+    if (finalScore >= 60)
+      return { act: "1차 20% 진입", pct: 20, tone: "buy", why: "조건 일부 충족 — 소규모로 먼저 진입하고 확인 후 늘리는 접근이 유리합니다.", inval: `종가 ${fmt(r.stop)}원 이탈 또는 시장 국면 하락 전환 시 철회.` };
+    return { act: "눌림목 대기", pct: 0, tone: "hold", why: `신호 부족(종합 ${finalScore}점) — 더 유리한 가격을 기다리는 구간입니다.`, inval: `${r.nearSup ? fmt(r.nearSup.p) + "원 지지 확인" : "지지 형성"} + 거래량 감소가 확인되면 진입 의견으로 변경.` };
+  }
+  const pl = pos.pl;
+  if (r.trendLabel === "하락")
+    return pl >= 0
+      ? { act: "전량매도 후 재진입 감시", pct: -100, tone: "sell", why: "추세 훼손 — 수익 보전이 우선입니다.", inval: "20일선 회복 + 정배열 복귀 시 재진입 검토." }
+      : { act: "반등 시 50% 축소", pct: -50, tone: "sell", why: "하락 추세 + 손실권 — 물타기보다 리스크 축소가 원칙입니다.", inval: "거래량 동반 20일선 회복 시 보유로 변경." };
+  if (r.heat >= 80 || inZone)
+    return { act: "30% 부분매도", pct: -30, tone: "sell", why: `단기 과열${inZone ? " + 1차 저항권 진입" : ""}이나 중기 상승추세는 유지되고 있습니다.`, inval: `거래량을 동반해 ${r.zones[0] ? fmt(r.zones[0].hi) + "원을" : "저항을"} 돌파하면 부분매도 의견을 보유로 변경.` };
+  if (pl >= 10)
+    return { act: "보유 유지 · 수익보호선 상향", pct: 0, tone: "buy", why: "추세 생존 + 수익권 — 이익을 태우며 방어선만 끌어올리는 구간입니다.", inval: `종가 ${fmt(Math.max(r.stop, Math.round(pos.avg * 1.02)))}원 이탈 시 전량 정리.` };
+  if (pl <= -5 && finalScore < 60)
+    return { act: "추가매수 금지 · 손절선 엄수", pct: 0, tone: "warn", why: "손실권 + 신호 부족 — 물타기는 위험을 키웁니다.", inval: `종가 ${fmt(r.stop)}원 이탈 시 원칙대로 손절.` };
+  return { act: "보유 유지", pct: 0, tone: "hold", why: `${r.trendLabel} 추세 유지 — 기존 계획대로 진행합니다.`, inval: `종가 ${fmt(r.stop)}원 이탈 또는 과열도 80 돌파 시 재평가.` };
+}
+
+function DecisionCard({ r, finalScore, inWl, toggleWl, showLive, showHeader }) {
+  const d = decideAction(r, finalScore);
+  const c = toneColor(d.tone);
+  const conf = r.prob ? (r.prob.n >= 20 ? "높음" : r.prob.n >= 10 ? "보통" : "낮음") : "낮음(데이터 부족)";
+  const posQty = r.position?.qty || 0;
+  const sellQty = d.pct < 0 && posQty ? Math.round((posQty * Math.abs(d.pct)) / 100) : null;
+  const sups = r.supports.slice(0, 2).map((s) => s.p);
+  const reentry = sups.length >= 2 ? `${fmt(Math.min(...sups))} ~ ${fmt(Math.max(...sups))}원` : sups.length ? `${fmt(sups[0])}원 부근` : "—";
+  const defLine = r.position && r.position.pl > 3 ? Math.max(r.stop, Math.round(r.position.avg * 1.02)) : r.stop;
+  const now = new Date();
+  const ts = `${now.getMonth() + 1}월 ${now.getDate()}일 ${String(now.getHours()).padStart(2, "0")}:${String(now.getMinutes()).padStart(2, "0")}`;
+  const rows = [
+    ["현재가", `${fmt(r.price)}원`],
+    r.position ? ["내 평단가", `${fmt(r.position.avg)}원 (${pct(r.position.pl)})`] : null,
+    ["추천 행동", d.pct > 0 ? `투입 예정 자금의 ${d.pct}% 진입` : d.pct < 0 ? `보유수량의 ${Math.abs(d.pct)}% 매도${sellQty ? ` ≈ ${fmt(sellQty)}주` : ""}` : "현 상태 유지 / 대기"],
+    ["1차 목표가", r.zones[0] ? `${fmt(r.zones[0].center)}원` : "신고가권 — 트레일링"],
+    ["손절·방어선", `${fmt(defLine)}원`],
+    ["재진입 후보", reentry],
+    ["예상 손익비", r.zones[0]?.rr != null ? `1 : ${r.zones[0].rr.toFixed(1)}` : "—"],
+    ["판단 신뢰도", `${conf}${r.prob ? ` · 유사사례 ${r.prob.n}회` : ""}`],
+    ["분석 시각", ts],
+  ].filter(Boolean);
   return (
-    <Card style={{ marginTop: 14, background: "linear-gradient(180deg,#0E1219,#0A0E16)", borderColor: bw.c + "66" }}>
-      <Eyebrow color={bw.c}>ONE-CALL GUIDE{r.isLive ? " · LIVE" : ""}</Eyebrow>
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 10 }}>
-        <div style={{ fontFamily: T.serif, fontSize: 24, fontWeight: 800 }}>
-          {r.name} <span style={{ fontSize: 14, color: T.sub, fontFamily: T.mono, fontWeight: 400 }}>{r.ticker} · {fmt(r.price)}원</span>
+    <Card style={{ marginTop: 14, background: "linear-gradient(180deg,#0E1219,#0A0E16)", borderColor: c + "77" }}>
+      {showHeader && (
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 10 }}>
+          <div style={{ fontFamily: T.serif, fontSize: 23, fontWeight: 800 }}>
+            {r.name} <span style={{ fontSize: 13, color: T.sub, fontFamily: T.mono, fontWeight: 400 }}>{r.ticker}</span>
+          </div>
+          <span onClick={toggleWl} style={{
+            cursor: "pointer", fontSize: 12.5, fontWeight: 700, whiteSpace: "nowrap", flexShrink: 0,
+            color: inWl ? T.warn : T.sub, border: `1px solid ${inWl ? T.warn : T.line}`, borderRadius: 20, padding: "5px 11px",
+          }}>{inWl ? "★ 관심중" : "☆ 관심등록"}</span>
         </div>
-        <span onClick={toggleWl} style={{
-          cursor: "pointer", fontSize: 12.5, fontWeight: 700, whiteSpace: "nowrap", flexShrink: 0,
-          color: inWl ? T.warn : T.sub, border: `1px solid ${inWl ? T.warn : T.line}`, borderRadius: 20, padding: "5px 11px",
-        }}>{inWl ? "★ 관심중" : "☆ 관심등록"}</span>
+      )}
+      {showLive && r.isLive && <LiveWatch ticker={r.ticker} />}
+      <div style={{ textAlign: "center", padding: "14px 0 6px" }}>
+        <div style={{ fontFamily: T.mono, fontSize: 11, letterSpacing: "0.3em", color: c }}>현재 판단</div>
+        <div style={{ fontFamily: T.serif, fontSize: 34, fontWeight: 900, color: c, marginTop: 4, lineHeight: 1.25 }}>{d.act}</div>
+        <div style={{ fontFamily: T.mono, fontSize: 11.5, color: T.faint, marginTop: 4 }}>종합 {finalScore}/100</div>
       </div>
-      {!inWl && <div style={{ fontSize: 11.5, color: T.faint, marginTop: 4 }}>관심등록하면 앱 맨 위에 실시간 시세판으로 표시됩니다</div>}
-      {r.isLive && <LiveWatch ticker={r.ticker} />}
-      <div style={{ textAlign: "center", padding: "18px 0 8px" }}>
-        <div style={{ fontFamily: T.serif, fontSize: 56, fontWeight: 900, color: bw.c, letterSpacing: "0.05em" }}>{bw.w}</div>
-        <div style={{ color: T.sub, fontSize: 14, marginTop: 6, lineHeight: 1.6 }}>{bw.s}</div>
-        <div style={{ fontFamily: T.mono, fontSize: 12, color: T.faint, marginTop: 8 }}>
-          종합 {finalScore}/100 = 기술 {r.composite}{nAdj ? ` ${nAdj > 0 ? "+" : "−"} 뉴스 ${Math.abs(nAdj)}` : ""}{regAdj ? ` ${regAdj > 0 ? "+" : "−"} 시장 ${Math.abs(regAdj)}` : ""}{selfAdj ? ` ${selfAdj > 0 ? "+" : "−"} 자가보정 ${Math.abs(selfAdj)}` : ""}
-          {newsLoading && <span style={{ color: T.info }}> · 뉴스 반영 중…</span>}
+      <div style={{ marginTop: 8 }}>
+        {rows.map(([k, v], i) => (
+          <div key={i} style={{ display: "flex", justifyContent: "space-between", gap: 10, padding: "8px 0", borderBottom: `1px dashed ${T.line}`, fontSize: 13.5 }}>
+            <span style={{ color: T.sub, fontFamily: T.mono, fontSize: 12 }}>{k}</span>
+            <span style={{ color: T.ink, fontWeight: 700, textAlign: "right" }}>{v}</span>
+          </div>
+        ))}
+      </div>
+      <div style={{ marginTop: 12, fontSize: 13, lineHeight: 1.7 }}>
+        <div><span style={{ color: T.info, fontFamily: T.mono, fontSize: 11.5 }}>판단 근거</span> <span style={{ color: T.ink }}>{d.why}</span></div>
+        <div style={{ marginTop: 5 }}><span style={{ color: T.warn, fontFamily: T.mono, fontSize: 11.5 }}>무효화 조건</span> <span style={{ color: T.ink }}>{d.inval}</span></div>
+      </div>
+      <div style={{ fontFamily: T.mono, fontSize: 10.5, color: T.faint, marginTop: 12, lineHeight: 1.6 }}>
+        데이터 기준 — 시세: 실시간 폴링 + 일봉 {r.date} · 뉴스: 최근 72시간 (네이버·구글·야후) · 공시: 최근 제출분
+      </div>
+    </Card>
+  );
+}
+
+function FactorPanel({ r, news, filings }) {
+  const [oi, setOi] = useState(-1);
+  const vol = (r.buyRows && r.buyRows[3] && r.buyRows[3].detail) || "—";
+  const rows = [
+    { name: "추세", tone: r.trendLabel === "상승" ? "buy" : r.trendLabel === "하락" ? "sell" : "hold",
+      sum: `중기 ${r.trendLabel}${r.heat >= 70 ? ", 단기 과열" : r.depression >= 70 ? ", 단기 눌림" : ""}`,
+      detail: [["정배열", r.aligned ? "충족" : "미충족"], ["ADX 추세강도", `${r.adxV.toFixed(0)} (${r.adxStrong ? "강" : "약"})`], ["200일선", r.above200 ? "위" : "아래"], ["데이터 기준", `일봉 ${r.date}`]] },
+    { name: "모멘텀", tone: (r.macdHist ?? 0) > 0 ? "buy" : "sell",
+      sum: `RSI ${(r.rsi ?? 0).toFixed(0)}${r.rsi >= 70 ? " 과열" : r.rsi <= 35 ? " 과매도" : ""} · MACD ${(r.macdHist ?? 0) > 0 ? "상승" : "둔화"}`,
+      detail: [["RSI(14)", (r.rsi ?? 0).toFixed(1)], ["MACD 히스토그램", (r.macdHist ?? 0).toFixed(0)], ["스토캐스틱 %K", (r.stochK ?? 0).toFixed(0)], ["10일 모멘텀", pct(r.mom10)], ["데이터 기준", `일봉 ${r.date}`]] },
+    { name: "거래량·수급", tone: r.obvUp ? "buy" : "sell",
+      sum: `${r.obvUp ? "매집 우위" : "분산 우위"} · 거래량 ${vol}`,
+      detail: [["OBV 20일 수급", r.obvUp ? "순매집" : "순분산"], ["거래량 최근/직전", vol], ["볼린저 %B", (r.pb ?? 0).toFixed(2)], ["데이터 기준", `일봉 ${r.date}`]] },
+    { name: "기업·이벤트", tone: news ? (news.sentiment >= 15 ? "buy" : news.sentiment <= -15 ? "sell" : "hold") : "hold",
+      sum: news ? `뉴스 감성 ${news.sentiment > 0 ? "+" : ""}${news.sentiment}${filings && filings.length ? ` · 공시 ${filings.length}건` : ""}` : "뉴스 분석 중…",
+      detail: [["뉴스 감성", news ? `${news.sentiment} — ${(news.mood || "").slice(0, 24)}` : "—"], ["최근 공시", filings && filings.length ? `${filings[0].date} ${filings[0].title.slice(0, 20)}…` : "없음"], ["뉴스 기준", "최근 72시간 · 네이버+구글+야후"], ["공시 기준", "최근 제출분 (네이버/SEC EDGAR)"]] },
+    { name: "시장 환경", tone: (r.regime && r.regime.tone) || "hold",
+      sum: r.regime ? `${r.regime.label} · ${r.regime.advice}` : "미판정",
+      detail: [["판정 지수", /\.(KS|KQ)$/i.test(r.ticker) ? "KOSPI" : "S&P500"], ["국면", (r.regime && r.regime.label) || "—"], ["점수 반영", r.regime ? `${r.regime.adj > 0 ? "+" : ""}${r.regime.adj}점` : "0점"], ["판정 기준", "지수 일봉 20/60일선 + 20일 변동성"]] },
+  ];
+  return (
+    <Card style={{ marginTop: 14 }}>
+      <Eyebrow color={T.info}>WHY · 분석 근거 5영역 (탭하면 상세)</Eyebrow>
+      {rows.map((f, i) => (
+        <div key={i}>
+          <div onClick={() => setOi(oi === i ? -1 : i)} style={{ display: "flex", gap: 10, padding: "11px 0", borderBottom: `1px dashed ${T.line}`, cursor: "pointer", alignItems: "baseline" }}>
+            <span style={{ fontFamily: T.mono, fontSize: 11.5, color: T.sub, minWidth: 78 }}>{f.name}</span>
+            <span style={{ flex: 1, fontSize: 13.5, color: toneColor(f.tone), fontWeight: 600 }}>{f.sum}</span>
+            <span style={{ color: T.faint, fontSize: 11 }}>{oi === i ? "▴" : "▾"}</span>
+          </div>
+          {oi === i && (
+            <div style={{ background: T.card2, borderRadius: 10, padding: "10px 12px", margin: "8px 0" }}>
+              {f.detail.map(([k, v], j) => (
+                <div key={j} style={{ display: "flex", justifyContent: "space-between", fontSize: 12.5, fontFamily: T.mono, padding: "4px 0" }}>
+                  <span style={{ color: T.faint }}>{k}</span><span style={{ color: T.ink }}>{v}</span>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
-      </div>
+      ))}
+    </Card>
+  );
+}
+
+function SummaryView({ r, news, newsLoading, finalScore, nAdj, regAdj, selfAdj, filings, inWl, toggleWl }) {
+  const risks = riskList(r, filings).slice(0, 3);
+  return (
+    <>
+      <DecisionCard r={r} finalScore={finalScore} inWl={inWl} toggleWl={toggleWl} showLive showHeader />
       {r.prob && (
-        <div style={{ background: T.card2, borderRadius: 12, padding: 13, marginTop: 8 }}>
-          <div style={{ fontFamily: T.mono, fontSize: 11, color: T.info, letterSpacing: "0.2em", marginBottom: 8 }}>과거 유사 조건 {r.prob.n}회 실측</div>
+        <Card style={{ marginTop: 14 }}>
+          <Eyebrow color={T.info}>과거 유사 조건 {r.prob.n}회 실측</Eyebrow>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px 14px", fontFamily: T.mono, fontSize: 13 }}>
             <div><span style={{ color: T.sub, fontSize: 11.5 }}>5일 상승확률</span><div style={{ fontSize: 19, fontWeight: 800, color: r.prob.pUp5 >= 55 ? T.buy : r.prob.pUp5 <= 45 ? T.sell : T.warn }}>{r.prob.pUp5}%</div></div>
             <div><span style={{ color: T.sub, fontSize: 11.5 }}>5일 예상(중앙)</span><div style={{ fontSize: 19, fontWeight: 800, color: r.prob.med5 >= 0 ? T.buy : T.sell }}>{pct(r.prob.med5)}</div></div>
             <div style={{ gridColumn: "1 / -1", fontSize: 12, color: T.sub }}>변동범위 {pct(r.prob.p10)} ~ {pct(r.prob.p90)} · 20일 중앙 {pct(r.prob.med20)}</div>
-            {r.prob.pTarget != null && <div style={{ gridColumn: "1 / -1", fontSize: 12.5 }}>목표 선도달 <b style={{ color: T.buy }}>{r.prob.pTarget}%</b> vs 손절 선도달 <b style={{ color: T.sell }}>{r.prob.pStop}%</b> · 기대값(비용차감) <b style={{ color: r.prob.ev > 0 ? T.buy : T.sell }}>{pct(r.prob.ev)}</b></div>}
+            {r.prob.pTarget != null && <div style={{ gridColumn: "1 / -1", fontSize: 12.5 }}>목표 선도달 <b style={{ color: T.buy }}>{r.prob.pTarget}%</b> vs 손절 선도달 <b style={{ color: T.sell }}>{r.prob.pStop}%</b> · 기대값 <b style={{ color: r.prob.ev > 0 ? T.buy : T.sell }}>{pct(r.prob.ev)}</b></div>}
           </div>
-        </div>
+        </Card>
       )}
-      <div style={{ marginTop: 12 }}>
-        {r.regime && <div style={rowS}><span style={lbl}>시장</span><span style={{ color: toneColor(r.regime.tone) }}>{r.regime.label} · {r.regime.advice}</span></div>}
-        <div style={rowS}><span style={lbl}>추세</span><span style={{ color: T.ink }}>{r.trendLabel} · {r.aligned ? "정배열" : "이평 미정렬"} · ADX {r.adxV.toFixed(0)}</span></div>
-        <div style={rowS}><span style={lbl}>눌림/지지</span><span style={{ color: T.ink }}>침체도 {r.depression} · {r.nearSup ? `지지 ${fmt(r.nearSup.p)}원 위` : "핵심 지지 이탈/부재"}</span></div>
-        <div style={rowS}><span style={lbl}>뉴스·공시</span><span style={{ color: news ? (news.sentiment >= 15 ? T.buy : news.sentiment <= -15 ? T.sell : T.warn) : T.faint }}>{news ? `감성 ${news.sentiment > 0 ? "+" : ""}${news.sentiment} · ${news.mood?.slice(0, 28) ?? ""}` : newsLoading ? "분석 중…" : "미분석"}</span></div>
-      </div>
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 10, marginTop: 14, fontFamily: T.mono, textAlign: "center" }}>
-        <div style={{ background: T.card2, borderRadius: 10, padding: "10px 4px" }}><div style={{ fontSize: 10.5, color: T.buy }}>진입 참고</div><div style={{ fontSize: 13.5, fontWeight: 700 }}>{fmt(r.nearSup ? r.nearSup.p : r.supports[0]?.p ?? r.price)}원</div></div>
-        <div style={{ background: T.card2, borderRadius: 10, padding: "10px 4px" }}><div style={{ fontSize: 10.5, color: T.info }}>1차 목표</div><div style={{ fontSize: 13.5, fontWeight: 700 }}>{r.zones[0] ? fmt(r.zones[0].center) + "원" : "신고가권"}</div></div>
-        <div style={{ background: T.card2, borderRadius: 10, padding: "10px 4px" }}><div style={{ fontSize: 10.5, color: T.sell }}>손절</div><div style={{ fontSize: 13.5, fontWeight: 700 }}>{fmt(r.stop)}원</div></div>
-      </div>
+      <FactorPanel r={r} news={news} filings={filings} />
       {risks.length > 0 && (
-        <div style={{ marginTop: 14, borderLeft: `3px solid ${T.sell}`, background: "rgba(255,107,107,0.06)", borderRadius: "0 10px 10px 0", padding: 12 }}>
-          <div style={{ fontFamily: T.mono, fontSize: 11, color: T.sell, letterSpacing: "0.2em", marginBottom: 6 }}>핵심 위험</div>
-          {risks.map((x, i) => <div key={i} style={{ fontSize: 12.5, color: T.ink, lineHeight: 1.7 }}>· {x}</div>)}
-        </div>
+        <Card style={{ marginTop: 14, borderColor: T.sell + "44" }}>
+          <Eyebrow color={T.sell}>핵심 위험</Eyebrow>
+          {risks.map((x, i) => <div key={i} style={{ fontSize: 13, color: T.ink, lineHeight: 1.8 }}>· {x}</div>)}
+        </Card>
       )}
-      {r.position && <div style={{ marginTop: 12, fontFamily: T.mono, fontSize: 13, color: T.sub }}>내 포지션: 평단 {fmt(r.position.avg)}원 · <span style={{ color: r.position.pl >= 0 ? T.buy : T.sell, fontWeight: 700 }}>{pct(r.position.pl)}</span> — 상세 화면에서 매도 플랜 확인</div>}
-    </Card>
+      {newsLoading && <div style={{ color: T.info, fontSize: 12.5, marginTop: 10, textAlign: "center", fontFamily: T.mono }}>뉴스·공시 반영 중… 잠시 후 판단이 갱신됩니다</div>}
+    </>
   );
 }
 
@@ -1038,6 +1139,7 @@ function TrackRecord({ refreshKey }) {
   const [vh, setVh] = useState([]);
   const [review, setReview] = useState(null);
   const [revLoading, setRevLoading] = useState(false);
+  const [open, setOpen] = useState(false);
   useEffect(() => {
     (async () => {
       const [h, v] = await Promise.all([
@@ -1073,6 +1175,11 @@ function TrackRecord({ refreshKey }) {
   const dEv = day.filter((p) => p.r1 != null);
   const hitRate = dEv.length ? Math.round((dEv.filter((p) => p.hit).length / dEv.length) * 100) : null;
   const dAvg = dEv.length ? (dEv.reduce((s, p) => s + p.r1, 0) / dEv.length).toFixed(1) : null;
+  const comps = [];
+  if (winRate != null) comps.push(winRate);
+  if (hitRate != null) comps.push(hitRate);
+  if (gs) comps.push(gs.acc);
+  const total = comps.length ? Math.round(comps.reduce((a, b) => a + b, 0) / comps.length) : null;
   const secT = { fontFamily: T.mono, fontSize: 11, letterSpacing: "0.22em", margin: "14px 0 8px" };
   const Row = ({ p, dayMode }) => (
     <div style={{ display: "flex", gap: 8, padding: "8px 0", borderBottom: `1px dashed ${T.line}`, fontSize: 12.5, alignItems: "center" }}>
@@ -1093,25 +1200,22 @@ function TrackRecord({ refreshKey }) {
   );
   return (
     <Card style={{ marginBottom: 16 }}>
-      <Eyebrow color={T.info}>TRACK RECORD · AI 추천 성적표</Eyebrow>
-      {(() => {
-        const comps = [];
-        if (winRate != null) comps.push(winRate);
-        if (hitRate != null) comps.push(hitRate);
-        if (gs) comps.push(gs.acc);
-        if (!comps.length) return <div style={{ color: T.faint, fontSize: 12.5, marginBottom: 4 }}>종합 점수는 첫 채점이 집계되는 날부터 표시됩니다.</div>;
-        const total = Math.round(comps.reduce((a, b) => a + b, 0) / comps.length);
-        const tc = total >= 50 ? T.info : T.sell;
-        return (
-          <div style={{ textAlign: "center", padding: "6px 0 14px", borderBottom: `1px solid ${T.line}`, marginBottom: 4 }}>
-            <span style={{ fontFamily: T.serif, fontSize: 44, fontWeight: 900, color: tc }}>{total}</span>
-            <span style={{ fontFamily: T.serif, fontSize: 18, color: T.faint }}>/100</span>
-            <div style={{ fontFamily: T.mono, fontSize: 11, color: T.faint, marginTop: 4 }}>
-              종합 점수 · {winRate != null ? `스윙 ${winRate}` : ""}{hitRate != null ? ` · 단타 ${hitRate}` : ""}{gs ? ` · 가이드 ${gs.acc}` : ""}
-            </div>
-          </div>
-        );
-      })()}
+      <div onClick={() => setOpen(!open)} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", cursor: "pointer", gap: 10 }}>
+        <span style={{ fontFamily: T.mono, fontSize: 11, letterSpacing: "0.3em", color: T.info }}>TRACK RECORD · AI 추천 성적표</span>
+        <span style={{ fontFamily: T.mono, fontSize: 13, color: T.sub, whiteSpace: "nowrap" }}>
+          {total != null ? (
+            <><b style={{ fontFamily: T.serif, fontSize: 21, color: total >= 50 ? T.info : T.sell }}>{total}</b><span style={{ color: T.faint }}>/100</span></>
+          ) : "집계 전"} {open ? "▴" : "▾"}
+        </span>
+      </div>
+      {!open && (
+        <div style={{ fontFamily: T.mono, fontSize: 11, color: T.faint, marginTop: 6 }}>
+          {total != null
+            ? `${winRate != null ? `스윙 ${winRate}` : ""}${hitRate != null ? ` · 단타 ${hitRate}` : ""}${gs ? ` · 가이드 ${gs.acc}` : ""} — 탭하면 상세`
+            : `기록 ${all.length}건 · 첫 채점부터 점수 집계 — 탭하면 상세`}
+        </div>
+      )}
+      {open && (<>
       {swing.length > 0 && (
         <>
           <div style={{ ...secT, color: T.buy }}>스윙 추천</div>
@@ -1165,6 +1269,7 @@ function TrackRecord({ refreshKey }) {
       <div style={{ fontSize: 11.5, color: T.info, marginTop: 10, lineHeight: 1.6 }}>
         🧠 성적과 코치 교훈은 다음 분석·추천에 자동 반영되어 종합 점수를 스스로 끌어올리도록 설계되어 있습니다.
       </div>
+      </>)}
     </Card>
   );
 }
@@ -1174,6 +1279,7 @@ export default function App() {
   const [query, setQuery] = useState("SK하이닉스 (000660.KS)");
   const [sugOpen, setSugOpen] = useState(false);
   const [avg, setAvg] = useState("");
+  const [qty, setQty] = useState("");
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState(null);
   const [news, setNews] = useState(null);
@@ -1251,7 +1357,7 @@ export default function App() {
     try {
       const live = await fetchChart(ticker);
       const data = live.data;
-      const r = analyze(data, parseFloat(avg) || 0);
+      const r = analyze(data, parseFloat(avg) || 0, parseInt(qty) || 0);
       let regime = null;
       {
         try {
@@ -1455,17 +1561,21 @@ export default function App() {
 
 
 
-          <div style={{ display: "flex", gap: 12, marginTop: 14, alignItems: "flex-end" }}>
+          <div style={{ display: "flex", gap: 10, marginTop: 14 }}>
             <div style={{ flex: 1 }}>
-              <label style={label}>평단가(선택) — 손절·손익비 기준</label>
-              <input style={inputS} value={avg} onChange={(e) => setAvg(e.target.value.replace(/[^\d.]/g, ""))} inputMode="numeric" placeholder="0" />
+              <label style={label}>평단가 (보유 시)</label>
+              <input style={inputS} value={avg} onChange={(e) => setAvg(e.target.value.replace(/[^\d.]/g, ""))} inputMode="numeric" placeholder="미보유면 비움" />
             </div>
-            <button onClick={run} disabled={loading} style={{
-              flex: 1, padding: "15px 10px", borderRadius: 12, border: "none", cursor: "pointer",
-              background: "linear-gradient(135deg,#5b6cff,#7c5bff)", color: "#fff", fontSize: 16.5, fontWeight: 700, letterSpacing: "0.04em",
-              opacity: loading ? 0.6 : 1,
-            }}>{loading ? "시세 불러오는 중…" : "분석 ▶"}</button>
+            <div style={{ flex: 1 }}>
+              <label style={label}>보유수량 (선택)</label>
+              <input style={inputS} value={qty} onChange={(e) => setQty(e.target.value.replace(/[^\d]/g, ""))} inputMode="numeric" placeholder="0" />
+            </div>
           </div>
+          <button onClick={run} disabled={loading} style={{
+            width: "100%", marginTop: 12, padding: "15px 10px", borderRadius: 12, border: "none", cursor: "pointer",
+            background: "linear-gradient(135deg,#5b6cff,#7c5bff)", color: "#fff", fontSize: 16.5, fontWeight: 700, letterSpacing: "0.04em",
+            opacity: loading ? 0.6 : 1,
+          }}>{loading ? "시세 불러오는 중…" : "분석 ▶"}</button>
           {err && <div style={{ marginTop: 12, color: T.sell, fontSize: 13.5 }}>⚠ {err}</div>}
           <div style={{ marginTop: 12, color: T.faint, fontSize: 12, lineHeight: 1.5 }}>
             실시간 분석 · 야후 파이낸스 일봉 기준 (국내주식 시세는 최대 15~20분 지연될 수 있음)
@@ -1484,6 +1594,7 @@ export default function App() {
             )}
 
             {view === "detail" && (<>
+            <DecisionCard r={r} finalScore={finalScore} showLive={false} showHeader={false} />
             {/* 종합 판단 */}
             <Card style={{ marginTop: 16, background: "linear-gradient(180deg,#0E1219,#0A0E16)", borderColor: vc + "55" }}>
               <Eyebrow color={vc}>OVERALL VERDICT{r.isLive ? " · LIVE" : r.isDemo ? " · 시세는 DEMO" : ""}</Eyebrow>
