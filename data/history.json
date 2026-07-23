@@ -1,0 +1,70 @@
+{
+ "entries": [
+  {
+   "date": "2026-07-24",
+   "market": "KR",
+   "picks": [
+    {
+     "kind": "swing",
+     "name": "SK이터닉스",
+     "ticker": "475150.KS",
+     "score": 90,
+     "p0": 80600,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "OCI홀딩스",
+     "ticker": "010060.KS",
+     "score": 85,
+     "p0": 247000,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "SGC에너지",
+     "ticker": "005090.KS",
+     "score": 80,
+     "p0": 54700,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "day",
+     "name": "HD현대에너지솔루션",
+     "ticker": "322000.KS",
+     "score": 88,
+     "target": 7,
+     "p0": 171500,
+     "r1": null,
+     "hit": null
+    },
+    {
+     "kind": "day",
+     "name": "SK이터닉스",
+     "ticker": "475150.KS",
+     "score": 85,
+     "target": 5,
+     "p0": 80600,
+     "r1": null,
+     "hit": null
+    },
+    {
+     "kind": "day",
+     "name": "OCI홀딩스",
+     "ticker": "010060.KS",
+     "score": 82,
+     "target": 4,
+     "p0": 247000,
+     "r1": null,
+     "hit": null
+    }
+   ]
+  }
+ ]
+}
