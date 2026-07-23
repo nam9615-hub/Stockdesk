@@ -824,7 +824,7 @@ function riskList(r, filings) {
   return out;
 }
 
-function SummaryView({ r, news, newsLoading, finalScore, nAdj, regAdj, selfAdj, filings }) {
+function SummaryView({ r, news, newsLoading, finalScore, nAdj, regAdj, selfAdj, filings, inWl, toggleWl }) {
   const bw = bigWord(r, finalScore);
   const risks = riskList(r, filings).slice(0, 3);
   const rowS = { display: "flex", gap: 10, padding: "8px 0", borderBottom: `1px dashed ${T.line}`, fontSize: 13.5, alignItems: "baseline" };
@@ -832,9 +832,16 @@ function SummaryView({ r, news, newsLoading, finalScore, nAdj, regAdj, selfAdj, 
   return (
     <Card style={{ marginTop: 14, background: "linear-gradient(180deg,#0E1219,#0A0E16)", borderColor: bw.c + "66" }}>
       <Eyebrow color={bw.c}>ONE-CALL GUIDE{r.isLive ? " · LIVE" : ""}</Eyebrow>
-      <div style={{ fontFamily: T.serif, fontSize: 24, fontWeight: 800 }}>
-        {r.name} <span style={{ fontSize: 14, color: T.sub, fontFamily: T.mono, fontWeight: 400 }}>{r.ticker} · {fmt(r.price)}원</span>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 10 }}>
+        <div style={{ fontFamily: T.serif, fontSize: 24, fontWeight: 800 }}>
+          {r.name} <span style={{ fontSize: 14, color: T.sub, fontFamily: T.mono, fontWeight: 400 }}>{r.ticker} · {fmt(r.price)}원</span>
+        </div>
+        <span onClick={toggleWl} style={{
+          cursor: "pointer", fontSize: 12.5, fontWeight: 700, whiteSpace: "nowrap", flexShrink: 0,
+          color: inWl ? T.warn : T.sub, border: `1px solid ${inWl ? T.warn : T.line}`, borderRadius: 20, padding: "5px 11px",
+        }}>{inWl ? "★ 관심중" : "☆ 관심등록"}</span>
       </div>
+      {!inWl && <div style={{ fontSize: 11.5, color: T.faint, marginTop: 4 }}>관심등록하면 앱 맨 위에 실시간 시세판으로 표시됩니다</div>}
       {r.isLive && <LiveWatch ticker={r.ticker} />}
       <div style={{ textAlign: "center", padding: "18px 0 8px" }}>
         <div style={{ fontFamily: T.serif, fontSize: 56, fontWeight: 900, color: bw.c, letterSpacing: "0.05em" }}>{bw.w}</div>
@@ -873,7 +880,6 @@ function SummaryView({ r, news, newsLoading, finalScore, nAdj, regAdj, selfAdj, 
         </div>
       )}
       {r.position && <div style={{ marginTop: 12, fontFamily: T.mono, fontSize: 13, color: T.sub }}>내 포지션: 평단 {fmt(r.position.avg)}원 · <span style={{ color: r.position.pl >= 0 ? T.buy : T.sell, fontWeight: 700 }}>{pct(r.position.pl)}</span> — 상세 화면에서 매도 플랜 확인</div>}
-      <div style={{ fontSize: 11, color: T.faint, marginTop: 14, lineHeight: 1.6, textAlign: "center" }}>확률·기대값은 이 종목 과거 데이터 실측이며 미래를 보장하지 않습니다 · 투자 판단과 책임은 본인 몫</div>
     </Card>
   );
 }
@@ -937,7 +943,7 @@ function SellPlan({ r }) {
         </div>
       ))}
       <div style={{ fontSize: 11.5, color: T.faint, marginTop: 10, lineHeight: 1.6 }}>
-        기술적 계산 기반 참고 플랜입니다. 뉴스·공시 급변 시 우선순위가 바뀔 수 있으며 최종 판단은 본인 몫입니다.
+        뉴스·공시 급변 시 우선순위가 바뀔 수 있습니다.
       </div>
     </Card>
   );
@@ -1045,9 +1051,7 @@ export default function App() {
   const [query, setQuery] = useState("SK하이닉스 (000660.KS)");
   const [sugOpen, setSugOpen] = useState(false);
   const [avg, setAvg] = useState("");
-  const [source, setSource] = useState("live"); // live | demo | csv
   const [loading, setLoading] = useState(false);
-  const [csv, setCsv] = useState("");
   const [useNews, setUseNews] = useState(true);
   const [result, setResult] = useState(null);
   const [news, setNews] = useState(null);
@@ -1115,13 +1119,11 @@ export default function App() {
     }
     setLoading(true);
     try {
-      let data, live = null;
-      if (source === "csv") data = parseCSV(csv);
-      else if (source === "demo") data = genDemo(ticker);
-      else { live = await fetchChart(ticker); data = live.data; }
+      const live = await fetchChart(ticker);
+      const data = live.data;
       const r = analyze(data, parseFloat(avg) || 0);
       let regime = null;
-      if (source === "live") {
+      {
         try {
           const idx = /\.(KS|KQ)$/i.test(ticker) ? "^KS11" : "^GSPC";
           const cl = (await fetchChart(idx)).data.map((d) => d.close);
@@ -1137,7 +1139,7 @@ export default function App() {
             : { label: "박스권/혼조 장세", adj: 0, advice: "지지·저항 단기 대응", tone: "warn" };
         } catch {}
       }
-      const merged = { ...r, regime, ticker, name, isDemo: source === "demo", isLive: source === "live", marketState: live?.marketState, currency: live?.currency };
+      const merged = { ...r, regime, ticker, name, isDemo: false, isLive: true, marketState: live?.marketState, currency: live?.currency };
       setResult(merged);
       recordVerdict(merged);
     } catch (e) { setErr(e.message); setResult(null); setLoading(false); return; }
@@ -1183,13 +1185,9 @@ export default function App() {
 
         {/* 헤더 */}
         <header style={{ padding: "30px 2px 18px" }}>
-          <Eyebrow color={T.info}>SWING DESK · DAILY CHART</Eyebrow>
-          <h1 style={{ fontFamily: T.serif, fontSize: 32, margin: 0, letterSpacing: "-0.01em" }}>
-            매도 <span style={{ color: T.faint }}>/</span> 매수 <span style={{ color: T.faint }}>/</span> 재진입 분석
+          <h1 style={{ fontFamily: T.serif, fontSize: 34, margin: 0, letterSpacing: "-0.01em" }}>
+            Yoon's <span style={{ color: T.info }}>가이드</span>
           </h1>
-          <p style={{ color: T.sub, fontSize: 13.5, lineHeight: 1.6, margin: "10px 0 0", fontStyle: "italic" }}>
-            일봉 기반 스윙(2~4주) 참고 도구. 투자 권유 아님 · 매매 트리거 아님 · 최종 판단과 책임은 본인에게 있습니다.
-          </p>
         </header>
 
         {/* AI 추천 성적표 */}
@@ -1264,7 +1262,7 @@ export default function App() {
                 </div>
               ))}
               <div style={{ fontSize: 11.5, color: T.faint, lineHeight: 1.6 }}>
-                추천은 AI가 개장 전 뉴스·재료 기준으로 고른 '관찰 후보'이며 투자 권유가 아닙니다. 앱이 닫혀 있으면 자동 알림은 불가 — 매일 8시/개장 전에 열어 확인하세요.
+                매일 8시(국내)·개장 1시간 전(미국)에 열어 확인하세요. 각 종목의 성적은 자동 채점되어 다음 추천에 반영됩니다.
               </div>
             </div>
           )}
@@ -1272,12 +1270,6 @@ export default function App() {
 
         {/* 입력 */}
         <Card>
-          <div style={{ display: "flex", gap: 8, marginBottom: 16 }}>
-            <div style={chip(source === "live")} onClick={() => setSource("live")}>실시간 시세</div>
-            <div style={chip(source === "demo")} onClick={() => setSource("demo")}>데모</div>
-            <div style={chip(source === "csv")} onClick={() => setSource("csv")}>CSV</div>
-          </div>
-
           <label style={label}>종목명(한글) 또는 티커</label>
           <div style={{ position: "relative" }}>
             <input style={inputS} value={query}
@@ -1316,13 +1308,6 @@ export default function App() {
             </span>
           </div>
 
-          {source === "csv" && (
-            <div style={{ marginTop: 14 }}>
-              <label style={label}>일봉 CSV — 날짜,시가,고가,저가,종가,거래량 (야후 파이낸스 다운로드 형식 지원)</label>
-              <textarea style={{ ...inputS, minHeight: 110, fontSize: 12.5, resize: "vertical" }} value={csv} onChange={(e) => setCsv(e.target.value)}
-                placeholder={"Date,Open,High,Low,Close,Adj Close,Volume\n2026-01-02,180000,183000,178500,182000,182000,1234567\n..."} />
-            </div>
-          )}
 
           <div style={{ display: "flex", gap: 12, marginTop: 14, alignItems: "flex-end" }}>
             <div style={{ flex: 1 }}>
@@ -1336,12 +1321,9 @@ export default function App() {
             }}>{loading ? "시세 불러오는 중…" : "분석 ▶"}</button>
           </div>
           {err && <div style={{ marginTop: 12, color: T.sell, fontSize: 13.5 }}>⚠ {err}</div>}
-          {source === "live" && <div style={{ marginTop: 12, color: T.faint, fontSize: 12, lineHeight: 1.5 }}>
-            야후 파이낸스 기준 시세입니다 (국내주식은 최대 15~20분 지연될 수 있음 · 5분 캐시).
-          </div>}
-          {source === "demo" && <div style={{ marginTop: 12, color: T.faint, fontSize: 12, lineHeight: 1.5 }}>
-            데모 모드는 티커별로 생성된 가상 시세입니다. 실전 판단에는 "실시간 시세"를 사용하세요.
-          </div>}
+          <div style={{ marginTop: 12, color: T.faint, fontSize: 12, lineHeight: 1.5 }}>
+            실시간 분석 · 야후 파이낸스 일봉 기준 (국내주식 시세는 최대 15~20분 지연될 수 있음)
+          </div>
         </Card>
 
         {r && (
@@ -1352,7 +1334,7 @@ export default function App() {
             </div>
 
             {view === "summary" && (
-              <SummaryView r={r} news={news} newsLoading={newsLoading} finalScore={finalScore} nAdj={nAdj} regAdj={regAdj} selfAdj={selfAdj} filings={filings} />
+              <SummaryView r={r} news={news} newsLoading={newsLoading} finalScore={finalScore} nAdj={nAdj} regAdj={regAdj} selfAdj={selfAdj} filings={filings} inWl={inWl} toggleWl={toggleWl} />
             )}
 
             {view === "detail" && (<>
@@ -1646,10 +1628,6 @@ export default function App() {
 
             </>)}
 
-            <p style={{ color: T.faint, fontSize: 11.5, lineHeight: 1.7, marginTop: 22, textAlign: "center" }}>
-              본 도구의 점수·구간은 과거 가격 데이터의 기술적 계산일 뿐, 미래 수익을 보장하지 않습니다.<br />
-              시장·뉴스·실적은 반영되지 않으며, 모든 매매 판단과 책임은 이용자 본인에게 있습니다.
-            </p>
           </>
         )}
       </div>
