@@ -509,6 +509,7 @@ const newsAdjOf = (n) => (n ? Math.max(-12, Math.min(12, Math.round(n.sentiment 
 async function fetchPicks(market, history) {
   const j = await callAI({ kind: "picks", market, history });
   j.picks = (j.picks || []).slice(0, 3);
+  j.day_picks = (j.day_picks || []).slice(0, 3);
   return j;
 }
 // 현재 시간 기준 추천 세션 (KST 가정 · 3~11월 미국 서머타임 → 22:30 개장)
@@ -766,23 +767,42 @@ function PositionCalc({ price, stop, ticker }) {
 /* ========== 추천 성적 추적 (셀프 학습 데이터) ========== */
 const histLoad = () => { try { return JSON.parse(localStorage.getItem("sd_picks_hist") || "[]"); } catch { return []; } };
 const histSave = (h) => { try { localStorage.setItem("sd_picks_hist", JSON.stringify(h.slice(-60))); } catch {} };
-async function recordPicks(market, picks) {
-  if (!picks || !picks.length) return;
+async function recordPicks(market, picks, dayPicks) {
+  const sw = picks || [], dy = dayPicks || [];
+  if (!sw.length && !dy.length) return;
   const today = new Date().toISOString().slice(0, 10);
   const h = histLoad();
   if (h.some((e) => e.date === today && e.market === market)) return;
   let pmap = {};
-  try { pmap = Object.fromEntries((await fetchQuotes(picks.map((p) => p.ticker))).map((q) => [q.ticker, q.price])); } catch {}
-  h.push({ date: today, market, picks: picks.map((p) => ({ name: p.name, ticker: p.ticker, score: p.score, p0: pmap[p.ticker] || null, r1: null, r5: null, r20: null })) });
+  try {
+    const all = [...new Set([...sw, ...dy].map((p) => p.ticker))];
+    pmap = Object.fromEntries((await fetchQuotes(all)).map((q) => [q.ticker, q.price]));
+  } catch {}
+  h.push({
+    date: today, market,
+    picks: [
+      ...sw.map((p) => ({ kind: "swing", name: p.name, ticker: p.ticker, score: p.score, p0: pmap[p.ticker] || null, r1: null, r5: null, r20: null })),
+      ...dy.map((p) => ({ kind: "day", name: p.name, ticker: p.ticker, score: p.score, target: +p.target_pct || 3, p0: pmap[p.ticker] || null, r1: null, hit: null, r5: null, r20: null })),
+    ],
+  });
   histSave(h);
 }
 async function evalHistory() {
   const h = histLoad(); let changed = false;
-  const need = [...new Set(h.flatMap((e) => e.picks.filter((p) => p.p0 && p.r20 == null).map((p) => p.ticker)))].slice(0, 8);
+  const need = [...new Set(h.flatMap((e) => e.picks.filter((p) => p.p0 && (p.kind === "day" ? p.r1 == null : p.r20 == null)).map((p) => p.ticker)))].slice(0, 8);
   const charts = {};
   for (const t of need) { try { charts[t] = (await fetchChart(t)).data; } catch {} }
   h.forEach((e) => e.picks.forEach((p) => {
     const d = charts[p.ticker]; if (!d || !p.p0) return;
+    if (p.kind === "day") {
+      if (p.r1 != null) return;
+      const row = d.find((x) => x.date >= e.date);
+      if (!row) return;
+      p.r1 = +(((row.close - p.p0) / p.p0) * 100).toFixed(1);
+      p.hit = row.high >= p.p0 * (1 + (p.target || 3) / 100);
+      changed = true;
+      return;
+    }
     const i0 = d.findIndex((x) => x.date > e.date); if (i0 < 0) return;
     const ret = (k) => (d[i0 + k - 1] ? +(((d[i0 + k - 1].close - p.p0) / p.p0) * 100).toFixed(1) : null);
     for (const [key, k] of [["r1", 1], ["r5", 5], ["r20", 20]]) {
@@ -792,8 +812,15 @@ async function evalHistory() {
   if (changed) histSave(h);
   return h;
 }
+function daySummary(h, market) {
+  const ps = h.filter((e) => e.market === market).flatMap((e) => e.picks).filter((p) => p.kind === "day" && p.r1 != null);
+  if (ps.length < 3) return "";
+  const hitR = Math.round((ps.filter((p) => p.hit).length / ps.length) * 100);
+  const avg = (ps.reduce((s, p) => s + p.r1, 0) / ps.length).toFixed(1);
+  return `당일 단타 추천 ${ps.length}건 실측: 목표가 적중률 ${hitR}%, 평균 당일 수익률 ${avg}%.`;
+}
 function perfSummary(h, market) {
-  const ps = h.filter((e) => e.market === market).flatMap((e) => e.picks).filter((p) => p.r5 != null);
+  const ps = h.filter((e) => e.market === market).flatMap((e) => e.picks).filter((p) => p.kind !== "day" && p.r5 != null);
   if (ps.length < 3) return "";
   const avg = (k) => (ps.reduce((s, p) => s + (p[k] ?? 0), 0) / ps.filter((p) => p[k] != null).length || 0).toFixed(1);
   const win = Math.round((ps.filter((p) => p.r5 > 0).length / ps.length) * 100);
@@ -983,7 +1010,8 @@ function guideStats(h) {
   return { n: ev.length, acc: Math.round((ok / ev.length) * 100) };
 }
 function fullHistoryStr(market) {
-  const parts = [perfSummary(histLoad(), market)];
+  const h = histLoad();
+  const parts = [perfSummary(h, market), daySummary(h, market)];
   const gs = guideStats(vhLoad());
   if (gs) parts.push(`개별 종목 매수/매도 가이드의 5일 적중률: ${gs.acc}% (${gs.n}건). 적중률이 낮으면 더 보수적으로, 높으면 기존 기준을 유지하라.`);
   return parts.filter(Boolean).join(" ");
@@ -1023,10 +1051,18 @@ function TrackRecord({ refreshKey }) {
           {recent.map((p, i) => (
             <div key={i} style={{ display: "flex", gap: 8, padding: "8px 0", borderBottom: `1px dashed ${T.line}`, fontSize: 12.5, alignItems: "center" }}>
               <span style={{ color: T.faint, fontFamily: T.mono, fontSize: 10.5, minWidth: 44 }}>{p.date.slice(5)}</span>
-              <span style={{ flex: 1, color: T.ink, fontWeight: 600, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{p.name}</span>
+              <span style={{ flex: 1, color: T.ink, fontWeight: 600, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{p.kind === "day" ? "⚡" : ""}{p.name}</span>
               <span style={{ fontFamily: T.mono, color: rc(p.r1), minWidth: 46, textAlign: "right" }}>{p.r1 != null ? `${p.r1 > 0 ? "+" : ""}${p.r1}%` : "채점전"}</span>
-              <span style={{ fontFamily: T.mono, color: rc(p.r5), minWidth: 46, textAlign: "right" }}>{p.r5 != null ? `${p.r5 > 0 ? "+" : ""}${p.r5}%` : "·"}</span>
-              <span style={{ fontFamily: T.mono, color: rc(p.r20), minWidth: 46, textAlign: "right" }}>{p.r20 != null ? `${p.r20 > 0 ? "+" : ""}${p.r20}%` : "·"}</span>
+              {p.kind === "day" ? (
+                <span style={{ fontFamily: T.mono, color: p.hit == null ? T.faint : p.hit ? T.buy : T.sell, minWidth: 96, textAlign: "right" }}>
+                  {p.hit == null ? "·" : p.hit ? `목표+${p.target}% ✓` : `목표+${p.target}% ✗`}
+                </span>
+              ) : (
+                <>
+                  <span style={{ fontFamily: T.mono, color: rc(p.r5), minWidth: 46, textAlign: "right" }}>{p.r5 != null ? `${p.r5 > 0 ? "+" : ""}${p.r5}%` : "·"}</span>
+                  <span style={{ fontFamily: T.mono, color: rc(p.r20), minWidth: 46, textAlign: "right" }}>{p.r20 != null ? `${p.r20 > 0 ? "+" : ""}${p.r20}%` : "·"}</span>
+                </>
+              )}
             </div>
           ))}
           <div style={{ display: "flex", gap: 8, marginTop: 6, fontSize: 10.5, color: T.faint, fontFamily: T.mono, justifyContent: "flex-end" }}>
@@ -1094,13 +1130,21 @@ export default function App() {
     return [...local, ...remote.filter((x) => !seen.has(x.ticker)).map((x) => [x.name, x.ticker])].slice(0, 8);
   }, [query, sugOpen, remote]);
 
+  const [picksCache, setPicksCache] = useState({});
   const loadPicks = async (m) => {
-    setPickMarket(m); setPicks(null); setPicksErr(""); setPicksLoading(true);
+    // 같은 버튼 재탭 → 접기
+    if (pickMarket === m && (picks || picksLoading)) { setPickMarket(null); setPicks(null); setPicksErr(""); setPicksLoading(false); return; }
+    setPickMarket(m); setPicksErr("");
+    const today = new Date().toISOString().slice(0, 10);
+    const c = picksCache[m];
+    if (c && c.date === today) { setPicks(c.data); return; } // 당일 캐시로 즉시 재열기
+    setPicks(null); setPicksLoading(true);
     try {
       const history = fullHistoryStr(m);
       const j = await fetchPicks(m, history);
       setPicks(j);
-      recordPicks(m, j.picks).catch(() => {});
+      setPicksCache((pc) => ({ ...pc, [m]: { date: today, data: j } }));
+      recordPicks(m, j.picks, j.day_picks).catch(() => {});
     }
     catch (e) { setPicksErr("추천 수집 실패 — 잠시 후 다시 시도해 주세요. (" + e.message + ")"); }
     setPicksLoading(false);
@@ -1261,8 +1305,37 @@ export default function App() {
                   }}>이 종목 정밀 분석 ▼</button>
                 </div>
               ))}
+              {picks.day_picks && picks.day_picks.length > 0 && (
+                <>
+                  <div style={{ fontFamily: T.mono, fontSize: 11, color: T.sell, letterSpacing: "0.25em", margin: "18px 0 10px" }}>⚡ 당일 단타 3선 · 장중 청산 전제</div>
+                  {picks.day_picks.map((p, i) => (
+                    <div key={"d" + i} style={{ border: `1px solid ${T.sell}44`, borderRadius: 14, padding: 13, marginBottom: 10, background: "rgba(255,107,107,0.04)" }}>
+                      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 10 }}>
+                        <div style={{ flex: 1 }}>
+                          <div style={{ fontFamily: T.serif, fontSize: 18, fontWeight: 800 }}>
+                            {p.name} <span style={{ fontFamily: T.mono, fontSize: 12, color: T.sub, fontWeight: 400 }}>{p.ticker}</span>
+                          </div>
+                          <div style={{ fontSize: 13, color: T.ink, lineHeight: 1.6, marginTop: 6 }}>{p.reason}</div>
+                          {p.risk && <div style={{ fontSize: 12, color: T.sub, marginTop: 4 }}><span style={{ color: T.sell, fontFamily: T.mono }}>주의</span> {p.risk}</div>}
+                        </div>
+                        <div style={{ textAlign: "center", flexShrink: 0 }}>
+                          <div style={{ border: `1px solid ${T.buy}66`, borderRadius: 12, padding: "7px 11px" }}>
+                            <div style={{ fontFamily: T.serif, fontSize: 19, fontWeight: 800, color: T.buy }}>+{p.target_pct}%</div>
+                            <div style={{ fontFamily: T.mono, fontSize: 10, color: T.faint }}>당일 목표</div>
+                          </div>
+                          <div style={{ fontFamily: T.mono, fontSize: 10.5, color: T.sub, marginTop: 5 }}>강도 {p.score}</div>
+                        </div>
+                      </div>
+                      <button onClick={() => { const q = `${p.name} (${p.ticker})`; setQuery(q); run(q); }} style={{
+                        marginTop: 10, width: "100%", padding: "9px 8px", borderRadius: 10, cursor: "pointer",
+                        background: "transparent", border: `1px solid ${T.info}66`, color: T.info, fontSize: 13, fontWeight: 700,
+                      }}>이 종목 정밀 분석 ▼</button>
+                    </div>
+                  ))}
+                </>
+              )}
               <div style={{ fontSize: 11.5, color: T.faint, lineHeight: 1.6 }}>
-                매일 8시(국내)·개장 1시간 전(미국)에 열어 확인하세요. 각 종목의 성적은 자동 채점되어 다음 추천에 반영됩니다.
+                매일 8시(국내)·개장 1시간 전(미국)에 열어 확인하세요. 스윙 픽(1·5·20일)과 단타 픽(당일 목표 적중 여부)은 자동 채점되어 다음 추천에 반영됩니다. 버튼을 다시 누르면 접힙니다.
               </div>
             </div>
           )}
