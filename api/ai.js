@@ -104,7 +104,10 @@ const picksUSPrompt = (data) =>
 
 export default async function handler(req, res) {
   if (req.method !== "POST") return res.status(405).json({ error: "POST only" });
-  const { kind, label, ticker, market } = req.body || {};
+  const { kind, label, ticker, market, history } = req.body || {};
+  const learn = history
+    ? `\n\n[너의 과거 추천 실측 성적표]\n${String(history).slice(0, 800)}\n위 성적을 분석해 반영하라: 실패 사례들과 비슷한 유형(예: 이미 과열된 급등 추격, 일회성 재료)은 피하고, 성공 사례들과 비슷한 조건을 우선하라. brief에 이번 추천에서 성적을 어떻게 반영했는지 한 문장으로 언급하라.`
+    : "";
   const claudeKey = process.env.ANTHROPIC_API_KEY;
   const geminiKey = process.env.GEMINI_API_KEY;
   const code = (String(ticker || "").match(/^(\d{6})\./) || [])[1];
@@ -126,8 +129,8 @@ export default async function handler(req, res) {
     if (kind === "picks") {
       if (market === "KR") {
         const data = await gatherKR();
-        if (claudeKey) return res.status(200).json(await callClaude(claudeKey, picksKRPrompt(data)));
-        if (geminiKey) return res.status(200).json(await gemini(geminiKey, picksKRPrompt(data)));
+        if (claudeKey) return res.status(200).json(await callClaude(claudeKey, picksKRPrompt(data) + learn));
+        if (geminiKey) return res.status(200).json(await gemini(geminiKey, picksKRPrompt(data) + learn));
         return res.status(200).json({ brief: "AI 키가 없습니다. GEMINI_API_KEY(구글 무료 키)를 Vercel 환경변수에 등록하면 실제 뉴스 기반 AI 선별 추천이 활성화됩니다. aistudio.google.com에서 카드 등록 없이 발급 가능합니다.", picks: [] });
       }
       const usData = await gatherUS();
@@ -135,7 +138,7 @@ export default async function handler(req, res) {
       if (claudeKey) return res.status(200).json(await callClaude(claudeKey, usPrompt || "너는 미국 주식 스윙 트레이더다. 웹검색으로 오늘 프리마켓·선물·실적 일정을 조사해 3종목을 골라라. JSON만 출력: {\"brief\":\"...\",\"picks\":[{\"name\",\"ticker\",\"score\",\"reason\",\"catalyst\",\"risk\"}]}"));
       if (geminiKey) {
         if (!usPrompt) return res.status(200).json({ brief: "미국장 데이터를 가져오지 못했습니다. 잠시 후 다시 시도해 주세요.", picks: [] });
-        return res.status(200).json(await gemini(geminiKey, usPrompt));
+        return res.status(200).json(await gemini(geminiKey, usPrompt + learn));
       }
       return res.status(200).json({ brief: "미국장 프리픽은 AI 키 등록 시 활성화됩니다 (GEMINI_API_KEY 무료 발급 가능).", picks: [] });
     }
