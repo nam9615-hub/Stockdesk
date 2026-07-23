@@ -1360,23 +1360,26 @@ export default function App() {
     }, 250);
     return () => clearTimeout(id);
   }, [query, sugOpen]);
+  const [srvReady, setSrvReady] = useState({});
   useEffect(() => {
     (async () => {
-      try {
-        const m = hint.m || "KR";
-        const today = new Date(Date.now() + 9 * 3600e3).toISOString().slice(0, 10);
-        const sj = await (await fetch(`/api/picks-data?what=latest&market=${m}`)).json();
-        if (sj && sj.date === today && sj.data) {
-          setPickMarket(m);
-          setPicks({ ...sj.data, auto: true, at: sj.at });
-          setPicksCache((pc) => ({ ...pc, [m]: { date: today, data: { ...sj.data, auto: true, at: sj.at } } }));
-          const flag = "sd_ntf_" + today + m;
-          if (!localStorage.getItem(flag)) {
-            notify(`오늘의 ${m === "KR" ? "국내장" : "미국장"} 추천(스윙 3 + 단타 3)이 준비됐어요`);
-            try { localStorage.setItem(flag, "1"); } catch {}
+      const today = new Date(Date.now() + 9 * 3600e3).toISOString().slice(0, 10);
+      for (const m of ["KR", "US"]) {
+        try {
+          const sj = await (await fetch(`/api/picks-data?what=latest&market=${m}`)).json();
+          if (sj && sj.date === today && sj.data) {
+            setPicksCache((pc) => ({ ...pc, [m]: { date: today, data: { ...sj.data, auto: true, at: sj.at } } }));
+            setSrvReady((s) => ({ ...s, [m]: true }));
+            if (m === (hint.m || "KR")) {
+              const flag = "sd_ntf_" + today + m;
+              if (!localStorage.getItem(flag)) {
+                notify(`오늘의 ${m === "KR" ? "국내장" : "미국장"} 추천(스윙 3 + 단타 3)이 준비됐어요`);
+                try { localStorage.setItem(flag, "1"); } catch {}
+              }
+            }
           }
-        }
-      } catch {}
+        } catch {}
+      }
     })();
   }, []);
 
@@ -1521,13 +1524,13 @@ export default function App() {
               background: pickMarket === "KR" ? "rgba(245,185,74,0.15)" : T.card2,
               border: `1px solid ${hint.m === "KR" || pickMarket === "KR" ? T.warn : T.line}`,
               color: pickMarket === "KR" ? T.warn : T.ink, opacity: picksLoading ? 0.6 : 1,
-            }}>🇰🇷 국내장 모닝픽</button>
+            }}>🇰🇷 국내장 모닝픽{srvReady.KR && <span style={{ color: T.buy, marginLeft: 6 }}>●</span>}</button>
             <button onClick={() => loadPicks("US")} disabled={picksLoading} style={{
               flex: 1, padding: "13px 8px", borderRadius: 12, cursor: "pointer", fontSize: 14.5, fontWeight: 700,
               background: pickMarket === "US" ? "rgba(111,195,255,0.14)" : T.card2,
               border: `1px solid ${hint.m === "US" || pickMarket === "US" ? T.info : T.line}`,
               color: pickMarket === "US" ? T.info : T.ink, opacity: picksLoading ? 0.6 : 1,
-            }}>🇺🇸 미국장 프리픽 <span style={{ fontSize: 11, color: T.faint, fontWeight: 400 }}>{hint.usOpen} 개장</span></button>
+            }}>🇺🇸 미국장 프리픽{srvReady.US && <span style={{ color: T.buy, marginLeft: 6 }}>●</span>} <span style={{ fontSize: 11, color: T.faint, fontWeight: 400 }}>{hint.usOpen} 개장</span></button>
           </div>
 
           {picksLoading && (
