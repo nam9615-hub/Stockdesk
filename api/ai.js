@@ -17,6 +17,17 @@ function collectTitles(obj, out) {
     }
   }
 }
+async function googleNews(q, lang, n = 6) {
+  try {
+    const url = lang === "ko"
+      ? `https://news.google.com/rss/search?q=${encodeURIComponent(q)}&hl=ko&gl=KR&ceid=KR:ko`
+      : `https://news.google.com/rss/search?q=${encodeURIComponent(q)}&hl=en-US&gl=US&ceid=US:en`;
+    const xml = await (await fetch(url, UA)).text();
+    return [...xml.matchAll(/<title>(?:<!\[CDATA\[)?(.*?)(?:\]\]>)?<\/title>/g)]
+      .map((m) => m[1].replace(/&amp;/g, "&").replace(/&quot;/g, '"').replace(/&#39;/g, "'"))
+      .slice(1, n + 1); // 첫 항목은 피드 제목이라 제외
+  } catch { return []; }
+}
 async function yahooNews(ticker, n = 5) {
   try {
     const j = await (await fetch(`https://query1.finance.yahoo.com/v1/finance/search?q=${encodeURIComponent(ticker)}&newsCount=${n}&quotesCount=0`, UA)).json();
@@ -89,13 +100,16 @@ async function gemini(key, prompt) {
   }
   throw new Error(errs.join(" / "));
 }
-// 미국 당일 상승 상위 (야후 스크리너)
+// 미국 당일 상승 상위 (야후 스크리너) + 종목별 실제 뉴스
 async function gatherUS() {
   try {
     const r = await fetch("https://query1.finance.yahoo.com/v1/finance/screener/predefined/saved?scrIds=day_gainers&count=10", UA);
     const j = await r.json();
-    const rows = (j?.finance?.result?.[0]?.quotes || []).slice(0, 10).map((q) =>
-      `${q.symbol} ${q.shortName || ""} ${q.regularMarketChangePercent > 0 ? "+" : ""}${(q.regularMarketChangePercent || 0).toFixed(1)}% $${(q.regularMarketPrice || 0).toFixed(2)}`);
+    const quotes = (j?.finance?.result?.[0]?.quotes || []).slice(0, 10);
+    const rows = await Promise.all(quotes.map(async (q) => {
+      const news = await yahooNews(q.symbol, 2);
+      return `${q.symbol} ${q.shortName || ""} ${q.regularMarketChangePercent > 0 ? "+" : ""}${(q.regularMarketChangePercent || 0).toFixed(1)}% $${(q.regularMarketPrice || 0).toFixed(2)} | 뉴스: ${news.join(" / ") || "없음"}`;
+    }));
     return rows.join("\n");
   } catch { return ""; }
 }
@@ -106,7 +120,7 @@ const newsPrompt = (label, ticker, ctx) =>
 const picksKRPrompt = (data) =>
   `너는 한국 주식 스윙 트레이더(2~4주 보유)다. 아래는 오늘 상승률·거래량 상위 후보 종목과 각 종목의 실제 최신 뉴스다.\n\n[후보 데이터]\n${data}\n\n임무: 단순 급등 추격이 아니라, 뉴스 재료의 '지속 가능성'과 스윙 관점 매력도 기준으로 후보 중 3개만 선별해라. 급등만 하고 재료가 없는 종목은 제외해라. 반드시 아래 JSON만 출력(마크다운 금지): {"brief":"오늘 시장 브리핑 2~3문장(한국어)","picks":[{"name":"종목명","ticker":"6자리코드.KS","score":0~100 정수(스윙 매력도),"reason":"선정 근거 2문장 — 왜 재료가 지속될 수 있는지","catalyst":"핵심 재료 한 줄","risk":"주의점 한 줄"}],"day_picks":[{"name":"종목명","ticker":"6자리코드.KS","score":0~100 정수(당일 모멘텀 강도),"target_pct":정수(당일 현실적 목표 상승률 %, 2~10),"reason":"단타 사유 한 줄 — 수급·모멘텀·재료 중심","risk":"주의 한 줄"}]} picks 정확히 3개(스윙), day_picks 정확히 3개(당일 단타·장중 청산 전제·가급적 스윙과 다른 종목), 모두 반드시 후보 목록 안의 종목만.`;
 const picksUSPrompt = (data) =>
-  `너는 미국 주식 스윙 트레이더(2~4주 보유)다. 아래는 오늘 미국장 상승률 상위 실제 데이터다.\n\n[후보 데이터]\n${data}\n\n임무: 단순 급등 추격이 아니라 스윙 관점 지속 가능성 기준으로 후보 중 3개만 선별해라. 반드시 후보 목록 안의 종목만 골라라. 각 종목에 대해 네가 아는 사업·업황 지식을 활용하되, 최신 뉴스를 확인할 수 없다면 risk에 "최신 뉴스 미확인"을 포함해라. 반드시 아래 JSON만 출력(마크다운 금지): {"brief":"브리핑 2~3문장(한국어)","picks":[{"name":"종목명","ticker":"티커","score":0~100 정수,"reason":"근거 2문장(한국어)","catalyst":"핵심 재료 한 줄","risk":"주의 한 줄"}],"day_picks":[{"name":"종목명","ticker":"티커","score":0~100 정수,"target_pct":정수(당일 목표 상승률 %, 2~10),"reason":"단타 사유 한 줄(한국어)","risk":"주의 한 줄"}]} picks 정확히 3개(스윙), day_picks 정확히 3개(당일 단타), 모두 후보 목록 안에서만.`;
+  `너는 미국 주식 스윙 트레이더(2~4주 보유)다. 아래는 오늘 미국장 상승률 상위 실제 데이터다.\n\n[후보 데이터]\n${data}\n\n각 후보에 실제 최신 뉴스 헤드라인(영문)이 포함되어 있다. 임무: 단순 급등 추격이 아니라 뉴스 재료의 지속 가능성과 스윙 관점 매력도 기준으로 후보 중 3개만 선별해라. 반드시 후보 목록 안의 종목만 골라라. 뉴스가 "없음"인 종목만 risk에 "관련 뉴스 확인 안 됨"을 포함해라. 반드시 아래 JSON만 출력(마크다운 금지): {"brief":"브리핑 2~3문장(한국어)","picks":[{"name":"종목명","ticker":"티커","score":0~100 정수,"reason":"근거 2문장(한국어)","catalyst":"핵심 재료 한 줄","risk":"주의 한 줄"}],"day_picks":[{"name":"종목명","ticker":"티커","score":0~100 정수,"target_pct":정수(당일 목표 상승률 %, 2~10),"reason":"단타 사유 한 줄(한국어)","risk":"주의 한 줄"}]} picks 정확히 3개(스윙), day_picks 정확히 3개(당일 단타), 모두 후보 목록 안에서만.`;
 
 export default async function handler(req, res) {
   if (req.method !== "POST") return res.status(405).json({ error: "POST only" });
@@ -120,8 +134,14 @@ export default async function handler(req, res) {
 
   try {
     if (kind === "news") {
-      const titles = code ? await naverNews(code, 5) : [];
-      const glob = await yahooNews(ticker, 5);
+      const [nv, gko, yh, gen] = await Promise.all([
+        code ? naverNews(code, 5) : Promise.resolve([]),
+        googleNews(label || ticker, "ko"),
+        yahooNews(ticker, 5),
+        googleNews(/[A-Za-z]/.test(String(label || "")) ? label : ticker, "en"),
+      ]);
+      const titles = [...new Set([...nv, ...gko])].slice(0, 7);
+      const glob = [...new Set([...yh, ...gen])].slice(0, 7);
       let filings = [];
       try {
         const fj = await (await fetch(`https://${req.headers.host}/api/filings?ticker=${encodeURIComponent(ticker)}`)).json();
@@ -129,8 +149,8 @@ export default async function handler(req, res) {
       } catch {}
       const filingCtx = filings.length ? `\n\n[최근 공시·제출서류]\n${filings.map((f) => `${f.date} ${f.title}`).join("\n")}` : "";
       const parts = [];
-      if (titles.length) parts.push("[국내 뉴스 헤드라인]\n" + titles.join("\n"));
-      if (glob.length) parts.push("[해외·영문 뉴스 헤드라인]\n" + glob.join("\n"));
+      if (titles.length) parts.push("[한국어 뉴스 헤드라인 · 네이버+구글]\n" + titles.join("\n"));
+      if (glob.length) parts.push("[해외·영문 뉴스 헤드라인 · 야후+구글]\n" + glob.join("\n"));
       const ctx = parts.join("\n\n") + filingCtx;
       const extra = "\n국내와 해외 헤드라인을 모두 고려하되, 답변은 반드시 한국어로 하라."
         + (filings.length ? `\n공시가 있으면 각 공시의 주가 영향(호재/악재/중립)을 판단해 headlines와 summary에 반영하라. 유상증자·전환사채·감자·소송은 특히 주의 깊게 평가하라.` : "") + learn;
@@ -160,7 +180,13 @@ export default async function handler(req, res) {
       }
       return res.status(200).json({ brief: "미국장 프리픽은 AI 키 등록 시 활성화됩니다 (GEMINI_API_KEY 무료 발급 가능).", picks: [] });
     }
-    return res.status(400).json({ error: "kind는 news 또는 picks" });
+    if (kind === "review") {
+      const prompt = `너는 트레이딩 코치다. 아래는 이 앱이 과거에 낸 추천과 매수/매도 가이드의 실측 성적이다.\n\n${String(history || "").slice(0, 1500)}\n\n기계적 수치 반복이 아니라 정성적으로 복기해라: 어떤 유형의 추천이 통했고 어떤 유형이 실패했는지, 공통 패턴은 무엇인지, 다음 추천에서 무엇을 바꿔야 종합 점수가 오를지. 반드시 아래 JSON만 출력(마크다운 금지): {"comment":"정성 총평 2~3문장(한국어)","lessons":["구체적 교훈 한 줄", "..."] (최대 3개),"focus":"다음 추천에서 가장 집중할 개선점 한 줄"}`;
+      if (claudeKey) return res.status(200).json(await callClaude(claudeKey, prompt));
+      if (geminiKey) return res.status(200).json(await gemini(geminiKey, prompt));
+      return res.status(200).json({ comment: "AI 키 등록 시 정성 평가가 활성화됩니다.", lessons: [], focus: "" });
+    }
+    return res.status(400).json({ error: "kind는 news, picks 또는 review" });
   } catch (e) {
     return res.status(502).json({ error: "AI 분석 실패: " + e.message });
   }
