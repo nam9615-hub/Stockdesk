@@ -193,9 +193,10 @@ export default async function handler(req, res) {
     // 1) 미채점 성적 자동 채점 (매 실행마다)
     const graded = await grade(hist.entries);
 
-    // 2) 오늘 추천 생성 (해당 시장, 중복 방지)
+    // 2) 오늘 추천 생성 (해당 시장, 중복 방지 · 주말 제외)
     let made = false;
-    if (job === "KR" || job === "US") {
+    const kstDay = new Date(Date.now() + 9 * 3600e3).getUTCDay();
+    if ((job === "KR" || job === "US") && kstDay !== 0 && kstDay !== 6) {
       const today = kstDate();
       if (!hist.entries.some((e) => e.date === today && e.market === job)) {
         const data = job === "KR" ? await gatherKR() : await gatherUS();
