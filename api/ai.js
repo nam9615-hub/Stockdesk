@@ -1,37 +1,127 @@
-// Vercel Serverless — Anthropic AI (뉴스 감성 · 모닝픽) 프록시
-// 환경변수 ANTHROPIC_API_KEY 필요 (없으면 501 반환 → 앱은 기술적 분석만 표시)
+// Vercel Serverless — 뉴스 감성 · 모닝픽 (3단 자동 전환)
+// 1) ANTHROPIC_API_KEY → Claude AI (웹검색)
+// 2) GEMINI_API_KEY   → Google Gemini AI (무료 키: aistudio.google.com)
+// 3) 둘 다 없으면     → 키워드 무료 모드
+const UA = { headers: { "User-Agent": "Mozilla/5.0" } };
+const POS = ["상승","급등","신고가","수주","흑자","호실적","실적개선","계약","돌파","성장","확대","증가","개선","최대","호조","강세","반등","기대","훈풍","질주"];
+const NEG = ["하락","급락","적자","소송","감소","악화","하향","우려","쇼크","신저가","약세","부진","리콜","제재","연기","취소","불확실","경고","매도세","조정"];
+
+function collectTitles(obj, out) {
+  if (!obj || out.length > 30) return;
+  if (Array.isArray(obj)) return obj.forEach((x) => collectTitles(x, out));
+  if (typeof obj === "object") {
+    for (const [k, v] of Object.entries(obj)) {
+      if (k === "title" && typeof v === "string" && v.length > 6)
+        out.push(v.replace(/<[^>]+>/g, "").replace(/&quot;/g, '"').replace(/&amp;/g, "&"));
+      else collectTitles(v, out);
+    }
+  }
+}
+async function naverNews(code, n = 3) {
+  const out = [];
+  try { collectTitles(await (await fetch(`https://m.stock.naver.com/api/news/stock/${code}?pageSize=${n + 3}`, UA)).json(), out); } catch {}
+  return [...new Set(out)].slice(0, n);
+}
+async function topKR(url, n) {
+  const html = new TextDecoder("euc-kr").decode(await (await fetch(url, UA)).arrayBuffer());
+  return [...html.matchAll(/code=(\d{6})"[^>]*>([^<]+)<\/a>/g)].slice(0, n).map(([, code, name]) => ({ code, name: name.trim() }));
+}
+async function quoteChg(code) {
+  try {
+    const j = await (await fetch(`https://polling.finance.naver.com/api/realtime/domestic/stock/${code}`, UA)).json();
+    const d = j?.datas?.[0];
+    return { chg: +(d?.fluctuationsRatio || 0), price: +String(d?.closePrice || 0).replace(/,/g, "") };
+  } catch { return { chg: 0, price: 0 }; }
+}
+// 국내 상승률+거래량 상위를 모아 후보 데이터 시트 작성
+async function gatherKR() {
+  const [rise, vol] = await Promise.all([
+    topKR("https://finance.naver.com/sise/sise_rise.naver", 8).catch(() => []),
+    topKR("https://finance.naver.com/sise/sise_quant.naver", 8).catch(() => []),
+  ]);
+  const seen = new Set(); const cands = [];
+  for (const s of [...rise, ...vol]) if (!seen.has(s.code) && cands.length < 10) { seen.add(s.code); cands.push(s); }
+  const rows = await Promise.all(cands.map(async (s) => {
+    const [q, news] = await Promise.all([quoteChg(s.code), naverNews(s.code, 2)]);
+    return `${s.name}(${s.code}) ${q.chg > 0 ? "+" : ""}${q.chg}% ${q.price ? q.price + "원" : ""} | 뉴스: ${news.join(" / ") || "없음"}`;
+  }));
+  return rows.join("\n");
+}
+
+/* ── AI 호출부 ── */
+async function callClaude(key, prompt) {
+  const r = await fetch("https://api.anthropic.com/v1/messages", {
+    method: "POST",
+    headers: { "Content-Type": "application/json", "x-api-key": key, "anthropic-version": "2023-06-01" },
+    body: JSON.stringify({ model: "claude-sonnet-4-6", max_tokens: 1500, messages: [{ role: "user", content: prompt }], tools: [{ type: "web_search_20250305", name: "web_search" }] }),
+  });
+  const data = await r.json();
+  if (data.error) throw new Error(data.error.message);
+  const text = (data.content || []).filter((b) => b.type === "text").map((b) => b.text).join("\n");
+  const m = text.replace(/```json|```/g, "").match(/\{[\s\S]*\}/);
+  if (!m) throw new Error("응답 해석 실패");
+  return JSON.parse(m[0]);
+}
+async function callGemini(key, prompt, useSearch) {
+  const body = { contents: [{ parts: [{ text: prompt }] }], generationConfig: { temperature: 0.4, maxOutputTokens: 2048 } };
+  if (useSearch) body.tools = [{ google_search: {} }];
+  const r = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${key}`, {
+    method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body),
+  });
+  const j = await r.json();
+  if (j.error) throw new Error(j.error.message);
+  const text = (j.candidates?.[0]?.content?.parts || []).map((p) => p.text || "").join("");
+  const m = text.replace(/```json|```/g, "").match(/\{[\s\S]*\}/);
+  if (!m) throw new Error("응답 해석 실패");
+  return JSON.parse(m[0]);
+}
+async function gemini(key, prompt) {
+  try { return await callGemini(key, prompt, true); }    // 웹검색 그라운딩 시도
+  catch { return await callGemini(key, prompt, false); } // 실패 시 제공 데이터만으로
+}
+
+/* ── 프롬프트 ── */
+const newsPrompt = (label, ticker, ctx) =>
+  `너는 한국 주식 애널리스트다. '${label}'(${ticker})의 최근 뉴스·실적·업황을 분석해라.${ctx ? `\n\n[수집된 실제 뉴스 헤드라인]\n${ctx}` : ""}\n웹검색이 가능하면 최신 정보를 보강해라. 반드시 아래 JSON만 출력(마크다운 금지): {"sentiment": 정수(-100~100, 악재 음수·호재 양수), "mood": "시장·수급 분위기 한 줄(한국어)", "headlines": [{"t":"뉴스 요약 한 줄","s":"+ 또는 - 또는 0"}] (최대 4개), "summary": "투자 관점 종합 2문장(한국어)"}`;
+const picksKRPrompt = (data) =>
+  `너는 한국 주식 스윙 트레이더(2~4주 보유)다. 아래는 오늘 상승률·거래량 상위 후보 종목과 각 종목의 실제 최신 뉴스다.\n\n[후보 데이터]\n${data}\n\n웹검색이 가능하면 시장 상황(코스피, 환율, 미국장)을 보강해라. 임무: 단순 급등 추격이 아니라, 뉴스 재료의 '지속 가능성'과 스윙 관점 매력도 기준으로 후보 중 3개만 선별해라. 급등만 하고 재료가 없는 종목은 제외해라. 반드시 아래 JSON만 출력(마크다운 금지): {"brief":"오늘 시장 브리핑 2~3문장(한국어)","picks":[{"name":"종목명","ticker":"6자리코드.KS","score":0~100 정수(스윙 매력도),"reason":"선정 근거 2문장 — 왜 재료가 지속될 수 있는지","catalyst":"핵심 재료 한 줄","risk":"주의점 한 줄"}]} picks 정확히 3개, 반드시 후보 목록 안의 종목만.`;
+const picksUSPrompt =
+  `너는 미국 주식 스윙 트레이더다. 웹검색으로 오늘 미국 증시 개장 전 상황(선물, 프리마켓 급등락, 실적·지표 일정)을 조사하고, 2~4주 스윙 관점에서 재료가 있는 종목 3개를 골라라. 반드시 아래 JSON만 출력(마크다운 금지): {"brief":"미국장 브리핑 2~3문장(한국어)","picks":[{"name":"종목명","ticker":"티커","score":0~100 정수,"reason":"근거 2문장(한국어)","catalyst":"핵심 재료 한 줄","risk":"주의점 한 줄"}]} picks 정확히 3개.`;
+
 export default async function handler(req, res) {
   if (req.method !== "POST") return res.status(405).json({ error: "POST only" });
-  const key = process.env.ANTHROPIC_API_KEY;
-  if (!key) return res.status(501).json({ error: "ANTHROPIC_API_KEY 미설정 — Vercel 환경변수에 추가하세요" });
   const { kind, label, ticker, market } = req.body || {};
-  let prompt;
-  if (kind === "news") {
-    prompt = `웹검색으로 '${label}'(${ticker}) 주식의 최근 1~2주 뉴스, 실적, 업황, 관련 시장 분위기를 조사해줘. 반드시 아래 JSON만 출력, 마크다운·설명 금지: {"sentiment": 정수(-100~100, 악재 음수·호재 양수·중립 0), "mood": "시장·수급 분위기 한 줄(한국어)", "headlines": [{"t":"뉴스 요약 한 줄","s":"+ 또는 - 또는 0"}] (최대 4개), "summary": "투자 관점 종합 2문장(한국어)"}`;
-  } else if (kind === "picks") {
-    prompt = market === "KR"
-      ? `웹검색으로 오늘 한국 증시 개장 전 상황(전일 미국장, 야간선물, 환율, 주요 뉴스·수급)을 조사하고, 일봉 스윙(2~4주) 관점에서 오늘 주목할 한국 종목 3개를 골라줘(투자 권유 아닌 관찰 후보). 반드시 아래 JSON만 출력, 마크다운·설명 금지: {"brief":"시장 브리핑 2~3문장(한국어)","picks":[{"name":"종목명","ticker":"티커(.KS/.KQ)","score":0~100 정수,"reason":"근거 1~2문장","catalyst":"핵심 재료 한 줄","risk":"주의점 한 줄"}]} picks 정확히 3개.`
-      : `웹검색으로 오늘 미국 증시 개장 전(프리마켓) 상황(선물, 프리마켓 급등락, 실적·지표 일정)을 조사하고, 스윙 관점에서 주목할 미국 종목 3개를 골라줘(투자 권유 아닌 관찰 후보). 반드시 아래 JSON만 출력, 마크다운·설명 금지: {"brief":"미국장 브리핑 2~3문장(한국어)","picks":[{"name":"종목명","ticker":"티커","score":0~100 정수,"reason":"근거 1~2문장(한국어)","catalyst":"핵심 재료 한 줄","risk":"주의점 한 줄"}]} picks 정확히 3개.`;
-  } else return res.status(400).json({ error: "kind는 news 또는 picks" });
+  const claudeKey = process.env.ANTHROPIC_API_KEY;
+  const geminiKey = process.env.GEMINI_API_KEY;
+  const code = (String(ticker || "").match(/^(\d{6})\./) || [])[1];
 
   try {
-    const r = await fetch("https://api.anthropic.com/v1/messages", {
-      method: "POST",
-      headers: { "Content-Type": "application/json", "x-api-key": key, "anthropic-version": "2023-06-01" },
-      body: JSON.stringify({
-        model: "claude-sonnet-4-6",
-        max_tokens: 1500,
-        messages: [{ role: "user", content: prompt }],
-        tools: [{ type: "web_search_20250305", name: "web_search" }],
-      }),
-    });
-    const data = await r.json();
-    if (data.error) return res.status(502).json({ error: data.error.message });
-    const text = (data.content || []).filter((b) => b.type === "text").map((b) => b.text).join("\n");
-    const m = text.replace(/```json|```/g, "").match(/\{[\s\S]*\}/);
-    if (!m) return res.status(502).json({ error: "AI 응답 해석 실패" });
-    return res.status(200).json(JSON.parse(m[0]));
+    if (kind === "news") {
+      const titles = code ? await naverNews(code, 5) : [];
+      const ctx = titles.join("\n");
+      if (claudeKey) return res.status(200).json(await callClaude(claudeKey, newsPrompt(label, ticker, ctx)));
+      if (geminiKey) return res.status(200).json(await gemini(geminiKey, newsPrompt(label, ticker, ctx)));
+      // 키워드 무료 모드
+      if (!titles.length) return res.status(200).json({ sentiment: 0, mood: "뉴스를 가져오지 못했습니다.", headlines: [], summary: "GEMINI_API_KEY(무료) 등록 시 AI 분석이 활성화됩니다." });
+      let p = 0, n = 0;
+      const heads = titles.slice(0, 4).map((t) => { const pc = POS.filter((w) => t.includes(w)).length, nc = NEG.filter((w) => t.includes(w)).length; p += pc; n += nc; return { t, s: pc > nc ? "+" : nc > pc ? "-" : "0" }; });
+      const sentiment = Math.max(-100, Math.min(100, Math.round(((p - n) / Math.max(p + n, 1)) * 60)));
+      return res.status(200).json({ sentiment, mood: "키워드 모드 (GEMINI_API_KEY 등록 시 AI 분석으로 업그레이드)", headlines: heads, summary: "키워드 판별이라 문맥은 인식하지 못합니다. 헤드라인을 직접 확인하세요." });
+    }
+
+    if (kind === "picks") {
+      if (market === "KR") {
+        const data = await gatherKR();
+        if (claudeKey) return res.status(200).json(await callClaude(claudeKey, picksKRPrompt(data)));
+        if (geminiKey) return res.status(200).json(await gemini(geminiKey, picksKRPrompt(data)));
+        return res.status(200).json({ brief: "AI 키가 없습니다. GEMINI_API_KEY(구글 무료 키)를 Vercel 환경변수에 등록하면 실제 뉴스 기반 AI 선별 추천이 활성화됩니다. aistudio.google.com에서 카드 등록 없이 발급 가능합니다.", picks: [] });
+      }
+      if (claudeKey) return res.status(200).json(await callClaude(claudeKey, picksUSPrompt));
+      if (geminiKey) return res.status(200).json(await callGemini(geminiKey, picksUSPrompt, true));
+      return res.status(200).json({ brief: "미국장 프리픽은 AI 키 등록 시 활성화됩니다 (GEMINI_API_KEY 무료 발급 가능).", picks: [] });
+    }
+    return res.status(400).json({ error: "kind는 news 또는 picks" });
   } catch (e) {
-    return res.status(500).json({ error: e.message });
+    return res.status(502).json({ error: "AI 분석 실패: " + e.message });
   }
 }
