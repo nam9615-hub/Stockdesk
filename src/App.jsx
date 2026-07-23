@@ -1391,32 +1391,42 @@ export default function App() {
   }, [query, sugOpen, remote]);
 
   const [picksCache, setPicksCache] = useState({});
+  const kstNow = () => new Date(Date.now() + 9 * 3600e3);
+  const kstToday = () => kstNow().toISOString().slice(0, 10);
+  const provisionInfo = (m) => {
+    const n = new Date();
+    const day = n.getDay();
+    if (day === 0 || day === 6) return { open: false, msg: "⏰ 주말에는 추천픽을 제공하지 않습니다 — 다음 거래일 개장 1시간 전에 공개됩니다." };
+    const t = n.getHours() + n.getMinutes() / 60;
+    const at = m === "KR" ? 8 : (hint.usOpen === "22:30" ? 21.5 : 22.5);
+    const label = m === "KR" ? "08:00" : (hint.usOpen === "22:30" ? "21:30" : "22:30");
+    if (t < at) return { open: false, msg: `⏰ 아직 추천픽 제공 시간이 아닙니다 — ${m === "KR" ? "국내장" : "미국장"} 추천은 개장 1시간 전(${label})에 확정·공개되며, 그날 장 마감까지 고정됩니다.` };
+    return { open: true };
+  };
   const loadPicks = async (m) => {
     // 같은 버튼 재탭 → 접기
-    if (pickMarket === m && (picks || picksLoading)) { setPickMarket(null); setPicks(null); setPicksErr(""); setPicksLoading(false); return; }
-    setPickMarket(m); setPicksErr("");
-    const today = new Date().toISOString().slice(0, 10);
+    if (pickMarket === m && (picks || picksLoading || picksErr)) { setPickMarket(null); setPicks(null); setPicksErr(""); setPicksLoading(false); return; }
+    setPickMarket(m); setPicksErr(""); setPicks(null);
+    const today = kstToday();
     const c = picksCache[m];
-    if (c && c.date === today) { setPicks(c.data); return; } // 당일 캐시로 즉시 재열기
-    setPicks(null); setPicksLoading(true);
+    if (c && c.date === today) { setPicks(c.data); return; }
+    const pv = provisionInfo(m);
+    if (!pv.open) { setPicksErr(pv.msg); return; }
+    setPicksLoading(true);
     try {
-      // 서버 크론이 이미 오늘 추천을 만들어 뒀으면 그걸 사용 (AI 재호출 없음)
-      try {
-        const sj = await (await fetch(`/api/picks-data?what=latest&market=${m}`)).json();
-        if (sj && sj.date === today && sj.data) {
-          setPicks({ ...sj.data, auto: true, at: sj.at });
-          setPicksCache((pc) => ({ ...pc, [m]: { date: today, data: { ...sj.data, auto: true, at: sj.at } } }));
-          setPicksLoading(false);
-          return;
-        }
-      } catch {}
-      const history = await fullHistoryStrA(m);
-      const j = await fetchPicks(m, history);
-      setPicks(j);
-      setPicksCache((pc) => ({ ...pc, [m]: { date: today, data: j } }));
-      recordPicks(m, j.picks, j.day_picks).catch(() => {});
-    }
-    catch (e) { setPicksErr("추천 수집 실패 — 잠시 후 다시 시도해 주세요. (" + e.message + ")"); }
+      const latest = async () => (await fetch(`/api/picks-data?what=latest&market=${m}`)).json();
+      let sj = await latest();
+      if (!(sj && sj.date === today && sj.data)) {
+        // 크론이 아직이면 서버 생성을 이 자리에서 트리거 → 서버에 단 한 번 확정 기록
+        await fetch(`/api/cron?job=${m.toLowerCase()}`).catch(() => {});
+        sj = await latest();
+      }
+      if (sj && sj.date === today && sj.data) {
+        const d = { ...sj.data, auto: true, at: sj.at };
+        setPicks(d);
+        setPicksCache((pc) => ({ ...pc, [m]: { date: today, data: d } }));
+      } else setPicksErr("⚠ 추천 생성이 지연되고 있습니다 — 잠시 후 다시 열어 주세요.");
+    } catch (e) { setPicksErr("⚠ 추천을 불러오지 못했습니다. (" + e.message + ")"); }
     setPicksLoading(false);
   };
 
@@ -1539,15 +1549,15 @@ export default function App() {
                 width: 16, height: 16, border: `2px solid ${T.line}`, borderTopColor: T.warn, borderRadius: "50%",
                 display: "inline-block", animation: "spin 0.9s linear infinite",
               }} />
-              {pickMarket === "KR" ? "전일 미국장·야간선물·환율·뉴스를 조사해 종목을 고르고 있습니다…" : "선물 지수·프리마켓 급등락·실적 일정을 조사해 종목을 고르고 있습니다…"}
+              오늘의 추천을 확정하고 있습니다 (뉴스·후보 수집 + AI 선별, 최대 40초)…
               <style>{`@keyframes spin{to{transform:rotate(360deg)}}`}</style>
             </div>
           )}
-          {picksErr && <div style={{ color: T.warn, fontSize: 13.5, marginTop: 14, lineHeight: 1.6 }}>⚠ {picksErr}</div>}
+          {picksErr && <div style={{ color: T.warn, fontSize: 13.5, marginTop: 14, lineHeight: 1.6 }}>{picksErr}</div>}
 
           {picks && (
             <div style={{ marginTop: 16 }}>
-              {picks.auto && <div style={{ fontFamily: T.mono, fontSize: 11, color: T.buy, marginBottom: 8 }}>🤖 서버 자동 수집 {picks.at || ""} — 앱을 안 열어도 매일 생성·채점됩니다</div>}
+              {picks.auto && <div style={{ fontFamily: T.mono, fontSize: 11, color: T.buy, marginBottom: 8 }}>🔒 {picks.at || ""} 확정 — 오늘 장 마감까지 고정되며 성적표와 동일한 목록입니다</div>}
               {picks.brief && (
                 <div style={{ background: T.card2, borderRadius: 12, padding: 13, fontSize: 13.5, lineHeight: 1.7, color: T.ink, marginBottom: 14 }}>
                   {picks.brief}
