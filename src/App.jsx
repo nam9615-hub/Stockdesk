@@ -453,8 +453,8 @@ async function callAI(body) {
   if (!r.ok) throw new Error(j.error || "AI 호출 실패");
   return j;
 }
-async function fetchNews(label, ticker) {
-  const j = await callAI({ kind: "news", label, ticker });
+async function fetchNews(label, ticker, history) {
+  const j = await callAI({ kind: "news", label, ticker, history });
   j.sentiment = Math.max(-100, Math.min(100, Math.round(j.sentiment || 0)));
   return j;
 }
@@ -757,6 +757,43 @@ function perfSummary(h, market) {
   return `과거 추천 ${ps.length}건 실측 성적 — 5일 승률 ${win}%, 평균 수익률: 1일 ${avg("r1")}% / 5일 ${avg("r5")}% / 20일 ${avg("r20")}%. 성공 사례: ${best}. 실패 사례: ${worst}.`;
 }
 
+function SellPlan({ r }) {
+  const pos = r.position; if (!pos) return null;
+  const avg = pos.avg, pl = pos.pl;
+  const fromAvg = (p) => `${((p - avg) / avg * 100) >= 0 ? "+" : ""}${(((p - avg) / avg) * 100).toFixed(1)}%`;
+  const effStop = pl > 3 ? Math.max(r.stop, Math.round(avg * 1.01)) : r.stop;
+  const steps = [];
+  if (r.heat >= 80) steps.push({ tag: "지금", color: T.sell, title: "과열권 진입 — 보유분 1/3 즉시 분할 익절 검토", sub: `과열도 ${r.heat}/100 · 현재가 ${fmt(r.price)}원 (평단 대비 ${fromAvg(r.price)})` });
+  else if (r.trendLabel === "하락") steps.push({ tag: "지금", color: T.sell, title: "추세 훼손 — 반등 시 비중 축소 우선", sub: "신규 물타기보다 리스크 축소가 원칙" });
+  else if (r.zones[0] && r.price >= r.zones[0].lo) steps.push({ tag: "지금", color: T.warn, title: "1차 매도 구간 안 — 분할 익절 진행 구간", sub: `${fmt(r.zones[0].lo)}~${fmt(r.zones[0].hi)}원 구간 내` });
+  r.zones.slice(0, 3).forEach((z, i) => {
+    const share = i === 0 ? "1/3 익절" : i === 1 ? "추가 1/3 익절" : "잔량 트레일링 전환";
+    steps.push({ tag: `${z.order}차`, color: i === 0 ? T.buy : T.info, title: `${fmt(z.center)}원 부근 — ${share}`, sub: `평단 대비 ${fromAvg(z.center)} · 저항강도 ${z.strength}/100` });
+  });
+  steps.push({ tag: "잔량", color: T.info, title: "고점 대비 1 ATR(" + fmt(r.a) + "원) 이탈 시 전량 정리", sub: "추세가 살아있는 동안 최대한 태우는 트레일링 스탑" });
+  steps.push({ tag: "방어", color: T.sell, title: `${fmt(effStop)}원 이탈 시 전량 손절`, sub: pl > 3 ? `수익권 — 손절선을 평단 위(본전 방어)로 상향 적용` : `기술적 손절선 (평단 대비 ${fromAvg(effStop)})` });
+  return (
+    <Card style={{ marginTop: 14, borderColor: T.warn + "55" }}>
+      <Eyebrow color={T.warn}>SELL PLAN · 내 평단 기준 매도 플랜</Eyebrow>
+      <div style={{ fontFamily: T.mono, fontSize: 13, color: T.sub, marginBottom: 10 }}>
+        평단 {fmt(avg)}원 · 현재 <span style={{ color: pl >= 0 ? T.buy : T.sell, fontWeight: 700 }}>{pct(pl)}</span> · {r.trendLabel === "상승" ? "추세 생존 — 전량 매도보다 분할 우위" : "추세 약화 — 방어 우선"}
+      </div>
+      {steps.map((s, i) => (
+        <div key={i} style={{ display: "flex", gap: 12, padding: "11px 0", borderBottom: `1px dashed ${T.line}` }}>
+          <span style={{ fontFamily: T.mono, fontSize: 11, fontWeight: 800, color: s.color, minWidth: 34, paddingTop: 2 }}>{s.tag}</span>
+          <div style={{ flex: 1 }}>
+            <div style={{ fontSize: 14, fontWeight: 700, color: T.ink, lineHeight: 1.5 }}>{s.title}</div>
+            <div style={{ fontSize: 12.5, color: T.sub, marginTop: 3, fontFamily: T.mono }}>{s.sub}</div>
+          </div>
+        </div>
+      ))}
+      <div style={{ fontSize: 11.5, color: T.faint, marginTop: 10, lineHeight: 1.6 }}>
+        기술적 계산 기반 참고 플랜입니다. 뉴스·공시 급변 시 우선순위가 바뀔 수 있으며 최종 판단은 본인 몫입니다.
+      </div>
+    </Card>
+  );
+}
+
 function TrackRecord({ refreshKey }) {
   const [hist, setHist] = useState(null);
   useEffect(() => { evalHistory().then(setHist).catch(() => setHist(histLoad())); }, [refreshKey]);
@@ -817,6 +854,7 @@ export default function App() {
   const [news, setNews] = useState(null);
   const [newsLoading, setNewsLoading] = useState(false);
   const [newsErr, setNewsErr] = useState("");
+  const [filings, setFilings] = useState(null);
   const [err, setErr] = useState("");
   const [tab, setTab] = useState("all"); // all | buy | sell
   const [picks, setPicks] = useState(null);
@@ -885,9 +923,17 @@ export default function App() {
       setResult({ ...r, ticker, name, isDemo: source === "demo", isLive: source === "live", marketState: live?.marketState, currency: live?.currency });
     } catch (e) { setErr(e.message); setResult(null); setLoading(false); return; }
     setLoading(false);
+    setFilings(null);
+    fetch(`/api/filings?ticker=${encodeURIComponent(ticker)}`).then((r) => r.json()).then((j) => setFilings(j.items || [])).catch(() => setFilings([]));
     if (useNews) {
       setNewsLoading(true);
-      try { setNews(await fetchNews(name, ticker)); }
+      try {
+        const h = histLoad();
+        const general = perfSummary(h, /\.(KS|KQ)$/i.test(ticker) ? "KR" : "US");
+        const own = h.flatMap((e) => e.picks.filter((p) => p.ticker === ticker && p.r1 != null).map((p) => `${e.date} 추천 → 1일 ${p.r1}% / 5일 ${p.r5 ?? "?"}% / 20일 ${p.r20 ?? "?"}%`)).join("; ");
+        const historyStr = [general, own ? `이 종목(${name})의 과거 추천 성적: ${own}` : ""].filter(Boolean).join(" ");
+        setNews(await fetchNews(name, ticker, historyStr));
+      }
       catch (e) { setNewsErr("뉴스 수집 실패 — 기술적 분석만 표시합니다. (" + e.message + ")"); }
       setNewsLoading(false);
     }
@@ -1321,6 +1367,23 @@ export default function App() {
                 {r.supports.length === 0 && <div style={{ color: T.sub, fontSize: 13.5 }}>가격대 인근 지지 레벨이 없습니다.</div>}
               </Card>
             )}
+
+            {/* 최근 공시 */}
+            {filings && filings.length > 0 && (
+              <Card style={{ marginTop: 14 }}>
+                <Eyebrow color={T.info}>FILINGS · 최근 공시 {/\.(KS|KQ)$/i.test(r.ticker) ? "(네이버 공시)" : "(SEC EDGAR)"}</Eyebrow>
+                {filings.map((f, i) => (
+                  <div key={i} style={{ display: "flex", gap: 10, padding: "9px 0", borderBottom: `1px dashed ${T.line}`, fontSize: 13 }}>
+                    <span style={{ fontFamily: T.mono, fontSize: 11, color: T.faint, minWidth: 74, paddingTop: 2 }}>{f.date}</span>
+                    <span style={{ color: T.ink, lineHeight: 1.5 }}>{f.title}</span>
+                  </div>
+                ))}
+                <div style={{ fontSize: 11, color: T.faint, marginTop: 8 }}>뉴스·시장 분석이 켜져 있으면 AI가 공시 영향(유증·CB·수주 등)을 감성점수에 반영합니다.</div>
+              </Card>
+            )}
+
+            {/* 매도 플랜 (평단가 입력 시) */}
+            {r.position && <SellPlan r={r} />}
 
             {/* 포지션 (평단가 입력 시) */}
             {r.position && (
