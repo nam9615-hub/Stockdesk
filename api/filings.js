@@ -43,6 +43,15 @@ export default async function handler(req, res) {
       }
     } catch {}
   }
+  // 실적 발표일 조회 (미국: 야후 / 국내: 미지원 시 null)
+  let earnings = null;
+  if (!kr) {
+    try {
+      const j = await (await fetch(`https://query2.finance.yahoo.com/v10/finance/quoteSummary/${encodeURIComponent(ticker)}?modules=calendarEvents`, { headers: { "User-Agent": "Mozilla/5.0" } })).json();
+      const raw = j?.quoteSummary?.result?.[0]?.calendarEvents?.earnings?.earningsDate?.[0]?.raw;
+      if (raw) earnings = new Date(raw * 1000).toISOString().slice(0, 10);
+    } catch {}
+  }
   res.setHeader("Cache-Control", "s-maxage=1800, stale-while-revalidate=3600");
-  return res.status(200).json({ items: items.slice(0, 8), source: kr ? "naver" : "sec-edgar" });
+  return res.status(200).json({ items: items.slice(0, 8), earnings, source: kr ? "naver" : "sec-edgar" });
 }
