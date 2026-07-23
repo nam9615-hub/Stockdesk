@@ -1027,57 +1027,75 @@ function TrackRecord({ refreshKey }) {
   const gs = guideStats(vh);
   if (!hist || !hist.length) return null;
   const all = hist.flatMap((e) => e.picks.map((p) => ({ ...p, date: e.date, market: e.market })));
-  const evald = all.filter((p) => p.r1 != null);
-  const win5 = evald.filter((p) => p.r5 != null);
-  const winRate = win5.length ? Math.round((win5.filter((p) => p.r5 > 0).length / win5.length) * 100) : null;
-  const avg = (k) => { const v = evald.filter((p) => p[k] != null); return v.length ? (v.reduce((s, p) => s + p[k], 0) / v.length).toFixed(1) : null; };
-  const recent = [...all].reverse().slice(0, 9);
-  const rc = (v) => (v == null ? T.faint : v > 0 ? T.buy : v < 0 ? T.sell : T.sub);
-  return (
-    <Card style={{ marginBottom: 16 }}>
-      <Eyebrow color={T.info}>TRACK RECORD · AI 추천 성적표 (자동 채점)</Eyebrow>
-      {evald.length === 0 ? (
-        <div style={{ color: T.sub, fontSize: 13.5, lineHeight: 1.7 }}>
-          추천 {all.length}건 기록됨 — 첫 성적은 다음 거래일부터 자동으로 채점됩니다. 이 성적은 다음 추천 시 AI에게 전달되어 스스로 개선하는 데 사용됩니다.
-        </div>
+  const swing = all.filter((p) => p.kind !== "day");
+  const day = all.filter((p) => p.kind === "day");
+  const rc = (v) => (v == null || isNaN(v) ? T.faint : v > 0 ? T.buy : v < 0 ? T.sell : T.sub);
+  const sEv = swing.filter((p) => p.r1 != null);
+  const s5 = swing.filter((p) => p.r5 != null);
+  const winRate = s5.length ? Math.round((s5.filter((p) => p.r5 > 0).length / s5.length) * 100) : null;
+  const avg = (k) => { const v = sEv.filter((p) => p[k] != null); return v.length ? (v.reduce((s, p) => s + p[k], 0) / v.length).toFixed(1) : null; };
+  const dEv = day.filter((p) => p.r1 != null);
+  const hitRate = dEv.length ? Math.round((dEv.filter((p) => p.hit).length / dEv.length) * 100) : null;
+  const dAvg = dEv.length ? (dEv.reduce((s, p) => s + p.r1, 0) / dEv.length).toFixed(1) : null;
+  const secT = { fontFamily: T.mono, fontSize: 11, letterSpacing: "0.22em", margin: "14px 0 8px" };
+  const Row = ({ p, dayMode }) => (
+    <div style={{ display: "flex", gap: 8, padding: "8px 0", borderBottom: `1px dashed ${T.line}`, fontSize: 12.5, alignItems: "center" }}>
+      <span style={{ color: T.faint, fontFamily: T.mono, fontSize: 10.5, minWidth: 44 }}>{p.date.slice(5)}</span>
+      <span style={{ flex: 1, color: T.ink, fontWeight: 600, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{p.name}</span>
+      <span style={{ fontFamily: T.mono, color: rc(p.r1), minWidth: 46, textAlign: "right" }}>{p.r1 != null ? `${p.r1 > 0 ? "+" : ""}${p.r1}%` : "채점전"}</span>
+      {dayMode ? (
+        <span style={{ fontFamily: T.mono, color: p.hit == null ? T.faint : p.hit ? T.buy : T.sell, minWidth: 92, textAlign: "right" }}>
+          {p.hit == null ? "·" : p.hit ? `목표+${p.target}% ✓` : `목표+${p.target}% ✗`}
+        </span>
       ) : (
         <>
-          <div style={{ display: "flex", gap: 18, fontFamily: T.mono, marginBottom: 12, flexWrap: "wrap" }}>
-            {winRate != null && <div><div style={{ fontSize: 11, color: T.sub }}>5일 승률</div><div style={{ fontSize: 22, fontWeight: 800, color: winRate >= 50 ? T.buy : T.sell }}>{winRate}%</div></div>}
-            <div><div style={{ fontSize: 11, color: T.sub }}>평균 1일</div><div style={{ fontSize: 18, fontWeight: 700, color: rc(+avg("r1")) }}>{avg("r1")}%</div></div>
-            <div><div style={{ fontSize: 11, color: T.sub }}>평균 5일</div><div style={{ fontSize: 18, fontWeight: 700, color: rc(+avg("r5")) }}>{avg("r5") ?? "—"}%</div></div>
-            <div><div style={{ fontSize: 11, color: T.sub }}>평균 20일</div><div style={{ fontSize: 18, fontWeight: 700, color: rc(+avg("r20")) }}>{avg("r20") ?? "—"}%</div></div>
-          </div>
-          {recent.map((p, i) => (
-            <div key={i} style={{ display: "flex", gap: 8, padding: "8px 0", borderBottom: `1px dashed ${T.line}`, fontSize: 12.5, alignItems: "center" }}>
-              <span style={{ color: T.faint, fontFamily: T.mono, fontSize: 10.5, minWidth: 44 }}>{p.date.slice(5)}</span>
-              <span style={{ flex: 1, color: T.ink, fontWeight: 600, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{p.kind === "day" ? "⚡" : ""}{p.name}</span>
-              <span style={{ fontFamily: T.mono, color: rc(p.r1), minWidth: 46, textAlign: "right" }}>{p.r1 != null ? `${p.r1 > 0 ? "+" : ""}${p.r1}%` : "채점전"}</span>
-              {p.kind === "day" ? (
-                <span style={{ fontFamily: T.mono, color: p.hit == null ? T.faint : p.hit ? T.buy : T.sell, minWidth: 96, textAlign: "right" }}>
-                  {p.hit == null ? "·" : p.hit ? `목표+${p.target}% ✓` : `목표+${p.target}% ✗`}
-                </span>
-              ) : (
-                <>
-                  <span style={{ fontFamily: T.mono, color: rc(p.r5), minWidth: 46, textAlign: "right" }}>{p.r5 != null ? `${p.r5 > 0 ? "+" : ""}${p.r5}%` : "·"}</span>
-                  <span style={{ fontFamily: T.mono, color: rc(p.r20), minWidth: 46, textAlign: "right" }}>{p.r20 != null ? `${p.r20 > 0 ? "+" : ""}${p.r20}%` : "·"}</span>
-                </>
-              )}
-            </div>
-          ))}
-          <div style={{ display: "flex", gap: 8, marginTop: 6, fontSize: 10.5, color: T.faint, fontFamily: T.mono, justifyContent: "flex-end" }}>
-            <span>1일</span><span>5일</span><span>20일</span>
-          </div>
-          {gs && (
-            <div style={{ fontFamily: T.mono, fontSize: 12.5, color: T.sub, marginTop: 10 }}>
-              개별 가이드 적중률(5일): <b style={{ color: gs.acc >= 50 ? T.buy : T.sell }}>{gs.acc}%</b> ({gs.n}건 채점)
-            </div>
-          )}
-          <div style={{ fontSize: 11.5, color: T.info, marginTop: 10, lineHeight: 1.6 }}>
-            🧠 추천 성적과 가이드 적중률은 다음 분석·추천 시 AI에게 자동 전달됩니다 — 실패 유형은 피하고 성공 유형을 우선하도록 스스로 보정합니다.
-          </div>
+          <span style={{ fontFamily: T.mono, color: rc(p.r5), minWidth: 46, textAlign: "right" }}>{p.r5 != null ? `${p.r5 > 0 ? "+" : ""}${p.r5}%` : "·"}</span>
+          <span style={{ fontFamily: T.mono, color: rc(p.r20), minWidth: 46, textAlign: "right" }}>{p.r20 != null ? `${p.r20 > 0 ? "+" : ""}${p.r20}%` : "·"}</span>
         </>
       )}
+    </div>
+  );
+  return (
+    <Card style={{ marginBottom: 16 }}>
+      <Eyebrow color={T.info}>TRACK RECORD · AI 추천 성적표</Eyebrow>
+      {swing.length > 0 && (
+        <>
+          <div style={{ ...secT, color: T.buy }}>스윙 추천</div>
+          {sEv.length === 0 ? (
+            <div style={{ color: T.sub, fontSize: 12.5, marginBottom: 4 }}>기록 {swing.length}건 — 다음 거래일부터 채점됩니다</div>
+          ) : (
+            <div style={{ display: "flex", gap: 16, fontFamily: T.mono, flexWrap: "wrap", marginBottom: 4 }}>
+              {winRate != null && <div><div style={{ fontSize: 10.5, color: T.sub }}>5일 승률</div><div style={{ fontSize: 19, fontWeight: 800, color: winRate >= 50 ? T.buy : T.sell }}>{winRate}%</div></div>}
+              <div><div style={{ fontSize: 10.5, color: T.sub }}>평균 1일</div><div style={{ fontSize: 16, fontWeight: 700, color: rc(+avg("r1")) }}>{avg("r1")}%</div></div>
+              <div><div style={{ fontSize: 10.5, color: T.sub }}>평균 5일</div><div style={{ fontSize: 16, fontWeight: 700, color: rc(+avg("r5")) }}>{avg("r5") ?? "—"}%</div></div>
+              <div><div style={{ fontSize: 10.5, color: T.sub }}>평균 20일</div><div style={{ fontSize: 16, fontWeight: 700, color: rc(+avg("r20")) }}>{avg("r20") ?? "—"}%</div></div>
+            </div>
+          )}
+          {[...swing].reverse().slice(0, 6).map((p, i) => <Row key={"s" + i} p={p} />)}
+        </>
+      )}
+      {day.length > 0 && (
+        <>
+          <div style={{ ...secT, color: T.sell }}>⚡ 당일 단타</div>
+          {dEv.length === 0 ? (
+            <div style={{ color: T.sub, fontSize: 12.5, marginBottom: 4 }}>기록 {day.length}건 — 당일 장 마감 후 채점됩니다</div>
+          ) : (
+            <div style={{ display: "flex", gap: 16, fontFamily: T.mono, marginBottom: 4 }}>
+              <div><div style={{ fontSize: 10.5, color: T.sub }}>목표가 적중률</div><div style={{ fontSize: 19, fontWeight: 800, color: hitRate >= 50 ? T.buy : T.sell }}>{hitRate}%</div></div>
+              <div><div style={{ fontSize: 10.5, color: T.sub }}>평균 당일</div><div style={{ fontSize: 16, fontWeight: 700, color: rc(+dAvg) }}>{dAvg}%</div></div>
+            </div>
+          )}
+          {[...day].reverse().slice(0, 6).map((p, i) => <Row key={"d" + i} p={p} dayMode />)}
+        </>
+      )}
+      {gs && (
+        <div style={{ fontFamily: T.mono, fontSize: 12.5, color: T.sub, marginTop: 10 }}>
+          개별 가이드 적중률(5일): <b style={{ color: gs.acc >= 50 ? T.buy : T.sell }}>{gs.acc}%</b> ({gs.n}건)
+        </div>
+      )}
+      <div style={{ fontSize: 11.5, color: T.info, marginTop: 10, lineHeight: 1.6 }}>
+        🧠 스윙·단타·가이드 성적은 다음 분석과 추천에 자동 반영되어 스스로 보정합니다.
+      </div>
     </Card>
   );
 }
@@ -1088,7 +1106,6 @@ export default function App() {
   const [sugOpen, setSugOpen] = useState(false);
   const [avg, setAvg] = useState("");
   const [loading, setLoading] = useState(false);
-  const [useNews, setUseNews] = useState(true);
   const [result, setResult] = useState(null);
   const [news, setNews] = useState(null);
   const [newsLoading, setNewsLoading] = useState(false);
@@ -1190,7 +1207,7 @@ export default function App() {
     setLoading(false);
     setFilings(null);
     fetch(`/api/filings?ticker=${encodeURIComponent(ticker)}`).then((r) => r.json()).then((j) => setFilings(j.items || [])).catch(() => setFilings([]));
-    if (useNews) {
+    {
       setNewsLoading(true);
       try {
         const h = histLoad();
@@ -1367,19 +1384,6 @@ export default function App() {
             )}
           </div>
 
-          <div onClick={() => setUseNews(!useNews)} style={{
-            display: "flex", alignItems: "center", gap: 10, marginTop: 14, cursor: "pointer",
-            background: useNews ? "rgba(111,195,255,0.08)" : T.card2, border: `1px solid ${useNews ? T.info + "77" : T.line}`,
-            borderRadius: 12, padding: "11px 14px",
-          }}>
-            <span style={{
-              width: 18, height: 18, borderRadius: 5, flexShrink: 0, display: "inline-flex", alignItems: "center", justifyContent: "center",
-              background: useNews ? T.info : "transparent", border: `1.5px solid ${useNews ? T.info : T.faint}`, color: "#07090F", fontSize: 13, fontWeight: 900,
-            }}>{useNews ? "✓" : ""}</span>
-            <span style={{ fontSize: 13.5, color: useNews ? T.ink : T.sub }}>
-              뉴스·시장 분석 포함 <span style={{ color: T.faint, fontSize: 12 }}>— AI가 실시간 웹검색으로 최근 뉴스·업황을 수집해 점수에 반영 (약 10~30초 소요)</span>
-            </span>
-          </div>
 
 
           <div style={{ display: "flex", gap: 12, marginTop: 14, alignItems: "flex-end" }}>
@@ -1451,7 +1455,7 @@ export default function App() {
             </Card>
 
             {/* 뉴스·시장 분석 */}
-            {useNews && (
+            {(news || newsLoading || newsErr) && (
               <Card style={{ marginTop: 14, borderColor: news ? (news.sentiment >= 15 ? T.buy : news.sentiment <= -15 ? T.sell : T.warn) + "66" : T.line }}>
                 <Eyebrow color={T.info}>NEWS & MARKET · 뉴스·시장 분석</Eyebrow>
                 {newsLoading && (
