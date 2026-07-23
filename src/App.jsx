@@ -1129,6 +1129,11 @@ function guideStats(h) {
   const ok = ev.filter((p) => (p.tone === "buy" ? p.r5 > 0 : p.r5 < 0)).length;
   return { n: ev.length, acc: Math.round((ok / ev.length) * 100) };
 }
+function mergeHist(server, local) {
+  const s = server || [], l = local || [];
+  const keys = new Set(s.map((e) => e.date + e.market));
+  return [...l.filter((e) => !keys.has(e.date + e.market)), ...s].sort((a, b) => (a.date < b.date ? -1 : 1));
+}
 let SRV_HIST = { t: 0, entries: null };
 async function loadServerHist() {
   if (Date.now() - SRV_HIST.t < 60000 && SRV_HIST.entries) return SRV_HIST.entries;
@@ -1153,7 +1158,7 @@ function buildReviewStr(h, v) {
   return lines.join("\n");
 }
 async function fullHistoryStrA(market) {
-  const h = (await loadServerHist()) || histLoad();
+  const h = mergeHist(await loadServerHist(), histLoad());
   const parts = [perfSummary(h.length !== undefined ? h : histLoad(), market), daySummary(h, market)];
   const rv = reviewLoad();
   if (rv?.data?.lessons?.length) parts.push(`과거 복기에서 얻은 교훈: ${rv.data.lessons.join(" / ")}. 이 교훈을 이번 판단에 반드시 반영해 종합 점수를 높여라.`);
@@ -1184,7 +1189,7 @@ function TrackRecord({ refreshKey }) {
         evalHistory().catch(() => histLoad()),
         evalVerdicts().catch(() => vhLoad()),
       ]);
-      const h = sh && sh.length ? sh : lh;
+      const h = mergeHist(sh, lh);
       setHist(h); setVh(v);
       const graded = h.flatMap((e) => e.picks).filter((p) => p.r1 != null).length + v.filter((p) => p.r1 != null).length;
       if (graded >= 5) {
