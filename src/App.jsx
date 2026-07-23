@@ -461,8 +461,8 @@ async function fetchNews(label, ticker) {
 const newsAdjOf = (n) => (n ? Math.max(-12, Math.min(12, Math.round(n.sentiment / 8))) : 0);
 
 /* ========== 모닝 브리핑 · 추천 종목 ========== */
-async function fetchPicks(market) {
-  const j = await callAI({ kind: "picks", market });
+async function fetchPicks(market, history) {
+  const j = await callAI({ kind: "picks", market, history });
   j.picks = (j.picks || []).slice(0, 3);
   return j;
 }
@@ -717,6 +717,93 @@ function PositionCalc({ price, stop, ticker }) {
   );
 }
 
+
+/* ========== 추천 성적 추적 (셀프 학습 데이터) ========== */
+const histLoad = () => { try { return JSON.parse(localStorage.getItem("sd_picks_hist") || "[]"); } catch { return []; } };
+const histSave = (h) => { try { localStorage.setItem("sd_picks_hist", JSON.stringify(h.slice(-60))); } catch {} };
+async function recordPicks(market, picks) {
+  if (!picks || !picks.length) return;
+  const today = new Date().toISOString().slice(0, 10);
+  const h = histLoad();
+  if (h.some((e) => e.date === today && e.market === market)) return;
+  let pmap = {};
+  try { pmap = Object.fromEntries((await fetchQuotes(picks.map((p) => p.ticker))).map((q) => [q.ticker, q.price])); } catch {}
+  h.push({ date: today, market, picks: picks.map((p) => ({ name: p.name, ticker: p.ticker, score: p.score, p0: pmap[p.ticker] || null, r1: null, r5: null, r20: null })) });
+  histSave(h);
+}
+async function evalHistory() {
+  const h = histLoad(); let changed = false;
+  const need = [...new Set(h.flatMap((e) => e.picks.filter((p) => p.p0 && p.r20 == null).map((p) => p.ticker)))].slice(0, 8);
+  const charts = {};
+  for (const t of need) { try { charts[t] = (await fetchChart(t)).data; } catch {} }
+  h.forEach((e) => e.picks.forEach((p) => {
+    const d = charts[p.ticker]; if (!d || !p.p0) return;
+    const i0 = d.findIndex((x) => x.date > e.date); if (i0 < 0) return;
+    const ret = (k) => (d[i0 + k - 1] ? +(((d[i0 + k - 1].close - p.p0) / p.p0) * 100).toFixed(1) : null);
+    for (const [key, k] of [["r1", 1], ["r5", 5], ["r20", 20]]) {
+      if (p[key] == null) { const v = ret(k); if (v != null) { p[key] = v; changed = true; } }
+    }
+  }));
+  if (changed) histSave(h);
+  return h;
+}
+function perfSummary(h, market) {
+  const ps = h.filter((e) => e.market === market).flatMap((e) => e.picks).filter((p) => p.r5 != null);
+  if (ps.length < 3) return "";
+  const avg = (k) => (ps.reduce((s, p) => s + (p[k] ?? 0), 0) / ps.filter((p) => p[k] != null).length || 0).toFixed(1);
+  const win = Math.round((ps.filter((p) => p.r5 > 0).length / ps.length) * 100);
+  const best = [...ps].sort((a, b) => (b.r5 ?? 0) - (a.r5 ?? 0)).slice(0, 3).map((p) => `${p.name}(${p.r5 > 0 ? "+" : ""}${p.r5}%)`).join(", ");
+  const worst = [...ps].sort((a, b) => (a.r5 ?? 0) - (b.r5 ?? 0)).slice(0, 3).map((p) => `${p.name}(${p.r5}%)`).join(", ");
+  return `과거 추천 ${ps.length}건 실측 성적 — 5일 승률 ${win}%, 평균 수익률: 1일 ${avg("r1")}% / 5일 ${avg("r5")}% / 20일 ${avg("r20")}%. 성공 사례: ${best}. 실패 사례: ${worst}.`;
+}
+
+function TrackRecord({ refreshKey }) {
+  const [hist, setHist] = useState(null);
+  useEffect(() => { evalHistory().then(setHist).catch(() => setHist(histLoad())); }, [refreshKey]);
+  if (!hist || !hist.length) return null;
+  const all = hist.flatMap((e) => e.picks.map((p) => ({ ...p, date: e.date, market: e.market })));
+  const evald = all.filter((p) => p.r1 != null);
+  const win5 = evald.filter((p) => p.r5 != null);
+  const winRate = win5.length ? Math.round((win5.filter((p) => p.r5 > 0).length / win5.length) * 100) : null;
+  const avg = (k) => { const v = evald.filter((p) => p[k] != null); return v.length ? (v.reduce((s, p) => s + p[k], 0) / v.length).toFixed(1) : null; };
+  const recent = [...all].reverse().slice(0, 9);
+  const rc = (v) => (v == null ? T.faint : v > 0 ? T.buy : v < 0 ? T.sell : T.sub);
+  return (
+    <Card style={{ marginBottom: 16 }}>
+      <Eyebrow color={T.info}>TRACK RECORD · AI 추천 성적표 (자동 채점)</Eyebrow>
+      {evald.length === 0 ? (
+        <div style={{ color: T.sub, fontSize: 13.5, lineHeight: 1.7 }}>
+          추천 {all.length}건 기록됨 — 첫 성적은 다음 거래일부터 자동으로 채점됩니다. 이 성적은 다음 추천 시 AI에게 전달되어 스스로 개선하는 데 사용됩니다.
+        </div>
+      ) : (
+        <>
+          <div style={{ display: "flex", gap: 18, fontFamily: T.mono, marginBottom: 12, flexWrap: "wrap" }}>
+            {winRate != null && <div><div style={{ fontSize: 11, color: T.sub }}>5일 승률</div><div style={{ fontSize: 22, fontWeight: 800, color: winRate >= 50 ? T.buy : T.sell }}>{winRate}%</div></div>}
+            <div><div style={{ fontSize: 11, color: T.sub }}>평균 1일</div><div style={{ fontSize: 18, fontWeight: 700, color: rc(+avg("r1")) }}>{avg("r1")}%</div></div>
+            <div><div style={{ fontSize: 11, color: T.sub }}>평균 5일</div><div style={{ fontSize: 18, fontWeight: 700, color: rc(+avg("r5")) }}>{avg("r5") ?? "—"}%</div></div>
+            <div><div style={{ fontSize: 11, color: T.sub }}>평균 20일</div><div style={{ fontSize: 18, fontWeight: 700, color: rc(+avg("r20")) }}>{avg("r20") ?? "—"}%</div></div>
+          </div>
+          {recent.map((p, i) => (
+            <div key={i} style={{ display: "flex", gap: 8, padding: "8px 0", borderBottom: `1px dashed ${T.line}`, fontSize: 12.5, alignItems: "center" }}>
+              <span style={{ color: T.faint, fontFamily: T.mono, fontSize: 10.5, minWidth: 44 }}>{p.date.slice(5)}</span>
+              <span style={{ flex: 1, color: T.ink, fontWeight: 600, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{p.name}</span>
+              <span style={{ fontFamily: T.mono, color: rc(p.r1), minWidth: 46, textAlign: "right" }}>{p.r1 != null ? `${p.r1 > 0 ? "+" : ""}${p.r1}%` : "채점전"}</span>
+              <span style={{ fontFamily: T.mono, color: rc(p.r5), minWidth: 46, textAlign: "right" }}>{p.r5 != null ? `${p.r5 > 0 ? "+" : ""}${p.r5}%` : "·"}</span>
+              <span style={{ fontFamily: T.mono, color: rc(p.r20), minWidth: 46, textAlign: "right" }}>{p.r20 != null ? `${p.r20 > 0 ? "+" : ""}${p.r20}%` : "·"}</span>
+            </div>
+          ))}
+          <div style={{ display: "flex", gap: 8, marginTop: 6, fontSize: 10.5, color: T.faint, fontFamily: T.mono, justifyContent: "flex-end" }}>
+            <span>1일</span><span>5일</span><span>20일</span>
+          </div>
+          <div style={{ fontSize: 11.5, color: T.info, marginTop: 10, lineHeight: 1.6 }}>
+            🧠 이 성적표는 다음 추천 시 AI에게 자동 전달됩니다 — 실패 유형은 피하고 성공 유형을 우선하도록 스스로 보정합니다.
+          </div>
+        </>
+      )}
+    </Card>
+  );
+}
+
 /* ========== 메인 앱 ========== */
 export default function App() {
   const [query, setQuery] = useState("SK하이닉스 (000660.KS)");
@@ -767,7 +854,12 @@ export default function App() {
 
   const loadPicks = async (m) => {
     setPickMarket(m); setPicks(null); setPicksErr(""); setPicksLoading(true);
-    try { setPicks(await fetchPicks(m)); }
+    try {
+      const history = perfSummary(histLoad(), m);
+      const j = await fetchPicks(m, history);
+      setPicks(j);
+      recordPicks(m, j.picks).catch(() => {});
+    }
     catch (e) { setPicksErr("추천 수집 실패 — 잠시 후 다시 시도해 주세요. (" + e.message + ")"); }
     setPicksLoading(false);
   };
@@ -831,6 +923,9 @@ export default function App() {
             일봉 기반 스윙(2~4주) 참고 도구. 투자 권유 아님 · 매매 트리거 아님 · 최종 판단과 책임은 본인에게 있습니다.
           </p>
         </header>
+
+        {/* AI 추천 성적표 */}
+        <TrackRecord refreshKey={picks ? 1 : 0} />
 
         {/* 관심종목 실시간 */}
         <Watchlist wl={wl} setWl={setWl} onAnalyze={(w) => { const q = `${w.name} (${w.ticker})`; setQuery(q); run(q); }} />
