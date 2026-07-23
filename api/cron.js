@@ -68,13 +68,20 @@ async function gatherKR() {
     top("https://finance.naver.com/sise/sise_rise.naver", 8).catch(() => []),
     top("https://finance.naver.com/sise/sise_quant.naver", 8).catch(() => []),
   ]);
-  const seen = new Set(); const cands = [];
+  const seen = new Set(); let cands = [];
   for (const s of [...rise, ...vol]) if (!seen.has(s.code) && cands.length < 10) { seen.add(s.code); cands.push(s); }
+  let note = "";
+  if (!cands.length) {
+    // 개장 전 등으로 상승률 데이터가 비어 있으면: 시가총액 상위로 대체 (뉴스 재료 중심 선별)
+    cands = await top("https://finance.naver.com/sise/sise_market_sum.naver", 12).catch(() => []);
+    note = "(개장 전 — 당일 등락 데이터 없음. 아래는 시가총액 상위이며, 각 종목 뉴스 재료 중심으로 선별하라)\n";
+  }
+  if (!cands.length) return "";
   const rows = await Promise.all(cands.map(async (s) => {
     const news = await naverNews(s.code, 2);
     return `${s.name}(${s.code}.KS) | 뉴스: ${news.join(" / ") || "없음"}`;
   }));
-  return rows.join("\n");
+  return note + rows.join("\n");
 }
 async function gatherUS() {
   try {
