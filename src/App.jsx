@@ -1009,9 +1009,25 @@ function guideStats(h) {
   const ok = ev.filter((p) => (p.tone === "buy" ? p.r5 > 0 : p.r5 < 0)).length;
   return { n: ev.length, acc: Math.round((ok / ev.length) * 100) };
 }
+const reviewLoad = () => { try { return JSON.parse(localStorage.getItem("sd_review") || "null"); } catch { return null; } };
+const reviewSave = (r) => { try { localStorage.setItem("sd_review", JSON.stringify(r)); } catch {} };
+function buildReviewStr(h, v) {
+  const lines = [];
+  h.flatMap((e) => e.picks.map((p) => ({ ...p, date: e.date }))).filter((p) => p.r1 != null).slice(-14).forEach((p) => {
+    lines.push(p.kind === "day"
+      ? `[단타] ${p.date} ${p.name}: 목표+${p.target}% ${p.hit ? "적중" : "미달"}, 당일 ${p.r1}%`
+      : `[스윙] ${p.date} ${p.name}: 1일 ${p.r1}% / 5일 ${p.r5 ?? "?"}% / 20일 ${p.r20 ?? "?"}%`);
+  });
+  v.filter((p) => p.r5 != null).slice(-8).forEach((p) => {
+    lines.push(`[가이드] ${p.date} ${p.name}: ${p.tone === "buy" ? "매수" : p.tone === "sell" ? "매도" : "관망"} 판정 → 5일 ${p.r5}%`);
+  });
+  return lines.join("\n");
+}
 function fullHistoryStr(market) {
   const h = histLoad();
   const parts = [perfSummary(h, market), daySummary(h, market)];
+  const rv = reviewLoad();
+  if (rv?.data?.lessons?.length) parts.push(`과거 복기에서 얻은 교훈: ${rv.data.lessons.join(" / ")}. 이 교훈을 이번 판단에 반드시 반영해 종합 점수를 높여라.`);
   const gs = guideStats(vhLoad());
   if (gs) parts.push(`개별 종목 매수/매도 가이드의 5일 적중률: ${gs.acc}% (${gs.n}건). 적중률이 낮으면 더 보수적으로, 높으면 기존 기준을 유지하라.`);
   return parts.filter(Boolean).join(" ");
@@ -1020,9 +1036,29 @@ function fullHistoryStr(market) {
 function TrackRecord({ refreshKey }) {
   const [hist, setHist] = useState(null);
   const [vh, setVh] = useState([]);
+  const [review, setReview] = useState(null);
+  const [revLoading, setRevLoading] = useState(false);
   useEffect(() => {
-    evalHistory().then(setHist).catch(() => setHist(histLoad()));
-    evalVerdicts().then(setVh).catch(() => setVh(vhLoad()));
+    (async () => {
+      const [h, v] = await Promise.all([
+        evalHistory().catch(() => histLoad()),
+        evalVerdicts().catch(() => vhLoad()),
+      ]);
+      setHist(h); setVh(v);
+      const graded = h.flatMap((e) => e.picks).filter((p) => p.r1 != null).length + v.filter((p) => p.r1 != null).length;
+      if (graded >= 5) {
+        const today = new Date().toISOString().slice(0, 10);
+        const cached = reviewLoad();
+        if (cached && cached.date === today) { setReview(cached.data); return; }
+        try {
+          setRevLoading(true);
+          const j = await callAI({ kind: "review", history: buildReviewStr(h, v) });
+          reviewSave({ date: today, data: j });
+          setReview(j);
+        } catch {}
+        setRevLoading(false);
+      }
+    })();
   }, [refreshKey]);
   const gs = guideStats(vh);
   if (!hist || !hist.length) return null;
@@ -1058,6 +1094,24 @@ function TrackRecord({ refreshKey }) {
   return (
     <Card style={{ marginBottom: 16 }}>
       <Eyebrow color={T.info}>TRACK RECORD · AI 추천 성적표</Eyebrow>
+      {(() => {
+        const comps = [];
+        if (winRate != null) comps.push(winRate);
+        if (hitRate != null) comps.push(hitRate);
+        if (gs) comps.push(gs.acc);
+        if (!comps.length) return <div style={{ color: T.faint, fontSize: 12.5, marginBottom: 4 }}>종합 점수는 첫 채점이 집계되는 날부터 표시됩니다.</div>;
+        const total = Math.round(comps.reduce((a, b) => a + b, 0) / comps.length);
+        const tc = total >= 50 ? T.info : T.sell;
+        return (
+          <div style={{ textAlign: "center", padding: "6px 0 14px", borderBottom: `1px solid ${T.line}`, marginBottom: 4 }}>
+            <span style={{ fontFamily: T.serif, fontSize: 44, fontWeight: 900, color: tc }}>{total}</span>
+            <span style={{ fontFamily: T.serif, fontSize: 18, color: T.faint }}>/100</span>
+            <div style={{ fontFamily: T.mono, fontSize: 11, color: T.faint, marginTop: 4 }}>
+              종합 점수 · {winRate != null ? `스윙 ${winRate}` : ""}{hitRate != null ? ` · 단타 ${hitRate}` : ""}{gs ? ` · 가이드 ${gs.acc}` : ""}
+            </div>
+          </div>
+        );
+      })()}
       {swing.length > 0 && (
         <>
           <div style={{ ...secT, color: T.buy }}>스윙 추천</div>
@@ -1093,8 +1147,23 @@ function TrackRecord({ refreshKey }) {
           개별 가이드 적중률(5일): <b style={{ color: gs.acc >= 50 ? T.buy : T.sell }}>{gs.acc}%</b> ({gs.n}건)
         </div>
       )}
+      {revLoading && <div style={{ color: T.sub, fontSize: 12.5, marginTop: 12 }}>🎓 AI 코치가 성적을 복기하는 중…</div>}
+      {review && review.comment && (
+        <div style={{ marginTop: 14, background: T.card2, borderRadius: 12, padding: 13 }}>
+          <div style={{ fontFamily: T.mono, fontSize: 11, color: T.warn, letterSpacing: "0.22em", marginBottom: 8 }}>🎓 AI 코치 · 정성 평가</div>
+          <div style={{ fontSize: 13.5, color: T.ink, lineHeight: 1.7 }}>{review.comment}</div>
+          {(review.lessons || []).map((l, i) => (
+            <div key={i} style={{ fontSize: 12.5, color: T.sub, lineHeight: 1.7, marginTop: i === 0 ? 8 : 2 }}>· {l}</div>
+          ))}
+          {review.focus && (
+            <div style={{ marginTop: 10, borderLeft: `3px solid ${T.info}`, paddingLeft: 10, fontSize: 12.5, color: T.info, lineHeight: 1.6 }}>
+              다음 집중 개선: {review.focus}
+            </div>
+          )}
+        </div>
+      )}
       <div style={{ fontSize: 11.5, color: T.info, marginTop: 10, lineHeight: 1.6 }}>
-        🧠 스윙·단타·가이드 성적은 다음 분석과 추천에 자동 반영되어 스스로 보정합니다.
+        🧠 성적과 코치 교훈은 다음 분석·추천에 자동 반영되어 종합 점수를 스스로 끌어올리도록 설계되어 있습니다.
       </div>
     </Card>
   );
