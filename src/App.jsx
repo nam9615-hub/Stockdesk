@@ -745,7 +745,25 @@ export default function App() {
     setWl(inWl ? wl.filter((w) => w.ticker !== result.ticker) : [...wl, { name: result.name, ticker: result.ticker }]);
   };
 
-  const suggestions = useMemo(() => (sugOpen ? searchStocks(query) : []), [query, sugOpen]);
+  const [remote, setRemote] = useState([]);
+  useEffect(() => {
+    const q = query.trim();
+    if (!sugOpen || !q || /\(/.test(q)) { setRemote([]); return; }
+    const id = setTimeout(async () => {
+      try {
+        const r = await fetch(`/api/search?q=${encodeURIComponent(q)}`);
+        const j = await r.json();
+        setRemote(j.items || []);
+      } catch { setRemote([]); }
+    }, 250);
+    return () => clearTimeout(id);
+  }, [query, sugOpen]);
+  const suggestions = useMemo(() => {
+    if (!sugOpen) return [];
+    const local = searchStocks(query);
+    const seen = new Set(local.map(([, t]) => t));
+    return [...local, ...remote.filter((x) => !seen.has(x.ticker)).map((x) => [x.name, x.ticker])].slice(0, 8);
+  }, [query, sugOpen, remote]);
 
   const loadPicks = async (m) => {
     setPickMarket(m); setPicks(null); setPicksErr(""); setPicksLoading(true);
@@ -757,7 +775,14 @@ export default function App() {
   const run = async (qArg) => {
     const q = typeof qArg === "string" ? qArg : query;
     setErr(""); setNews(null); setNewsErr(""); setSugOpen(false);
-    const { name, ticker } = resolveTicker(q || "DEMO");
+    let { name, ticker } = resolveTicker(q || "DEMO");
+    if (/[가-힣]/.test(ticker)) {
+      try {
+        const r0 = await fetch(`/api/search?q=${encodeURIComponent(ticker)}`);
+        const j0 = await r0.json();
+        if (j0.items && j0.items[0]) { name = j0.items[0].name; ticker = j0.items[0].ticker; }
+      } catch {}
+    }
     setLoading(true);
     try {
       let data, live = null;
@@ -895,7 +920,7 @@ export default function App() {
             <input style={inputS} value={query}
               onChange={(e) => { setQuery(e.target.value); setSugOpen(true); }}
               onFocus={() => setSugOpen(true)}
-              placeholder="예: 삼성, SK하이닉스, 000660.KS, AAPL" />
+              placeholder="예: 삼성, 보성파워텍, 000660.KS, AAPL — 국내 전 종목 검색" />
             {suggestions.length > 0 && (
               <div style={{
                 position: "absolute", top: "calc(100% + 6px)", left: 0, right: 0, zIndex: 20,
