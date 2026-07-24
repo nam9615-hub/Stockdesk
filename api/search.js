@@ -4,6 +4,7 @@ export default async function handler(req, res) {
   if (!q) return res.status(200).json({ items: [] });
   const sfx = (m) => (/KOSDAQ|코스닥/i.test(m) ? ".KQ" : /KOSPI|KONEX|코스피|코넥스/i.test(m) ? ".KS" : "");
   let items = [];
+  // 1순위: 네이버 모바일 자동완성
   try {
     const r = await fetch(`https://m.stock.naver.com/front-api/search/autoComplete?query=${encodeURIComponent(q)}&target=stock`, { headers: { "User-Agent": "Mozilla/5.0" } });
     const j = await r.json();
@@ -17,6 +18,7 @@ export default async function handler(req, res) {
       return null;
     }).filter(Boolean);
   } catch {}
+  // 2순위: 구형 자동완성 엔드포인트
   if (!items.length) {
     try {
       const r = await fetch(`https://ac.stock.naver.com/ac?q=${encodeURIComponent(q)}&target=stock`, { headers: { "User-Agent": "Mozilla/5.0" } });
@@ -31,6 +33,13 @@ export default async function handler(req, res) {
         if (/^\d{6}$/.test(code) && name) return { name, ticker: code + (sfx(mkt) || ".KS") };
         return null;
       }).filter(Boolean);
+    } catch {}
+  }
+  // 국내 결과가 없고 영문 티커 형태면 야후 검색으로 이름 해석 (미국 등)
+  if (!items.length && /^[A-Za-z.\-^=]{1,10}$/.test(q)) {
+    try {
+      const j = await (await fetch(`https://query1.finance.yahoo.com/v1/finance/search?q=${encodeURIComponent(q)}&quotesCount=6&newsCount=0`, { headers: { "User-Agent": "Mozilla/5.0" } })).json();
+      items = (j.quotes || []).filter((x) => x.symbol).map((x) => ({ name: x.shortname || x.longname || x.symbol, ticker: x.symbol })).slice(0, 6);
     } catch {}
   }
   res.setHeader("Cache-Control", "s-maxage=3600, stale-while-revalidate=86400");
