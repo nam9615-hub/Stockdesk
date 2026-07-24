@@ -184,6 +184,7 @@ async function grade(entries) {
       if (p.r1 != null) return;
       const row = d.find((x) => x.date >= e.date); if (!row) return;
       const base = row.open || p.p0; // 실전 기준: 당일 시가 진입
+      p.b = base;
       p.gap = row.open && p.p0 ? +(((row.open - p.p0) / p.p0) * 100).toFixed(1) : null;
       p.r1 = +(((row.close - base) / base) * 100).toFixed(1);
       p.hit = row.high >= base * (1 + (p.target || 3) / 100);
@@ -196,6 +197,7 @@ async function grade(entries) {
     }
     const i0 = d.findIndex((x) => x.date >= e.date); if (i0 < 0) return;
     const base = d[i0].open || p.p0; // 추천일 시가 진입 기준
+    if (p.b == null) { p.b = base; changed = true; }
     if (p.gap == null && d[i0].open && p.p0) { p.gap = +(((d[i0].open - p.p0) / p.p0) * 100).toFixed(1); changed = true; }
     for (const [k, n] of [["r1", 1], ["r5", 5], ["r20", 20]])
       if (p[k] == null && d[i0 + n - 1]) {
