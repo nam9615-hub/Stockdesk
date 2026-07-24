@@ -1538,6 +1538,48 @@ export default function App() {
   }, [query, sugOpen, remote]);
 
   const [picksCache, setPicksCache] = useState({});
+  const [capMan, setCapMan] = useState(() => { try { return localStorage.getItem("sd_cap") || ""; } catch { return ""; } });
+  const [riskP, setRiskP] = useState(() => { try { return localStorage.getItem("sd_risk") || "1.5"; } catch { return "1.5"; } });
+  useEffect(() => { try { localStorage.setItem("sd_cap", capMan); localStorage.setItem("sd_risk", riskP); } catch {} }, [capMan, riskP]);
+  const [pickPx, setPickPx] = useState({});
+  useEffect(() => {
+    if (!picks) return;
+    const ts = [...(picks.picks || []), ...(picks.day_picks || [])].map((p) => p.ticker).filter(Boolean);
+    if (!ts.length) return;
+    (async () => {
+      try {
+        if (pickMarket === "US") await loadFx();
+        const qs = await fetchQuotes([...new Set(ts)]);
+        setPickPx(Object.fromEntries(qs.map((q) => [q.ticker, q.price])));
+      } catch {}
+    })();
+  }, [picks]);
+  const budgetOf = (p, kind) => {
+    const cap = (parseFloat(capMan) || 0) * 10000;
+    if (cap <= 0) return null;
+    const risk = Math.min(Math.max(parseFloat(riskP) || 1.5, 0.2), 5);
+    const stopPct = kind === "day" ? 3 : 5;
+    const loss = (cap * risk) / 100;
+    let amt = loss / (stopPct / 100);
+    amt = Math.min(amt, cap * (kind === "day" ? 0.2 : 0.25)); // 종목당 상한 (몰빵 방지)
+    const px = pickPx[p.ticker];
+    const fx = /\.(KS|KQ)$/i.test(p.ticker) ? 1 : FX.usd || 1350;
+    const shares = px ? Math.floor(amt / (px * fx)) : null;
+    const realAmt = shares != null && shares > 0 ? shares * px * fx : amt;
+    const realLoss = (realAmt * stopPct) / 100;
+    return { amt: realAmt, shares, loss: realLoss, stopPct };
+  };
+  const manW = (v) => (v >= 1e8 ? (v / 1e8).toFixed(1) + "억" : Math.round(v / 1e4).toLocaleString() + "만");
+  const BudgetLine = ({ p, kind }) => {
+    const b = budgetOf(p, kind);
+    if (!b) return null;
+    if (b.shares === 0) return <div style={{ fontFamily: T.mono, fontSize: 11.5, color: T.faint, marginTop: 8 }}>💰 1주 단가가 배분액보다 큼 — 투자금 대비 부담 큰 종목</div>;
+    return (
+      <div style={{ fontFamily: T.mono, fontSize: 12, color: T.buy, marginTop: 8, lineHeight: 1.5 }}>
+        💰 약 {manW(b.amt)}원{b.shares != null ? ` · ${fmt(b.shares)}주` : ""} <span style={{ color: T.faint }}>(손절 −{b.stopPct}% 시 최대 −{manW(b.loss)}원)</span>
+      </div>
+    );
+  };
   const kstNow = () => new Date(Date.now() + 9 * 3600e3);
   const kstToday = () => kstNow().toISOString().slice(0, 10);
   const provisionInfo = (m) => {
@@ -1720,6 +1762,15 @@ export default function App() {
           {picks && (
             <div style={{ marginTop: 16 }}>
               {picks.auto && <div style={{ fontFamily: T.mono, fontSize: 11, color: T.buy, marginBottom: 8 }}>🔒 {picks.at || ""} 확정 — 오늘 장 마감까지 고정되며 성적표와 동일한 목록입니다</div>}
+              <div style={{ display: "flex", gap: 8, alignItems: "center", marginBottom: 12, fontFamily: T.mono, fontSize: 12, color: T.sub, flexWrap: "wrap" }}>
+                투자금
+                <input value={capMan} onChange={(e) => setCapMan(e.target.value.replace(/[^\d]/g, ""))} inputMode="numeric" placeholder="1000"
+                  style={{ width: 70, background: T.bg, border: `1px solid ${T.line}`, borderRadius: 8, color: T.ink, padding: "6px 8px", fontFamily: T.mono, fontSize: 13, textAlign: "right" }} />
+                만원 · 1회 위험
+                <input value={riskP} onChange={(e) => setRiskP(e.target.value.replace(/[^\d.]/g, ""))} inputMode="decimal"
+                  style={{ width: 44, background: T.bg, border: `1px solid ${T.line}`, borderRadius: 8, color: T.ink, padding: "6px 8px", fontFamily: T.mono, fontSize: 13, textAlign: "right" }} />%
+              </div>
+              {!parseFloat(capMan) && <div style={{ fontSize: 11.5, color: T.faint, marginBottom: 10 }}>투자금을 입력하면 종목별 투입금액·주수 가이드가 표시됩니다 (원화 기준, 한 번만 입력하면 저장돼요)</div>}
               {picks.brief && (
                 <div style={{ background: T.card2, borderRadius: 12, padding: 13, fontSize: 13.5, lineHeight: 1.7, color: T.ink, marginBottom: 14 }}>
                   {picks.brief}
@@ -1744,6 +1795,7 @@ export default function App() {
                     {p.catalyst && <div><span style={{ color: T.buy, fontFamily: T.mono }}>재료</span> <span style={{ color: T.sub }}>{p.catalyst}</span></div>}
                     {p.risk && <div><span style={{ color: T.sell, fontFamily: T.mono }}>리스크</span> <span style={{ color: T.sub }}>{p.risk}</span></div>}
                   </div>
+                  <BudgetLine p={p} kind="swing" />
                   <button onClick={() => { const q = `${p.name} (${p.ticker})`; setQuery(q); run(q); }} style={{
                     marginTop: 12, width: "100%", padding: "11px 8px", borderRadius: 10, cursor: "pointer",
                     background: "transparent", border: `1px solid ${T.info}88`, color: T.info, fontSize: 13.5, fontWeight: 700,
@@ -1771,6 +1823,7 @@ export default function App() {
                           <div style={{ fontFamily: T.mono, fontSize: 10.5, color: T.sub, marginTop: 5 }}>강도 {p.score}</div>
                         </div>
                       </div>
+                      <BudgetLine p={p} kind="day" />
                       <button onClick={() => { const q = `${p.name} (${p.ticker})`; setQuery(q); run(q); }} style={{
                         marginTop: 10, width: "100%", padding: "9px 8px", borderRadius: 10, cursor: "pointer",
                         background: "transparent", border: `1px solid ${T.info}66`, color: T.info, fontSize: 13, fontWeight: 700,
