@@ -792,7 +792,7 @@ function PositionCalc({ price, stop, ticker }) {
   const inS = { width: "100%", boxSizing: "border-box", background: T.card2, border: `1px solid ${T.line}`, borderRadius: 10, padding: "10px 11px", color: T.ink, fontSize: 14, fontFamily: T.mono, outline: "none" };
   return (
     <Card style={{ marginTop: 14 }}>
-      <Eyebrow color={T.info}>POSITION · 리스크 기반 수량 계산</Eyebrow>
+      <Eyebrow color={T.info}>POSITION · 수량 계산</Eyebrow>
       <div style={{ display: "flex", gap: 10 }}>
         <div style={{ flex: 1.4 }}>
           <div style={{ fontSize: 11.5, color: T.info, fontFamily: T.mono, marginBottom: 5 }}>총 투자금</div>
@@ -2039,7 +2039,7 @@ export default function App() {
             {/* 추세 국면 */}
             {(tab === "all") && (
               <Card style={{ marginTop: 14 }}>
-                <Eyebrow color={T.info}>TREND PHASE · 추세 국면</Eyebrow>
+                <Eyebrow color={T.info}>TREND · 추세 국면</Eyebrow>
                 <div style={{ display: "flex", alignItems: "baseline", gap: 12 }}>
                   <span style={{ fontFamily: T.serif, fontSize: 30, fontWeight: 800, color: r.trendLabel === "상승" ? T.buy : r.trendLabel === "하락" ? T.sell : T.warn }}>{r.trendLabel}</span>
                   <span style={{ fontFamily: T.mono, color: T.sub, fontSize: 13 }}>
@@ -2068,7 +2068,7 @@ export default function App() {
             {/* 매수 분석 */}
             {(tab === "all" || tab === "buy") && (
               <Card style={{ marginTop: 14 }}>
-                <Eyebrow color={T.buy}>PULLBACK · 눌림목 매수 분석</Eyebrow>
+                <Eyebrow color={T.buy}>PULLBACK · 눌림목 매수</Eyebrow>
                 <div style={{ textAlign: "center", padding: "10px 0 4px" }}>
                   <span style={{ fontFamily: T.serif, fontSize: 46, fontWeight: 800, color: r.buyScore >= 80 ? T.buy : r.buyScore >= 60 ? T.warn : T.faint }}>{r.buyScore}</span>
                   <span style={{ fontFamily: T.serif, fontSize: 20, color: T.faint }}>/100</span>
@@ -2111,7 +2111,7 @@ export default function App() {
             {/* 매도 분석 */}
             {(tab === "all" || tab === "sell") && (
               <Card style={{ marginTop: 14 }}>
-                <Eyebrow color={T.sell}>SELL ZONES · 과열도·목표 구간</Eyebrow>
+                <Eyebrow color={T.sell}>SELL · 과열도·목표</Eyebrow>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
                   <span style={{ color: T.sub, fontSize: 14 }}>과열도</span>
                   <span>
@@ -2177,7 +2177,7 @@ export default function App() {
             {/* 지지 레벨 */}
             {(tab === "all" || tab === "buy") && (
               <Card style={{ marginTop: 14 }}>
-                <Eyebrow color={T.warn}>SUPPORTS · 지지 레벨·재진입 참고</Eyebrow>
+                <Eyebrow color={T.warn}>SUPPORTS · 지지·재진입</Eyebrow>
                 {r.supports.map((s, i) => (
                   <div key={i} style={{ display: "flex", justifyContent: "space-between", padding: "10px 0", borderBottom: `1px dashed ${T.line}`, fontSize: 13.5 }}>
                     <span style={{ color: T.sub }}>{s.name}</span>
