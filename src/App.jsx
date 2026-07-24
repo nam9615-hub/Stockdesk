@@ -565,7 +565,7 @@ const Card = ({ children, style }) => (
 
 function Gauge({ value, tone }) {
   const c = toneColor(tone);
-  const angle = -90 + (Math.max(0, Math.min(100, value)) / 100) * 180;
+  const angle = -180 + (Math.max(0, Math.min(100, value)) / 100) * 180; // 0점=왼쪽, 100점=오른쪽 (아크와 동일 기준)
   const arc = (start, end, color, w) => {
     const r = 84, cx = 100, cy = 100;
     const p = (a) => [cx + r * Math.cos((a * Math.PI) / 180), cy + r * Math.sin((a * Math.PI) / 180)];
