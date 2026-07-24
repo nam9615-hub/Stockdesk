@@ -700,6 +700,24 @@ function LiveWatch({ ticker }) {
 function Watchlist({ wl, setWl, onAnalyze }) {
   const [quotes, setQuotes] = useState({});
   useEffect(() => {
+    // 이름이 코드 그대로인 옛 항목 자동 교정 (1회)
+    (async () => {
+      let changed = false;
+      const next = await Promise.all(wl.map(async (w) => {
+        const bad = !w.name || w.name === w.ticker || /^\d{6}\.(KS|KQ)$/i.test(w.name) || /^[A-Z.\-]{1,10}$/.test(w.name);
+        if (!bad) return w;
+        try {
+          const q6 = (w.ticker.match(/^(\d{6})\./) || [])[1] || w.ticker;
+          const j = await (await fetch(`/api/search?q=${encodeURIComponent(q6)}`)).json();
+          const hit = (j.items || []).find((x) => x.ticker.toUpperCase() === w.ticker.toUpperCase()) || (j.items || [])[0];
+          if (hit && hit.name && hit.name !== w.name) { changed = true; return { ...w, name: hit.name }; }
+        } catch {}
+        return w;
+      }));
+      if (changed) setWl(next);
+    })();
+  }, []);
+  useEffect(() => {
     if (!wl.length) return;
     let alive = true;
     const tick = async () => {
@@ -1435,7 +1453,7 @@ function TrackRecord({ refreshKey }) {
 
 /* ========== 메인 앱 ========== */
 export default function App() {
-  const [query, setQuery] = useState("SK하이닉스 (000660.KS)");
+  const [query, setQuery] = useState("");
   const [sugOpen, setSugOpen] = useState(false);
   const [avg, setAvg] = useState("");
   const [qty, setQty] = useState("");
@@ -1555,6 +1573,19 @@ export default function App() {
         const j0 = await r0.json();
         if (j0.items && j0.items[0]) { name = j0.items[0].name; ticker = j0.items[0].ticker; }
       } catch {}
+    }
+    // 이름이 코드 그대로면(006910.KQ, AAPL 등) 정식 종목명으로 해석
+    if (!name || name === ticker || /^\d{6}\.(KS|KQ)$/i.test(name) || /^[A-Z.\-]{1,10}$/.test(name)) {
+      const local = SUGGEST.find((s) => s.ticker.toUpperCase() === ticker.toUpperCase());
+      if (local) name = local.name;
+      else {
+        try {
+          const q6 = (ticker.match(/^(\d{6})\./) || [])[1] || ticker;
+          const rn = await (await fetch(`/api/search?q=${encodeURIComponent(q6)}`)).json();
+          const hit = (rn.items || []).find((x) => x.ticker.toUpperCase() === ticker.toUpperCase()) || (rn.items || [])[0];
+          if (hit && hit.name) name = hit.name;
+        } catch {}
+      }
     }
     setLoading(true);
     try {
