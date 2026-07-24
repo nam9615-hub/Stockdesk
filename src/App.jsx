@@ -1304,6 +1304,15 @@ function TrackRecord({ refreshKey }) {
   const [open, setOpen] = useState(false);
   useEffect(() => {
     (async () => {
+      // 성적표 열람 시 서버 채점 자동 트리거 (30분 스로틀)
+      try {
+        const last = +(localStorage.getItem("sd_evalping") || 0);
+        if (Date.now() - last > 30 * 60e3) {
+          localStorage.setItem("sd_evalping", String(Date.now()));
+          await fetch("/api/cron?job=eval").catch(() => {});
+          SRV_HIST.t = 0; // 서버 이력 캐시 무효화 → 방금 채점분 반영
+        }
+      } catch {}
       const [sh, lh, v] = await Promise.all([
         loadServerHist(),
         evalHistory().catch(() => histLoad()),
