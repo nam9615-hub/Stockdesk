@@ -1416,7 +1416,7 @@ function TrackRecord({ refreshKey }) {
           {K.total != null || U.total != null ? "시장별 종합 점수 (스윙·단타·가이드 평균) — 탭하면 상세" : `기록 ${all.length}건 · 첫 채점부터 시장별 점수 집계 — 탭하면 상세`}
         </div>
       )}
-      {open && (<>
+      {open && (<div style={{ maxHeight: 470, overflowY: "auto", WebkitOverflowScrolling: "touch", marginTop: 6, paddingRight: 6, overscrollBehavior: "contain" }}>
       {swing.length > 0 && (
         <>
           <div style={{ ...secT, color: T.buy }}>스윙 추천</div>
@@ -1432,7 +1432,7 @@ function TrackRecord({ refreshKey }) {
               </div>
             ))
           )}
-          {[...swing].reverse().slice(0, 6).map((p, i) => <Row key={"s" + i} p={p} />)}
+          {[...swing].reverse().slice(0, 20).map((p, i) => <Row key={"s" + i} p={p} />)}
         </>
       )}
       {day.length > 0 && (
@@ -1449,7 +1449,7 @@ function TrackRecord({ refreshKey }) {
               </div>
             ))
           )}
-          {[...day].reverse().slice(0, 6).map((p, i) => <Row key={"d" + i} p={p} dayMode />)}
+          {[...day].reverse().slice(0, 20).map((p, i) => <Row key={"d" + i} p={p} dayMode />)}
         </>
       )}
       {(() => {
@@ -1489,7 +1489,7 @@ function TrackRecord({ refreshKey }) {
       <div style={{ fontSize: 11.5, color: T.info, marginTop: 10, lineHeight: 1.6 }}>
         🧠 성적과 코치 교훈은 다음 분석·추천에 자동 반영되어 종합 점수를 스스로 끌어올리도록 설계되어 있습니다.
       </div>
-      </>)}
+      </div>)}
     </Card>
   );
 }
