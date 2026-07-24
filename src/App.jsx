@@ -701,6 +701,7 @@ function Watchlist({ wl, setWl, onAnalyze }) {
   const [quotes, setQuotes] = useState({});
   useEffect(() => {
     // 이름이 코드 그대로인 옛 항목 자동 교정 (1회)
+    if (!wl.length) return;
     (async () => {
       let changed = false;
       const next = await Promise.all(wl.map(async (w) => {
@@ -821,12 +822,12 @@ async function recordPicks(market, picks, dayPicks) {
 }
 async function evalHistory() {
   const h = histLoad(); let changed = false;
-  const need = [...new Set(h.flatMap((e) => e.picks.filter((p) => p.p0 && (p.kind === "day" ? p.r1 == null : p.r20 == null)).map((p) => p.ticker)))].slice(0, 8);
+  const need = [...new Set(h.flatMap((e) => (e.picks || []).filter((p) => p.p0 && (p.kind === "day" ? p.r1 == null : p.r20 == null)).map((p) => p.ticker)))].slice(0, 8);
   const charts = {};
   for (const t of need) { try { charts[t] = (await fetchChart(t)).data; } catch {} }
   const idxMap = {};
   if (need.length) {
-    for (const m of [...new Set(h.filter((e) => e.picks.some((p) => p.p0 && (p.kind === "day" ? p.r1 == null : p.r20 == null))).map((e) => e.market))]) {
+    for (const m of [...new Set(h.filter((e) => (e.picks || []).some((p) => p.p0 && (p.kind === "day" ? p.r1 == null : p.r20 == null))).map((e) => e.market))]) {
       try {
         const d = (await fetchChart(m === "KR" ? "^KS11" : "^GSPC")).data;
         idxMap[m] = {};
@@ -834,7 +835,7 @@ async function evalHistory() {
       } catch {}
     }
   }
-  h.forEach((e) => e.picks.forEach((p) => {
+  h.forEach((e) => (e.picks || []).forEach((p) => {
     const d = charts[p.ticker]; if (!d || !p.p0) return;
     if (p.kind === "day") {
       if (p.r1 != null) return;
@@ -1173,7 +1174,11 @@ async function loadServerHist() {
   if (Date.now() - SRV_HIST.t < 60000 && SRV_HIST.entries) return SRV_HIST.entries;
   try {
     const j = await (await fetch("/api/picks-data?what=history")).json();
-    if (j && Array.isArray(j.entries)) { SRV_HIST = { t: Date.now(), entries: j.entries }; return j.entries; }
+    if (j && Array.isArray(j.entries)) {
+      const clean = j.entries.filter((e) => e && e.date && Array.isArray(e.picks));
+      SRV_HIST = { t: Date.now(), entries: clean };
+      return clean;
+    }
   } catch {}
   return null;
 }
@@ -1182,7 +1187,7 @@ const reviewSave = (r) => { try { localStorage.setItem("sd_review2", JSON.string
 function buildReviewStr(h, v, market) {
   const lines = [];
   condInsights(h, market).forEach((r) => lines.push(`[규칙] ${r}`));
-  h.filter((e) => e.market === market).flatMap((e) => e.picks.map((p) => ({ ...p, date: e.date }))).filter((p) => p.r1 != null).slice(-14).forEach((p) => {
+  h.filter((e) => e.market === market).flatMap((e) => (e.picks || []).map((p) => ({ ...p, date: e.date }))).filter((p) => p.r1 != null).slice(-14).forEach((p) => {
     lines.push(p.kind === "day"
       ? `[단타] ${p.date} ${p.name}: 목표+${p.target}% ${p.hit ? "적중" : "미달"}, 당일 ${p.r1}%`
       : `[스윙] ${p.date} ${p.name}: 1일 ${p.r1}% / 5일 ${p.r5 ?? "?"}% / 20일 ${p.r20 ?? "?"}%`);
@@ -1242,7 +1247,7 @@ function condInsights(h, market) {
   });
   // 시장 국면별 (추천 시점 저장분)
   const reg = {};
-  h.filter((e) => e.market === market && e.regime).forEach((e) => e.picks.filter((p) => p.kind === "day" && p.r1 != null).forEach((p) => { (reg[e.regime] = reg[e.regime] || []).push(p); }));
+  h.filter((e) => e.market === market && e.regime).forEach((e) => (e.picks || []).filter((p) => p.kind === "day" && p.r1 != null).forEach((p) => { (reg[e.regime] = reg[e.regime] || []).push(p); }));
   const regE = Object.entries(reg).filter(([, v]) => v.length >= 3);
   if (regE.length >= 2) out.push(`국면별 단타 적중: ${regE.map(([k, v]) => `${k}장 ${pctOf(v, (x) => x.hit)}%(${v.length})`).join(" · ")}`);
   // 단기 vs 장기 괴리
@@ -1318,7 +1323,7 @@ function TrackRecord({ refreshKey }) {
     })();
   }, [refreshKey]);
   if (!hist || !hist.length) return null;
-  const all = hist.flatMap((e) => e.picks.map((p) => ({ ...p, date: e.date, market: e.market })));
+  const all = hist.flatMap((e) => (e.picks || []).map((p) => ({ ...p, date: e.date, market: e.market })));
   const swing = all.filter((p) => p.kind !== "day");
   const day = all.filter((p) => p.kind === "day");
   const rc = (v) => (v == null || isNaN(v) ? T.faint : v > 0 ? T.buy : v < 0 ? T.sell : T.sub);
@@ -1574,19 +1579,20 @@ export default function App() {
         if (j0.items && j0.items[0]) { name = j0.items[0].name; ticker = j0.items[0].ticker; }
       } catch {}
     }
+    if (/[가-힣]/.test(ticker)) { setErr("종목을 찾지 못했어요 — 이름을 다시 확인하거나 잠시 후 다시 시도해 주세요."); return; }
     // 이름이 코드 그대로면(006910.KQ, AAPL 등) 정식 종목명으로 해석
-    if (!name || name === ticker || /^\d{6}\.(KS|KQ)$/i.test(name) || /^[A-Z.\-]{1,10}$/.test(name)) {
-      const local = SUGGEST.find((s) => s.ticker.toUpperCase() === ticker.toUpperCase());
-      if (local) name = local.name;
-      else {
-        try {
-          const q6 = (ticker.match(/^(\d{6})\./) || [])[1] || ticker;
+    try {
+      if (!name || name === ticker || /^\d{6}\.(KS|KQ)$/i.test(name) || /^[A-Z.\-]{1,10}$/.test(name)) {
+        const local = STOCKS.find((s) => String(s.ticker).toUpperCase() === String(ticker).toUpperCase());
+        if (local) name = local.name;
+        else {
+          const q6 = (String(ticker).match(/^(\d{6})\./) || [])[1] || ticker;
           const rn = await (await fetch(`/api/search?q=${encodeURIComponent(q6)}`)).json();
-          const hit = (rn.items || []).find((x) => x.ticker.toUpperCase() === ticker.toUpperCase()) || (rn.items || [])[0];
+          const hit = (rn.items || []).find((x) => String(x.ticker).toUpperCase() === String(ticker).toUpperCase()) || (rn.items || [])[0];
           if (hit && hit.name) name = hit.name;
-        } catch {}
+        }
       }
-    }
+    } catch {}
     setLoading(true);
     try {
       const live = await fetchChart(ticker);
@@ -1623,7 +1629,7 @@ export default function App() {
       try {
         const h = histLoad();
         const general = await fullHistoryStrA(/\.(KS|KQ)$/i.test(ticker) ? "KR" : "US");
-        const own = h.flatMap((e) => e.picks.filter((p) => p.ticker === ticker && p.r1 != null).map((p) => `${e.date} 추천 → 1일 ${p.r1}% / 5일 ${p.r5 ?? "?"}% / 20일 ${p.r20 ?? "?"}%`)).join("; ");
+        const own = h.flatMap((e) => (e.picks || []).filter((p) => p.ticker === ticker && p.r1 != null).map((p) => `${e.date} 추천 → 1일 ${p.r1}% / 5일 ${p.r5 ?? "?"}% / 20일 ${p.r20 ?? "?"}%`)).join("; ");
         const historyStr = [general, own ? `이 종목(${name})의 과거 추천 성적: ${own}` : ""].filter(Boolean).join(" ");
         setNews(await fetchNews(name, ticker, historyStr));
       }
@@ -1778,7 +1784,7 @@ export default function App() {
             <input style={inputS} value={query}
               onChange={(e) => { setQuery(e.target.value); setSugOpen(true); }}
               onFocus={() => setSugOpen(true)}
-              placeholder="예: 삼성, 보성파워텍, 000660.KS, AAPL — 국내 전 종목 검색" />
+              placeholder="예: 삼성전자" />
             {suggestions.length > 0 && (
               <div style={{
                 position: "absolute", top: "calc(100% + 6px)", left: 0, right: 0, zIndex: 20,
