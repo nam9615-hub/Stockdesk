@@ -806,6 +806,16 @@ async function evalHistory() {
   const need = [...new Set(h.flatMap((e) => e.picks.filter((p) => p.p0 && (p.kind === "day" ? p.r1 == null : p.r20 == null)).map((p) => p.ticker)))].slice(0, 8);
   const charts = {};
   for (const t of need) { try { charts[t] = (await fetchChart(t)).data; } catch {} }
+  const idxMap = {};
+  if (need.length) {
+    for (const m of [...new Set(h.filter((e) => e.picks.some((p) => p.p0 && (p.kind === "day" ? p.r1 == null : p.r20 == null))).map((e) => e.market))]) {
+      try {
+        const d = (await fetchChart(m === "KR" ? "^KS11" : "^GSPC")).data;
+        idxMap[m] = {};
+        for (let i = 1; i < d.length; i++) idxMap[m][d[i].date] = +(((d[i].close - d[i - 1].close) / d[i - 1].close) * 100).toFixed(2);
+      } catch {}
+    }
+  }
   h.forEach((e) => e.picks.forEach((p) => {
     const d = charts[p.ticker]; if (!d || !p.p0) return;
     if (p.kind === "day") {
@@ -814,6 +824,11 @@ async function evalHistory() {
       if (!row) return;
       p.r1 = +(((row.close - p.p0) / p.p0) * 100).toFixed(1);
       p.hit = row.high >= p.p0 * (1 + (p.target || 3) / 100);
+      p.mfe = +(((row.high - p.p0) / p.p0) * 100).toFixed(1);
+      p.mae = +(((row.low - p.p0) / p.p0) * 100).toFixed(1);
+      const hitStop = row.low <= p.p0 * 0.97;
+      p.touch = p.hit && hitStop ? "both" : p.hit ? "target" : hitStop ? "stop" : "none";
+      p.idx = (idxMap[e.market] || {})[row.date] ?? null;
       changed = true;
       return;
     }
@@ -1148,6 +1163,7 @@ const reviewLoad = () => { try { return JSON.parse(localStorage.getItem("sd_revi
 const reviewSave = (r) => { try { localStorage.setItem("sd_review2", JSON.stringify(r)); } catch {} };
 function buildReviewStr(h, v, market) {
   const lines = [];
+  condInsights(h, market).forEach((r) => lines.push(`[규칙] ${r}`));
   h.filter((e) => e.market === market).flatMap((e) => e.picks.map((p) => ({ ...p, date: e.date }))).filter((p) => p.r1 != null).slice(-14).forEach((p) => {
     lines.push(p.kind === "day"
       ? `[단타] ${p.date} ${p.name}: 목표+${p.target}% ${p.hit ? "적중" : "미달"}, 당일 ${p.r1}%`
@@ -1158,11 +1174,82 @@ function buildReviewStr(h, v, market) {
   });
   return lines.join("\n");
 }
+function condInsights(h, market) {
+  const flat = h.filter((e) => e.market === market).flatMap((e) => e.picks);
+  const out = [];
+  const pctOf = (arr, ok) => Math.round((arr.filter(ok).length / arr.length) * 100);
+  const dy = flat.filter((p) => p.kind === "day" && p.r1 != null);
+  const bk = {};
+  dy.forEach((p) => { const b = (p.target || 3) <= 4 ? "목표 ~4%" : (p.target || 3) <= 6 ? "목표 5~6%" : "목표 7%+"; (bk[b] = bk[b] || []).push(p); });
+  const brs = Object.entries(bk).filter(([, v]) => v.length >= 3).map(([b, v]) => `${b} 적중 ${pctOf(v, (x) => x.hit)}%(${v.length}건)`);
+  if (brs.length >= 2) out.push(`단타 ${brs.join(" · ")}`);
+  // 실패 유형 분해 (초과수익률·MFE 기반)
+  const fails = dy.filter((p) => !p.hit);
+  if (fails.length >= 3) {
+    let mkt = 0, tgt = 0, sel = 0;
+    fails.forEach((p) => {
+      const alpha = p.idx != null ? p.r1 - p.idx : null;
+      if (alpha != null && alpha > 0) mkt++;
+      else if (p.mfe != null && p.mfe >= (p.target || 3) * 0.8) tgt++;
+      else sel++;
+    });
+    out.push(`단타 실패 ${fails.length}건 분해: 시장충격형 ${mkt} · 목표과다형 ${tgt} · 종목선정형 ${sel}${tgt > sel && tgt >= 2 ? " → 목표% 하향 권장" : sel >= mkt && sel >= 2 ? " → 선정 기준 강화 필요" : mkt >= 2 ? " → 지수 약세일 단타 자제" : ""}`);
+  }
+  // 손절 선도달 (일봉 한계: 동시터치는 순서 불명)
+  const touched = dy.filter((p) => p.touch);
+  if (touched.length >= 3) {
+    const st = touched.filter((p) => p.touch === "stop").length, bo = touched.filter((p) => p.touch === "both").length;
+    if (st + bo >= 2) out.push(`단타 중 손절선(−3%) 선도달 ${st}건 + 목표·손절 동시터치 ${bo}건 — 변동성 대비 진입가 주의`);
+  }
+  const byScore = (arr, ok, label) => {
+    const hi = arr.filter((p) => p.score >= 80), lo = arr.filter((p) => p.score < 80);
+    if (hi.length >= 3 && lo.length >= 3) out.push(`${label} 강도80+ ${pctOf(hi, ok)}%(${hi.length}) vs 미만 ${pctOf(lo, ok)}%(${lo.length})`);
+  };
+  byScore(dy, (x) => x.hit, "단타 적중");
+  const sw = flat.filter((p) => p.kind !== "day" && p.r5 != null);
+  byScore(sw, (x) => x.r5 > 0, "스윙 5일승률");
+  // 확신도 캘리브레이션 해석
+  const hi80 = dy.filter((p) => p.score >= 80);
+  if (hi80.length >= 5) {
+    const acc80 = pctOf(hi80, (x) => x.hit);
+    if (acc80 < 55) out.push(`강도 80+ 실측 적중 ${acc80}%(${hi80.length}건) — AI 확신도 과장 경향, 강도 해석 보수화 필요`);
+  }
+  // 근거코드별 성공률
+  const bas = {};
+  flat.filter((p) => Array.isArray(p.basis) && p.r1 != null).forEach((p) => p.basis.forEach((b) => { (bas[b] = bas[b] || []).push(p); }));
+  Object.entries(bas).filter(([, v]) => v.length >= 3).forEach(([b, v]) => {
+    const r = pctOf(v, (p) => (p.kind === "day" ? p.hit : (p.r5 ?? p.r1) > 0));
+    if (r <= 40) out.push(`근거 '${b}' 성공 ${r}%(${v.length}건) → 이 근거 단독 추천 지양`);
+    else if (r >= 70) out.push(`근거 '${b}' 성공 ${r}%(${v.length}건) → 신뢰 근거`);
+  });
+  // 시장 국면별 (추천 시점 저장분)
+  const reg = {};
+  h.filter((e) => e.market === market && e.regime).forEach((e) => e.picks.filter((p) => p.kind === "day" && p.r1 != null).forEach((p) => { (reg[e.regime] = reg[e.regime] || []).push(p); }));
+  const regE = Object.entries(reg).filter(([, v]) => v.length >= 3);
+  if (regE.length >= 2) out.push(`국면별 단타 적중: ${regE.map(([k, v]) => `${k}장 ${pctOf(v, (x) => x.hit)}%(${v.length})`).join(" · ")}`);
+  // 단기 vs 장기 괴리
+  const swAll = flat.filter((p) => p.kind !== "day" && p.r5 != null);
+  if (swAll.length >= 15) {
+    const rec = swAll.slice(-10);
+    const wL = pctOf(swAll, (x) => x.r5 > 0), wS = pctOf(rec, (x) => x.r5 > 0);
+    if (Math.abs(wL - wS) >= 15) out.push(`스윙 최근10건 승률 ${wS}% vs 장기 ${wL}%(${swAll.length}건) — 시장 변화 감지, 전략 폐기 대신 강도만 일시 조정`);
+  }
+  const sec = {};
+  flat.filter((p) => p.sector && p.r1 != null).forEach((p) => { (sec[p.sector] = sec[p.sector] || []).push(p); });
+  Object.entries(sec).filter(([, v]) => v.length >= 3).forEach(([s, v]) => {
+    const r = pctOf(v, (p) => (p.kind === "day" ? p.hit : (p.r5 ?? p.r1) > 0));
+    if (r <= 40) out.push(`섹터 '${s}' 성공 ${r}%(${v.length}건) → 신중/회피`);
+    else if (r >= 65) out.push(`섹터 '${s}' 성공 ${r}%(${v.length}건) → 우위`);
+  });
+  return out;
+}
 async function fullHistoryStrA(market) {
   const h = mergeHist(await loadServerHist(), histLoad());
-  const parts = [perfSummary(h.length !== undefined ? h : histLoad(), market), daySummary(h, market)];
+  const parts = [perfSummary(h, market), daySummary(h, market)];
+  const rules = condInsights(h, market);
+  if (rules.length) parts.push(`[실측 데이터 도출 규칙 — 반드시 준수하라] ${rules.join(" / ")}`);
   const rv = reviewLoad()[market];
-  if (rv?.data?.lessons?.length) parts.push(`이 시장(${market === "KR" ? "국내" : "미국"})의 과거 복기 교훈: ${rv.data.lessons.join(" / ")}. 이 교훈을 이번 판단에 반드시 반영해 종합 점수를 높여라.`);
+  if (rv?.data?.lessons?.length) parts.push(`코치 가설(참고용 — 강제 규칙 아님, 통계로 검증 전): ${rv.data.lessons.join(" / ")}.`);
   const gs = guideStats(vhLoad(), market);
   if (gs) parts.push(`이 시장 개별 가이드의 5일 적중률: ${gs.acc}% (${gs.n}건).`);
   return parts.filter(Boolean).join(" ");
@@ -1226,9 +1313,13 @@ function TrackRecord({ refreshKey }) {
     const dEv = dy.filter((p) => p.r1 != null);
     const hitRate = dEv.length ? Math.round((dEv.filter((p) => p.hit).length / dEv.length) * 100) : null;
     const dAvg = dEv.length ? (dEv.reduce((s, p) => s + p.r1, 0) / dEv.length).toFixed(1) : null;
+    const dExp = dEv.length ? (dEv.reduce((s, p) => s + p.r1, 0) / dEv.length - 0.3).toFixed(1) : null; // 비용 0.3% 차감
+    const pos = dEv.filter((p) => p.r1 > 0).reduce((s, p) => s + p.r1, 0);
+    const neg = Math.abs(dEv.filter((p) => p.r1 < 0).reduce((s, p) => s + p.r1, 0));
+    const dPF = dEv.length >= 3 && neg > 0 ? (pos / neg).toFixed(2) : null;
     const g = guideStats(vh, m);
     const comps = [winRate, hitRate, g && g.acc].filter((x) => x != null);
-    return { winRate, avg, hitRate, dAvg, g, sEvN: sEv.length, dEvN: dEv.length, total: comps.length ? Math.round(comps.reduce((a, b) => a + b, 0) / comps.length) : null };
+    return { winRate, avg, hitRate, dAvg, dExp, dPF, g, sEvN: sEv.length, dEvN: dEv.length, total: comps.length ? Math.round(comps.reduce((a, b) => a + b, 0) / comps.length) : null };
   };
   const K = statsFor("KR"), U = statsFor("US");
   const secT = { fontFamily: T.mono, fontSize: 11, letterSpacing: "0.22em", margin: "14px 0 8px" };
@@ -1291,13 +1382,27 @@ function TrackRecord({ refreshKey }) {
           ) : (
             [["🇰🇷", K], ["🇺🇸", U]].map(([f, S]) => S.dEvN > 0 && (
               <div key={f} style={{ fontFamily: T.mono, fontSize: 12.5, color: T.sub, marginBottom: 5 }}>
-                {f} 목표 적중 <b style={{ color: S.hitRate >= 50 ? T.buy : T.sell }}>{S.hitRate}%</b> · 평균 당일 <b style={{ color: rc(+S.dAvg) }}>{S.dAvg}%</b>
+                {f} 적중 <b style={{ color: S.hitRate >= 50 ? T.buy : T.sell }}>{S.hitRate}%</b> · 평균 <b style={{ color: rc(+S.dAvg) }}>{S.dAvg}%</b>
+                {S.dExp != null && <> · 기대 <b style={{ color: rc(+S.dExp) }}>{S.dExp}%</b></>}
+                {S.dPF != null && <> · PF <b style={{ color: S.dPF >= 1 ? T.buy : T.sell }}>{S.dPF}</b></>}
               </div>
             ))
           )}
           {[...day].reverse().slice(0, 6).map((p, i) => <Row key={"d" + i} p={p} dayMode />)}
         </>
       )}
+      {(() => {
+        const rk = condInsights(hist, "KR"), ru = condInsights(hist, "US");
+        if (!rk.length && !ru.length) return null;
+        return (
+          <div style={{ marginTop: 14, background: T.card2, borderRadius: 12, padding: 13 }}>
+            <div style={{ fontFamily: T.mono, fontSize: 11, color: T.info, letterSpacing: "0.22em", marginBottom: 8 }}>📐 실측 도출 규칙 · 다음 추천에 강제 반영</div>
+            {rk.map((x, i) => <div key={"k" + i} style={{ fontSize: 12.5, color: T.ink, lineHeight: 1.7 }}>🇰🇷 {x}</div>)}
+            {ru.map((x, i) => <div key={"u" + i} style={{ fontSize: 12.5, color: T.ink, lineHeight: 1.7 }}>🇺🇸 {x}</div>)}
+            <div style={{ fontSize: 11, color: T.faint, marginTop: 6 }}>표본 3건 미만 조건은 결론을 유보합니다 (과적합 방지)</div>
+          </div>
+        );
+      })()}
       {(K.g || U.g) && (
         <div style={{ fontFamily: T.mono, fontSize: 12.5, color: T.sub, marginTop: 10 }}>
           가이드 적중률(5일):
@@ -1511,7 +1616,8 @@ export default function App() {
   const vc = r ? toneColor(r.verdict.tone) : T.buy;
   const nAdj = newsAdjOf(news);
   const gsNow = useMemo(() => (r ? guideStats(vhLoad(), marketOf(r.ticker)) : null), [result]);
-  const selfAdj = gsNow && gsNow.n >= 10 ? (gsNow.acc < 45 ? -5 : gsNow.acc >= 60 ? 3 : 0) : 0;
+  // 점진 보정: (성공률−50%) × 표본신뢰도 N/(N+30) × 최대폭 8
+  const selfAdj = gsNow ? Math.round(((gsNow.acc - 50) / 50) * (gsNow.n / (gsNow.n + 30)) * 8) : 0;
   const regAdj = r?.regime?.adj || 0;
   const finalScore = r ? Math.max(0, Math.min(100, r.composite + nAdj + regAdj + selfAdj)) : 0;
 
