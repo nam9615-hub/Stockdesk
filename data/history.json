@@ -10,9 +10,11 @@
      "ticker": "475150.KS",
      "score": 90,
      "p0": 80600,
-     "r1": null,
+     "r1": 0.1,
      "r5": null,
-     "r20": null
+     "r20": null,
+     "gap": 0.2,
+     "idx": -5.72
     },
     {
      "kind": "swing",
@@ -20,9 +22,11 @@
      "ticker": "010060.KS",
      "score": 85,
      "p0": 247000,
-     "r1": null,
+     "r1": -3.3,
      "r5": null,
-     "r20": null
+     "r20": null,
+     "gap": 4.7,
+     "idx": -5.72
     },
     {
      "kind": "swing",
@@ -30,9 +34,11 @@
      "ticker": "005090.KS",
      "score": 80,
      "p0": 54700,
-     "r1": null,
+     "r1": -5,
      "r5": null,
-     "r20": null
+     "r20": null,
+     "gap": -5.1,
+     "idx": -5.72
     },
     {
      "kind": "day",
@@ -41,8 +47,13 @@
      "score": 88,
      "target": 7,
      "p0": 171500,
-     "r1": null,
-     "hit": null
+     "r1": -2.7,
+     "hit": true,
+     "gap": -1.7,
+     "mfe": 26,
+     "mae": -5.8,
+     "touch": "both",
+     "idx": -5.72
     },
     {
      "kind": "day",
@@ -51,8 +62,13 @@
      "score": 85,
      "target": 5,
      "p0": 80600,
-     "r1": null,
-     "hit": null
+     "r1": 0.1,
+     "hit": true,
+     "gap": 0.2,
+     "mfe": 8.5,
+     "mae": -6.6,
+     "touch": "both",
+     "idx": -5.72
     },
     {
      "kind": "day",
@@ -61,8 +77,13 @@
      "score": 82,
      "target": 4,
      "p0": 247000,
-     "r1": null,
-     "hit": null
+     "r1": -3.3,
+     "hit": true,
+     "gap": 4.7,
+     "mfe": 9.7,
+     "mae": -7.5,
+     "touch": "both",
+     "idx": -5.72
     }
    ]
   }
