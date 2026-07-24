@@ -86,6 +86,108 @@
      "idx": -5.72
     }
    ]
+  },
+  {
+   "date": "2026-07-24",
+   "market": "US",
+   "regime": "하락",
+   "picks": [
+    {
+     "kind": "swing",
+     "name": "Cleveland-Cliffs Inc.",
+     "ticker": "CLF",
+     "score": 88,
+     "sector": "철강",
+     "basis": [
+      "실적/수주계약",
+      "추세지속",
+      "신고가"
+     ],
+     "p0": 10.96,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "Imax Corporation",
+     "ticker": "IMAX",
+     "score": 85,
+     "sector": "엔터테인먼트",
+     "basis": [
+      "실적/수주계약",
+      "거래량급증",
+      "신고가"
+     ],
+     "p0": 43.96,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "Medpace Holdings, Inc.",
+     "ticker": "MEDP",
+     "score": 82,
+     "sector": "헬스케어",
+     "basis": [
+      "뉴스재료",
+      "추세지속",
+      "신고가"
+     ],
+     "p0": 605.82,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "day",
+     "name": "Cleveland-Cliffs Inc.",
+     "ticker": "CLF",
+     "score": 87,
+     "target": 7,
+     "sector": "철강",
+     "basis": [
+      "실적/수주계약",
+      "추세지속",
+      "거래량급증"
+     ],
+     "p0": 10.96,
+     "r1": null,
+     "hit": null
+    },
+    {
+     "kind": "day",
+     "name": "Imax Corporation",
+     "ticker": "IMAX",
+     "score": 84,
+     "target": 6,
+     "sector": "엔터테인먼트",
+     "basis": [
+      "실적/수주계약",
+      "거래량급증",
+      "신고가"
+     ],
+     "p0": 43.96,
+     "r1": null,
+     "hit": null
+    },
+    {
+     "kind": "day",
+     "name": "Lockheed Martin Corporation",
+     "ticker": "LMT",
+     "score": 80,
+     "target": 5,
+     "sector": "방산",
+     "basis": [
+      "뉴스재료",
+      "추세지속"
+     ],
+     "p0": 568.59,
+     "r1": null,
+     "hit": null
+    }
+   ]
   }
  ]
 }
