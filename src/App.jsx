@@ -557,7 +557,7 @@ const toneColor = (t) => (t === "buy" ? T.buy : t === "sell" ? T.sell : T.warn);
 
 /* ========== UI 조각 ========== */
 const Eyebrow = ({ children, color = T.buy }) => (
-  <div style={{ fontFamily: T.mono, fontSize: 11, letterSpacing: "0.35em", color, textTransform: "uppercase", marginBottom: 8 }}>{children}</div>
+  <div style={{ fontFamily: T.mono, fontSize: 10.5, letterSpacing: "0.14em", color, textTransform: "uppercase", marginBottom: 8, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{children}</div>
 );
 const Card = ({ children, style }) => (
   <div style={{ background: T.card, border: `1px solid ${T.line}`, borderRadius: 16, padding: "18px 16px", ...style }}>{children}</div>
@@ -792,7 +792,7 @@ function PositionCalc({ price, stop, ticker }) {
   const inS = { width: "100%", boxSizing: "border-box", background: T.card2, border: `1px solid ${T.line}`, borderRadius: 10, padding: "10px 11px", color: T.ink, fontSize: 14, fontFamily: T.mono, outline: "none" };
   return (
     <Card style={{ marginTop: 14 }}>
-      <Eyebrow color={T.info}>POSITION SIZING · 리스크 기반 수량 계산</Eyebrow>
+      <Eyebrow color={T.info}>POSITION · 리스크 기반 수량 계산</Eyebrow>
       <div style={{ display: "flex", gap: 10 }}>
         <div style={{ flex: 1.4 }}>
           <div style={{ fontSize: 11.5, color: T.info, fontFamily: T.mono, marginBottom: 5 }}>총 투자금</div>
@@ -1037,7 +1037,7 @@ function FactorPanel({ r, news, filings }) {
   ];
   return (
     <Card style={{ marginTop: 14 }}>
-      <Eyebrow color={T.info}>WHY · 분석 근거 5영역 (탭하면 상세)</Eyebrow>
+      <Eyebrow color={T.info}>WHY · 근거 5영역 · 탭하면 상세</Eyebrow>
       {rows.map((f, i) => (
         <div key={i}>
           <div onClick={() => setOi(oi === i ? -1 : i)} style={{ display: "flex", gap: 10, padding: "11px 0", borderBottom: `1px dashed ${T.line}`, cursor: "pointer", alignItems: "baseline" }}>
@@ -1104,7 +1104,7 @@ function BuyPlan({ r }) {
   ];
   return (
     <Card style={{ marginTop: 14 }}>
-      <Eyebrow color={T.buy}>TRADE PLAN · 자동 매매계획 (매수 시)</Eyebrow>
+      <Eyebrow color={T.buy}>TRADE PLAN · 매수 매매계획</Eyebrow>
       {rows.map(([k, v, c], i) => (
         <div key={i} style={{ display: "flex", gap: 12, padding: "10px 0", borderBottom: `1px dashed ${T.line}`, fontSize: 13.5 }}>
           <span style={{ fontFamily: T.mono, fontSize: 11.5, color: c, minWidth: 78, paddingTop: 2 }}>{k}</span>
@@ -1133,7 +1133,7 @@ function SellPlan({ r }) {
   steps.push({ tag: "방어", color: T.sell, title: `${M(effStop, r.ticker)} 이탈 시 전량 손절`, sub: pl > 3 ? `수익권 — 손절선을 평단 위(본전 방어)로 상향 적용` : `기술적 손절선 (평단 대비 ${fromAvg(effStop)})` });
   return (
     <Card style={{ marginTop: 14, borderColor: T.warn + "55" }}>
-      <Eyebrow color={T.warn}>SELL PLAN · 내 평단 기준 매도 플랜</Eyebrow>
+      <Eyebrow color={T.warn}>SELL PLAN · 내 평단 매도 플랜</Eyebrow>
       <div style={{ fontFamily: T.mono, fontSize: 13, color: T.sub, marginBottom: 10 }}>
         평단 {M(avg, r.ticker)} · 현재 <span style={{ color: pl >= 0 ? T.buy : T.sell, fontWeight: 700 }}>{pct(pl)}</span> · {r.trendLabel === "상승" ? "추세 생존 — 전량 매도보다 분할 우위" : "추세 약화 — 방어 우선"}
       </div>
@@ -1758,7 +1758,7 @@ export default function App() {
 
         {/* 모닝 브리핑 · 추천 종목 */}
         <Card style={{ marginBottom: 16, borderColor: hint.m ? T.warn + "66" : T.line }}>
-          <Eyebrow color={T.warn}>MORNING PICKS · 개장 전 추천 종목</Eyebrow>
+          <Eyebrow color={T.warn}>MORNING PICKS · 개장 전 추천</Eyebrow>
           <div style={{ color: hint.m ? T.warn : T.sub, fontSize: 13, lineHeight: 1.6, marginBottom: 12 }}>
             ⏰ {hint.msg}
           </div>
@@ -1973,7 +1973,7 @@ export default function App() {
             {/* 뉴스·시장 분석 */}
             {(news || newsLoading || newsErr) && (
               <Card style={{ marginTop: 14, borderColor: news ? (news.sentiment >= 15 ? T.buy : news.sentiment <= -15 ? T.sell : T.warn) + "66" : T.line }}>
-                <Eyebrow color={T.info}>NEWS & MARKET · 뉴스·시장 분석</Eyebrow>
+                <Eyebrow color={T.info}>NEWS · 뉴스·시장 분석</Eyebrow>
                 {newsLoading && (
                   <div style={{ display: "flex", alignItems: "center", gap: 12, color: T.sub, fontSize: 14, padding: "8px 0" }}>
                     <span style={{
@@ -2068,7 +2068,7 @@ export default function App() {
             {/* 매수 분석 */}
             {(tab === "all" || tab === "buy") && (
               <Card style={{ marginTop: 14 }}>
-                <Eyebrow color={T.buy}>PULLBACK BUY ANALYSIS · 눌림목 매수</Eyebrow>
+                <Eyebrow color={T.buy}>PULLBACK · 눌림목 매수 분석</Eyebrow>
                 <div style={{ textAlign: "center", padding: "10px 0 4px" }}>
                   <span style={{ fontFamily: T.serif, fontSize: 46, fontWeight: 800, color: r.buyScore >= 80 ? T.buy : r.buyScore >= 60 ? T.warn : T.faint }}>{r.buyScore}</span>
                   <span style={{ fontFamily: T.serif, fontSize: 20, color: T.faint }}>/100</span>
@@ -2111,7 +2111,7 @@ export default function App() {
             {/* 매도 분석 */}
             {(tab === "all" || tab === "sell") && (
               <Card style={{ marginTop: 14 }}>
-                <Eyebrow color={T.sell}>SELL ZONE ANALYSIS · 과열도 & 목표 구간</Eyebrow>
+                <Eyebrow color={T.sell}>SELL ZONES · 과열도·목표 구간</Eyebrow>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
                   <span style={{ color: T.sub, fontSize: 14 }}>과열도</span>
                   <span>
@@ -2177,7 +2177,7 @@ export default function App() {
             {/* 지지 레벨 */}
             {(tab === "all" || tab === "buy") && (
               <Card style={{ marginTop: 14 }}>
-                <Eyebrow color={T.warn}>SUPPORT LADDER · 지지 레벨 (재진입 참고)</Eyebrow>
+                <Eyebrow color={T.warn}>SUPPORTS · 지지 레벨·재진입 참고</Eyebrow>
                 {r.supports.map((s, i) => (
                   <div key={i} style={{ display: "flex", justifyContent: "space-between", padding: "10px 0", borderBottom: `1px dashed ${T.line}`, fontSize: 13.5 }}>
                     <span style={{ color: T.sub }}>{s.name}</span>
@@ -2191,7 +2191,7 @@ export default function App() {
             {/* 최근 공시 */}
             {filings && filings.length > 0 && (
               <Card style={{ marginTop: 14 }}>
-                <Eyebrow color={T.info}>FILINGS · 최근 공시 {/\.(KS|KQ)$/i.test(r.ticker) ? "(네이버 공시)" : "(SEC EDGAR)"}</Eyebrow>
+                <Eyebrow color={T.info}>FILINGS · 공시 {/\.(KS|KQ)$/i.test(r.ticker) ? "(네이버 공시)" : "(SEC EDGAR)"}</Eyebrow>
                 {filings.map((f, i) => (
                   <div key={i} style={{ display: "flex", gap: 10, padding: "9px 0", borderBottom: `1px dashed ${T.line}`, fontSize: 13 }}>
                     <span style={{ fontFamily: T.mono, fontSize: 11, color: T.faint, minWidth: 74, paddingTop: 2 }}>{f.date}</span>
