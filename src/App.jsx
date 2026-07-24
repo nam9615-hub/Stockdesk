@@ -513,10 +513,30 @@ async function fetchPicks(market, history) {
   return j;
 }
 // 현재 시간 기준 추천 세션 (KST 가정 · 3~11월 미국 서머타임 → 22:30 개장)
+function LiveClock() {
+  const [now, setNow] = useState(new Date());
+  useEffect(() => { const id = setInterval(() => setNow(new Date()), 30000); return () => clearInterval(id); }, []);
+  const days = ["일", "월", "화", "수", "목", "금", "토"];
+  const dst = isUsDST(now);
+  return (
+    <div style={{ fontFamily: T.mono, fontSize: 12, color: T.sub, marginTop: 8 }}>
+      {now.getFullYear()}.{String(now.getMonth() + 1).padStart(2, "0")}.{String(now.getDate()).padStart(2, "0")} ({days[now.getDay()]}) {String(now.getHours()).padStart(2, "0")}:{String(now.getMinutes()).padStart(2, "0")}
+      <span style={{ color: T.faint }}> · 🇺🇸 {dst ? "서머타임 중 · 개장 22:30" : "서머타임 해제 · 개장 23:30"}</span>
+    </div>
+  );
+}
+function isUsDST(d) {
+  // 미국 서머타임: 3월 둘째 일요일 ~ 11월 첫 일요일 (매년 자동 계산)
+  const y = d.getFullYear(), m = d.getMonth(), day = d.getDate();
+  if (m > 2 && m < 10) return true;
+  if (m < 2 || m > 10) return false;
+  if (m === 2) { const w = new Date(y, 2, 1).getDay(); const secondSun = 1 + ((7 - w) % 7) + 7; return day >= secondSun; }
+  const w = new Date(y, 10, 1).getDay(); const firstSun = 1 + ((7 - w) % 7); return day < firstSun;
+}
 function sessionHint() {
   const now = new Date();
   const h = now.getHours(), mn = now.getMinutes(), t = h + mn / 60;
-  const dst = now.getMonth() >= 2 && now.getMonth() <= 10;
+  const dst = isUsDST(now);
   const usOpen = dst ? "22:30" : "23:30";
   const usPre = dst ? 21.5 : 22.5;
   if (t >= 6 && t < 9) return { m: "KR", msg: "지금은 국내장 개장 전 — 모닝픽을 받아보기 좋은 시간입니다.", usOpen };
@@ -1384,7 +1404,7 @@ function TrackRecord({ refreshKey }) {
   return (
     <Card style={{ marginBottom: 16 }}>
       <div onClick={() => setOpen(!open)} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", cursor: "pointer", gap: 10 }}>
-        <span style={{ fontFamily: T.mono, fontSize: 11, letterSpacing: "0.3em", color: T.info }}>TRACK RECORD · AI 추천 성적표</span>
+        <span style={{ fontFamily: T.mono, fontSize: 10.5, letterSpacing: "0.14em", color: T.info, flex: 1, minWidth: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>TRACK RECORD · 성적표</span>
         <span style={{ fontFamily: T.mono, fontSize: 13, color: T.sub, whiteSpace: "nowrap" }}>
           {K.total != null && <span>🇰🇷 <b style={{ fontFamily: T.serif, fontSize: 18, color: K.total >= 50 ? T.info : T.sell }}>{K.total}</b></span>}
           {U.total != null && <span style={{ marginLeft: 8 }}>🇺🇸 <b style={{ fontFamily: T.serif, fontSize: 18, color: U.total >= 50 ? T.info : T.sell }}>{U.total}</b></span>}
@@ -1404,11 +1424,11 @@ function TrackRecord({ refreshKey }) {
             <div style={{ color: T.sub, fontSize: 12.5, marginBottom: 4 }}>기록 {swing.length}건 — 추천일 시가 진입 기준 · 장 마감부터 채점</div>
           ) : (
             [["🇰🇷", K], ["🇺🇸", U]].map(([f, S]) => S.sEvN > 0 && (
-              <div key={f} style={{ fontFamily: T.mono, fontSize: 12.5, color: T.sub, marginBottom: 5 }}>
-                {f} {S.winRate != null ? <>승률 <b style={{ color: S.winRate >= 50 ? T.buy : T.sell }}>{S.winRate}%</b></> : "승률 —"}
-                {" · 1일 "}<b style={{ color: rc(+S.avg("r1")) }}>{S.avg("r1") ?? "—"}%</b>
-                {" · 5일 "}<b style={{ color: rc(+S.avg("r5")) }}>{S.avg("r5") ?? "—"}%</b>
-                {" · 20일 "}<b style={{ color: rc(+S.avg("r20")) }}>{S.avg("r20") ?? "—"}%</b>
+              <div key={f} style={{ fontFamily: T.mono, fontSize: 11.5, color: T.sub, marginBottom: 5, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
+                {f} {S.winRate != null ? <>승률<b style={{ color: S.winRate >= 50 ? T.buy : T.sell }}>{S.winRate}%</b></> : "승률—"}
+                {" 1일"}<b style={{ color: rc(+S.avg("r1")) }}>{S.avg("r1") ?? "—"}%</b>
+                {" 5일"}<b style={{ color: rc(+S.avg("r5")) }}>{S.avg("r5") ?? "—"}%</b>
+                {" 20일"}<b style={{ color: rc(+S.avg("r20")) }}>{S.avg("r20") ?? "—"}%</b>
               </div>
             ))
           )}
@@ -1422,8 +1442,8 @@ function TrackRecord({ refreshKey }) {
             <div style={{ color: T.sub, fontSize: 12.5, marginBottom: 4 }}>기록 {day.length}건 — 당일 시가 진입 기준 · 장 마감 후 채점</div>
           ) : (
             [["🇰🇷", K], ["🇺🇸", U]].map(([f, S]) => S.dEvN > 0 && (
-              <div key={f} style={{ fontFamily: T.mono, fontSize: 12.5, color: T.sub, marginBottom: 5 }}>
-                {f} 적중 <b style={{ color: S.hitRate >= 50 ? T.buy : T.sell }}>{S.hitRate}%</b> · 평균 <b style={{ color: rc(+S.dAvg) }}>{S.dAvg}%</b>
+              <div key={f} style={{ fontFamily: T.mono, fontSize: 11.5, color: T.sub, marginBottom: 5, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
+                {f} 적중<b style={{ color: S.hitRate >= 50 ? T.buy : T.sell }}>{S.hitRate}%</b> 평균<b style={{ color: rc(+S.dAvg) }}>{S.dAvg}%</b>
                 {S.dExp != null && <> · 기대 <b style={{ color: rc(+S.dExp) }}>{S.dExp}%</b></>}
                 {S.dPF != null && <> · PF <b style={{ color: S.dPF >= 1 ? T.buy : T.sell }}>{S.dPF}</b></>}
               </div>
@@ -1727,6 +1747,7 @@ export default function App() {
           <h1 style={{ fontFamily: T.serif, fontSize: 34, margin: 0, letterSpacing: "-0.01em" }}>
             Yoon's <span style={{ color: T.info }}>가이드</span>
           </h1>
+          <LiveClock />
         </header>
 
         {/* AI 추천 성적표 */}
