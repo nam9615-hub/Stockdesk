@@ -173,7 +173,7 @@ async function grade(entries) {
       const q = j?.chart?.result?.[0];
       if (q?.timestamp) {
         const o = q.indicators.quote[0];
-        charts[t] = q.timestamp.map((s, i) => ({ date: new Date(s * 1000).toISOString().slice(0, 10), close: o.close[i], high: o.high[i], low: o.low[i] })).filter((d) => d.close != null);
+        charts[t] = q.timestamp.map((s, i) => ({ date: new Date(s * 1000).toISOString().slice(0, 10), open: o.open[i], close: o.close[i], high: o.high[i], low: o.low[i] })).filter((d) => d.close != null);
       }
     } catch {}
   }
@@ -183,26 +183,30 @@ async function grade(entries) {
     if (p.kind === "day") {
       if (p.r1 != null) return;
       const row = d.find((x) => x.date >= e.date); if (!row) return;
-      p.r1 = +(((row.close - p.p0) / p.p0) * 100).toFixed(1);
-      p.hit = row.high >= p.p0 * (1 + (p.target || 3) / 100);
-      p.mfe = +(((row.high - p.p0) / p.p0) * 100).toFixed(1);
-      p.mae = +(((row.low - p.p0) / p.p0) * 100).toFixed(1);
-      const hitStop = row.low <= p.p0 * 0.97; // 손절 가정 -3%
+      const base = row.open || p.p0; // 실전 기준: 당일 시가 진입
+      p.gap = row.open && p.p0 ? +(((row.open - p.p0) / p.p0) * 100).toFixed(1) : null;
+      p.r1 = +(((row.close - base) / base) * 100).toFixed(1);
+      p.hit = row.high >= base * (1 + (p.target || 3) / 100);
+      p.mfe = +(((row.high - base) / base) * 100).toFixed(1);
+      p.mae = +(((row.low - base) / base) * 100).toFixed(1);
+      const hitStop = row.low <= base * 0.97; // 손절 가정 -3%
       p.touch = p.hit && hitStop ? "both" : p.hit ? "target" : hitStop ? "stop" : "none";
       p.idx = (idxMap[e.market] || {})[row.date] ?? null;
       changed = true; return;
     }
-    const i0 = d.findIndex((x) => x.date > e.date); if (i0 < 0) return;
+    const i0 = d.findIndex((x) => x.date >= e.date); if (i0 < 0) return;
+    const base = d[i0].open || p.p0; // 추천일 시가 진입 기준
+    if (p.gap == null && d[i0].open && p.p0) { p.gap = +(((d[i0].open - p.p0) / p.p0) * 100).toFixed(1); changed = true; }
     for (const [k, n] of [["r1", 1], ["r5", 5], ["r20", 20]])
       if (p[k] == null && d[i0 + n - 1]) {
-        p[k] = +(((d[i0 + n - 1].close - p.p0) / p.p0) * 100).toFixed(1);
+        p[k] = +(((d[i0 + n - 1].close - base) / base) * 100).toFixed(1);
         if (k === "r1") p.idx = (idxMap[e.market] || {})[d[i0].date] ?? null;
         changed = true;
       }
     if (p.mfe == null && d[i0 + 19]) {
       const seg = d.slice(i0, i0 + 20);
-      p.mfe = +(((Math.max(...seg.map((x) => x.high)) - p.p0) / p.p0) * 100).toFixed(1);
-      p.mae = +(((Math.min(...seg.map((x) => x.low)) - p.p0) / p.p0) * 100).toFixed(1);
+      p.mfe = +(((Math.max(...seg.map((x) => x.high)) - base) / base) * 100).toFixed(1);
+      p.mae = +(((Math.min(...seg.map((x) => x.low)) - base) / base) * 100).toFixed(1);
       changed = true;
     }
   }));
