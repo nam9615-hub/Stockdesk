@@ -841,18 +841,21 @@ async function evalHistory() {
       if (p.r1 != null) return;
       const row = d.find((x) => x.date >= e.date);
       if (!row) return;
-      p.r1 = +(((row.close - p.p0) / p.p0) * 100).toFixed(1);
-      p.hit = row.high >= p.p0 * (1 + (p.target || 3) / 100);
-      p.mfe = +(((row.high - p.p0) / p.p0) * 100).toFixed(1);
-      p.mae = +(((row.low - p.p0) / p.p0) * 100).toFixed(1);
-      const hitStop = row.low <= p.p0 * 0.97;
+      const base = row.open || p.p0; // 실전 기준: 당일 시가 진입
+      p.gap = row.open && p.p0 ? +(((row.open - p.p0) / p.p0) * 100).toFixed(1) : null;
+      p.r1 = +(((row.close - base) / base) * 100).toFixed(1);
+      p.hit = row.high >= base * (1 + (p.target || 3) / 100);
+      p.mfe = +(((row.high - base) / base) * 100).toFixed(1);
+      p.mae = +(((row.low - base) / base) * 100).toFixed(1);
+      const hitStop = row.low <= base * 0.97;
       p.touch = p.hit && hitStop ? "both" : p.hit ? "target" : hitStop ? "stop" : "none";
       p.idx = (idxMap[e.market] || {})[row.date] ?? null;
       changed = true;
       return;
     }
-    const i0 = d.findIndex((x) => x.date > e.date); if (i0 < 0) return;
-    const ret = (k) => (d[i0 + k - 1] ? +(((d[i0 + k - 1].close - p.p0) / p.p0) * 100).toFixed(1) : null);
+    const i0 = d.findIndex((x) => x.date >= e.date); if (i0 < 0) return;
+    const base = d[i0].open || p.p0; // 추천일 시가 진입 기준
+    const ret = (k) => (d[i0 + k - 1] ? +(((d[i0 + k - 1].close - base) / base) * 100).toFixed(1) : null);
     for (const [key, k] of [["r1", 1], ["r5", 5], ["r20", 20]]) {
       if (p[key] == null) { const v = ret(k); if (v != null) { p[key] = v; changed = true; } }
     }
@@ -1231,6 +1234,12 @@ function condInsights(h, market) {
   byScore(dy, (x) => x.hit, "단타 적중");
   const sw = flat.filter((p) => p.kind !== "day" && p.r5 != null);
   byScore(sw, (x) => x.r5 > 0, "스윙 5일승률");
+  // 갭 상승 조건 성과
+  const gapped = dy.filter((p) => p.gap != null && p.gap >= 4);
+  if (gapped.length >= 3) {
+    const g = pctOf(gapped, (x) => x.hit);
+    if (g <= 40) out.push(`갭상승 4%+ 시초 진입 적중 ${g}%(${gapped.length}건) → 큰 갭 종목은 추격 지양`);
+  }
   // 확신도 캘리브레이션 해석
   const hi80 = dy.filter((p) => p.score >= 80);
   if (hi80.length >= 5) {
@@ -1383,7 +1392,7 @@ function TrackRecord({ refreshKey }) {
         <>
           <div style={{ ...secT, color: T.buy }}>스윙 추천</div>
           {K.sEvN + U.sEvN === 0 ? (
-            <div style={{ color: T.sub, fontSize: 12.5, marginBottom: 4 }}>기록 {swing.length}건 — 다음 거래일부터 채점됩니다</div>
+            <div style={{ color: T.sub, fontSize: 12.5, marginBottom: 4 }}>기록 {swing.length}건 — 추천일 시가 진입 기준 · 장 마감부터 채점</div>
           ) : (
             [["🇰🇷", K], ["🇺🇸", U]].map(([f, S]) => S.sEvN > 0 && (
               <div key={f} style={{ fontFamily: T.mono, fontSize: 12.5, color: T.sub, marginBottom: 5 }}>
@@ -1401,7 +1410,7 @@ function TrackRecord({ refreshKey }) {
         <>
           <div style={{ ...secT, color: T.sell }}>⚡ 당일 단타</div>
           {K.dEvN + U.dEvN === 0 ? (
-            <div style={{ color: T.sub, fontSize: 12.5, marginBottom: 4 }}>기록 {day.length}건 — 당일 장 마감 후 채점됩니다</div>
+            <div style={{ color: T.sub, fontSize: 12.5, marginBottom: 4 }}>기록 {day.length}건 — 당일 시가 진입 기준 · 장 마감 후 채점</div>
           ) : (
             [["🇰🇷", K], ["🇺🇸", U]].map(([f, S]) => S.dEvN > 0 && (
               <div key={f} style={{ fontFamily: T.mono, fontSize: 12.5, color: T.sub, marginBottom: 5 }}>
