@@ -152,6 +152,20 @@ function historySummary(entries, market) {
 /* ── 채점 ── */
 async function grade(entries) {
   const need = [...new Set(entries.flatMap((e) => e.picks.filter((p) => p.p0 && (p.kind === "day" ? p.r1 == null : p.r20 == null)).map((p) => p.ticker)))].slice(0, 12);
+  // 시장 지수 일별 등락 맵 (실패 원인 귀속용)
+  const idxMap = {};
+  const mkts = [...new Set(entries.filter((e) => e.picks.some((p) => p.p0 && (p.kind === "day" ? p.r1 == null : p.r20 == null))).map((e) => e.market))];
+  for (const m of mkts) {
+    try {
+      const j = await (await fetch(`https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(m === "KR" ? "^KS11" : "^GSPC")}?range=6mo&interval=1d`, UA)).json();
+      const q = j?.chart?.result?.[0];
+      if (q?.timestamp) {
+        const c = q.indicators.quote[0].close;
+        idxMap[m] = {};
+        q.timestamp.forEach((s, i) => { if (i > 0 && c[i] != null && c[i - 1] != null) idxMap[m][new Date(s * 1000).toISOString().slice(0, 10)] = +(((c[i] - c[i - 1]) / c[i - 1]) * 100).toFixed(2); });
+      }
+    } catch {}
+  }
   const charts = {};
   for (const t of need) {
     try {
@@ -159,7 +173,7 @@ async function grade(entries) {
       const q = j?.chart?.result?.[0];
       if (q?.timestamp) {
         const o = q.indicators.quote[0];
-        charts[t] = q.timestamp.map((s, i) => ({ date: new Date(s * 1000).toISOString().slice(0, 10), close: o.close[i], high: o.high[i] })).filter((d) => d.close != null);
+        charts[t] = q.timestamp.map((s, i) => ({ date: new Date(s * 1000).toISOString().slice(0, 10), close: o.close[i], high: o.high[i], low: o.low[i] })).filter((d) => d.close != null);
       }
     } catch {}
   }
@@ -171,18 +185,44 @@ async function grade(entries) {
       const row = d.find((x) => x.date >= e.date); if (!row) return;
       p.r1 = +(((row.close - p.p0) / p.p0) * 100).toFixed(1);
       p.hit = row.high >= p.p0 * (1 + (p.target || 3) / 100);
+      p.mfe = +(((row.high - p.p0) / p.p0) * 100).toFixed(1);
+      p.mae = +(((row.low - p.p0) / p.p0) * 100).toFixed(1);
+      const hitStop = row.low <= p.p0 * 0.97; // 손절 가정 -3%
+      p.touch = p.hit && hitStop ? "both" : p.hit ? "target" : hitStop ? "stop" : "none";
+      p.idx = (idxMap[e.market] || {})[row.date] ?? null;
       changed = true; return;
     }
     const i0 = d.findIndex((x) => x.date > e.date); if (i0 < 0) return;
     for (const [k, n] of [["r1", 1], ["r5", 5], ["r20", 20]])
-      if (p[k] == null && d[i0 + n - 1]) { p[k] = +(((d[i0 + n - 1].close - p.p0) / p.p0) * 100).toFixed(1); changed = true; }
+      if (p[k] == null && d[i0 + n - 1]) {
+        p[k] = +(((d[i0 + n - 1].close - p.p0) / p.p0) * 100).toFixed(1);
+        if (k === "r1") p.idx = (idxMap[e.market] || {})[d[i0].date] ?? null;
+        changed = true;
+      }
+    if (p.mfe == null && d[i0 + 19]) {
+      const seg = d.slice(i0, i0 + 20);
+      p.mfe = +(((Math.max(...seg.map((x) => x.high)) - p.p0) / p.p0) * 100).toFixed(1);
+      p.mae = +(((Math.min(...seg.map((x) => x.low)) - p.p0) / p.p0) * 100).toFixed(1);
+      changed = true;
+    }
   }));
   return changed;
 }
 
-const promptKR = (data, learn) => `너는 한국 주식 스윙 트레이더(2~4주 보유)다. 아래는 오늘 상승률·거래량 상위 후보와 각 종목의 실제 최신 뉴스다.\n\n[후보]\n${data}\n\n${learn}\n임무: 급등 추격이 아니라 재료 지속성 기준으로 선별. 반드시 아래 JSON만 출력(마크다운 금지): {"brief":"시장 브리핑 2~3문장(한국어)","picks":[{"name":"종목명","ticker":"6자리코드.KS","score":0~100,"reason":"근거 2문장","catalyst":"핵심 재료","risk":"주의점"}],"day_picks":[{"name":"종목명","ticker":"6자리코드.KS","score":0~100,"target_pct":정수(2~10),"reason":"단타 사유","risk":"주의"}]} picks 3개, day_picks 3개(장중 청산 전제), 반드시 후보 안에서만.`;
-const promptUS = (data, learn) => `너는 미국 주식 스윙 트레이더다. 아래는 오늘 미국장 상승률 상위 후보와 실제 뉴스다.\n\n[후보]\n${data}\n\n${learn}\n반드시 아래 JSON만 출력(마크다운 금지): {"brief":"브리핑 2~3문장(한국어)","picks":[{"name":"종목명","ticker":"티커","score":0~100,"reason":"근거 2문장(한국어)","catalyst":"핵심 재료","risk":"주의"}],"day_picks":[{"name":"종목명","ticker":"티커","score":0~100,"target_pct":정수(2~10),"reason":"단타 사유(한국어)","risk":"주의"}]} picks 3개, day_picks 3개, 후보 안에서만.`;
+const promptKR = (data, learn) => `너는 한국 주식 스윙 트레이더(2~4주 보유)다. 아래는 오늘 상승률·거래량 상위 후보와 각 종목의 실제 최신 뉴스다.\n\n[후보]\n${data}\n\n${learn}\n임무: 급등 추격이 아니라 재료 지속성 기준으로 선별. 반드시 아래 JSON만 출력(마크다운 금지): {"brief":"시장 브리핑 2~3문장(한국어)","picks":[{"name":"종목명","ticker":"6자리코드.KS","score":0~100,"sector":"업종·테마 한 단어","basis":["근거코드 배열 — 뉴스재료/실적/수주계약/정책테마/거래량급증/추세지속/낙폭과대/신고가 중 해당되는 것"],"reason":"근거 2문장","catalyst":"핵심 재료","risk":"주의점"}],"day_picks":[{"name":"종목명","ticker":"6자리코드.KS","score":0~100,"target_pct":정수(2~10),"sector":"업종·테마 한 단어","basis":["근거코드 배열(위와 동일 목록)"],"reason":"단타 사유","risk":"주의"}]} picks 3개, day_picks 3개(장중 청산 전제), 반드시 후보 안에서만. 단, 확률 우위가 있는 후보가 부족하면 억지로 채우지 말고 해당 배열을 줄이거나 비우고 brief에 보류 사유를 밝혀라.`;
+const promptUS = (data, learn) => `너는 미국 주식 스윙 트레이더다. 아래는 오늘 미국장 상승률 상위 후보와 실제 뉴스다.\n\n[후보]\n${data}\n\n${learn}\n반드시 아래 JSON만 출력(마크다운 금지): {"brief":"브리핑 2~3문장(한국어)","picks":[{"name":"종목명","ticker":"티커","score":0~100,"sector":"업종 한 단어(한국어)","basis":["근거코드 — 뉴스재료/실적/수주계약/정책테마/거래량급증/추세지속/낙폭과대/신고가"],"reason":"근거 2문장(한국어)","catalyst":"핵심 재료","risk":"주의"}],"day_picks":[{"name":"종목명","ticker":"티커","score":0~100,"target_pct":정수(2~10),"sector":"업종 한 단어(한국어)","basis":["근거코드(위 목록)"],"reason":"단타 사유(한국어)","risk":"주의"}]} picks 3개, day_picks 3개, 후보 안에서만. 확률 우위 후보가 부족하면 배열을 줄이거나 비우고 brief에 보류 사유를 밝혀라.`;
 
+async function regimeOf(market) {
+  try {
+    const j = await (await fetch(`https://query1.finance.yahoo.com/v8/finance/chart/${market === "KR" ? "%5EKS11" : "%5EGSPC"}?range=6mo&interval=1d`, UA)).json();
+    const c = (j?.chart?.result?.[0]?.indicators?.quote?.[0]?.close || []).filter((x) => x != null);
+    if (c.length < 60) return null;
+    const last = c[c.length - 1];
+    const s20 = c.slice(-20).reduce((a, b) => a + b, 0) / 20;
+    const s60 = c.slice(-60).reduce((a, b) => a + b, 0) / 60;
+    return last > s20 && last > s60 ? "상승" : last < s20 && last < s60 ? "하락" : "혼조";
+  } catch { return null; }
+}
 export default async function handler(req, res) {
   const job = String(req.query.job || "").toUpperCase();
   if (!process.env.GH_TOKEN || !process.env.GH_REPO) return res.status(501).json({ error: "GH_TOKEN / GH_REPO 환경변수 필요" });
@@ -208,11 +248,12 @@ export default async function handler(req, res) {
           const all = [...j.picks, ...j.day_picks];
           const prices = {};
           for (const p of [...new Set(all.map((x) => x.ticker))]) prices[p] = await quotePrice(p);
+          const regime = await regimeOf(job);
           hist.entries.push({
-            date: today, market: job,
+            date: today, market: job, regime,
             picks: [
-              ...j.picks.map((p) => ({ kind: "swing", name: p.name, ticker: p.ticker, score: p.score, p0: prices[p.ticker] || null, r1: null, r5: null, r20: null })),
-              ...j.day_picks.map((p) => ({ kind: "day", name: p.name, ticker: p.ticker, score: p.score, target: +p.target_pct || 3, p0: prices[p.ticker] || null, r1: null, hit: null })),
+              ...j.picks.map((p) => ({ kind: "swing", name: p.name, ticker: p.ticker, score: p.score, sector: p.sector || null, basis: p.basis || [], p0: prices[p.ticker] || null, r1: null, r5: null, r20: null })),
+              ...j.day_picks.map((p) => ({ kind: "day", name: p.name, ticker: p.ticker, score: p.score, target: +p.target_pct || 3, sector: p.sector || null, basis: p.basis || [], p0: prices[p.ticker] || null, r1: null, hit: null })),
             ],
           });
           const { sha: ls } = await ghRead(`data/latest-${job}.json`);

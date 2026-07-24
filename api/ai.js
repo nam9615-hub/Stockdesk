@@ -181,7 +181,7 @@ export default async function handler(req, res) {
       return res.status(200).json({ brief: "미국장 프리픽은 AI 키 등록 시 활성화됩니다 (GEMINI_API_KEY 무료 발급 가능).", picks: [] });
     }
     if (kind === "review") {
-      const prompt = `너는 트레이딩 코치다. 아래는 이 앱이 과거에 낸 추천과 매수/매도 가이드의 실측 성적이다.\n\n${String(history || "").slice(0, 1500)}\n\n기계적 수치 반복이 아니라 정성적으로 복기해라: 어떤 유형의 추천이 통했고 어떤 유형이 실패했는지, 공통 패턴은 무엇인지, 다음 추천에서 무엇을 바꿔야 종합 점수가 오를지. 반드시 아래 JSON만 출력(마크다운 금지): {"comment":"정성 총평 2~3문장(한국어)","lessons":["구체적 교훈 한 줄", "..."] (최대 3개),"focus":"다음 추천에서 가장 집중할 개선점 한 줄"}`;
+      const prompt = `너는 트레이딩 코치다. 아래는 이 앱의 실측 성적과 통계 엔진이 도출한 [규칙]들이다.\n\n${String(history || "").slice(0, 1800)}\n\n역할 구분: 강제 규칙 제정은 통계 엔진의 몫이다. 너는 숫자를 해석하고 '가설'만 제안하라. 표본이 적은 패턴(5건 미만)으로 단정하지 말고, 시장 요인과 선정 요인을 구분해서 평가하라. 성공률만이 아니라 손익비·기대수익 관점도 언급하라. 반드시 아래 JSON만 출력(마크다운 금지): {"comment":"정성 총평 2~3문장(한국어) — 시장 탓인지 선정 탓인지 구분 포함","lessons":["검증 대기 가설 한 줄", "..."] (최대 3개, 각각 근거 표본 수 명시),"focus":"다음 추천에서 가장 집중할 개선점 한 줄"}`;
       if (claudeKey) return res.status(200).json(await callClaude(claudeKey, prompt));
       if (geminiKey) return res.status(200).json(await gemini(geminiKey, prompt));
       return res.status(200).json({ comment: "AI 키 등록 시 정성 평가가 활성화됩니다.", lessons: [], focus: "" });
