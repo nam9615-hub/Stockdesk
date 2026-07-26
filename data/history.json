@@ -215,6 +215,106 @@
      "idx": -0.07
     }
    ]
+  },
+  {
+   "date": "2026-07-27",
+   "market": "KR",
+   "regime": "하락",
+   "picks": [
+    {
+     "kind": "swing",
+     "name": "삼성전자",
+     "ticker": "005930.KS",
+     "score": 85,
+     "sector": "반도체",
+     "basis": [
+      "뉴스재료",
+      "정책테마",
+      "추세지속"
+     ],
+     "p0": 249500,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "SK하이닉스",
+     "ticker": "006600.KS",
+     "score": 80,
+     "sector": "반도체",
+     "basis": [
+      "뉴스재료",
+      "신고가",
+      "추세지속"
+     ],
+     "p0": null,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "LG에너지솔루션",
+     "ticker": "373220.KS",
+     "score": 78,
+     "sector": "이차전지",
+     "basis": [
+      "뉴스재료",
+      "신사업확대",
+      "낙폭과대"
+     ],
+     "p0": 329500,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "day",
+     "name": "삼성전자",
+     "ticker": "005930.KS",
+     "score": 82,
+     "target": 4,
+     "sector": "반도체",
+     "basis": [
+      "뉴스재료",
+      "정책테마"
+     ],
+     "p0": 249500,
+     "r1": null,
+     "hit": null
+    },
+    {
+     "kind": "day",
+     "name": "SK하이닉스",
+     "ticker": "006600.KS",
+     "score": 80,
+     "target": 5,
+     "sector": "반도체",
+     "basis": [
+      "뉴스재료",
+      "추세지속"
+     ],
+     "p0": null,
+     "r1": null,
+     "hit": null
+    },
+    {
+     "kind": "day",
+     "name": "LG에너지솔루션",
+     "ticker": "373220.KS",
+     "score": 75,
+     "target": 3,
+     "sector": "이차전지",
+     "basis": [
+      "뉴스재료",
+      "낙폭과대"
+     ],
+     "p0": 329500,
+     "r1": null,
+     "hit": null
+    }
+   ]
   }
  ]
 }
