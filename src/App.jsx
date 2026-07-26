@@ -1309,6 +1309,28 @@ function fullHistoryStr(market) {
   return parts.filter(Boolean).join(" ");
 }
 
+function paperSim(h, market) {
+  const START = 5000000; // 초기 500만원 (시장별)
+  const trades = [], open = [];
+  h.filter((e) => e.market === market).forEach((e) => (e.picks || []).forEach((p) => {
+    const w = p.kind === "day" ? 0.15 : 0.10; // 배분: 단타 15% · 스윙 10%
+    if (p.simR != null) trades.push({ d: p.simD || e.date, r: p.simR, w, kind: p.kind, name: p.name, exit: p.simExit });
+    else if (p.simOpen != null) open.push({ r: p.simOpen, w, name: p.name });
+  }));
+  if (!trades.length && !open.length) return null;
+  trades.sort((a, b) => (a.d < b.d ? -1 : 1));
+  let eq = START;
+  trades.forEach((t) => { eq *= 1 + (t.w * t.r) / 100; });
+  let evalEq = eq;
+  open.forEach((o) => { evalEq *= 1 + (o.w * o.r) / 100; });
+  return {
+    start: START, realized: Math.round(eq), evalEq: Math.round(evalEq),
+    ret: +(((evalEq - START) / START) * 100).toFixed(2),
+    nT: trades.length, nOpen: open.length,
+    wins: trades.filter((t) => t.r > 0).length,
+  };
+}
+
 function TrackRecord({ refreshKey }) {
   const [hist, setHist] = useState(null);
   const [vh, setVh] = useState([]);
@@ -1424,6 +1446,26 @@ function TrackRecord({ refreshKey }) {
         </div>
       )}
       {open && (<div style={{ maxHeight: 470, overflowY: "auto", WebkitOverflowScrolling: "touch", marginTop: 6, paddingRight: 6, overscrollBehavior: "contain" }}>
+      {(() => {
+        const pk = paperSim(hist, "KR"), pu = paperSim(hist, "US");
+        if (!pk && !pu) return null;
+        const line = (f, s) => s && (
+          <div style={{ fontFamily: T.mono, fontSize: 12, color: T.sub, lineHeight: 1.8, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
+            {f} <b style={{ fontFamily: T.serif, fontSize: 15, color: T.ink }}>{fmt(s.evalEq)}원</b>
+            <b style={{ color: s.ret >= 0 ? T.buy : T.sell }}> ({s.ret >= 0 ? "+" : ""}{s.ret}%)</b>
+            <span style={{ color: T.faint }}> · 청산 {s.nT}건(승 {s.wins}){s.nOpen ? ` · 보유 ${s.nOpen}건 평가 포함` : ""}</span>
+          </div>
+        );
+        return (
+          <div style={{ background: "rgba(93,211,158,0.05)", border: `1px solid ${T.buy}33`, borderRadius: 12, padding: 12, marginBottom: 12 }}>
+            <div style={{ fontFamily: T.mono, fontSize: 10.5, color: T.buy, letterSpacing: "0.14em", marginBottom: 6, whiteSpace: "nowrap" }}>🤖 가상 자동매매 · 시장별 초기 500만원</div>
+            {line("🇰🇷", pk)}{line("🇺🇸", pu)}
+            <div style={{ fontSize: 10.5, color: T.faint, marginTop: 6, lineHeight: 1.6 }}>
+              규칙: 시가 매수 · 단타 −3%손절/목표 익절/종가 청산 · 스윙 −5%손절/+10% 익절/20일 청산 · 배분 단타15%/스윙10% 복리 · 동시터치 시 손절 가정(보수적)
+            </div>
+          </div>
+        );
+      })()}
       {swing.length > 0 && (
         <>
           <div style={{ ...secT, color: T.buy }}>스윙 추천</div>
