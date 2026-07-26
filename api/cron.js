@@ -192,6 +192,10 @@ async function grade(entries) {
       p.mae = +(((row.low - base) / base) * 100).toFixed(1);
       const hitStop = row.low <= base * 0.97; // 손절 가정 -3%
       p.touch = p.hit && hitStop ? "both" : p.hit ? "target" : hitStop ? "stop" : "none";
+      // 가상매매: 시가 매수 → 손절 -3% / 목표 익절 / 종가 청산 (동시 터치 시 손절 가정)
+      p.simR = hitStop ? -3 : p.hit ? (p.target || 3) : p.r1;
+      p.simExit = hitStop ? "stop" : p.hit ? "target" : "close";
+      p.simD = row.date;
       p.idx = (idxMap[e.market] || {})[row.date] ?? null;
       changed = true; return;
     }
@@ -206,17 +210,33 @@ async function grade(entries) {
         changed = true;
       }
     if (p.mfe == null && d[i0 + 19]) {
-      const seg = d.slice(i0, i0 + 20);
-      p.mfe = +(((Math.max(...seg.map((x) => x.high)) - base) / base) * 100).toFixed(1);
-      p.mae = +(((Math.min(...seg.map((x) => x.low)) - base) / base) * 100).toFixed(1);
+      const seg20 = d.slice(i0, i0 + 20);
+      p.mfe = +(((Math.max(...seg20.map((x) => x.high)) - base) / base) * 100).toFixed(1);
+      p.mae = +(((Math.min(...seg20.map((x) => x.low)) - base) / base) * 100).toFixed(1);
       changed = true;
+    }
+    // 가상매매(스윙): 시가 매수 → -5% 손절 / +10% 익절 / 20일 후 종가 청산 (동시 터치 시 손절 가정)
+    if (p.simR == null) {
+      const seg = d.slice(i0, i0 + 20);
+      let exited = false;
+      for (const s of seg) {
+        if (s.low <= base * 0.95) { p.simR = -5; p.simExit = "stop"; p.simD = s.date; exited = true; changed = true; break; }
+        if (s.high >= base * 1.10) { p.simR = 10; p.simExit = "target"; p.simD = s.date; exited = true; changed = true; break; }
+      }
+      if (!exited) {
+        if (seg.length >= 20) { p.simR = +(((seg[19].close - base) / base) * 100).toFixed(1); p.simExit = "time"; p.simD = seg[19].date; changed = true; }
+        else if (seg.length) {
+          const u = +(((seg[seg.length - 1].close - base) / base) * 100).toFixed(1);
+          if (p.simOpen !== u) { p.simOpen = u; changed = true; }
+        }
+      } else { delete p.simOpen; }
     }
   }));
   return changed;
 }
 
-const promptKR = (data, learn) => `너는 한국 주식 스윙 트레이더(2~4주 보유)다. 아래는 오늘 상승률·거래량 상위 후보와 각 종목의 실제 최신 뉴스다.\n\n[후보]\n${data}\n\n${learn}\n임무: 급등 추격이 아니라 재료 지속성 기준으로 선별. 반드시 아래 JSON만 출력(마크다운 금지): {"brief":"시장 브리핑 2~3문장(한국어)","picks":[{"name":"종목명","ticker":"6자리코드.KS","score":0~100,"sector":"업종·테마 한 단어","basis":["근거코드 배열 — 뉴스재료/실적/수주계약/정책테마/거래량급증/추세지속/낙폭과대/신고가 중 해당되는 것"],"reason":"근거 2문장","catalyst":"핵심 재료","risk":"주의점"}],"day_picks":[{"name":"종목명","ticker":"6자리코드.KS","score":0~100,"target_pct":정수(2~10),"sector":"업종·테마 한 단어","basis":["근거코드 배열(위와 동일 목록)"],"reason":"단타 사유","risk":"주의"}]} picks 3개, day_picks 3개(장중 청산 전제), 반드시 후보 안에서만. 단, 확률 우위가 있는 후보가 부족하면 억지로 채우지 말고 해당 배열을 줄이거나 비우고 brief에 보류 사유를 밝혀라.`;
-const promptUS = (data, learn) => `너는 미국 주식 스윙 트레이더다. 아래는 오늘 미국장 상승률 상위 후보와 실제 뉴스다.\n\n[후보]\n${data}\n\n${learn}\n반드시 아래 JSON만 출력(마크다운 금지): {"brief":"브리핑 2~3문장(한국어)","picks":[{"name":"종목명","ticker":"티커","score":0~100,"sector":"업종 한 단어(한국어)","basis":["근거코드 — 뉴스재료/실적/수주계약/정책테마/거래량급증/추세지속/낙폭과대/신고가"],"reason":"근거 2문장(한국어)","catalyst":"핵심 재료","risk":"주의"}],"day_picks":[{"name":"종목명","ticker":"티커","score":0~100,"target_pct":정수(2~10),"sector":"업종 한 단어(한국어)","basis":["근거코드(위 목록)"],"reason":"단타 사유(한국어)","risk":"주의"}]} picks 3개, day_picks 3개, 후보 안에서만. 확률 우위 후보가 부족하면 배열을 줄이거나 비우고 brief에 보류 사유를 밝혀라.`;
+const promptKR = (data, learn) => `너는 한국 주식 스윙 트레이더(2~4주 보유)다. 아래는 오늘 상승률·거래량 상위 후보와 각 종목의 실제 최신 뉴스다.\n\n[후보]\n${data}\n\n${learn}\n임무: 급등 추격이 아니라 재료 지속성 기준으로 선별. 반드시 아래 JSON만 출력(마크다운 금지): {"brief":"시장 브리핑 2~3문장(한국어)","picks":[{"name":"종목명","ticker":"6자리코드.KS","score":0~100,"sector":"업종·테마 한 단어","basis":["근거코드 배열 — 뉴스재료/실적/수주계약/정책테마/거래량급증/추세지속/낙폭과대/신고가 중 해당되는 것"],"reason":"근거 2문장","catalyst":"핵심 재료","risk":"주의점"}],"day_picks":[{"name":"종목명","ticker":"6자리코드.KS","score":0~100,"target_pct":정수(2~10),"sector":"업종·테마 한 단어","basis":["근거코드 배열(위와 동일 목록)"],"reason":"단타 사유","risk":"주의"}]} picks 3개, day_picks 3개(장중 청산 전제), 반드시 후보 안에서만. 스윙은 2~4주 재료의 지속성, 단타는 당일 수급·변동성·모멘텀이라는 서로 다른 기준으로 관점을 분리해 선정하라. day_picks는 picks와 원칙적으로 다른 종목이어야 하며, 동일 종목은 두 관점 모두에서 압도적 우위일 때만 허용하고 그 경우 reason에 이유를 명시하라. 확률 우위가 있는 후보가 부족하면 억지로 채우지 말고 배열을 줄이거나 비우고 brief에 보류 사유를 밝혀라.`;
+const promptUS = (data, learn) => `너는 미국 주식 스윙 트레이더다. 아래는 오늘 미국장 상승률 상위 후보와 실제 뉴스다.\n\n[후보]\n${data}\n\n${learn}\n반드시 아래 JSON만 출력(마크다운 금지): {"brief":"브리핑 2~3문장(한국어)","picks":[{"name":"종목명","ticker":"티커","score":0~100,"sector":"업종 한 단어(한국어)","basis":["근거코드 — 뉴스재료/실적/수주계약/정책테마/거래량급증/추세지속/낙폭과대/신고가"],"reason":"근거 2문장(한국어)","catalyst":"핵심 재료","risk":"주의"}],"day_picks":[{"name":"종목명","ticker":"티커","score":0~100,"target_pct":정수(2~10),"sector":"업종 한 단어(한국어)","basis":["근거코드(위 목록)"],"reason":"단타 사유(한국어)","risk":"주의"}]} picks 3개, day_picks 3개, 후보 안에서만. 스윙(재료 지속성)과 단타(당일 모멘텀)는 관점을 분리하고, day_picks는 picks와 원칙적으로 다른 종목으로 선정하라(겹치면 reason에 이유 명시). 확률 우위 후보가 부족하면 배열을 줄이거나 비우고 brief에 보류 사유를 밝혀라.`;
 
 async function regimeOf(market) {
   try {
