@@ -179,6 +179,13 @@ async function grade(entries) {
   }
   let changed = false;
   entries.forEach((e) => e.picks.forEach((p) => {
+    // 소급 가상체결: 기능 배포 전 이미 채점된 단타 (차트 없이 저장값으로 계산)
+    if (p.kind === "day" && p.r1 != null && p.simR == null && p.mae != null) {
+      p.simR = p.mae <= -3 ? -3 : p.hit ? (p.target || 3) : p.r1;
+      p.simExit = p.mae <= -3 ? "stop" : p.hit ? "target" : "close";
+      p.simD = e.date;
+      changed = true;
+    }
     const d = charts[p.ticker]; if (!d || !p.p0) return;
     if (p.kind === "day") {
       if (p.r1 != null) return;
