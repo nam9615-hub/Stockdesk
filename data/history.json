@@ -65,7 +65,10 @@
      "mfe": 26,
      "mae": -5.8,
      "touch": "both",
-     "idx": -5.72
+     "idx": -5.72,
+     "simR": -3,
+     "simExit": "stop",
+     "simD": "2026-07-24"
     },
     {
      "kind": "day",
@@ -80,7 +83,10 @@
      "mfe": 8.5,
      "mae": -6.6,
      "touch": "both",
-     "idx": -5.72
+     "idx": -5.72,
+     "simR": -3,
+     "simExit": "stop",
+     "simD": "2026-07-24"
     },
     {
      "kind": "day",
@@ -95,7 +101,10 @@
      "mfe": 9.7,
      "mae": -7.5,
      "touch": "both",
-     "idx": -5.72
+     "idx": -5.72,
+     "simR": -3,
+     "simExit": "stop",
+     "simD": "2026-07-24"
     }
    ]
   },
@@ -183,7 +192,10 @@
      "mfe": 5.6,
      "mae": -0.6,
      "touch": "none",
-     "idx": -0.07
+     "idx": -0.07,
+     "simR": 3.2,
+     "simExit": "close",
+     "simD": "2026-07-24"
     },
     {
      "kind": "day",
@@ -204,7 +216,10 @@
      "mfe": 3.7,
      "mae": -1.5,
      "touch": "none",
-     "idx": -0.07
+     "idx": -0.07,
+     "simR": 0.7,
+     "simExit": "close",
+     "simD": "2026-07-24"
     },
     {
      "kind": "day",
@@ -224,7 +239,10 @@
      "mfe": 3.5,
      "mae": 0,
      "touch": "none",
-     "idx": -0.07
+     "idx": -0.07,
+     "simR": 2.7,
+     "simExit": "close",
+     "simD": "2026-07-24"
     }
    ]
   },
