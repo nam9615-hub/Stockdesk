@@ -1450,7 +1450,7 @@ function TrackRecord({ refreshKey }) {
         const pk = paperSim(hist, "KR"), pu = paperSim(hist, "US");
         if (!pk && !pu) return null;
         const line = (f, s) => s && (
-          <div style={{ fontFamily: T.mono, fontSize: 12, color: T.sub, lineHeight: 1.8, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
+          <div style={{ fontFamily: T.mono, fontSize: 12, color: T.sub, lineHeight: 1.8 }}>
             {f} <b style={{ fontFamily: T.serif, fontSize: 15, color: T.ink }}>{fmt(s.evalEq)}원</b>
             <b style={{ color: s.ret >= 0 ? T.buy : T.sell }}> ({s.ret >= 0 ? "+" : ""}{s.ret}%)</b>
             <span style={{ color: T.faint }}> · 청산 {s.nT}건(승 {s.wins}){s.nOpen ? ` · 보유 ${s.nOpen}건 평가 포함` : ""}</span>
