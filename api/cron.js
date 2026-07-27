@@ -276,13 +276,17 @@ async function grade(entries) {
   }));
   for (const p of broken.slice(0, 3)) {
     try {
-      const q = encodeURIComponent(p.name.replace(/\s/g, ""));
-      const j = await (await fetch(`https://m.stock.naver.com/api/search/all?query=${q}`, UA)).json();
-      const items = j?.stocks || j?.result?.stocks || j?.items || [];
-      const hit = (Array.isArray(items) ? items : []).find((x) => String(x.stockName || x.name || "").replace(/\s/g, "") === p.name.replace(/\s/g, ""));
-      const code = hit && String(hit.itemCode || hit.code || hit.reutersCode || "").match(/\d{6}/)?.[0];
-      if (!code) continue;
-      const { rows, ticker } = await fetchDaily(`${code}.KS`, "3mo");
+      // 검증된 검색 엔드포인트 (api/search.js와 동일)로 이름→코드 해석
+      const r = await fetch(`https://m.stock.naver.com/front-api/search/autoComplete?query=${encodeURIComponent(p.name.replace(/\s/g, ""))}&target=stock`, UA);
+      const jj = await r.json();
+      const arr = jj?.result?.items || jj?.items || [];
+      const nm = p.name.replace(/\s/g, "");
+      const hit = arr.find((it) => String(it.name || it.stockName || it.itemName || "").replace(/\s/g, "") === nm) || arr[0];
+      const code = String(hit?.code || hit?.itemCode || hit?.reutersCode || "").match(/\d{6}/)?.[0];
+      if (!code || `${code}` === p.ticker.slice(0, 6)) continue;
+      const mkt = String(hit?.typeCode || hit?.category || hit?.market || (hit?.stockExchangeType && (hit.stockExchangeType.name || hit.stockExchangeType)) || "");
+      const sfx = /KOSDAQ|코스닥/i.test(mkt) ? ".KQ" : ".KS";
+      const { rows, ticker } = await fetchDaily(`${code}${sfx}`, "3mo");
       if (rows) { charts[p.ticker] = rows; charts[ticker] = rows; p.ticker = ticker; changedT = true; }
     } catch {}
   }
