@@ -90,7 +90,7 @@ async function gatherKR() {
     const news = await naverNews(s.code, i < 10 ? 2 : 1);
     return `${s.name}(${s.tk}) | 뉴스: ${news.join(" / ") || "없음"}`;
   }));
-  return { text: note + rows.join("\n"), allowed: cands.map((s) => s.tk) };
+  return { text: note + rows.join("\n"), allowed: cands.map((s) => ({ t: s.tk, n: s.name })) };
 }
 async function gatherUS() {
   try {
@@ -105,7 +105,7 @@ async function gatherUS() {
       const news = await yahooNews(q.symbol, i < 10 ? 2 : 1);
       return `${q.symbol} ${q.shortName || ""} ${(q.regularMarketChangePercent || 0).toFixed(1)}% $${(q.regularMarketPrice || 0).toFixed(2)} | 뉴스: ${news.join(" / ") || "없음"}`;
     }));
-    return { text: rows.join("\n"), allowed: qs.map((q) => q.symbol) };
+    return { text: rows.join("\n"), allowed: qs.map((q) => ({ t: q.symbol, n: q.shortName || q.symbol })) };
   } catch { return { text: "", allowed: [] }; }
 }
 
@@ -268,6 +268,24 @@ async function grade(entries) {
   let changed = false;
   let changedT = false;
   entries.forEach((e) => (e.picks || []).forEach((p) => { if (fixmap[p.ticker] && fixmap[p.ticker] !== p.ticker) { p.ticker = fixmap[p.ticker]; changedT = true; } }));
+  // 자가 치유: 차트 조회가 안 되는 국내 픽은 종목명으로 정답 티커를 찾아 교정 (AI 티커 오타 대응)
+  const broken = [];
+  entries.forEach((e) => (e.picks || []).forEach((p) => {
+    const pending = p.kind === "day" ? p.r1 == null : p.r20 == null;
+    if (pending && /^\d{6}\.(KS|KQ)$/i.test(p.ticker) && !charts[p.ticker] && need.includes(p.ticker) && p.name) broken.push(p);
+  }));
+  for (const p of broken.slice(0, 3)) {
+    try {
+      const q = encodeURIComponent(p.name.replace(/\s/g, ""));
+      const j = await (await fetch(`https://m.stock.naver.com/api/search/all?query=${q}`, UA)).json();
+      const items = j?.stocks || j?.result?.stocks || j?.items || [];
+      const hit = (Array.isArray(items) ? items : []).find((x) => String(x.stockName || x.name || "").replace(/\s/g, "") === p.name.replace(/\s/g, ""));
+      const code = hit && String(hit.itemCode || hit.code || hit.reutersCode || "").match(/\d{6}/)?.[0];
+      if (!code) continue;
+      const { rows, ticker } = await fetchDaily(`${code}.KS`, "3mo");
+      if (rows) { charts[p.ticker] = rows; charts[ticker] = rows; p.ticker = ticker; changedT = true; }
+    } catch {}
+  }
   entries.forEach((e) => e.picks.forEach((p) => {
     // 소급 가상체결: 기능 배포 전 이미 채점된 단타 (차트 없이 저장값으로 계산)
     if (p.kind === "day" && p.r1 != null && p.simR == null && p.mae != null) {
@@ -557,17 +575,21 @@ export default async function handler(req, res) {
           ].filter(Boolean).join("\n");
           const j = await askAI(job === "KR" ? promptKR(data, learn) : promptUS(data, learn));
           // 출력 검증: 후보 화이트리스트(코스닥 접미사 오기 허용)·중복 제거·점수 클램프
-          const allow = allowedT.map((x) => String(x).toUpperCase());
-          const okT = (t) => {
+          const allow = allowedT.map((x) => ({ t: String(x.t || x).toUpperCase(), n: String(x.n || "").replace(/\s/g, "") }));
+          const allowTk = allow.map((a) => a.t);
+          const okT = (t, name) => {
             t = String(t || "").toUpperCase().trim();
-            if (allow.includes(t)) return t;
+            if (allowTk.includes(t)) return t;
             const m = t.match(/^(\d{6})/);
-            if (m) { const hit = allow.find((a) => a.startsWith(m[1])); if (hit) return hit; }
+            if (m) { const hit = allowTk.find((a) => a.startsWith(m[1])); if (hit) return hit; }
+            // 티커 오타 → 이름으로 정답 복구 (예: 하이닉스 006600 오기 → 000660)
+            const nm = String(name || "").replace(/\s/g, "");
+            if (nm) { const byName = allow.find((a) => a.n && (a.n === nm || a.n.includes(nm) || nm.includes(a.n))); if (byName) return byName.t; }
             return null;
           };
           const seenS = new Set();
           const normP = (arr, max, tag) => (arr || []).map((p) => {
-            const t = okT(p.ticker); if (!t || seenS.has(tag + t)) return null;
+            const t = okT(p.ticker, p.name); if (!t || seenS.has(tag + t)) return null;
             seenS.add(tag + t);
             const s = Math.round(+p.score);
             return { ...p, ticker: t, score: Number.isFinite(s) ? Math.max(0, Math.min(100, s)) : 50 };
@@ -583,7 +605,7 @@ export default async function handler(req, res) {
           }).filter(Boolean).slice(0, 20);
           // LLM이 평가 누락한 후보 자동 보완 (선택능력 통계 왜곡 방지)
           const haveC = new Set(cands.map((c) => c.ticker));
-          allow.forEach((t, i) => { if (!haveC.has(t) && cands.length < 20) cands.push({ ticker: t, rank: 90 + i, verdict: "관찰", why: "LLM 평가 누락", miss: 1, r1: null }); });
+          allowTk.forEach((t, i) => { if (!haveC.has(t) && cands.length < 20) cands.push({ ticker: t, rank: 90 + i, verdict: "관찰", why: "LLM 평가 누락", miss: 1, r1: null }); });
           const prices = {};
           for (const p of [...new Set(j.picks.map((x) => x.ticker))]) prices[p] = await quotePrice(p);
           const regime = regimeNow;
