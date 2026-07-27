@@ -165,20 +165,7 @@ export default async function handler(req, res) {
     }
 
     if (kind === "picks") {
-      if (market === "KR") {
-        const data = await gatherKR();
-        if (claudeKey) return res.status(200).json(await callClaude(claudeKey, picksKRPrompt(data) + learn));
-        if (geminiKey) return res.status(200).json(await gemini(geminiKey, picksKRPrompt(data) + learn));
-        return res.status(200).json({ brief: "AI 키가 없습니다. GEMINI_API_KEY(구글 무료 키)를 Vercel 환경변수에 등록하면 실제 뉴스 기반 AI 선별 추천이 활성화됩니다. aistudio.google.com에서 카드 등록 없이 발급 가능합니다.", picks: [] });
-      }
-      const usData = await gatherUS();
-      const usPrompt = usData ? picksUSPrompt(usData) : null;
-      if (claudeKey) return res.status(200).json(await callClaude(claudeKey, usPrompt || "너는 미국 주식 스윙 트레이더다. 웹검색으로 오늘 프리마켓·선물·실적 일정을 조사해 3종목을 골라라. JSON만 출력: {\"brief\":\"...\",\"picks\":[{\"name\",\"ticker\",\"score\",\"reason\",\"catalyst\",\"risk\"}]}"));
-      if (geminiKey) {
-        if (!usPrompt) return res.status(200).json({ brief: "미국장 데이터를 가져오지 못했습니다. 잠시 후 다시 시도해 주세요.", picks: [] });
-        return res.status(200).json(await gemini(geminiKey, usPrompt + learn));
-      }
-      return res.status(200).json({ brief: "미국장 프리픽은 AI 키 등록 시 활성화됩니다 (GEMINI_API_KEY 무료 발급 가능).", picks: [] });
+      return res.status(410).json({ error: "picks 경로 폐기 — 추천 생성은 /api/cron 단일 경로" });
     }
     if (kind === "review") {
       const prompt = `너는 트레이딩 코치다. 아래는 이 앱의 실측 성적과 통계 엔진이 도출한 [규칙]들이다.\n\n${String(history || "").slice(0, 1800)}\n\n역할 구분: 강제 규칙 제정은 통계 엔진의 몫이다. 너는 숫자를 해석하고 '가설'만 제안하라. 표본이 적은 패턴(5건 미만)으로 단정하지 말고, 시장 요인과 선정 요인을 구분해서 평가하라. 성공률만이 아니라 손익비·기대수익 관점도 언급하라. 반드시 아래 JSON만 출력(마크다운 금지): {"comment":"정성 총평 2~3문장(한국어) — 시장 탓인지 선정 탓인지 구분 포함","lessons":["검증 대기 가설 한 줄", "..."] (최대 3개, 각각 근거 표본 수 명시),"focus":"다음 추천에서 가장 집중할 개선점 한 줄"}`;

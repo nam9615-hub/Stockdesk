@@ -88,10 +88,11 @@ export default async function handler(req, res) {
     });
     if (!targets.length) return res.status(200).json({ ok: true, market, watched: 0, at: kstTime() });
 
-    let changed = false;
+    let hard = false, soft = false; // hard=진입가 확정·체결, soft=평가손익 갱신
     const fills = [];
     const seen = {};
-    for (const { e, p } of targets.slice(0, 14)) {
+    targets.sort((a, b) => (a.p.kind === "day" ? 0 : 1) - (b.p.kind === "day" ? 0 : 1)); // 단타 우선 감시
+    for (const { e, p } of targets.slice(0, 25)) {
       if (!seen[p.ticker]) seen[p.ticker] = await priceOpen(p.ticker);
       const { px, op } = seen[p.ticker];
       if (!px) continue;
@@ -100,24 +101,29 @@ export default async function handler(req, res) {
         const base = op || px;
         p.b = base;
         if (p.p0) p.gap = +(((base - p.p0) / p.p0) * 100).toFixed(1);
-        changed = true;
+        hard = true;
       }
       const stopPct = p.kind === "day" ? 3 : 5;
       const tgtPct = p.kind === "day" ? (p.target || 3) : 10;
       const r = ((px - p.b) / p.b) * 100;
       if (px <= p.b * (1 - stopPct / 100)) {
         p.simR = -stopPct; p.simExit = "stop"; p.simD = today; p.simT = kstTime(); p.live = 1;
-        fills.push(`${p.name} 손절 −${stopPct}% (${kstTime()})`); changed = true;
+        fills.push(`${p.name} 손절 −${stopPct}% (${kstTime()})`); hard = true;
       } else if (px >= p.b * (1 + tgtPct / 100)) {
         p.simR = tgtPct; p.simExit = "target"; p.simD = today; p.simT = kstTime(); p.live = 1;
-        fills.push(`${p.name} 익절 +${tgtPct}% (${kstTime()})`); changed = true;
+        fills.push(`${p.name} 익절 +${tgtPct}% (${kstTime()})`); hard = true;
       } else if (p.kind !== "day") {
         const u = +r.toFixed(1);
-        if (p.simOpen !== u) { p.simOpen = u; changed = true; }
+        if (p.simOpen !== u) { p.simOpen = u; soft = true; }
       }
     }
-    if (changed) await ghWrite("data/history.json", hist, sha);
-    return res.status(200).json({ ok: true, market, watched: targets.length, fills, at: kstTime() });
+    // 커밋 스로틀: 체결·진입가는 즉시, 평가손익만 바뀐 경우 15분 간격 스냅샷
+    const snapDue = Date.now() - Number(hist.monAt || 0) > 15 * 60e3;
+    if (hard || (soft && snapDue)) {
+      hist.monAt = Date.now();
+      await ghWrite("data/history.json", hist, sha);
+    }
+    return res.status(200).json({ ok: true, market, watched: targets.length, fills, saved: hard || (soft && snapDue), at: kstTime() });
   } catch (e) {
     return res.status(500).json({ error: e.message });
   }
