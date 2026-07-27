@@ -1525,7 +1525,7 @@ function TrackRecord({ refreshKey }) {
         if (!k && !u) return null;
         return (
           <div style={{ marginTop: 14, background: T.card2, borderRadius: 12, padding: 13 }}>
-            <div style={{ fontFamily: T.mono, fontSize: 10.5, color: T.info, letterSpacing: "0.14em", marginBottom: 6, whiteSpace: "nowrap" }}>🎯 선택 능력 · 검토한 전체 후보 대비</div>
+            <div style={{ fontFamily: T.mono, fontSize: 10.5, color: T.info, letterSpacing: "0.14em", marginBottom: 6, whiteSpace: "nowrap" }}>🎯 선택 능력 · 당일 입력 후보군 대비</div>
             {k}{u}
             <div style={{ fontSize: 10.5, color: T.faint, marginTop: 5, lineHeight: 1.5 }}>후보대비=선택 종목이 후보 중앙값보다 나은 정도 · 후회=그날 최고 후보와의 격차 · 제외판단은 음수일수록 정확</div>
           </div>
@@ -1539,7 +1539,7 @@ function TrackRecord({ refreshKey }) {
           <div style={{ marginTop: 14, background: T.card2, borderRadius: 12, padding: 13 }}>
             {anyR > 0 && (
               <>
-                <div style={{ fontFamily: T.mono, fontSize: 10.5, color: T.info, letterSpacing: "0.14em", marginBottom: 6, whiteSpace: "nowrap" }}>📐 검증된 규칙 (표본 8건+) · 추천에 강제 반영</div>
+                <div style={{ fontFamily: T.mono, fontSize: 10.5, color: T.info, letterSpacing: "0.14em", marginBottom: 6, whiteSpace: "nowrap" }}>📐 실측 통계 증거 (표본 8+) · 판단에 강한 가중</div>
                 {rk.rules.map((x, i) => <div key={"k" + i} style={{ fontSize: 12.5, color: T.ink, lineHeight: 1.7 }}>🇰🇷 {x}</div>)}
                 {ru.rules.map((x, i) => <div key={"u" + i} style={{ fontSize: 12.5, color: T.ink, lineHeight: 1.7 }}>🇺🇸 {x}</div>)}
               </>
