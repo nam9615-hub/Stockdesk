@@ -369,10 +369,21 @@ function analyze(data, avgPrice, qty = 0, tick = "") {
   let prob = null;
   {
     const heatAt = (k) => {
+      // 워크포워드: k 시점까지의 최근 1년 분포만 사용 (미래정보 혼입 제거)
       if (ma20[k] == null || !ATR[k] || RSI[k] == null || BB.pb[k] == null || !close[k - 10]) return null;
+      const start = Math.max(60, k - 252);
+      const devH = [], rsiH = [], pbH = [], momH = [];
+      for (let t = start; t <= k; t++) {
+        if (ma20[t] == null || !ATR[t] || RSI[t] == null || BB.pb[t] == null || !close[t - 10]) continue;
+        devH.push((close[t] - ma20[t]) / ATR[t]);
+        rsiH.push(RSI[t]);
+        pbH.push(BB.pb[t]);
+        momH.push(((close[t] - close[t - 10]) / close[t - 10]) * 100);
+      }
+      if (devH.length < 30) return null;
       const dv = (close[k] - ma20[k]) / ATR[k];
       const mk = ((close[k] - close[k - 10]) / close[k - 10]) * 100;
-      return Math.round((percentile(devSeries, dv) + percentile(RSI.slice(yr), RSI[k]) + percentile(BB.pb.slice(yr), BB.pb[k]) + percentile(momSeries, mk)) / 4);
+      return Math.round((percentile(devH, dv) + percentile(rsiH, RSI[k]) + percentile(pbH, BB.pb[k]) + percentile(momH, mk)) / 4);
     };
     const targetPct = zones[0] ? (zones[0].center - price) / price : 0.05;
     const stopPct = (stop - price) / price;
@@ -1527,7 +1538,7 @@ function TrackRecord({ refreshKey }) {
           <div style={{ marginTop: 14, background: T.card2, borderRadius: 12, padding: 13 }}>
             <div style={{ fontFamily: T.mono, fontSize: 10.5, color: T.info, letterSpacing: "0.14em", marginBottom: 6, whiteSpace: "nowrap" }}>🎯 선택 능력 · 당일 입력 후보군 대비</div>
             {k}{u}
-            <div style={{ fontSize: 10.5, color: T.faint, marginTop: 5, lineHeight: 1.5 }}>후보대비=선택 종목이 후보 중앙값보다 나은 정도 · 후회=그날 최고 후보와의 격차 · 제외판단은 음수일수록 정확</div>
+            <div style={{ fontSize: 10.5, color: T.faint, marginTop: 5, lineHeight: 1.5 }}>후보대비=스윙 선택이 후보 중앙값보다 나은 정도(단타는 진입시점이 달라 제외) · 후회=그날 최고 후보와의 격차 · 제외판단은 음수일수록 정확</div>
           </div>
         );
       })()}
