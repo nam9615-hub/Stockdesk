@@ -244,10 +244,10 @@ function similarCases(entries, market, regime) {
 
 /* ── 채점 ── */
 async function grade(entries) {
-  const need = [...new Set(entries.flatMap((e) => e.picks.filter((p) => p.p0 && (p.kind === "day" ? p.r1 == null : p.r20 == null)).map((p) => p.ticker)))].slice(0, 12);
+  const need = [...new Set(entries.flatMap((e) => (e.picks || []).filter((p) => (p.kind === "day" ? p.r1 == null : p.r20 == null)).map((p) => p.ticker)))].slice(0, 12);
   // 시장 지수 일별 등락 맵 (실패 원인 귀속용)
   const idxMap = {};
-  const mkts = [...new Set(entries.filter((e) => e.picks.some((p) => p.p0 && (p.kind === "day" ? p.r1 == null : p.r20 == null))).map((e) => e.market))];
+  const mkts = [...new Set(entries.filter((e) => (e.picks || []).some((p) => (p.kind === "day" ? p.r1 == null : p.r20 == null))).map((e) => e.market))];
   for (const m of mkts) {
     try {
       const j = await (await fetch(`https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(m === "KR" ? "^KS11" : "^GSPC")}?range=6mo&interval=1d`, UA)).json();
@@ -276,7 +276,7 @@ async function grade(entries) {
       p.simD = e.date;
       changed = true;
     }
-    const d = charts[p.ticker] || charts[Object.keys(fixmap).find((k) => fixmap[k] === p.ticker)] ; if (!d || !p.p0) return;
+    const d = charts[p.ticker] || charts[Object.keys(fixmap).find((k) => fixmap[k] === p.ticker)]; if (!d) return; // p0(추천시점가)는 참고값 — 없어도 시가 기준 채점 진행
     if (p.kind === "day") {
       if (p.r1 != null) return;
       const row = d.find((x) => x.date >= e.date); if (!row) return;
