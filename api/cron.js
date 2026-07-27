@@ -78,12 +78,19 @@ async function gatherKR() {
     note = "(개장 전 — 당일 등락 데이터 없음. 아래는 시가총액 상위이며, 각 종목 뉴스 재료 중심으로 선별하라)\n";
   }
   if (!cands.length) return { text: "", allowed: [] };
+  // 거래소(코스피/코스닥) 정확 판별 — 티커를 처음부터 올바르게 생성
+  await Promise.all(cands.map(async (s) => {
+    try {
+      const j = await (await fetch(`https://m.stock.naver.com/api/stock/${s.code}/basic`, UA)).json();
+      s.tk = /KOSDAQ|코스닥/i.test(JSON.stringify(j)) ? `${s.code}.KQ` : `${s.code}.KS`;
+    } catch { s.tk = `${s.code}.KS`; }
+  }));
   // 실행시간 보호: 상위 10개는 뉴스 2건, 나머지는 1건
   const rows = await Promise.all(cands.map(async (s, i) => {
     const news = await naverNews(s.code, i < 10 ? 2 : 1);
-    return `${s.name}(${s.code}.KS) | 뉴스: ${news.join(" / ") || "없음"}`;
+    return `${s.name}(${s.tk}) | 뉴스: ${news.join(" / ") || "없음"}`;
   }));
-  return { text: note + rows.join("\n"), allowed: cands.map((s) => `${s.code}.KS`) };
+  return { text: note + rows.join("\n"), allowed: cands.map((s) => s.tk) };
 }
 async function gatherUS() {
   try {
@@ -105,6 +112,13 @@ async function gatherUS() {
 /* ── AI 호출 ── */
 let USED_MODEL = "";
 async function askAI(prompt) {
+  try { return await askOnce(prompt); }
+  catch (e) {
+    // 파싱·모델 오류 시 1회 교정 재시도
+    return await askOnce(prompt + "\n(중요: 직전 응답이 유효한 JSON이 아니었다. 설명 없이 유효한 JSON 객체 하나만 출력하라.)");
+  }
+}
+async function askOnce(prompt) {
   const ck = process.env.ANTHROPIC_API_KEY, gk = process.env.GEMINI_API_KEY;
   const parse = (text) => {
     const m = text.replace(/```json|```/g, "").match(/\{[\s\S]*\}/);
@@ -112,6 +126,7 @@ async function askAI(prompt) {
     return JSON.parse(m[0]);
   };
   if (ck) {
+    try {
     const r = await fetch("https://api.anthropic.com/v1/messages", {
       method: "POST",
       headers: { "Content-Type": "application/json", "x-api-key": ck, "anthropic-version": "2023-06-01" },
@@ -119,8 +134,9 @@ async function askAI(prompt) {
     });
     const d = await r.json();
     if (d.error) throw new Error(d.error.message);
-    USED_MODEL = "claude";
+    USED_MODEL = "claude-sonnet-4-6";
     return parse((d.content || []).filter((b) => b.type === "text").map((b) => b.text).join("\n"));
+    } catch (e) { if (!gk) throw e; /* Claude 실패 → Gemini 폴백 */ }
   }
   if (gk) {
     let last = null;
@@ -249,9 +265,9 @@ async function grade(entries) {
     const { rows, ticker } = await fetchDaily(t, "3mo");
     if (rows) { charts[t] = rows; fixmap[t] = ticker; }
   }
-  entries.forEach((e) => (e.picks || []).forEach((p) => { if (fixmap[p.ticker] && fixmap[p.ticker] !== p.ticker) { p.ticker = fixmap[p.ticker]; changedT = true; } }));
   let changed = false;
   let changedT = false;
+  entries.forEach((e) => (e.picks || []).forEach((p) => { if (fixmap[p.ticker] && fixmap[p.ticker] !== p.ticker) { p.ticker = fixmap[p.ticker]; changedT = true; } }));
   entries.forEach((e) => e.picks.forEach((p) => {
     // 소급 가상체결: 기능 배포 전 이미 채점된 단타 (차트 없이 저장값으로 계산)
     if (p.kind === "day" && p.r1 != null && p.simR == null && p.mae != null) {
@@ -273,6 +289,8 @@ async function grade(entries) {
       p.mae = +(((row.low - base) / base) * 100).toFixed(1);
       const hitStop = row.low <= base * 0.97; // 손절 가정 -3%
       p.touch = p.hit && hitStop ? "both" : p.hit ? "target" : hitStop ? "stop" : "none";
+      // 장중 실시간 체결이 이미 확정된 픽은 그 결과가 최종 — 일봉 추론으로 뒤집지 않음
+      if (p.live && p.simExit) { p.hit = p.simExit === "target"; p.touch = p.hit ? "target" : "stop"; }
       // 가상매매: 시가 매수 → 손절 -3% / 목표 익절 / 종가 청산 (동시 터치 시 손절 가정)
       // 단, 장중 모니터가 실시간 체결한 기록(live)은 보존
       if (p.simR == null) {
@@ -345,13 +363,21 @@ const promptDay2 = (mkt, rows, learn) => `너는 ${mkt === "KR" ? "한국" : "�
 async function gradeCands(entries) {
   let changed = false;
   const pend = [];
-  entries.forEach((e) => (e.cands || []).forEach((c) => { if (c.r1 == null && c.ticker) pend.push({ e, c }); }));
+  entries.forEach((e) => (e.cands || []).forEach((c) => { if (c.r1 == null && c.ticker && !c.na) pend.push({ e, c }); }));
   const tickers = [...new Set(pend.map((x) => x.c.ticker))].slice(0, 10);
   const charts = {};
   for (const t of tickers) {
     const { rows, ticker } = await fetchDaily(t, "3mo");
     if (rows) { charts[t] = rows; charts[ticker] = rows; if (ticker !== t) pend.forEach((x) => { if (x.c.ticker === t) x.c.ticker = ticker; }); }
   }
+  // 조회 실패 누적 3회면 제외 처리 — 실패 티커가 채점 큐를 영원히 막지 않게
+  pend.forEach(({ c }) => {
+    if (tickers.includes(c.ticker) && !charts[c.ticker]) {
+      c.gA = (c.gA || 0) + 1;
+      if (c.gA >= 3) c.na = 1;
+      changed = true;
+    }
+  });
   const nowKst = new Date(Date.now() + 9 * 3600e3);
   const nowT = nowKst.getUTCHours() + nowKst.getUTCMinutes() / 60;
   const todayS = nowKst.toISOString().slice(0, 10);
@@ -367,13 +393,13 @@ async function gradeCands(entries) {
       changed = true;
     });
     // 커버리지 80% 이상일 때 산출, 추가 채점되면 재계산
-    const all = e.cands || [];
+    const all = (e.cands || []).filter((c) => !c.na);
     const cs = all.filter((c) => c.r1 != null);
     const need80 = Math.max(4, Math.ceil(all.length * 0.8));
     if (cs.length >= need80 && (!e.cstat || cs.length > (e.cstat.n || 0))) {
       const rs = cs.map((c) => c.r1).sort((a, b) => a - b);
       const med = rs[Math.floor(rs.length / 2)];
-      const selT = new Set((e.picks || []).map((p) => p.ticker));
+      const selT = new Set((e.picks || []).filter((p) => p.kind === "swing").map((p) => p.ticker)); // 스윙 기준 (단타는 진입시점 상이)
       const sel = cs.filter((c) => selT.has(c.ticker));
       const rej = cs.filter((c) => c.verdict === "제외");
       const avg = (a) => a.reduce((s, x) => s + x.r1, 0) / a.length;
@@ -416,7 +442,7 @@ async function refine5m(entries) {
         })).filter((b) => b.h != null);
       }
       let bars = cache[p.ticker].filter((b) => b.date === e.date);
-      if (p.cm) bars = bars.slice(Math.floor(p.cm / 5)); // 확정(진입) 이전 봉 제외
+      if (p.cm) bars = bars.slice(Math.ceil(p.cm / 5)); // 진입 이전·진입 걸친 봉 제외 (보수적)
       if (!bars.length) continue;
       const tgtP = p.b * (1 + (p.target || 3) / 100), stpP = p.b * 0.97;
       if (mode === "post") {
@@ -555,6 +581,9 @@ export default async function handler(req, res) {
             seenC.add(t);
             return { ticker: t, rank: Number.isFinite(+c.rank) ? Math.max(1, +c.rank) : 99, verdict: ["선택", "관찰", "제외"].includes(c.verdict) ? c.verdict : "관찰", why: String(c.why || "").slice(0, 60), r1: null };
           }).filter(Boolean).slice(0, 20);
+          // LLM이 평가 누락한 후보 자동 보완 (선택능력 통계 왜곡 방지)
+          const haveC = new Set(cands.map((c) => c.ticker));
+          allow.forEach((t, i) => { if (!haveC.has(t) && cands.length < 20) cands.push({ ticker: t, rank: 90 + i, verdict: "관찰", why: "LLM 평가 누락", miss: 1, r1: null }); });
           const prices = {};
           for (const p of [...new Set(j.picks.map((x) => x.ticker))]) prices[p] = await quotePrice(p);
           const regime = regimeNow;
@@ -597,7 +626,7 @@ export default async function handler(req, res) {
         entry.picks.push({
           kind: "day", name: p.name, ticker: p.ticker, score: p.score, target: Math.min(+p.target_pct || 3, 8),
           sector: p.sector || c.sector || null, basis: p.basis || c.basis || [],
-          p0: c.o?.px || null, b: c.o?.px || null, gap: c.o?.gap ?? null, cAt,
+          p0: c.o?.px || null, b: c.o?.px || null, gap: c.o?.gap ?? null, cAt, eTs: new Date().toISOString(),
           cm: Math.max(0, Math.round((nowT - openH) * 60)), // 개장 후 경과분 (5분봉 필터용)
           r1: null, hit: null,
         });
