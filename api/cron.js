@@ -131,6 +131,47 @@ async function askAI(prompt) {
   throw new Error("AI 키 없음");
 }
 
+/* ── 조건부 규칙 엔진 (표본 8+ = 규칙 / 3~7 = 관찰) ── */
+function condRules(entries, market) {
+  const flat = entries.filter((e) => e.market === market).flatMap((e) => e.picks || []);
+  const raw = [];
+  const pctOf = (a, ok) => Math.round((a.filter(ok).length / a.length) * 100);
+  const dy = flat.filter((p) => p.kind === "day" && p.r1 != null);
+  const bk = {};
+  dy.forEach((p) => { const b = (p.target || 3) <= 4 ? "목표~4%" : (p.target || 3) <= 6 ? "목표5~6%" : "목표7%+"; (bk[b] = bk[b] || []).push(p); });
+  const brs = Object.entries(bk).filter(([, v]) => v.length >= 3);
+  if (brs.length >= 2) raw.push({ t: `단타 ${brs.map(([b, v]) => `${b} 적중${pctOf(v, (x) => x.hit)}%(${v.length})`).join("·")}`, n: Math.min(...brs.map(([, v]) => v.length)) });
+  const fails = dy.filter((p) => !p.hit);
+  if (fails.length >= 3) {
+    let mkt = 0, tgt = 0, sel = 0;
+    fails.forEach((p) => { const a = p.idx != null ? p.r1 - p.idx : null; if (a != null && a > 0) mkt++; else if (p.mfe != null && p.mfe >= (p.target || 3) * 0.8) tgt++; else sel++; });
+    raw.push({ t: `단타 실패 분해: 시장충격${mkt}·목표과다${tgt}·선정${sel}${tgt > sel && tgt >= 2 ? " → 목표% 하향" : sel >= 2 ? " → 선정 강화" : mkt >= 2 ? " → 약세일 자제" : ""}`, n: fails.length });
+  }
+  const gapped = dy.filter((p) => p.gap != null && p.gap >= 4);
+  if (gapped.length >= 3 && pctOf(gapped, (x) => x.hit) <= 40) raw.push({ t: `갭4%+ 시초진입 적중 ${pctOf(gapped, (x) => x.hit)}%(${gapped.length}) → 큰 갭 추격 지양`, n: gapped.length });
+  const hi80 = dy.filter((p) => p.score >= 80);
+  if (hi80.length >= 5 && pctOf(hi80, (x) => x.hit) < 55) raw.push({ t: `강도80+ 실측 ${pctOf(hi80, (x) => x.hit)}%(${hi80.length}) — 확신도 과장, 보수화`, n: hi80.length });
+  const bas = {};
+  flat.filter((p) => Array.isArray(p.basis) && p.r1 != null).forEach((p) => p.basis.forEach((b) => { (bas[b] = bas[b] || []).push(p); }));
+  Object.entries(bas).filter(([, v]) => v.length >= 3).forEach(([b, v]) => {
+    const r = pctOf(v, (p) => (p.kind === "day" ? p.hit : (p.r5 ?? p.r1) > 0));
+    if (r <= 40) raw.push({ t: `근거'${b}' 성공${r}%(${v.length}) → 단독추천 지양`, n: v.length });
+    else if (r >= 70) raw.push({ t: `근거'${b}' 성공${r}%(${v.length}) → 신뢰`, n: v.length });
+  });
+  const sec = {};
+  flat.filter((p) => p.sector && p.r1 != null).forEach((p) => { (sec[p.sector] = sec[p.sector] || []).push(p); });
+  Object.entries(sec).filter(([, v]) => v.length >= 3).forEach(([s, v]) => {
+    const r = pctOf(v, (p) => (p.kind === "day" ? p.hit : (p.r5 ?? p.r1) > 0));
+    if (r <= 40) raw.push({ t: `섹터'${s}' 성공${r}%(${v.length}) → 회피`, n: v.length });
+    else if (r >= 65) raw.push({ t: `섹터'${s}' 성공${r}%(${v.length}) → 우위`, n: v.length });
+  });
+  const reg = {};
+  entries.filter((e) => e.market === market && e.regime).forEach((e) => (e.picks || []).filter((p) => p.kind === "day" && p.r1 != null).forEach((p) => { (reg[e.regime] = reg[e.regime] || []).push(p); }));
+  const regE = Object.entries(reg).filter(([, v]) => v.length >= 3);
+  if (regE.length >= 2) raw.push({ t: `국면별 단타: ${regE.map(([k, v]) => `${k}장${pctOf(v, (x) => x.hit)}%(${v.length})`).join("·")}`, n: Math.min(...regE.map(([, v]) => v.length)) });
+  return { rules: raw.filter((x) => x.n >= 8).map((x) => x.t), watch: raw.filter((x) => x.n < 8).map((x) => x.t) };
+}
+
 /* ── 성적 요약 (프롬프트 학습용) ── */
 function historySummary(entries, market) {
   const flat = entries.filter((e) => e.market === market).flatMap((e) => e.picks);
@@ -200,9 +241,12 @@ async function grade(entries) {
       const hitStop = row.low <= base * 0.97; // 손절 가정 -3%
       p.touch = p.hit && hitStop ? "both" : p.hit ? "target" : hitStop ? "stop" : "none";
       // 가상매매: 시가 매수 → 손절 -3% / 목표 익절 / 종가 청산 (동시 터치 시 손절 가정)
-      p.simR = hitStop ? -3 : p.hit ? (p.target || 3) : p.r1;
-      p.simExit = hitStop ? "stop" : p.hit ? "target" : "close";
-      p.simD = row.date;
+      // 단, 장중 모니터가 실시간 체결한 기록(live)은 보존
+      if (p.simR == null) {
+        p.simR = hitStop ? -3 : p.hit ? (p.target || 3) : p.r1;
+        p.simExit = hitStop ? "stop" : p.hit ? "target" : "close";
+        p.simD = row.date;
+      }
       p.idx = (idxMap[e.market] || {})[row.date] ?? null;
       changed = true; return;
     }
@@ -242,6 +286,48 @@ async function grade(entries) {
   return changed;
 }
 
+/* ── 5분봉으로 동시터치(목표·손절 같은 날) 순서 정밀 판정 ── */
+async function refine5m(entries) {
+  const cases = [];
+  entries.forEach((e) => (e.picks || []).forEach((p) => {
+    if (p.kind === "day" && p.touch === "both" && !p.seq && !p.live && p.b) cases.push({ e, p });
+  }));
+  if (!cases.length) return false;
+  let changed = false;
+  const cache = {};
+  for (const { e, p } of cases.slice(0, 8)) {
+    try {
+      if (!cache[p.ticker]) {
+        const j = await (await fetch(`https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(p.ticker)}?range=1mo&interval=5m`, UA)).json();
+        const q = j?.chart?.result?.[0];
+        if (!q?.timestamp) { cache[p.ticker] = []; continue; }
+        const off = (q.meta?.gmtoffset ?? 32400) * 1000;
+        const o = q.indicators.quote[0];
+        cache[p.ticker] = q.timestamp.map((s, i) => ({
+          date: new Date(s * 1000 + off).toISOString().slice(0, 10),
+          h: o.high[i], l: o.low[i],
+        })).filter((b) => b.h != null);
+      }
+      const bars = cache[p.ticker].filter((b) => b.date === e.date);
+      if (!bars.length) continue;
+      const tgtP = p.b * (1 + (p.target || 3) / 100), stpP = p.b * 0.97;
+      let seq = null;
+      for (const b of bars) {
+        const hitT = b.h >= tgtP, hitS = b.l <= stpP;
+        if (hitT && hitS) { seq = "stop-first"; break; } // 같은 5분봉 내 동시 — 보수 유지
+        if (hitS) { seq = "stop-first"; break; }
+        if (hitT) { seq = "target-first"; break; }
+      }
+      if (!seq) continue;
+      p.seq = seq;
+      if (seq === "target-first") { p.simR = p.target || 3; p.simExit = "target"; }
+      else { p.simR = -3; p.simExit = "stop"; }
+      changed = true;
+    } catch {}
+  }
+  return changed;
+}
+
 const promptKR = (data, learn) => `너는 한국 주식 스윙 트레이더(2~4주 보유)다. 아래는 오늘 상승률·거래량 상위 후보와 각 종목의 실제 최신 뉴스다.\n\n[후보]\n${data}\n\n${learn}\n임무: 급등 추격이 아니라 재료 지속성 기준으로 선별. 반드시 아래 JSON만 출력(마크다운 금지): {"brief":"시장 브리핑 2~3문장(한국어)","picks":[{"name":"종목명","ticker":"6자리코드.KS","score":0~100,"sector":"업종·테마 한 단어","basis":["근거코드 배열 — 뉴스재료/실적/수주계약/정책테마/거래량급증/추세지속/낙폭과대/신고가 중 해당되는 것"],"reason":"근거 2문장","catalyst":"핵심 재료","risk":"주의점"}],"day_picks":[{"name":"종목명","ticker":"6자리코드.KS","score":0~100,"target_pct":정수(2~10),"sector":"업종·테마 한 단어","basis":["근거코드 배열(위와 동일 목록)"],"reason":"단타 사유","risk":"주의"}]} picks 3개, day_picks 3개(장중 청산 전제), 반드시 후보 안에서만. 스윙은 2~4주 재료의 지속성, 단타는 당일 수급·변동성·모멘텀이라는 서로 다른 기준으로 관점을 분리해 선정하라. day_picks는 picks와 원칙적으로 다른 종목이어야 하며, 동일 종목은 두 관점 모두에서 압도적 우위일 때만 허용하고 그 경우 reason에 이유를 명시하라. 확률 우위가 있는 후보가 부족하면 억지로 채우지 말고 배열을 줄이거나 비우고 brief에 보류 사유를 밝혀라.`;
 const promptUS = (data, learn) => `너는 미국 주식 스윙 트레이더다. 아래는 오늘 미국장 상승률 상위 후보와 실제 뉴스다.\n\n[후보]\n${data}\n\n${learn}\n반드시 아래 JSON만 출력(마크다운 금지): {"brief":"브리핑 2~3문장(한국어)","picks":[{"name":"종목명","ticker":"티커","score":0~100,"sector":"업종 한 단어(한국어)","basis":["근거코드 — 뉴스재료/실적/수주계약/정책테마/거래량급증/추세지속/낙폭과대/신고가"],"reason":"근거 2문장(한국어)","catalyst":"핵심 재료","risk":"주의"}],"day_picks":[{"name":"종목명","ticker":"티커","score":0~100,"target_pct":정수(2~10),"sector":"업종 한 단어(한국어)","basis":["근거코드(위 목록)"],"reason":"단타 사유(한국어)","risk":"주의"}]} picks 3개, day_picks 3개, 후보 안에서만. 스윙(재료 지속성)과 단타(당일 모멘텀)는 관점을 분리하고, day_picks는 picks와 원칙적으로 다른 종목으로 선정하라(겹치면 reason에 이유 명시). 확률 우위 후보가 부족하면 배열을 줄이거나 비우고 brief에 보류 사유를 밝혀라.`;
 
@@ -256,25 +342,39 @@ async function regimeOf(market) {
     return last > s20 && last > s60 ? "상승" : last < s20 && last < s60 ? "하락" : "혼조";
   } catch { return null; }
 }
+// 휴장일 (매년 초 갱신 필요 — 잘못돼도 그날 추천만 건너뜀, 안전 방향)
+const HOLIDAYS = {
+  KR: ["2026-01-01", "2026-02-16", "2026-02-17", "2026-02-18", "2026-03-01", "2026-03-02", "2026-05-05", "2026-05-25", "2026-06-06", "2026-08-15", "2026-08-17", "2026-09-24", "2026-09-25", "2026-09-26", "2026-10-03", "2026-10-05", "2026-10-09", "2026-12-25", "2026-12-31"],
+  US: ["2026-01-01", "2026-01-19", "2026-02-16", "2026-04-03", "2026-05-25", "2026-06-19", "2026-07-03", "2026-09-07", "2026-11-26", "2026-12-25"],
+};
 export default async function handler(req, res) {
   const job = String(req.query.job || "").toUpperCase();
+  if (process.env.CRON_KEY && req.query.key !== process.env.CRON_KEY) return res.status(401).json({ error: "key 필요" });
+  if (process.env.PAUSE === "1") return res.status(200).json({ ok: true, paused: true, note: "킬스위치 작동 중 — Vercel 환경변수 PAUSE 삭제 후 Redeploy로 재개" });
   if (!process.env.GH_TOKEN || !process.env.GH_REPO) return res.status(501).json({ error: "GH_TOKEN / GH_REPO 환경변수 필요" });
   try {
     const { data: histRaw, sha } = await ghRead("data/history.json");
     const hist = histRaw || { entries: [] };
 
-    // 1) 미채점 성적 자동 채점 (매 실행마다)
+    // 1) 미채점 성적 자동 채점 (매 실행마다) + 동시터치 5분봉 정밀 판정
     const graded = await grade(hist.entries);
+    const refined = await refine5m(hist.entries);
 
     // 2) 오늘 추천 생성 (해당 시장, 중복 방지 · 주말 제외)
     let made = false;
     const kstDay = new Date(Date.now() + 9 * 3600e3).getUTCDay();
-    if ((job === "KR" || job === "US") && kstDay !== 0 && kstDay !== 6) {
+    const holiday = (HOLIDAYS[job] || []).includes(kstDate());
+    if ((job === "KR" || job === "US") && kstDay !== 0 && kstDay !== 6 && !holiday) {
       const today = kstDate();
       if (!hist.entries.some((e) => e.date === today && e.market === job)) {
         const data = job === "KR" ? await gatherKR() : await gatherUS();
         if (data) {
-          const learn = historySummary(hist.entries, job);
+          const ci = condRules(hist.entries, job);
+          const learn = [
+            historySummary(hist.entries, job),
+            ci.rules.length ? `[검증된 규칙(표본8+) — 반드시 준수] ${ci.rules.join(" / ")}` : "",
+            ci.watch.length ? `[관찰 중 패턴(참고만, 강제 아님)] ${ci.watch.join(" / ")}` : "",
+          ].filter(Boolean).join("\n");
           const j = await askAI(job === "KR" ? promptKR(data, learn) : promptUS(data, learn));
           j.picks = (j.picks || []).slice(0, 3);
           j.day_picks = (j.day_picks || []).slice(0, 3);
@@ -283,7 +383,7 @@ export default async function handler(req, res) {
           for (const p of [...new Set(all.map((x) => x.ticker))]) prices[p] = await quotePrice(p);
           const regime = await regimeOf(job);
           hist.entries.push({
-            date: today, market: job, regime,
+            date: today, market: job, regime, rules: ci.rules.slice(0, 6), // 이날 적용된 규칙 스냅샷 (효과 검증용)
             picks: [
               ...j.picks.map((p) => ({ kind: "swing", name: p.name, ticker: p.ticker, score: p.score, sector: p.sector || null, basis: p.basis || [], p0: prices[p.ticker] || null, r1: null, r5: null, r20: null })),
               ...j.day_picks.map((p) => ({ kind: "day", name: p.name, ticker: p.ticker, score: p.score, target: +p.target_pct || 3, sector: p.sector || null, basis: p.basis || [], p0: prices[p.ticker] || null, r1: null, hit: null })),
@@ -296,8 +396,8 @@ export default async function handler(req, res) {
       }
     }
     hist.entries = hist.entries.slice(-120);
-    if (graded || made) await ghWrite("data/history.json", hist, sha);
-    return res.status(200).json({ ok: true, job, made, graded, at: kstTime() });
+    if (graded || refined || made) await ghWrite("data/history.json", hist, sha);
+    return res.status(200).json({ ok: true, job, made, graded, refined, at: kstTime() });
   } catch (e) {
     return res.status(500).json({ error: e.message });
   }
