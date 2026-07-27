@@ -867,7 +867,7 @@ async function evalHistory() {
     }
   }
   h.forEach((e) => (e.picks || []).forEach((p) => {
-    const d = charts[p.ticker]; if (!d || !p.p0) return;
+    const d = charts[p.ticker]; if (!d) return;
     if (p.kind === "day") {
       if (p.r1 != null) return;
       const row = d.find((x) => x.date >= e.date);
@@ -1183,7 +1183,7 @@ async function evalVerdicts() {
   const charts = {};
   for (const t of need) { try { charts[t] = (await fetchChart(t)).data; } catch {} }
   h.forEach((p) => {
-    const d = charts[p.ticker]; if (!d || !p.p0) return;
+    const d = charts[p.ticker]; if (!d || !p.p0) return; // 가이드는 분석시점가(p0) 기준이라 필수
     const i0 = d.findIndex((x) => x.date > p.date); if (i0 < 0) return;
     const ret = (k) => (d[i0 + k - 1] ? +(((d[i0 + k - 1].close - p.p0) / p.p0) * 100).toFixed(1) : null);
     for (const [key, k] of [["r1", 1], ["r5", 5], ["r20", 20]]) {
