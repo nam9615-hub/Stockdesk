@@ -1417,8 +1417,9 @@ function TrackRecord({ refreshKey }) {
             {p.hit == null ? "·" : p.hit ? `목표+${p.target}% ✓` : `목표+${p.target}% ✗`}
           </span>
           {p.mfe != null && (
-            <div style={{ fontSize: 10, color: p.touch === "stop" || p.touch === "both" ? T.sell : T.faint }}>
-              고+{p.mfe} 저{p.mae}{p.touch === "stop" ? " 손절선도달" : p.touch === "both" ? " 동시터치" : ""}
+            <div style={{ fontSize: 10, color: p.seq === "target-first" ? T.buy : p.touch === "stop" || p.touch === "both" ? T.sell : T.faint }}>
+              고+{p.mfe} 저{p.mae}
+              {p.live ? ` 장중체결${p.simT ? " " + p.simT : ""}⚡` : p.seq === "target-first" ? " 목표선도달✓(5분봉)" : p.seq === "stop-first" ? " 손절선도달(5분봉)" : p.touch === "stop" ? " 손절선도달" : p.touch === "both" ? " 동시터치" : ""}
             </div>
           )}
         </span>
