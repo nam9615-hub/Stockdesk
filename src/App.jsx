@@ -1506,6 +1506,32 @@ function TrackRecord({ refreshKey }) {
         </>
       )}
       {(() => {
+        const selLine = (m, flag) => {
+          const cs = hist.filter((e) => e.market === m && e.cstat).map((e) => e.cstat);
+          const holds = hist.filter((e) => e.market === m && e.holdEval);
+          if (!cs.length && !holds.length) return null;
+          const avg = (k) => { const v = cs.map((c) => c[k]).filter((x) => x != null); return v.length ? (v.reduce((a, b) => a + b, 0) / v.length).toFixed(1) : null; };
+          const ex = avg("ex"), rg = avg("rg"), rj = avg("rej");
+          return (
+            <div key={m} style={{ fontFamily: T.mono, fontSize: 12, color: T.sub, lineHeight: 1.8 }}>
+              {flag} {ex != null && <>후보대비 <b style={{ color: +ex >= 0 ? T.buy : T.sell }}>{ex > 0 ? "+" : ""}{ex}%p</b></>}
+              {rg != null && <> · 후회 <b style={{ color: T.warn }}>{rg}%p</b></>}
+              {rj != null && <> · 제외판단 <b style={{ color: +rj <= 0 ? T.buy : T.sell }}>{rj}%p</b></>}
+              {holds.length > 0 && <> · 보류 {holds.length}회({holds.filter((h) => h.holdEval.includes("성공")).length}적중)</>}
+            </div>
+          );
+        };
+        const k = selLine("KR", "🇰🇷"), u = selLine("US", "🇺🇸");
+        if (!k && !u) return null;
+        return (
+          <div style={{ marginTop: 14, background: T.card2, borderRadius: 12, padding: 13 }}>
+            <div style={{ fontFamily: T.mono, fontSize: 10.5, color: T.info, letterSpacing: "0.14em", marginBottom: 6, whiteSpace: "nowrap" }}>🎯 선택 능력 · 검토한 전체 후보 대비</div>
+            {k}{u}
+            <div style={{ fontSize: 10.5, color: T.faint, marginTop: 5, lineHeight: 1.5 }}>후보대비=선택 종목이 후보 중앙값보다 나은 정도 · 후회=그날 최고 후보와의 격차 · 제외판단은 음수일수록 정확</div>
+          </div>
+        );
+      })()}
+      {(() => {
         const rk = condInsights(hist, "KR"), ru = condInsights(hist, "US");
         const anyR = rk.rules.length + ru.rules.length, anyW = rk.watch.length + ru.watch.length;
         if (!anyR && !anyW) return null;
@@ -1691,8 +1717,15 @@ export default function App() {
     if (pickMarket === m && (picks || picksLoading || picksErr)) { setPickMarket(null); setPicks(null); setPicksErr(""); setPicksLoading(false); return; }
     setPickMarket(m); setPicksErr(""); setPicks(null);
     const today = kstToday();
+    // 단타 2차 확정 시각(개장+5분) 경과 여부
+    const day2Due = () => {
+      const n = new Date(); const t = n.getHours() + n.getMinutes() / 60;
+      const openH = m === "KR" ? 9 : (isUsDST(n) ? 22.5 : 23.5);
+      return t >= openH + 0.09 || (m === "US" && t <= 6.2); // 개장+5분 이후 (미국 새벽 포함)
+    };
     const c = picksCache[m];
-    if (c && c.date === today) { setPicks(c.data); return; }
+    const stale = c && c.date === today && !(c.data.day_picks || []).length && (c.data.day_cands || []).length && day2Due();
+    if (c && c.date === today && !stale) { setPicks(c.data); return; }
     const pv = provisionInfo(m);
     if (!pv.open) { setPicksErr(pv.msg); return; }
     setPicksLoading(true);
@@ -1702,6 +1735,11 @@ export default function App() {
       if (!(sj && sj.date === today && sj.data)) {
         // 크론이 아직이면 서버 생성을 이 자리에서 트리거 → 서버에 단 한 번 확정 기록
         await fetch(`/api/cron?job=${m.toLowerCase()}`).catch(() => {});
+        sj = await latest();
+      }
+      // 2차 확정 시간이 지났는데 단타가 미확정이면 서버 2차 확정 트리거 (안전망)
+      if (sj && sj.date === today && sj.data && !(sj.data.day_picks || []).length && (sj.data.day_cands || []).length && day2Due()) {
+        await fetch(`/api/cron?job=${m.toLowerCase()}2`).catch(() => {});
         sj = await latest();
       }
       if (sj && sj.date === today && sj.data) {
@@ -1897,9 +1935,30 @@ export default function App() {
                   }}>이 종목 정밀 분석 ▼</button>
                 </div>
               ))}
+              {!(picks.day_picks || []).length && (picks.day_cands || []).length > 0 && (
+                <>
+                  <div style={{ fontFamily: T.mono, fontSize: 11, color: T.warn, letterSpacing: "0.2em", margin: "18px 0 10px", whiteSpace: "nowrap" }}>⚡ 단타 후보 {picks.day_cands.length} · {pickMarket === "KR" ? "09:05" : "개장+5분"} 확정</div>
+                  <div style={{ fontSize: 12, color: T.sub, lineHeight: 1.7, marginBottom: 10 }}>
+                    ⏳ 개장 5분 실측 데이터(갭·초반 수급)를 확인한 뒤 아래 후보 중 <b style={{ color: T.ink }}>0~3개를 최종 확정</b>합니다. 갭 과다·시가 붕괴 종목은 자동 제외되고, 전부 부적합하면 오늘 단타는 보류됩니다.
+                  </div>
+                  {picks.day_cands.map((p, i) => (
+                    <div key={"dc" + i} style={{ border: `1px solid ${T.line}`, borderRadius: 12, padding: "10px 12px", marginBottom: 8, background: T.card2 }}>
+                      <div style={{ display: "flex", justifyContent: "space-between", gap: 8 }}>
+                        <span style={{ fontWeight: 700, fontSize: 14.5 }}>{p.name} <span style={{ fontFamily: T.mono, fontSize: 11, color: T.faint }}>{p.ticker}</span></span>
+                        <span style={{ fontFamily: T.mono, fontSize: 12, color: T.warn, whiteSpace: "nowrap" }}>강도 {p.score} · 목표 +{p.target_pct}%</span>
+                      </div>
+                      <div style={{ fontSize: 12, color: T.sub, lineHeight: 1.6, marginTop: 4 }}>{p.reason}</div>
+                    </div>
+                  ))}
+                  {picks.day_at && !(picks.day_picks || []).length && (
+                    <div style={{ fontSize: 12, color: T.sub, marginTop: 4 }}>⏸ {picks.day_at} 확정 결과: 오늘 단타 보류{picks.day_brief ? ` — ${picks.day_brief}` : ""}</div>
+                  )}
+                </>
+              )}
               {picks.day_picks && picks.day_picks.length > 0 && (
                 <>
-                  <div style={{ fontFamily: T.mono, fontSize: 11, color: T.sell, letterSpacing: "0.25em", margin: "18px 0 10px" }}>⚡ 당일 단타 3선 · 장중 청산 전제</div>
+                  <div style={{ fontFamily: T.mono, fontSize: 11, color: T.sell, letterSpacing: "0.2em", margin: "18px 0 10px", whiteSpace: "nowrap" }}>⚡ 당일 단타 · 장중 청산 전제{picks.day_at ? ` · 🔒 ${picks.day_at} 확정` : ""}</div>
+                  {picks.day_brief && <div style={{ fontSize: 12, color: T.sub, lineHeight: 1.6, marginBottom: 10 }}>🔔 개장 판단: {picks.day_brief}</div>}
                   {picks.day_picks.map((p, i) => (
                     <div key={"d" + i} style={{ border: `1px solid ${T.sell}44`, borderRadius: 14, padding: 13, marginBottom: 10, background: "rgba(255,107,107,0.04)" }}>
                       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 10 }}>
