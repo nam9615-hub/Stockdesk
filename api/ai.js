@@ -126,7 +126,7 @@ export default async function handler(req, res) {
   if (req.method !== "POST") return res.status(405).json({ error: "POST only" });
   const { kind, label, ticker, market, history } = req.body || {};
   const learn = history
-    ? `\n\n[너의 과거 추천 실측 성적표]\n${String(history).slice(0, 800)}\n위 실측 성적을 분석해 판단에 반영하라: 실패 사례와 비슷한 유형(과열 급등 추격, 일회성 재료)은 경계하고, 성공 사례와 비슷한 조건은 신뢰도를 높여라. 성적을 어떻게 반영했는지 결과(brief 또는 summary)에 한 문장으로 언급하라.`
+    ? `\n\n[너의 과거 추천 실측 성적표]\n${String(history).slice(0, 2000)}\n위 실측 성적을 분석해 판단에 반영하라: 실패 사례와 비슷한 유형(과열 급등 추격, 일회성 재료)은 경계하고, 성공 사례와 비슷한 조건은 신뢰도를 높여라. 성적을 어떻게 반영했는지 결과(brief 또는 summary)에 한 문장으로 언급하라.`
     : "";
   const claudeKey = process.env.ANTHROPIC_API_KEY;
   const geminiKey = process.env.GEMINI_API_KEY;

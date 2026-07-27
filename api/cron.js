@@ -96,6 +96,7 @@ async function gatherUS() {
 }
 
 /* ── AI 호출 ── */
+let USED_MODEL = "";
 async function askAI(prompt) {
   const ck = process.env.ANTHROPIC_API_KEY, gk = process.env.GEMINI_API_KEY;
   const parse = (text) => {
@@ -111,6 +112,7 @@ async function askAI(prompt) {
     });
     const d = await r.json();
     if (d.error) throw new Error(d.error.message);
+    USED_MODEL = "claude";
     return parse((d.content || []).filter((b) => b.type === "text").map((b) => b.text).join("\n"));
   }
   if (gk) {
@@ -123,6 +125,7 @@ async function askAI(prompt) {
         });
         const j = await r.json();
         if (j.error) throw new Error(j.error.message);
+        USED_MODEL = model;
         return parse((j.candidates?.[0]?.content?.parts || []).map((p) => p.text || "").join(""));
       } catch (e) { last = e; }
     }
@@ -174,7 +177,8 @@ function condRules(entries, market) {
 
 /* ── 성적 요약 (프롬프트 학습용) ── */
 function historySummary(entries, market) {
-  const flat = entries.filter((e) => e.market === market).flatMap((e) => e.picks);
+  const flat = entries.filter((e) => e.market === market).flatMap((e) => e.picks || []);
+  const flat0 = flat;
   const sw = flat.filter((p) => p.kind !== "day" && p.r5 != null);
   const dy = flat.filter((p) => p.kind === "day" && p.r1 != null);
   const parts = [];
@@ -187,7 +191,32 @@ function historySummary(entries, market) {
     const hit = Math.round((dy.filter((p) => p.hit).length / dy.length) * 100);
     parts.push(`단타 추천 ${dy.length}건: 목표 적중률 ${hit}%.`);
   }
+  // 선택능력 (후보 대비)
+  const cst = entries.filter((e) => e.market === market && e.cstat).map((e) => e.cstat);
+  if (cst.length >= 2) {
+    const m = (k) => { const v = cst.map((c) => c[k]).filter((x) => x != null); return v.length ? (v.reduce((a, b) => a + b, 0) / v.length).toFixed(1) : null; };
+    const ex = m("ex"), rg = m("rg"), rj = m("rej");
+    parts.push(`선택능력(${cst.length}일): 후보 중앙 대비 초과 ${ex > 0 ? "+" : ""}${ex}%p, 평균 후회값 ${rg}%p${rj != null ? `, 제외 종목 상대성과 ${rj}%p(음수=제외 정확)` : ""}. 초과가 음수면 선택 기준 자체를 재고하라.`);
+  }
+  // 확신도 교정 (강도 구간별 실측)
+  const dyA = flat0.filter((p) => p.kind === "day" && p.r1 != null && p.score != null);
+  const cal = [];
+  for (const [lo, hi] of [[60, 69], [70, 79], [80, 89], [90, 100]]) {
+    const b = dyA.filter((p) => p.score >= lo && p.score <= hi);
+    if (b.length >= 5) cal.push(`${lo}대→실측 ${Math.round((b.filter((x) => x.hit).length / b.length) * 100)}%(${b.length})`);
+  }
+  if (cal.length >= 2) parts.push(`[확신도 교정] 네가 표시한 강도 대비 실제 적중: ${cal.join(" · ")}. 이 격차만큼 확신을 보정하라.`);
   return parts.length ? `[과거 실측 성적] ${parts.join(" ")} 실패 유형은 피하고 성공 유형을 우선하라.` : "";
+}
+function similarCases(entries, market, regime) {
+  if (!regime) return "";
+  const cases = entries.filter((e) => e.market === market && e.regime === regime)
+    .flatMap((e) => (e.picks || []).filter((p) => p.r1 != null).map((p) => ({ ...p, date: e.date })))
+    .slice(-5);
+  if (cases.length < 3) return "";
+  return `[유사 국면(${regime}장) 최근 실측 사례] ` + cases.map((p) =>
+    p.kind === "day" ? `${p.name} 목표+${p.target}% ${p.hit ? "적중" : "미달"}(당일 ${p.r1}%)` : `${p.name} 1일 ${p.r1}%`
+  ).join(" / ") + " — 같은 국면의 실제 결과를 판단에 반영하라.";
 }
 
 /* ── 채점 ── */
@@ -231,9 +260,9 @@ async function grade(entries) {
     if (p.kind === "day") {
       if (p.r1 != null) return;
       const row = d.find((x) => x.date >= e.date); if (!row) return;
-      const base = row.open || p.p0; // 실전 기준: 당일 시가 진입
+      const base = p.b || row.open || p.p0; // 2차 확정가(b) 우선, 없으면 시가 진입
       p.b = base;
-      p.gap = row.open && p.p0 ? +(((row.open - p.p0) / p.p0) * 100).toFixed(1) : null;
+      if (p.gap == null) p.gap = row.open && p.p0 ? +(((row.open - p.p0) / p.p0) * 100).toFixed(1) : null;
       p.r1 = +(((row.close - base) / base) * 100).toFixed(1);
       p.hit = row.high >= base * (1 + (p.target || 3) / 100);
       p.mfe = +(((row.high - base) / base) * 100).toFixed(1);
@@ -251,7 +280,7 @@ async function grade(entries) {
       changed = true; return;
     }
     const i0 = d.findIndex((x) => x.date >= e.date); if (i0 < 0) return;
-    const base = d[i0].open || p.p0; // 추천일 시가 진입 기준
+    const base = p.b || d[i0].open || p.p0; // 추천일 시가(또는 모니터 확정가) 진입 기준
     if (p.b == null) { p.b = base; changed = true; }
     if (p.gap == null && d[i0].open && p.p0) { p.gap = +(((d[i0].open - p.p0) / p.p0) * 100).toFixed(1); changed = true; }
     for (const [k, n] of [["r1", 1], ["r5", 5], ["r20", 20]])
@@ -286,6 +315,75 @@ async function grade(entries) {
   return changed;
 }
 
+/* ── 개장 실측 데이터 (2차 단타 확정용): 현재가·시가·전일종가 ── */
+async function openInfo(t) {
+  const kr = t.match(/^(\d{6})\.(KS|KQ)$/i);
+  if (kr) {
+    try {
+      const j = await (await fetch(`https://polling.finance.naver.com/api/realtime/domestic/stock/${kr[1]}`, UA)).json();
+      const d = j?.datas?.[0];
+      const px = +String(d?.closePrice || 0).replace(/,/g, "");
+      const op = +String(d?.openPrice || 0).replace(/,/g, "");
+      const fr = parseFloat(d?.fluctuationsRatio);
+      const prev = px && !isNaN(fr) ? px / (1 + fr / 100) : null;
+      if (px) return { px, op: op || null, prev };
+    } catch {}
+  }
+  try {
+    const j = await (await fetch(`https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(t)}?range=1d&interval=1m`, UA)).json();
+    const q = j?.chart?.result?.[0];
+    return { px: q?.meta?.regularMarketPrice || null, op: q?.indicators?.quote?.[0]?.open?.find((x) => x != null) ?? null, prev: q?.meta?.chartPreviousClose || null };
+  } catch { return { px: null, op: null, prev: null }; }
+}
+const promptDay2 = (mkt, rows, learn) => `너는 ${mkt === "KR" ? "한국" : "미국"} 주식 단타 트레이더다. 아침에 선정한 단타 후보들의 개장 5분 실측 데이터다.\n\n[후보 + 개장 데이터]\n${rows}\n\n${learn}\n원칙: 갭 +5% 이상 급등 출발, 개장 후 시가 대비 -2% 이하 붕괴, 확률 우위 없음 → 제외. 개장 데이터가 후보 선정 논리를 확인해주는 종목만 골라라. 전부 부적합하면 빈 배열로 보류하라. 반드시 아래 JSON만 출력(마크다운 금지): {"brief":"개장 판단 1~2문장(한국어)","day_picks":[{"name":"종목명","ticker":"티커","score":0~100,"target_pct":정수(2~8),"sector":"업종 한 단어","basis":["근거코드"],"reason":"확정 사유 — 개장 데이터 근거 포함(한국어)","risk":"주의"}]} 최대 3개, 반드시 후보 안에서만.`;
+
+/* ── 후보 전체 사후 채점: 선택 초과성과·후회값·제외 정확도·보류 판정 ── */
+async function gradeCands(entries) {
+  let changed = false;
+  const pend = [];
+  entries.forEach((e) => (e.cands || []).forEach((c) => { if (c.r1 == null && c.ticker) pend.push({ e, c }); }));
+  const tickers = [...new Set(pend.map((x) => x.c.ticker))].slice(0, 8);
+  const charts = {};
+  for (const t of tickers) {
+    try {
+      const j = await (await fetch(`https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(t)}?range=3mo&interval=1d`, UA)).json();
+      const q = j?.chart?.result?.[0];
+      if (q?.timestamp) {
+        const o = q.indicators.quote[0];
+        charts[t] = q.timestamp.map((s, i) => ({ date: new Date(s * 1000).toISOString().slice(0, 10), open: o.open[i], close: o.close[i] })).filter((d) => d.close != null);
+      }
+    } catch {}
+  }
+  entries.forEach((e) => {
+    (e.cands || []).forEach((c) => {
+      if (c.r1 != null) return;
+      const d = charts[c.ticker]; if (!d) return;
+      const row = d.find((x) => x.date >= e.date); if (!row || !row.open) return;
+      c.r1 = +(((row.close - row.open) / row.open) * 100).toFixed(1); // 시가→종가, 픽과 동일 기준
+      changed = true;
+    });
+    // 후보 대부분 채점되면 선택능력 지표 산출
+    const cs = (e.cands || []).filter((c) => c.r1 != null);
+    if (cs.length >= 4 && e.cstat == null) {
+      const rs = cs.map((c) => c.r1).sort((a, b) => a - b);
+      const med = rs[Math.floor(rs.length / 2)];
+      const selT = new Set((e.picks || []).map((p) => p.ticker));
+      const sel = cs.filter((c) => selT.has(c.ticker));
+      const rej = cs.filter((c) => c.verdict === "제외");
+      const avg = (a) => a.reduce((s, x) => s + x.r1, 0) / a.length;
+      e.cstat = {
+        med: +med.toFixed(1),
+        ex: sel.length ? +(avg(sel) - med).toFixed(1) : null,         // 선택 초과성과
+        rg: sel.length ? +(Math.max(...rs) - avg(sel)).toFixed(1) : null, // 선택 후회값
+        rej: rej.length >= 2 ? +(avg(rej) - med).toFixed(1) : null,   // 제외 종목 상대성과 (음수=제외 정확)
+      };
+      if (e.hold) e.holdEval = med <= 0 ? `보류 성공 (후보 중앙 ${med}%)` : `기회손실 ${med}%`;
+      changed = true;
+    }
+  });
+  return changed;
+}
+
 /* ── 5분봉으로 동시터치(목표·손절 같은 날) 순서 정밀 판정 ── */
 async function refine5m(entries) {
   const cases = [];
@@ -305,10 +403,12 @@ async function refine5m(entries) {
         const o = q.indicators.quote[0];
         cache[p.ticker] = q.timestamp.map((s, i) => ({
           date: new Date(s * 1000 + off).toISOString().slice(0, 10),
+          hm: new Date(s * 1000 + off).toISOString().slice(11, 16),
           h: o.high[i], l: o.low[i],
         })).filter((b) => b.h != null);
       }
-      const bars = cache[p.ticker].filter((b) => b.date === e.date);
+      let bars = cache[p.ticker].filter((b) => b.date === e.date);
+      if (p.cm) bars = bars.slice(Math.floor(p.cm / 5)); // 확정 이전 봉 제외
       if (!bars.length) continue;
       const tgtP = p.b * (1 + (p.target || 3) / 100), stpP = p.b * 0.97;
       let seq = null;
@@ -328,8 +428,8 @@ async function refine5m(entries) {
   return changed;
 }
 
-const promptKR = (data, learn) => `너는 한국 주식 스윙 트레이더(2~4주 보유)다. 아래는 오늘 상승률·거래량 상위 후보와 각 종목의 실제 최신 뉴스다.\n\n[후보]\n${data}\n\n${learn}\n임무: 급등 추격이 아니라 재료 지속성 기준으로 선별. 반드시 아래 JSON만 출력(마크다운 금지): {"brief":"시장 브리핑 2~3문장(한국어)","picks":[{"name":"종목명","ticker":"6자리코드.KS","score":0~100,"sector":"업종·테마 한 단어","basis":["근거코드 배열 — 뉴스재료/실적/수주계약/정책테마/거래량급증/추세지속/낙폭과대/신고가 중 해당되는 것"],"reason":"근거 2문장","catalyst":"핵심 재료","risk":"주의점"}],"day_picks":[{"name":"종목명","ticker":"6자리코드.KS","score":0~100,"target_pct":정수(2~10),"sector":"업종·테마 한 단어","basis":["근거코드 배열(위와 동일 목록)"],"reason":"단타 사유","risk":"주의"}]} picks 3개, day_picks 3개(장중 청산 전제), 반드시 후보 안에서만. 스윙은 2~4주 재료의 지속성, 단타는 당일 수급·변동성·모멘텀이라는 서로 다른 기준으로 관점을 분리해 선정하라. day_picks는 picks와 원칙적으로 다른 종목이어야 하며, 동일 종목은 두 관점 모두에서 압도적 우위일 때만 허용하고 그 경우 reason에 이유를 명시하라. 확률 우위가 있는 후보가 부족하면 억지로 채우지 말고 배열을 줄이거나 비우고 brief에 보류 사유를 밝혀라.`;
-const promptUS = (data, learn) => `너는 미국 주식 스윙 트레이더다. 아래는 오늘 미국장 상승률 상위 후보와 실제 뉴스다.\n\n[후보]\n${data}\n\n${learn}\n반드시 아래 JSON만 출력(마크다운 금지): {"brief":"브리핑 2~3문장(한국어)","picks":[{"name":"종목명","ticker":"티커","score":0~100,"sector":"업종 한 단어(한국어)","basis":["근거코드 — 뉴스재료/실적/수주계약/정책테마/거래량급증/추세지속/낙폭과대/신고가"],"reason":"근거 2문장(한국어)","catalyst":"핵심 재료","risk":"주의"}],"day_picks":[{"name":"종목명","ticker":"티커","score":0~100,"target_pct":정수(2~10),"sector":"업종 한 단어(한국어)","basis":["근거코드(위 목록)"],"reason":"단타 사유(한국어)","risk":"주의"}]} picks 3개, day_picks 3개, 후보 안에서만. 스윙(재료 지속성)과 단타(당일 모멘텀)는 관점을 분리하고, day_picks는 picks와 원칙적으로 다른 종목으로 선정하라(겹치면 reason에 이유 명시). 확률 우위 후보가 부족하면 배열을 줄이거나 비우고 brief에 보류 사유를 밝혀라.`;
+const promptKR = (data, learn) => `너는 한국 주식 스윙 트레이더(2~4주 보유)다. 아래는 오늘 상승률·거래량 상위 후보와 각 종목의 실제 최신 뉴스다.\n\n[후보]\n${data}\n\n${learn}\n임무: 급등 추격이 아니라 재료 지속성 기준으로 선별. 반드시 아래 JSON만 출력(마크다운 금지): {"brief":"시장 브리핑 2~3문장(한국어)","picks":[{"name":"종목명","ticker":"6자리코드.KS","score":0~100,"sector":"업종·테마 한 단어","basis":["근거코드 배열 — 뉴스재료/실적/수주계약/정책테마/거래량급증/추세지속/낙폭과대/신고가 중 해당되는 것"],"reason":"근거 2문장","catalyst":"핵심 재료","risk":"주의점"}],"day_cands":[{"name":"종목명","ticker":"6자리코드.KS","score":0~100,"target_pct":정수(2~10),"sector":"업종·테마 한 단어","basis":["근거코드 배열(위와 동일 목록)"],"reason":"단타 사유","risk":"주의"}],"cands":[{"ticker":"후보 티커","rank":순위 정수(1이 최고),"verdict":"선택|관찰|제외","why":"판정 사유 한 줄"}]} cands에는 제공된 모든 후보를 순위와 함께 평가하라. picks 3개(스윙 최종 확정), day_cands 5개(단타 후보 — 최종 확정은 개장 5분 데이터를 본 뒤 별도로 하므로 여기서는 유력 후보만). 스윙은 2~4주 재료 지속성, 단타 후보는 당일 수급·변동성·모멘텀 기준으로 관점 분리. day_cands는 picks와 원칙적으로 다른 종목 위주로. 확률 우위 후보가 부족하면 억지로 채우지 말고 배열을 줄이고 brief에 사유를 밝혀라.`;
+const promptUS = (data, learn) => `너는 미국 주식 스윙 트레이더다. 아래는 오늘 미국장 상승률 상위 후보와 실제 뉴스다.\n\n[후보]\n${data}\n\n${learn}\n반드시 아래 JSON만 출력(마크다운 금지): {"brief":"브리핑 2~3문장(한국어)","picks":[{"name":"종목명","ticker":"티커","score":0~100,"sector":"업종 한 단어(한국어)","basis":["근거코드 — 뉴스재료/실적/수주계약/정책테마/거래량급증/추세지속/낙폭과대/신고가"],"reason":"근거 2문장(한국어)","catalyst":"핵심 재료","risk":"주의"}],"day_cands":[{"name":"종목명","ticker":"티커","score":0~100,"target_pct":정수(2~10),"sector":"업종 한 단어(한국어)","basis":["근거코드(위 목록)"],"reason":"단타 사유(한국어)","risk":"주의"}],"cands":[{"ticker":"티커","rank":정수,"verdict":"선택|관찰|제외","why":"한 줄"}]} cands에는 모든 후보를 순위 평가하라. picks 3개(스윙 최종), day_cands 5개(단타 후보 — 개장 후 재평가 예정). 스윙(재료 지속성)과 단타 후보(당일 모멘텀)는 관점 분리, day_cands는 picks와 다른 종목 위주. 우위 없으면 배열을 줄이고 brief에 사유.`;
 
 async function regimeOf(market) {
   try {
@@ -359,6 +459,7 @@ export default async function handler(req, res) {
     // 1) 미채점 성적 자동 채점 (매 실행마다) + 동시터치 5분봉 정밀 판정
     const graded = await grade(hist.entries);
     const refined = await refine5m(hist.entries);
+    const cgraded = await gradeCands(hist.entries);
 
     // 2) 오늘 추천 생성 (해당 시장, 중복 방지 · 주말 제외)
     let made = false;
@@ -370,24 +471,27 @@ export default async function handler(req, res) {
         const data = job === "KR" ? await gatherKR() : await gatherUS();
         if (data) {
           const ci = condRules(hist.entries, job);
+          const regimeNow = await regimeOf(job);
           const learn = [
             historySummary(hist.entries, job),
+            similarCases(hist.entries, job, regimeNow),
             ci.rules.length ? `[검증된 규칙(표본8+) — 반드시 준수] ${ci.rules.join(" / ")}` : "",
             ci.watch.length ? `[관찰 중 패턴(참고만, 강제 아님)] ${ci.watch.join(" / ")}` : "",
           ].filter(Boolean).join("\n");
           const j = await askAI(job === "KR" ? promptKR(data, learn) : promptUS(data, learn));
           j.picks = (j.picks || []).slice(0, 3);
-          j.day_picks = (j.day_picks || []).slice(0, 3);
-          const all = [...j.picks, ...j.day_picks];
+          j.day_cands = (j.day_cands || j.day_picks || []).slice(0, 5); // 단타는 후보만 (개장 후 2차 확정)
+          delete j.day_picks;
+          const cands = (j.cands || []).slice(0, 12).map((c) => ({
+            ticker: c.ticker, rank: +c.rank || 99, verdict: c.verdict || "", why: String(c.why || "").slice(0, 60), r1: null,
+          }));
           const prices = {};
-          for (const p of [...new Set(all.map((x) => x.ticker))]) prices[p] = await quotePrice(p);
-          const regime = await regimeOf(job);
+          for (const p of [...new Set(j.picks.map((x) => x.ticker))]) prices[p] = await quotePrice(p);
+          const regime = regimeNow;
           hist.entries.push({
             date: today, market: job, regime, rules: ci.rules.slice(0, 6), // 이날 적용된 규칙 스냅샷 (효과 검증용)
-            picks: [
-              ...j.picks.map((p) => ({ kind: "swing", name: p.name, ticker: p.ticker, score: p.score, sector: p.sector || null, basis: p.basis || [], p0: prices[p.ticker] || null, r1: null, r5: null, r20: null })),
-              ...j.day_picks.map((p) => ({ kind: "day", name: p.name, ticker: p.ticker, score: p.score, target: +p.target_pct || 3, sector: p.sector || null, basis: p.basis || [], p0: prices[p.ticker] || null, r1: null, hit: null })),
-            ],
+            cands, dayCands: j.day_cands, hold: j.picks.length === 0 && j.day_cands.length === 0 ? 1 : 0, v: { m: USED_MODEL, pv: 5 },
+            picks: j.picks.map((p) => ({ kind: "swing", name: p.name, ticker: p.ticker, score: p.score, sector: p.sector || null, basis: p.basis || [], p0: prices[p.ticker] || null, r1: null, r5: null, r20: null })),
           });
           const { sha: ls } = await ghRead(`data/latest-${job}.json`);
           await ghWrite(`data/latest-${job}.json`, { date: today, at: kstTime(), data: j }, ls);
@@ -395,8 +499,56 @@ export default async function handler(req, res) {
         }
       }
     }
+    // ── 2차 단타 확정 (개장 5분 후): job=KR2 / US2 ──
+    if (job === "KR2" || job === "US2") {
+      const mkt = job.slice(0, 2);
+      const openH = mkt === "KR" ? 9 : (isUsDST(new Date()) ? 22.5 : 23.5);
+      const nowT = (() => { const n = new Date(Date.now() + 9 * 3600e3); return n.getUTCHours() + n.getUTCMinutes() / 60; })();
+      const okDay = kstDay >= 1 && kstDay <= 5 && !(HOLIDAYS[mkt] || []).includes(kstDate());
+      const inWin = nowT >= openH + 0.05 && nowT <= openH + 0.7; // 개장+3분~+42분
+      const entry = hist.entries.find((e) => e.date === today && e.market === mkt);
+      let skip = !okDay ? "휴장" : !inWin ? "확정 시간대 아님" : (!entry || !(entry.dayCands || []).length) ? "오늘 단타 후보 없음" : entry.day2 ? "이미 확정됨" : null;
+      if (!skip) {
+      const rows = [];
+      for (const c of entry.dayCands) {
+        const o = await openInfo(c.ticker);
+        const gap = o.op && o.prev ? +(((o.op - o.prev) / o.prev) * 100).toFixed(1) : null;
+        const mom = o.px && o.op ? +(((o.px - o.op) / o.op) * 100).toFixed(1) : null;
+        c.o = { px: o.px, op: o.op, gap, mom };
+        rows.push(`${c.name}(${c.ticker}) 사전강도${c.score} 목표+${c.target_pct}% | 시가갭 ${gap != null ? gap + "%" : "?"} · 개장후 ${mom != null ? (mom > 0 ? "+" : "") + mom + "%" : "?"} · 현재 ${o.px ?? "?"} | 사전근거: ${String(c.reason || "").slice(0, 60)}`);
+      }
+      const ci2 = condRules(hist.entries, mkt);
+      const learn2 = ci2.rules.length ? `[검증된 규칙 — 반드시 준수] ${ci2.rules.join(" / ")}` : "";
+      const j2 = await askAI(promptDay2(mkt, rows.join("\n"), learn2));
+      const fin = (j2.day_picks || []).slice(0, 3).filter((p) => entry.dayCands.some((c) => c.ticker === p.ticker));
+      const cAt = kstTime();
+      fin.forEach((p) => {
+        const c = entry.dayCands.find((x) => x.ticker === p.ticker) || {};
+        entry.picks.push({
+          kind: "day", name: p.name, ticker: p.ticker, score: p.score, target: Math.min(+p.target_pct || 3, 8),
+          sector: p.sector || c.sector || null, basis: p.basis || c.basis || [],
+          p0: c.o?.px || null, b: c.o?.px || null, gap: c.o?.gap ?? null, cAt,
+          cm: Math.max(0, Math.round((nowT - openH) * 60)), // 개장 후 경과분 (5분봉 필터용)
+          r1: null, hit: null,
+        });
+      });
+      entry.day2 = { at: cAt, brief: String(j2.brief || "").slice(0, 200), n: fin.length };
+      if (!fin.length) { entry.dayHold = 1; if (!(entry.picks || []).some((p) => p.kind === "swing")) entry.hold = 1; }
+      const { data: lat, sha: ls2 } = await ghRead(`data/latest-${mkt}.json`);
+      if (lat && lat.date === today) {
+        lat.data.day_picks = fin;
+        lat.data.day_at = cAt;
+        lat.data.day_brief = entry.day2.brief;
+        await ghWrite(`data/latest-${mkt}.json`, lat, ls2);
+      }
+      made = true;
+      }
+      hist.entries = hist.entries.slice(-120);
+      if (graded || refined || cgraded || made) await ghWrite("data/history.json", hist, sha);
+      return res.status(200).json({ ok: true, job, made, skipped: skip || undefined, graded, refined, at: kstTime() });
+    }
     hist.entries = hist.entries.slice(-120);
-    if (graded || refined || made) await ghWrite("data/history.json", hist, sha);
+    if (graded || refined || cgraded || made) await ghWrite("data/history.json", hist, sha);
     return res.status(200).json({ ok: true, job, made, graded, refined, at: kstTime() });
   } catch (e) {
     return res.status(500).json({ error: e.message });
