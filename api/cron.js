@@ -64,31 +64,38 @@ async function gatherKR() {
     const html = new TextDecoder("euc-kr").decode(await (await fetch(url, UA)).arrayBuffer());
     return [...html.matchAll(/code=(\d{6})"[^>]*>([^<]+)<\/a>/g)].slice(0, n).map(([, code, name]) => ({ code, name: name.trim() }));
   };
-  const [rise, vol] = await Promise.all([
-    top("https://finance.naver.com/sise/sise_rise.naver", 8).catch(() => []),
-    top("https://finance.naver.com/sise/sise_quant.naver", 8).catch(() => []),
+  const [upper, rise, vol] = await Promise.all([
+    top("https://finance.naver.com/sise/sise_upper.naver", 5).catch(() => []),
+    top("https://finance.naver.com/sise/sise_rise.naver", 14).catch(() => []),
+    top("https://finance.naver.com/sise/sise_quant.naver", 14).catch(() => []),
   ]);
   const seen = new Set(); let cands = [];
-  for (const s of [...rise, ...vol]) if (!seen.has(s.code) && cands.length < 10) { seen.add(s.code); cands.push(s); }
+  for (const s of [...upper, ...rise, ...vol]) if (!seen.has(s.code) && cands.length < 20) { seen.add(s.code); cands.push(s); }
   let note = "";
   if (!cands.length) {
     // 개장 전 등으로 상승률 데이터가 비어 있으면: 시가총액 상위로 대체 (뉴스 재료 중심 선별)
-    cands = await top("https://finance.naver.com/sise/sise_market_sum.naver", 12).catch(() => []);
+    cands = await top("https://finance.naver.com/sise/sise_market_sum.naver", 15).catch(() => []);
     note = "(개장 전 — 당일 등락 데이터 없음. 아래는 시가총액 상위이며, 각 종목 뉴스 재료 중심으로 선별하라)\n";
   }
   if (!cands.length) return "";
-  const rows = await Promise.all(cands.map(async (s) => {
-    const news = await naverNews(s.code, 2);
+  // 실행시간 보호: 상위 10개는 뉴스 2건, 나머지는 1건
+  const rows = await Promise.all(cands.map(async (s, i) => {
+    const news = await naverNews(s.code, i < 10 ? 2 : 1);
     return `${s.name}(${s.code}.KS) | 뉴스: ${news.join(" / ") || "없음"}`;
   }));
   return note + rows.join("\n");
 }
 async function gatherUS() {
   try {
-    const j = await (await fetch("https://query1.finance.yahoo.com/v1/finance/screener/predefined/saved?scrIds=day_gainers&count=10", UA)).json();
-    const qs = (j?.finance?.result?.[0]?.quotes || []).slice(0, 10);
-    const rows = await Promise.all(qs.map(async (q) => {
-      const news = await yahooNews(q.symbol, 2);
+    const grab = async (scr, n) => {
+      const j = await (await fetch(`https://query1.finance.yahoo.com/v1/finance/screener/predefined/saved?scrIds=${scr}&count=${n}`, UA)).json();
+      return j?.finance?.result?.[0]?.quotes || [];
+    };
+    const [g, a] = await Promise.all([grab("day_gainers", 14).catch(() => []), grab("most_actives", 10).catch(() => [])]);
+    const seen = new Set(); const qs = [];
+    for (const q of [...g, ...a]) if (q?.symbol && !seen.has(q.symbol) && qs.length < 18) { seen.add(q.symbol); qs.push(q); }
+    const rows = await Promise.all(qs.map(async (q, i) => {
+      const news = await yahooNews(q.symbol, i < 10 ? 2 : 1);
       return `${q.symbol} ${q.shortName || ""} ${(q.regularMarketChangePercent || 0).toFixed(1)}% $${(q.regularMarketPrice || 0).toFixed(2)} | 뉴스: ${news.join(" / ") || "없음"}`;
     }));
     return rows.join("\n");
@@ -342,7 +349,7 @@ async function gradeCands(entries) {
   let changed = false;
   const pend = [];
   entries.forEach((e) => (e.cands || []).forEach((c) => { if (c.r1 == null && c.ticker) pend.push({ e, c }); }));
-  const tickers = [...new Set(pend.map((x) => x.c.ticker))].slice(0, 8);
+  const tickers = [...new Set(pend.map((x) => x.c.ticker))].slice(0, 10);
   const charts = {};
   for (const t of tickers) {
     try {
@@ -482,7 +489,7 @@ export default async function handler(req, res) {
           j.picks = (j.picks || []).slice(0, 3);
           j.day_cands = (j.day_cands || j.day_picks || []).slice(0, 5); // 단타는 후보만 (개장 후 2차 확정)
           delete j.day_picks;
-          const cands = (j.cands || []).slice(0, 12).map((c) => ({
+          const cands = (j.cands || []).slice(0, 20).map((c) => ({
             ticker: c.ticker, rank: +c.rank || 99, verdict: c.verdict || "", why: String(c.why || "").slice(0, 60), r1: null,
           }));
           const prices = {};
