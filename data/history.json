@@ -269,7 +269,7 @@
      "b": 257000,
      "gap": 3,
      "idx": 0.15,
-     "simOpen": -2.7
+     "simOpen": -2.9
     },
     {
      "kind": "swing",
@@ -305,7 +305,7 @@
      "b": 335000,
      "gap": 1.7,
      "idx": 0.15,
-     "simOpen": -1.5
+     "simOpen": -1.6
     },
     {
      "kind": "day",
