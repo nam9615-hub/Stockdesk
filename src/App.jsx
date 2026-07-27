@@ -1322,11 +1322,12 @@ function fullHistoryStr(market) {
 
 function paperSim(h, market) {
   const START = 5000000; // 초기 500만원 (시장별)
+  const COST = market === "KR" ? 0.25 : 0.10; // 왕복 거래비용 %p: 수수료+거래세+슬리피지 보수 추정
   const trades = [], open = [];
   h.filter((e) => e.market === market).forEach((e) => (e.picks || []).forEach((p) => {
     const w = p.kind === "day" ? 0.15 : 0.10; // 배분: 단타 15% · 스윙 10%
-    if (p.simR != null) trades.push({ d: p.simD || e.date, r: p.simR, w, kind: p.kind, name: p.name, exit: p.simExit });
-    else if (p.simOpen != null) open.push({ r: p.simOpen, w, name: p.name });
+    if (p.simR != null) trades.push({ d: p.simD || e.date, r: p.simR - COST, w, kind: p.kind, name: p.name, exit: p.simExit });
+    else if (p.simOpen != null) open.push({ r: p.simOpen - COST, w, name: p.name }); // 평가분도 청산 비용 선반영
   }));
   if (!trades.length && !open.length) return null;
   trades.sort((a, b) => (a.d < b.d ? -1 : 1));
@@ -1338,7 +1339,7 @@ function paperSim(h, market) {
     start: START, realized: Math.round(eq), evalEq: Math.round(evalEq),
     ret: +(((evalEq - START) / START) * 100).toFixed(2),
     nT: trades.length, nOpen: open.length,
-    wins: trades.filter((t) => t.r > 0).length,
+    wins: trades.filter((t) => t.r - 0 > 0).length, // 승패는 비용 차감 후 기준
   };
 }
 
@@ -1473,7 +1474,7 @@ function TrackRecord({ refreshKey }) {
             <div style={{ fontFamily: T.mono, fontSize: 10.5, color: T.buy, letterSpacing: "0.14em", marginBottom: 6, whiteSpace: "nowrap" }}>🤖 가상 자동매매 · 시장별 초기 500만원</div>
             {line("🇰🇷", pk)}{line("🇺🇸", pu)}
             <div style={{ fontSize: 10.5, color: T.faint, marginTop: 6, lineHeight: 1.6 }}>
-              규칙: 시가 매수 · 단타 −3%손절/목표 익절/종가 청산 · 스윙 −5%손절/+10% 익절/20일 청산 · 배분 단타15%/스윙10% 복리 · 동시터치 시 손절 가정(보수적)
+              규칙: 시가 매수 · 단타 −3%손절/목표 익절/종가 청산 · 스윙 −5%손절/+10% 익절/20일 청산 · 배분 단타15%/스윙10% 복리 · 동시터치 시 손절 가정(보수적) · 거래비용 차감(🇰🇷 0.25%p·🇺🇸 0.10%p)
             </div>
           </div>
         );
