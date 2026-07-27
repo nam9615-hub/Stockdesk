@@ -64,13 +64,19 @@ async function gatherKR() {
     const html = new TextDecoder("euc-kr").decode(await (await fetch(url, UA)).arrayBuffer());
     return [...html.matchAll(/code=(\d{6})"[^>]*>([^<]+)<\/a>/g)].slice(0, n).map(([, code, name]) => ({ code, name: name.trim() }));
   };
-  const [upper, rise, vol] = await Promise.all([
+  const [upper, riseKP, riseKQ, volKP, volKQ] = await Promise.all([
     top("https://finance.naver.com/sise/sise_upper.naver", 5).catch(() => []),
-    top("https://finance.naver.com/sise/sise_rise.naver", 14).catch(() => []),
-    top("https://finance.naver.com/sise/sise_quant.naver", 14).catch(() => []),
+    top("https://finance.naver.com/sise/sise_rise.naver?sosok=0", 10).catch(() => []),   // 코스피 상승률
+    top("https://finance.naver.com/sise/sise_rise.naver?sosok=1", 10).catch(() => []),   // 코스닥 상승률
+    top("https://finance.naver.com/sise/sise_quant.naver?sosok=0", 8).catch(() => []),   // 코스피 거래량
+    top("https://finance.naver.com/sise/sise_quant.naver?sosok=1", 8).catch(() => []),   // 코스닥 거래량
   ]);
+  // 코스피·코스닥 균형 병합 (교차로 섞어 어느 한쪽 쏠림 방지)
+  const inter = [];
+  const maxL = Math.max(riseKP.length, riseKQ.length, volKP.length, volKQ.length);
+  for (let i = 0; i < maxL; i++) for (const a of [riseKP, riseKQ, volKP, volKQ]) if (a[i]) inter.push(a[i]);
   const seen = new Set(); let cands = [];
-  for (const s of [...upper, ...rise, ...vol]) if (!seen.has(s.code) && cands.length < 20) { seen.add(s.code); cands.push(s); }
+  for (const s of [...upper, ...inter]) if (!seen.has(s.code) && cands.length < 20) { seen.add(s.code); cands.push(s); }
   let note = "";
   if (!cands.length) {
     // 개장 전 등으로 상승률 데이터가 비어 있으면: 시가총액 상위로 대체 (뉴스 재료 중심 선별)
