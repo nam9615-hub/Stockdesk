@@ -274,7 +274,7 @@
     {
      "kind": "swing",
      "name": "SK하이닉스",
-     "ticker": "006600.KS",
+     "ticker": "000660.KS",
      "score": 80,
      "sector": "반도체",
      "basis": [
@@ -283,9 +283,14 @@
       "추세지속"
      ],
      "p0": null,
-     "r1": null,
+     "r1": 0.1,
      "r5": null,
-     "r20": null
+     "r20": null,
+     "b": 1814000,
+     "idx": 0.97,
+     "simR": -5,
+     "simExit": "stop",
+     "simD": "2026-07-27"
     },
     {
      "kind": "swing",
@@ -334,7 +339,7 @@
     {
      "kind": "day",
      "name": "SK하이닉스",
-     "ticker": "006600.KS",
+     "ticker": "000660.KS",
      "score": 80,
      "target": 5,
      "sector": "반도체",
@@ -343,8 +348,17 @@
       "추세지속"
      ],
      "p0": null,
-     "r1": null,
-     "hit": null
+     "r1": 0.1,
+     "hit": false,
+     "b": 1814000,
+     "gap": null,
+     "mfe": 0.4,
+     "mae": -5.9,
+     "touch": "stop",
+     "simR": -3,
+     "simExit": "stop",
+     "simD": "2026-07-27",
+     "idx": 0.97
     },
     {
      "kind": "day",
