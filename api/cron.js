@@ -646,6 +646,14 @@ export default async function handler(req, res) {
         const gap = o.op && o.prev ? +(((o.op - o.prev) / o.prev) * 100).toFixed(1) : null;
         const mom = o.px && o.op ? +(((o.px - o.op) / o.op) * 100).toFixed(1) : null;
         c.o = { px: o.px, op: o.op, gap, mom };
+        // 개장 초반 1분 경로 스냅샷 (야후 1분봉은 30일 후 소실 → 지금 저장해야 나중에 "N분 확정이 최적이었나" 분석 가능)
+        try {
+          const jm = await (await fetch(`https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(c.ticker)}?range=1d&interval=1m`, UA)).json();
+          const qm = jm?.chart?.result?.[0];
+          const cl = qm?.indicators?.quote?.[0]?.close || [];
+          const base = o.op || cl.find((x) => x != null);
+          if (base) c.m1 = cl.filter((x) => x != null).slice(0, 12).map((x) => +(((x - base) / base) * 100).toFixed(2));
+        } catch {}
         rows.push(`${c.name}(${c.ticker}) 사전강도${c.score} 목표+${c.target_pct}% | 시가갭 ${gap != null ? gap + "%" : "?"} · 개장후 ${mom != null ? (mom > 0 ? "+" : "") + mom + "%" : "?"} · 현재 ${o.px ?? "?"} | 사전근거: ${String(c.reason || "").slice(0, 60)}`);
       }
       const ci2 = condRules(hist.entries, mkt);
