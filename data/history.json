@@ -730,13 +730,19 @@
      "cAt": "22:34",
      "eTs": "2026-07-27T13:34:10.752Z",
      "cm": 4,
-     "r1": null,
-     "hit": null,
+     "r1": -2.2,
+     "hit": false,
      "simR": -3,
      "simExit": "stop",
      "simD": "2026-07-27",
      "simT": "23:46",
-     "live": 1
+     "live": 1,
+     "mfe": 1.2,
+     "mae": -4.2,
+     "tv": 87,
+     "tvx": 1.5,
+     "touch": "stop",
+     "idx": 0.02
     }
    ],
    "day2": {
@@ -1004,12 +1010,15 @@
       "정책테마"
      ],
      "p0": 1545000,
-     "r1": null,
+     "r1": 1,
      "r5": null,
      "r20": null,
      "b": 1533000,
      "gap": -0.8,
-     "simOpen": 1
+     "simOpen": 1,
+     "tv": 241108,
+     "tvx": 2.8,
+     "idx": -10.84
     },
     {
      "kind": "swing",
@@ -1022,12 +1031,15 @@
       "수주계약"
      ],
      "p0": 899000,
-     "r1": null,
+     "r1": -0.1,
      "r5": null,
      "r20": null,
      "b": 876000,
      "gap": -2.6,
-     "simOpen": 0.7
+     "simOpen": -0.1,
+     "tv": 151285,
+     "tvx": 0.7,
+     "idx": -10.84
     },
     {
      "kind": "day",
@@ -1046,13 +1058,19 @@
      "cAt": "09:04",
      "eTs": "2026-07-28T00:04:13.645Z",
      "cm": 4,
-     "r1": null,
-     "hit": null,
+     "r1": -4.2,
+     "hit": false,
      "simR": -3,
      "simExit": "stop",
      "simD": "2026-07-28",
      "simT": "13:10",
-     "live": 1
+     "live": 1,
+     "mfe": 1,
+     "mae": -5,
+     "tv": 214371,
+     "tvx": 0.8,
+     "touch": "stop",
+     "idx": -10.84
     },
     {
      "kind": "day",
@@ -1071,13 +1089,19 @@
      "cAt": "09:04",
      "eTs": "2026-07-28T00:04:13.645Z",
      "cm": 4,
-     "r1": null,
-     "hit": null,
+     "r1": -3.7,
+     "hit": false,
      "simR": -3,
      "simExit": "stop",
      "simD": "2026-07-28",
      "simT": "13:06",
-     "live": 1
+     "live": 1,
+     "mfe": 0.6,
+     "mae": -4.9,
+     "tv": 148551,
+     "tvx": 1,
+     "touch": "stop",
+     "idx": -10.84
     }
    ],
    "day2": {
