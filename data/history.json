@@ -137,9 +137,11 @@
      "gap": 3.4,
      "idx": -0.07,
      "b": 11.329999923706055,
-     "simOpen": 5.7,
      "tv": 834,
-     "tvx": 3.8
+     "tvx": 3.8,
+     "simR": 10,
+     "simExit": "target",
+     "simD": "2026-07-28"
     },
     {
      "kind": "swing",
@@ -1135,70 +1137,70 @@
      "rank": 1,
      "verdict": "관찰",
      "why": "크립토 하락 속 자사주 매입 호재이나 변동성 과다",
-     "r1": null
+     "r1": 3
     },
     {
      "ticker": "RHI",
      "rank": 2,
      "verdict": "선택",
      "why": "증권사 업그레이드 및 목표가 상향으로 안정적 상승 기대",
-     "r1": null
+     "r1": -1.6
     },
     {
      "ticker": "W",
      "rank": 3,
      "verdict": "선택",
      "why": "온라인 리테일 실적 기대감 및 낙폭 활용 단타 적합",
-     "r1": null
+     "r1": -2.3
     },
     {
      "ticker": "DJT",
      "rank": 4,
      "verdict": "제외",
      "why": "정치 테마성 변동성 커서 스윙 및 단타로 부적절",
-     "r1": null
+     "r1": 3.6
     },
     {
      "ticker": "SHOP",
      "rank": 5,
      "verdict": "선택",
      "why": "매출 성장 기대감과 월가 매수 추천으로 스윙 최우선",
-     "r1": null
+     "r1": 1.8
     },
     {
      "ticker": "RNG",
      "rank": 6,
      "verdict": "선택",
      "why": "배당 호재와 신고가 경신 모멘텀 보유",
-     "r1": null
+     "r1": 3.1
     },
     {
      "ticker": "YSS",
      "rank": 7,
      "verdict": "선택",
      "why": "우주항공 위성 배치 성공 실적 모멘텀",
-     "r1": null
+     "r1": -2.6
     },
     {
      "ticker": "RGTI",
      "rank": 8,
      "verdict": "선택",
      "why": "양자 컴퓨팅 파트너십 확장 재료 보유",
-     "r1": null
+     "r1": -3.5
     },
     {
      "ticker": "JBS",
      "rank": 9,
      "verdict": "선택",
      "why": "투자의견 상향 및 정책 수혜 모멘텀",
-     "r1": null
+     "r1": -0.3
     },
     {
      "ticker": "ANDG",
      "rank": 10,
      "verdict": "관찰",
      "why": "신용시설 계약 및 실적 발표 앞둠",
-     "r1": null
+     "r1": -1.2
     },
     {
      "ticker": "IONQ",
