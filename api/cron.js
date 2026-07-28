@@ -59,6 +59,26 @@ async function quotePrice(ticker) {
     return j?.chart?.result?.[0]?.meta?.regularMarketPrice || null;
   } catch { return null; }
 }
+// 수급(외국인·기관 최근 3일 순매매) — 파싱 실패 시 조용히 생략
+async function frgnTrend(code) {
+  try {
+    const buf = await (await fetch(`https://finance.naver.com/item/frgn.naver?code=${code}`, UA)).arrayBuffer();
+    const html = new TextDecoder("euc-kr").decode(buf);
+    const rows = [];
+    const re = /(\d{4}\.\d{2}\.\d{2})[\s\S]*?(?=\d{4}\.\d{2}\.\d{2}|$)/g;
+    let m, cnt = 0;
+    while ((m = re.exec(html)) && cnt < 3) {
+      const nums = [...m[0].matchAll(/>\s*([+-]?[\d,]+)\s*</g)].map((x) => +x[1].replace(/,/g, ""));
+      // [종가, 전일비, 거래량, 기관순매매, 외국인순매매, 보유주수...] 형태에서 기관·외인 추출
+      if (nums.length >= 5) { rows.push({ inst: nums[3], frgn: nums[4] }); cnt++; }
+    }
+    if (rows.length < 2) return null;
+    const sum = (k) => rows.reduce((a, r) => a + (r[k] || 0), 0);
+    const st = (k) => rows.every((r) => r[k] > 0) ? "연속순매수" : rows.every((r) => r[k] < 0) ? "연속순매도" : "혼조";
+    const fmt = (v) => (v >= 0 ? "+" : "") + Math.round(v / 1000) + "천주";
+    return `외인 ${fmt(sum("frgn"))}(${st("frgn")}) 기관 ${fmt(sum("inst"))}(${st("inst")})`;
+  } catch { return null; }
+}
 async function gatherKR() {
   const top = async (url, n) => {
     const html = new TextDecoder("euc-kr").decode(await (await fetch(url, UA)).arrayBuffer());
@@ -94,7 +114,8 @@ async function gatherKR() {
   // 실행시간 보호: 상위 10개는 뉴스 2건, 나머지는 1건
   const rows = await Promise.all(cands.map(async (s, i) => {
     const news = await naverNews(s.code, i < 10 ? 2 : 1);
-    return `${s.name}(${s.tk}) | 뉴스: ${news.join(" / ") || "없음"}`;
+    const sup = i < 12 ? await frgnTrend(s.code) : null;
+    return `${s.name}(${s.tk})${sup ? ` | 수급(3일): ${sup}` : ""} | 뉴스: ${news.join(" / ") || "없음"}`;
   }));
   return { text: note + rows.join("\n"), allowed: cands.map((s) => ({ t: s.tk, n: s.name })) };
 }
