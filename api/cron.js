@@ -315,6 +315,13 @@ async function grade(entries) {
       p.hit = row.high >= base * (1 + (p.target || 3) / 100);
       p.mfe = +(((row.high - base) / base) * 100).toFixed(1);
       p.mae = +(((row.low - base) / base) * 100).toFixed(1);
+      // 유동성 스냅샷: 당일 거래대금(백만) + 20일 평균 대비 배율 — 자동매매 자금 규모 설계용
+      if (p.tv == null && row.vol && row.close) {
+        p.tv = Math.round((row.vol * row.close) / 1e6);
+        const i0v = d.indexOf(row);
+        const prev = d.slice(Math.max(0, i0v - 20), i0v).map((x) => (x.vol || 0) * x.close).filter((x) => x > 0);
+        if (prev.length >= 5) p.tvx = +((row.vol * row.close) / (prev.reduce((a, b) => a + b, 0) / prev.length)).toFixed(1);
+      }
       const hitStop = row.low <= base * 0.97; // 손절 가정 -3%
       p.touch = p.hit && hitStop ? "both" : p.hit ? "target" : hitStop ? "stop" : "none";
       // 장중 실시간 체결이 이미 확정된 픽은 그 결과가 최종 — 일봉 추론으로 뒤집지 않음
@@ -331,6 +338,11 @@ async function grade(entries) {
     }
     const i0 = d.findIndex((x) => x.date >= e.date); if (i0 < 0) return;
     const base = p.b || d[i0].open || p.p0; // 추천일 시가(또는 모니터 확정가) 진입 기준
+    if (p.tv == null && d[i0].vol && d[i0].close) {
+      p.tv = Math.round((d[i0].vol * d[i0].close) / 1e6);
+      const pv = d.slice(Math.max(0, i0 - 20), i0).map((x) => (x.vol || 0) * x.close).filter((x) => x > 0);
+      if (pv.length >= 5) p.tvx = +((d[i0].vol * d[i0].close) / (pv.reduce((a, b) => a + b, 0) / pv.length)).toFixed(1);
+    }
     if (p.b == null) { p.b = base; changed = true; }
     if (p.gap == null && d[i0].open && p.p0) { p.gap = +(((d[i0].open - p.p0) / p.p0) * 100).toFixed(1); changed = true; }
     for (const [k, n] of [["r1", 1], ["r5", 5], ["r20", 20]])
@@ -533,7 +545,7 @@ async function fetchDaily(t, range = "3mo") {
     const q = j?.chart?.result?.[0];
     if (!q?.timestamp?.length) return null;
     const o = q.indicators.quote[0];
-    return q.timestamp.map((s, i) => ({ date: new Date(s * 1000).toISOString().slice(0, 10), open: o.open[i], close: o.close[i], high: o.high[i], low: o.low[i] })).filter((d) => d.close != null);
+    return q.timestamp.map((s, i) => ({ date: new Date(s * 1000).toISOString().slice(0, 10), open: o.open[i], close: o.close[i], high: o.high[i], low: o.low[i], vol: o.volume ? o.volume[i] : null })).filter((d) => d.close != null);
   };
   const t0 = KRFIX[t] || t;
   let rows = await get(t0).catch(() => null);
