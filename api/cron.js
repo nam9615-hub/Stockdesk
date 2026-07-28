@@ -250,7 +250,15 @@ function similarCases(entries, market, regime) {
 
 /* ── 채점 ── */
 async function grade(entries) {
-  const need = [...new Set(entries.flatMap((e) => (e.picks || []).filter((p) => (p.kind === "day" ? p.r1 == null : p.r20 == null)).map((p) => p.ticker)))].slice(0, 12);
+  // 우선순위 대기줄: 미채점(r1 없음) 최우선 → r5 대기 → r20 대기, 같은 급은 최신부터 (신규 픽 기아 방지)
+  const pendQ = [];
+  entries.forEach((e) => (e.picks || []).forEach((p) => {
+    if (p.kind === "day" ? p.r1 == null : p.r20 == null) {
+      pendQ.push({ t: p.ticker, pri: p.r1 == null ? 0 : p.r5 == null ? 1 : 2, d: e.date });
+    }
+  }));
+  pendQ.sort((a, b) => a.pri - b.pri || (a.d < b.d ? 1 : -1));
+  const need = [...new Set(pendQ.map((x) => x.t))].slice(0, 16);
   // 시장 지수 일별 등락 맵 (실패 원인 귀속용)
   const idxMap = {};
   const mkts = [...new Set(entries.filter((e) => (e.picks || []).some((p) => (p.kind === "day" ? p.r1 == null : p.r20 == null))).map((e) => e.market))];
@@ -700,7 +708,10 @@ export default async function handler(req, res) {
     }
     hist.entries = hist.entries.slice(-240);
     if (graded || refined || cgraded || made) await ghWrite("data/history.json", hist, sha);
-    return res.status(200).json({ ok: true, job, made, graded, refined, at: kstTime() });
+    // 대기줄 계기판: 이 숫자가 계속 늘면 채점 한도를 올릴 시점
+    const qPicks = hist.entries.reduce((n, e) => n + (e.picks || []).filter((p) => (p.kind === "day" ? p.r1 == null : p.r20 == null)).length, 0);
+    const qCands = hist.entries.reduce((n, e) => n + (e.cands || []).filter((c) => c.r1 == null && !c.na).length, 0);
+    return res.status(200).json({ ok: true, job, made, graded, refined, queue: { picks: qPicks, cands: qCands }, at: kstTime() });
   } catch (e) {
     return res.status(500).json({ error: e.message });
   }
