@@ -1116,6 +1116,258 @@
     "rg": 2.1,
     "rej": -1.3
    }
+  },
+  {
+   "date": "2026-07-28",
+   "market": "US",
+   "regime": "하락",
+   "rules": [],
+   "cands": [
+    {
+     "ticker": "BMNR",
+     "rank": 1,
+     "verdict": "관찰",
+     "why": "크립토 하락 속 자사주 매입 호재이나 변동성 과다",
+     "r1": null
+    },
+    {
+     "ticker": "RHI",
+     "rank": 2,
+     "verdict": "선택",
+     "why": "증권사 업그레이드 및 목표가 상향으로 안정적 상승 기대",
+     "r1": null
+    },
+    {
+     "ticker": "W",
+     "rank": 3,
+     "verdict": "선택",
+     "why": "온라인 리테일 실적 기대감 및 낙폭 활용 단타 적합",
+     "r1": null
+    },
+    {
+     "ticker": "DJT",
+     "rank": 4,
+     "verdict": "제외",
+     "why": "정치 테마성 변동성 커서 스윙 및 단타로 부적절",
+     "r1": null
+    },
+    {
+     "ticker": "SHOP",
+     "rank": 5,
+     "verdict": "선택",
+     "why": "매출 성장 기대감과 월가 매수 추천으로 스윙 최우선",
+     "r1": null
+    },
+    {
+     "ticker": "RNG",
+     "rank": 6,
+     "verdict": "선택",
+     "why": "배당 호재와 신고가 경신 모멘텀 보유",
+     "r1": null
+    },
+    {
+     "ticker": "YSS",
+     "rank": 7,
+     "verdict": "선택",
+     "why": "우주항공 위성 배치 성공 실적 모멘텀",
+     "r1": null
+    },
+    {
+     "ticker": "RGTI",
+     "rank": 8,
+     "verdict": "선택",
+     "why": "양자 컴퓨팅 파트너십 확장 재료 보유",
+     "r1": null
+    },
+    {
+     "ticker": "JBS",
+     "rank": 9,
+     "verdict": "선택",
+     "why": "투자의견 상향 및 정책 수혜 모멘텀",
+     "r1": null
+    },
+    {
+     "ticker": "ANDG",
+     "rank": 10,
+     "verdict": "관찰",
+     "why": "신용시설 계약 및 실적 발표 앞둠",
+     "r1": null
+    },
+    {
+     "ticker": "IONQ",
+     "rank": 11,
+     "verdict": "관찰",
+     "why": "양자 컴퓨팅 섹터 동조화 흐름 관찰 필요",
+     "r1": null
+    },
+    {
+     "ticker": "PAY",
+     "rank": 12,
+     "verdict": "관찰",
+     "why": "이사진 개편 외 특이 수급 부재",
+     "r1": null
+    },
+    {
+     "ticker": "HUBS",
+     "rank": 13,
+     "verdict": "관찰",
+     "why": "현금창출력 주목받으나 모멘텀 제한적소",
+     "r1": null
+    },
+    {
+     "ticker": "INFQ",
+     "rank": 14,
+     "verdict": "관찰",
+     "why": "양자 컴퓨팅 테마 후발주",
+     "r1": null
+    },
+    {
+     "ticker": "NOK",
+     "rank": 15,
+     "verdict": "제외",
+     "why": "상승률 낮고 모멘텀 부족",
+     "r1": null
+    },
+    {
+     "ticker": "T",
+     "rank": 16,
+     "verdict": "제외",
+     "why": "방어주 성격으로 단기 스윙 수익률 제한적",
+     "r1": null
+    },
+    {
+     "ticker": "NU",
+     "rank": 17,
+     "verdict": "제외",
+     "why": "디지털 결제 뉴스 영향 제한적",
+     "r1": null
+    },
+    {
+     "ticker": "RIG",
+     "rank": 18,
+     "verdict": "제외",
+     "why": "하락 추세 및 실적 불확실성",
+     "r1": null
+    }
+   ],
+   "dayCands": [
+    {
+     "name": "Wayfair Inc.",
+     "ticker": "W",
+     "score": 79,
+     "target_pct": 5,
+     "sector": "유통",
+     "basis": [
+      "실적/수주계약",
+      "낙폭과대"
+     ],
+     "reason": "온라인 리테일 부문 실적 기대감과 함께 최근 주가 변동성을 활용한 단기 반등 모멘텀이 유효합니다. 거래량 집중 시 빠른 차익실현이 가능합니다.",
+     "risk": "부동산 시장 부진에 따른 실적 우려"
+    },
+    {
+     "name": "Ringcentral, Inc.",
+     "ticker": "RNG",
+     "score": 77,
+     "target_pct": 4,
+     "sector": "소프트웨어",
+     "basis": [
+      "실적/수주계약",
+      "신고가"
+     ],
+     "reason": "배당금 지급 기대감과 함께 소프트웨어 섹터 강세에 힘입어 신고가 부근에서 강한 거래대금이 유입되고 있습니다. 단기 추세 추종 매매에 적합합니다.",
+     "risk": "단기 차익 실현 매물 출회"
+    },
+    {
+     "name": "York Space Systems Inc.",
+     "ticker": "YSS",
+     "score": 76,
+     "target_pct": 5,
+     "sector": "우주항공",
+     "basis": [
+      "실적/수주계약",
+      "정책테마"
+     ],
+     "reason": "위성 배치 성공 및 SDA 미션 완료 등 가시적인 기술 성과가 부각되며 모멘텀이 지속되고 있습니다. 정책 및 방산 테마와 맞물려 단기 변동성이 큽니다.",
+     "risk": "테마성 수급 이탈 시 급락 가능성"
+    },
+    {
+     "name": "Rigetti Computing, Inc.",
+     "ticker": "RGTI",
+     "score": 74,
+     "target_pct": 4,
+     "sector": "기술",
+     "basis": [
+      "실적/수주계약",
+      "추세지속"
+     ],
+     "reason": "HPE와의 파트너십 확장 및 슈퍼컴퓨터 구축 소식이 양자 컴퓨팅 테마의 수급을 자극하고 있습니다. 변동성을 이용한 트레이딩 기회를 제공합니다.",
+     "risk": "테마 변동성 심화"
+    },
+    {
+     "name": "BitMine Immersion Technologies",
+     "ticker": "BMNR",
+     "score": 70,
+     "target_pct": 3,
+     "sector": "금융",
+     "basis": [
+      "실적/수주계약",
+      "낙폭과대"
+     ],
+     "reason": "자사주 매입 소식과 이더리움 목표가 상향 리포트가 하락장 속에서도 단기 반발 매수세를 유입시키고 있습니다. 비트코인 변동성에 연동된 빠른 대응이 필요합니다.",
+     "risk": "가상자산 시장 하락 추세"
+    }
+   ],
+   "hold": 0,
+   "v": {
+    "m": "gemini-3.5-flash-lite",
+    "pv": 5
+   },
+   "picks": [
+    {
+     "kind": "swing",
+     "name": "Shopify Inc.",
+     "ticker": "SHOP",
+     "score": 82,
+     "sector": "소프트웨어",
+     "basis": [
+      "실적/수주계약",
+      "추세지속"
+     ],
+     "p0": 126.88,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "Robert Half Inc.",
+     "ticker": "RHI",
+     "score": 78,
+     "sector": "서비스",
+     "basis": [
+      "실적/수주계약"
+     ],
+     "p0": 39.74,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "JBS N.V.",
+     "ticker": "JBS",
+     "score": 75,
+     "sector": "필수소비재",
+     "basis": [
+      "실적/수주계약",
+      "정책테마"
+     ],
+     "p0": 13.55,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    }
+   ]
   }
  ],
  "monAt": 1785219849028
