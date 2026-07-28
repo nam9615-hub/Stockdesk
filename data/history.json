@@ -955,12 +955,13 @@
       "추세지속"
      ],
      "p0": 333000,
-     "r1": null,
+     "r1": -3,
      "r5": null,
      "r20": null,
      "b": 328000,
      "gap": -1.5,
-     "simOpen": -3.4
+     "simOpen": -3,
+     "idx": null
     },
     {
      "kind": "swing",
