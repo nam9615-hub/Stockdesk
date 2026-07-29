@@ -1024,7 +1024,7 @@
      "r20": null,
      "b": 1533000,
      "gap": -0.8,
-     "simOpen": -0.5,
+     "simOpen": -0.3,
      "tv": 241108,
      "tvx": 2.8,
      "idx": -10.84
@@ -1045,10 +1045,12 @@
      "r20": null,
      "b": 876000,
      "gap": -2.6,
-     "simOpen": -1.5,
      "tv": 151285,
      "tvx": 0.7,
-     "idx": -10.84
+     "idx": -10.84,
+     "simR": -5,
+     "simExit": "stop",
+     "simD": "2026-07-29"
     },
     {
      "kind": "day",
@@ -1700,12 +1702,15 @@
       "추세지속"
      ],
      "p0": 165200,
-     "r1": null,
+     "r1": 2.2,
      "r5": null,
      "r20": null,
      "b": 165300,
      "gap": 0.1,
-     "simOpen": 2.4
+     "simOpen": 2.2,
+     "tv": 31909,
+     "tvx": 0.1,
+     "idx": null
     },
     {
      "kind": "swing",
@@ -1718,12 +1723,15 @@
       "뉴스재료"
      ],
      "p0": 305000,
-     "r1": null,
+     "r1": -1.3,
      "r5": null,
      "r20": null,
      "b": 305500,
      "gap": 0.2,
-     "simOpen": -1.3
+     "simOpen": -1.3,
+     "tv": 28971,
+     "tvx": 0.1,
+     "idx": null
     },
     {
      "kind": "swing",
@@ -1736,12 +1744,15 @@
       "정책테마"
      ],
      "p0": 875000,
-     "r1": null,
+     "r1": 0.2,
      "r5": null,
      "r20": null,
      "b": 862000,
      "gap": -1.5,
-     "simOpen": 0.1
+     "simOpen": 0.2,
+     "tv": 36240,
+     "tvx": 0.2,
+     "idx": null
     },
     {
      "kind": "day",
@@ -1760,8 +1771,18 @@
      "cAt": "09:04",
      "eTs": "2026-07-29T00:04:12.684Z",
      "cm": 4,
-     "r1": null,
-     "hit": null
+     "r1": 0.5,
+     "hit": false,
+     "mfe": 2,
+     "mae": -0.6,
+     "tv": 80298,
+     "tvx": 0.2,
+     "touch": "none",
+     "simR": 0.5,
+     "simExit": "close",
+     "simD": "2026-07-29",
+     "idx": null,
+     "postFixed": 1
     }
    ],
    "day2": {
