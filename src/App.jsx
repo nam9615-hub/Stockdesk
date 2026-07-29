@@ -1530,6 +1530,7 @@ function TrackRecord({ refreshKey }) {
               {rg != null && <> · 후회 <b style={{ color: T.warn }}>{rg}%p</b></>}
               {rj != null && <> · 제외판단 <b style={{ color: +rj <= 0 ? T.buy : T.sell }}>{rj}%p</b></>}
               {holds.length > 0 && <> · 보류 {holds.length}회({holds.filter((h) => h.holdEval.includes("성공")).length}적중)</>}
+              {(() => { const mf = hist.filter((e) => e.market === m && e.mktF && e.mktF.ok != null); if (!mf.length) return null; return <> · 시장예측 <b style={{ color: mf.filter((x) => x.mktF.ok).length / mf.length >= 0.5 ? T.buy : T.sell }}>{mf.filter((x) => x.mktF.ok).length}/{mf.length}</b></>; })()}
             </div>
           );
         };
