@@ -1922,6 +1922,16 @@ export default function App() {
                   {picks.brief}
                 </div>
               )}
+              {!(picks.picks || []).length && !(picks.day_cands || []).length && !(picks.day_picks || []).length && (
+                <div style={{ border: `1.5px solid ${T.warn}66`, background: "rgba(255,190,90,0.06)", borderRadius: 14, padding: 15, marginBottom: 14 }}>
+                  <div style={{ fontWeight: 800, fontSize: 15.5, marginBottom: 6 }}>⏸ 오늘은 매수 보류 — 고장이 아닙니다</div>
+                  <div style={{ fontSize: 13, color: T.sub, lineHeight: 1.7 }}>
+                    AI가 후보 {(picks.cands || []).length || "전"}개를 전부 심사한 뒤 <b style={{ color: T.ink }}>확률 우위가 없다고 판단해 스윙·단타 모두 추천하지 않기로 결정</b>했습니다.
+                    {picks.mkt && <> 시장 예측: <b style={{ color: picks.mkt.dir === "상승" ? T.buy : picks.mkt.dir === "하락" ? T.sell : T.warn }}>{picks.mkt.dir}</b> (확신 {picks.mkt.conf}){picks.mkt.why ? ` — ${picks.mkt.why}` : ""}</>}
+                  </div>
+                  <div style={{ fontSize: 11.5, color: T.faint, marginTop: 7, lineHeight: 1.6 }}>보류도 채점됩니다 — 오늘 후보들이 실제로 하락하면 "보류 성공", 상승하면 "기회손실"로 기록되어 다음 판단에 반영돼요.</div>
+                </div>
+              )}
               {picks.picks.map((p, i) => (
                 <div key={i} style={{ border: `1px solid ${T.line}`, borderRadius: 14, padding: 14, marginBottom: 12, background: T.card2 }}>
                   <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 10 }}>
