@@ -1831,70 +1831,70 @@
      "rank": 1,
      "verdict": "선택",
      "why": "마진 서프라이즈 및 가이던스 상향",
-     "r1": null
+     "r1": -2.9
     },
     {
      "ticker": "IOND",
      "rank": 2,
      "verdict": "관찰",
      "why": "뉴스 부재 속 급등으로 추격 매수 자제",
-     "r1": null
+     "r1": 28.1
     },
     {
      "ticker": "KNSA",
      "rank": 3,
      "verdict": "관찰",
      "why": "실적 발표 후 변동성 주시",
-     "r1": null
+     "r1": -0.7
     },
     {
      "ticker": "LCID",
      "rank": 4,
      "verdict": "선택",
      "why": "사우디 지원 백업으로 재무 우려 해소",
-     "r1": null
+     "r1": 3.1
     },
     {
      "ticker": "IQV",
      "rank": 5,
      "verdict": "관찰",
      "why": "목표가 상향이나 단기 모멘텀 확인 필요",
-     "r1": null
+     "r1": 2.4
     },
     {
      "ticker": "RGEN",
      "rank": 6,
      "verdict": "관찰",
      "why": "목표가 상향이나 상승 여력 점검",
-     "r1": null
+     "r1": -2.1
     },
     {
      "ticker": "OSCR",
      "rank": 7,
      "verdict": "관찰",
      "why": "투자자 이벤트 대기 중",
-     "r1": null
+     "r1": -2.6
     },
     {
      "ticker": "JBLU",
      "rank": 8,
      "verdict": "선택",
      "why": "중장기 가이던스 상향 호재",
-     "r1": null
+     "r1": -2.4
     },
     {
      "ticker": "CLS",
      "rank": 9,
      "verdict": "관찰",
      "why": "목표가 연쇄 상향 중이나 단기 과열",
-     "r1": null
+     "r1": -6.4
     },
     {
      "ticker": "FOUR",
      "rank": 10,
      "verdict": "제외",
      "why": "관련 뉴스 연계성 부족",
-     "r1": null
+     "r1": 3.8
     },
     {
      "ticker": "PRK",
