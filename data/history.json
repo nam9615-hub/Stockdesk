@@ -1901,56 +1901,56 @@
      "rank": 11,
      "verdict": "제외",
      "why": "상승 모멘텀 제한적",
-     "r1": null
+     "r1": 2.6
     },
     {
      "ticker": "INCY",
      "rank": 12,
      "verdict": "관찰",
      "why": "목표가 상향 외 촉매 부족",
-     "r1": null
+     "r1": -1.4
     },
     {
      "ticker": "WPP",
      "rank": 13,
      "verdict": "제외",
      "why": "타사 실적 영향에 동조화",
-     "r1": null
+     "r1": 2.4
     },
     {
      "ticker": "UL",
      "rank": 14,
      "verdict": "제외",
      "why": "외부 지정학 리스크 피난처 성격",
-     "r1": null
+     "r1": 1
     },
     {
      "ticker": "INTC",
      "rank": 15,
      "verdict": "제외",
      "why": "하락 종목으로 스윙 부적합",
-     "r1": null
+     "r1": -5.6
     },
     {
      "ticker": "NVDA",
      "rank": 16,
      "verdict": "제외",
      "why": "변동성 미미",
-     "r1": null
+     "r1": -3
     },
     {
      "ticker": "NOK",
      "rank": 17,
      "verdict": "제외",
      "why": "하락세 지속",
-     "r1": null
+     "r1": -5.6
     },
     {
      "ticker": "AAL",
      "rank": 18,
      "verdict": "제외",
      "why": "IT 장애 후 복구 반등에 불과",
-     "r1": null
+     "r1": 0.8
     }
    ],
    "dayCands": [
@@ -2220,6 +2220,13 @@
     "at": "22:34",
     "brief": "OSCR은 시가갭 -0.4%에서 개장 후 +2% 상승하며 수급이 유입되었고, RGEN은 -0.8% 갭하락 후 +0.9% 반등하며 매수세를 확인했습니다. 반면 CLS는 개장 후 -2.8% 하락하여 원칙에 따라 제외합니다.",
     "n": 2
+   },
+   "cstat": {
+    "n": 18,
+    "med": -0.7,
+    "ex": 0,
+    "rg": 28.8,
+    "rej": 0.3
    }
   }
  ],
