@@ -1712,7 +1712,12 @@
      "simOpen": -4.6,
      "tv": 31909,
      "tvx": 0.1,
-     "idx": null
+     "idx": null,
+     "simR": -5,
+     "simExit": "stop",
+     "simD": "2026-07-29",
+     "simT": "13:30",
+     "live": 1
     },
     {
      "kind": "swing",
@@ -1804,5 +1809,5 @@
    }
   }
  ],
- "monAt": 1785298817325
+ "monAt": 1785299426080
 }
