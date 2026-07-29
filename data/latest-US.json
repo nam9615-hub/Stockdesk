@@ -1,227 +1,223 @@
 {
- "date": "2026-07-28",
+ "date": "2026-07-29",
  "at": "21:29",
  "data": {
-  "brief": "시장 전반의 하락 압력과 과거 실측 성적의 낮은 적중률을 고려하여, 변동성이 큰 크립토 및 테마성 종목은 보수적으로 접근하고 모멘텀과 실적 개선 기대감이 있는 종목 위주로 선별했습니다. 단타와 스윙 후보 모두 리스크 관리를 최우선으로 하여 엄선했습니다.",
+  "brief": "실적 개선과 가이드라인 상향 종목이 강세를 보이나 과거 단타 성적이 부진하므로 엄선된 모멘텀 종목 위주로 대응해야 한다. 실적/수주계약 중심의 종목이 유리하며 추세 지속 종목은 신중히 접근한다.",
   "picks": [
    {
-    "name": "Shopify Inc.",
-    "ticker": "SHOP",
-    "score": 82,
-    "sector": "소프트웨어",
-    "basis": [
-     "실적/수주계약",
-     "추세지속"
-    ],
-    "reason": "2분기 '하이 트웬티' 매출 성장 기대감과 월가 애널리스트의 강력한 매수 추천이 맞물리며 강한 상승 모멘텀을 보이고 있습니다. 견고한 펀더멘털을 바탕으로 추가 상승 여력이 기대됩니다.",
-    "catalyst": "2분기 매출 성장 기대감",
-    "risk": "기술주 전반의 조정 변동성"
-   },
-   {
-    "name": "Robert Half Inc.",
-    "ticker": "RHI",
-    "score": 78,
-    "sector": "서비스",
+    "name": "Itron, Inc.",
+    "ticker": "ITRI",
+    "score": 88,
+    "sector": "장비",
     "basis": [
      "실적/수주계약"
     ],
-    "reason": "BMO 캐피털이 투자의견을 상향 조정하고 목표주가를 상향하면서 매수세가 유입되고 있습니다. 실적 개선 기대감이 당분간 주가 지지력으로 작용할 것입니다.",
-    "catalyst": "BMO 캐피털 투자의견 상향",
-    "risk": "거시경제 둔화에 따른 고용 시장 위축"
+    "reason": "마진 서프라이즈와 함께 EPS 전망치를 상향 조정하며 주가가 급등했다. 실적 개선 모멘텀이 이어지며 단기 스윙 관점에서 유리하다.",
+    "catalyst": "마진 호조 및 EPS 가이던스 상향",
+    "risk": "단기 급등에 따른 변동성 확대"
    },
    {
-    "name": "JBS N.V.",
-    "ticker": "JBS",
-    "score": 75,
-    "sector": "필수소비재",
+    "name": "Lucid Group, Inc.",
+    "ticker": "LCID",
+    "score": 82,
+    "sector": "자동차",
     "basis": [
-     "실적/수주계약",
-     "정책테마"
+     "재료재료/실적",
+     "뉴스재료"
     ],
-    "reason": "JP모건이 투자의견을 오버웨이트로 상향하고 미국 정부의 멕시코산 소 수입 재개 계획이 호재로 작용했습니다. 정책적 수혜와 실적 개선 전망이 긍정적입니다.",
-    "catalyst": "JP모건 투자의견 상향 및 정책 수혜",
-    "risk": "원자재 가격 변동성"
+    "reason": "사우디 왕실의 재정 지원 소식이 전해지며 재무 건전성 우려가 완화되어 급등했다. 대주주 백업이라는 강력한 모멘텀이 지속될 수 있다.",
+    "catalyst": "사우디 왕실 지원 및 재무 우려 해소",
+    "risk": "전기차 섹터 센티먼트 변화"
+   },
+   {
+    "name": "JetBlue Airways Corporation",
+    "ticker": "JBLU",
+    "score": 79,
+    "sector": "운송",
+    "basis": [
+     "실적/수주계약"
+    ],
+    "reason": "2026년 실적 전망을 재확인하고 2028년 EPS 목표를 제시하면서 투자심리가 개선되었다. 가시성 높은 장기 목표가 주가 하방을 지지한다.",
+    "catalyst": "2026 전망 복원 및 2028 EPS 목표 제시",
+    "risk": "항공 업종 전반의 비용 압박"
    }
   ],
   "day_cands": [
    {
-    "name": "Wayfair Inc.",
-    "ticker": "W",
-    "score": 79,
+    "name": "Celestica, Inc.",
+    "ticker": "CLS",
+    "score": 85,
     "target_pct": 5,
-    "sector": "유통",
-    "basis": [
-     "실적/수주계약",
-     "낙폭과대"
-    ],
-    "reason": "온라인 리테일 부문 실적 기대감과 함께 최근 주가 변동성을 활용한 단기 반등 모멘텀이 유효합니다. 거래량 집중 시 빠른 차익실현이 가능합니다.",
-    "risk": "부동산 시장 부진에 따른 실적 우려"
-   },
-   {
-    "name": "Ringcentral, Inc.",
-    "ticker": "RNG",
-    "score": 77,
-    "target_pct": 4,
-    "sector": "소프트웨어",
-    "basis": [
-     "실적/수주계약",
-     "신고가"
-    ],
-    "reason": "배당금 지급 기대감과 함께 소프트웨어 섹터 강세에 힘입어 신고가 부근에서 강한 거래대금이 유입되고 있습니다. 단기 추세 추종 매매에 적합합니다.",
-    "risk": "단기 차익 실현 매물 출회"
-   },
-   {
-    "name": "York Space Systems Inc.",
-    "ticker": "YSS",
-    "score": 76,
-    "target_pct": 5,
-    "sector": "우주항공",
-    "basis": [
-     "실적/수주계약",
-     "정책테마"
-    ],
-    "reason": "위성 배치 성공 및 SDA 미션 완료 등 가시적인 기술 성과가 부각되며 모멘텀이 지속되고 있습니다. 정책 및 방산 테마와 맞물려 단기 변동성이 큽니다.",
-    "risk": "테마성 수급 이탈 시 급락 가능성"
-   },
-   {
-    "name": "Rigetti Computing, Inc.",
-    "ticker": "RGTI",
-    "score": 74,
-    "target_pct": 4,
     "sector": "기술",
     "basis": [
-     "실적/수주계약",
-     "추세지속"
+     "뉴스재료"
     ],
-    "reason": "HPE와의 파트너십 확장 및 슈퍼컴퓨터 구축 소식이 양자 컴퓨팅 테마의 수급을 자극하고 있습니다. 변동성을 이용한 트레이딩 기회를 제공합니다.",
-    "risk": "테마 변동성 심화"
+    "reason": "주요 투자기관들의 목표주가 상향 리포트가 이어지며 모멘텀이 유지되고 있다.",
+    "risk": "고점 부담에 따른 차익실현 매물"
    },
    {
-    "name": "BitMine Immersion Technologies",
-    "ticker": "BMNR",
-    "score": 70,
-    "target_pct": 3,
-    "sector": "금융",
+    "name": "Oscar Health, Inc.",
+    "ticker": "OSCR",
+    "score": 81,
+    "target_pct": 4,
+    "sector": "헬스케어",
     "basis": [
-     "실적/수주계약",
-     "낙폭과대"
+     "뉴스재료"
     ],
-    "reason": "자사주 매입 소식과 이더리움 목표가 상향 리포트가 하락장 속에서도 단기 반발 매수세를 유입시키고 있습니다. 비트코인 변동성에 연동된 빠른 대응이 필요합니다.",
-    "risk": "가상자산 시장 하락 추세"
+    "reason": "메디케이드 관련 반사이익 기대감과 함께 투자자의 날 개최 등 이벤트가 대기 중이다.",
+    "risk": "변동성 높은 섹터 특성"
+   },
+   {
+    "name": "Kiniksa Pharmaceuticals",
+    "ticker": "KNSA",
+    "score": 77,
+    "target_pct": 3,
+    "sector": "헬스케어",
+    "basis": [
+     "실적/수주계약"
+    ],
+    "reason": "양호한 실적 발표와 함께 미디엄 게이너 상위권에 랭크되며 수급이 유입되고 있다.",
+    "risk": "테마 지속성 부족 가능성"
+   },
+   {
+    "name": "Incyte Corporation",
+    "ticker": "INCY",
+    "score": 75,
+    "target_pct": 3,
+    "sector": "헬스케어",
+    "basis": [
+     "뉴스재료"
+    ],
+    "reason": "증권가의 목표주가 상향 조정이 이어지며 완만한 상승 흐름을 보이고 있다.",
+    "risk": "상승 폭 제한 가능성"
+   },
+   {
+    "name": "Repligen Corporation",
+    "ticker": "RGEN",
+    "score": 74,
+    "target_pct": 3,
+    "sector": "바이오",
+    "basis": [
+     "뉴스재료"
+    ],
+    "reason": "복수의 투자은행으로부터 목표가 상향 조정을 받으며 매수세가 유입되고 있다.",
+    "risk": "시장 전반의 하방 압력"
    }
   ],
   "cands": [
    {
-    "ticker": "BMNR",
+    "ticker": "ITRI",
     "rank": 1,
-    "verdict": "관찰",
-    "why": "크립토 하락 속 자사주 매입 호재이나 변동성 과다"
+    "verdict": "선택",
+    "why": "마진 서프라이즈 및 가이던스 상향"
    },
    {
-    "ticker": "RHI",
+    "ticker": "IOND",
     "rank": 2,
-    "verdict": "선택",
-    "why": "증권사 업그레이드 및 목표가 상향으로 안정적 상승 기대"
+    "verdict": "관찰",
+    "why": "뉴스 부재 속 급등으로 추격 매수 자제"
    },
    {
-    "ticker": "W",
+    "ticker": "KNSA",
     "rank": 3,
-    "verdict": "선택",
-    "why": "온라인 리테일 실적 기대감 및 낙폭 활용 단타 적합"
+    "verdict": "관찰",
+    "why": "실적 발표 후 변동성 주시"
    },
    {
-    "ticker": "DJT",
+    "ticker": "LCID",
     "rank": 4,
-    "verdict": "제외",
-    "why": "정치 테마성 변동성 커서 스윙 및 단타로 부적절"
+    "verdict": "선택",
+    "why": "사우디 지원 백업으로 재무 우려 해소"
    },
    {
-    "ticker": "SHOP",
+    "ticker": "IQV",
     "rank": 5,
-    "verdict": "선택",
-    "why": "매출 성장 기대감과 월가 매수 추천으로 스윙 최우선"
+    "verdict": "관찰",
+    "why": "목표가 상향이나 단기 모멘텀 확인 필요"
    },
    {
-    "ticker": "RNG",
+    "ticker": "RGEN",
     "rank": 6,
-    "verdict": "선택",
-    "why": "배당 호재와 신고가 경신 모멘텀 보유"
+    "verdict": "관찰",
+    "why": "목표가 상향이나 상승 여력 점검"
    },
    {
-    "ticker": "YSS",
+    "ticker": "OSCR",
     "rank": 7,
-    "verdict": "선택",
-    "why": "우주항공 위성 배치 성공 실적 모멘텀"
+    "verdict": "관찰",
+    "why": "투자자 이벤트 대기 중"
    },
    {
-    "ticker": "RGTI",
+    "ticker": "JBLU",
     "rank": 8,
     "verdict": "선택",
-    "why": "양자 컴퓨팅 파트너십 확장 재료 보유"
+    "why": "중장기 가이던스 상향 호재"
    },
    {
-    "ticker": "JBS",
+    "ticker": "CLS",
     "rank": 9,
-    "verdict": "선택",
-    "why": "투자의견 상향 및 정책 수혜 모멘텀"
+    "verdict": "관찰",
+    "why": "목표가 연쇄 상향 중이나 단기 과열"
    },
    {
-    "ticker": "ANDG",
+    "ticker": "FOUR",
     "rank": 10,
-    "verdict": "관찰",
-    "why": "신용시설 계약 및 실적 발표 앞둠"
+    "verdict": "제외",
+    "why": "관련 뉴스 연계성 부족"
    },
    {
-    "ticker": "IONQ",
+    "ticker": "PRK",
     "rank": 11,
-    "verdict": "관찰",
-    "why": "양자 컴퓨팅 섹터 동조화 흐름 관찰 필요"
+    "verdict": "제외",
+    "why": "상승 모멘텀 제한적"
    },
    {
-    "ticker": "PAY",
+    "ticker": "INCY",
     "rank": 12,
     "verdict": "관찰",
-    "why": "이사진 개편 외 특이 수급 부재"
+    "why": "목표가 상향 외 촉매 부족"
    },
    {
-    "ticker": "HUBS",
+    "ticker": "WPP",
     "rank": 13,
-    "verdict": "관찰",
-    "why": "현금창출력 주목받으나 모멘텀 제한적소"
+    "verdict": "제외",
+    "why": "타사 실적 영향에 동조화"
    },
    {
-    "ticker": "INFQ",
+    "ticker": "UL",
     "rank": 14,
-    "verdict": "관찰",
-    "why": "양자 컴퓨팅 테마 후발주"
+    "verdict": "제외",
+    "why": "외부 지정학 리스크 피난처 성격"
+   },
+   {
+    "ticker": "INTC",
+    "rank": 15,
+    "verdict": "제외",
+    "why": "하락 종목으로 스윙 부적합"
+   },
+   {
+    "ticker": "NVDA",
+    "rank": 16,
+    "verdict": "제외",
+    "why": "변동성 미미"
    },
    {
     "ticker": "NOK",
-    "rank": 15,
-    "verdict": "제외",
-    "why": "상승률 낮고 모멘텀 부족"
-   },
-   {
-    "ticker": "T",
-    "rank": 16,
-    "verdict": "제외",
-    "why": "방어주 성격으로 단기 스윙 수익률 제한적"
-   },
-   {
-    "ticker": "NU",
     "rank": 17,
     "verdict": "제외",
-    "why": "디지털 결제 뉴스 영향 제한적"
+    "why": "하락세 지속"
    },
    {
-    "ticker": "RIG",
+    "ticker": "AAL",
     "rank": 18,
     "verdict": "제외",
-    "why": "하락 추세 및 실적 불확실성"
+    "why": "IT 장애 후 복구 반등에 불과"
    }
   ],
-  "day_picks": [],
-  "day_at": "22:34",
-  "day_brief": "모든 후보가 개장 후 마이너스(-) 전환 또는 시가 대비 붕괴를 보여 확률 우위 조건에 부합하지 않습니다."
+  "mkt": {
+   "dir": "횡보",
+   "conf": 55,
+   "why": "개별 실적 호조 종목이 강세를 보이나 거시경제 지표 경계감이 상존함"
+  }
  }
 }
