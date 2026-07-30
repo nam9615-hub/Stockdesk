@@ -2365,6 +2365,265 @@
     "rej": -3.1
    },
    "holdEval": "기회손실 2.4%"
+  },
+  {
+   "date": "2026-07-30",
+   "market": "US",
+   "regime": "하락",
+   "rules": [],
+   "cands": [
+    {
+     "ticker": "HURN",
+     "rank": 1,
+     "verdict": "관찰",
+     "why": "당일 급등세이나 추격매수 주의",
+     "r1": null
+    },
+    {
+     "ticker": "MANH",
+     "rank": 2,
+     "verdict": "선택",
+     "why": "클라우드/AI 가이던스 상향으로 소프트웨어 우위 확보",
+     "r1": null
+    },
+    {
+     "ticker": "LAD",
+     "rank": 3,
+     "verdict": "관찰",
+     "why": "어닝 비트 기록 있으나 밸류에이션 점검 필요",
+     "r1": null
+    },
+    {
+     "ticker": "EXLS",
+     "rank": 4,
+     "verdict": "관찰",
+     "why": "기관 목표가 상향 반영 중",
+     "r1": null
+    },
+    {
+     "ticker": "CBZ",
+     "rank": 5,
+     "verdict": "선택",
+     "why": "50억 달러 대형 M&A 재료 보유",
+     "r1": null
+    },
+    {
+     "ticker": "GRMN",
+     "rank": 6,
+     "verdict": "선택",
+     "why": "가이던스 상향 및 프리미엄 항공 테크 전환",
+     "r1": null
+    },
+    {
+     "ticker": "AVTR",
+     "rank": 7,
+     "verdict": "관찰",
+     "why": "목표가 상향이나 중립적 투자의견 잔존",
+     "r1": null
+    },
+    {
+     "ticker": "EDU",
+     "rank": 8,
+     "verdict": "관찰",
+     "why": "자본 환원 계획 발표 후 변동성 관찰",
+     "r1": null
+    },
+    {
+     "ticker": "CAKE",
+     "rank": 9,
+     "verdict": "제외",
+     "why": "뚜렷한 추가 모멘텀 부족",
+     "r1": null
+    },
+    {
+     "ticker": "GEHC",
+     "rank": 10,
+     "verdict": "제외",
+     "why": "상승 탄력 둔화",
+     "r1": null
+    },
+    {
+     "ticker": "MBIN",
+     "rank": 11,
+     "verdict": "제외",
+     "why": "실적 호조이나 관심도 낮음",
+     "r1": null
+    },
+    {
+     "ticker": "CTSH",
+     "rank": 12,
+     "verdict": "제외",
+     "why": "타 소프트웨어 대비 모멘텀 약함",
+     "r1": null
+    },
+    {
+     "ticker": "NP",
+     "rank": 13,
+     "verdict": "제외",
+     "why": "시가총액 및 유동성 한계",
+     "r1": null
+    },
+    {
+     "ticker": "TEVA",
+     "rank": 14,
+     "verdict": "제외",
+     "why": "상승폭 제한적",
+     "r1": null
+    },
+    {
+     "ticker": "SOFI",
+     "rank": 15,
+     "verdict": "제외",
+     "why": "실적 시즌 하락 추세",
+     "r1": null
+    },
+    {
+     "ticker": "INTC",
+     "rank": 16,
+     "verdict": "제외",
+     "why": "반도체 업황 혼조 및 하락세",
+     "r1": null
+    },
+    {
+     "ticker": "NVDA",
+     "rank": 17,
+     "verdict": "제외",
+     "why": "대형 기술주 약세 동참",
+     "r1": null
+    },
+    {
+     "ticker": "F",
+     "rank": 18,
+     "verdict": "제외",
+     "why": "상승 모멘텀 미미",
+     "r1": null
+    }
+   ],
+   "dayCands": [
+    {
+     "name": "Huron Consulting Group Inc.",
+     "ticker": "HURN",
+     "score": 68,
+     "target_pct": 4,
+     "sector": "컨설팅",
+     "basis": [
+      "뉴스재료"
+     ],
+     "reason": "당일 급등 상위 후보로 거래대금과 모멘텀이 집중되고 있습니다. 개장 후 변동성을 이용한 단기 트레이딩 관점입니다.",
+     "catalyst": "상위 거래대금 및 중형주 강세",
+     "risk": "급등 후 변동성 확대"
+    },
+    {
+     "name": "Lithia Motors, Inc.",
+     "ticker": "LAD",
+     "score": 65,
+     "target_pct": 3,
+     "sector": "유통",
+     "basis": [
+      "실적"
+     ],
+     "reason": "어닝 서프라이즈 기록 이후 추가적인 모멘텀을 테스트하는 국면입니다. 실적 호조에 따른 매수세 유입을 기대합니다.",
+     "catalyst": "어닝 비트 및 실적 호조",
+     "risk": "공정 가치 평가 논란"
+    },
+    {
+     "name": "ExlService Holdings, Inc.",
+     "ticker": "EXLS",
+     "score": 64,
+     "target_pct": 3,
+     "sector": "서비스",
+     "basis": [
+      "뉴스재료"
+     ],
+     "reason": "배어드 등 주요 기관의 목표주가 상향 조정 및 투자의견 상향 리포트가 발표되었습니다. 기관 수급 유입에 따른 단기 탄력이 기대됩니다.",
+     "catalyst": "기관 투자의견 상향 및 목표가 상향",
+     "risk": "시장 하락에 따른 동반 조정"
+    },
+    {
+     "name": "Avantor, Inc.",
+     "ticker": "AVTR",
+     "score": 62,
+     "target_pct": 2,
+     "sector": "헬스케어",
+     "basis": [
+      "뉴스재료"
+     ],
+     "reason": "RBC와 제퍼리스 등에서 목표주가를 잇달아 상향 조정했습니다. 투자의견 개선에 따른 저가 매수세 유입 가능성이 있습니다.",
+     "catalyst": "목표주가 상향 조정 릴레이",
+     "risk": "시장 제한적인 섹터 흐름"
+    },
+    {
+     "name": "New Oriental Education & Technology Group",
+     "ticker": "EDU",
+     "score": 60,
+     "target_pct": 3,
+     "sector": "교육",
+     "basis": [
+      "뉴스재료"
+     ],
+     "reason": "신규 자본 환원 계획 발표와 함께 투자의견이 상향되었습니다. 주주환원 정책 모멘텀이 단기 반등을 지지합니다.",
+     "catalyst": "자본 환원 계획 및 투자의견 상향",
+     "risk": "중국 관련 자산 변동성"
+    }
+   ],
+   "hold": 0,
+   "v": {
+    "m": "gemini-3.5-flash-lite",
+    "pv": 5
+   },
+   "mktF": {
+    "dir": "하락",
+    "conf": 65,
+    "why": "S&P500 선물 혼조세와 금리 우려가 겹치며 방어적 장세가 예상됩니다.",
+    "ok": null
+   },
+   "picks": [
+    {
+     "kind": "swing",
+     "name": "Manhattan Associates, Inc.",
+     "ticker": "MANH",
+     "score": 75,
+     "sector": "소프트웨어",
+     "basis": [
+      "실적",
+      "수주계약"
+     ],
+     "p0": 204.02,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "Garmin Ltd.",
+     "ticker": "GRMN",
+     "score": 72,
+     "sector": "보기",
+     "basis": [
+      "실적",
+      "추세지속"
+     ],
+     "p0": 294.83,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "CBIZ, Inc.",
+     "ticker": "CBZ",
+     "score": 70,
+     "sector": "금융",
+     "basis": [
+      "뉴스재료",
+      "수주계약"
+     ],
+     "p0": 54.9,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    }
+   ]
   }
  ],
  "monAt": 1785356170666
