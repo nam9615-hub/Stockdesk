@@ -2136,10 +2136,12 @@
      "r20": null,
      "b": 7.860000133514404,
      "gap": -0.5,
-     "simOpen": 3.3,
      "tv": 7,
      "tvx": 0,
-     "idx": -0.05
+     "idx": -0.05,
+     "simR": -5,
+     "simExit": "stop",
+     "simD": "2026-07-30"
     },
     {
      "kind": "swing",
@@ -2382,70 +2384,70 @@
      "rank": 1,
      "verdict": "관찰",
      "why": "당일 급등세이나 추격매수 주의",
-     "r1": null
+     "r1": -1.3
     },
     {
      "ticker": "MANH",
      "rank": 2,
      "verdict": "선택",
      "why": "클라우드/AI 가이던스 상향으로 소프트웨어 우위 확보",
-     "r1": null
+     "r1": -2.1
     },
     {
      "ticker": "LAD",
      "rank": 3,
      "verdict": "관찰",
      "why": "어닝 비트 기록 있으나 밸류에이션 점검 필요",
-     "r1": null
+     "r1": -3.7
     },
     {
      "ticker": "EXLS",
      "rank": 4,
      "verdict": "관찰",
      "why": "기관 목표가 상향 반영 중",
-     "r1": null
+     "r1": -3.6
     },
     {
      "ticker": "CBZ",
      "rank": 5,
      "verdict": "선택",
      "why": "50억 달러 대형 M&A 재료 보유",
-     "r1": null
+     "r1": 0
     },
     {
      "ticker": "GRMN",
      "rank": 6,
      "verdict": "선택",
      "why": "가이던스 상향 및 프리미엄 항공 테크 전환",
-     "r1": null
+     "r1": 1.6
     },
     {
      "ticker": "AVTR",
      "rank": 7,
      "verdict": "관찰",
      "why": "목표가 상향이나 중립적 투자의견 잔존",
-     "r1": null
+     "r1": -4.7
     },
     {
      "ticker": "EDU",
      "rank": 8,
      "verdict": "관찰",
      "why": "자본 환원 계획 발표 후 변동성 관찰",
-     "r1": null
+     "r1": -6.1
     },
     {
      "ticker": "CAKE",
      "rank": 9,
      "verdict": "제외",
      "why": "뚜렷한 추가 모멘텀 부족",
-     "r1": null
+     "r1": -0.2
     },
     {
      "ticker": "GEHC",
      "rank": 10,
      "verdict": "제외",
      "why": "상승 탄력 둔화",
-     "r1": null
+     "r1": -2.2
     },
     {
      "ticker": "MBIN",
