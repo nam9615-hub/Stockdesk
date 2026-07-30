@@ -2242,70 +2242,70 @@
      "rank": 1,
      "verdict": "제외",
      "why": "미증시 급락 및 반도체 약세로 하방 압력 큼",
-     "r1": null
+     "r1": -3.3
     },
     {
      "ticker": "000660.KS",
      "rank": 2,
      "verdict": "제외",
      "why": "프리마켓 약세 및 반도체 섹터 회피 구간",
-     "r1": null
+     "r1": -2.9
     },
     {
      "ticker": "005935.KS",
      "rank": 3,
      "verdict": "제외",
      "why": "패닉셀 국면으로 관망 필요",
-     "r1": null
+     "r1": -1.9
     },
     {
      "ticker": "402340.KS",
      "rank": 4,
      "verdict": "제외",
      "why": "지수 급락 영향으로 변동성 확대",
-     "r1": null
+     "r1": -3.3
     },
     {
      "ticker": "009150.KS",
      "rank": 5,
      "verdict": "제외",
      "why": "시장 충격 속 단기 매매 실익 낮음",
-     "r1": null
+     "r1": -12.5
     },
     {
      "ticker": "005380.KS",
      "rank": 6,
      "verdict": "관찰",
      "why": "금융지원 등 개별 재료 있으나 시장 하락 방어력 점검 필요",
-     "r1": null
+     "r1": 1.4
     },
     {
      "ticker": "373220.KS",
      "rank": 7,
      "verdict": "제외",
      "why": "지수 동반 하락 우려",
-     "r1": null
+     "r1": 6.5
     },
     {
      "ticker": "207940.KS",
      "rank": 8,
      "verdict": "관찰",
      "why": "기관 연속 순매수 있으나 지수 영향 주시",
-     "r1": null
+     "r1": 3.7
     },
     {
      "ticker": "105560.KS",
      "rank": 9,
      "verdict": "관찰",
      "why": "방어주 성격이나 유사 국면 하락 사례 참고",
-     "r1": null
+     "r1": 4.6
     },
     {
      "ticker": "032830.KS",
      "rank": 10,
      "verdict": "제외",
      "why": "계열사 주가 부진 영향 연동",
-     "r1": null
+     "r1": 0
     },
     {
      "ticker": "000270.KS",
