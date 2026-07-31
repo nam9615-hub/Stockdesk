@@ -22,6 +22,21 @@ async function ghWrite(path, obj, sha) {
     headers: { Authorization: `Bearer ${process.env.GH_TOKEN}`, "User-Agent": "stockdesk", Accept: "application/vnd.github+json" },
     body: JSON.stringify(body),
   });
+  if (r.status === 409) {
+    // 동시 저장 충돌: 최신 SHA 재취득 후 1회 재시도 (모니터·크론 병행 대비)
+    const r2 = await fetch(`https://api.github.com/repos/${process.env.GH_REPO}/contents/${path}`, {
+      headers: { Authorization: `Bearer ${process.env.GH_TOKEN}`, "User-Agent": "stockdesk", Accept: "application/vnd.github+json" },
+    });
+    const j2 = r2.ok ? await r2.json() : null;
+    if (j2?.sha) {
+      body.sha = j2.sha;
+      const r3 = await fetch(`https://api.github.com/repos/${process.env.GH_REPO}/contents/${path}`, {
+        method: "PUT", headers: { Authorization: `Bearer ${process.env.GH_TOKEN}`, "User-Agent": "stockdesk", Accept: "application/vnd.github+json" },
+        body: JSON.stringify(body),
+      });
+      if (r3.ok) return;
+    }
+  }
   if (!r.ok) throw new Error("GitHub 저장 실패: " + (await r.text()).slice(0, 120));
 }
 
@@ -100,7 +115,12 @@ async function gatherKR() {
   let note = "";
   if (!cands.length) {
     // 개장 전 등으로 상승률 데이터가 비어 있으면: 시가총액 상위로 대체 (뉴스 재료 중심 선별)
-    cands = await top("https://finance.naver.com/sise/sise_market_sum.naver", 15).catch(() => []);
+    const [mkKP, mkKQ] = await Promise.all([
+      top("https://finance.naver.com/sise/sise_market_sum.naver?sosok=0", 10).catch(() => []),
+      top("https://finance.naver.com/sise/sise_market_sum.naver?sosok=1", 10).catch(() => []),
+    ]);
+    for (let i = 0; i < 10; i++) for (const a of [mkKP, mkKQ]) if (a[i]) cands.push(a[i]);
+    cands = cands.slice(0, 16);
     note = "(개장 전 — 당일 등락 데이터 없음. 아래는 시가총액 상위이며, 각 종목 뉴스 재료 중심으로 선별하라)\n";
   }
   if (!cands.length) return { text: "", allowed: [] };
@@ -263,6 +283,21 @@ function historySummary(entries, market) {
   }
   if (cal.length >= 2) parts.push(`[확신도 교정] 네가 표시한 강도 대비 실제 적중: ${cal.join(" · ")}. 이 격차만큼 확신을 보정하라.`);
   return parts.length ? `[과거 실측 성적] ${parts.join(" ")} 실패 유형은 피하고 성공 유형을 우선하라.` : "";
+}
+async function mktCtx(market) {
+  const one = async (t, label, fmt) => {
+    try {
+      const { rows } = await fetchDaily(t, "5d");
+      if (!rows || rows.length < 2) return null;
+      const a = rows[rows.length - 1], b = rows[rows.length - 2];
+      const chg = +(((a.close - b.close) / b.close) * 100).toFixed(1);
+      return `${label} ${fmt ? fmt(a.close) : ""}${chg >= 0 ? "+" : ""}${chg}%`;
+    } catch { return null; }
+  };
+  const parts = (await Promise.all(market === "KR"
+    ? [one("^GSPC", "전일 S&P500 "), one("^IXIC", "나스닥 "), one("KRW=X", "원달러 ", (v) => Math.round(v) + "원 "), one("ES=F", "미 지수선물(야간) ")]
+    : [one("^GSPC", "전일 S&P500 "), one("ES=F", "지수선물 "), one("^VIX", "VIX ", (v) => v.toFixed(0) + " ")])).filter(Boolean);
+  return parts.length ? `[시장 환경 실측] ${parts.join(" · ")}` : "";
 }
 function similarCases(entries, market, regime) {
   if (!regime) return "";
@@ -477,24 +512,47 @@ async function gradeCands(entries) {
       c.r1 = +(((row.close - row.open) / row.open) * 100).toFixed(1); // 시가→종가, 픽과 동일 기준
       changed = true;
     });
+    // 스윙 평가용 5일 수익률 (시가 기준)
+    (e.cands || []).forEach((c) => {
+      if (c.r5 != null) return;
+      const d = charts[c.ticker]; if (!d) return;
+      const i0 = d.findIndex((x) => x.date >= e.date); if (i0 < 0 || !d[i0]?.open || !d[i0 + 4]) return;
+      c.r5 = +(((d[i0 + 4].close - d[i0].open) / d[i0].open) * 100).toFixed(1);
+      changed = true;
+    });
     // 커버리지 80% 이상일 때 산출, 추가 채점되면 재계산
     const all = (e.cands || []).filter((c) => !c.na);
     const cs = all.filter((c) => c.r1 != null);
     const need80 = Math.max(4, Math.ceil(all.length * 0.8));
-    if (cs.length >= need80 && (!e.cstat || cs.length > (e.cstat.n || 0))) {
+    const cs5 = all.filter((c) => c.r5 != null);
+    if (cs.length >= need80 && (!e.cstat || cs.length > (e.cstat.n || 0) || (cs5.length >= 4 && e.cstat.ex == null))) {
       const rs = cs.map((c) => c.r1).sort((a, b) => a - b);
       const med = rs[Math.floor(rs.length / 2)];
-      const selT = new Set((e.picks || []).filter((p) => p.kind === "swing").map((p) => p.ticker)); // 스윙 기준 (단타는 진입시점 상이)
-      const sel = cs.filter((c) => selT.has(c.ticker));
+      const avg = (a, k) => a.reduce((s, x) => s + x[k], 0) / a.length;
+      // 단타 선택능력: 당일(r1) 기준
+      const dT = new Set((e.picks || []).filter((p) => p.kind === "day").map((p) => p.ticker));
+      const dSel = cs.filter((c) => dT.has(c.ticker));
+      // 스윙 선택능력: 5일(r5) 기준 — 평가 기간을 전략에 맞춤
+      const sT = new Set((e.picks || []).filter((p) => p.kind === "swing").map((p) => p.ticker));
+      const sSel = cs5.filter((c) => sT.has(c.ticker));
+      const med5 = cs5.length >= 4 ? cs5.map((c) => c.r5).sort((a, b) => a - b)[Math.floor(cs5.length / 2)] : null;
       const rej = cs.filter((c) => c.verdict === "제외");
-      const avg = (a) => a.reduce((s, x) => s + x.r1, 0) / a.length;
+      // 비교군: 무작위·모멘텀 (당일 기준, 후보 중앙 대비)
+      const blr = {};
+      if (e.bl) for (const k of ["rand", "mom"]) {
+        const g = cs.filter((c) => (e.bl[k] || []).includes(c.ticker));
+        if (g.length >= 2) blr[k] = +(avg(g, "r1") - med).toFixed(1);
+      }
       e.cstat = {
         n: cs.length,
         med: +med.toFixed(1),
-        ex: sel.length ? +(avg(sel) - med).toFixed(1) : null,         // 선택 초과성과
-        rg: sel.length ? +(Math.max(...rs) - avg(sel)).toFixed(1) : null, // 선택 후회값
-        rej: rej.length >= 2 ? +(avg(rej) - med).toFixed(1) : null,   // 제외 종목 상대성과 (음수=제외 정확)
+        ex: sSel.length && med5 != null ? +(avg(sSel, "r5") - med5).toFixed(1) : (e.cstat?.ex ?? null), // 스윙(5일)
+        exD: dSel.length ? +(avg(dSel, "r1") - med).toFixed(1) : null,                                   // 단타(당일)
+        rg: dSel.length ? +(Math.max(...rs) - avg(dSel, "r1")).toFixed(1) : null,
+        rej: rej.length >= 2 ? +(avg(rej, "r1") - med).toFixed(1) : null,
+        blr: Object.keys(blr).length ? blr : (e.cstat?.blr ?? null),
       };
+      changed = true;
       if (e.hold) e.holdEval = med <= 0 ? `보류 성공 (후보 중앙 ${med}%)` : `기회손실 ${med}%`;
       changed = true;
     }
@@ -635,9 +693,10 @@ export default async function handler(req, res) {
           const ci = condRules(hist.entries, job);
           const regimeNow = await regimeOf(job);
           const learn = [
+            await mktCtx(job),
             historySummary(hist.entries, job),
             similarCases(hist.entries, job, regimeNow),
-            ci.rules.length ? `[실측 통계 증거(표본8+) — 강한 가중으로 반영하되, 명백한 반대 증거가 있으면 사유를 명시하고 벗어날 수 있다] ${ci.rules.join(" / ")}` : "",
+            ci.rules.length ? `[실측 통계 증거(표본8+) — 강한 가중으로 반영하되 소표본임을 유념해 일괄 배제 대신 현재 시장 조건과 결합해 판단하고, 명백한 반대 증거가 있으면 사유를 명시하고 벗어날 수 있다] ${ci.rules.join(" / ")}` : "",
             ci.watch.length ? `[관찰 중 패턴(참고만, 강제 아님)] ${ci.watch.join(" / ")}` : "",
           ].filter(Boolean).join("\n");
           const j = await askAI(job === "KR" ? promptKR(data, learn) : promptUS(data, learn));
@@ -673,12 +732,15 @@ export default async function handler(req, res) {
           // LLM이 평가 누락한 후보 자동 보완 (선택능력 통계 왜곡 방지)
           const haveC = new Set(cands.map((c) => c.ticker));
           allowTk.forEach((t, i) => { if (!haveC.has(t) && cands.length < 20) cands.push({ ticker: t, rank: 90 + i, verdict: "관찰", why: "LLM 평가 누락", miss: 1, r1: null }); });
+          // 비교군 기록: 같은 후보에서 무작위 3 · 모멘텀(수집 순서 상위) 3 — LLM 선택과 병행 채점
+          const shuf = [...allowTk].sort(() => Math.random() - 0.5);
+          const bl = { rand: shuf.slice(0, 3), mom: allowTk.slice(0, 3) };
           const prices = {};
           for (const p of [...new Set(j.picks.map((x) => x.ticker))]) prices[p] = await quotePrice(p);
           const regime = regimeNow;
           hist.entries.push({
             date: today, market: job, regime, rules: ci.rules.slice(0, 6), // 이날 적용된 규칙 스냅샷 (효과 검증용)
-            cands, dayCands: j.day_cands, hold: j.picks.length === 0 && j.day_cands.length === 0 ? 1 : 0, v: { m: USED_MODEL, pv: 5 },
+            cands, bl, dayCands: j.day_cands, hold: j.picks.length === 0 && j.day_cands.length === 0 ? 1 : 0, v: { m: USED_MODEL, pv: "J1.0" },
             mktF: j.mkt && ["상승", "하락", "횡보"].includes(j.mkt.dir) ? { dir: j.mkt.dir, conf: Math.max(0, Math.min(100, Math.round(+j.mkt.conf) || 50)), why: String(j.mkt.why || "").slice(0, 80), ok: null } : null,
             picks: j.picks.map((p) => ({ kind: "swing", name: p.name, ticker: p.ticker, score: p.score, sector: p.sector || null, basis: p.basis || [], p0: prices[p.ticker] || null, r1: null, r5: null, r20: null })),
           });
@@ -722,7 +784,7 @@ export default async function handler(req, res) {
       fin.forEach((p) => {
         const c = entry.dayCands.find((x) => x.ticker === p.ticker) || {};
         entry.picks.push({
-          kind: "day", name: p.name, ticker: p.ticker, score: p.score, target: Math.min(+p.target_pct || 3, 8),
+          kind: "day", name: p.name, ticker: p.ticker, score: p.score, target: Math.max(2, Math.min(+p.target_pct || 3, 8)),
           sector: p.sector || c.sector || null, basis: p.basis || c.basis || [],
           p0: c.o?.px || null, b: c.o?.px || null, gap: c.o?.gap ?? null, cAt, eTs: new Date().toISOString(),
           cm: Math.max(0, Math.round((nowT - openH) * 60)), // 개장 후 경과분 (5분봉 필터용)
@@ -743,6 +805,16 @@ export default async function handler(req, res) {
       hist.entries = hist.entries.slice(-240);
       if (graded || refined || cgraded || made) await ghWrite("data/history.json", hist, sha);
       return res.status(200).json({ ok: true, job, made, skipped: skip || undefined, graded, refined, at: kstTime() });
+    }
+    // 용량 관리: 90일 지난 엔트리는 채점 결과만 남기고 부피 데이터 정리 (GitHub 1MB 한계 대비)
+    {
+      const cutoff = new Date(Date.now() + 9 * 3600e3 - 90 * 864e5).toISOString().slice(0, 10);
+      hist.entries.forEach((e) => {
+        if (e.date < cutoff) {
+          (e.cands || []).forEach((c) => { delete c.why; delete c.m1; delete c.o; });
+          delete e.dayCands;
+        }
+      });
     }
     hist.entries = hist.entries.slice(-240);
     if (graded || refined || cgraded || made) await ghWrite("data/history.json", hist, sha);
