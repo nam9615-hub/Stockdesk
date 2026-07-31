@@ -2737,70 +2737,70 @@
      "rank": 1,
      "verdict": "관찰",
      "why": "미 증시 반도체 폭등 프리마켓 반영이나 섹터 통계 부진",
-     "r1": null
+     "r1": 2.1
     },
     {
      "ticker": "005935.KS",
      "rank": 3,
      "verdict": "제외",
      "why": "코스피 폭락 및 지지선 이탈 국면",
-     "r1": null
+     "r1": 5.8
     },
     {
      "ticker": "402340.KS",
      "rank": 4,
      "verdict": "제외",
      "why": "단기 모멘텀 부족",
-     "r1": null
+     "r1": 4.3
     },
     {
      "ticker": "373220.KS",
      "rank": 5,
      "verdict": "제외",
      "why": "ESS 마진 불확실성 및 목표가 하향 리포트 존재",
-     "r1": null
+     "r1": -0.2
     },
     {
      "ticker": "005380.KS",
      "rank": 6,
      "verdict": "관찰",
      "why": "정책 및 협력 뉴스 있으나 시장 하방 압력 직면",
-     "r1": null
+     "r1": 4.9
     },
     {
      "ticker": "207940.KS",
      "rank": 7,
      "verdict": "선택",
      "why": "기관 연속 순매수 및 하반기 모멘텀 보유",
-     "r1": null
+     "r1": -2.7
     },
     {
      "ticker": "009150.KS",
      "rank": 8,
      "verdict": "관찰",
      "why": "실적 전망 좋으나 지수 영향 주목",
-     "r1": null
+     "r1": 1.2
     },
     {
      "ticker": "105560.KS",
      "rank": 9,
      "verdict": "선택",
      "why": "기관 연속 순매수 유입 및 방어력 우수",
-     "r1": null
+     "r1": 0.6
     },
     {
      "ticker": "032830.KS",
      "rank": 10,
      "verdict": "관찰",
      "why": "퇴직연금 승부수이나 탄력성 확인 필요",
-     "r1": null
+     "r1": 5.1
     },
     {
      "ticker": "028260.KS",
      "rank": 11,
      "verdict": "선택",
      "why": "기관 연속 순매수 및 지주사 방어 매력",
-     "r1": null
+     "r1": 4.9
     },
     {
      "ticker": "055550.KS",
@@ -3015,7 +3015,7 @@
      "r20": null,
      "b": 1526000,
      "gap": -0.1,
-     "simOpen": -2.9,
+     "simOpen": -2.7,
      "tv": 36603,
      "tvx": 0.4,
      "idx": null
