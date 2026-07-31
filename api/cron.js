@@ -94,6 +94,27 @@ async function frgnTrend(code) {
     return `외인 ${fmt(sum("frgn"))}(${st("frgn")}) 기관 ${fmt(sum("inst"))}(${st("inst")})`;
   } catch { return null; }
 }
+// 자체 스크리너: 전 종목 유니버스에서 모멘텀·과열배제·유동성 기준으로 후보 발굴
+function screenUniverse(uni, today) {
+  if (!uni || !uni.stocks) return null;
+  const fresh = uni.day && (Date.parse(today) - Date.parse(uni.day)) <= 4 * 864e5; // 주말 포함 4일 이내
+  if (!fresh) return null;
+  const sum = (a, n) => a.slice(-n).reduce((s, x) => s + x, 0);
+  const rows = Object.entries(uni.stocks).map(([code, s]) => {
+    if (!s.h || s.h.length < 6 || !s.mr || s.mr > 700) return null; // 유동성 하한(시총 700위) + 이력 최소 6일
+    const m1 = s.h[s.h.length - 1] || 0;
+    const m5 = sum(s.h, 5), m20 = s.h.length >= 15 ? sum(s.h, 20) : m5 * 2;
+    if (m1 > 12 || m5 > 25) return null;          // 과열(이미 오른 것) 배제 — 추격 편향 차단
+    if (m5 <= -10) return null;                    // 급락 나이프 배제
+    const score = m5 * 0.5 + m20 * 0.25 + (m1 > 0 ? 1.5 : 0) - Math.max(0, m1 - 5); // 초입 모멘텀 선호
+    return { code, name: s.n, kq: s.kq, score, m5: +m5.toFixed(1), m20: +m20.toFixed(1) };
+  }).filter(Boolean).sort((a, b) => b.score - a.score);
+  if (rows.length < 10) return null;
+  // 코스피·코스닥 균형 (각 최소 5)
+  const kp = rows.filter((r) => !r.kq).slice(0, 9), kq = rows.filter((r) => r.kq).slice(0, 9);
+  const out = []; for (let i = 0; i < 9; i++) { if (kp[i]) out.push(kp[i]); if (kq[i]) out.push(kq[i]); }
+  return out.slice(0, 14).map((r) => ({ code: r.code, name: r.name, scr: `자체스크리너 모멘텀 5일 ${r.m5 > 0 ? "+" : ""}${r.m5}% · 20일 ${r.m20 > 0 ? "+" : ""}${r.m20}%` }));
+}
 async function gatherKR() {
   const top = async (url, n) => {
     const html = new TextDecoder("euc-kr").decode(await (await fetch(url, UA)).arrayBuffer());
@@ -106,12 +127,15 @@ async function gatherKR() {
     top("https://finance.naver.com/sise/sise_quant.naver?sosok=0", 8).catch(() => []),   // 코스피 거래량
     top("https://finance.naver.com/sise/sise_quant.naver?sosok=1", 8).catch(() => []),   // 코스닥 거래량
   ]);
+  // 자체 스크리너(전 종목 유니버스) 우선 — 초입 모멘텀 발굴, 급등·거래량 목록은 보조
+  let scr = [];
+  try { const { data: uni } = await ghRead("data/universe.json"); scr = screenUniverse(uni, kstDate()) || []; } catch {}
   // 코스피·코스닥 균형 병합 (교차로 섞어 어느 한쪽 쏠림 방지)
   const inter = [];
   const maxL = Math.max(riseKP.length, riseKQ.length, volKP.length, volKQ.length);
   for (let i = 0; i < maxL; i++) for (const a of [riseKP, riseKQ, volKP, volKQ]) if (a[i]) inter.push(a[i]);
   const seen = new Set(); let cands = [];
-  for (const s of [...upper, ...inter]) if (!seen.has(s.code) && cands.length < 20) { seen.add(s.code); cands.push(s); }
+  for (const s of [...scr, ...upper, ...inter]) if (!seen.has(s.code) && cands.length < 20) { seen.add(s.code); cands.push(s); }
   let note = "";
   if (!cands.length) {
     // 개장 전 등으로 상승률 데이터가 비어 있으면: 시가총액 상위로 대체 (뉴스 재료 중심 선별)
@@ -135,7 +159,7 @@ async function gatherKR() {
   const rows = await Promise.all(cands.map(async (s, i) => {
     const news = await naverNews(s.code, i < 10 ? 2 : 1);
     const sup = i < 12 ? await frgnTrend(s.code) : null;
-    return `${s.name}(${s.tk})${sup ? ` | 수급(3일): ${sup}` : ""} | 뉴스: ${news.join(" / ") || "없음"}`;
+    return `${s.name}(${s.tk})${s.scr ? ` | ${s.scr}` : ""}${sup ? ` | 수급(3일): ${sup}` : ""} | 뉴스: ${news.join(" / ") || "없음"}`;
   }));
   return { text: note + rows.join("\n"), allowed: cands.map((s) => ({ t: s.tk, n: s.name })) };
 }
@@ -750,6 +774,46 @@ export default async function handler(req, res) {
         }
       }
     }
+    // ── 전 종목 유니버스 스캔: job=SCAN (새벽 크론이 조각 순회 — 회당 8페이지) ──
+    if (job === "SCAN") {
+      const { data: uniRaw, sha: us } = await ghRead("data/universe.json");
+      const uni = uniRaw || { cursor: { kq: 0, page: 1 }, day: "", stocks: {} };
+      const parseRows = (html) => {
+        // 시총 목록 행: 종목 링크 + 이후 첫 등락률(%)만 추출 (열 구성 변화에 강건)
+        const out = [];
+        const chunks = html.split(/code=(\d{6})"[^>]*>([^<]+)<\/a>/);
+        for (let i = 1; i + 2 < chunks.length; i += 3) {
+          const code = chunks[i], name = chunks[i + 1].trim();
+          const m = chunks[i + 2].match(/([+-]?\d+\.\d+)%/);
+          out.push({ code, name, chg: m ? +m[1] : 0 });
+        }
+        return out;
+      };
+      let scanned = 0;
+      for (let step = 0; step < 8; step++) {
+        const url = `https://finance.naver.com/sise/sise_market_sum.naver?sosok=${uni.cursor.kq}&page=${uni.cursor.page}`;
+        let rows = [];
+        try { rows = parseRows(new TextDecoder("euc-kr").decode(await (await fetch(url, UA)).arrayBuffer())); } catch {}
+        if (!rows.length) {
+          if (uni.cursor.kq === 0) { uni.cursor = { kq: 1, page: 1 }; continue; }
+          uni.cursor = { kq: 0, page: 1 }; uni.day = today; break; // 전체 순회 완료
+        }
+        rows.forEach((r, idx) => {
+          const st = uni.stocks[r.code] || (uni.stocks[r.code] = { n: r.name, h: [] });
+          st.n = r.name; st.kq = uni.cursor.kq;
+          st.mr = (uni.cursor.page - 1) * 50 + idx + 1; // 시총 순위 (유동성 근사)
+          if (st.d !== today) { st.h.push(r.chg); st.h = st.h.slice(-21); st.d = today; }
+          scanned++;
+        });
+        uni.cursor.page++;
+      }
+      // 상장폐지 등 오래 안 보인 종목 정리
+      const stale = Object.keys(uni.stocks).filter((c) => { const d = uni.stocks[c].d; return d && (Date.parse(today) - Date.parse(d)) > 14 * 864e5; });
+      stale.forEach((c) => delete uni.stocks[c]);
+      await ghWrite("data/universe.json", uni, us);
+      return res.status(200).json({ ok: true, job, scanned, cursor: uni.cursor, total: Object.keys(uni.stocks).length, complete: uni.day === today, at: kstTime() });
+    }
+
     // ── 2차 단타 확정 (개장 5분 후): job=KR2 / US2 ──
     if (job === "KR2" || job === "US2") {
       const mkt = job.slice(0, 2);
