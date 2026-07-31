@@ -3036,6 +3036,277 @@
     "rej": 0,
     "blr": null
    }
+  },
+  {
+   "date": "2026-07-31",
+   "market": "US",
+   "regime": "하락",
+   "rules": [],
+   "cands": [
+    {
+     "ticker": "FRVO",
+     "rank": 1,
+     "verdict": "선택",
+     "why": "BofA 매수 기회 분석 및 강력한 수급 유입",
+     "r1": null
+    },
+    {
+     "ticker": "IREN",
+     "rank": 2,
+     "verdict": "선택",
+     "why": "초과 수요 호재와 30% 급등 모멘텀",
+     "r1": null
+    },
+    {
+     "ticker": "MKTX",
+     "rank": 3,
+     "verdict": "선택",
+     "why": "목표주가 상향 조정 및 안정적 추세",
+     "r1": null
+    },
+    {
+     "ticker": "BHC",
+     "rank": 4,
+     "verdict": "선택",
+     "why": "Q2 턴어라운드 실적 서프라이즈",
+     "r1": null
+    },
+    {
+     "ticker": "CIFR",
+     "rank": 5,
+     "verdict": "선택",
+     "why": "모간스탠리 수혜주 부각 및 인프라 테마",
+     "r1": null
+    },
+    {
+     "ticker": "CORT",
+     "rank": 6,
+     "verdict": "선택",
+     "why": "52주 신고가 경신 및 실적 가이드라인 상향",
+     "r1": null
+    },
+    {
+     "ticker": "NBIS",
+     "rank": 7,
+     "verdict": "관찰",
+     "why": "소셜 버즈 혼조세로 방향성 확인 필요",
+     "r1": null
+    },
+    {
+     "ticker": "AXTI",
+     "rank": 8,
+     "verdict": "선택",
+     "why": "기록적 수익성 실적 발표",
+     "r1": null
+    },
+    {
+     "ticker": "BE",
+     "rank": 9,
+     "verdict": "선택",
+     "why": "부정적 보고서 속 리테일 매수세 지속",
+     "r1": null
+    },
+    {
+     "ticker": "FORM",
+     "rank": 10,
+     "verdict": "관찰",
+     "why": "반도체 ETF 편입 및 AI 오퍼링 영향 주시",
+     "r1": null
+    },
+    {
+     "ticker": "SNDK",
+     "rank": 11,
+     "verdict": "제외",
+     "why": "개별 재료 부족 및 지수 연동성 낮음",
+     "r1": null
+    },
+    {
+     "ticker": "BTDR",
+     "rank": 12,
+     "verdict": "제외",
+     "why": "IREN과 테마 겹침, 후발주",
+     "r1": null
+    },
+    {
+     "ticker": "HUT",
+     "rank": 13,
+     "verdict": "제외",
+     "why": "AI 팩토리 리스크 프로필 관망",
+     "r1": null
+    },
+    {
+     "ticker": "NEOG",
+     "rank": 14,
+     "verdict": "제외",
+     "why": "환율 영향 등 제한적 모멘텀",
+     "r1": null
+    },
+    {
+     "ticker": "INTC",
+     "rank": 15,
+     "verdict": "제외",
+     "why": "상승률 및 모멘텀 상위 후보 대비 열위",
+     "r1": null
+    },
+    {
+     "ticker": "MSFT",
+     "rank": 16,
+     "verdict": "제외",
+     "why": "대형주 특성상 단기 탄력성 부족",
+     "r1": null
+    },
+    {
+     "ticker": "NVDA",
+     "rank": 17,
+     "verdict": "제외",
+     "why": "상승률 하위 및 모멘텀 부재",
+     "r1": null
+    },
+    {
+     "ticker": "NOK",
+     "rank": 18,
+     "verdict": "제외",
+     "why": "단기 급등 테마에서 소외",
+     "r1": null
+    }
+   ],
+   "bl": {
+    "rand": [
+     "BE",
+     "HUT",
+     "FRVO"
+    ],
+    "mom": [
+     "FRVO",
+     "IREN",
+     "MKTX"
+    ]
+   },
+   "dayCands": [
+    {
+     "name": "IREN LIMITED",
+     "ticker": "IREN",
+     "score": 83,
+     "target_pct": 5,
+     "sector": "기술",
+     "basis": [
+      "수주계약",
+      "거래량급증"
+     ],
+     "reason": "CEO의 수요가 공급을 초과한다는 발언과 함께 30% 급등하며 강한 모멘텀을 형성했습니다. AI 및 클라우드 인프라 연계 기대감이 장중 추가 상승을 견인할 수 있습니다.",
+     "risk": "암호화폐 가격 변동성에 따른 급등락 위험"
+    },
+    {
+     "name": "Bausch Health Companies Inc.",
+     "ticker": "BHC",
+     "score": 78,
+     "target_pct": 4,
+     "sector": "헬스케어",
+     "basis": [
+      "실적",
+      "추세지속"
+     ],
+     "reason": "Q2 턴어라운드가 가시화되면서 28% 급등세를 기록하며 회복 기대감을 높였습니다. 실적 개선 추세가 장중 단기 모멘텀으로 이어질 가능성이 있습니다.",
+     "risk": "오후장 헬스케어 섹터 전반의 약세 전환 가능성"
+    },
+    {
+     "name": "AXT Inc",
+     "ticker": "AXTI",
+     "score": 77,
+     "target_pct": 4,
+     "sector": "반도체",
+     "basis": [
+      "실적",
+      "신고가"
+     ],
+     "reason": "Q2 실적에서 기록적인 매출과 수익성 급증을 발표하며 프리마켓 상승률 상위에 올랐습니다. 반도체 소재 수요 회복에 따른 추가 탄력성이 주목됩니다.",
+     "risk": "변동성 높은 소형 반도체주의 특성상 빠른 차익실현 주의"
+    },
+    {
+     "name": "Cipher Digital Inc.",
+     "ticker": "CIFR",
+     "score": 75,
+     "target_pct": 3,
+     "sector": "기술",
+     "basis": [
+      "정책테마",
+      "추세지속"
+     ],
+     "reason": "모간스탠리가 ERCOT 전력 인프라 관련 수혜주로 지목하면서 시장의 큰 관심을 받고 있습니다. 데이터센터 전력 수요 테마와 맞물려 장중 변동성 매매가 유효합니다.",
+     "risk": "정책 및 전력망 관련 뉴스 흐름에 따른 민감한 반응"
+    },
+    {
+     "name": "Bloom Energy Corporation",
+     "ticker": "BE",
+     "score": 74,
+     "target_pct": 3,
+     "sector": "에너지",
+     "basis": [
+      "추세지속",
+      "거래량급증"
+     ],
+     "reason": "부정적 보고서 출현에도 불구하고 리테일 매수세가 유입되며 야간 거래에서 급등세를 유지했습니다. 개인 투자자의 강한 수급이 단기 모멘텀을 지탱하고 있습니다.",
+     "risk": "보고서 관련 추가 악재나 기관 매물 출화 우려"
+    }
+   ],
+   "hold": 0,
+   "v": {
+    "m": "gemini-3.5-flash-lite",
+    "pv": "J1.0"
+   },
+   "mktF": {
+    "dir": "상승",
+    "conf": 65,
+    "why": "전일 S&P500의 견고한 상승세와 선물 강보합세가 이어지며 리스크 온 심리가 지수를 지지할 것임.",
+    "ok": null
+   },
+   "picks": [
+    {
+     "kind": "swing",
+     "name": "Corcept Therapeutics Incorporat",
+     "ticker": "CORT",
+     "score": 85,
+     "sector": "바이오",
+     "basis": [
+      "실적",
+      "신고가"
+     ],
+     "p0": 118.32,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "MarketAxess Holdings, Inc.",
+     "ticker": "MKTX",
+     "score": 82,
+     "sector": "금융",
+     "basis": [
+      "정책테마",
+      "추세지속"
+     ],
+     "p0": 162.76,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "Fervo Energy Company",
+     "ticker": "FRVO",
+     "score": 80,
+     "sector": "에너지",
+     "basis": [
+      "낙폭과대",
+      "추세지속"
+     ],
+     "p0": 22.3,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    }
+   ]
   }
  ],
  "monAt": 1785479169798
