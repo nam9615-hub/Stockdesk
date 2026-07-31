@@ -1523,10 +1523,14 @@ function TrackRecord({ refreshKey }) {
           const holds = hist.filter((e) => e.market === m && e.holdEval);
           if (!cs.length && !holds.length) return null;
           const avg = (k) => { const v = cs.map((c) => c[k]).filter((x) => x != null); return v.length ? (v.reduce((a, b) => a + b, 0) / v.length).toFixed(1) : null; };
-          const ex = avg("ex"), rg = avg("rg"), rj = avg("rej");
+          const ex = avg("ex"), exD = avg("exD"), rg = avg("rg"), rj = avg("rej");
+          const blA = (k) => { const v = cs.map((c) => c.blr?.[k]).filter((x) => x != null); return v.length ? (v.reduce((a, b) => a + b, 0) / v.length).toFixed(1) : null; };
+          const bR = blA("rand"), bM = blA("mom");
           return (
             <div key={m} style={{ fontFamily: T.mono, fontSize: 12, color: T.sub, lineHeight: 1.8 }}>
-              {flag} {ex != null && <>후보대비 <b style={{ color: +ex >= 0 ? T.buy : T.sell }}>{ex > 0 ? "+" : ""}{ex}%p</b></>}
+              {flag} {ex != null && <>스윙(5일) <b style={{ color: +ex >= 0 ? T.buy : T.sell }}>{ex > 0 ? "+" : ""}{ex}</b></>}
+              {exD != null && <> · 단타(당일) <b style={{ color: +exD >= 0 ? T.buy : T.sell }}>{exD > 0 ? "+" : ""}{exD}</b></>}
+              {(bR != null || bM != null) && <> · 무작위 {bR ?? "-"} · 모멘텀 {bM ?? "-"}</>}
               {rg != null && <> · 후회 <b style={{ color: T.warn }}>{rg}%p</b></>}
               {rj != null && <> · 제외판단 <b style={{ color: +rj <= 0 ? T.buy : T.sell }}>{rj}%p</b></>}
               {holds.length > 0 && <> · 보류 {holds.length}회({holds.filter((h) => h.holdEval.includes("성공")).length}적중)</>}
@@ -1540,7 +1544,7 @@ function TrackRecord({ refreshKey }) {
           <div style={{ marginTop: 14, background: T.card2, borderRadius: 12, padding: 13 }}>
             <div style={{ fontFamily: T.mono, fontSize: 10.5, color: T.info, letterSpacing: "0.14em", marginBottom: 6, whiteSpace: "nowrap" }}>🎯 선택 능력 · 당일 입력 후보군 대비</div>
             {k}{u}
-            <div style={{ fontSize: 10.5, color: T.faint, marginTop: 5, lineHeight: 1.5 }}>후보대비=스윙 선택이 후보 중앙값보다 나은 정도(단타는 진입시점이 달라 제외) · 후회=그날 최고 후보와의 격차 · 제외판단은 음수일수록 정확</div>
+            <div style={{ fontSize: 10.5, color: T.faint, marginTop: 5, lineHeight: 1.5 }}>전 수치는 후보 중앙값 대비 %p — 스윙은 5일·단타는 당일 기준으로 전략에 맞게 분리 · 무작위/모멘텀은 같은 후보에서 뽑은 비교군(LLM이 이들보다 지속 우위여야 선택 능력 입증) · 제외판단은 음수일수록 정확</div>
           </div>
         );
       })()}
@@ -1647,7 +1651,7 @@ export default function App() {
       for (const m of ["KR", "US"]) {
         try {
           const sj = await (await fetch(`/api/picks-data?what=latest&market=${m}`)).json();
-          if (sj && sj.date === today && sj.data) {
+          if (sj && sj.date === sessToday && sj.data) {
             setPicksCache((pc) => ({ ...pc, [m]: { date: today, data: { ...sj.data, auto: true, at: sj.at } } }));
             setSrvReady((s) => ({ ...s, [m]: true }));
             if (m === (hint.m || "KR")) {
@@ -1730,6 +1734,9 @@ export default function App() {
     if (pickMarket === m && (picks || picksLoading || picksErr)) { setPickMarket(null); setPicks(null); setPicksErr(""); setPicksLoading(false); return; }
     setPickMarket(m); setPicksErr(""); setPicks(null);
     const today = kstToday();
+    // 미국장은 KST 자정을 넘겨 진행 — 새벽(06시 전)엔 전일을 세션 날짜로 간주
+    const sessToday = m === "US" && new Date().getHours() < 6
+      ? new Date(Date.parse(today) - 864e5).toISOString().slice(0, 10) : today;
     // 단타 2차 확정 시각(개장+5분) 경과 여부
     const day2Due = () => {
       const n = new Date(); const t = n.getHours() + n.getMinutes() / 60;
@@ -1737,28 +1744,28 @@ export default function App() {
       return t >= openH + 0.09 || (m === "US" && t <= 6.2); // 개장+5분 이후 (미국 새벽 포함)
     };
     const c = picksCache[m];
-    const stale = c && c.date === today && !(c.data.day_picks || []).length && (c.data.day_cands || []).length && day2Due();
-    if (c && c.date === today && !stale) { setPicks(c.data); return; }
+    const stale = c && c.date === sessToday && !(c.data.day_picks || []).length && (c.data.day_cands || []).length && day2Due();
+    if (c && c.date === sessToday && !stale) { setPicks(c.data); return; }
     const pv = provisionInfo(m);
     if (!pv.open) { setPicksErr(pv.msg); return; }
     setPicksLoading(true);
     try {
       const latest = async () => (await fetch(`/api/picks-data?what=latest&market=${m}`)).json();
       let sj = await latest();
-      if (!(sj && sj.date === today && sj.data)) {
+      if (!(sj && sj.date === sessToday && sj.data)) {
         // 크론이 아직이면 서버 생성을 이 자리에서 트리거 → 서버에 단 한 번 확정 기록
         await fetch(`/api/cron?job=${m.toLowerCase()}`).catch(() => {});
         sj = await latest();
       }
       // 2차 확정 시간이 지났는데 단타가 미확정이면 서버 2차 확정 트리거 (안전망)
-      if (sj && sj.date === today && sj.data && !(sj.data.day_picks || []).length && (sj.data.day_cands || []).length && day2Due()) {
+      if (sj && sj.date === sessToday && sj.data && !(sj.data.day_picks || []).length && (sj.data.day_cands || []).length && day2Due()) {
         await fetch(`/api/cron?job=${m.toLowerCase()}2`).catch(() => {});
         sj = await latest();
       }
-      if (sj && sj.date === today && sj.data) {
+      if (sj && sj.date === sessToday && sj.data) {
         const d = { ...sj.data, auto: true, at: sj.at };
         setPicks(d);
-        setPicksCache((pc) => ({ ...pc, [m]: { date: today, data: d } }));
+        setPicksCache((pc) => ({ ...pc, [m]: { date: sessToday, data: d } }));
       } else setPicksErr("⚠ 추천 생성이 지연되고 있습니다 — 잠시 후 다시 열어 주세요.");
     } catch (e) { setPicksErr("⚠ 추천을 불러오지 못했습니다. (" + e.message + ")"); }
     setPicksLoading(false);
