@@ -2932,7 +2932,12 @@
      "r20": null,
      "b": 294000,
      "gap": 0,
-     "simOpen": 0
+     "simOpen": 0,
+     "simR": 10,
+     "simExit": "target",
+     "simD": "2026-07-31",
+     "simT": "09:03",
+     "live": 1
     },
     {
      "kind": "swing",
@@ -2950,7 +2955,7 @@
      "r20": null,
      "b": 167500,
      "gap": 0.1,
-     "simOpen": 0.4
+     "simOpen": -1.4
     },
     {
      "kind": "swing",
@@ -2968,10 +2973,10 @@
      "r20": null,
      "b": 1526000,
      "gap": -0.1,
-     "simOpen": 0.3
+     "simOpen": -1.7
     }
    ]
   }
  ],
- "monAt": 1785456034665
+ "monAt": 1785456187380
 }
