@@ -3815,6 +3815,277 @@
      "mom": -0.6
     }
    }
+  },
+  {
+   "date": "2026-08-03",
+   "market": "US",
+   "regime": "상승",
+   "rules": [],
+   "cands": [
+    {
+     "ticker": "IESC",
+     "rank": 1,
+     "verdict": "선택",
+     "why": "데이터센터 실적 및 분할 모멘텀 우수",
+     "r1": null
+    },
+    {
+     "ticker": "AXTI",
+     "rank": 2,
+     "verdict": "선택",
+     "why": "흑자 전환 및 AI 수요 부각",
+     "r1": null
+    },
+    {
+     "ticker": "ITGR",
+     "rank": 3,
+     "verdict": "선택",
+     "why": "KKR 대규모 인수합병 프리미엄",
+     "r1": null
+    },
+    {
+     "ticker": "AMBA",
+     "rank": 4,
+     "verdict": "관찰",
+     "why": "인수설 관련 변동성 모니터링 필요",
+     "r1": null
+    },
+    {
+     "ticker": "AMZN",
+     "rank": 5,
+     "verdict": "관찰",
+     "why": "대형주 수급 및 지수 연동성 체크",
+     "r1": null
+    },
+    {
+     "ticker": "CDNA",
+     "rank": 6,
+     "verdict": "관찰",
+     "why": "유상증자 및 일반 뉴스 혼재",
+     "r1": null
+    },
+    {
+     "ticker": "BHC",
+     "rank": 7,
+     "verdict": "관찰",
+     "why": "턴어라운드 단기 급등 후 추이 확인",
+     "r1": null
+    },
+    {
+     "ticker": "DLB",
+     "rank": 8,
+     "verdict": "관찰",
+     "why": "가이드라인 상향 후 호가창 확인 필요",
+     "r1": null
+    },
+    {
+     "ticker": "BSBR",
+     "rank": 9,
+     "verdict": "관찰",
+     "why": "인수 관련 뉴스 세부사항 분석 필요",
+     "r1": null
+    },
+    {
+     "ticker": "DXCM",
+     "rank": 10,
+     "verdict": "관찰",
+     "why": "전망 상향 모멘텀 지속 여부 확인",
+     "r1": null
+    },
+    {
+     "ticker": "SPSC",
+     "rank": 11,
+     "verdict": "제외",
+     "why": "가이드라인 대비 밸류에이션 부담",
+     "r1": null
+    },
+    {
+     "ticker": "ARXS",
+     "rank": 12,
+     "verdict": "제외",
+     "why": "단기 모멘텀 및 유동성 부족",
+     "r1": null
+    },
+    {
+     "ticker": "SPXC",
+     "rank": 13,
+     "verdict": "제외",
+     "why": "목표가 상향이나 탄력성 제한적",
+     "r1": null
+    },
+    {
+     "ticker": "KC",
+     "rank": 14,
+     "verdict": "제외",
+     "why": "ADR 전반의 변동성 영향",
+     "r1": null
+    },
+    {
+     "ticker": "NVDA",
+     "rank": 15,
+     "verdict": "제외",
+     "why": "상승 폭 제한적이며 관망 필요",
+     "r1": null
+    },
+    {
+     "ticker": "AAPL",
+     "rank": 16,
+     "verdict": "제외",
+     "why": "핵심 투자은행의 부정적 전망 및 약세",
+     "r1": null
+    },
+    {
+     "ticker": "INTC",
+     "rank": 17,
+     "verdict": "제외",
+     "why": "반도체 섹터 내 관망세 우세",
+     "r1": null
+    },
+    {
+     "ticker": "NOK",
+     "rank": 18,
+     "verdict": "제외",
+     "why": "테마성 움직임으로 리스크 관리 필요",
+     "r1": null
+    }
+   ],
+   "bl": {
+    "rand": [
+     "AMBA",
+     "ARXS",
+     "ITGR"
+    ],
+    "mom": [
+     "IESC",
+     "AXTI",
+     "ITGR"
+    ]
+   },
+   "dayCands": [
+    {
+     "name": "Amazon.com, Inc.",
+     "ticker": "AMZN",
+     "score": 80,
+     "target_pct": 4,
+     "sector": "유통",
+     "basis": [
+      "뉴스재료",
+      "추세지속"
+     ],
+     "reason": "골드만삭스의 AI 투자 관련 메시지와 함께 대형 기술주 전반의 모멘텀을 활용한 단기 트레이딩이 가능합니다. 견고한 거래대금을 바탕으로 한 기술적 반등을 노립니다.",
+     "risk": "대형주 수급 이탈 시 지연 가능성"
+    },
+    {
+     "name": "Bausch Health Companies Inc.",
+     "ticker": "BHC",
+     "score": 77,
+     "sector": "헬스케어",
+     "basis": [
+      "실적/재무",
+      "낙폭과대"
+     ],
+     "reason": "2분기 턴어라운드 실적이 회복 기대감을 자극하며 강한 거래량을 동반해 급등했습니다. 단기 낙폭 과대 구간에서의 모멘텀 추종 매매에 적합합니다.",
+     "risk": "헬스케어 섹터 전반의 오후장 약세 흐름 주의",
+     "target_pct": 3
+    },
+    {
+     "name": "Dolby Laboratories",
+     "ticker": "DLB",
+     "score": 75,
+     "sector": "기술",
+     "basis": [
+      "실적/재무",
+      "뉴스재료"
+     ],
+     "reason": "3분기 실적 호조와 함께 자사주 매입 확대 및 가이드라인 상향으로 매수세가 유입되었습니다. 실적 발표 이후의 추세적 모멘텀을 활용합니다.",
+     "risk": "단기 차익실현 매물 압박",
+     "target_pct": 3
+    },
+    {
+     "name": "DexCom, Inc.",
+     "ticker": "DXCM",
+     "score": 74,
+     "sector": "헬스케어",
+     "basis": [
+      "뉴스재료",
+      "추세지속"
+     ],
+     "reason": "2026년 전망 상향과 제2형 당뇨 접근성 확대 뉴스로 분석가 목표주가 상향 조치가 이어졌습니다. 양호한 수급을 바탕으로 단기 모멘텀이 유효합니다.",
+     "risk": "종목 자체 변동성 및 섹터 순환매",
+     "target_pct": 3
+    },
+    {
+     "name": "AXT Inc",
+     "ticker": "AXTI",
+     "score": 72,
+     "sector": "반도체",
+     "basis": [
+      "실적/재무",
+      "거래량급증"
+     ],
+     "reason": "AI 수요 스토리와 흑자 전환 모멘텀이 당일에도 거래량을 동반하며 이어질 가능성이 높습니다. 초반 눌림목 구간에서의 단타 접근이 유리합니다.",
+     "risk": "급등에 따른 높은 변동성",
+     "target_pct": 3
+    }
+   ],
+   "hold": 0,
+   "v": {
+    "m": "gemini-3.5-flash-lite",
+    "pv": "J1.0"
+   },
+   "mktF": {
+    "dir": "상승",
+    "conf": 67,
+    "why": "전일 S&P500 및 지수선물이 플러스이나 VIX 동반 상승으로 제한적 상승 예상",
+    "ok": null
+   },
+   "picks": [
+    {
+     "kind": "swing",
+     "name": "IES Holdings, Inc.",
+     "ticker": "IESC",
+     "score": 85,
+     "sector": "인프라",
+     "basis": [
+      "실적/재무",
+      "수주계약"
+     ],
+     "p0": 744.54,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "AXT Inc",
+     "ticker": "AXTI",
+     "score": 82,
+     "sector": "반도체",
+     "basis": [
+      "실적/재무",
+      "거래량급증"
+     ],
+     "p0": 60.43,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "Integer Holdings Corporation",
+     "ticker": "ITGR",
+     "score": 78,
+     "sector": "헬스케어",
+     "basis": [
+      "수주계약",
+      "뉴스재료"
+     ],
+     "p0": 121.21,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    }
+   ]
   }
  ],
  "monAt": 1785738130815
