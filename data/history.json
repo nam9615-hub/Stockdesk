@@ -2699,7 +2699,7 @@
      "r20": null,
      "b": 290.0400085449219,
      "gap": -1.6,
-     "simOpen": 4.1,
+     "simOpen": 3.8,
      "tv": 12,
      "tvx": 0,
      "idx": 0.91
@@ -4200,8 +4200,18 @@
      "cAt": "22:34",
      "eTs": "2026-08-03T13:34:11.533Z",
      "cm": 4,
-     "r1": null,
-     "hit": null
+     "r1": 0.6,
+     "hit": false,
+     "mfe": 1.4,
+     "mae": 0,
+     "tv": 10110,
+     "tvx": 0.9,
+     "touch": "none",
+     "simR": 0.6,
+     "simExit": "close",
+     "simD": "2026-08-03",
+     "idx": 1.07,
+     "postFixed": 1
     },
     {
      "kind": "day",
@@ -4220,8 +4230,18 @@
      "cAt": "22:34",
      "eTs": "2026-08-03T13:34:11.533Z",
      "cm": 4,
-     "r1": null,
-     "hit": null
+     "r1": -0.5,
+     "hit": false,
+     "mfe": 0.5,
+     "mae": -0.9,
+     "tv": 11,
+     "tvx": 0.2,
+     "touch": "none",
+     "simR": -0.5,
+     "simExit": "close",
+     "simD": "2026-08-03",
+     "idx": 1.07,
+     "postFixed": 1
     }
    ],
    "day2": {
