@@ -3007,7 +3007,7 @@
      "r20": null,
      "b": 167500,
      "gap": 0.1,
-     "simOpen": 0.8,
+     "simOpen": 1.2,
      "tv": 50005,
      "tvx": 0.2,
      "idx": null
@@ -3475,35 +3475,35 @@
      "rank": 1,
      "verdict": "선택",
      "why": "외인 수급 양호하나 환율 압력으로 신중 접근",
-     "r1": null
+     "r1": -3.4
     },
     {
      "ticker": "373220.KS",
      "rank": 13,
      "verdict": "제외",
      "why": "트럼프 리스크 및 환율 악재 영향",
-     "r1": null
+     "r1": -2.3
     },
     {
      "ticker": "240810.KQ",
      "rank": 14,
      "verdict": "제외",
      "why": "집중형 ETF 역풍 및 수급 부재",
-     "r1": null
+     "r1": -0.2
     },
     {
      "ticker": "207940.KS",
      "rank": 15,
      "verdict": "제외",
      "why": "유사 국면 실적 부진 사례 및 하방 압력",
-     "r1": null
+     "r1": -3.4
     },
     {
      "ticker": "028300.KQ",
      "rank": 16,
      "verdict": "제외",
      "why": "변동성 과도 및 단기 급등 후유증",
-     "r1": null
+     "r1": 4
     },
     {
      "ticker": "196170.KQ",
@@ -3511,7 +3511,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": 4.8
     },
     {
      "ticker": "000660.KS",
@@ -3519,7 +3519,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": -4.6
     },
     {
      "ticker": "086520.KQ",
@@ -3527,7 +3527,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": 0.4
     },
     {
      "ticker": "005935.KS",
@@ -3535,7 +3535,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": -2.7
     },
     {
      "ticker": "247540.KQ",
@@ -3543,7 +3543,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": -1.9
     },
     {
      "ticker": "402340.KS",
