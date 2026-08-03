@@ -225,6 +225,37 @@
    "dir": "상승",
    "conf": 67,
    "why": "전일 S&P500 및 지수선물이 플러스이나 VIX 동반 상승으로 제한적 상승 예상"
-  }
+  },
+  "day_picks": [
+   {
+    "name": "Amazon.com, Inc.",
+    "ticker": "AMZN",
+    "score": 82,
+    "target_pct": 4,
+    "sector": "기술",
+    "basis": [
+     "PRE_STRONG",
+     "GAP_UP",
+     "POST_UP"
+    ],
+    "reason": "시가갭 2.8% 상승 출발 후 개장 후 추가 +1.5% 상승하며 대형 기술주 모멘텀 유입 확인",
+    "risk": "지수 변동성 및 기술주 동반 매물 출현 주의"
+   },
+   {
+    "name": "Dolby Laboratories",
+    "ticker": "DLB",
+    "score": 76,
+    "target_pct": 3,
+    "sector": "기술",
+    "basis": [
+     "PRE_STRONG",
+     "POST_UP"
+    ],
+    "reason": "보합권 출발 후 개장 후 +2.3% 상승하며 실적 호조 및 자사주 매입 모멘텀 반영 확인",
+    "risk": "소형주 특유의 장중 변동성 확대 주의"
+   }
+  ],
+  "day_at": "22:34",
+  "day_brief": "AMZN과 DLB는 개장 후 상승 흐름을 유지하며 선정 논리를 확인해주어 매수 후보로 확정했습니다. 반면 DXCM, AXTI는 개장 후 하락 전환하여 제외했습니다."
  }
 }
