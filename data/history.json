@@ -2323,21 +2323,24 @@
      "rank": 6,
      "verdict": "관찰",
      "why": "금융지원 등 개별 재료 있으나 시장 하락 방어력 점검 필요",
-     "r1": 1.4
+     "r1": 1.4,
+     "r5": 16.9
     },
     {
      "ticker": "373220.KS",
      "rank": 7,
      "verdict": "제외",
      "why": "지수 동반 하락 우려",
-     "r1": 6.5
+     "r1": 6.5,
+     "r5": 11.6
     },
     {
      "ticker": "207940.KS",
      "rank": 8,
      "verdict": "관찰",
      "why": "기관 연속 순매수 있으나 지수 영향 주시",
-     "r1": 3.7
+     "r1": 3.7,
+     "r5": 1.2
     },
     {
      "ticker": "105560.KS",
@@ -5212,7 +5215,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": 0.7
     },
     {
      "ticker": "058470.KQ",
@@ -5220,7 +5223,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": -1.2
     },
     {
      "ticker": "373220.KS",
@@ -5228,7 +5231,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": -0.1
     },
     {
      "ticker": "240810.KQ",
@@ -5236,7 +5239,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": -5.4
     },
     {
      "ticker": "207940.KS",
@@ -5244,7 +5247,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": 1.2
     },
     {
      "ticker": "028300.KQ",
@@ -5252,7 +5255,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": 1.2
     }
    ],
    "bl": {
@@ -5454,7 +5457,290 @@
     "brief": "대부분의 후보가 갭상승 후 시가 대비 급락하여 원칙에 부합하지 않거나 확률 우위가 낮아 전량 제외합니다.",
     "n": 0
    },
-   "dayHold": 1
+   "dayHold": 1,
+   "cstat": {
+    "n": 16,
+    "med": -1.2,
+    "ex": null,
+    "exD": null,
+    "rg": null,
+    "rej": null,
+    "blr": {
+     "rand": 0.4,
+     "mom": -1.8
+    }
+   }
+  },
+  {
+   "date": "2026-08-05",
+   "market": "US",
+   "regime": "상승",
+   "rules": [
+    "단타 실패 분해: 시장충격4·목표과다0·선정6 → 선정 강화",
+    "강도80+ 실측 0%(8) — 확신도 과장, 보수화"
+   ],
+   "cands": [
+    {
+     "ticker": "W",
+     "rank": 1,
+     "verdict": "선택",
+     "why": "목표가 상향 및 수요 회복 모멘텀",
+     "r1": null
+    },
+    {
+     "ticker": "PLTR",
+     "rank": 2,
+     "verdict": "선택",
+     "why": "강한 거래량과 시장 추종 상승",
+     "r1": null
+    },
+    {
+     "ticker": "PAY",
+     "rank": 3,
+     "verdict": "선택",
+     "why": "기록적 매출 실적 호조",
+     "r1": null
+    },
+    {
+     "ticker": "ZBRA",
+     "rank": 4,
+     "verdict": "선택",
+     "why": "다수의 목표가 상향 조정",
+     "r1": null
+    },
+    {
+     "ticker": "UFPT",
+     "rank": 5,
+     "verdict": "선택",
+     "why": "역대급 실적 및 밸류에이션 매력",
+     "r1": null
+    },
+    {
+     "ticker": "IT",
+     "rank": 6,
+     "verdict": "선택",
+     "why": "증권사 목표가 상향 및 리서치 모멘텀",
+     "r1": null
+    },
+    {
+     "ticker": "AEHR",
+     "rank": 7,
+     "verdict": "선택",
+     "why": "AI 트렌드 연동 반도체 장비 모멘텀",
+     "r1": null
+    },
+    {
+     "ticker": "AAOI",
+     "rank": 8,
+     "verdict": "관찰",
+     "why": "중국 광수신기 금지 관련 노이즈 상존",
+     "r1": null
+    },
+    {
+     "ticker": "PLPC",
+     "rank": 9,
+     "verdict": "관찰",
+     "why": "시가총액 대비 거래대금 확인 필요",
+     "r1": null
+    },
+    {
+     "ticker": "TDW",
+     "rank": 10,
+     "verdict": "선택",
+     "why": "어닝 서프라이즈 및 실적 호조",
+     "r1": null
+    },
+    {
+     "ticker": "WIX",
+     "rank": 11,
+     "verdict": "관찰",
+     "why": "실적 호조이나 추가 모멘텀 대기",
+     "r1": null
+    },
+    {
+     "ticker": "ARM",
+     "rank": 12,
+     "verdict": "관찰",
+     "why": "지수 선물 연동 흐름 관찰 필요",
+     "r1": null
+    },
+    {
+     "ticker": "EWTX",
+     "rank": 13,
+     "verdict": "제외",
+     "why": "바이오 섹터 과거 승률 부진 및 고평가 논란",
+     "r1": null
+    },
+    {
+     "ticker": "FN",
+     "rank": 14,
+     "verdict": "관찰",
+     "why": "광네트워킹 섹터 연동 확인",
+     "r1": null
+    },
+    {
+     "ticker": "SPCX",
+     "rank": 15,
+     "verdict": "제외",
+     "why": "어닝 발표 후 주가 급락세 포착",
+     "r1": null
+    },
+    {
+     "ticker": "GRAB",
+     "rank": 16,
+     "verdict": "제외",
+     "why": "상승률 미미하여 모멘텀 부족",
+     "r1": null
+    },
+    {
+     "ticker": "NVDA",
+     "rank": 17,
+     "verdict": "관찰",
+     "why": "대형주로 스윙 탄력 제한적",
+     "r1": null
+    },
+    {
+     "ticker": "NOK",
+     "rank": 18,
+     "verdict": "제외",
+     "why": "상승률 및 모멘텀 상대적 열위",
+     "r1": null
+    }
+   ],
+   "bl": {
+    "rand": [
+     "W",
+     "EWTX",
+     "IT"
+    ],
+    "mom": [
+     "W",
+     "PLTR",
+     "PAY"
+    ]
+   },
+   "dayCands": [
+    {
+     "name": "Palantir Technologies Inc.",
+     "ticker": "PLTR",
+     "score": 78,
+     "target_pct": 5,
+     "sector": "소프트웨어",
+     "basis": [
+      "뉴스재료",
+      "거래량급증"
+     ],
+     "reason": "어닝 시즌 훈풍과 우호적인 시장 환경 속에서 거래량이 동반되며 강한 상승 탄력을 보이고 있습니다. 단기 모멘텀 트레이딩에 적합합니다.",
+     "risk": "높은 밸류에이션으로 인한 장중 변동성"
+    },
+    {
+     "name": "Paymentus Holdings, Inc.",
+     "ticker": "PAY",
+     "score": 76,
+     "target_pct": 4,
+     "sector": "핀테크",
+     "basis": [
+      "실적",
+      "뉴스재료"
+     ],
+     "reason": "2분기 실적발표에서 기록적인 매출을 달성하며 상위 상승률 종목으로 부각되었습니다. 당일 거래 집중도가 높아 단기 반등 공략이 가능합니다.",
+     "risk": "시총 규모에 따른 호가창 얇음"
+    },
+    {
+     "name": "Tidewater Inc.",
+     "ticker": "TDW",
+     "score": 75,
+     "target_pct": 4,
+     "sector": "에너지",
+     "basis": [
+      "실적",
+      "추세지속"
+     ],
+     "reason": "기록적인 매출과 강세장 전망을 담은 실적 컨퍼런스콜 이후 매수세가 유입되고 있습니다. 실적 모멘텀이 당일 주가에 긍정적으로 작용할 것입니다.",
+     "risk": "에너지 섹터 전반의 수급 변동"
+    },
+    {
+     "name": "Gartner, Inc.",
+     "ticker": "IT",
+     "score": 74,
+     "target_pct": 3,
+     "sector": "서비스",
+     "basis": [
+      "뉴스재료"
+     ],
+     "reason": "Truist의 목표가 상향(205달러)과 AI 관련 리서치 인사이트가 호재로 작용하고 있습니다. 안정적인 우상향 흐름 속 단기 트레이딩 구간이 나옵니다.",
+     "risk": "제한적인 변동성 폭"
+    },
+    {
+     "name": "Aehr Test Systems",
+     "ticker": "AEHR",
+     "score": 72,
+     "target_pct": 3,
+     "sector": "반도체",
+     "basis": [
+      "추세지속"
+     ],
+     "reason": "AI 반도체 트렌드와 맞물려 관련 수혜 기대감이 작용하며 주가가 강세를 보이고 있습니다. 기술주 전반의 투심 개선 효과를 누릴 수 있습니다.",
+     "risk": "내부자 매도 공시 존재"
+    }
+   ],
+   "hold": 0,
+   "v": {
+    "m": "gemini-3.5-flash-lite",
+    "pv": "J1.0"
+   },
+   "mktF": {
+    "dir": "상승",
+    "conf": 75,
+    "why": "전일 S&P500 급등과 지수선물 우상향 흐름이 위험선호 심리를 지지함",
+    "ok": null
+   },
+   "picks": [
+    {
+     "kind": "swing",
+     "name": "Wayfair Inc.",
+     "ticker": "W",
+     "score": 85,
+     "sector": "유통",
+     "basis": [
+      "뉴스재료",
+      "실적"
+     ],
+     "p0": 116.08,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "UFP Technologies, Inc.",
+     "ticker": "UFPT",
+     "score": 82,
+     "sector": "소재",
+     "basis": [
+      "실적",
+      "추세지속"
+     ],
+     "p0": 334.84,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "Zebra Technologies Corporation",
+     "ticker": "ZBRA",
+     "score": 80,
+     "sector": "기술",
+     "basis": [
+      "뉴스재료"
+     ],
+     "p0": 368.83,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    }
+   ]
   }
  ],
  "monAt": 1785911428365
