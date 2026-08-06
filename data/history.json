@@ -2542,7 +2542,8 @@
      "rank": 16,
      "verdict": "제외",
      "why": "반도체 업황 혼조 및 하락세",
-     "r1": 5.5
+     "r1": 5.5,
+     "r5": 16.8
     },
     {
      "ticker": "NVDA",
@@ -3210,7 +3211,8 @@
      "rank": 15,
      "verdict": "제외",
      "why": "상승률 및 모멘텀 상위 후보 대비 열위",
-     "r1": -6.7
+     "r1": -6.7,
+     "r5": 3.2
     },
     {
      "ticker": "MSFT",
@@ -3224,7 +3226,8 @@
      "rank": 17,
      "verdict": "제외",
      "why": "상승률 하위 및 모멘텀 부재",
-     "r1": 1.2
+     "r1": 1.2,
+     "r5": 10.4
     },
     {
      "ticker": "NOK",
@@ -6338,7 +6341,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": 1.2
     },
     {
      "ticker": "INTA",
@@ -6346,7 +6349,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": 1.7
     },
     {
      "ticker": "SIND",
@@ -6354,7 +6357,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": 9.3
     },
     {
      "ticker": "SHAK",
@@ -6362,7 +6365,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": -2.4
     },
     {
      "ticker": "SPCX",
@@ -6370,7 +6373,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": 7.3
     },
     {
      "ticker": "NVDA",
@@ -6378,7 +6381,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": -1.1
     },
     {
      "ticker": "ONDS",
@@ -6386,7 +6389,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": 1.8
     },
     {
      "ticker": "INTC",
@@ -6394,7 +6397,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": 1.6
     }
    ],
    "bl": {
@@ -6616,7 +6619,19 @@
     "brief": "실측 통계 및 개장 데이터 기준, 마이너스 시가갭과 개장 후 약세로 인해 확률 우위 종목이 부재하여 금일 단타는 보류합니다.",
     "n": 0
    },
-   "dayHold": 1
+   "dayHold": 1,
+   "cstat": {
+    "n": 18,
+    "med": 1.2,
+    "ex": null,
+    "exD": null,
+    "rg": null,
+    "rej": null,
+    "blr": {
+     "rand": 2,
+     "mom": -3.2
+    }
+   }
   },
   {
    "date": "2026-08-07",
