@@ -5444,7 +5444,7 @@
      "r20": null,
      "b": 401500,
      "gap": 2.3,
-     "simOpen": -1,
+     "simOpen": -0.4,
      "tv": 78319,
      "tvx": 0.2,
      "idx": null
@@ -5465,7 +5465,7 @@
      "r20": null,
      "b": 1473000,
      "gap": -0.2,
-     "simOpen": 1.8,
+     "simOpen": 2.8,
      "tv": 13563,
      "tvx": 0.1,
      "idx": null
@@ -5935,70 +5935,70 @@
      "rank": 1,
      "verdict": "선택",
      "why": "정책 수혜 및 외인 연속 순매수로 스윙 적합",
-     "r1": null
+     "r1": -0.9
     },
     {
      "ticker": "215600.KQ",
      "rank": 2,
      "verdict": "관찰",
      "why": "임상 성과 재료 있으나 바이오 섹터 리스크 주의",
-     "r1": null
+     "r1": -0.2
     },
     {
      "ticker": "102970.KS",
      "rank": 3,
      "verdict": "제외",
      "why": "증권주 침체 및 수급 혼조로 모멘텀 부족",
-     "r1": null
+     "r1": 0
     },
     {
      "ticker": "290720.KQ",
      "rank": 4,
      "verdict": "관찰",
      "why": "단기 재료 있으나 변동성 큼",
-     "r1": null
+     "r1": -2.4
     },
     {
      "ticker": "192650.KS",
      "rank": 5,
      "verdict": "선택",
      "why": "기관 연속 순매수 및 신사업 모멘텀 보유",
-     "r1": null
+     "r1": 2.1
     },
     {
      "ticker": "206650.KQ",
      "rank": 6,
      "verdict": "제외",
      "why": "바이오 섹터 및 수급 약세",
-     "r1": null
+     "r1": 3.8
     },
     {
      "ticker": "078520.KS",
      "rank": 7,
      "verdict": "선택",
      "why": "해외 실적 호조 및 수급 양호로 스윙 최우선",
-     "r1": null
+     "r1": 2.3
     },
     {
      "ticker": "067290.KQ",
      "rank": 8,
      "verdict": "제외",
      "why": "거래상위이나 모멘텀 지속성 불확실",
-     "r1": null
+     "r1": 15.3
     },
     {
      "ticker": "450080.KS",
      "rank": 9,
      "verdict": "제외",
      "why": "이차전지 섹터 저승률 통계 반영 회피",
-     "r1": null
+     "r1": 5
     },
     {
      "ticker": "052260.KQ",
      "rank": 10,
      "verdict": "제외",
      "why": "제약바이오 혼재 및 테마 모멘텀 약함",
-     "r1": null
+     "r1": 2.3
     },
     {
      "ticker": "035420.KS",
@@ -6151,7 +6151,8 @@
     "dir": "하락",
     "conf": 35,
     "why": "미국 증시 약세 및 환율 부담으로 하락 압력이 우세하나 개별 종목 장세가 혼조세를 보일 것",
-    "ok": null
+    "ok": true,
+    "act": -4.58
    },
    "picks": [
     {
@@ -6171,7 +6172,7 @@
      "r20": null,
      "b": 11240,
      "gap": 0.1,
-     "simOpen": 2.2,
+     "simOpen": 2.3,
      "tv": 49,
      "tvx": 0,
      "idx": null
@@ -6193,7 +6194,7 @@
      "r20": null,
      "b": 23100,
      "gap": -0.6,
-     "simOpen": -1.7,
+     "simOpen": -0.9,
      "tv": 358,
      "tvx": 0.1,
      "idx": null
@@ -6214,7 +6215,7 @@
      "r20": null,
      "b": 4600,
      "gap": -1,
-     "simOpen": 0.4,
+     "simOpen": 0.3,
      "tv": 79,
      "tvx": 0.1,
      "idx": null
