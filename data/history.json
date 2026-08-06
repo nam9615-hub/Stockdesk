@@ -6005,28 +6005,28 @@
      "rank": 11,
      "verdict": "관찰",
      "why": "기관 수급 좋으나 탄력성 점검 필요",
-     "r1": null
+     "r1": 0.4
     },
     {
      "ticker": "067900.KQ",
      "rank": 12,
      "verdict": "관찰",
      "why": "정책 테마 저평가 탈출 관점 단기 대상",
-     "r1": null
+     "r1": -0.3
     },
     {
      "ticker": "058430.KS",
      "rank": 13,
      "verdict": "선택",
      "why": "호실적 기반 스윙 모멘텀 확보",
-     "r1": null
+     "r1": 0.3
     },
     {
      "ticker": "063570.KQ",
      "rank": 14,
      "verdict": "제외",
      "why": "모멘텀 및 거래대금 미흡",
-     "r1": null
+     "r1": -0.5
     }
    ],
    "bl": {
@@ -6226,7 +6226,303 @@
     "brief": "시가갭과 개장 후 흐름을 분석한 결과, 제시된 5개 종목 모두 갭 -2% 이하 붕괴 또는 수급 유입 부족으로 인해 단타 기준에 부합하지 않아 전부 보류합니다.",
     "n": 0
    },
-   "dayHold": 1
+   "dayHold": 1,
+   "cstat": {
+    "n": 14,
+    "med": 0.4,
+    "ex": null,
+    "exD": null,
+    "rg": null,
+    "rej": 3.9,
+    "blr": {
+     "rand": 6.3,
+     "mom": -0.8
+    }
+   }
+  },
+  {
+   "date": "2026-08-06",
+   "market": "US",
+   "regime": "상승",
+   "rules": [
+    "단타 실패 분해: 시장충격4·목표과다0·선정8 → 선정 강화",
+    "강도80+ 실측 0%(9) — 확신도 과장, 보수화",
+    "근거'뉴스재료' 성공40%(10) → 단독추천 지양"
+   ],
+   "cands": [
+    {
+     "ticker": "MTRN",
+     "rank": 1,
+     "verdict": "선택",
+     "why": "레코드 실적 및 가이던스 상향으로 가장 강력한 모멘텀 보유",
+     "r1": null
+    },
+    {
+     "ticker": "WTTR",
+     "rank": 91,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "SHOP",
+     "rank": 92,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "BSP",
+     "rank": 93,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "URGN",
+     "rank": 94,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "TWST",
+     "rank": 95,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "FRPT",
+     "rank": 96,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "LIME",
+     "rank": 97,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "AUGO",
+     "rank": 98,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "QLYS",
+     "rank": 99,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "EGO",
+     "rank": 100,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "INTA",
+     "rank": 101,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "SIND",
+     "rank": 102,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "SHAK",
+     "rank": 103,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "SPCX",
+     "rank": 104,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "NVDA",
+     "rank": 105,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "ONDS",
+     "rank": 106,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "INTC",
+     "rank": 107,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    }
+   ],
+   "bl": {
+    "rand": [
+     "SPCX",
+     "URGN",
+     "BSP"
+    ],
+    "mom": [
+     "MTRN",
+     "WTTR",
+     "SHOP"
+    ]
+   },
+   "dayCands": [
+    {
+     "name": "Shopify Inc.",
+     "ticker": "SHOP",
+     "score": 76,
+     "target_pct": 4,
+     "sector": "기술",
+     "basis": [
+      "뉴스재료"
+     ],
+     "reason": "RBC의 목표가 상향 조정 뉴스가 유입되며 기술주 하락 국면에서도 상대적 강세를 보이고 있습니다. 단기 모멘텀을 활용한 빠른 트레이딩에 유리합니다.",
+     "risk": "기술주 전반의 하락 압력"
+    },
+    {
+     "name": "UroGen Pharma Ltd.",
+     "ticker": "URGN",
+     "score": 74,
+     "target_pct": 4,
+     "sector": "헬스케어",
+     "basis": [
+      "실적"
+     ],
+     "reason": "Cysview 매출이 73% 급증하는 등 어닝 서프라이즈 성과를 기록했습니다. 단기 수급 유입에 따른 탄력적 움직임이 기대됩니다.",
+     "risk": "헬스케어 섹터 과거 성과 부진 패턴"
+    },
+    {
+     "name": "Twist Bioscience Corporation",
+     "ticker": "TWST",
+     "score": 72,
+     "target_pct": 3,
+     "sector": "뉴스재료",
+     "basis": [
+      "뉴스재료"
+     ],
+     "reason": "3억 달러 규모의 대규모 유상증자 프라이싱 완료로 불확실성이 해소되며 주가 변동성 확대를 이용한 단타가 가능합니다.",
+     "risk": "유상증자에 따른 단기 물량 부담"
+    },
+    {
+     "name": "Eldorado Gold Corporation",
+     "ticker": "EGO",
+     "score": 70,
+     "target_pct": 3,
+     "sector": "소재",
+     "basis": [
+      "추세지속"
+     ],
+     "reason": "귀금속 및 광물 관련 우호적인 분석가 코멘트와 함께 견조한 상승 추세를 유지하고 있습니다.",
+     "risk": "원자재 가격 변동성"
+    },
+    {
+     "name": "Shake Shack, Inc.",
+     "ticker": "SHAK",
+     "score": 68,
+     "target_pct": 3,
+     "sector": "소비재",
+     "basis": [
+      "뉴스재료"
+     ],
+     "reason": "소비재 전반의 긍정적 소비 트렌드 언급과 함께 소비 심리 호조의 수혜를 받고 있습니다.",
+     "risk": "단기 급등에 따른 차익실현 매물 출화"
+    }
+   ],
+   "hold": 0,
+   "v": {
+    "m": "gemini-3.5-flash-lite",
+    "pv": "J1.0"
+   },
+   "mktF": {
+    "dir": "횡보",
+    "conf": 75,
+    "why": "전일 지수 소폭 하락과 VIX 상승 속에서도 개별 실적주 중심의 차별화 장세가 예상됨",
+    "ok": null
+   },
+   "picks": [
+    {
+     "kind": "swing",
+     "name": "Materion Corporation",
+     "ticker": "MTRN",
+     "score": 82,
+     "sector": "소재",
+     "basis": [
+      "실적"
+     ],
+     "p0": 297.08,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "Select Water Solutions, Inc.",
+     "ticker": "WTTR",
+     "score": 78,
+     "sector": "에너지",
+     "basis": [
+      "실적"
+     ],
+     "p0": 22.26,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "Qualys, Inc.",
+     "ticker": "QLYS",
+     "score": 75,
+     "sector": "기술",
+     "basis": [
+      "실적"
+     ],
+     "p0": 183.25,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    }
+   ]
   }
  ],
  "monAt": 1785997451165
