@@ -6258,7 +6258,7 @@
      "rank": 1,
      "verdict": "선택",
      "why": "레코드 실적 및 가이던스 상향으로 가장 강력한 모멘텀 보유",
-     "r1": null
+     "r1": -4.3
     },
     {
      "ticker": "WTTR",
@@ -6266,7 +6266,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": -4.4
     },
     {
      "ticker": "SHOP",
@@ -6274,7 +6274,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": 2.6
     },
     {
      "ticker": "BSP",
@@ -6282,7 +6282,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": 3.7
     },
     {
      "ticker": "URGN",
@@ -6290,7 +6290,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": -1.4
     },
     {
      "ticker": "TWST",
@@ -6298,7 +6298,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": -3
     },
     {
      "ticker": "FRPT",
@@ -6306,7 +6306,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": -2.3
     },
     {
      "ticker": "LIME",
@@ -6314,7 +6314,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": 0.5
     },
     {
      "ticker": "AUGO",
@@ -6322,7 +6322,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": 1.5
     },
     {
      "ticker": "QLYS",
@@ -6330,7 +6330,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": 1
     },
     {
      "ticker": "EGO",
@@ -6617,6 +6617,261 @@
     "n": 0
    },
    "dayHold": 1
+  },
+  {
+   "date": "2026-08-07",
+   "market": "KR",
+   "regime": "하락",
+   "rules": [
+    "단타 실패 분해: 시장충격2·목표과다0·선정6 → 선정 강화",
+    "근거'수급(3일)' 성공38%(8) → 단독추천 지양"
+   ],
+   "cands": [
+    {
+     "ticker": "015860.KS",
+     "rank": 1,
+     "verdict": "선택",
+     "why": "글로벌 전력망 수혜와 외인 수급 양호",
+     "r1": null
+    },
+    {
+     "ticker": "338220.KQ",
+     "rank": 91,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "128940.KS",
+     "rank": 92,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "078070.KQ",
+     "rank": 93,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "474590.KS",
+     "rank": 94,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "067080.KQ",
+     "rank": 95,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "530134.KS",
+     "rank": 96,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "085660.KQ",
+     "rank": 97,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "034020.KS",
+     "rank": 98,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "030520.KQ",
+     "rank": 99,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "200880.KS",
+     "rank": 100,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "393890.KQ",
+     "rank": 101,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "336370.KS",
+     "rank": 102,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "455900.KQ",
+     "rank": 103,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    }
+   ],
+   "bl": {
+    "rand": [
+     "015860.KS",
+     "393890.KQ",
+     "200880.KS"
+    ],
+    "mom": [
+     "015860.KS",
+     "338220.KQ",
+     "128940.KS"
+    ]
+   },
+   "dayCands": [
+    {
+     "name": "두산에너빌리티",
+     "ticker": "034020.KS",
+     "score": 70,
+     "target_pct": 4,
+     "sector": "원자력",
+     "basis": [
+      "뉴스재료",
+      "수급(3일)"
+     ],
+     "reason": "한수원 통합 원전정비원자격제도 정부 인정 획득으로 공신력이 강화되었습니다. 기관 중심의 수급 유입이 활발합니다.",
+     "risk": "외국인 매도세 지속 여부 모니터링 필요"
+    },
+    {
+     "name": "차바이오텍",
+     "ticker": "085660.KQ",
+     "score": 66,
+     "sector": "바이오",
+     "basis": [
+      "뉴스재료"
+     ],
+     "reason": "정부 과제 추진을 통한 신약 개발 가속화 기대감이 유입되고 있습니다. 단기 변동성을 활용한 트레이딩이 가능합니다.",
+     "risk": "바이오 섹터 전반의 투자 심리 변동",
+     "target_pct": 3
+    },
+    {
+     "name": "대화제약",
+     "ticker": "067080.KQ",
+     "score": 64,
+     "sector": "제약",
+     "basis": [
+      "추세지속"
+     ],
+     "reason": "최근 강한 모멘텀을 바탕으로 일시적 거래량 유입이 기대됩니다. 단기 스윙 관점의 접근이 유효합니다.",
+     "risk": "차익실현 물량 출회 가능성",
+     "target_pct": 3
+    },
+    {
+     "name": "서연이화",
+     "ticker": "200880.KS",
+     "score": 62,
+     "sector": "자동차부품",
+     "basis": [
+      "추세지속"
+     ],
+     "reason": "안정적인 5일·20일 모멘텀을 유지하며 기관 수급이 소폭 유입되고 있습니다.",
+     "risk": "완성차 섹터 전반의 흐름에 연동",
+     "target_pct": 3
+    },
+    {
+     "name": "한미약품",
+     "ticker": "128940.KS",
+     "score": 60,
+     "sector": "제약",
+     "basis": [
+      "뉴스재료"
+     ],
+     "reason": "기관의 연속 순매수세와 내부 AI 업무 혁신 등 긍정적 재료가 혼재되어 있습니다.",
+     "risk": "경영권 관련 노이즈 지속",
+     "target_pct": 3
+    }
+   ],
+   "hold": 0,
+   "v": {
+    "m": "gemini-3.5-flash-lite",
+    "pv": "J1.0"
+   },
+   "mktF": {
+    "dir": "횡보",
+    "conf": 33,
+    "why": "글로벌 증시 혼조 및 고환율 부담 속에서 지수 방향성이 제한되는 국면입니다.",
+    "ok": null
+   },
+   "picks": [
+    {
+     "kind": "swing",
+     "name": "한컴",
+     "ticker": "030520.KQ",
+     "score": 72,
+     "sector": "AI·소프트웨어",
+     "basis": [
+      "뉴스재료",
+      "추세지속"
+     ],
+     "p0": 18650,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "유비쿼스홀딩스",
+     "ticker": "078070.KQ",
+     "score": 68,
+     "sector": "통신·주주환원",
+     "basis": [
+      "뉴스재료",
+      "추세지속"
+     ],
+     "p0": 9220,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "일진홀딩스",
+     "ticker": "015860.KS",
+     "score": 65,
+     "sector": "전력설비",
+     "basis": [
+      "뉴스재료",
+      "수주계약"
+     ],
+     "p0": 6250,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    }
+   ]
   }
  ],
  "monAt": 1786048223085
