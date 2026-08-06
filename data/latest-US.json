@@ -1,255 +1,222 @@
 {
- "date": "2026-08-05",
+ "date": "2026-08-06",
  "at": "21:29",
  "data": {
-  "brief": "전일 S&P500의 강세와 지수선물 상승세에 힘입어 위험선호 심리가 유지되는 상승장 국면입니다. 실적 호조 및 애널리스트 목표가 상향 종목을 중심으로 모멘텀이 집중되고 있습니다.",
+  "brief": "전일 S&P500 소폭 하락과 VIX 상승 속에서 실적 호조 및 가이던스 상향 종목들이 강세를 보이고 있습니다. 과거 통계에 따른 보수적 접근과 실적 모멘텀이 검증된 종목 중심의 선별적 대응이 필요합니다.",
   "picks": [
    {
-    "name": "Wayfair Inc.",
-    "ticker": "W",
-    "score": 85,
-    "sector": "유통",
-    "basis": [
-     "뉴스재료",
-     "실적"
-    ],
-    "reason": "Wedbush의 목표가 상향(125달러)과 미국 가구 수요 회복세 진단이 맞물려 강력한 상승 모멘텀을 형성했습니다. 실적 개선 기대감이 중기 스윙 관점의 추가 상승을 지지합니다.",
-    "catalyst": "목표가 상향 및 가구 수요 회복",
-    "risk": "단기 급등에 따른 차익실현 매물 주의"
-   },
-   {
-    "name": "UFP Technologies, Inc.",
-    "ticker": "UFPT",
+    "name": "Materion Corporation",
+    "ticker": "MTRN",
     "score": 82,
     "sector": "소재",
     "basis": [
-     "실적",
-     "추세지속"
+     "실적"
     ],
-    "reason": "역대급 2분기 실적 발표 이후 적정 가치 대비 저평가 분석과 함께 주가가 급등세를 타고 있습니다. 실적 기반의 펀더멘털 매수세가 지속될 가능성이 높습니다.",
-    "catalyst": "역대급 Q2 실적 및 저평가 매력",
-    "risk": "역사적 고가 부근 변동성 확대"
+    "reason": "2분기 실적 호조와 함께 레코드 매출을 기록하고 가이던스를 상향 조정하여 강한 매수세를 유입시키고 있습니다. 긍정적인 실적 모멘텀이 단기 스윙 관점에서 지속될 가능성이 높습니다.",
+    "catalyst": "Q2 레코드 매출 및 가이던스 상향",
+    "risk": "소재 섹터 변동성 및 거시경제 지표 악영향"
    },
    {
-    "name": "Zebra Technologies Corporation",
-    "ticker": "ZBRA",
-    "score": 80,
+    "name": "Select Water Solutions, Inc.",
+    "ticker": "WTTR",
+    "score": 78,
+    "sector": "에너지",
+    "basis": [
+     "실적"
+    ],
+    "reason": "이익이 거의 두 배로 증가하며 신고가 근처에서 강력한 실적 모멘텀을 보여주고 있습니다. 레코드 매출 달성으로 향후 추가적인 상승 여력이 기대됩니다.",
+    "catalyst": "이익 급증 및 레코드 매출 달성",
+    "risk": "유가 및 에너지 업황 변동성에 노출"
+   },
+   {
+    "name": "Qualys, Inc.",
+    "ticker": "QLYS",
+    "score": 75,
     "sector": "기술",
     "basis": [
-     "뉴스재료"
+     "실적"
     ],
-    "reason": "Truist와 KeyBanc 등 주요 투자기관의 목표가 상향 조정이 이어지며 투심이 개선되었습니다. 기관의 긍정적인 평가가 스윙 관점의 우상향 흐름을 뒷받침합니다.",
-    "catalyst": "복수 증권사 목표가 대폭 상향",
-    "risk": "단기 저항선 도달 시 숨고르기 가능성"
+    "reason": "2분기 실적 서프라이즈와 함께 FY26 가이던스를 상향하며 시장 예상치를 크게 상회했습니다. 채널 강세가 확인되어 기술주 내 차별적 흐름이 예상됩니다.",
+    "catalyst": "실적 서프라이즈 및 가이던스 상향",
+    "risk": "기술주 전반의 수급 불안 및 밸류에이션 부담"
    }
   ],
   "day_cands": [
    {
-    "name": "Palantir Technologies Inc.",
-    "ticker": "PLTR",
-    "score": 78,
-    "target_pct": 5,
-    "sector": "소프트웨어",
-    "basis": [
-     "뉴스재료",
-     "거래량급증"
-    ],
-    "reason": "어닝 시즌 훈풍과 우호적인 시장 환경 속에서 거래량이 동반되며 강한 상승 탄력을 보이고 있습니다. 단기 모멘텀 트레이딩에 적합합니다.",
-    "risk": "높은 밸류에이션으로 인한 장중 변동성"
-   },
-   {
-    "name": "Paymentus Holdings, Inc.",
-    "ticker": "PAY",
+    "name": "Shopify Inc.",
+    "ticker": "SHOP",
     "score": 76,
     "target_pct": 4,
-    "sector": "핀테크",
+    "sector": "기술",
     "basis": [
-     "실적",
      "뉴스재료"
     ],
-    "reason": "2분기 실적발표에서 기록적인 매출을 달성하며 상위 상승률 종목으로 부각되었습니다. 당일 거래 집중도가 높아 단기 반등 공략이 가능합니다.",
-    "risk": "시총 규모에 따른 호가창 얇음"
+    "reason": "RBC의 목표가 상향 조정 뉴스가 유입되며 기술주 하락 국면에서도 상대적 강세를 보이고 있습니다. 단기 모멘텀을 활용한 빠른 트레이딩에 유리합니다.",
+    "risk": "기술주 전반의 하락 압력"
    },
    {
-    "name": "Tidewater Inc.",
-    "ticker": "TDW",
-    "score": 75,
-    "target_pct": 4,
-    "sector": "에너지",
-    "basis": [
-     "실적",
-     "추세지속"
-    ],
-    "reason": "기록적인 매출과 강세장 전망을 담은 실적 컨퍼런스콜 이후 매수세가 유입되고 있습니다. 실적 모멘텀이 당일 주가에 긍정적으로 작용할 것입니다.",
-    "risk": "에너지 섹터 전반의 수급 변동"
-   },
-   {
-    "name": "Gartner, Inc.",
-    "ticker": "IT",
+    "name": "UroGen Pharma Ltd.",
+    "ticker": "URGN",
     "score": 74,
-    "target_pct": 3,
-    "sector": "서비스",
+    "target_pct": 4,
+    "sector": "헬스케어",
     "basis": [
-     "뉴스재료"
+     "실적"
     ],
-    "reason": "Truist의 목표가 상향(205달러)과 AI 관련 리서치 인사이트가 호재로 작용하고 있습니다. 안정적인 우상향 흐름 속 단기 트레이딩 구간이 나옵니다.",
-    "risk": "제한적인 변동성 폭"
+    "reason": "Cysview 매출이 73% 급증하는 등 어닝 서프라이즈 성과를 기록했습니다. 단기 수급 유입에 따른 탄력적 움직임이 기대됩니다.",
+    "risk": "헬스케어 섹터 과거 성과 부진 패턴"
    },
    {
-    "name": "Aehr Test Systems",
-    "ticker": "AEHR",
+    "name": "Twist Bioscience Corporation",
+    "ticker": "TWST",
     "score": 72,
     "target_pct": 3,
-    "sector": "반도체",
+    "sector": "뉴스재료",
+    "basis": [
+     "뉴스재료"
+    ],
+    "reason": "3억 달러 규모의 대규모 유상증자 프라이싱 완료로 불확실성이 해소되며 주가 변동성 확대를 이용한 단타가 가능합니다.",
+    "risk": "유상증자에 따른 단기 물량 부담"
+   },
+   {
+    "name": "Eldorado Gold Corporation",
+    "ticker": "EGO",
+    "score": 70,
+    "target_pct": 3,
+    "sector": "소재",
     "basis": [
      "추세지속"
     ],
-    "reason": "AI 반도체 트렌드와 맞물려 관련 수혜 기대감이 작용하며 주가가 강세를 보이고 있습니다. 기술주 전반의 투심 개선 효과를 누릴 수 있습니다.",
-    "risk": "내부자 매도 공시 존재"
+    "reason": "귀금속 및 광물 관련 우호적인 분석가 코멘트와 함께 견조한 상승 추세를 유지하고 있습니다.",
+    "risk": "원자재 가격 변동성"
+   },
+   {
+    "name": "Shake Shack, Inc.",
+    "ticker": "SHAK",
+    "score": 68,
+    "target_pct": 3,
+    "sector": "소비재",
+    "basis": [
+     "뉴스재료"
+    ],
+    "reason": "소비재 전반의 긍정적 소비 트렌드 언급과 함께 소비 심리 호조의 수혜를 받고 있습니다.",
+    "risk": "단기 급등에 따른 차익실현 매물 출화"
    }
   ],
   "cands": [
    {
-    "ticker": "W",
+    "ticker": "MTRN",
     "rank": 1,
     "verdict": "선택",
-    "why": "목표가 상향 및 수요 회복 모멘텀"
+    "why": "레코드 실적 및 가이던스 상향으로 가장 강력한 모멘텀 보유"
    },
    {
-    "ticker": "PLTR",
+    "name": "WTTR",
     "rank": 2,
     "verdict": "선택",
-    "why": "강한 거래량과 시장 추종 상승"
+    "why": "이익 급증과 신고가 경신으로 수급 집중"
    },
    {
-    "ticker": "PAY",
+    "name": "SHOP",
     "rank": 3,
     "verdict": "선택",
-    "why": "기록적 매출 실적 호조"
+    "why": "목표가 상향 리포트 및 견조한 거래대금"
    },
    {
-    "ticker": "ZBRA",
+    "name": "BSP",
     "rank": 4,
-    "verdict": "선택",
-    "why": "다수의 목표가 상향 조정"
+    "verdict": "관찰",
+    "why": "Airtable 인수 건의 할인율 및 시장 반응 대기"
    },
    {
-    "ticker": "UFPT",
+    "name": "URGN",
     "rank": 5,
-    "verdict": "선택",
-    "why": "역대급 실적 및 밸류에이션 매력"
+    "verdict": "관찰",
+    "why": "핵심 제품 매출 73% 급증이나 헬스케어 섹터 리스크 고려"
    },
    {
-    "ticker": "IT",
+    "name": "TWST",
     "rank": 6,
-    "verdict": "선택",
-    "why": "증권사 목표가 상향 및 리서치 모멘텀"
+    "verdict": "관찰",
+    "why": "공모 증자 이후 주가 안착 여부 확인 필요"
    },
    {
-    "ticker": "AEHR",
+    "name": "FRPT",
     "rank": 7,
-    "verdict": "선택",
-    "why": "AI 트렌드 연동 반도체 장비 모멘텀"
+    "verdict": "제외",
+    "why": "모간스탠리 등급 하향 및 목표가 조정"
    },
    {
-    "ticker": "AAOI",
+    "name": "LIME",
     "rank": 8,
     "verdict": "관찰",
-    "why": "중국 광수신기 금지 관련 노이즈 상존"
+    "why": "IPO 직후 첫 실적 발표 이후 변동성 관찰"
    },
    {
-    "ticker": "PLPC",
+    "name": "AUGO",
     "rank": 9,
-    "verdict": "관찰",
-    "why": "시가총액 대비 거래대금 확인 필요"
+    "verdict": "제외",
+    "why": "실적 및 매출 컨센서스 미달"
    },
    {
-    "ticker": "TDW",
+    "name": "QLYS",
     "rank": 10,
     "verdict": "선택",
-    "why": "어닝 서프라이즈 및 실적 호조"
+    "why": "어닝 서프라이즈 및 가이던스 상향으로 기술주 중 우수"
    },
    {
-    "ticker": "WIX",
+    "name": "EGO",
     "rank": 11,
     "verdict": "관찰",
-    "why": "실적 호조이나 추가 모멘텀 대기"
+    "why": "긍정적 애널리스트 평가 기반 완만한 상승"
    },
    {
-    "ticker": "ARM",
+    "name": "INTA",
     "rank": 12,
     "verdict": "관찰",
-    "why": "지수 선물 연동 흐름 관찰 필요"
+    "why": "목표가 상향 조정 반영 중"
    },
    {
-    "ticker": "EWTX",
+    "name": "SIND",
     "rank": 13,
     "verdict": "제외",
-    "why": "바이오 섹터 과거 승률 부진 및 고평가 논란"
+    "why": "실적 발표 앞두고 방향성 불투명"
    },
    {
-    "ticker": "FN",
+    "name": "SHAK",
     "rank": 14,
     "verdict": "관찰",
-    "why": "광네트워킹 섹터 연동 확인"
+    "why": "소비재 섹터 강세 동조화"
    },
    {
-    "ticker": "SPCX",
+    "name": "SPCX",
     "rank": 15,
     "verdict": "제외",
-    "why": "어닝 발표 후 주가 급락세 포착"
+    "why": "락업 해제 및 내부자 매도 물량 출회로 급락"
    },
    {
-    "ticker": "GRAB",
+    "name": "NVDA",
     "rank": 16,
     "verdict": "제외",
-    "why": "상승률 미미하여 모멘텀 부족"
+    "why": "시장 전반의 기술주 조정 흐름 동조"
    },
    {
-    "ticker": "NVDA",
+    "name": "ONDS",
     "rank": 17,
-    "verdict": "관찰",
-    "why": "대형주로 스윙 탄력 제한적"
+    "verdict": "제외",
+    "why": "모멘텀 부족 및 거래대금 저조"
    },
    {
-    "ticker": "NOK",
+    "name": "INTC",
     "rank": 18,
     "verdict": "제외",
-    "why": "상승률 및 모멘텀 상대적 열위"
+    "why": "반도체 소프트웨어 약세 흐름 영향"
    }
   ],
   "mkt": {
-   "dir": "상승",
+   "dir": "횡보",
    "conf": 75,
-   "why": "전일 S&P500 급등과 지수선물 우상향 흐름이 위험선호 심리를 지지함"
-  },
-  "day_picks": [
-   {
-    "name": "Palantir Technologies Inc.",
-    "ticker": "PLTR",
-    "score": 82,
-    "target_pct": 5,
-    "sector": "Software",
-    "basis": [
-     "어닝모멘텀"
-    ],
-    "reason": "시가갭 하락(-0.4%) 후 즉각적인 매수세 유입으로 +2.1% 반등, 개장 데이터가 상승 논리를 강력하게 뒷받침함.",
-    "risk": "급격한 추격 매수 시 조정 가능성"
-   },
-   {
-    "name": "Gartner, Inc.",
-    "ticker": "IT",
-    "score": 78,
-    "target_pct": 3,
-    "sector": "Consulting",
-    "basis": [
-     "목표가상향"
-    ],
-    "reason": "시가갭 +1.7% 이후에도 +1.5%를 유지하며 견고한 흐름을 보임. 기관 매수세와 리서치 호재가 개장 직후에도 지속 반영 중.",
-    "risk": "상승 탄력이 낮아 긴 호흡의 대응 필요"
-   }
-  ],
-  "day_at": "22:34",
-  "day_brief": "PLTR과 IT는 개장 후에도 선정 논리를 뒷받침하는 안정적인 상승 흐름을 보이고 있어 단타 유효 종목으로 판단합니다. 반면 PAY는 시가 대비 추가 하락으로 근거가 부정되었고 TDW와 AEHR은 변동성이 부족하여 제외합니다."
+   "why": "전일 지수 소폭 하락과 VIX 상승 속에서도 개별 실적주 중심의 차별화 장세가 예상됨"
+  }
  }
 }
