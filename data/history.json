@@ -3054,7 +3054,7 @@
      "r20": null,
      "b": 167500,
      "gap": 0.1,
-     "simOpen": 4.7,
+     "simOpen": 4.4,
      "tv": 50005,
      "tvx": 0.2,
      "idx": null
@@ -5469,7 +5469,7 @@
      "r20": null,
      "b": 1473000,
      "gap": -0.2,
-     "simOpen": 3.3,
+     "simOpen": 3.5,
      "tv": 13563,
      "tvx": 0.1,
      "idx": null
@@ -6178,7 +6178,7 @@
      "r20": null,
      "b": 11240,
      "gap": 0.1,
-     "simOpen": 6,
+     "simOpen": 5.5,
      "tv": 49,
      "tvx": 0,
      "idx": null
@@ -6200,7 +6200,7 @@
      "r20": null,
      "b": 23100,
      "gap": -0.6,
-     "simOpen": -2.4,
+     "simOpen": -2.8,
      "tv": 358,
      "tvx": 0.1,
      "idx": null
@@ -6221,7 +6221,7 @@
      "r20": null,
      "b": 4600,
      "gap": -1,
-     "simOpen": -0.3,
+     "simOpen": -1.2,
      "tv": 79,
      "tvx": 0.1,
      "idx": null
@@ -6893,7 +6893,7 @@
      "r20": null,
      "b": 18500,
      "gap": -0.8,
-     "simOpen": -0.6,
+     "simOpen": -0.4,
      "tv": 1085,
      "tvx": 0.6,
      "idx": -0.53
@@ -6935,7 +6935,7 @@
      "r20": null,
      "b": 6280,
      "gap": 0.5,
-     "simOpen": -1,
+     "simOpen": -1.1,
      "tv": 430,
      "tvx": 0.6,
      "idx": -0.53
@@ -6949,5 +6949,5 @@
    "dayHold": 1
   }
  ],
- "monAt": 1786068491102
+ "monAt": 1786069450712
 }
