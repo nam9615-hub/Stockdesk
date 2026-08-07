@@ -6987,70 +6987,70 @@
      "rank": 14,
      "verdict": "제외",
      "why": "헬스케어 섹터 회피 및 뉴스 모멘텀 단독의 낮은 성공률 반영",
-     "r1": null
+     "r1": 1
     },
     {
      "ticker": "IOVA",
      "rank": 2,
      "verdict": "선택",
      "why": "기록적 매출과 52주 신고가 경신 모멘텀 보유",
-     "r1": null
+     "r1": -3.8
     },
     {
      "ticker": "INSM",
      "rank": 1,
      "verdict": "선택",
      "why": "실적 개선 및 2026년 가이던스 상향으로 가장 우수한 펀더멘털",
-     "r1": null
+     "r1": -2.9
     },
     {
      "ticker": "SITM",
      "rank": 3,
      "verdict": "선택",
      "why": "강한 거래량 동반 반도체 칩 관련주 급등세",
-     "r1": null
+     "r1": 1.6
     },
     {
      "ticker": "WPP",
      "rank": 10,
      "verdict": "관찰",
      "why": "동종 업계 실적 부진 뉴스가 혼재되어 선별적 접근 필요",
-     "r1": null
+     "r1": 5.1
     },
     {
      "ticker": "PAYC",
      "rank": 8,
      "verdict": "관찰",
      "why": "오토메이션 실적 발표이나 보수적 관점 유지",
-     "r1": null
+     "r1": -0.9
     },
     {
      "ticker": "VAC",
      "rank": 5,
      "verdict": "선택",
      "why": "가이던스 상향 및 어닝 서프라이즈로 상승 추세 지속",
-     "r1": null
+     "r1": -2.6
     },
     {
      "ticker": "CAI",
      "rank": 9,
      "verdict": "관찰",
      "why": "메드테크 셀오프 분위기 속 단기 반등 여부 확인 필요",
-     "r1": null
+     "r1": 9.6
     },
     {
      "ticker": "CACI",
      "rank": 4,
      "verdict": "선택",
      "why": "방산 섹터 실적 호조 및 신고가 돌파",
-     "r1": null
+     "r1": 3.1
     },
     {
      "ticker": "CHYM",
      "rank": 6,
      "verdict": "선택",
      "why": "흑자 전환 및 가이던스 상향에 따른 실적 모멘텀",
-     "r1": null
+     "r1": -4.6
     },
     {
      "ticker": "FTDR",
