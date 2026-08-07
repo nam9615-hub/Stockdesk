@@ -6619,7 +6619,7 @@
      "r20": null,
      "b": 178.5,
      "gap": -2.6,
-     "simOpen": 2.3,
+     "simOpen": 1.9,
      "tv": 15,
      "tvx": 0.1,
      "idx": 0
@@ -7277,7 +7277,7 @@
      "r20": null,
      "b": 134.8300018310547,
      "gap": 1.7,
-     "simOpen": -4.4,
+     "simOpen": -4,
      "tv": 25,
      "tvx": 0.1,
      "idx": 0.37
@@ -7298,7 +7298,7 @@
      "r20": null,
      "b": 628.79,
      "gap": 0,
-     "simOpen": -0.8,
+     "simOpen": -1.5,
      "tv": 6,
      "tvx": 0,
      "idx": 0.37
@@ -7319,7 +7319,7 @@
      "r20": null,
      "b": 30.524999618530273,
      "gap": -2.3,
-     "simOpen": 0,
+     "simOpen": 1.5,
      "tv": 37,
      "tvx": 0.2,
      "idx": 0.37
@@ -7341,8 +7341,19 @@
      "cAt": "22:34",
      "eTs": "2026-08-07T13:34:10.967Z",
      "cm": 4,
-     "r1": null,
-     "hit": null
+     "r1": -1.8,
+     "hit": false,
+     "mfe": 1.6,
+     "mae": -3.1,
+     "tv": 195,
+     "tvx": 0.7,
+     "touch": "stop",
+     "simR": -3,
+     "simExit": "stop",
+     "simD": "2026-08-07",
+     "idx": 0.51,
+     "seq": "stop-first",
+     "postFixed": 1
     },
     {
      "kind": "day",
@@ -7361,13 +7372,19 @@
      "cAt": "22:34",
      "eTs": "2026-08-07T13:34:10.967Z",
      "cm": 4,
-     "r1": null,
-     "hit": null,
+     "r1": -8.8,
+     "hit": false,
      "simR": -3,
      "simExit": "stop",
      "simD": "2026-08-07",
      "simT": "22:50",
-     "live": 1
+     "live": 1,
+     "mfe": 4.5,
+     "mae": -8.9,
+     "tv": 60,
+     "tvx": 0.6,
+     "touch": "stop",
+     "idx": 0.51
     }
    ],
    "day2": {
