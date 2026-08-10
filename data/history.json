@@ -6629,7 +6629,7 @@
      "r20": null,
      "b": 178.5,
      "gap": -2.6,
-     "simOpen": 5.4,
+     "simOpen": 5.9,
      "tv": 15,
      "tvx": 0.1,
      "idx": 0
@@ -6914,7 +6914,7 @@
      "r20": null,
      "b": 18500,
      "gap": -0.8,
-     "simOpen": 2.7,
+     "simOpen": -0.1,
      "tv": 1085,
      "tvx": 0.6,
      "idx": -0.53
@@ -6935,7 +6935,7 @@
      "r20": null,
      "b": 9220,
      "gap": 0,
-     "simOpen": 5.2,
+     "simOpen": 0.3,
      "tv": 132,
      "tvx": 0.4,
      "idx": -0.53
@@ -6956,7 +6956,7 @@
      "r20": null,
      "b": 6280,
      "gap": 0.5,
-     "simOpen": 3,
+     "simOpen": 1,
      "tv": 430,
      "tvx": 0.6,
      "idx": -0.53
@@ -7313,7 +7313,7 @@
      "r20": null,
      "b": 628.79,
      "gap": 0,
-     "simOpen": 1.8,
+     "simOpen": 1.6,
      "tv": 6,
      "tvx": 0,
      "idx": 0.37
@@ -7860,70 +7860,70 @@
      "rank": 1,
      "verdict": "선택",
      "why": "AI 우려 해소 및 강력한 주가 상승 흐름",
-     "r1": null
+     "r1": -1.3
     },
     {
      "ticker": "DOCS",
      "rank": 2,
      "verdict": "관찰",
      "why": "애널리스트 평가 엇갈림 속 AI 성장성 주시",
-     "r1": null
+     "r1": -2.2
     },
     {
      "ticker": "FIGS",
      "rank": 3,
      "verdict": "관찰",
      "why": "강한 실적 후 밸류에이션 점검 필요",
-     "r1": null
+     "r1": -1.2
     },
     {
      "ticker": "TWLO",
      "rank": 4,
      "verdict": "선택",
      "why": "사상 최대 매출 및 가이던스 상향으로 실적 모멘텀 우수",
-     "r1": null
+     "r1": 2
     },
     {
      "ticker": "BTG",
      "rank": 5,
      "verdict": "관찰",
      "why": "광산 허가 취득 재료 보유",
-     "r1": null
+     "r1": 1.2
     },
     {
      "ticker": "NTRA",
      "rank": 6,
      "verdict": "관찰",
      "why": "내부자 매도 있으나 가이던스 상향으로 강세",
-     "r1": null
+     "r1": -2.3
     },
     {
      "ticker": "HALO",
      "rank": 7,
      "verdict": "관찰",
      "why": "가이던스 상향 및 자사주 매입 효과",
-     "r1": null
+     "r1": -1.3
     },
     {
      "ticker": "FIVN",
      "rank": 8,
      "verdict": "제외",
      "why": "관련 섹터 혼조세",
-     "r1": null
+     "r1": 0.5
     },
     {
      "ticker": "ROAD",
      "rank": 9,
      "verdict": "관찰",
      "why": "목표가 조정 반영 중",
-     "r1": null
+     "r1": 0.6
     },
     {
      "ticker": "AXTI",
      "rank": 10,
      "verdict": "제외",
      "why": "소표본 및 변동성 고려 제외",
-     "r1": null
+     "r1": -12.4
     },
     {
      "ticker": "ABNB",
@@ -8151,7 +8151,7 @@
      "r20": null,
      "b": 245.2888946533203,
      "gap": 1.7,
-     "simOpen": 2.1,
+     "simOpen": 1.6,
      "tv": 39,
      "tvx": 0.1,
      "idx": -0.02
@@ -8172,7 +8172,7 @@
      "r20": null,
      "b": 147.55999755859375,
      "gap": -1,
-     "simOpen": 0.4,
+     "simOpen": -0.4,
      "tv": 117,
      "tvx": 0.2,
      "idx": -0.02
@@ -8193,7 +8193,7 @@
      "r20": null,
      "b": 177.85000610351562,
      "gap": -0.1,
-     "simOpen": 2.5,
+     "simOpen": 2.1,
      "tv": 76,
      "tvx": 0.1,
      "idx": -0.02
