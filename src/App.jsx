@@ -1722,6 +1722,9 @@ export default function App() {
   const provisionInfo = (m) => {
     const n = new Date();
     const day = n.getDay();
+    const tNow = n.getHours() + n.getMinutes() / 60;
+    // 미국장은 KST 자정을 넘겨 새벽까지 진행 — 화~토 새벽(06시 전)은 전일 시작된 세션이 살아있는 시간
+    if (m === "US" && tNow < 6 && day >= 2 && day <= 6) return { open: true };
     if (day === 0 || day === 6) return { open: false, msg: "⏰ 주말에는 추천픽을 제공하지 않습니다 — 다음 거래일 개장 1시간 전에 공개됩니다." };
     const t = n.getHours() + n.getMinutes() / 60;
     const at = m === "KR" ? 8 : (hint.usOpen === "22:30" ? 21.5 : 22.5);
