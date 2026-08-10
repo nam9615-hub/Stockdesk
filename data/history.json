@@ -6932,7 +6932,7 @@
      "r20": null,
      "b": 9220,
      "gap": 0,
-     "simOpen": 5.7,
+     "simOpen": 5.2,
      "tv": 132,
      "tvx": 0.4,
      "idx": -0.53
@@ -7436,70 +7436,70 @@
      "rank": 1,
      "verdict": "선택",
      "why": "기관 연속 순매수 및 히트펌프·AI 성장 모멘텀 보유",
-     "r1": null
+     "r1": 2.9
     },
     {
      "ticker": "011780.KS",
      "rank": 2,
      "verdict": "선택",
      "why": "원가 전가에 따른 실적 반등 기대감 우수",
-     "r1": null
+     "r1": -0.5
     },
     {
      "ticker": "051900.KS",
      "rank": 3,
      "verdict": "선택",
      "why": "기관 연속 매수와 K뷰티 미국 수출 호조",
-     "r1": null
+     "r1": -2.6
     },
     {
      "ticker": "006400.KS",
      "rank": 4,
      "verdict": "관찰",
      "why": "ESS 턴어라운드 기대감 있으나 2차전지 섹터 신중 접근",
-     "r1": null
+     "r1": 6.1
     },
     {
      "ticker": "121600.KQ",
      "rank": 5,
      "verdict": "관찰",
      "why": "실적 호조이나 섹터 부담 존재",
-     "r1": null
+     "r1": 7.1
     },
     {
      "ticker": "082800.KQ",
      "rank": 6,
      "verdict": "관찰",
      "why": "외인 수급 양호하나 단기 변동성 주의",
-     "r1": null
+     "r1": 0.2
     },
     {
      "ticker": "141080.KQ",
      "rank": 7,
      "verdict": "관찰",
      "why": "임상 모멘텀 있으나 바이오 섹터 통계적 열위",
-     "r1": null
+     "r1": 3.2
     },
     {
      "ticker": "052020.KQ",
      "rank": 8,
      "verdict": "관찰",
      "why": "바이오 행사 및 임상 모멘텀 혼재",
-     "r1": null
+     "r1": 4.9
     },
     {
      "ticker": "252990.KQ",
      "rank": 9,
      "verdict": "제외",
      "why": "수급 및 재료 지속성 상대적 열위",
-     "r1": null
+     "r1": 10.1
     },
     {
      "ticker": "006405.KS",
      "rank": 10,
      "verdict": "제외",
      "why": "우선주 유동성 제약",
-     "r1": null
+     "r1": 2.2
     },
     {
      "ticker": "003670.KS",
