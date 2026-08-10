@@ -5451,7 +5451,7 @@
      "r20": null,
      "b": 401500,
      "gap": 2.3,
-     "simOpen": -2.1,
+     "simOpen": -1.1,
      "tv": 78319,
      "tvx": 0.2,
      "idx": null
@@ -5472,7 +5472,7 @@
      "r20": null,
      "b": 1473000,
      "gap": -0.2,
-     "simOpen": 5.1,
+     "simOpen": 4.7,
      "tv": 13563,
      "tvx": 0.1,
      "idx": null
@@ -6181,7 +6181,7 @@
      "r20": null,
      "b": 11240,
      "gap": 0.1,
-     "simOpen": 8.1,
+     "simOpen": 8.5,
      "tv": 49,
      "tvx": 0,
      "idx": null
@@ -6203,7 +6203,7 @@
      "r20": null,
      "b": 23100,
      "gap": -0.6,
-     "simOpen": 1.9,
+     "simOpen": 2.4,
      "tv": 358,
      "tvx": 0.1,
      "idx": null
@@ -6927,7 +6927,7 @@
      "r20": null,
      "b": 9220,
      "gap": 0,
-     "simOpen": 1.2,
+     "simOpen": 2.2,
      "tv": 132,
      "tvx": 0.4,
      "idx": -0.53
@@ -6948,7 +6948,7 @@
      "r20": null,
      "b": 6280,
      "gap": 0.5,
-     "simOpen": 1.4,
+     "simOpen": 2.7,
      "tv": 430,
      "tvx": 0.6,
      "idx": -0.53
@@ -7668,7 +7668,7 @@
      "r20": null,
      "b": 184600,
      "gap": -0.2,
-     "simOpen": -0.5
+     "simOpen": 0.3
     },
     {
      "kind": "swing",
@@ -7687,7 +7687,12 @@
      "r20": null,
      "b": 125700,
      "gap": -3,
-     "simOpen": -4
+     "simOpen": -4,
+     "simR": -5,
+     "simExit": "stop",
+     "simD": "2026-08-10",
+     "simT": "09:24",
+     "live": 1
     },
     {
      "kind": "swing",
@@ -7788,5 +7793,5 @@
    }
   }
  ],
- "monAt": 1786321221831
+ "monAt": 1786321451645
 }
