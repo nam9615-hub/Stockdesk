@@ -3058,7 +3058,7 @@
      "r20": null,
      "b": 167500,
      "gap": 0.1,
-     "simOpen": 2.2,
+     "simOpen": 1.5,
      "tv": 50005,
      "tvx": 0.2,
      "idx": null
@@ -5458,7 +5458,7 @@
      "r20": null,
      "b": 401500,
      "gap": 2.3,
-     "simOpen": 0.4,
+     "simOpen": 0.6,
      "tv": 78319,
      "tvx": 0.2,
      "idx": null
@@ -5479,7 +5479,7 @@
      "r20": null,
      "b": 1473000,
      "gap": -0.2,
-     "simOpen": 7.7,
+     "simOpen": 7,
      "tv": 13563,
      "tvx": 0.1,
      "idx": null
@@ -6215,7 +6215,7 @@
      "r20": null,
      "b": 23100,
      "gap": -0.6,
-     "simOpen": 5.2,
+     "simOpen": 5,
      "tv": 358,
      "tvx": 0.1,
      "idx": null
@@ -6918,7 +6918,7 @@
      "r20": null,
      "b": 18500,
      "gap": -0.8,
-     "simOpen": 2.7,
+     "simOpen": 1.5,
      "tv": 1085,
      "tvx": 0.6,
      "idx": -0.53
@@ -6939,7 +6939,7 @@
      "r20": null,
      "b": 9220,
      "gap": 0,
-     "simOpen": 5.2,
+     "simOpen": 3.6,
      "tv": 132,
      "tvx": 0.4,
      "idx": -0.53
@@ -6960,7 +6960,7 @@
      "r20": null,
      "b": 6280,
      "gap": 0.5,
-     "simOpen": 3,
+     "simOpen": 2.9,
      "tv": 430,
      "tvx": 0.6,
      "idx": -0.53
@@ -7681,7 +7681,7 @@
      "r20": null,
      "b": 184600,
      "gap": -0.2,
-     "simOpen": 2.9,
+     "simOpen": -0.5,
      "tv": 58669,
      "tvx": 0.2,
      "idx": 0.84
@@ -8531,7 +8531,12 @@
      "r20": null,
      "b": 1173000,
      "gap": 1.8,
-     "simOpen": -1.4
+     "simOpen": -1.4,
+     "simR": -5,
+     "simExit": "stop",
+     "simD": "2026-08-11",
+     "simT": "09:06",
+     "live": 1
     },
     {
      "kind": "swing",
@@ -8549,7 +8554,7 @@
      "r20": null,
      "b": 22500,
      "gap": 0.2,
-     "simOpen": 0
+     "simOpen": -2
     },
     {
      "kind": "swing",
@@ -8568,7 +8573,7 @@
      "r20": null,
      "b": 36350,
      "gap": -1.2,
-     "simOpen": 0
+     "simOpen": -0.6
     }
    ],
    "day2": {
@@ -8579,5 +8584,5 @@
    "dayHold": 1
   }
  ],
- "monAt": 1786406438492
+ "monAt": 1786406772689
 }
