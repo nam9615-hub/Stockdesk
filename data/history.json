@@ -6923,7 +6923,7 @@
      "r20": null,
      "b": 18500,
      "gap": -0.8,
-     "simOpen": 2.8,
+     "simOpen": 3.2,
      "tv": 1085,
      "tvx": 0.6,
      "idx": -0.53
@@ -6944,7 +6944,7 @@
      "r20": null,
      "b": 9220,
      "gap": 0,
-     "simOpen": 5.2,
+     "simOpen": 5.3,
      "tv": 132,
      "tvx": 0.4,
      "idx": -0.53
@@ -6965,7 +6965,7 @@
      "r20": null,
      "b": 6280,
      "gap": 0.5,
-     "simOpen": 4.5,
+     "simOpen": 4.6,
      "tv": 430,
      "tvx": 0.6,
      "idx": -0.53
@@ -7686,7 +7686,7 @@
      "r20": null,
      "b": 184600,
      "gap": -0.2,
-     "simOpen": -1.4,
+     "simOpen": -1.6,
      "tv": 58669,
      "tvx": 0.2,
      "idx": 0.84
@@ -8299,70 +8299,70 @@
      "rank": 11,
      "verdict": "제외",
      "why": "이차전지 ETF로 최근 섹터 부진 및 수급 혼조로 제외",
-     "r1": null
+     "r1": -2.1
     },
     {
      "ticker": "194480.KQ",
      "rank": 2,
      "verdict": "선택",
      "why": "신작 흥행 모멘텀이 우수하여 스윙 및 단타 후보로 적합",
-     "r1": null
+     "r1": -2.2
     },
     {
      "ticker": "003670.KS",
      "rank": 10,
      "verdict": "제외",
      "why": "양극재 하반기 불확실성과 수급 이탈로 관망",
-     "r1": null
+     "r1": -3.9
     },
     {
      "ticker": "317330.KQ",
      "rank": 9,
      "verdict": "관찰",
      "why": "테마성 이슈이나 실적 가시성 부족",
-     "r1": null
+     "r1": -0.9
     },
     {
      "ticker": "305720.KS",
      "rank": 12,
      "verdict": "제외",
      "why": "이차전지 지수 상품으로 섹터 회피 원칙 적용",
-     "r1": null
+     "r1": -1
     },
     {
      "ticker": "001540.KQ",
      "rank": 6,
      "verdict": "관찰",
      "why": "단기 변동성은 있으나 지속성 검증 필요",
-     "r1": null
+     "r1": 0.5
     },
     {
      "ticker": "012450.KS",
      "rank": 1,
      "verdict": "선택",
      "why": "방산 업황 호조와 연속 순매수로 가장 확실한 모멘텀 보유",
-     "r1": null
+     "r1": -6.4
     },
     {
      "ticker": "159010.KQ",
      "rank": 7,
      "verdict": "관찰",
      "why": "단기 수급 유입이나 추세 안착 확인 필요",
-     "r1": null
+     "r1": 8
     },
     {
      "ticker": "361610.KS",
      "rank": 8,
      "verdict": "관찰",
      "why": "낙폭과대 반등이나 이차전지 섹터 약세 반영",
-     "r1": null
+     "r1": 0.1
     },
     {
      "ticker": "035760.KQ",
      "rank": 3,
      "verdict": "선택",
      "why": "실적 턴어라운드 기대와 기관 수급 유입으로 매력적",
-     "r1": null
+     "r1": 2.3
     },
     {
      "ticker": "006405.KS",
@@ -8516,7 +8516,8 @@
     "dir": "횡보",
     "conf": 35,
     "why": "환율 상승과 미 증시 혼조세로 뚜렷한 방향성 없이 박스권 횡보 예상",
-    "ok": null
+    "ok": false,
+    "act": 0.73
    },
    "picks": [
     {
@@ -8531,7 +8532,7 @@
       "추세지속"
      ],
      "p0": 1152000,
-     "r1": null,
+     "r1": -6.4,
      "r5": null,
      "r20": null,
      "b": 1173000,
@@ -8541,7 +8542,10 @@
      "simExit": "stop",
      "simD": "2026-08-11",
      "simT": "09:06",
-     "live": 1
+     "live": 1,
+     "tv": 191272,
+     "tvx": 0.9,
+     "idx": 0.73
     },
     {
      "kind": "swing",
@@ -8554,12 +8558,15 @@
       "거래량급증"
      ],
      "p0": 22450,
-     "r1": null,
+     "r1": -2.2,
      "r5": null,
      "r20": null,
      "b": 22500,
      "gap": 0.2,
-     "simOpen": -2
+     "simOpen": -2.2,
+     "tv": 1082,
+     "tvx": 0.5,
+     "idx": 0.73
     },
     {
      "kind": "swing",
@@ -8573,12 +8580,15 @@
       "추세지속"
      ],
      "p0": 36800,
-     "r1": null,
+     "r1": 2.3,
      "r5": null,
      "r20": null,
      "b": 36350,
      "gap": -1.2,
-     "simOpen": 2.3
+     "simOpen": 2.3,
+     "tv": 2479,
+     "tvx": 1,
+     "idx": 0.73
     }
    ],
    "day2": {
@@ -8587,6 +8597,281 @@
     "n": 0
    },
    "dayHold": 1
+  },
+  {
+   "date": "2026-08-11",
+   "market": "US",
+   "regime": "상승",
+   "rules": [
+    "단타 실패 분해: 시장충격4·목표과다1·선정11 → 선정 강화",
+    "강도80+ 실측 0%(9) — 확신도 과장, 보수화",
+    "근거'실적' 성공21%(14) → 단독추천 지양"
+   ],
+   "cands": [
+    {
+     "ticker": "ABCL",
+     "rank": 1,
+     "verdict": "선택",
+     "why": "높은 상승률과 거래량 유지",
+     "r1": null
+    },
+    {
+     "ticker": "OBX",
+     "rank": 2,
+     "verdict": "관찰",
+     "why": "큰 폭 상승 후 방향성 확인 필요",
+     "r1": null
+    },
+    {
+     "ticker": "NESR",
+     "rank": 3,
+     "verdict": "선택",
+     "why": "신고가 경신 흐름 양호",
+     "r1": null
+    },
+    {
+     "ticker": "FSLY",
+     "rank": 4,
+     "verdict": "선택",
+     "why": "AI 및 보안 성장 모멘텀 유효",
+     "r1": null
+    },
+    {
+     "ticker": "BSP",
+     "rank": 5,
+     "verdict": "관찰",
+     "why": "실적 발표 앞두고 관망 필요",
+     "r1": null
+    },
+    {
+     "ticker": "CLMT",
+     "rank": 6,
+     "verdict": "선택",
+     "why": "실적 호조 및 강한 거래대금 유입",
+     "r1": null
+    },
+    {
+     "ticker": "HP",
+     "rank": 7,
+     "verdict": "선택",
+     "why": "계약 모멘텀 및 저평가 매력",
+     "r1": null
+    },
+    {
+     "ticker": "TXG",
+     "rank": 8,
+     "verdict": "선택",
+     "why": "신제품 론칭 및 재료 보유",
+     "r1": null
+    },
+    {
+     "ticker": "ACHR",
+     "rank": 9,
+     "verdict": "관찰",
+     "why": "일반적인 테마 흐름 동조",
+     "r1": null
+    },
+    {
+     "ticker": "DDOG",
+     "rank": 10,
+     "verdict": "관찰",
+     "why": "대형 기술주 전반의 흐름 추종",
+     "r1": null
+    },
+    {
+     "ticker": "PTEN",
+     "rank": 11,
+     "verdict": "관찰",
+     "why": "에너지 섹터 동조화 흐름",
+     "r1": null
+    },
+    {
+     "ticker": "MAAS",
+     "rank": 12,
+     "verdict": "선택",
+     "why": "CTO 영입 및 AI 전략 모멘텀",
+     "r1": null
+    },
+    {
+     "ticker": "SM",
+     "rank": 13,
+     "verdict": "관찰",
+     "why": "실적 발표 이후 변동성 주시",
+     "r1": null
+    },
+    {
+     "ticker": "BFLY",
+     "rank": 14,
+     "verdict": "제외",
+     "why": "바이오 섹터 회피 기조 적용",
+     "r1": null
+    },
+    {
+     "ticker": "SPCX",
+     "rank": 15,
+     "verdict": "관찰",
+     "why": "뉴스 재료 소폭 반영",
+     "r1": null
+    },
+    {
+     "ticker": "PLUG",
+     "rank": 16,
+     "verdict": "제외",
+     "why": "하락 추세 및 약세 지속",
+     "r1": null
+    },
+    {
+     "ticker": "NVDA",
+     "rank": 17,
+     "verdict": "제외",
+     "why": "하락세로 단기 모멘텀 부족",
+     "r1": null
+    },
+    {
+     "ticker": "INTC",
+     "rank": 18,
+     "verdict": "제외",
+     "why": "유상증자 및 약세 압력",
+     "r1": null
+    }
+   ],
+   "bl": {
+    "rand": [
+     "BFLY",
+     "HP",
+     "OBX"
+    ],
+    "mom": [
+     "ABCL",
+     "OBX",
+     "NESR"
+    ]
+   },
+   "dayCands": [
+    {
+     "name": "National Energy Services Reunit",
+     "ticker": "NESR",
+     "score": 55,
+     "target_pct": 4,
+     "sector": "에너지",
+     "basis": [
+      "신고가",
+      "추세지속"
+     ],
+     "reason": "신고가 경신과 함께 강한 상방 모멘텀을 형성하고 있습니다. 당일 거래 집중도를 활용한 단기 트레이딩에 적합합니다.",
+     "risk": "신고가 부담에 따른 빠른 되돌림 가능성"
+    },
+    {
+     "name": "10x Genomics, Inc.",
+     "ticker": "TXG",
+     "score": 53,
+     "sector": "헬스케어",
+     "basis": [
+      "뉴스재료",
+      "거래량급증"
+     ],
+     "reason": "Atera 론칭 등 공간 유전체학 시장 변화 속에서 새로운 모멘텀을 확보하고 있습니다. 단기 변동성을 활용한 매매가 가능합니다.",
+     "risk": "바이오 및 헬스케어 섹터 전반의 신중론",
+     "target_pct": 3
+    },
+    {
+     "name": "Maase Inc.",
+     "ticker": "MAAS",
+     "score": 52,
+     "sector": "기술",
+     "basis": [
+      "뉴스재료",
+      "정책테마"
+     ],
+     "reason": "AI 기술 전략을 이끌 최고기술책임자(CTO) 영입 소식이 전해지며 모멘텀이 발생했습니다. AI 테마에 따른 단기 수급 유입을 기대합니다.",
+     "risk": "실적 가시성 부족 및 테마 소멸 가능성",
+     "target_pct": 3
+    },
+    {
+     "name": "AbCellera Biologics Inc.",
+     "ticker": "ABCL",
+     "score": 50,
+     "target_pct": 3,
+     "sector": "바이오",
+     "basis": [
+      "추세지속",
+      "거래량급증"
+     ],
+     "reason": "최근 강한 상승 흐름을 이어가며 거래량이 유입되고 있습니다. 단기 모멘텀을 추종하는 매매 관점에서 접근합니다.",
+     "risk": "고점 부담 및 바이오 섹터 회피 기조"
+    },
+    {
+     "name": "Fastly, Inc.",
+     "ticker": "FSLY",
+     "score": 50,
+     "target_pct": 3,
+     "sector": "기술",
+     "basis": [
+      "뉴스재료",
+      "추세지속"
+     ],
+     "reason": "AI 및 보안 관련 재료가 당일에도 장중 수급을 지지할 수 있습니다. 지수 선물 반등과 연계한 단기 트레이딩이 가능합니다.",
+     "risk": "장중 차익실현 매물 출회 가능성"
+    }
+   ],
+   "hold": 0,
+   "v": {
+    "m": "gemini-3.5-flash-lite",
+    "pv": "J1.0"
+   },
+   "mktF": {
+    "dir": "상승",
+    "conf": 55,
+    "why": "지수 선물 반등과 금리 우려 완화세 반영",
+    "ok": null
+   },
+   "picks": [
+    {
+     "kind": "swing",
+     "name": "Fastly, Inc.",
+     "ticker": "FSLY",
+     "score": 62,
+     "sector": "기술",
+     "basis": [
+      "뉴스재료",
+      "추세지속"
+     ],
+     "p0": 27.75,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "Calumet, Inc",
+     "ticker": "CLMT",
+     "score": 60,
+     "sector": "에너지",
+     "basis": [
+      "실적",
+      "거래량급증"
+     ],
+     "p0": 45.47,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "Helmerich & Payne, Inc.",
+     "ticker": "HP",
+     "score": 58,
+     "sector": "에너지",
+     "basis": [
+      "수주계약",
+      "뉴스재료"
+     ],
+     "p0": 41.87,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    }
+   ]
   }
  ],
  "monAt": 1786429751327
