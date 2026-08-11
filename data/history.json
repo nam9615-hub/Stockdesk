@@ -4768,7 +4768,8 @@
      "rank": 5,
      "verdict": "관찰",
      "why": "내부자 매도 공시로 인해 추가 수급 동향 주시 필요",
-     "r1": 7.7
+     "r1": 7.7,
+     "r5": 18.6
     },
     {
      "ticker": "CDNA",
@@ -4847,7 +4848,8 @@
      "rank": 16,
      "verdict": "제외",
      "why": "중립 의견 유지 및 제한적인 주가 변동성",
-     "r1": 5.8
+     "r1": 5.8,
+     "r5": 2.4
     },
     {
      "ticker": "AMZN",
@@ -5631,7 +5633,8 @@
      "rank": 15,
      "verdict": "제외",
      "why": "어닝 발표 후 주가 급락세 포착",
-     "r1": -3.6
+     "r1": -3.6,
+     "r5": 18.6
     },
     {
      "ticker": "GRAB",
@@ -5645,7 +5648,8 @@
      "rank": 17,
      "verdict": "관찰",
      "why": "대형주로 스윙 탄력 제한적",
-     "r1": 1.1
+     "r1": 1.1,
+     "r5": 0.3
     },
     {
      "ticker": "NOK",
@@ -8705,56 +8709,56 @@
      "rank": 11,
      "verdict": "관찰",
      "why": "에너지 섹터 동조화 흐름",
-     "r1": null
+     "r1": 1
     },
     {
      "ticker": "MAAS",
      "rank": 12,
      "verdict": "선택",
      "why": "CTO 영입 및 AI 전략 모멘텀",
-     "r1": null
+     "r1": -1.2
     },
     {
      "ticker": "SM",
      "rank": 13,
      "verdict": "관찰",
      "why": "실적 발표 이후 변동성 주시",
-     "r1": null
+     "r1": 3.2
     },
     {
      "ticker": "BFLY",
      "rank": 14,
      "verdict": "제외",
      "why": "바이오 섹터 회피 기조 적용",
-     "r1": null
+     "r1": -3
     },
     {
      "ticker": "SPCX",
      "rank": 15,
      "verdict": "관찰",
      "why": "뉴스 재료 소폭 반영",
-     "r1": null
+     "r1": -3.9
     },
     {
      "ticker": "PLUG",
      "rank": 16,
      "verdict": "제외",
      "why": "하락 추세 및 약세 지속",
-     "r1": null
+     "r1": -10.7
     },
     {
      "ticker": "NVDA",
      "rank": 17,
      "verdict": "제외",
      "why": "하락세로 단기 모멘텀 부족",
-     "r1": null
+     "r1": -2.1
     },
     {
      "ticker": "INTC",
      "rank": 18,
      "verdict": "제외",
      "why": "유상증자 및 약세 압력",
-     "r1": null
+     "r1": 1
     }
    ],
    "bl": {
@@ -8979,7 +8983,275 @@
     "brief": "개장 후 시가 대비 -2% 이상 하락하거나 갭 및 모멘텀 조건이 부합하지 않아 모든 후보가 원칙에 어긋납니다.",
     "n": 0
    },
-   "dayHold": 1
+   "dayHold": 1,
+   "cstat": {
+    "n": 18,
+    "med": 0.7,
+    "ex": null,
+    "exD": null,
+    "rg": null,
+    "rej": -4.4,
+    "blr": {
+     "rand": -5.4,
+     "mom": -3.8
+    }
+   }
+  },
+  {
+   "date": "2026-08-12",
+   "market": "KR",
+   "regime": "하락",
+   "rules": [
+    "단타 실패 분해: 시장충격4·목표과다0·선정7 → 선정 강화",
+    "근거'수급(3일)' 성공38%(8) → 단독추천 지양"
+   ],
+   "cands": [
+    {
+     "ticker": "305540.KS",
+     "rank": 1,
+     "verdict": "관찰",
+     "why": "이차전지 ETF로 지수 연동성이 높아 하락장 방어에 불리",
+     "r1": null
+    },
+    {
+     "ticker": "080220.KQ",
+     "rank": 91,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "003670.KS",
+     "rank": 92,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "393890.KQ",
+     "rank": 93,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "305720.KS",
+     "rank": 94,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "194480.KQ",
+     "rank": 95,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "012450.KS",
+     "rank": 96,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "101970.KQ",
+     "rank": 97,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "361610.KS",
+     "rank": 98,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "083450.KQ",
+     "rank": 99,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "051910.KS",
+     "rank": 100,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "220260.KQ",
+     "rank": 101,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "530031.KS",
+     "rank": 102,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "082800.KQ",
+     "rank": 103,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    }
+   ],
+   "bl": {
+    "rand": [
+     "305720.KS",
+     "051910.KS",
+     "101970.KQ"
+    ],
+    "mom": [
+     "305540.KS",
+     "080220.KQ",
+     "003670.KS"
+    ]
+   },
+   "dayCands": [
+    {
+     "name": "제주반도체",
+     "ticker": "080220.KQ",
+     "score": 52,
+     "target_pct": 4,
+     "sector": "반도체",
+     "basis": [
+      "거래량급증",
+      "낙폭과대"
+     ],
+     "reason": "삼성·하닉 설비투자 낙수효과 기대감과 함께 최근 모멘텀이 강하게 유입되어 장중 단기 변동성을 활용한 트레이딩이 가능합니다.",
+     "risk": "외인 매도세 출회 중으로 장중 변동성 확대 주의"
+    },
+    {
+     "name": "더블유씨피",
+     "ticker": "393890.KQ",
+     "score": 50,
+     "target_pct": 4,
+     "sector": "이차전지",
+     "basis": [
+      "뉴스재료",
+      "거래량급증"
+     ],
+     "reason": "2분기 영업손실 축소 및 3분기 실적 반등 전환점 기대 뉴스가 부각되며 단기 수급 유입 가능성이 있습니다.",
+     "risk": "이차전지 섹터의 낮은 과거 승률 및 기관 수급 변동성"
+    },
+    {
+     "name": "데브시스터즈",
+     "ticker": "194480.KQ",
+     "score": 48,
+     "target_pct": 3,
+     "sector": "게임",
+     "basis": [
+      "거래량급증"
+     ],
+     "reason": "5일 모멘텀 23%대의 강한 거래량 유입 종목으로 장초반 단기 반등 탄력을 노려볼 수 있습니다.",
+     "risk": "유사 하락장 사례에서 단기 낙폭을 보인 전력이 있어 짧은 손절라인 필수"
+    },
+    {
+     "name": "켐트로스",
+     "ticker": "220260.KQ",
+     "score": 47,
+     "target_pct": 3,
+     "sector": "소부장",
+     "basis": [
+      "실적",
+      "거래량급증"
+     ],
+     "reason": "반도체 매출 비중 상승세와 1분기 호실적 모멘텀이 잔존해 있어 단기 거래 집중 시 탄력적 반등이 기대됩니다.",
+     "risk": "수급 지속성이 다소 약해 장중 밀릴 경우 빠른 대응 필요"
+    },
+    {
+     "name": "비보존 제약",
+     "ticker": "082800.KQ",
+     "score": 45,
+     "target_pct": 3,
+     "sector": "바이오",
+     "basis": [
+      "뉴스재료"
+     ],
+     "reason": "비마약성 진통제 관련 재료가 부각되며 단기 트레이더들의 관심이 집중될 수 있는 구간입니다.",
+     "risk": "바이오 섹터의 낮은 승률과 높은 변동성"
+    }
+   ],
+   "hold": 0,
+   "v": {
+    "m": "gemini-3.5-flash-lite",
+    "pv": "J1.0"
+   },
+   "mktF": {
+    "dir": "하락",
+    "conf": 35,
+    "why": "미 증시 약세 및 야간 선물 하락, 환율 1412원대 등으로 보수적 접근 필요",
+    "ok": null
+   },
+   "picks": [
+    {
+     "kind": "swing",
+     "name": "우양에이치씨",
+     "ticker": "101970.KQ",
+     "score": 62,
+     "sector": "플랜트",
+     "basis": [
+      "수주계약",
+      "추세지속"
+     ],
+     "p0": 9990,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "GST",
+     "ticker": "083450.KQ",
+     "score": 58,
+     "sector": "반도체",
+     "basis": [
+      "뉴스재료",
+      "추세지속"
+     ],
+     "p0": 50800,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "한화에어로스페이스",
+     "ticker": "012450.KS",
+     "score": 55,
+     "sector": "방산",
+     "basis": [
+      "추세지속"
+     ],
+     "p0": 1098000,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    }
+   ]
   }
  ],
  "monAt": 1786479731119
