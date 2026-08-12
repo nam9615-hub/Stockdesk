@@ -1,250 +1,231 @@
 {
- "date": "2026-08-11",
+ "date": "2026-08-12",
  "at": "21:29",
  "data": {
-  "brief": "미국 증시는 금리 인상 우려 완화와 지수 선물 반등으로 완만한 상승 흐름이 예상됩니다. 다만 과거 상승장 단타 실적 부진과 높은 확신도에 대한 교정 기조를 반영하여 보수적이고 신중한 접근을 취합니다.",
+  "brief": "전일 S&P500 소폭 조정을 거쳤으나 지수 선물이 반등하며 제한적인 상승장이 예상됩니다. 과거 실측 통계를 반영하여 과도한 확신을 낮추고, 헬스케어·바이오·신고가 패턴 등 취약 섹터는 신중히 다루며 실적과 수주 모멘텀 중심의 종목을 엄선했습니다.",
   "picks": [
    {
-    "name": "Fastly, Inc.",
-    "ticker": "FSLY",
+    "name": "Aehr Test Systems",
+    "ticker": "AEHR",
     "score": 62,
-    "sector": "기술",
+    "sector": "반도체",
     "basis": [
-     "뉴스재료",
-     "추세지속"
+     "수주계약",
+     "실적"
     ],
-    "reason": "보안 확장 및 AI 수요 모멘텀이 부각되며 상승세를 기록하고 있습니다. 견조한 성장 모멘텀이 중기 스윙 관점에서 지속될 가능성이 있습니다.",
-    "catalyst": "보안 확장 및 AI 수요 가속화",
-    "risk": "단기 급등에 따른 변동성 확대"
+    "reason": "AI 프로세서 고객사로부터 2,200만 달러 규모의 웨이퍼 레벨 번인 시스템 후속 주문을 확보하며 강력한 모멘텀을 증명했습니다. 실적 성장성과 수주 잔고를 바탕으로 스윙 관점에서 안정적인 추세 지속이 기대됩니다.",
+    "catalyst": "2,200만 달러 대형 수주",
+    "risk": "반도체 장비 섹터 변동성"
    },
    {
-    "name": "Calumet, Inc",
-    "ticker": "CLMT",
+    "name": "ChipMOS TECHNOLOGIES INC.",
+    "ticker": "IMOS",
     "score": 60,
-    "sector": "에너지",
+    "sector": "반도체",
     "basis": [
      "실적",
      "거래량급증"
     ],
-    "reason": "호실적 발표와 함께 주가가 강한 상승세를 보이며 거래량이 집중되었습니다. 견조한 펀더멘털을 바탕으로 추가적인 주가 탄력을 기대할 수 있습니다.",
-    "catalyst": "Q2 2026 실적 호조",
-    "risk": "에너지 섹터 변동성 및 차익실현 매물"
+    "reason": "2분기 실적에서 흑자 전환에 성공하며 2014년 이후 분기 기준 사상 최대 매출을 기록했습니다. 실적 호조에 따른 매수세 유입으로 추가적인 주가 상승 여력이 충분합니다.",
+    "catalyst": "2014년 이후 최고 분기 매출",
+    "risk": "글로벌 IT 수요 둔화 우려"
    },
    {
-    "name": "Helmerich & Payne, Inc.",
-    "ticker": "HP",
+    "name": "NextNav Inc.",
+    "ticker": "NN",
     "score": 58,
-    "sector": "에너지",
+    "sector": "기술",
     "basis": [
-     "수주계약",
-     "뉴스재료"
+     "실적",
+     "추세지속"
     ],
-    "reason": "리그 거래 계약과 관련된 호재가 작용하며 공정 가치 대비 저평가 분석이 나오고 있습니다. 실적 호조와 함께 안정적인 스윙 트레이딩 후보가 됩니다.",
-    "catalyst": "Beetaloo Rig 계약 모멘텀",
-    "risk": "원자재 가격 변동에 따른 리스크"
+    "reason": "2분기 실적 발표에서 시장 예상치를 상회하는 매출을 기록하며 견조한 펀더멘털을 입증했습니다. 어닝 서프라이즈 모멘텀이 단기적인 가격 상방 압력으로 작용할 것입니다.",
+    "catalyst": "예상 상회하는 2분기 실적",
+    "risk": "적자 지속에 따른 심리적 부담"
    }
   ],
   "day_cands": [
    {
-    "name": "National Energy Services Reunit",
-    "ticker": "NESR",
+    "name": "NIQ Global Intelligence plc",
+    "ticker": "NIQ",
     "score": 55,
-    "target_pct": 4,
+    "target_pct": 3,
+    "sector": "소비재",
+    "basis": [
+     "실적",
+     "거래량급증"
+    ],
+    "reason": "어닝 호조 소식과 함께 주가가 42% 폭등하며 시장의 강력한 주목을 받았습니다. 단기 모멘텀이 매우 강해 당일 변동성을 활용한 트레이딩 기회가 엿보입니다.",
+    "risk": "단기 급등에 따른 차익실현 매물"
+   },
+   {
+    "name": "Fermi Inc.",
+    "ticker": "FRMI",
+    "score": 54,
+    "target_pct": 3,
     "sector": "에너지",
     "basis": [
-     "신고가",
-     "추세지속"
-    ],
-    "reason": "신고가 경신과 함께 강한 상방 모멘텀을 형성하고 있습니다. 당일 거래 집중도를 활용한 단기 트레이딩에 적합합니다.",
-    "risk": "신고가 부담에 따른 빠른 되돌림 가능성"
-   },
-   {
-    "name": "10x Genomics, Inc.",
-    "ticker": "TXG",
-    "score": 53,
-    "sector": "헬스케어",
-    "basis": [
-     "뉴스재료",
+     "수주계약",
      "거래량급증"
     ],
-    "reason": "Atera 론칭 등 공간 유전체학 시장 변화 속에서 새로운 모멘텀을 확보하고 있습니다. 단기 변동성을 활용한 매매가 가능합니다.",
-    "risk": "바이오 및 헬스케어 섹터 전반의 신중론",
-    "target_pct": 3
-   },
-   {
-    "name": "Maase Inc.",
-    "ticker": "MAAS",
-    "score": 52,
-    "sector": "기술",
-    "basis": [
-     "뉴스재료",
-     "정책테마"
-    ],
-    "reason": "AI 기술 전략을 이끌 최고기술책임자(CTO) 영입 소식이 전해지며 모멘텀이 발생했습니다. AI 테마에 따른 단기 수급 유입을 기대합니다.",
-    "risk": "실적 가시성 부족 및 테마 소멸 가능성",
-    "target_pct": 3
-   },
-   {
-    "name": "AbCellera Biologics Inc.",
-    "ticker": "ABCL",
-    "score": 50,
-    "target_pct": 3,
-    "sector": "바이오",
-    "basis": [
-     "추세지속",
-     "거래량급증"
-    ],
-    "reason": "최근 강한 상승 흐름을 이어가며 거래량이 유입되고 있습니다. 단기 모멘텀을 추종하는 매매 관점에서 접근합니다.",
-    "risk": "고점 부담 및 바이오 섹터 회피 기조"
-   },
-   {
-    "name": "Fastly, Inc.",
-    "ticker": "FSLY",
-    "score": 50,
-    "target_pct": 3,
-    "sector": "기술",
-    "basis": [
-     "뉴스재료",
-     "추세지속"
-    ],
-    "reason": "AI 및 보안 관련 재료가 당일에도 장중 수급을 지지할 수 있습니다. 지수 선물 반등과 연계한 단기 트레이딩이 가능합니다.",
-    "risk": "장중 차익실현 매물 출회 가능성"
-   }
-  ],
-  "cands": [
-   {
-    "ticker": "ABCL",
-    "rank": 1,
-    "verdict": "선택",
-    "why": "높은 상승률과 거래량 유지"
-   },
-   {
-    "name": "Obsidian Therapeutics, Inc. Common Stock",
-    "ticker": "OBX",
-    "rank": 2,
-    "verdict": "관찰",
-    "why": "큰 폭 상승 후 방향성 확인 필요"
-   },
-   {
-    "name": "National Energy Services Reunit",
-    "ticker": "NESR",
-    "rank": 3,
-    "verdict": "선택",
-    "why": "신고가 경신 흐름 양호"
-   },
-   {
-    "name": "Fastly, Inc.",
-    "ticker": "FSLY",
-    "rank": 4,
-    "verdict": "선택",
-    "why": "AI 및 보안 성장 모멘텀 유효"
-   },
-   {
-    "name": "Bending Spoons S.p.A.",
-    "ticker": "BSP",
-    "rank": 5,
-    "verdict": "관찰",
-    "why": "실적 발표 앞두고 관망 필요"
-   },
-   {
-    "name": "Calumet, Inc",
-    "ticker": "CLMT",
-    "rank": 6,
-    "verdict": "선택",
-    "why": "실적 호조 및 강한 거래대금 유입"
-   },
-   {
-    "name": "Helmerich & Payne, Inc.",
-    "ticker": "HP",
-    "rank": 7,
-    "verdict": "선택",
-    "why": "계약 모멘텀 및 저평가 매력"
-   },
-   {
-    "name": "10x Genomics, Inc.",
-    "ticker": "TXG",
-    "rank": 8,
-    "verdict": "선택",
-    "why": "신제품 론칭 및 재료 보유"
+    "reason": "2.6기가와트 규모의 대형 전력 전략적 제휴를 체결하며 첫 번째 대형 수주에 성공했습니다. 대규모 프로젝트 모멘텀으로 단기 수급 집중이 예상됩니다.",
+    "risk": "초기 실현 가능성 검증 필요"
    },
    {
     "name": "Archer Aviation Inc.",
     "ticker": "ACHR",
-    "rank": 9,
-    "verdict": "관찰",
-    "why": "일반적인 테마 흐름 동조"
+    "score": 52,
+    "target_pct": 3,
+    "sector": "항공",
+    "basis": [
+     "수주계약",
+     "정책테마"
+    ],
+    "reason": "새로운 보잉과의 계약 체결로 경쟁사 대비 차별화된 모멘텀을 확보했습니다. 항공 혁신 테마와 맞물려 당일 강한 수급 유입이 기대됩니다.",
+    "risk": "단기 변동성 확대 가능성"
    },
    {
-    "name": "Datadog, Inc.",
-    "ticker": "DDOG",
-    "rank": 10,
-    "verdict": "관찰",
-    "why": "대형 기술주 전반의 흐름 추종"
-   },
-   {
-    "name": "Patterson-UTI Energy, Inc.",
-    "ticker": "PTEN",
-    "rank": 11,
-    "verdict": "관찰",
-    "why": "에너지 섹터 동조화 흐름"
-   },
-   {
-    "name": "Maase Inc.",
-    "ticker": "MAAS",
-    "rank": 12,
-    "verdict": "선택",
-    "why": "CTO 영입 및 AI 전략 모멘텀"
-   },
-   {
-    "name": "SM Energy Company",
-    "ticker": "SM",
-    "rank": 13,
-    "verdict": "관찰",
-    "why": "실적 발표 이후 변동성 주시"
-   },
-   {
-    "name": "Butterfly Network, Inc.",
-    "ticker": "BFLY",
-    "rank": 14,
-    "verdict": "제외",
-    "why": "바이오 섹터 회피 기조 적용"
-   },
-   {
-    "name": "Space Exploration Technologies",
-    "ticker": "SPCX",
-    "rank": 15,
-    "verdict": "관찰",
-    "why": "뉴스 재료 소폭 반영"
+    "name": "Onto Innovation Inc.",
+    "ticker": "ONTO",
+    "score": 52,
+    "target_pct": 3,
+    "sector": "반도체",
+    "basis": [
+     "추세지속",
+     "실적"
+    ],
+    "reason": "엔비디아의 파트너십 및 관련 실적 호조 영향으로 증권가 상향 조정과 함께 상승세가 이어지고 있습니다. 우수한 섹터 내 지위로 단기 추세 추종이 유효합니다.",
+    "risk": "지수 연동성 높음"
    },
    {
     "name": "Plug Power, Inc.",
     "ticker": "PLUG",
+    "score": 50,
+    "target_pct": 3,
+    "sector": "에너지",
+    "basis": [
+     "낙폭과대",
+     "거래량급증"
+    ],
+    "reason": "손실을 절반으로 줄였다는 소식과 함께 수소 관련 저가 매수세가 유입될 가능성이 있습니다. 낙폭 과대에 따른 기술적 반등 모멘텀을 노릴 수 있습니다.",
+    "risk": "구조적 적자 기업의 한계"
+   }
+  ],
+  "cands": [
+   {
+    "ticker": "NIQ",
+    "rank": 1,
+    "verdict": "선택",
+    "why": "어닝 서프라이즈와 42% 폭등으로 단기 모멘텀 최우수"
+   },
+   {
+    "ticker": "ALMR",
+    "rank": 2,
+    "verdict": "관찰",
+    "why": "헬스케어 섹터 회피 성향을 고려해 관망"
+   },
+   {
+    "ticker": "SEPN",
+    "rank": 3,
+    "verdict": "제외",
+    "why": "바이오/헬스케어 섹터 과거 실적 부진으로 제외"
+   },
+   {
+    "ticker": "FRMI",
+    "rank": 4,
+    "verdict": "선택",
+    "why": "대규모 전력 인프라 제휴 모멘텀 보유"
+   },
+   {
+    "ticker": "NN",
+    "rank": 5,
+    "verdict": "선택",
+    "why": "실적 호조와 어닝 서프라이즈 지속성"
+   },
+   {
+    "ticker": "RNW",
+    "rank": 6,
+    "verdict": "관찰",
+    "why": "옵션 변동성 급증으로 방향성 확인 필요"
+   },
+   {
+    "ticker": "IMOS",
+    "rank": 7,
+    "verdict": "선택",
+    "why": "흑자 전환 및 사상 최대 분기 매출 달성"
+   },
+   {
+    "ticker": "AEHR",
+    "rank": 8,
+    "verdict": "선택",
+    "why": "AI 프로세서 대규모 후속 수주 확보"
+   },
+   {
+    "ticker": "ZLAB",
+    "rank": 9,
+    "verdict": "제외",
+    "why": "바이오 섹터 및 실적 부진 반영"
+   },
+   {
+    "ticker": "ONTO",
+    "rank": 10,
+    "verdict": "선택",
+    "why": "반도체 강세 및 파트너십 모멘텀"
+   },
+   {
+    "ticker": "BVC",
+    "rank": 11,
+    "verdict": "관찰",
+    "why": "실적 개선 있으나 거래 유동성 점검 필요"
+   },
+   {
+    "ticker": "VSEC",
+    "rank": 12,
+    "verdict": "관찰",
+    "why": "목표가 상향이나 방산/기타 섹터 보수적 접근"
+   },
+   {
+    "ticker": "SEZL",
+    "rank": 13,
+    "verdict": "관찰",
+    "why": "러셀 2000 관련 종목으로 시장 지수 연동 관망"
+   },
+   {
+    "ticker": "ARMK",
+    "rank": 14,
+    "verdict": "관찰",
+    "why": "목표가 상향 조정되었으나 모멘텀 제한적"
+   },
+   {
+    "ticker": "PLUG",
+    "rank": 15,
+    "verdict": "선택",
+    "why": "손실 축소 뉴스로 단기 기술적 반등 기대"
+   },
+   {
+    "ticker": "INTC",
     "rank": 16,
     "verdict": "제외",
-    "why": "하락 추세 및 약세 지속"
+    "why": "유증에 따른 주당순이익(EPS) 희석 우려"
    },
    {
-    "name": "NVIDIA Corporation",
-    "ticker": "NVDA",
+    "ticker": "SPCX",
     "rank": 17,
     "verdict": "제외",
-    "why": "하락세로 단기 모멘텀 부족"
+    "why": "지수 하락 압력 및 마이너스 수익률"
    },
    {
-    "name": "Intel Corporation",
-    "ticker": "INTC",
+    "name": "Archer Aviation Inc.",
+    "ticker": "ACHR",
     "rank": 18,
-    "verdict": "제외",
-    "why": "유상증자 및 약세 압력"
+    "verdict": "선택",
+    "why": "보잉과의 단독 계약으로 차별화된 수급 집중"
    }
   ],
   "mkt": {
    "dir": "상승",
    "conf": 55,
-   "why": "지수 선물 반등과 금리 우려 완화세 반영"
-  },
-  "day_picks": [],
-  "day_at": "22:34",
-  "day_brief": "개장 후 시가 대비 -2% 이상 하락하거나 갭 및 모멘텀 조건이 부합하지 않아 모든 후보가 원칙에 어긋납니다."
+   "why": "지수 선물 반등과 낙폭 과대 인식에 따른 제한적 반등 예상"
+  }
  }
 }
