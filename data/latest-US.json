@@ -1,234 +1,229 @@
 {
- "date": "2026-08-12",
+ "date": "2026-08-13",
  "at": "21:29",
  "data": {
-  "brief": "전일 S&P500 소폭 조정을 거쳤으나 지수 선물이 반등하며 제한적인 상승장이 예상됩니다. 과거 실측 통계를 반영하여 과도한 확신을 낮추고, 헬스케어·바이오·신고가 패턴 등 취약 섹터는 신중히 다루며 실적과 수주 모멘텀 중심의 종목을 엄선했습니다.",
+  "brief": "전일 S&P500의 완만한 상승과 VIX 안정세 속에 AI 인프라 및 실적 모멘텀 종목들이 강세를 보이고 있습니다. 다만 과거 상승장 단타 성과와 확신도 괴리를 고려해 보수적이고 선별적인 접근을 취합니다.",
   "picks": [
    {
-    "name": "Aehr Test Systems",
-    "ticker": "AEHR",
-    "score": 62,
-    "sector": "반도체",
+    "name": "Nebius Group N.V.",
+    "ticker": "NBIS",
+    "score": 55,
+    "sector": "인공지능",
     "basis": [
-     "수주계약",
-     "실적"
+     "뉴스재료",
+     "거래량급증"
     ],
-    "reason": "AI 프로세서 고객사로부터 2,200만 달러 규모의 웨이퍼 레벨 번인 시스템 후속 주문을 확보하며 강력한 모멘텀을 증명했습니다. 실적 성장성과 수주 잔고를 바탕으로 스윙 관점에서 안정적인 추세 지속이 기대됩니다.",
-    "catalyst": "2,200만 달러 대형 수주",
-    "risk": "반도체 장비 섹터 변동성"
+    "reason": "영국 AI 인프라 확장 및 AI 랠리를 주도하며 강력한 거래량과 모멘텀을 형성하고 있습니다. 단기 급등에 따른 변동성 확대를 주의해야 합니다.",
+    "catalyst": "영국 AI 인프라 확장 및 AI 랠리 주도",
+    "risk": "단기 과열 및 변동성"
    },
    {
-    "name": "ChipMOS TECHNOLOGIES INC.",
-    "ticker": "IMOS",
-    "score": 60,
-    "sector": "반도체",
+    "name": "ERock, Inc.",
+    "ticker": "EROC",
+    "score": 52,
+    "sector": "소프트웨어",
+    "basis": [
+     "수주계약",
+     "목표가상향"
+    ],
+    "reason": "앤트로픽(Anthropic)과의 거래 호재와 BofA의 목표가 상향 조정으로 실적 개선 기대감이 부각되었습니다. 급등 후 차익실현 매물 출회 가능성에 유의합니다.",
+    "catalyst": "Anthropic 파트너십 및 BofA 목표가 상향",
+    "risk": "단기 차익실현 매물"
+   },
+   {
+    "name": "Marex Group Limited",
+    "ticker": "MRX",
+    "score": 50,
+    "sector": "금융",
     "basis": [
      "실적",
      "거래량급증"
     ],
-    "reason": "2분기 실적에서 흑자 전환에 성공하며 2014년 이후 분기 기준 사상 최대 매출을 기록했습니다. 실적 호조에 따른 매수세 유입으로 추가적인 주가 상승 여력이 충분합니다.",
-    "catalyst": "2014년 이후 최고 분기 매출",
-    "risk": "글로벌 IT 수요 둔화 우려"
-   },
-   {
-    "name": "NextNav Inc.",
-    "ticker": "NN",
-    "score": 58,
-    "sector": "기술",
-    "basis": [
-     "실적",
-     "추세지속"
-    ],
-    "reason": "2분기 실적 발표에서 시장 예상치를 상회하는 매출을 기록하며 견조한 펀더멘털을 입증했습니다. 어닝 서프라이즈 모멘텀이 단기적인 가격 상방 압력으로 작용할 것입니다.",
-    "catalyst": "예상 상회하는 2분기 실적",
-    "risk": "적자 지속에 따른 심리적 부담"
+    "reason": "양호한 Q2 실적 발표와 함께 원자재 트레이더로서의 매수 시그널이 발생했습니다. 금융 섹터의 상대적 우위 통계를 바탕으로 선별했습니다.",
+    "catalyst": "Q2 실적 호조 및 매수 시그널",
+    "risk": "매크로 변동성"
    }
   ],
   "day_cands": [
    {
-    "name": "NIQ Global Intelligence plc",
-    "ticker": "NIQ",
-    "score": 55,
+    "name": "CoreWeave, Inc.",
+    "ticker": "CRWV",
+    "score": 48,
+    "target_pct": 4,
+    "sector": "인공지능",
+    "basis": [
+     "뉴스재료",
+     "거래량급증"
+    ],
+    "reason": "AI 랠리의 핵심 축으로 강한 거래량이 유입되고 있으나 단기 급등에 따른 눌림목 공략이 필요합니다.",
+    "risk": "변동성 확대"
+   },
+   {
+    "name": "H&R Block, Inc.",
+    "ticker": "HRB",
+    "score": 46,
     "target_pct": 3,
-    "sector": "소비재",
+    "sector": "금융",
     "basis": [
      "실적",
      "거래량급증"
     ],
-    "reason": "어닝 호조 소식과 함께 주가가 42% 폭등하며 시장의 강력한 주목을 받았습니다. 단기 모멘텀이 매우 강해 당일 변동성을 활용한 트레이딩 기회가 엿보입니다.",
-    "risk": "단기 급등에 따른 차익실현 매물"
+    "reason": "기록적인 고객 증가와 공격적인 자사주 매입 발표로 강한 모멘텀을 형성했습니다.",
+    "risk": "상단 저항선 확인 필요"
    },
    {
-    "name": "Fermi Inc.",
-    "ticker": "FRMI",
-    "score": 54,
-    "target_pct": 3,
-    "sector": "에너지",
+    "name": "Lumentum Holdings Inc.",
+    "ticker": "LITE",
+    "score": 45,
+    "target_pct": 4,
+    "sector": "통신장비",
     "basis": [
-     "수주계약",
-     "거래량급증"
+     "뉴스재료",
+     "추세지속"
     ],
-    "reason": "2.6기가와트 규모의 대형 전력 전략적 제휴를 체결하며 첫 번째 대형 수주에 성공했습니다. 대규모 프로젝트 모멘텀으로 단기 수급 집중이 예상됩니다.",
-    "risk": "초기 실현 가능성 검증 필요"
+    "reason": "AI 인프라 관련주로 묶이며 동반 상승 흐름을 보이고 있으나 높은 주가 수준으로 인한 변동성에 주의합니다.",
+    "risk": "높은 주가 변동성"
    },
    {
-    "name": "Archer Aviation Inc.",
-    "ticker": "ACHR",
-    "score": 52,
+    "name": "CAVA Group, Inc.",
+    "ticker": "CAVA",
+    "score": 44,
     "target_pct": 3,
-    "sector": "항공",
+    "sector": "요식업",
     "basis": [
-     "수주계약",
-     "정책테마"
+     "뉴스재료",
+     "투자의견상향"
     ],
-    "reason": "새로운 보잉과의 계약 체결로 경쟁사 대비 차별화된 모멘텀을 확보했습니다. 항공 혁신 테마와 맞물려 당일 강한 수급 유입이 기대됩니다.",
-    "risk": "단기 변동성 확대 가능성"
+    "reason": "증권사의 투자의견 상향과 고객 트렌드 호조로 안정적인 상승 모멘텀을 유지 중입니다.",
+    "risk": "소비재 섹터 수급 변화"
    },
    {
-    "name": "Onto Innovation Inc.",
-    "ticker": "ONTO",
-    "score": 52,
-    "target_pct": 3,
-    "sector": "반도체",
+    "name": "SharonAI Holdings, Inc.",
+    "ticker": "SHAZ",
+    "score": 42,
+    "target_pct": 4,
+    "sector": "인공지능",
     "basis": [
-     "추세지속",
      "실적"
     ],
-    "reason": "엔비디아의 파트너십 및 관련 실적 호조 영향으로 증권가 상향 조정과 함께 상승세가 이어지고 있습니다. 우수한 섹터 내 지위로 단기 추세 추종이 유효합니다.",
-    "risk": "지수 연동성 높음"
-   },
-   {
-    "name": "Plug Power, Inc.",
-    "ticker": "PLUG",
-    "score": 50,
-    "target_pct": 3,
-    "sector": "에너지",
-    "basis": [
-     "낙폭과대",
-     "거래량급증"
-    ],
-    "reason": "손실을 절반으로 줄였다는 소식과 함께 수소 관련 저가 매수세가 유입될 가능성이 있습니다. 낙폭 과대에 따른 기술적 반등 모멘텀을 노릴 수 있습니다.",
-    "risk": "구조적 적자 기업의 한계"
+    "reason": "AI 처리 용량 급증에 따른 실적 기대감이 작용했으나 소형주 특유의 변동성을 주의해야 합니다.",
+    "risk": "유동성 및 변동성"
    }
   ],
   "cands": [
    {
-    "ticker": "NIQ",
+    "ticker": "NBIS",
     "rank": 1,
     "verdict": "선택",
-    "why": "어닝 서프라이즈와 42% 폭등으로 단기 모멘텀 최우수"
+    "why": "AI 랠리 주도 및 인프라 확장 모멘텀"
    },
    {
-    "ticker": "ALMR",
+    "ticker": "QNT",
     "rank": 2,
     "verdict": "관찰",
-    "why": "헬스케어 섹터 회피 성향을 고려해 관망"
+    "why": "급등 후 흐름 확인 필요"
    },
    {
-    "ticker": "SEPN",
+    "ticker": "EROC",
     "rank": 3,
-    "verdict": "제외",
-    "why": "바이오/헬스케어 섹터 과거 실적 부진으로 제외"
+    "verdict": "선택",
+    "why": "Anthropic 계약 및 목표가 상향 호재"
    },
    {
-    "ticker": "FRMI",
+    "ticker": "SHAZ",
     "rank": 4,
-    "verdict": "선택",
-    "why": "대규모 전력 인프라 제휴 모멘텀 보유"
-   },
-   {
-    "ticker": "NN",
-    "rank": 5,
-    "verdict": "선택",
-    "why": "실적 호조와 어닝 서프라이즈 지속성"
-   },
-   {
-    "ticker": "RNW",
-    "rank": 6,
     "verdict": "관찰",
-    "why": "옵션 변동성 급증으로 방향성 확인 필요"
+    "why": "실적 발표 후 변동성 주시"
    },
    {
-    "ticker": "IMOS",
+    "ticker": "CRWV",
+    "rank": 5,
+    "verdict": "관찰",
+    "why": "AI 관련주 동조화 흐름 점검"
+   },
+   {
+    "ticker": "SMCI",
+    "rank": 6,
+    "verdict": "제외",
+    "why": "반도체/하드웨어 섹터 부진 통계 반영"
+   },
+   {
+    "ticker": "MRX",
     "rank": 7,
     "verdict": "선택",
-    "why": "흑자 전환 및 사상 최대 분기 매출 달성"
+    "why": "금융 섹터 우위 및 호실적 모멘텀"
    },
    {
-    "ticker": "AEHR",
+    "ticker": "ATRO",
     "rank": 8,
-    "verdict": "선택",
-    "why": "AI 프로세서 대규모 후속 수주 확보"
+    "verdict": "관찰",
+    "why": "밸류에이션 부담 확인 필요"
    },
    {
-    "ticker": "ZLAB",
+    "ticker": "HRB",
     "rank": 9,
-    "verdict": "제외",
-    "why": "바이오 섹터 및 실적 부진 반영"
+    "verdict": "관찰",
+    "why": "실적 모멘텀 후속 매수세 관찰"
    },
    {
-    "ticker": "ONTO",
+    "ticker": "CAVA",
     "rank": 10,
-    "verdict": "선택",
-    "why": "반도체 강세 및 파트너십 모멘텀"
+    "verdict": "관찰",
+    "why": "요식업 섹터 제한적 접근"
    },
    {
-    "ticker": "BVC",
+    "ticker": "LITE",
     "rank": 11,
     "verdict": "관찰",
-    "why": "실적 개선 있으나 거래 유동성 점검 필요"
+    "why": "AI 인프라 연동 흐름 체크"
    },
    {
-    "ticker": "VSEC",
+    "ticker": "BE",
     "rank": 12,
-    "verdict": "관찰",
-    "why": "목표가 상향이나 방산/기타 섹터 보수적 접근"
+    "verdict": "제외",
+    "why": "변동성 대비 모멘텀 제한적"
    },
    {
-    "ticker": "SEZL",
+    "ticker": "VIAV",
     "rank": 13,
     "verdict": "관찰",
-    "why": "러셀 2000 관련 종목으로 시장 지수 연동 관망"
+    "why": "신제품 뉴스 반응 주시"
    },
    {
-    "ticker": "ARMK",
+    "ticker": "CBRS",
     "rank": 14,
-    "verdict": "관찰",
-    "why": "목표가 상향 조정되었으나 모멘텀 제한적"
+    "verdict": "제외",
+    "why": "실적 혼조세로 인한 하락 압력"
    },
    {
-    "ticker": "PLUG",
+    "ticker": "SPCX",
     "rank": 15,
-    "verdict": "선택",
-    "why": "손실 축소 뉴스로 단기 기술적 반등 기대"
+    "verdict": "관찰",
+    "why": "테마성 수급 변동성"
    },
    {
     "ticker": "INTC",
     "rank": 16,
     "verdict": "제외",
-    "why": "유증에 따른 주당순이익(EPS) 희석 우려"
+    "why": "대규모 유상증자 우려 및 반도체 회피"
    },
    {
-    "ticker": "SPCX",
+    "ticker": "NOK",
     "rank": 17,
-    "verdict": "제외",
-    "why": "지수 하락 압력 및 마이너스 수익률"
+    "verdict": "관찰",
+    "why": "6G 테마 연동성 체크"
    },
    {
-    "name": "Archer Aviation Inc.",
-    "ticker": "ACHR",
+    "ticker": "NVDA",
     "rank": 18,
-    "verdict": "선택",
-    "why": "보잉과의 단독 계약으로 차별화된 수급 집중"
+    "verdict": "관찰",
+    "why": "대형주 안정성 위주로 관망"
    }
   ],
   "mkt": {
    "dir": "상승",
    "conf": 55,
-   "why": "지수 선물 반등과 낙폭 과대 인식에 따른 제한적 반등 예상"
-  },
-  "day_picks": [],
-  "day_at": "22:34",
-  "day_brief": "대부분의 후보가 개장 후 하락 전환하거나 갭 상승 후 밀리는 양상을 보여, 통계적 실패 확률(선정 오류 및 갭/밀림 패턴)을 고려해 보수적으로 전원 보류합니다."
+   "why": "전일 S&P500 및 선물 강세이나 과거 예측 적중률과 과신 교정을 반영해 신중한 상승 예상"
+  }
  }
 }
