@@ -6788,7 +6788,8 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": -0.1
+     "r1": -0.1,
+     "r5": 20.4
     },
     {
      "ticker": "336370.KS",
@@ -8623,10 +8624,12 @@
      "r20": null,
      "b": 36350,
      "gap": -1.2,
-     "simOpen": -4.8,
      "tv": 2479,
      "tvx": 1,
-     "idx": 0.73
+     "idx": 0.73,
+     "simR": -5,
+     "simExit": "stop",
+     "simD": "2026-08-13"
     }
    ],
    "day2": {
@@ -9288,10 +9291,12 @@
      "r20": null,
      "b": 9990,
      "gap": 0,
-     "simOpen": -3,
      "tv": 4,
      "tvx": 0,
-     "idx": 1.94
+     "idx": 1.94,
+     "simR": -5,
+     "simExit": "stop",
+     "simD": "2026-08-13"
     },
     {
      "kind": "swing",
@@ -9808,7 +9813,7 @@
      "rank": 4,
      "verdict": "관찰",
      "why": "이차전지 ETF로 지수 연동성이 높아 스윙보다는 관찰이 유리함",
-     "r1": null
+     "r1": 0.5
     },
     {
      "ticker": "200130.KQ",
@@ -9816,7 +9821,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": -3.7
     },
     {
      "ticker": "305720.KS",
@@ -9824,7 +9829,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": 0.6
     },
     {
      "ticker": "393890.KQ",
@@ -9832,7 +9837,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": 2.3
     },
     {
      "ticker": "012450.KS",
@@ -9840,7 +9845,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": 1.5
     },
     {
      "ticker": "042600.KQ",
@@ -9848,7 +9853,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": -2.4
     },
     {
      "ticker": "530031.KS",
@@ -9856,7 +9861,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": 1.5
     },
     {
      "ticker": "382800.KQ",
@@ -9864,7 +9869,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": -1
     },
     {
      "ticker": "298040.KS",
@@ -9872,7 +9877,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": 0.9
     },
     {
      "ticker": "220260.KQ",
@@ -9880,7 +9885,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": 0.5
     },
     {
      "ticker": "353200.KS",
@@ -10038,7 +10043,8 @@
     "dir": "횡보",
     "conf": 35,
     "why": "미증시 소폭 상승과 환율 불안이 상충되며 코스피는 제한적인 등락을 보일 것으로 예상됨",
-    "ok": null
+    "ok": false,
+    "act": 3.56
    },
    "picks": [
     {
@@ -10052,12 +10058,15 @@
       "추세지속"
      ],
      "p0": 1156000,
-     "r1": null,
+     "r1": 1.5,
      "r5": null,
      "r20": null,
      "b": 1167000,
      "gap": 1,
-     "simOpen": 1.5
+     "simOpen": 1.5,
+     "tv": 352552,
+     "tvx": 1.6,
+     "idx": 3.56
     },
     {
      "kind": "swing",
@@ -10070,12 +10079,14 @@
       "추세지속"
      ],
      "p0": 2440,
-     "r1": null,
+     "r1": 1.5,
      "r5": null,
      "r20": null,
      "b": 2385,
      "gap": -2.3,
-     "simOpen": 1.5
+     "simOpen": 1.5,
+     "tv": 1092,
+     "idx": 3.56
     },
     {
      "kind": "swing",
@@ -10088,12 +10099,15 @@
       "실적"
      ],
      "p0": 10580,
-     "r1": null,
+     "r1": -3.7,
      "r5": null,
      "r20": null,
      "b": 10490,
      "gap": -0.9,
-     "simOpen": -3.7
+     "simOpen": -3.7,
+     "tv": 1975,
+     "tvx": 2.3,
+     "idx": 3.56
     }
    ],
    "day2": {
@@ -10102,6 +10116,281 @@
     "n": 0
    },
    "dayHold": 1
+  },
+  {
+   "date": "2026-08-13",
+   "market": "US",
+   "regime": "상승",
+   "rules": [
+    "단타 실패 분해: 시장충격4·목표과다1·선정11 → 선정 강화",
+    "강도80+ 실측 0%(9) — 확신도 과장, 보수화",
+    "근거'수주계약' 성공40%(10) → 단독추천 지양",
+    "근거'실적' 성공28%(18) → 단독추천 지양"
+   ],
+   "cands": [
+    {
+     "ticker": "NBIS",
+     "rank": 1,
+     "verdict": "선택",
+     "why": "AI 랠리 주도 및 인프라 확장 모멘텀",
+     "r1": null
+    },
+    {
+     "ticker": "QNT",
+     "rank": 2,
+     "verdict": "관찰",
+     "why": "급등 후 흐름 확인 필요",
+     "r1": null
+    },
+    {
+     "ticker": "EROC",
+     "rank": 3,
+     "verdict": "선택",
+     "why": "Anthropic 계약 및 목표가 상향 호재",
+     "r1": null
+    },
+    {
+     "ticker": "SHAZ",
+     "rank": 4,
+     "verdict": "관찰",
+     "why": "실적 발표 후 변동성 주시",
+     "r1": null
+    },
+    {
+     "ticker": "CRWV",
+     "rank": 5,
+     "verdict": "관찰",
+     "why": "AI 관련주 동조화 흐름 점검",
+     "r1": null
+    },
+    {
+     "ticker": "SMCI",
+     "rank": 6,
+     "verdict": "제외",
+     "why": "반도체/하드웨어 섹터 부진 통계 반영",
+     "r1": null
+    },
+    {
+     "ticker": "MRX",
+     "rank": 7,
+     "verdict": "선택",
+     "why": "금융 섹터 우위 및 호실적 모멘텀",
+     "r1": null
+    },
+    {
+     "ticker": "ATRO",
+     "rank": 8,
+     "verdict": "관찰",
+     "why": "밸류에이션 부담 확인 필요",
+     "r1": null
+    },
+    {
+     "ticker": "HRB",
+     "rank": 9,
+     "verdict": "관찰",
+     "why": "실적 모멘텀 후속 매수세 관찰",
+     "r1": null
+    },
+    {
+     "ticker": "CAVA",
+     "rank": 10,
+     "verdict": "관찰",
+     "why": "요식업 섹터 제한적 접근",
+     "r1": null
+    },
+    {
+     "ticker": "LITE",
+     "rank": 11,
+     "verdict": "관찰",
+     "why": "AI 인프라 연동 흐름 체크",
+     "r1": null
+    },
+    {
+     "ticker": "BE",
+     "rank": 12,
+     "verdict": "제외",
+     "why": "변동성 대비 모멘텀 제한적",
+     "r1": null
+    },
+    {
+     "ticker": "VIAV",
+     "rank": 13,
+     "verdict": "관찰",
+     "why": "신제품 뉴스 반응 주시",
+     "r1": null
+    },
+    {
+     "ticker": "CBRS",
+     "rank": 14,
+     "verdict": "제외",
+     "why": "실적 혼조세로 인한 하락 압력",
+     "r1": null
+    },
+    {
+     "ticker": "SPCX",
+     "rank": 15,
+     "verdict": "관찰",
+     "why": "테마성 수급 변동성",
+     "r1": null
+    },
+    {
+     "ticker": "INTC",
+     "rank": 16,
+     "verdict": "제외",
+     "why": "대규모 유상증자 우려 및 반도체 회피",
+     "r1": null
+    },
+    {
+     "ticker": "NOK",
+     "rank": 17,
+     "verdict": "관찰",
+     "why": "6G 테마 연동성 체크",
+     "r1": null
+    },
+    {
+     "ticker": "NVDA",
+     "rank": 18,
+     "verdict": "관찰",
+     "why": "대형주 안정성 위주로 관망",
+     "r1": null
+    }
+   ],
+   "bl": {
+    "rand": [
+     "CRWV",
+     "CBRS",
+     "INTC"
+    ],
+    "mom": [
+     "NBIS",
+     "QNT",
+     "EROC"
+    ]
+   },
+   "dayCands": [
+    {
+     "name": "CoreWeave, Inc.",
+     "ticker": "CRWV",
+     "score": 48,
+     "target_pct": 4,
+     "sector": "인공지능",
+     "basis": [
+      "뉴스재료",
+      "거래량급증"
+     ],
+     "reason": "AI 랠리의 핵심 축으로 강한 거래량이 유입되고 있으나 단기 급등에 따른 눌림목 공략이 필요합니다.",
+     "risk": "변동성 확대"
+    },
+    {
+     "name": "H&R Block, Inc.",
+     "ticker": "HRB",
+     "score": 46,
+     "target_pct": 3,
+     "sector": "금융",
+     "basis": [
+      "실적",
+      "거래량급증"
+     ],
+     "reason": "기록적인 고객 증가와 공격적인 자사주 매입 발표로 강한 모멘텀을 형성했습니다.",
+     "risk": "상단 저항선 확인 필요"
+    },
+    {
+     "name": "Lumentum Holdings Inc.",
+     "ticker": "LITE",
+     "score": 45,
+     "target_pct": 4,
+     "sector": "통신장비",
+     "basis": [
+      "뉴스재료",
+      "추세지속"
+     ],
+     "reason": "AI 인프라 관련주로 묶이며 동반 상승 흐름을 보이고 있으나 높은 주가 수준으로 인한 변동성에 주의합니다.",
+     "risk": "높은 주가 변동성"
+    },
+    {
+     "name": "CAVA Group, Inc.",
+     "ticker": "CAVA",
+     "score": 44,
+     "target_pct": 3,
+     "sector": "요식업",
+     "basis": [
+      "뉴스재료",
+      "투자의견상향"
+     ],
+     "reason": "증권사의 투자의견 상향과 고객 트렌드 호조로 안정적인 상승 모멘텀을 유지 중입니다.",
+     "risk": "소비재 섹터 수급 변화"
+    },
+    {
+     "name": "SharonAI Holdings, Inc.",
+     "ticker": "SHAZ",
+     "score": 42,
+     "target_pct": 4,
+     "sector": "인공지능",
+     "basis": [
+      "실적"
+     ],
+     "reason": "AI 처리 용량 급증에 따른 실적 기대감이 작용했으나 소형주 특유의 변동성을 주의해야 합니다.",
+     "risk": "유동성 및 변동성"
+    }
+   ],
+   "hold": 0,
+   "v": {
+    "m": "gemini-3.5-flash-lite",
+    "pv": "J1.0"
+   },
+   "mktF": {
+    "dir": "상승",
+    "conf": 55,
+    "why": "전일 S&P500 및 선물 강세이나 과거 예측 적중률과 과신 교정을 반영해 신중한 상승 예상",
+    "ok": null
+   },
+   "picks": [
+    {
+     "kind": "swing",
+     "name": "Nebius Group N.V.",
+     "ticker": "NBIS",
+     "score": 55,
+     "sector": "인공지능",
+     "basis": [
+      "뉴스재료",
+      "거래량급증"
+     ],
+     "p0": 259.2,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "ERock, Inc.",
+     "ticker": "EROC",
+     "score": 52,
+     "sector": "소프트웨어",
+     "basis": [
+      "수주계약",
+      "목표가상향"
+     ],
+     "p0": 13.82,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "Marex Group Limited",
+     "ticker": "MRX",
+     "score": 50,
+     "sector": "금융",
+     "basis": [
+      "실적",
+      "거래량급증"
+     ],
+     "p0": 71.13,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    }
+   ]
   }
  ],
  "monAt": 1786602852974
