@@ -10622,7 +10622,7 @@
      "rank": 1,
      "verdict": "선택",
      "why": "화장품 모멘텀 및 특허 재료 보유",
-     "r1": null
+     "r1": 1.1
     },
     {
      "ticker": "446540.KQ",
@@ -10630,7 +10630,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": -4.5
     },
     {
      "ticker": "003670.KS",
@@ -10638,7 +10638,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": 2.4
     },
     {
      "ticker": "323280.KQ",
@@ -10646,7 +10646,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": 3.8
     },
     {
      "ticker": "090460.KS",
@@ -10654,7 +10654,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": -4.1
     },
     {
      "ticker": "092870.KQ",
@@ -10662,7 +10662,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": 3.4
     },
     {
      "ticker": "096770.KS",
@@ -10670,7 +10670,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": 5.5
     },
     {
      "ticker": "131290.KQ",
@@ -10678,7 +10678,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": -0.4
     },
     {
      "ticker": "282330.KS",
@@ -10686,7 +10686,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": 3.2
     },
     {
      "ticker": "354320.KQ",
@@ -10694,7 +10694,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": -0.3
     },
     {
      "ticker": "103590.KS",
@@ -10964,6 +10964,291 @@
     "brief": "전체 후보군 중 개장 후 시가 대비 급락이나 과도한 갭 상승 없이 안정적인 흐름을 보인 종목을 선별했습니다.",
     "n": 1
    }
+  },
+  {
+   "date": "2026-08-14",
+   "market": "US",
+   "regime": "상승",
+   "rules": [
+    "단타 실패 분해: 시장충격4·목표과다1·선정12 → 선정 강화",
+    "강도80+ 실측 0%(9) — 확신도 과장, 보수화",
+    "근거'수주계약' 성공36%(11) → 단독추천 지양",
+    "근거'실적' 성공32%(19) → 단독추천 지양"
+   ],
+   "cands": [
+    {
+     "ticker": "ARX",
+     "rank": 1,
+     "verdict": "선택",
+     "why": "인수합병 재료로 인한 강력한 상승 모멘텀",
+     "r1": null
+    },
+    {
+     "ticker": "AVAH",
+     "rank": 91,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "WDAY",
+     "rank": 92,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "MH",
+     "rank": 93,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "WIX",
+     "rank": 94,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "TBBB",
+     "rank": 95,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "HUBS",
+     "rank": 96,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "BVC",
+     "rank": 97,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "SNDK",
+     "rank": 98,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "EROC",
+     "rank": 99,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "XE",
+     "rank": 100,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "BIRK",
+     "rank": 101,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "BLSH",
+     "rank": 102,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "ESTC",
+     "rank": 103,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "OPEN",
+     "rank": 104,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "ONDS",
+     "rank": 105,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "SMCI",
+     "rank": 106,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "SPCX",
+     "rank": 107,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    }
+   ],
+   "bl": {
+    "rand": [
+     "TBBB",
+     "XE",
+     "SPCX"
+    ],
+    "mom": [
+     "ARX",
+     "AVAH",
+     "WDAY"
+    ]
+   },
+   "dayCands": [
+    {
+     "name": "ERock, Inc.",
+     "ticker": "EROC",
+     "score": 50,
+     "target_pct": 4,
+     "sector": "기술",
+     "basis": [
+      "뉴스재료"
+     ],
+     "reason": "앤스로픽과의 계약 체결 소식으로 긍정적인 전망이 부각되며 큰 폭의 상승을 기록했습니다. 인공지능 관련 파트너십 모멘텀이 당일 추가 탄력을 줄 수 있습니다.",
+     "risk": "급등 후 변동성 확대"
+    },
+    {
+     "name": "X-Energy, Inc.",
+     "ticker": "XE",
+     "score": 48,
+     "target_pct": 4,
+     "sector": "에너지",
+     "basis": [
+      "실적"
+     ],
+     "reason": "미국 에너지부(DOE)의 자금 지원과 함께 매출이 154% 급증하는 강력한 실적 성장을 보였습니다. 정책적 지원과 실적 호조가 주가 모멘텀을 지지합니다.",
+     "risk": "정책 테마 변동성"
+    },
+    {
+     "name": "Aveanna Healthcare Holdings Inc",
+     "ticker": "AVAH",
+     "score": 45,
+     "target_pct": 3,
+     "sector": "헬스케어",
+     "basis": [
+      "뉴스재료"
+     ],
+     "reason": "도이체방크의 목표주가 상향 조정과 투자의견 유지 소식이 매수세를 자극했습니다. 실적 개선 기대감이 유효합니다.",
+     "risk": "헬스케어 섹터 과거 부진 이력"
+    },
+    {
+     "name": "McGraw Hill, Inc.",
+     "ticker": "MH",
+     "score": 42,
+     "target_pct": 3,
+     "sector": "미디어",
+     "basis": [
+      "뉴스재료"
+     ],
+     "reason": "모건스탠리의 목표주가 조정 및 비중확대 유지로 안정적인 투자 심리가 유지되고 있습니다. 기관의 긍정적 시각이 하방을 방어합니다.",
+     "risk": "상승 모멘텀 강도 제한적"
+    },
+    {
+     "name": "BBB Foods Inc.",
+     "ticker": "TBBB",
+     "score": 40,
+     "target_pct": 3,
+     "sector": "유통",
+     "basis": [
+      "실적"
+     ],
+     "reason": "견조한 Q2 실적 발표와 함께 시장의 주목을 받으며 급등세를 기록했습니다. 실적 발표 이후의 추세 지속 여부를 관찰합니다.",
+     "risk": "단기 과열 부담"
+    }
+   ],
+   "hold": 0,
+   "v": {
+    "m": "gemini-3.5-flash-lite",
+    "pv": "J1.0"
+   },
+   "mktF": {
+    "dir": "상승",
+    "conf": 60,
+    "why": "전일 S&P500 상승세와 낮은 VIX 환경 유지이나 보수적 접근 필요",
+    "ok": null
+   },
+   "picks": [
+    {
+     "kind": "swing",
+     "name": "Accelerant Holdings",
+     "ticker": "ARX",
+     "score": 55,
+     "sector": "금융",
+     "basis": [
+      "뉴스재료"
+     ],
+     "p0": 19.51,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "Workday, Inc.",
+     "ticker": "WDAY",
+     "score": 50,
+     "sector": "소프트웨어",
+     "basis": [
+      "뉴스재료"
+     ],
+     "p0": 206.45,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "Wix.com Ltd.",
+     "ticker": "WIX",
+     "score": 45,
+     "sector": "소프트웨어",
+     "basis": [
+      "거래량급증"
+     ],
+     "p0": 80.06,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    }
+   ]
   }
  ],
  "monAt": 1786689130942
