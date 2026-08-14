@@ -1,257 +1,222 @@
 {
- "date": "2026-08-13",
+ "date": "2026-08-14",
  "at": "21:29",
  "data": {
-  "brief": "전일 S&P500의 완만한 상승과 VIX 안정세 속에 AI 인프라 및 실적 모멘텀 종목들이 강세를 보이고 있습니다. 다만 과거 상승장 단타 성과와 확신도 괴리를 고려해 보수적이고 선별적인 접근을 취합니다.",
+  "brief": "S&P500 전일 상승과 VIX 하락 등 안정적인 상승장 환경이나, 과거 데이터상 고확신도 과장 경향을 반영하여 보수적으로 접근합니다. 실적 및 인수합병 재료를 중심으로 선별적인 종목 접근이 유효합니다.",
   "picks": [
    {
-    "name": "Nebius Group N.V.",
-    "ticker": "NBIS",
+    "name": "Accelerant Holdings",
+    "ticker": "ARX",
     "score": 55,
-    "sector": "인공지능",
-    "basis": [
-     "뉴스재료",
-     "거래량급증"
-    ],
-    "reason": "영국 AI 인프라 확장 및 AI 랠리를 주도하며 강력한 거래량과 모멘텀을 형성하고 있습니다. 단기 급등에 따른 변동성 확대를 주의해야 합니다.",
-    "catalyst": "영국 AI 인프라 확장 및 AI 랠리 주도",
-    "risk": "단기 과열 및 변동성"
-   },
-   {
-    "name": "ERock, Inc.",
-    "ticker": "EROC",
-    "score": 52,
-    "sector": "소프트웨어",
-    "basis": [
-     "수주계약",
-     "목표가상향"
-    ],
-    "reason": "앤트로픽(Anthropic)과의 거래 호재와 BofA의 목표가 상향 조정으로 실적 개선 기대감이 부각되었습니다. 급등 후 차익실현 매물 출회 가능성에 유의합니다.",
-    "catalyst": "Anthropic 파트너십 및 BofA 목표가 상향",
-    "risk": "단기 차익실현 매물"
-   },
-   {
-    "name": "Marex Group Limited",
-    "ticker": "MRX",
-    "score": 50,
     "sector": "금융",
     "basis": [
-     "실적",
+     "뉴스재료"
+    ],
+    "reason": "전액 현금 인수 제안 소식에 힘입어 주가가 43% 이상 급등하며 강력한 모멘텀을 형성했습니다. 인수합병 관련 재료는 단기적으로 가격 지지력을 제공할 수 있습니다.",
+    "catalyst": "전액 현금 인수 제안",
+    "risk": "인수 절차 지연 또는 무산 리스크"
+   },
+   {
+    "name": "Workday, Inc.",
+    "ticker": "WDAY",
+    "score": 50,
+    "sector": "소프트웨어",
+    "basis": [
+     "뉴스재료"
+    ],
+    "reason": "실버레이크의 비공개 전환 계획이 성장의 재가속화를 이끌 것이라는 분석이 제기되었습니다. 대형 사모펀드의 바이아웃 기대감으로 하방 경직성이 확보될 수 있습니다.",
+    "catalyst": "비공개 전환(Take-Private) 계획",
+    "risk": "소프트웨어 섹터 전반의 밸류에이션 부담"
+   },
+   {
+    "name": "Wix.com Ltd.",
+    "ticker": "WIX",
+    "score": 45,
+    "sector": "소프트웨어",
+    "basis": [
      "거래량급증"
     ],
-    "reason": "양호한 Q2 실적 발표와 함께 원자재 트레이더로서의 매수 시그널이 발생했습니다. 금융 섹터의 상대적 우위 통계를 바탕으로 선별했습니다.",
-    "catalyst": "Q2 실적 호조 및 매수 시그널",
-    "risk": "매크로 변동성"
+    "reason": "뚜렷한 상승 흐름과 함께 시장 참여자들의 높은 관심을 받으며 급등세를 연출했습니다. 동종 업계 대비 상대적 가치 매력이 부각될 수 있습니다.",
+    "catalyst": "거래량 급증 및 매수세 유입",
+    "risk": "단기 급등에 따른 차익실현 매물 압박"
    }
   ],
   "day_cands": [
    {
-    "name": "CoreWeave, Inc.",
-    "ticker": "CRWV",
+    "name": "ERock, Inc.",
+    "ticker": "EROC",
+    "score": 50,
+    "target_pct": 4,
+    "sector": "기술",
+    "basis": [
+     "뉴스재료"
+    ],
+    "reason": "앤스로픽과의 계약 체결 소식으로 긍정적인 전망이 부각되며 큰 폭의 상승을 기록했습니다. 인공지능 관련 파트너십 모멘텀이 당일 추가 탄력을 줄 수 있습니다.",
+    "risk": "급등 후 변동성 확대"
+   },
+   {
+    "name": "X-Energy, Inc.",
+    "ticker": "XE",
     "score": 48,
     "target_pct": 4,
-    "sector": "인공지능",
-    "basis": [
-     "뉴스재료",
-     "거래량급증"
-    ],
-    "reason": "AI 랠리의 핵심 축으로 강한 거래량이 유입되고 있으나 단기 급등에 따른 눌림목 공략이 필요합니다.",
-    "risk": "변동성 확대"
-   },
-   {
-    "name": "H&R Block, Inc.",
-    "ticker": "HRB",
-    "score": 46,
-    "target_pct": 3,
-    "sector": "금융",
-    "basis": [
-     "실적",
-     "거래량급증"
-    ],
-    "reason": "기록적인 고객 증가와 공격적인 자사주 매입 발표로 강한 모멘텀을 형성했습니다.",
-    "risk": "상단 저항선 확인 필요"
-   },
-   {
-    "name": "Lumentum Holdings Inc.",
-    "ticker": "LITE",
-    "score": 45,
-    "target_pct": 4,
-    "sector": "통신장비",
-    "basis": [
-     "뉴스재료",
-     "추세지속"
-    ],
-    "reason": "AI 인프라 관련주로 묶이며 동반 상승 흐름을 보이고 있으나 높은 주가 수준으로 인한 변동성에 주의합니다.",
-    "risk": "높은 주가 변동성"
-   },
-   {
-    "name": "CAVA Group, Inc.",
-    "ticker": "CAVA",
-    "score": 44,
-    "target_pct": 3,
-    "sector": "요식업",
-    "basis": [
-     "뉴스재료",
-     "투자의견상향"
-    ],
-    "reason": "증권사의 투자의견 상향과 고객 트렌드 호조로 안정적인 상승 모멘텀을 유지 중입니다.",
-    "risk": "소비재 섹터 수급 변화"
-   },
-   {
-    "name": "SharonAI Holdings, Inc.",
-    "ticker": "SHAZ",
-    "score": 42,
-    "target_pct": 4,
-    "sector": "인공지능",
+    "sector": "에너지",
     "basis": [
      "실적"
     ],
-    "reason": "AI 처리 용량 급증에 따른 실적 기대감이 작용했으나 소형주 특유의 변동성을 주의해야 합니다.",
-    "risk": "유동성 및 변동성"
+    "reason": "미국 에너지부(DOE)의 자금 지원과 함께 매출이 154% 급증하는 강력한 실적 성장을 보였습니다. 정책적 지원과 실적 호조가 주가 모멘텀을 지지합니다.",
+    "risk": "정책 테마 변동성"
+   },
+   {
+    "name": "Aveanna Healthcare Holdings Inc",
+    "ticker": "AVAH",
+    "score": 45,
+    "target_pct": 3,
+    "sector": "헬스케어",
+    "basis": [
+     "뉴스재료"
+    ],
+    "reason": "도이체방크의 목표주가 상향 조정과 투자의견 유지 소식이 매수세를 자극했습니다. 실적 개선 기대감이 유효합니다.",
+    "risk": "헬스케어 섹터 과거 부진 이력"
+   },
+   {
+    "name": "McGraw Hill, Inc.",
+    "ticker": "MH",
+    "score": 42,
+    "target_pct": 3,
+    "sector": "미디어",
+    "basis": [
+     "뉴스재료"
+    ],
+    "reason": "모건스탠리의 목표주가 조정 및 비중확대 유지로 안정적인 투자 심리가 유지되고 있습니다. 기관의 긍정적 시각이 하방을 방어합니다.",
+    "risk": "상승 모멘텀 강도 제한적"
+   },
+   {
+    "name": "BBB Foods Inc.",
+    "ticker": "TBBB",
+    "score": 40,
+    "target_pct": 3,
+    "sector": "유통",
+    "basis": [
+     "실적"
+    ],
+    "reason": "견조한 Q2 실적 발표와 함께 시장의 주목을 받으며 급등세를 기록했습니다. 실적 발표 이후의 추세 지속 여부를 관찰합니다.",
+    "risk": "단기 과열 부담"
    }
   ],
   "cands": [
    {
-    "ticker": "NBIS",
+    "ticker": "ARX",
     "rank": 1,
     "verdict": "선택",
-    "why": "AI 랠리 주도 및 인프라 확장 모멘텀"
+    "why": "인수합병 재료로 인한 강력한 상승 모멘텀"
    },
    {
-    "ticker": "QNT",
+    "name": "AVAH",
     "rank": 2,
     "verdict": "관찰",
-    "why": "급등 후 흐름 확인 필요"
+    "why": "목표가 상향 및 실적 기대감 유지"
    },
    {
-    "ticker": "EROC",
+    "name": "WDAY",
     "rank": 3,
     "verdict": "선택",
-    "why": "Anthropic 계약 및 목표가 상향 호재"
+    "why": "비공개 전환 계획으로 성장 재가속화 기대"
    },
    {
-    "ticker": "SHAZ",
+    "name": "MH",
     "rank": 4,
     "verdict": "관찰",
-    "why": "실적 발표 후 변동성 주시"
+    "why": "기관 목표가 조정 및 오버위크 유지"
    },
    {
-    "ticker": "CRWV",
+    "name": "WIX",
     "rank": 5,
-    "verdict": "관찰",
-    "why": "AI 관련주 동조화 흐름 점검"
-   },
-   {
-    "ticker": "SMCI",
-    "rank": 6,
-    "verdict": "제외",
-    "why": "반도체/하드웨어 섹터 부진 통계 반영"
-   },
-   {
-    "ticker": "MRX",
-    "rank": 7,
     "verdict": "선택",
-    "why": "금융 섹터 우위 및 호실적 모멘텀"
+    "why": "거래량 동반 급등세 지속"
    },
    {
-    "ticker": "ATRO",
+    "name": "TBBB",
+    "rank": 6,
+    "verdict": "관찰",
+    "why": "실적 호조에 따른 매수세 유입"
+   },
+   {
+    "name": "HUBS",
+    "rank": 7,
+    "verdict": "제외",
+    "why": "가이드라인 하향 및 밸류에이션 부담"
+   },
+   {
+    "name": "BVC",
     "rank": 8,
     "verdict": "관찰",
-    "why": "밸류에이션 부담 확인 필요"
+    "why": "흑자 전환 및 매출 발생"
    },
    {
-    "ticker": "HRB",
+    "name": "SNDK",
     "rank": 9,
     "verdict": "관찰",
-    "why": "실적 모멘텀 후속 매수세 관찰"
+    "why": "반도체 섹터 주의 필요하나 메모리주 강세 동조"
    },
    {
-    "ticker": "CAVA",
+    "name": "EROC",
     "rank": 10,
     "verdict": "관찰",
-    "why": "요식업 섹터 제한적 접근"
+    "why": "AI 파트너십 재료 보유"
    },
    {
-    "ticker": "LITE",
+    "name": "XE",
     "rank": 11,
     "verdict": "관찰",
-    "why": "AI 인프라 연동 흐름 체크"
+    "why": "실적 급증 및 정책 자금 모멘텀"
    },
    {
-    "ticker": "BE",
+    "name": "BIRK",
     "rank": 12,
     "verdict": "제외",
-    "why": "변동성 대비 모멘텀 제한적"
+    "why": "할인된 2차 발행으로 인한 하방 압력"
    },
    {
-    "ticker": "VIAV",
+    "name": "BLSH",
     "rank": 13,
     "verdict": "관찰",
-    "why": "신제품 뉴스 반응 주시"
+    "why": "Q2 실적 발표 진행"
    },
    {
-    "ticker": "CBRS",
+    "name": "ESTC",
     "rank": 14,
-    "verdict": "제외",
-    "why": "실적 혼조세로 인한 하락 압력"
-   },
-   {
-    "ticker": "SPCX",
-    "rank": 15,
     "verdict": "관찰",
-    "why": "테마성 수급 변동성"
+    "why": "급등 후 추가 상승 여력 점검 필요"
    },
    {
-    "ticker": "INTC",
+    "name": "OPEN",
+    "rank": 15,
+    "verdict": "제외",
+    "why": "상승 모멘텀 제한적"
+   },
+   {
+    "name": "ONDS",
     "rank": 16,
     "verdict": "제외",
-    "why": "대규모 유상증자 우려 및 반도체 회피"
+    "why": "전일 하락 마감 및 반도체/소셜버즈 변동성"
    },
    {
-    "ticker": "NOK",
+    "name": "SMCI",
     "rank": 17,
-    "verdict": "관찰",
-    "why": "6G 테마 연동성 체크"
+    "verdict": "제외",
+    "why": "높은 공매도 잔고 부담"
    },
    {
-    "ticker": "NVDA",
+    "name": "SPCX",
     "rank": 18,
-    "verdict": "관찰",
-    "why": "대형주 안정성 위주로 관망"
+    "verdict": "제외",
+    "why": "주가 약세 및 하락 흐름"
    }
   ],
   "mkt": {
    "dir": "상승",
-   "conf": 55,
-   "why": "전일 S&P500 및 선물 강세이나 과거 예측 적중률과 과신 교정을 반영해 신중한 상승 예상"
-  },
-  "day_picks": [
-   {
-    "name": "CAVA Group, Inc.",
-    "ticker": "CAVA",
-    "score": 78,
-    "target_pct": 3,
-    "sector": "외식",
-    "basis": [
-     "증권사투자의견상향"
-    ],
-    "reason": "시가갭 1.8% 상승 출발 후 개장 후에도 +1.4% 상승을 유지하며 안정적인 모멘텀을 증명함.",
-    "risk": "소비재 섹터 변동성 및 단기 차익실현 매물 주의"
-   },
-   {
-    "name": "SharonAI Holdings, Inc.",
-    "ticker": "SHAZ",
-    "score": 75,
-    "target_pct": 4,
-    "sector": "AI",
-    "basis": [
-     "실적기대감"
-    ],
-    "reason": "보합권 출발 후 개장 직후 +2% 상승하며 실적 기대감에 따른 매수세가 실제로 유입됨을 확인.",
-    "risk": "소형주 특유의 높은 변동성과 급격한 되돌림 가능성"
-   }
-  ],
-  "day_at": "22:34",
-  "day_brief": "개장 후 양의 수익률을 기록하며 선정 논리를 확인한 CAVA와 SHAZ를 선정합니다. 나머지 종목은 하락 전환하여 제외했습니다."
+   "conf": 60,
+   "why": "전일 S&P500 상승세와 낮은 VIX 환경 유지이나 보수적 접근 필요"
+  }
  }
 }
