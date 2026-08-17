@@ -11408,6 +11408,276 @@
      "mom": 1
     }
    }
+  },
+  {
+   "date": "2026-08-17",
+   "market": "US",
+   "regime": "상승",
+   "rules": [
+    "단타 실패 분해: 시장충격4·목표과다1·선정13 → 선정 강화",
+    "강도80+ 실측 0%(9) — 확신도 과장, 보수화",
+    "근거'수주계약' 성공36%(11) → 단독추천 지양",
+    "근거'실적' 성공32%(19) → 단독추천 지양"
+   ],
+   "cands": [
+    {
+     "ticker": "HTFL",
+     "rank": 1,
+     "verdict": "선택",
+     "why": "폭등세와 강력한 거래량 동반",
+     "r1": null
+    },
+    {
+     "ticker": "AAOI",
+     "rank": 2,
+     "verdict": "선택",
+     "why": "주요 이벤트 앞두고 거래량 유입",
+     "r1": null
+    },
+    {
+     "ticker": "RDDT",
+     "rank": 3,
+     "verdict": "선택",
+     "why": "S&P 500 편입 호재와 추세 지속",
+     "r1": null
+    },
+    {
+     "ticker": "WING",
+     "rank": 4,
+     "verdict": "선택",
+     "why": "섹터 내 차별화된 강세 흐름",
+     "r1": null
+    },
+    {
+     "ticker": "MXL",
+     "rank": 5,
+     "verdict": "선택",
+     "why": "AI 인프라 신제품 모멘텀",
+     "r1": null
+    },
+    {
+     "ticker": "STDN",
+     "rank": 6,
+     "verdict": "관찰",
+     "why": "임원 선임 및 실적 발표 앞둠",
+     "r1": null
+    },
+    {
+     "ticker": "VERA",
+     "rank": 7,
+     "verdict": "제외",
+     "why": "목표가 하향 및 바이오·헬스케어 회피 기조",
+     "r1": null
+    },
+    {
+     "ticker": "NU",
+     "rank": 8,
+     "verdict": "관찰",
+     "why": "남미 시장 지배력 있으나 단기 모멘텀 다소 부족",
+     "r1": null
+    },
+    {
+     "ticker": "AVAH",
+     "rank": 9,
+     "verdict": "제외",
+     "why": "목표가 조정 및 헬스케어 섹터 회피",
+     "r1": null
+    },
+    {
+     "ticker": "ALM",
+     "rank": 10,
+     "verdict": "선택",
+     "why": "대규모 자사주 매입 발표",
+     "r1": null
+    },
+    {
+     "ticker": "NBIS",
+     "rank": 11,
+     "verdict": "선택",
+     "why": "AI 데이터센터 가격 상승 수혜",
+     "r1": null
+    },
+    {
+     "ticker": "AEHR",
+     "rank": 12,
+     "verdict": "관찰",
+     "why": "52주 신고가 근접했으나 단독 추천 지양",
+     "r1": null
+    },
+    {
+     "ticker": "LUNR",
+     "rank": 13,
+     "verdict": "선택",
+     "why": "인프라 프로그램 선정 수주 모멘텀",
+     "r1": null
+    },
+    {
+     "ticker": "ASTH",
+     "rank": 14,
+     "verdict": "제외",
+     "why": "헬스케어 섹터 회피 및 관심도 낮음",
+     "r1": null
+    },
+    {
+     "ticker": "ONDS",
+     "rank": 15,
+     "verdict": "관찰",
+     "why": "시장 관망세 속 변동성 제한적",
+     "r1": null
+    },
+    {
+     "ticker": "SPCX",
+     "rank": 16,
+     "verdict": "제외",
+     "why": "당일 하락세 및 모멘텀 부재",
+     "r1": null
+    },
+    {
+     "ticker": "INTC",
+     "rank": 17,
+     "verdict": "제외",
+     "why": "파운드리 기대감 불구 주가 약세",
+     "r1": null
+    },
+    {
+     "ticker": "NVDA",
+     "rank": 18,
+     "verdict": "제외",
+     "why": "반도체 섹터 회피 및 약보합세",
+     "r1": null
+    }
+   ],
+   "bl": {
+    "rand": [
+     "STDN",
+     "WING",
+     "RDDT"
+    ],
+    "mom": [
+     "HTFL",
+     "AAOI",
+     "RDDT"
+    ]
+   },
+   "dayCands": [
+    {
+     "name": "Heartflow, Inc.",
+     "ticker": "HTFL",
+     "score": 60,
+     "target_pct": 4,
+     "sector": "의료기기",
+     "basis": [
+      "거래량급증"
+     ],
+     "reason": "애널리스트 호평과 함께 35% 이상 폭등하며 시장의 이목을 집중시킨 주도주입니다. 당일 변동성을 활용한 단기 트레이딩 관점에서 접근합니다.",
+     "risk": "단기 과열 진입 및 변동성 확대"
+    },
+    {
+     "name": "Applied Optoelectronics, Inc.",
+     "ticker": "AAOI",
+     "score": 55,
+     "target_pct": 3,
+     "sector": "광통신",
+     "basis": [
+      "거래량급증"
+     ],
+     "reason": "다음 주 사업 업데이트 발표를 앞두고 투심이 선제적으로 유입되며 강한 거래량을 동반했습니다. 단기 모멘텀 플레이에 적합한 조건을 갖추고 있습니다.",
+     "risk": "이벤트 대기 차익실현 가능성"
+    },
+    {
+     "name": "Nebius Group N.V.",
+     "ticker": "NBIS",
+     "score": 53,
+     "target_pct": 3,
+     "sector": "인프라",
+     "basis": [
+      "추세지속"
+     ],
+     "reason": "데이터 센터 가격 상승 추세 속에서 AI 인프라 관련 핵심 수혜주로 부각되며 상승세를 타고 있습니다. 견조한 수급 흐름을 바탕으로 단기 반등을 노립니다.",
+     "risk": "단기 급등에 따른 피로감 누적"
+    },
+    {
+     "name": "Intuitive Machines, Inc.",
+     "ticker": "LUNR",
+     "score": 50,
+     "target_pct": 3,
+     "sector": "우주항공",
+     "basis": [
+      "수주계약"
+     ],
+     "reason": "다중 위성 통신 인프라 프로그램에 선정되며 뚜렷한 재료를 확보했습니다. 뉴스 모멘텀에 따른 장초반 수급 유입을 기대합니다.",
+     "risk": "실제 매출 가시화까지 시차 존재"
+    },
+    {
+     "name": "Almonty Industries Inc.",
+     "ticker": "ALM",
+     "score": 48,
+     "target_pct": 3,
+     "sector": "소재",
+     "basis": [
+      "정책테마"
+     ],
+     "reason": "3억 달러 규모의 대규모 자사주 매입 프로그램 발표로 주주환원 기대감이 큽니다. 하단 지지력을 바탕으로 한 단기 반등 시도가 예상됩니다.",
+     "risk": "소형주 특유의 낮은 유동성과 얇은 호가창"
+    }
+   ],
+   "hold": 0,
+   "v": {
+    "m": "gemini-3.5-flash-lite",
+    "pv": "J1.0"
+   },
+   "mktF": {
+    "dir": "횡보",
+    "conf": 45,
+    "why": "S&P500 하락 및 VIX 상승 속 지수선물 혼조세로 방향성 탐색 국면",
+    "ok": null
+   },
+   "picks": [
+    {
+     "kind": "swing",
+     "name": "Reddit, Inc.",
+     "ticker": "RDDT",
+     "score": 55,
+     "sector": "소셜미디어",
+     "basis": [
+      "추세지속",
+      "거래량급증"
+     ],
+     "p0": 178.09,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "Wingstop Inc.",
+     "ticker": "WING",
+     "score": 52,
+     "sector": "요식업",
+     "basis": [
+      "추세지속"
+     ],
+     "p0": 126.12,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "MaxLinear, Inc",
+     "ticker": "MXL",
+     "score": 50,
+     "sector": "반도체",
+     "basis": [
+      "수주계약",
+      "정책테마"
+     ],
+     "p0": 84.84,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    }
+   ]
   }
  ],
  "monAt": 1786738691015
