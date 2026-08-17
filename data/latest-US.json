@@ -219,6 +219,38 @@
    "dir": "횡보",
    "conf": 45,
    "why": "S&P500 하락 및 VIX 상승 속 지수선물 혼조세로 방향성 탐색 국면"
-  }
+  },
+  "day_picks": [
+   {
+    "name": "Heartflow, Inc.",
+    "ticker": "HTFL",
+    "score": 58,
+    "target_pct": 4,
+    "sector": "의료기기",
+    "basis": [
+     "PRE_HIGH",
+     "GAP_NEG",
+     "MOM_UP"
+    ],
+    "reason": "시가갭 -2% 역발상 출발 후 개장 직후 +4.4% 상승 반전하며 강한 매수세 유입 확인",
+    "risk": "변동성 큼"
+   },
+   {
+    "name": "Applied Optoelectronics, Inc.",
+    "ticker": "AAOI",
+    "score": 55,
+    "target_pct": 3,
+    "sector": "광통신",
+    "basis": [
+     "PRE_MED",
+     "GAP_POS",
+     "MOM_UP"
+    ],
+    "reason": "1.6% 온건한 갭 상승 후 개장 후에도 추가 상승(+0.5%)하며 거래량 유지 확인",
+    "risk": "상승 모멘텀 둔화 가능성"
+   }
+  ],
+  "day_at": "22:34",
+  "day_brief": "HTFL은 역추세 반등으로, AAOI는 완만한 강세 유지로 진입 기회를 포착했습니다. LUNR과 ALM은 과도한 시가갭으로 원칙에 따라 제외했습니다."
  }
 }
