@@ -8654,7 +8654,7 @@
      ],
      "p0": 1152000,
      "r1": -6.4,
-     "r5": null,
+     "r5": -2.3,
      "r20": null,
      "b": 1173000,
      "gap": 1.8,
@@ -10590,7 +10590,7 @@
      "r20": null,
      "b": 72.16000366210938,
      "gap": 1.4,
-     "simOpen": -1,
+     "simOpen": -1.5,
      "tv": 2,
      "tvx": 0,
      "idx": 0.33
@@ -11367,7 +11367,7 @@
      "r20": null,
      "b": 19.579999923706055,
      "gap": 0.4,
-     "simOpen": -0.2,
+     "simOpen": 0,
      "tv": 31,
      "tvx": 0.3,
      "idx": 0.05
@@ -11933,7 +11933,7 @@
      "rank": 1,
      "verdict": "관찰",
      "why": "외인·기관 혼조세이나 시총 상위로 지수 방어력 체크 필요",
-     "r1": null
+     "r1": -5.1
     },
     {
      "ticker": "196170.KQ",
@@ -11941,7 +11941,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": -4
     },
     {
      "ticker": "000660.KS",
@@ -11949,7 +11949,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": -4.3
     },
     {
      "ticker": "086520.KQ",
@@ -11957,7 +11957,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": -5.5
     },
     {
      "ticker": "005935.KS",
@@ -11965,7 +11965,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": -4.7
     },
     {
      "ticker": "247540.KQ",
@@ -11973,7 +11973,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": -5.3
     },
     {
      "ticker": "402340.KS",
@@ -11981,7 +11981,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": -5.4
     },
     {
      "ticker": "277810.KQ",
@@ -11989,7 +11989,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": -9.1
     },
     {
      "ticker": "009150.KS",
@@ -11997,7 +11997,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": -8.5
     },
     {
      "ticker": "036930.KQ",
@@ -12005,7 +12005,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": 0.1
     },
     {
      "ticker": "005380.KS",
@@ -12179,7 +12179,8 @@
     "dir": "횡보",
     "conf": 25,
     "why": "미 증시 약세와 혼조세 국면으로 지수의 방향성이 제한될 가능성 높음",
-    "ok": null
+    "ok": false,
+    "act": -1.55
    },
    "picks": [
     {
@@ -12193,7 +12194,7 @@
       "추세지속"
      ],
      "p0": 1645000,
-     "r1": null,
+     "r1": -4.3,
      "r5": null,
      "r20": null,
      "b": 1736000,
@@ -12203,7 +12204,10 @@
      "simExit": "stop",
      "simD": "2026-08-18",
      "simT": "15:02",
-     "live": 1
+     "live": 1,
+     "tv": 8985535,
+     "tvx": 1,
+     "idx": -1.55
     },
     {
      "kind": "swing",
@@ -12216,7 +12220,7 @@
       "주주환원"
      ],
      "p0": 1154000,
-     "r1": null,
+     "r1": -5.4,
      "r5": null,
      "r20": null,
      "b": 1200000,
@@ -12226,7 +12230,10 @@
      "simExit": "stop",
      "simD": "2026-08-18",
      "simT": "14:32",
-     "live": 1
+     "live": 1,
+     "tv": 808916,
+     "tvx": 0.9,
+     "idx": -1.55
     },
     {
      "kind": "swing",
@@ -12239,7 +12246,7 @@
       "외인수급"
      ],
      "p0": 453000,
-     "r1": null,
+     "r1": -5.3,
      "r5": null,
      "r20": null,
      "b": 459500,
@@ -12249,7 +12256,10 @@
      "simExit": "stop",
      "simD": "2026-08-18",
      "simT": "12:26",
-     "live": 1
+     "live": 1,
+     "tv": 393508,
+     "tvx": 1.3,
+     "idx": -1.55
     }
    ],
    "day2": {
@@ -12258,6 +12268,273 @@
     "n": 0
    },
    "dayHold": 1
+  },
+  {
+   "date": "2026-08-18",
+   "market": "US",
+   "regime": "상승",
+   "rules": [
+    "단타 실패 분해: 시장충격5·목표과다1·선정14 → 선정 강화",
+    "강도80+ 실측 0%(9) — 확신도 과장, 보수화",
+    "근거'실적' 성공32%(19) → 단독추천 지양"
+   ],
+   "cands": [
+    {
+     "ticker": "AXTI",
+     "rank": 1,
+     "verdict": "선택",
+     "why": "가격 인상 모멘텀 우수",
+     "r1": null
+    },
+    {
+     "ticker": "ARGX",
+     "rank": 2,
+     "verdict": "선택",
+     "why": "목표가 상향 지속",
+     "r1": null
+    },
+    {
+     "ticker": "CBRS",
+     "rank": 3,
+     "verdict": "선택",
+     "why": "AI 관련 대형 딜 모멘텀",
+     "r1": null
+    },
+    {
+     "ticker": "FIGR",
+     "rank": 4,
+     "verdict": "관찰",
+     "why": "실적 호조이나 내부자 매도 공존",
+     "r1": null
+    },
+    {
+     "ticker": "HTHT",
+     "rank": 5,
+     "verdict": "제외",
+     "why": "소비재 섹터 약세",
+     "r1": null
+    },
+    {
+     "ticker": "RUM",
+     "rank": 6,
+     "verdict": "관찰",
+     "why": "이슈성 등락 반복",
+     "r1": null
+    },
+    {
+     "ticker": "SMTC",
+     "rank": 7,
+     "verdict": "관찰",
+     "why": "이벤트 대기 중",
+     "r1": null
+    },
+    {
+     "ticker": "NBTX",
+     "rank": 8,
+     "verdict": "제외",
+     "why": "바이오 섹터 리스크",
+     "r1": null
+    },
+    {
+     "ticker": "MESO",
+     "rank": 9,
+     "verdict": "제외",
+     "why": "헬스케어 섹터 회피",
+     "r1": null
+    },
+    {
+     "ticker": "SNDK",
+     "rank": 10,
+     "verdict": "제외",
+     "why": "지수 하락 및 기술주 동반 매도",
+     "r1": null
+    },
+    {
+     "ticker": "CRDO",
+     "rank": 11,
+     "verdict": "제외",
+     "why": "반도체 섹터 보수적 접근",
+     "r1": null
+    },
+    {
+     "ticker": "AEHR",
+     "rank": 12,
+     "verdict": "제외",
+     "why": "신고가 부담 및 반도체 회피",
+     "r1": null
+    },
+    {
+     "ticker": "ALM",
+     "rank": 13,
+     "verdict": "제외",
+     "why": "주가 밸류에이션 부담",
+     "r1": null
+    },
+    {
+     "ticker": "VICR",
+     "rank": 14,
+     "verdict": "제외",
+     "why": "고평가 우려 제기",
+     "r1": null
+    },
+    {
+     "ticker": "SPCX",
+     "rank": 15,
+     "verdict": "제외",
+     "why": "IPO 경쟁 구도 불확실성",
+     "r1": null
+    },
+    {
+     "ticker": "INTC",
+     "rank": 16,
+     "verdict": "제외",
+     "why": "상승 모멘텀 미흡",
+     "r1": null
+    },
+    {
+     "ticker": "NU",
+     "rank": 17,
+     "verdict": "제외",
+     "why": "하락 마감 종목",
+     "r1": null
+    },
+    {
+     "ticker": "NVDA",
+     "rank": 18,
+     "verdict": "제외",
+     "why": "약보합세 및 모멘텀 부재",
+     "r1": null
+    }
+   ],
+   "bl": {
+    "rand": [
+     "ARGX",
+     "VICR",
+     "NBTX"
+    ],
+    "mom": [
+     "AXTI",
+     "ARGX",
+     "CBRS"
+    ]
+   },
+   "dayCands": [
+    {
+     "name": "Cerebras Systems Inc.",
+     "ticker": "CBRS",
+     "score": 55,
+     "target_pct": 3,
+     "sector": "소프트웨어",
+     "basis": [
+      "뉴스재료"
+     ],
+     "reason": "AI 관련 호재에 따른 당일 거래대금 유입을 노립니다.",
+     "risk": "단기 과열 부담"
+    },
+    {
+     "name": "Figure Technology Solutions, In",
+     "ticker": "FIGR",
+     "score": 54,
+     "target_pct": 3,
+     "sector": "금융",
+     "basis": [
+      "뉴스재료"
+     ],
+     "reason": "실적 호조 및 다수의 매수 의견 리포트로 모멘텀이 유지됩니다.",
+     "risk": "내부자 매도 물량 출회"
+    },
+    {
+     "name": "RUM Group Inc.",
+     "ticker": "RUM",
+     "score": 52,
+     "target_pct": 3,
+     "sector": "미디어",
+     "basis": [
+      "뉴스재료"
+     ],
+     "reason": "메타 관련 재판 이슈 및 플랫폼 수혜 기대감이 작용했습니다.",
+     "risk": "테마성 변동성 확대"
+    },
+    {
+     "name": "Semtech Corporation",
+     "ticker": "SMTC",
+     "score": 50,
+     "target_pct": 3,
+     "sector": "반도체",
+     "basis": [
+      "뉴스재료"
+     ],
+     "reason": "데이터 센터 관련 티치인 이벤트 앞두고 기대감 형성 중입니다.",
+     "risk": "반도체 섹터 약세 연동"
+    },
+    {
+     "name": "Nanobiotix S.A.",
+     "ticker": "NBTX",
+     "score": 48,
+     "target_pct": 2,
+     "sector": "바이오",
+     "basis": [
+      "뉴스재료"
+     ],
+     "reason": "운영 진척 상황 발표에 따른 단기 변동성 활용 매매입니다.",
+     "risk": "바이오 섹터 회피 성향"
+    }
+   ],
+   "hold": 0,
+   "v": {
+    "m": "gemini-3.5-flash-lite",
+    "pv": "J1.0"
+   },
+   "mktF": {
+    "dir": "하락",
+    "conf": 45,
+    "why": "지수선물 하락 및 VIX 상승 등 매크로 압력 지속",
+    "ok": null
+   },
+   "picks": [
+    {
+     "kind": "swing",
+     "name": "AXT Inc",
+     "ticker": "AXTI",
+     "score": 62,
+     "sector": "반도체",
+     "basis": [
+      "뉴스재료"
+     ],
+     "p0": 95.97,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "argenx SE",
+     "ticker": "ARGX",
+     "score": 60,
+     "sector": "바이오",
+     "basis": [
+      "뉴스재료"
+     ],
+     "p0": 987.84,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "Cerebras Systems Inc.",
+     "ticker": "CBRS",
+     "score": 58,
+     "sector": "소프트웨어",
+     "basis": [
+      "뉴스재료"
+     ],
+     "p0": 251.98,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    }
+   ]
   }
  ],
  "monAt": 1787034850406
