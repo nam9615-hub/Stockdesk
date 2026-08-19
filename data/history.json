@@ -12653,7 +12653,7 @@
      "r20": null,
      "b": 988.49,
      "gap": 0.1,
-     "simOpen": 3.3,
+     "simOpen": 3.5,
      "tv": 7,
      "tvx": 0,
      "idx": null
@@ -13398,7 +13398,7 @@
      "r20": null,
      "b": 6.96,
      "gap": 0,
-     "simOpen": 5.5,
+     "simOpen": 5.7,
      "tv": 3,
      "tvx": 0.1,
      "idx": 0.35
@@ -13419,7 +13419,7 @@
      "r20": null,
      "b": 38.64870071411133,
      "gap": 0.7,
-     "simOpen": 1.5,
+     "simOpen": 1,
      "tv": 4,
      "tvx": 0.1,
      "idx": 0.35
@@ -13461,8 +13461,19 @@
      "cAt": "22:34",
      "eTs": "2026-08-19T13:34:12.613Z",
      "cm": 4,
-     "r1": null,
-     "hit": null
+     "r1": 2.5,
+     "hit": true,
+     "mfe": 4.4,
+     "mae": -2.8,
+     "tv": 100,
+     "tvx": 1.2,
+     "touch": "target",
+     "simR": 4,
+     "simExit": "target",
+     "simD": "2026-08-19",
+     "idx": 0.32,
+     "seq": "target-first",
+     "postFixed": 1
     },
     {
      "kind": "day",
@@ -13480,8 +13491,18 @@
      "cAt": "22:34",
      "eTs": "2026-08-19T13:34:12.613Z",
      "cm": 4,
-     "r1": null,
-     "hit": null
+     "r1": 1.6,
+     "hit": false,
+     "mfe": 1.7,
+     "mae": 0.2,
+     "tv": 21,
+     "tvx": 0.1,
+     "touch": "none",
+     "simR": 1.6,
+     "simExit": "close",
+     "simD": "2026-08-19",
+     "idx": 0.32,
+     "postFixed": 1
     }
    ],
    "day2": {
