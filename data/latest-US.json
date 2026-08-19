@@ -1,225 +1,228 @@
 {
- "date": "2026-08-18",
+ "date": "2026-08-19",
  "at": "21:29",
  "data": {
-  "brief": "전일 S&P500 약세 및 변동성 확대 국면이나 개별 기술·바이오 모멘텀 종목 중심으로 선별적 접근이 유효합니다. 과거 데이터 기반 확신도 보정 및 섹터 필터를 적용하여 리스크를 관리합니다.",
-  "mkt": {
-   "dir": "하락",
-   "conf": 45,
-   "why": "지수선물 하락 및 VIX 상승 등 매크로 압력 지속"
-  },
+  "brief": "전일 S&P500 하락에도 지수선물 반등과 낮은 VIX를 고려할 때 금일 시장은 완만한 횡보 또는 제한적 상승 국면이 예상됩니다. 과거 과도한 확신 성적을 반영하여 보수적인 관점에서 스윙과 단타 후보를 엄선했습니다.",
   "picks": [
    {
-    "name": "AXT Inc",
-    "ticker": "AXTI",
+    "name": "Nuvation Bio Inc.",
+    "ticker": "NUVB",
     "score": 62,
-    "sector": "반도체",
-    "basis": [
-     "뉴스재료"
-    ],
-    "reason": "인듐 인화물 가격 인상 전망에 따른 강력한 모멘텀이 유입되었습니다. 단기 실적 기대감과 함께 수급 집중도가 높습니다.",
-    "catalyst": "인듐 인화물 가격 인상",
-    "risk": "반도체 섹터 전반의 변동성"
-   },
-   {
-    "name": "argenx SE",
-    "ticker": "ARGX",
-    "score": 60,
     "sector": "바이오",
     "basis": [
-     "뉴스재료"
+     "뉴스재료",
+     "수주계약"
     ],
-    "reason": "대형 투자기관들의 목표가 상향 조정이 이어지며 매수세가 유입되었습니다. 펀더멘털 개선 기대감이 주가를 지지합니다.",
-    "catalyst": "투자은행 목표가 상향",
-    "risk": "바이오 섹터 과거 부진 이력"
+    "reason": "JPMorgan의 비중 확대 개시와 13달러 목표가 제시로 강력한 상승 모멘텀이 형성되었습니다. 월가에서 높은 업사이드 잠재력을 예측하고 있어 스윙 관점에서 유리합니다.",
+    "catalyst": "JPMorgan 매수 의견 및 목표가 설정",
+    "risk": "바이오 섹터 전반의 변동성 주의"
    },
    {
-    "name": "Cerebras Systems Inc.",
-    "ticker": "CBRS",
-    "score": 58,
+    "name": "UGI Corporation",
+    "ticker": "UGI",
+    "sector": "에너지",
+    "basis": [
+     "뉴스재료",
+     "추세지속"
+    ],
+    "reason": "에너지 섹터 전반의 후반 강세 흐름과 함께 안정적인 주가 우상향 흐름을 보이고 있습니다. 단기 변동성 장세에서 방어력과 상승 여력을 동시에 기대할 수 있습니다.",
+    "catalyst": "에너지 섹터 강세 흐름 동조",
+    "risk": "에너지 업종 단기 조정 가능성",
+    "score": 50
+   },
+   {
+    "name": "CCC Intelligent Solutions Holdi",
+    "ticker": "CCC",
     "sector": "소프트웨어",
     "basis": [
-     "뉴스재료"
+     "뉴스재료",
+     "수주계약"
     ],
-    "reason": "OpenAI와의 대규모 딜 진척 소식으로 시장의 주목을 받았습니다. AI 인프라 관련 모멘텀이 지속되는 중입니다.",
-    "catalyst": "OpenAI 딜 진척",
-    "risk": "소프트웨어 섹터 주의보"
+    "reason": "Copart의 인수설 관련 시장 루머와 AI 기술 적용 확대로 인한 기업 가치 재평가가 기대됩니다. 실질적인 사업 확장 뉴스가 주가 하방을 지지합니다.",
+    "catalyst": "M&A 기대감 및 AI 솔루션 도입",
+    "risk": "인수 관련 불확실성 및 루머 소멸 리스크",
+    "score": 50
    }
   ],
   "day_cands": [
    {
-    "name": "Cerebras Systems Inc.",
-    "ticker": "CBRS",
-    "score": 55,
+    "name": "Amylyx Pharmaceuticals, Inc.",
+    "ticker": "AMLX",
+    "score": 65,
+    "target_pct": 4,
+    "sector": "바이오",
+    "basis": [
+     "뉴스재료",
+     "실적"
+    ],
+    "reason": "임상 3상 성공 및 유상증자 완료와 함께 미즈호의 목표가 상향 조정 뉴스가 동반되었습니다. 강력한 재료로 인해 장초반 강한 모멘텀이 이어질 가능성이 높습니다.",
+    "risk": "바이오 섹터 회피 통계 감안 필요"
+   },
+   {
+    "name": "Haemonetics Corporation",
+    "ticker": "HAE",
+    "score": 60,
     "target_pct": 3,
-    "sector": "소프트웨어",
+    "sector": "헬스케어",
     "basis": [
      "뉴스재료"
     ],
-    "reason": "AI 관련 호재에 따른 당일 거래대금 유입을 노립니다.",
-    "risk": "단기 과열 부담"
+    "reason": "배링턴의 목표가 상향 조정과 헬스케어 섹터 후반 상승 흐름이 긍정적으로 작용했습니다. 안정적인 밴드 내에서 추가 상승 여력이 존재합니다.",
+    "risk": "과거 헬스케어 단타 실패 통계"
    },
    {
-    "name": "Figure Technology Solutions, In",
-    "ticker": "FIGR",
-    "score": 54,
+    "name": "BRP Inc.",
+    "ticker": "DOO",
+    "score": 58,
+    "target_pct": 3,
+    "sector": "경기소비재",
+    "basis": [
+     "뉴스재료",
+     "추세지속"
+    ],
+    "reason": "신규 자금 조달 추진 소식과 함께 견조한 주가 상승 탄력을 보여주고 있습니다. 거래량 동반 시 단기 트레이딩 관점 접근이 유효합니다.",
+    "risk": "전체 시장 방향성 변동 주의"
+   },
+   {
+    "name": "Freedom Holding Corp.",
+    "ticker": "FRHC",
+    "score": 55,
     "target_pct": 3,
     "sector": "금융",
     "basis": [
      "뉴스재료"
     ],
-    "reason": "실적 호조 및 다수의 매수 의견 리포트로 모멘텀이 유지됩니다.",
-    "risk": "내부자 매도 물량 출회"
+    "reason": "튀르키예 시장 진출 및 브로커리지 라이선스 획득이라는 글로벌 확장 모멘텀이 발생했습니다. 실적 발표 이후 밸류에이션 재조정 국면입니다.",
+    "risk": "지정학적 및 해외 시장 리스크"
    },
    {
-    "name": "RUM Group Inc.",
-    "ticker": "RUM",
-    "score": 52,
+    "name": "Insulet Corporation",
+    "ticker": "PODD",
+    "score": 53,
     "target_pct": 3,
-    "sector": "미디어",
+    "sector": "의료기기",
     "basis": [
+     "실적",
      "뉴스재료"
     ],
-    "reason": "메타 관련 재판 이슈 및 플랫폼 수혜 기대감이 작용했습니다.",
-    "risk": "테마성 변동성 확대"
-   },
-   {
-    "name": "Semtech Corporation",
-    "ticker": "SMTC",
-    "score": 50,
-    "target_pct": 3,
-    "sector": "반도체",
-    "basis": [
-     "뉴스재료"
-    ],
-    "reason": "데이터 센터 관련 티치인 이벤트 앞두고 기대감 형성 중입니다.",
-    "risk": "반도체 섹터 약세 연동"
-   },
-   {
-    "name": "Nanobiotix S.A.",
-    "ticker": "NBTX",
-    "score": 48,
-    "target_pct": 2,
-    "sector": "바이오",
-    "basis": [
-     "뉴스재료"
-    ],
-    "reason": "운영 진척 상황 발표에 따른 단기 변동성 활용 매매입니다.",
-    "risk": "바이오 섹터 회피 성향"
+    "reason": "최근 Q2 실적 컨퍼런스 콜 이후 애널리스트들의 집중 관심을 받으며 하방 경직성을 확보했습니다. 박스권 돌파 시 단기 슈팅 가능성이 있습니다.",
+    "risk": "실적 기대감 선반영 여부 확인 필요"
    }
   ],
   "cands": [
    {
-    "ticker": "AXTI",
+    "ticker": "AMLX",
     "rank": 1,
     "verdict": "선택",
-    "why": "가격 인상 모멘텀 우수"
+    "why": "임상 성공 및 목표가 상향으로 강한 재료 보유"
    },
    {
-    "ticker": "ARGX",
+    "name": "HAE",
     "rank": 2,
     "verdict": "선택",
-    "why": "목표가 상향 지속"
+    "why": "증권사 목표가 상향 및 섹터 동조화"
    },
    {
-    "ticker": "CBRS",
+    "name": "UGI",
     "rank": 3,
     "verdict": "선택",
-    "why": "AI 관련 대형 딜 모멘텀"
+    "why": "에너지 섹터 강세 및 안정적 추세"
    },
    {
-    "ticker": "FIGR",
+    "name": "HTFL",
     "rank": 4,
     "verdict": "관찰",
-    "why": "실적 호조이나 내부자 매도 공존"
+    "why": "급등 이후 고평가 논쟁 진행 중"
    },
    {
-    "ticker": "HTHT",
+    "name": "DOO",
     "rank": 5,
-    "verdict": "제외",
-    "why": "소비재 섹터 약세"
+    "verdict": "선택",
+    "why": "신규 자금 조달 모멘텀 및 상승 탄력"
    },
    {
-    "ticker": "RUM",
+    "name": "NUVB",
     "rank": 6,
-    "verdict": "관찰",
-    "why": "이슈성 등락 반복"
+    "verdict": "선택",
+    "why": "JPMorgan 신규 커버리지 및 대폭 상향된 목표가"
    },
    {
-    "ticker": "SMTC",
+    "name": "DUOL",
     "rank": 7,
     "verdict": "관찰",
-    "why": "이벤트 대기 중"
+    "why": "매출 전망 둔화 우려와 임원 영입 뉴스 혼조"
    },
    {
-    "ticker": "NBTX",
+    "name": "TRGP",
     "rank": 8,
     "verdict": "제외",
-    "why": "바이오 섹터 리스크"
+    "why": "거시 지수 하락 압력 및 에너지 변동성"
    },
    {
-    "ticker": "MESO",
+    "name": "FRHC",
     "rank": 9,
-    "verdict": "제외",
-    "why": "헬스케어 섹터 회피"
+    "verdict": "선택",
+    "why": "튀르키예 라이선스 획득 확장성"
    },
    {
-    "ticker": "SNDK",
+    "name": "CCC",
     "rank": 10,
-    "verdict": "제외",
-    "why": "지수 하락 및 기술주 동반 매도"
+    "verdict": "선택",
+    "why": "M&A 루머 및 AI 협력 재료"
    },
    {
-    "ticker": "CRDO",
+    "name": "BBWI",
     "rank": 11,
-    "verdict": "제외",
-    "why": "반도체 섹터 보수적 접근"
+    "verdict": "관찰",
+    "why": "저평가 분석 있으나 수급 관망 필요"
    },
    {
-    "ticker": "AEHR",
+    "name": "LEGN",
     "rank": 12,
     "verdict": "제외",
-    "why": "신고가 부담 및 반도체 회피"
+    "why": "바이오 섹터 통계적 약세 반영"
    },
    {
-    "ticker": "ALM",
+    "name": "CHRN",
     "rank": 13,
-    "verdict": "제외",
-    "why": "주가 밸류에이션 부담"
+    "verdict": "관찰",
+    "why": "AI 인프라 협업 있으나 모멘텀 확인 필요"
    },
    {
-    "ticker": "VICR",
+    "name": "PODD",
     "rank": 14,
-    "verdict": "제외",
-    "why": "고평가 우려 제기"
+    "verdict": "선택",
+    "why": "실적 콜 이후 관심 집중"
    },
    {
-    "ticker": "SPCX",
+    "name": "INTC",
     "rank": 15,
     "verdict": "제외",
-    "why": "IPO 경쟁 구도 불확실성"
+    "why": "하락 추세 및 기술주 약세"
    },
    {
-    "ticker": "INTC",
+    "name": "PATH",
     "rank": 16,
     "verdict": "제외",
-    "why": "상승 모멘텀 미흡"
+    "why": "장기 하락세 및 소프트웨어 회피 통계"
    },
    {
-    "ticker": "NU",
+    "name": "NU",
     "rank": 17,
     "verdict": "제외",
-    "why": "하락 마감 종목"
+    "why": "성장성 대비 밸류에이션 부담 검증 필요"
    },
    {
-    "ticker": "NVDA",
+    "name": "NVDA",
     "rank": 18,
     "verdict": "제외",
-    "why": "약보합세 및 모멘텀 부재"
+    "why": "중국 관련 뉴스 있으나 전반적 기술주 하락 동조"
    }
   ],
-  "day_picks": [],
-  "day_at": "22:34",
-  "day_brief": "전체 후보군이 마이너스 시가갭을 기록하였으나, RUM은 개장 후 상승 전환하며 모멘텀을 확인했고, NBTX는 소폭 상승 흐름을 보였습니다. 그러나 실측 통계와 엄격한 개장 데이터 검증 원칙(개장 후 시가 대비 -2% 이하 붕괴 및 소프트웨어 섹터 회피 등)을 적용할 때, 확률 우위를 충족하는 종목이 없어 보류합니다."
+  "mkt": {
+   "dir": "횡보",
+   "conf": 45,
+   "why": "선물 반등과 낮은 VIX이나 전일 S&P 하락 및 보수적 통계 반영"
+  }
  }
 }
