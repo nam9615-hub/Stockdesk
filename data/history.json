@@ -13094,7 +13094,7 @@
      "rank": 1,
      "verdict": "선택",
      "why": "임상 성공 및 목표가 상향으로 강한 재료 보유",
-     "r1": null
+     "r1": 6.9
     },
     {
      "ticker": "HAE",
@@ -13102,7 +13102,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": 3.1
     },
     {
      "ticker": "UGI",
@@ -13110,7 +13110,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": 0.1
     },
     {
      "ticker": "HTFL",
@@ -13118,7 +13118,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": -1.1
     },
     {
      "ticker": "DOO",
@@ -13126,7 +13126,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": -1
     },
     {
      "ticker": "NUVB",
@@ -13134,7 +13134,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": 1.4
     },
     {
      "ticker": "DUOL",
@@ -13142,7 +13142,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": -2
     },
     {
      "ticker": "TRGP",
@@ -13150,7 +13150,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": -0.4
     },
     {
      "ticker": "FRHC",
@@ -13158,7 +13158,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": 0.1
     },
     {
      "ticker": "CCC",
@@ -13166,7 +13166,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": 4.1
     },
     {
      "ticker": "BBWI",
@@ -13510,6 +13510,280 @@
     "brief": "AMLX와 PODD는 개장 후 상승 흐름을 보이며 사전 논리를 확인해주었으나, 통계적 보수화 원칙과 목표가 달성 가능성을 고려해 신중히 선별했습니다.",
     "n": 2
    }
+  },
+  {
+   "date": "2026-08-20",
+   "market": "KR",
+   "regime": "혼조",
+   "rules": [
+    "단타 실패 분해: 시장충격4·목표과다0·선정9 → 선정 강화",
+    "근거'뉴스재료' 성공39%(31) → 단독추천 지양",
+    "근거'정책테마' 성공38%(8) → 단독추천 지양",
+    "근거'수주계약' 성공38%(8) → 단독추천 지양",
+    "섹터'반도체' 성공0%(8) → 회피"
+   ],
+   "cands": [
+    {
+     "ticker": "005930.KS",
+     "rank": 1,
+     "verdict": "관찰",
+     "why": "환율 하락과 주주환원 이슈 있으나 수급 혼조 및 반도체 섹터 부진 통계 감안",
+     "r1": null
+    },
+    {
+     "ticker": "196170.KQ",
+     "rank": 91,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "000660.KS",
+     "rank": 92,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "086520.KQ",
+     "rank": 93,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "005935.KS",
+     "rank": 94,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "247540.KQ",
+     "rank": 95,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "402340.KS",
+     "rank": 96,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "277810.KQ",
+     "rank": 97,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "009150.KS",
+     "rank": 98,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "036930.KQ",
+     "rank": 99,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "005380.KS",
+     "rank": 100,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "028300.KQ",
+     "rank": 101,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "373220.KS",
+     "rank": 102,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "240810.KQ",
+     "rank": 103,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "207940.KS",
+     "rank": 104,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "058470.KQ",
+     "rank": 105,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    }
+   ],
+   "bl": {
+    "rand": [
+     "058470.KQ",
+     "005930.KS",
+     "240810.KQ"
+    ],
+    "mom": [
+     "005930.KS",
+     "196170.KQ",
+     "000660.KS"
+    ]
+   },
+   "dayCands": [
+    {
+     "name": "삼성전자",
+     "ticker": "005930.KS",
+     "score": 60,
+     "target_pct": 4,
+     "sector": "반도체",
+     "basis": [
+      "뉴스재료",
+      "거래량급증"
+     ],
+     "reason": "1400원을 밑도는 환율과 대규모 자사주 및 주주환원 관련 뉴스에 힘입어 개장 초 강한 변동성과 거래량 유입이 예상된다.",
+     "risk": "반도체 섹터의 과거 실측 승률 부진 및 외인·기관 수급 혼조."
+    },
+    {
+     "name": "SK하이닉스",
+     "ticker": "000660.KS",
+     "score": 61,
+     "target_pct": 5,
+     "sector": "반도체",
+     "basis": [
+      "뉴스재료",
+      "거래량급증"
+     ],
+     "reason": "'40조 주주환원' 및 프리마켓 급등 소식으로 당일 초반 강력한 매수세와 변동성이 집중될 유력한 후보이다.",
+     "risk": "단기 급등 후 차익실현 매물 출화 가능성 및 반도체 섹터 회피 전략 고려."
+    },
+    {
+     "name": "알테오젠",
+     "ticker": "196170.KQ",
+     "score": 52,
+     "target_pct": 4,
+     "sector": "바이오",
+     "basis": [
+      "뉴스재료"
+     ],
+     "reason": "경쟁사 관련 뉴스 및 제약·바이오 섹터 내 개별 이슈로 인해 장중 단기 수급 변동성이 발생할 수 있다.",
+     "risk": "바이오 섹터의 낮은 과거 승률 및 수급 불안정."
+    },
+    {
+     "name": "에코프로비엠",
+     "ticker": "247540.KQ",
+     "score": 50,
+     "target_pct": 3,
+     "sector": "이차전지",
+     "basis": [
+      "뉴스재료"
+     ],
+     "reason": "실적 관련 뉴스 및 애프터마켓 리뷰에 따른 저가 매수세 유입 여부를 단기적으로 관찰할 수 있다.",
+     "risk": "이차전지 섹터의 과거 저조한 승률과 추세적 하방 압력."
+    },
+    {
+     "name": "삼성전기",
+     "ticker": "009150.KS",
+     "score": 53,
+     "target_pct": 4,
+     "sector": "반도체",
+     "basis": [
+      "뉴스재료"
+     ],
+     "reason": "그룹사 주주환원 및 실적 관련 뉴스의 영향으로 장중 테마성 반등 시도가 나타날 수 있다.",
+     "risk": "소부장 및 반도체 섹터의 전반적인 약세 통계."
+    }
+   ],
+   "hold": 0,
+   "v": {
+    "m": "gemini-3.5-flash-lite",
+    "pv": "J1.0"
+   },
+   "mktF": {
+    "dir": "횡보",
+    "conf": 35,
+    "why": "환율 하락과 미 지수 소폭 상승은 호재이나 과거 낮은 예측 적중률과 혼조장 실측 사례를 반영해 보수적으로 횡보 전망",
+    "ok": null
+   },
+   "picks": [
+    {
+     "kind": "swing",
+     "name": "레인보우로보틱스",
+     "ticker": "277810.KQ",
+     "score": 62,
+     "sector": "로봇",
+     "basis": [
+      "뉴스재료",
+      "추세지속"
+     ],
+     "p0": 462500,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "SK스퀘어",
+     "ticker": "402340.KS",
+     "score": 58,
+     "sector": "지주사",
+     "basis": [
+      "뉴스재료",
+      "정책테마"
+     ],
+     "p0": 1004000,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "현대차",
+     "ticker": "005380.KS",
+     "score": 55,
+     "sector": "자동차",
+     "basis": [
+      "뉴스재료"
+     ],
+     "p0": 414000,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    }
+   ]
   }
  ],
  "monAt": 1787171049195
