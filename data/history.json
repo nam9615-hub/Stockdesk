@@ -3074,7 +3074,7 @@
      "r20": null,
      "b": 167500,
      "gap": 0.1,
-     "simOpen": 0.6,
+     "simOpen": -1.5,
      "tv": 50005,
      "tvx": 0.2,
      "idx": null
@@ -7059,7 +7059,7 @@
      "r20": null,
      "b": 9220,
      "gap": 0,
-     "simOpen": 1.1,
+     "simOpen": -0.1,
      "tv": 132,
      "tvx": 0.4,
      "idx": -0.53
@@ -12952,7 +12952,10 @@
      "p0": 3670,
      "r1": null,
      "r5": null,
-     "r20": null
+     "r20": null,
+     "b": 3670,
+     "gap": 0,
+     "simOpen": 0
     },
     {
      "kind": "swing",
@@ -12967,7 +12970,10 @@
      "p0": 1587,
      "r1": null,
      "r5": null,
-     "r20": null
+     "r20": null,
+     "b": 1538,
+     "gap": -3.1,
+     "simOpen": -2.5
     },
     {
      "kind": "swing",
@@ -12982,10 +12988,13 @@
      "p0": 12630,
      "r1": null,
      "r5": null,
-     "r20": null
+     "r20": null,
+     "b": 12630,
+     "gap": 0,
+     "simOpen": 0
     }
    ]
   }
  ],
- "monAt": 1787084889621
+ "monAt": 1787097635034
 }
