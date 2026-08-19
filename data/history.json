@@ -12718,70 +12718,70 @@
      "rank": 4,
      "verdict": "관찰",
      "why": "코스피 혼조세 속 거래상위이나 뚜렷한 주도 모멘텀 부족",
-     "r1": null
+     "r1": -5.9
     },
     {
      "ticker": "014990.KS",
      "rank": 2,
      "verdict": "선택",
      "why": "북미 대화 기대감에 따른 경협주 단기 수급 유입",
-     "r1": null
+     "r1": 0
     },
     {
      "ticker": "000040.KS",
      "rank": 3,
      "verdict": "선택",
      "why": "2분기 흑자전환 및 합병 효과 기대감 유효",
-     "r1": null
+     "r1": -7.8
     },
     {
      "ticker": "465770.KS",
      "rank": 1,
      "verdict": "선택",
      "why": "호르무즈 해협 긴장 및 외국인 연속 순매수로 스윙 적합",
-     "r1": null
+     "r1": -0.8
     },
     {
      "ticker": "001770.KS",
      "rank": 5,
      "verdict": "선택",
      "why": "자사주 취득 공시로 인한 단기 주가 지지력 확보",
-     "r1": null
+     "r1": 0
     },
     {
      "ticker": "950260.KQ",
      "rank": 14,
      "verdict": "제외",
      "why": "외인·기관 대규모 순매도 및 재료 부재",
-     "r1": null
+     "r1": -30.2
     },
     {
      "ticker": "252670.KS",
      "rank": 11,
      "verdict": "관찰",
      "why": "개인 매수세 집중이나 방향성 확인 필요",
-     "r1": null
+     "r1": 2.3
     },
     {
      "ticker": "033340.KQ",
      "rank": 6,
      "verdict": "선택",
      "why": "남북경협 테마 동반 상승에 따른 단기 변동성",
-     "r1": null
+     "r1": 0
     },
     {
      "ticker": "114800.KS",
      "rank": 7,
      "verdict": "선택",
      "why": "지수 하락 대비 헤지 목적의 단기 수급 유입",
-     "r1": null
+     "r1": 0.9
     },
     {
      "ticker": "269620.KQ",
      "rank": 15,
      "verdict": "제외",
      "why": "상장폐지 사유 및 소송 리스크로 투자 부적합",
-     "r1": null
+     "r1": 0
     },
     {
      "ticker": "047770.KQ",
@@ -12975,7 +12975,8 @@
     "dir": "하락",
     "conf": 55,
     "why": "미국 증시 약세 및 야간 선물 하락 여파로 코스피 하방 압력이 우세함",
-    "ok": null
+    "ok": true,
+    "act": -5.8
    },
    "picks": [
     {
@@ -12990,7 +12991,7 @@
       "추세지속"
      ],
      "p0": 3670,
-     "r1": null,
+     "r1": 5.2,
      "r5": null,
      "r20": null,
      "b": 3670,
@@ -13000,7 +13001,10 @@
      "simExit": "target",
      "simD": "2026-08-19",
      "simT": "09:05",
-     "live": 1
+     "live": 1,
+     "tv": 23087,
+     "tvx": 2.2,
+     "idx": -5.8
     },
     {
      "kind": "swing",
@@ -13013,7 +13017,7 @@
       "추세지속"
      ],
      "p0": 1587,
-     "r1": null,
+     "r1": -7.8,
      "r5": null,
      "r20": null,
      "b": 1538,
@@ -13023,7 +13027,10 @@
      "simExit": "stop",
      "simD": "2026-08-19",
      "simT": "09:16",
-     "live": 1
+     "live": 1,
+     "tv": 916,
+     "tvx": 4.9,
+     "idx": -5.8
     },
     {
      "kind": "swing",
@@ -13036,7 +13043,7 @@
       "거래량급증"
      ],
      "p0": 12630,
-     "r1": null,
+     "r1": 29.9,
      "r5": null,
      "r20": null,
      "b": 12630,
@@ -13046,7 +13053,10 @@
      "simExit": "target",
      "simD": "2026-08-19",
      "simT": "09:03",
-     "live": 1
+     "live": 1,
+     "tv": 9967,
+     "tvx": 91.7,
+     "idx": -5.8
     }
    ],
    "day2": {
@@ -13055,6 +13065,297 @@
     "n": 0
    },
    "dayHold": 1
+  },
+  {
+   "date": "2026-08-19",
+   "market": "US",
+   "regime": "상승",
+   "rules": [
+    "단타 실패 분해: 시장충격5·목표과다1·선정14 → 선정 강화",
+    "강도80+ 실측 0%(9) — 확신도 과장, 보수화",
+    "근거'실적' 성공32%(19) → 단독추천 지양",
+    "섹터'소프트웨어' 성공25%(8) → 회피"
+   ],
+   "cands": [
+    {
+     "ticker": "AMLX",
+     "rank": 1,
+     "verdict": "선택",
+     "why": "임상 성공 및 목표가 상향으로 강한 재료 보유",
+     "r1": null
+    },
+    {
+     "ticker": "HAE",
+     "rank": 91,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "UGI",
+     "rank": 92,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "HTFL",
+     "rank": 93,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "DOO",
+     "rank": 94,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "NUVB",
+     "rank": 95,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "DUOL",
+     "rank": 96,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "TRGP",
+     "rank": 97,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "FRHC",
+     "rank": 98,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "CCC",
+     "rank": 99,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "BBWI",
+     "rank": 100,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "LEGN",
+     "rank": 101,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "CHRN",
+     "rank": 102,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "PODD",
+     "rank": 103,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "INTC",
+     "rank": 104,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "PATH",
+     "rank": 105,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "NU",
+     "rank": 106,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "NVDA",
+     "rank": 107,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    }
+   ],
+   "bl": {
+    "rand": [
+     "CHRN",
+     "DUOL",
+     "FRHC"
+    ],
+    "mom": [
+     "AMLX",
+     "HAE",
+     "UGI"
+    ]
+   },
+   "dayCands": [
+    {
+     "name": "Amylyx Pharmaceuticals, Inc.",
+     "ticker": "AMLX",
+     "score": 65,
+     "target_pct": 4,
+     "sector": "바이오",
+     "basis": [
+      "뉴스재료",
+      "실적"
+     ],
+     "reason": "임상 3상 성공 및 유상증자 완료와 함께 미즈호의 목표가 상향 조정 뉴스가 동반되었습니다. 강력한 재료로 인해 장초반 강한 모멘텀이 이어질 가능성이 높습니다.",
+     "risk": "바이오 섹터 회피 통계 감안 필요"
+    },
+    {
+     "name": "Haemonetics Corporation",
+     "ticker": "HAE",
+     "score": 60,
+     "target_pct": 3,
+     "sector": "헬스케어",
+     "basis": [
+      "뉴스재료"
+     ],
+     "reason": "배링턴의 목표가 상향 조정과 헬스케어 섹터 후반 상승 흐름이 긍정적으로 작용했습니다. 안정적인 밴드 내에서 추가 상승 여력이 존재합니다.",
+     "risk": "과거 헬스케어 단타 실패 통계"
+    },
+    {
+     "name": "BRP Inc.",
+     "ticker": "DOO",
+     "score": 58,
+     "target_pct": 3,
+     "sector": "경기소비재",
+     "basis": [
+      "뉴스재료",
+      "추세지속"
+     ],
+     "reason": "신규 자금 조달 추진 소식과 함께 견조한 주가 상승 탄력을 보여주고 있습니다. 거래량 동반 시 단기 트레이딩 관점 접근이 유효합니다.",
+     "risk": "전체 시장 방향성 변동 주의"
+    },
+    {
+     "name": "Freedom Holding Corp.",
+     "ticker": "FRHC",
+     "score": 55,
+     "target_pct": 3,
+     "sector": "금융",
+     "basis": [
+      "뉴스재료"
+     ],
+     "reason": "튀르키예 시장 진출 및 브로커리지 라이선스 획득이라는 글로벌 확장 모멘텀이 발생했습니다. 실적 발표 이후 밸류에이션 재조정 국면입니다.",
+     "risk": "지정학적 및 해외 시장 리스크"
+    },
+    {
+     "name": "Insulet Corporation",
+     "ticker": "PODD",
+     "score": 53,
+     "target_pct": 3,
+     "sector": "의료기기",
+     "basis": [
+      "실적",
+      "뉴스재료"
+     ],
+     "reason": "최근 Q2 실적 컨퍼런스 콜 이후 애널리스트들의 집중 관심을 받으며 하방 경직성을 확보했습니다. 박스권 돌파 시 단기 슈팅 가능성이 있습니다.",
+     "risk": "실적 기대감 선반영 여부 확인 필요"
+    }
+   ],
+   "hold": 0,
+   "v": {
+    "m": "gemini-3.5-flash-lite",
+    "pv": "J1.0"
+   },
+   "mktF": {
+    "dir": "횡보",
+    "conf": 45,
+    "why": "선물 반등과 낮은 VIX이나 전일 S&P 하락 및 보수적 통계 반영",
+    "ok": null
+   },
+   "picks": [
+    {
+     "kind": "swing",
+     "name": "Nuvation Bio Inc.",
+     "ticker": "NUVB",
+     "score": 62,
+     "sector": "바이오",
+     "basis": [
+      "뉴스재료",
+      "수주계약"
+     ],
+     "p0": 6.96,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "UGI Corporation",
+     "ticker": "UGI",
+     "score": 50,
+     "sector": "에너지",
+     "basis": [
+      "뉴스재료",
+      "추세지속"
+     ],
+     "p0": 38.39,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "CCC Intelligent Solutions Holdi",
+     "ticker": "CCC",
+     "score": 50,
+     "sector": "소프트웨어",
+     "basis": [
+      "뉴스재료",
+      "수주계약"
+     ],
+     "p0": 7.14,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    }
+   ]
   }
  ],
  "monAt": 1787120650264
