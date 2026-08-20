@@ -13895,70 +13895,70 @@
      "rank": 1,
      "verdict": "제외",
      "why": "헬스케어 섹터 단타 실패 데이터 반영",
-     "r1": null
+     "r1": -11.2
     },
     {
      "ticker": "TEM",
      "rank": 2,
      "verdict": "선택",
      "why": "재료의 파급력이 가장 큼",
-     "r1": null
+     "r1": 7.5
     },
     {
      "ticker": "TWST",
      "rank": 3,
      "verdict": "선택",
      "why": "추세 강도 유지",
-     "r1": null
+     "r1": -0.4
     },
     {
      "ticker": "BNTX",
      "rank": 4,
      "verdict": "제외",
      "why": "헬스케어 섹터 회피",
-     "r1": null
+     "r1": 1.7
     },
     {
      "ticker": "HYMC",
      "rank": 5,
      "verdict": "선택",
      "why": "시추 결과 재료의 실질성",
-     "r1": null
+     "r1": -4.1
     },
     {
      "ticker": "AMR",
      "rank": 6,
      "verdict": "제외",
      "why": "투자의견 하향 및 중립 유지",
-     "r1": null
+     "r1": 3.3
     },
     {
      "ticker": "XXI",
      "rank": 7,
      "verdict": "선택",
      "why": "정책 테마의 변동성 활용",
-     "r1": null
+     "r1": 4.6
     },
     {
      "ticker": "HL",
      "rank": 8,
      "verdict": "선택",
      "why": "섹터 매수세 집중",
-     "r1": null
+     "r1": 2.8
     },
     {
      "ticker": "NG",
      "rank": 9,
      "verdict": "관찰",
      "why": "귀금속 섹터 동향 파악용",
-     "r1": null
+     "r1": 3.3
     },
     {
      "ticker": "KC",
      "rank": 10,
      "verdict": "선택",
      "why": "실적 기반 모멘텀",
-     "r1": null
+     "r1": -2.2
     },
     {
      "ticker": "EXK",
@@ -14263,6 +14263,260 @@
     "brief": "개장 후 시가 대비 급락 및 갭 상승 원칙에 부합하지 않거나 변동성이 과도한 종목들을 배제하고, 실측 데이터상 수급과 방향성이 확인된 종목만 선별했습니다.",
     "n": 1
    }
+  },
+  {
+   "date": "2026-08-21",
+   "market": "KR",
+   "regime": "혼조",
+   "rules": [
+    "단타 실패 분해: 시장충격4·목표과다0·선정9 → 선정 강화",
+    "근거'수주계약' 성공38%(8) → 단독추천 지양",
+    "섹터'반도체' 성공0%(8) → 회피"
+   ],
+   "cands": [
+    {
+     "ticker": "036930.KQ",
+     "rank": 1,
+     "verdict": "선택",
+     "why": "소부장 정책 수혜 및 기술적 강세",
+     "r1": null
+    },
+    {
+     "ticker": "402340.KS",
+     "rank": 2,
+     "verdict": "선택",
+     "why": "실적 기반 방어력 및 주주환원",
+     "r1": null
+    },
+    {
+     "ticker": "277810.KQ",
+     "rank": 3,
+     "verdict": "선택",
+     "why": "로봇 섹터 통계적 우위",
+     "r1": null
+    },
+    {
+     "ticker": "196170.KQ",
+     "rank": 4,
+     "verdict": "관찰",
+     "why": "수급 양호하나 바이오 섹터 회피 전략 고려",
+     "r1": null
+    },
+    {
+     "ticker": "247540.KQ",
+     "rank": 5,
+     "verdict": "관찰",
+     "why": "기관 매수세 있으나 유증 리스크",
+     "r1": null
+    },
+    {
+     "ticker": "005930.KS",
+     "rank": 6,
+     "verdict": "관찰",
+     "why": "대형주로서 수급 확인 필요",
+     "r1": null
+    },
+    {
+     "ticker": "005380.KS",
+     "rank": 7,
+     "verdict": "관찰",
+     "why": "파업 리스크가 상존함",
+     "r1": null
+    },
+    {
+     "ticker": "000660.KS",
+     "rank": 8,
+     "verdict": "관찰",
+     "why": "반도체 섹터 회피 성향 고려",
+     "r1": null
+    },
+    {
+     "ticker": "240810.KQ",
+     "rank": 9,
+     "verdict": "제외",
+     "why": "반도체 섹터 통계적 약세",
+     "r1": null
+    },
+    {
+     "ticker": "005935.KS",
+     "rank": 10,
+     "verdict": "제외",
+     "why": "우선주 수급 분산",
+     "r1": null
+    },
+    {
+     "ticker": "009150.KS",
+     "rank": 11,
+     "verdict": "제외",
+     "why": "기관/외인 동반 매도세",
+     "r1": null
+    },
+    {
+     "ticker": "373220.KS",
+     "rank": 12,
+     "verdict": "제외",
+     "why": "이차전지 섹터 통계적 약세",
+     "r1": null
+    },
+    {
+     "ticker": "028300.KQ",
+     "rank": 13,
+     "verdict": "제외",
+     "why": "바이오 섹터 통계적 약세",
+     "r1": null
+    },
+    {
+     "ticker": "207940.KS",
+     "rank": 14,
+     "verdict": "제외",
+     "why": "바이오 섹터 통계적 약세",
+     "r1": null
+    },
+    {
+     "ticker": "058470.KQ",
+     "rank": 15,
+     "verdict": "제외",
+     "why": "반도체 섹터 통계적 약세",
+     "r1": null
+    },
+    {
+     "ticker": "086520.KQ",
+     "rank": 16,
+     "verdict": "제외",
+     "why": "이차전지 섹터 통계적 약세",
+     "r1": null
+    }
+   ],
+   "bl": {
+    "rand": [
+     "277810.KQ",
+     "207940.KS",
+     "086520.KQ"
+    ],
+    "mom": [
+     "005930.KS",
+     "196170.KQ",
+     "000660.KS"
+    ]
+   },
+   "dayCands": [
+    {
+     "name": "알테오젠",
+     "ticker": "196170.KQ",
+     "score": 60,
+     "target_pct": 5,
+     "sector": "바이오",
+     "basis": [
+      "추세지속"
+     ],
+     "reason": "기관의 연속 순매수가 이어지며 수급이 양호합니다. mRNA 관련 뉴스 지속성으로 당일 변동성 활용 가능합니다.",
+     "risk": "바이오 섹터 전반의 높은 변동성"
+    },
+    {
+     "name": "에코프로비엠",
+     "ticker": "247540.KQ",
+     "score": 55,
+     "target_pct": 4,
+     "sector": "이차전지",
+     "basis": [
+      "낙폭과대"
+     ],
+     "reason": "연속 순매수 유입 확인되어 기술적 반등 노린 단타 접근 가능합니다. 유상증자 이슈는 악재이나 수급으로 상쇄 여부 확인이 필요합니다.",
+     "risk": "유상증자 불확실성"
+    },
+    {
+     "name": "삼성전자",
+     "ticker": "005930.KS",
+     "score": 50,
+     "target_pct": 2,
+     "sector": "반도체",
+     "basis": [
+      "낙폭과대"
+     ],
+     "reason": "역대급 투자 재료가 대기 중이나 기관 매도세가 거셉니다. 기술적 낙폭 과대에 따른 당일 저가 매수세 대응입니다.",
+     "risk": "수급 불균형 지속"
+    },
+    {
+     "name": "현대차",
+     "ticker": "005380.KS",
+     "score": 50,
+     "target_pct": 3,
+     "sector": "자동차",
+     "basis": [
+      "낙폭과대"
+     ],
+     "reason": "전면 파업 리스크가 있으나 단기 낙폭이 과도합니다. 저가 매수 심리 유입 시 반등을 노립니다.",
+     "risk": "노조 리스크 및 생산 차질"
+    },
+    {
+     "name": "SK하이닉스",
+     "ticker": "000660.KS",
+     "score": 45,
+     "target_pct": 3,
+     "sector": "반도체",
+     "basis": [
+      "낙폭과대"
+     ],
+     "reason": "삼성전자와 동조화되어 대규모 투자 뉴스를 보유 중입니다. 외인 수급이 개선될 경우 당일 단기 변동성 노릴 수 있습니다.",
+     "risk": "수급 이탈 지속"
+    }
+   ],
+   "hold": 0,
+   "v": {
+    "m": "gemini-3.1-flash-lite",
+    "pv": "J1.0"
+   },
+   "mktF": {
+    "dir": "하락",
+    "conf": 40,
+    "why": "미국 증시 약세 및 환율 상승에 따른 외국인 투자 심리 위축",
+    "ok": null
+   },
+   "picks": [
+    {
+     "kind": "swing",
+     "name": "주성엔지니어링",
+     "ticker": "036930.KQ",
+     "score": 75,
+     "sector": "반도체",
+     "basis": [
+      "수주계약",
+      "추세지속"
+     ],
+     "p0": 177300,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "SK스퀘어",
+     "ticker": "402340.KS",
+     "score": 70,
+     "sector": "지주사",
+     "basis": [
+      "실적개선"
+     ],
+     "p0": 1123000,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "레인보우로보틱스",
+     "ticker": "277810.KQ",
+     "score": 65,
+     "sector": "로봇",
+     "basis": [
+      "정책테마"
+     ],
+     "p0": 471500,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    }
+   ]
   }
  ],
  "monAt": 1787256970175
