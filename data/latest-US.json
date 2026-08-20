@@ -1,256 +1,222 @@
 {
- "date": "2026-08-19",
+ "date": "2026-08-20",
  "at": "21:29",
  "data": {
-  "brief": "전일 S&P500 하락에도 지수선물 반등과 낮은 VIX를 고려할 때 금일 시장은 완만한 횡보 또는 제한적 상승 국면이 예상됩니다. 과거 과도한 확신 성적을 반영하여 보수적인 관점에서 스윙과 단타 후보를 엄선했습니다.",
+  "brief": "시장 전반의 지수 선물 하락과 VIX 상승은 단기 변동성 확대를 예고합니다. MRNA와 관련 헬스케어 섹터가 급등했으나 과거 데이터상 헬스케어 섹터의 낮은 적중률을 고려해 보수적 접근이 필요합니다.",
   "picks": [
    {
-    "name": "Nuvation Bio Inc.",
-    "ticker": "NUVB",
-    "score": 62,
-    "sector": "바이오",
+    "name": "Hycroft Mining Holding Corp.",
+    "ticker": "HYMC",
+    "score": 65,
+    "sector": "광업",
     "basis": [
-     "뉴스재료",
-     "수주계약"
+     "뉴스재료"
     ],
-    "reason": "JPMorgan의 비중 확대 개시와 13달러 목표가 제시로 강력한 상승 모멘텀이 형성되었습니다. 월가에서 높은 업사이드 잠재력을 예측하고 있어 스윙 관점에서 유리합니다.",
-    "catalyst": "JPMorgan 매수 의견 및 목표가 설정",
-    "risk": "바이오 섹터 전반의 변동성 주의"
+    "reason": "고품위 은 매장량 추가 확인은 실질적인 자산 가치 상승으로 이어집니다. 귀금속 섹터의 동반 강세 흐름 속에 수급 유입이 기대됩니다.",
+    "catalyst": "은 시추 결과 발표",
+    "risk": "원자재 가격 변동성"
    },
    {
-    "name": "UGI Corporation",
-    "ticker": "UGI",
-    "sector": "에너지",
+    "name": "Hecla Mining Company",
+    "ticker": "HL",
+    "score": 60,
+    "sector": "광업",
     "basis": [
-     "뉴스재료",
-     "추세지속"
+     "거래량급증"
     ],
-    "reason": "에너지 섹터 전반의 후반 강세 흐름과 함께 안정적인 주가 우상향 흐름을 보이고 있습니다. 단기 변동성 장세에서 방어력과 상승 여력을 동시에 기대할 수 있습니다.",
-    "catalyst": "에너지 섹터 강세 흐름 동조",
-    "risk": "에너지 업종 단기 조정 가능성",
-    "score": 50
+    "reason": "Treasury Buyback 정책으로 인한 귀금속 섹터 전반의 수급이 강력합니다. 동종 업체인 Coeur Mining과 함께 기술적 강세 국면에 진입했습니다.",
+    "catalyst": "귀금속 매수세 유입",
+    "risk": "단기 급등에 따른 차익 실현"
    },
    {
-    "name": "CCC Intelligent Solutions Holdi",
-    "ticker": "CCC",
-    "sector": "소프트웨어",
+    "name": "Kingsoft Cloud Holdings",
+    "ticker": "KC",
+    "score": 55,
+    "sector": "기술",
     "basis": [
-     "뉴스재료",
-     "수주계약"
+     "뉴스재료"
     ],
-    "reason": "Copart의 인수설 관련 시장 루머와 AI 기술 적용 확대로 인한 기업 가치 재평가가 기대됩니다. 실질적인 사업 확장 뉴스가 주가 하방을 지지합니다.",
-    "catalyst": "M&A 기대감 및 AI 솔루션 도입",
-    "risk": "인수 관련 불확실성 및 루머 소멸 리스크",
-    "score": 50
+    "reason": "AI 클라우드 매출 성장이 실적 기반의 모멘텀을 형성하고 있습니다. 기술주 중 소프트웨어 섹터 회피 전략 속에서도 실적 주도형 흐름은 예외적입니다.",
+    "catalyst": "AI 클라우드 실적",
+    "risk": "중국 기업 관련 지정학적 리스크"
    }
   ],
   "day_cands": [
    {
-    "name": "Amylyx Pharmaceuticals, Inc.",
-    "ticker": "AMLX",
-    "score": 65,
+    "name": "Tempus AI, Inc.",
+    "ticker": "TEM",
+    "score": 40,
     "target_pct": 4,
-    "sector": "바이오",
-    "basis": [
-     "뉴스재료",
-     "실적"
-    ],
-    "reason": "임상 3상 성공 및 유상증자 완료와 함께 미즈호의 목표가 상향 조정 뉴스가 동반되었습니다. 강력한 재료로 인해 장초반 강한 모멘텀이 이어질 가능성이 높습니다.",
-    "risk": "바이오 섹터 회피 통계 감안 필요"
-   },
-   {
-    "name": "Haemonetics Corporation",
-    "ticker": "HAE",
-    "score": 60,
-    "target_pct": 3,
     "sector": "헬스케어",
     "basis": [
      "뉴스재료"
     ],
-    "reason": "배링턴의 목표가 상향 조정과 헬스케어 섹터 후반 상승 흐름이 긍정적으로 작용했습니다. 안정적인 밴드 내에서 추가 상승 여력이 존재합니다.",
-    "risk": "과거 헬스케어 단타 실패 통계"
+    "reason": "MRNA 암 백신 이슈로 인한 낙수 효과가 강력하지만, 헬스케어 단타 실패 경험이 많아 보수적 목표 설정이 필요합니다.",
+    "risk": "재료 소멸 시 급락"
    },
    {
-    "name": "BRP Inc.",
-    "ticker": "DOO",
-    "score": 58,
+    "name": "Twist Bioscience Corp.",
+    "ticker": "TWST",
+    "score": 40,
     "target_pct": 3,
-    "sector": "경기소비재",
+    "sector": "바이오",
     "basis": [
-     "뉴스재료",
      "추세지속"
     ],
-    "reason": "신규 자금 조달 추진 소식과 함께 견조한 주가 상승 탄력을 보여주고 있습니다. 거래량 동반 시 단기 트레이딩 관점 접근이 유효합니다.",
-    "risk": "전체 시장 방향성 변동 주의"
+    "reason": "헬스케어 섹터 내 동반 상승 탄력이 좋으나, 개장 직후 추격 매수보다는 눌림목 공략이 유효합니다.",
+    "risk": "섹터 회피 관점 고려"
    },
    {
-    "name": "Freedom Holding Corp.",
-    "ticker": "FRHC",
-    "score": 55,
-    "target_pct": 3,
+    "name": "Twenty One Capital, Inc.",
+    "ticker": "XXI",
+    "score": 35,
+    "target_pct": 4,
     "sector": "금융",
     "basis": [
-     "뉴스재료"
+     "정책테마"
     ],
-    "reason": "튀르키예 시장 진출 및 브로커리지 라이선스 획득이라는 글로벌 확장 모멘텀이 발생했습니다. 실적 발표 이후 밸류에이션 재조정 국면입니다.",
-    "risk": "지정학적 및 해외 시장 리스크"
+    "reason": "비트코인 보유 전략 확장은 정책 테마 성격으로 단기 변동성을 유발할 수 있습니다. 지수 하락기 상대적 강세를 기대합니다.",
+    "risk": "변동성 확대"
    },
    {
-    "name": "Insulet Corporation",
-    "ticker": "PODD",
-    "score": 53,
+    "name": "Endeavour Silver Corp.",
+    "ticker": "EXK",
+    "score": 35,
     "target_pct": 3,
-    "sector": "의료기기",
+    "sector": "광업",
     "basis": [
-     "실적",
      "뉴스재료"
     ],
-    "reason": "최근 Q2 실적 컨퍼런스 콜 이후 애널리스트들의 집중 관심을 받으며 하방 경직성을 확보했습니다. 박스권 돌파 시 단기 슈팅 가능성이 있습니다.",
-    "risk": "실적 기대감 선반영 여부 확인 필요"
+    "reason": "귀금속 섹터의 수급 흐름에 편승하는 전략으로, 앞선 광업 종목들과 동조화될 가능성이 큽니다.",
+    "risk": "귀금속 가격 하락 시 동반 하락"
+   },
+   {
+    "name": "Coeur Mining, Inc.",
+    "ticker": "CDE",
+    "score": 30,
+    "target_pct": 3,
+    "sector": "광업",
+    "basis": [
+     "뉴스재료"
+    ],
+    "reason": "HL과 동일한 테마로 움직이나, 선택지 분산을 위해 하위 후보로 배치합니다.",
+    "risk": "상위 종목 순환매 가능성"
    }
   ],
   "cands": [
    {
-    "ticker": "AMLX",
+    "ticker": "MRNA",
     "rank": 1,
-    "verdict": "선택",
-    "why": "임상 성공 및 목표가 상향으로 강한 재료 보유"
+    "verdict": "제외",
+    "why": "헬스케어 섹터 단타 실패 데이터 반영"
    },
    {
-    "name": "HAE",
+    "ticker": "TEM",
     "rank": 2,
     "verdict": "선택",
-    "why": "증권사 목표가 상향 및 섹터 동조화"
+    "why": "재료의 파급력이 가장 큼"
    },
    {
-    "name": "UGI",
+    "ticker": "TWST",
     "rank": 3,
     "verdict": "선택",
-    "why": "에너지 섹터 강세 및 안정적 추세"
+    "why": "추세 강도 유지"
    },
    {
-    "name": "HTFL",
+    "ticker": "BNTX",
     "rank": 4,
-    "verdict": "관찰",
-    "why": "급등 이후 고평가 논쟁 진행 중"
+    "verdict": "제외",
+    "why": "헬스케어 섹터 회피"
    },
    {
-    "name": "DOO",
+    "ticker": "HYMC",
     "rank": 5,
     "verdict": "선택",
-    "why": "신규 자금 조달 모멘텀 및 상승 탄력"
+    "why": "시추 결과 재료의 실질성"
    },
    {
-    "name": "NUVB",
+    "ticker": "AMR",
     "rank": 6,
-    "verdict": "선택",
-    "why": "JPMorgan 신규 커버리지 및 대폭 상향된 목표가"
-   },
-   {
-    "name": "DUOL",
-    "rank": 7,
-    "verdict": "관찰",
-    "why": "매출 전망 둔화 우려와 임원 영입 뉴스 혼조"
-   },
-   {
-    "name": "TRGP",
-    "rank": 8,
     "verdict": "제외",
-    "why": "거시 지수 하락 압력 및 에너지 변동성"
+    "why": "투자의견 하향 및 중립 유지"
    },
    {
-    "name": "FRHC",
-    "rank": 9,
+    "ticker": "XXI",
+    "rank": 7,
     "verdict": "선택",
-    "why": "튀르키예 라이선스 획득 확장성"
+    "why": "정책 테마의 변동성 활용"
    },
    {
-    "name": "CCC",
+    "ticker": "HL",
+    "rank": 8,
+    "verdict": "선택",
+    "why": "섹터 매수세 집중"
+   },
+   {
+    "ticker": "NG",
+    "rank": 9,
+    "verdict": "관찰",
+    "why": "귀금속 섹터 동향 파악용"
+   },
+   {
+    "ticker": "KC",
     "rank": 10,
     "verdict": "선택",
-    "why": "M&A 루머 및 AI 협력 재료"
+    "why": "실적 기반 모멘텀"
    },
    {
-    "name": "BBWI",
+    "ticker": "EXK",
     "rank": 11,
-    "verdict": "관찰",
-    "why": "저평가 분석 있으나 수급 관망 필요"
+    "verdict": "선택",
+    "why": "귀금속 동조화"
    },
    {
-    "name": "LEGN",
+    "ticker": "IOVA",
     "rank": 12,
     "verdict": "제외",
-    "why": "바이오 섹터 통계적 약세 반영"
+    "why": "헬스케어 섹터 회피"
    },
    {
-    "name": "CHRN",
+    "ticker": "HIMS",
     "rank": 13,
-    "verdict": "관찰",
-    "why": "AI 인프라 협업 있으나 모멘텀 확인 필요"
+    "verdict": "제외",
+    "why": "내부자 매도 이슈"
    },
    {
-    "name": "PODD",
+    "ticker": "CDE",
     "rank": 14,
     "verdict": "선택",
-    "why": "실적 콜 이후 관심 집중"
+    "why": "귀금속 동조화"
    },
    {
-    "name": "INTC",
+    "ticker": "NU",
     "rank": 15,
-    "verdict": "제외",
-    "why": "하락 추세 및 기술주 약세"
+    "verdict": "관찰",
+    "why": "투자의견 상향 추적"
    },
    {
-    "name": "PATH",
+    "ticker": "AAL",
     "rank": 16,
     "verdict": "제외",
-    "why": "장기 하락세 및 소프트웨어 회피 통계"
+    "why": "하락 추세 지속"
    },
    {
-    "name": "NU",
+    "ticker": "INTC",
     "rank": 17,
     "verdict": "제외",
-    "why": "성장성 대비 밸류에이션 부담 검증 필요"
+    "why": "악재성 보유 지분 보도"
    },
    {
-    "name": "NVDA",
+    "ticker": "WBS",
     "rank": 18,
     "verdict": "제외",
-    "why": "중국 관련 뉴스 있으나 전반적 기술주 하락 동조"
+    "why": "합병 종결 이슈"
    }
   ],
   "mkt": {
-   "dir": "횡보",
+   "dir": "하락",
    "conf": 45,
-   "why": "선물 반등과 낮은 VIX이나 전일 S&P 하락 및 보수적 통계 반영"
-  },
-  "day_picks": [
-   {
-    "name": "Amylyx Pharmaceuticals, Inc.",
-    "ticker": "AMLX",
-    "score": 62,
-    "target_pct": 4,
-    "sector": "바이오",
-    "basis": [
-     "AMLX_CLINICAL_FINANCE"
-    ],
-    "reason": "사전강도 65 및 임상/유상증자 모멘텀이 유지되며 개장 후 +0.6% 상승으로 논리가 확인됨.",
-    "risk": "유상증자 물량 출하 및 변동성 주의"
-   },
-   {
-    "name": "Insulet Corporation",
-    "ticker": "PODD",
-    "score": 55,
-    "target_pct": 3,
-    "sector": "의료기기",
-    "basis": [
-     "PODD_ANALYST_INTEREST"
-    ],
-    "reason": "시가갭 0%에서 개장 후 +1.7% 상승하며 하방 경직성과 박스권 돌파 시도가 실측 데이터로 확인됨.",
-    "risk": "단기 급등에 따른 차익실현 매물 주의"
-   }
-  ],
-  "day_at": "22:34",
-  "day_brief": "AMLX와 PODD는 개장 후 상승 흐름을 보이며 사전 논리를 확인해주었으나, 통계적 보수화 원칙과 목표가 달성 가능성을 고려해 신중히 선별했습니다."
+   "why": "지수 선물 하락과 VIX의 가파른 상승은 당일 기술적 조정을 예고함"
+  }
  }
 }
