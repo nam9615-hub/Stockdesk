@@ -13623,7 +13623,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": 0.1
     },
     {
      "ticker": "028300.KQ",
@@ -13631,7 +13631,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": -9
     },
     {
      "ticker": "373220.KS",
@@ -13639,7 +13639,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": 0
     },
     {
      "ticker": "240810.KQ",
@@ -13647,7 +13647,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": 1.5
     },
     {
      "ticker": "207940.KS",
@@ -13655,7 +13655,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": -3
     },
     {
      "ticker": "058470.KQ",
@@ -13663,7 +13663,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": 0.4
     }
    ],
    "bl": {
@@ -13858,7 +13858,287 @@
     "brief": "제시된 종목들은 실측 통계 상 반도체 섹터 회피 조건에 해당하거나 개장 후 급락 및 갭상승 붕괴 패턴을 보여 단타 기준을 충족하는 후보가 없습니다.",
     "n": 0
    },
-   "dayHold": 1
+   "dayHold": 1,
+   "cstat": {
+    "n": 16,
+    "med": 0.9,
+    "ex": null,
+    "exD": null,
+    "rg": null,
+    "rej": null,
+    "blr": {
+     "rand": 1.5,
+     "mom": 3.2
+    }
+   }
+  },
+  {
+   "date": "2026-08-20",
+   "market": "US",
+   "regime": "상승",
+   "rules": [
+    "단타 실패 분해: 시장충격6·목표과다1·선정14 → 선정 강화",
+    "강도80+ 실측 0%(9) — 확신도 과장, 보수화",
+    "근거'실적' 성공32%(19) → 단독추천 지양",
+    "섹터'소프트웨어' 성공33%(9) → 회피"
+   ],
+   "cands": [
+    {
+     "ticker": "MRNA",
+     "rank": 1,
+     "verdict": "제외",
+     "why": "헬스케어 섹터 단타 실패 데이터 반영",
+     "r1": null
+    },
+    {
+     "ticker": "TEM",
+     "rank": 2,
+     "verdict": "선택",
+     "why": "재료의 파급력이 가장 큼",
+     "r1": null
+    },
+    {
+     "ticker": "TWST",
+     "rank": 3,
+     "verdict": "선택",
+     "why": "추세 강도 유지",
+     "r1": null
+    },
+    {
+     "ticker": "BNTX",
+     "rank": 4,
+     "verdict": "제외",
+     "why": "헬스케어 섹터 회피",
+     "r1": null
+    },
+    {
+     "ticker": "HYMC",
+     "rank": 5,
+     "verdict": "선택",
+     "why": "시추 결과 재료의 실질성",
+     "r1": null
+    },
+    {
+     "ticker": "AMR",
+     "rank": 6,
+     "verdict": "제외",
+     "why": "투자의견 하향 및 중립 유지",
+     "r1": null
+    },
+    {
+     "ticker": "XXI",
+     "rank": 7,
+     "verdict": "선택",
+     "why": "정책 테마의 변동성 활용",
+     "r1": null
+    },
+    {
+     "ticker": "HL",
+     "rank": 8,
+     "verdict": "선택",
+     "why": "섹터 매수세 집중",
+     "r1": null
+    },
+    {
+     "ticker": "NG",
+     "rank": 9,
+     "verdict": "관찰",
+     "why": "귀금속 섹터 동향 파악용",
+     "r1": null
+    },
+    {
+     "ticker": "KC",
+     "rank": 10,
+     "verdict": "선택",
+     "why": "실적 기반 모멘텀",
+     "r1": null
+    },
+    {
+     "ticker": "EXK",
+     "rank": 11,
+     "verdict": "선택",
+     "why": "귀금속 동조화",
+     "r1": null
+    },
+    {
+     "ticker": "IOVA",
+     "rank": 12,
+     "verdict": "제외",
+     "why": "헬스케어 섹터 회피",
+     "r1": null
+    },
+    {
+     "ticker": "HIMS",
+     "rank": 13,
+     "verdict": "제외",
+     "why": "내부자 매도 이슈",
+     "r1": null
+    },
+    {
+     "ticker": "CDE",
+     "rank": 14,
+     "verdict": "선택",
+     "why": "귀금속 동조화",
+     "r1": null
+    },
+    {
+     "ticker": "NU",
+     "rank": 15,
+     "verdict": "관찰",
+     "why": "투자의견 상향 추적",
+     "r1": null
+    },
+    {
+     "ticker": "AAL",
+     "rank": 16,
+     "verdict": "제외",
+     "why": "하락 추세 지속",
+     "r1": null
+    },
+    {
+     "ticker": "INTC",
+     "rank": 17,
+     "verdict": "제외",
+     "why": "악재성 보유 지분 보도",
+     "r1": null
+    },
+    {
+     "ticker": "WBS",
+     "rank": 18,
+     "verdict": "제외",
+     "why": "합병 종결 이슈",
+     "r1": null
+    }
+   ],
+   "bl": {
+    "rand": [
+     "AAL",
+     "INTC",
+     "NU"
+    ],
+    "mom": [
+     "MRNA",
+     "TEM",
+     "TWST"
+    ]
+   },
+   "dayCands": [
+    {
+     "name": "Tempus AI, Inc.",
+     "ticker": "TEM",
+     "score": 40,
+     "target_pct": 4,
+     "sector": "헬스케어",
+     "basis": [
+      "뉴스재료"
+     ],
+     "reason": "MRNA 암 백신 이슈로 인한 낙수 효과가 강력하지만, 헬스케어 단타 실패 경험이 많아 보수적 목표 설정이 필요합니다.",
+     "risk": "재료 소멸 시 급락"
+    },
+    {
+     "name": "Twist Bioscience Corp.",
+     "ticker": "TWST",
+     "score": 40,
+     "target_pct": 3,
+     "sector": "바이오",
+     "basis": [
+      "추세지속"
+     ],
+     "reason": "헬스케어 섹터 내 동반 상승 탄력이 좋으나, 개장 직후 추격 매수보다는 눌림목 공략이 유효합니다.",
+     "risk": "섹터 회피 관점 고려"
+    },
+    {
+     "name": "Twenty One Capital, Inc.",
+     "ticker": "XXI",
+     "score": 35,
+     "target_pct": 4,
+     "sector": "금융",
+     "basis": [
+      "정책테마"
+     ],
+     "reason": "비트코인 보유 전략 확장은 정책 테마 성격으로 단기 변동성을 유발할 수 있습니다. 지수 하락기 상대적 강세를 기대합니다.",
+     "risk": "변동성 확대"
+    },
+    {
+     "name": "Endeavour Silver Corp.",
+     "ticker": "EXK",
+     "score": 35,
+     "target_pct": 3,
+     "sector": "광업",
+     "basis": [
+      "뉴스재료"
+     ],
+     "reason": "귀금속 섹터의 수급 흐름에 편승하는 전략으로, 앞선 광업 종목들과 동조화될 가능성이 큽니다.",
+     "risk": "귀금속 가격 하락 시 동반 하락"
+    },
+    {
+     "name": "Coeur Mining, Inc.",
+     "ticker": "CDE",
+     "score": 30,
+     "target_pct": 3,
+     "sector": "광업",
+     "basis": [
+      "뉴스재료"
+     ],
+     "reason": "HL과 동일한 테마로 움직이나, 선택지 분산을 위해 하위 후보로 배치합니다.",
+     "risk": "상위 종목 순환매 가능성"
+    }
+   ],
+   "hold": 0,
+   "v": {
+    "m": "gemini-3.1-flash-lite",
+    "pv": "J1.0"
+   },
+   "mktF": {
+    "dir": "하락",
+    "conf": 45,
+    "why": "지수 선물 하락과 VIX의 가파른 상승은 당일 기술적 조정을 예고함",
+    "ok": null
+   },
+   "picks": [
+    {
+     "kind": "swing",
+     "name": "Hycroft Mining Holding Corp.",
+     "ticker": "HYMC",
+     "score": 65,
+     "sector": "광업",
+     "basis": [
+      "뉴스재료"
+     ],
+     "p0": 27.9,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "Hecla Mining Company",
+     "ticker": "HL",
+     "score": 60,
+     "sector": "광업",
+     "basis": [
+      "거래량급증"
+     ],
+     "p0": 20.54,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "Kingsoft Cloud Holdings",
+     "ticker": "KC",
+     "score": 55,
+     "sector": "기술",
+     "basis": [
+      "뉴스재료"
+     ],
+     "p0": 12.37,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    }
+   ]
   }
  ],
  "monAt": 1787207050899
