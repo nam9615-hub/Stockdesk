@@ -1,238 +1,236 @@
 {
- "date": "2026-08-20",
+ "date": "2026-08-21",
  "at": "21:29",
  "data": {
-  "brief": "시장 전반의 지수 선물 하락과 VIX 상승은 단기 변동성 확대를 예고합니다. MRNA와 관련 헬스케어 섹터가 급등했으나 과거 데이터상 헬스케어 섹터의 낮은 적중률을 고려해 보수적 접근이 필요합니다.",
+  "brief": "전일 S&P500 조정에도 지수선물 반등과 VIX 하락으로 심리가 안정되었으며, 암호화폐 및 규제 모멘텀 관련 종목이 강세를 보이고 있습니다. 과거 승률 통계와 확신도 보정(고확신 오적중 반영)을 적용하여 보수적이면서도 정책 테마 중심의 선별적인 접근을 취합니다.",
   "picks": [
    {
-    "name": "Hycroft Mining Holding Corp.",
-    "ticker": "HYMC",
-    "score": 65,
-    "sector": "광업",
+    "name": "MARA Holdings, Inc.",
+    "ticker": "MARA",
+    "score": 55,
+    "sector": "금융",
     "basis": [
-     "뉴스재료"
-    ],
-    "reason": "고품위 은 매장량 추가 확인은 실질적인 자산 가치 상승으로 이어집니다. 귀금속 섹터의 동반 강세 흐름 속에 수급 유입이 기대됩니다.",
-    "catalyst": "은 시추 결과 발표",
-    "risk": "원자재 가격 변동성"
-   },
-   {
-    "name": "Hecla Mining Company",
-    "ticker": "HL",
-    "score": 60,
-    "sector": "광업",
-    "basis": [
+     "정책테마",
      "거래량급증"
     ],
-    "reason": "Treasury Buyback 정책으로 인한 귀금속 섹터 전반의 수급이 강력합니다. 동종 업체인 Coeur Mining과 함께 기술적 강세 국면에 진입했습니다.",
-    "catalyst": "귀금속 매수세 유입",
-    "risk": "단기 급등에 따른 차익 실현"
+    "reason": "미국 규제 모멘텀과 비트코인 상승에 힘입어 암호화폐 관련주 전반의 랠리가 지속되고 있습니다. 거래량이 동반되며 단기 추세 지속 가능성이 높으나 변동성에 주의해야 합니다.",
+    "catalyst": "비트코인 상승 및 규제 모멘텀",
+    "risk": "암호화폐 가격 변동성 및 규제 리스크"
    },
    {
-    "name": "Kingsoft Cloud Holdings",
-    "ticker": "KC",
-    "score": 55,
-    "sector": "기술",
+    "name": "Standard Nuclear, Inc.",
+    "ticker": "STDN",
+    "score": 52,
+    "sector": "에너지",
     "basis": [
+     "수주계약",
      "뉴스재료"
     ],
-    "reason": "AI 클라우드 매출 성장이 실적 기반의 모멘텀을 형성하고 있습니다. 기술주 중 소프트웨어 섹터 회피 전략 속에서도 실적 주도형 흐름은 예외적입니다.",
-    "catalyst": "AI 클라우드 실적",
-    "risk": "중국 기업 관련 지정학적 리스크"
+    "reason": "Radiant Industries와의 TRISO 핵연료 공급 계약 체결로 실질적인 사업 모멘텀이 부각되었습니다. 중장기 에너지 전환 테마와 맞물려 관심이 집중되고 있습니다.",
+    "catalyst": "TRISO 핵연료 공급 계약",
+    "risk": "프로젝트 진행 지연 및 섹터 투자심리 변화"
+   },
+   {
+    "name": "Bitdeer Technologies Group",
+    "ticker": "BTDR",
+    "score": 50,
+    "sector": "기술",
+    "basis": [
+     "수주계약",
+     "뉴스재료"
+    ],
+    "reason": "바클레이즈의 커버리지 개시와 더불어 AI 부문의 대규모 말레이시아 계약 소식이 호재로 작용했습니다. 인프라 및 AI 관련 수혜 기대감이 유효합니다.",
+    "catalyst": "AI 부문 말레이시아 계약 및 증권사 커버리지",
+    "risk": "단기 급등에 따른 차익실현 압력"
    }
   ],
   "day_cands": [
    {
-    "name": "Tempus AI, Inc.",
-    "ticker": "TEM",
-    "score": 40,
+    "name": "IOVA Biotherapeutics, Inc.",
+    "ticker": "IOVA",
+    "score": 48,
     "target_pct": 4,
     "sector": "헬스케어",
     "basis": [
+     "신고가",
      "뉴스재료"
     ],
-    "reason": "MRNA 암 백신 이슈로 인한 낙수 효과가 강력하지만, 헬스케어 단타 실패 경험이 많아 보수적 목표 설정이 필요합니다.",
-    "risk": "재료 소멸 시 급락"
+    "reason": "UBS의 목표가 상향과 흑색종 섹터 낙관론에 힘입어 52주 신고가를 경신했습니다. 모멘텀 추종 매수세가 유입될 여지가 있으나 헬스케어 섹터 과거 부진 이력을 감안해 목표가를 낮게 설정합니다.",
+    "catalyst": "UBS 목표가 상향 및 52주 신고가",
+    "risk": "바이오 섹터 변동성 및 차익실현 매물"
    },
    {
-    "name": "Twist Bioscience Corp.",
-    "ticker": "TWST",
-    "score": 40,
-    "target_pct": 3,
-    "sector": "바이오",
+    "name": "Riot Platforms, Inc.",
+    "ticker": "RIOT",
+    "score": 46,
+    "target_pct": 4,
+    "sector": "금융",
     "basis": [
-     "추세지속"
+     "수주계약",
+     "뉴스재료"
     ],
-    "reason": "헬스케어 섹터 내 동반 상승 탄력이 좋으나, 개장 직후 추격 매수보다는 눌림목 공략이 유효합니다.",
-    "risk": "섹터 회피 관점 고려"
+    "reason": "대규모 부채 조달을 통한 데이터 센터 중심 재편 가속화 뉴스가 긍정적으로 작용하고 있습니다. 암호화폐 랠리와 연동된 강한 단기 탄력이 기대됩니다.",
+    "catalyst": "대규모 데이터 센터 투자 재원 확보",
+    "risk": "부채 부담 및 비트코인 연동 변동성"
+   },
+   {
+    "name": "Andersen Group Inc.",
+    "ticker": "ANDG",
+    "score": 45,
+    "target_pct": 3,
+    "sector": "금융",
+    "basis": [
+     "뉴스재료",
+     "거래량급증"
+    ],
+    "reason": "대규모 유상증자 프라이싱 완료 후 불확실성이 해소되며 주가가 반등세를 보이고 있습니다. 단기 수급 유입 가능성을 활용한 짧은 접근이 유효합니다.",
+    "catalyst": "2차 공모 가격 확정 및 물량 출회 해소",
+    "risk": "유상증자에 따른 오버행 우려"
    },
    {
     "name": "Twenty One Capital, Inc.",
     "ticker": "XXI",
-    "score": 35,
-    "target_pct": 4,
+    "score": 44,
+    "target_pct": 3,
     "sector": "금융",
     "basis": [
-     "정책테마"
-    ],
-    "reason": "비트코인 보유 전략 확장은 정책 테마 성격으로 단기 변동성을 유발할 수 있습니다. 지수 하락기 상대적 강세를 기대합니다.",
-    "risk": "변동성 확대"
-   },
-   {
-    "name": "Endeavour Silver Corp.",
-    "ticker": "EXK",
-    "score": 35,
-    "target_pct": 3,
-    "sector": "광업",
-    "basis": [
+     "정책테마",
      "뉴스재료"
     ],
-    "reason": "귀금속 섹터의 수급 흐름에 편승하는 전략으로, 앞선 광업 종목들과 동조화될 가능성이 큽니다.",
-    "risk": "귀금속 가격 하락 시 동반 하락"
+    "reason": "비트코인 트레저리 다각화를 위한 5단계 계획 발표로 투자자들의 이목을 끌고 있습니다. 테마성 수급에 기반한 단기 변동성 활용이 가능합니다.",
+    "catalyst": "비트코인 외 사업 확장 5단계 계획",
+    "risk": "실행력 검증 필요 및 테마 소멸 가능성"
    },
    {
-    "name": "Coeur Mining, Inc.",
-    "ticker": "CDE",
-    "score": 30,
+    "name": "Bitdeer Technologies Group",
+    "ticker": "BTDR",
+    "score": 43,
     "target_pct": 3,
-    "sector": "광업",
+    "sector": "기술",
     "basis": [
-     "뉴스재료"
+     "수주계약",
+     "거래량급증"
     ],
-    "reason": "HL과 동일한 테마로 움직이나, 선택지 분산을 위해 하위 후보로 배치합니다.",
-    "risk": "상위 종목 순환매 가능성"
+    "reason": "AI 인프라 계약과 증권사 호평이 맞물려 거래량이 집중되고 있습니다. 스윙 관점과 별개로 당일 모멘텀 지속 여부를 타진합니다.",
+    "catalyst": "AI 인프라 계약 모멘텀",
+    "risk": "변동성 확대 및 지수 연동성"
    }
   ],
   "cands": [
    {
-    "ticker": "MRNA",
+    "ticker": "MARA",
     "rank": 1,
-    "verdict": "제외",
-    "why": "헬스케어 섹터 단타 실패 데이터 반영"
+    "verdict": "선택",
+    "why": "암호화폐 랠리와 정책 모멘텀 결합"
    },
    {
-    "ticker": "TEM",
+    "s&p500": -0.9,
+    "ticker": "IOVA",
     "rank": 2,
     "verdict": "선택",
-    "why": "재료의 파급력이 가장 큼"
+    "why": "신고가 경신 및 목표가 상향 반영"
    },
    {
-    "ticker": "TWST",
+    "ticker": "ANDG",
     "rank": 3,
     "verdict": "선택",
-    "why": "추세 강도 유지"
-   },
-   {
-    "ticker": "BNTX",
-    "rank": 4,
-    "verdict": "제외",
-    "why": "헬스케어 섹터 회피"
-   },
-   {
-    "ticker": "HYMC",
-    "rank": 5,
-    "verdict": "선택",
-    "why": "시추 결과 재료의 실질성"
-   },
-   {
-    "ticker": "AMR",
-    "rank": 6,
-    "verdict": "제외",
-    "why": "투자의견 하향 및 중립 유지"
+    "why": "대규모 자금 조달 불확실성 해소"
    },
    {
     "ticker": "XXI",
-    "rank": 7,
+    "rank": 4,
     "verdict": "선택",
-    "why": "정책 테마의 변동성 활용"
+    "why": "비트코인 확장 전략 발표 테마"
    },
    {
-    "ticker": "HL",
+    "ticker": "LIME",
+    "rank": 5,
+    "verdict": "관찰",
+    "why": "IPO 및 컨퍼런스 참가 모멘텀 주시"
+   },
+   {
+    "ticker": "ALM",
+    "rank": 6,
+    "verdict": "관찰",
+    "why": "자사주 매입 뉴스와 밸류에이션 비교 필요"
+   },
+   {
+    "ticker": "TEM",
+    "rank": 7,
+    "verdict": "제외",
+    "why": "내부자 매도 물량 출회 부담"
+   },
+   {
+    "ticker": "STDN",
     "rank": 8,
     "verdict": "선택",
-    "why": "섹터 매수세 집중"
+    "why": "실질적인 핵연료 공급 계약 체결"
    },
    {
-    "ticker": "NG",
+    "ticker": "BTDR",
     "rank": 9,
-    "verdict": "관찰",
-    "why": "귀금속 섹터 동향 파악용"
-   },
-   {
-    "ticker": "KC",
-    "rank": 10,
     "verdict": "선택",
-    "why": "실적 기반 모멘텀"
+    "why": "AI 계약 및 증권사 커버리지 개시 호재"
    },
    {
-    "ticker": "EXK",
+    "ticker": "CIFR",
+    "rank": 10,
+    "verdict": "제외",
+    "why": "밸류에이션 논란 및 사업 축소 우려"
+   },
+   {
+    "ticker": "RIOT",
     "rank": 11,
     "verdict": "선택",
-    "why": "귀금속 동조화"
+    "why": "데이터 센터 중심 투자 재원 확보"
    },
    {
-    "ticker": "IOVA",
+    "ticker": "HUT",
     "rank": 12,
-    "verdict": "제외",
-    "why": "헬스케어 섹터 회피"
-   },
-   {
-    "ticker": "HIMS",
-    "rank": 13,
-    "verdict": "제외",
-    "why": "내부자 매도 이슈"
-   },
-   {
-    "ticker": "CDE",
-    "rank": 14,
-    "verdict": "선택",
-    "why": "귀금속 동조화"
-   },
-   {
-    "ticker": "NU",
-    "rank": 15,
     "verdict": "관찰",
-    "why": "투자의견 상향 추적"
+    "why": "마라와 연동된 암호화폐 랠리 추이 확인"
    },
    {
-    "ticker": "AAL",
+    "ticker": "CAI",
+    "rank": 13,
+    "verdict": "관찰",
+    "why": "급등 후 후속 모멘텀 관찰 필요"
+   },
+   {
+    "ticker": "NDSN",
+    "rank": 14,
+    "verdict": "관찰",
+    "why": "목표가 상향이나 중립 의견 유지로 관망"
+   },
+   {
+    "ticker": "SPCX",
+    "rank": 15,
+    "verdict": "제외",
+    "why": "매도 리포트 출회 및 하락 추세"
+   },
+   {
+    "ticker": "ABEV",
     "rank": 16,
     "verdict": "제외",
-    "why": "하락 추세 지속"
+    "why": "모멘텀 부족 및 저조한 등락률"
    },
    {
-    "ticker": "INTC",
+    "ticker": "MRNA",
     "rank": 17,
     "verdict": "제외",
-    "why": "악재성 보유 지분 보도"
+    "why": "급락세 전개로 하방 압력 큼"
    },
    {
     "ticker": "WBS",
     "rank": 18,
     "verdict": "제외",
-    "why": "합병 종결 이슈"
+    "why": "인수합병 완료에 따른 정체 국면"
    }
   ],
   "mkt": {
-   "dir": "하락",
-   "conf": 45,
-   "why": "지수 선물 하락과 VIX의 가파른 상승은 당일 기술적 조정을 예고함"
-  },
-  "day_picks": [
-   {
-    "name": "Endeavour Silver Corp.",
-    "ticker": "EXK",
-    "score": 45,
-    "target_pct": 3,
-    "sector": "광업",
-    "basis": [
-     "EXK_OPEN"
-    ],
-    "reason": "시가갭 -1.9%로 안정적이며 개장 후 +1.3% 상승 반전하여 귀금속 섹터 수급 유입이 실측 데이터로 확인됨.",
-    "risk": "귀금속 가격 변동성 및 광업 섹터 동조화 리스크"
-   }
-  ],
-  "day_at": "22:34",
-  "day_brief": "개장 후 시가 대비 급락 및 갭 상승 원칙에 부합하지 않거나 변동성이 과도한 종목들을 배제하고, 실측 데이터상 수급과 방향성이 확인된 종목만 선별했습니다."
+   "dir": "상승",
+   "conf": 55,
+   "why": "지수 선물 반등과 VIX 하락으로 기술적 반등 여건 조성"
+  }
  }
 }
