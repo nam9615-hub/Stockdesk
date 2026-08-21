@@ -14670,70 +14670,70 @@
      "rank": 1,
      "verdict": "선택",
      "why": "암호화폐 랠리와 정책 모멘텀 결합",
-     "r1": null
+     "r1": -3.9
     },
     {
      "ticker": "IOVA",
      "rank": 2,
      "verdict": "선택",
      "why": "신고가 경신 및 목표가 상향 반영",
-     "r1": null
+     "r1": -8.7
     },
     {
      "ticker": "ANDG",
      "rank": 3,
      "verdict": "선택",
      "why": "대규모 자금 조달 불확실성 해소",
-     "r1": null
+     "r1": -0.9
     },
     {
      "ticker": "XXI",
      "rank": 4,
      "verdict": "선택",
      "why": "비트코인 확장 전략 발표 테마",
-     "r1": null
+     "r1": 1.1
     },
     {
      "ticker": "LIME",
      "rank": 5,
      "verdict": "관찰",
      "why": "IPO 및 컨퍼런스 참가 모멘텀 주시",
-     "r1": null
+     "r1": -3.4
     },
     {
      "ticker": "ALM",
      "rank": 6,
      "verdict": "관찰",
      "why": "자사주 매입 뉴스와 밸류에이션 비교 필요",
-     "r1": null
+     "r1": 2.5
     },
     {
      "ticker": "TEM",
      "rank": 7,
      "verdict": "제외",
      "why": "내부자 매도 물량 출회 부담",
-     "r1": null
+     "r1": 10.6
     },
     {
      "ticker": "STDN",
      "rank": 8,
      "verdict": "선택",
      "why": "실질적인 핵연료 공급 계약 체결",
-     "r1": null
+     "r1": -2.8
     },
     {
      "ticker": "BTDR",
      "rank": 9,
      "verdict": "선택",
      "why": "AI 계약 및 증권사 커버리지 개시 호재",
-     "r1": null
+     "r1": 2.5
     },
     {
      "ticker": "CIFR",
      "rank": 10,
      "verdict": "제외",
      "why": "밸류에이션 논란 및 사업 축소 우려",
-     "r1": null
+     "r1": -10
     },
     {
      "ticker": "RIOT",
