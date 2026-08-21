@@ -231,6 +231,36 @@
    "dir": "상승",
    "conf": 55,
    "why": "지수 선물 반등과 VIX 하락으로 기술적 반등 여건 조성"
-  }
+  },
+  "day_picks": [
+   {
+    "name": "IOVA Biotherapeutics, Inc.",
+    "ticker": "IOVA",
+    "score": 75,
+    "target_pct": 4,
+    "sector": "바이오",
+    "basis": [
+     "UBS 목표가 상향",
+     "52주 신고가 경신"
+    ],
+    "reason": "시가갭 1%로 안정적이며 개장 후 상승세가 유지되어 모멘텀 추종 매수세가 확인됨.",
+    "risk": "단기 변동성에 따른 빠른 차익실현 물량 주의"
+   },
+   {
+    "name": "Bitdeer Technologies Group",
+    "ticker": "BTDR",
+    "score": 70,
+    "target_pct": 3,
+    "sector": "테크",
+    "basis": [
+     "AI 인프라 계약",
+     "증권사 호평"
+    ],
+    "reason": "시가갭 6.4%이나 개장 후 추가 상승을 기록하며 거래량이 집중되어 단기 모멘텀이 유효함.",
+    "risk": "높은 갭 상승에 따른 되돌림 가능성 주의"
+   }
+  ],
+  "day_at": "22:34",
+  "day_brief": "IOVA는 목표가 상향 모멘텀을 유지하며 긍정적 흐름을 보이고 있고, BTDR은 AI 인프라 계약 호재로 거래량이 집중되어 선정 원칙을 충족합니다."
  }
 }
