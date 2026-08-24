@@ -12304,7 +12304,7 @@
      ],
      "p0": 1154000,
      "r1": -5.4,
-     "r5": null,
+     "r5": -10.3,
      "r20": null,
      "b": 1200000,
      "gap": 4,
@@ -12330,7 +12330,7 @@
      ],
      "p0": 453000,
      "r1": -5.3,
-     "r5": null,
+     "r5": -9.9,
      "r20": null,
      "b": 459500,
      "gap": 1.4,
@@ -15132,63 +15132,63 @@
      "rank": 1,
      "verdict": "선택",
      "why": "K뷰티 ODM 호조 및 기관 연속 순매수로 스윙 적합",
-     "r1": null
+     "r1": 5.3
     },
     {
      "ticker": "181710.KS",
      "rank": 2,
      "verdict": "선택",
      "why": "외인 연속 순매수 및 신사업 모멘텀 유효",
-     "r1": null
+     "r1": -3.4
     },
     {
      "ticker": "377450.KQ",
      "rank": 3,
      "verdict": "선택",
      "why": "공개매수 이벤트와 기관 수급 결합",
-     "r1": null
+     "r1": 2.6
     },
     {
      "ticker": "307180.KQ",
      "rank": 4,
      "verdict": "관찰",
      "why": "피지컬AI 모멘텀 강하나 단기 변동성 주의",
-     "r1": null
+     "r1": 1.5
     },
     {
      "ticker": "019010.KQ",
      "rank": 5,
      "verdict": "관찰",
      "why": "자산 가치 및 경영권 이슈, 변동성 큼",
-     "r1": null
+     "r1": -9.6
     },
     {
      "ticker": "028260.KS",
      "rank": 6,
      "verdict": "관찰",
      "why": "히트펌프 재료 유효하나 대형주 흐름 연동",
-     "r1": null
+     "r1": -4.8
     },
     {
      "ticker": "128940.KS",
      "rank": 7,
      "verdict": "관찰",
      "why": "바이오 섹터 과거 승률 고려 보수적 접근",
-     "r1": null
+     "r1": 23.3
     },
     {
      "ticker": "036800.KQ",
      "rank": 8,
      "verdict": "관찰",
      "why": "결제 테마 모멘텀 지속 여부 확인 필요",
-     "r1": null
+     "r1": 7.5
     },
     {
      "ticker": "000810.KS",
      "rank": 9,
      "verdict": "제외",
      "why": "금융 섹터 실측 부진 및 배당 이슈 혼조",
-     "r1": null
+     "r1": -2.8
     },
     {
      "ticker": "468530.KQ",
@@ -15350,7 +15350,8 @@
     "dir": "횡보",
     "conf": 45,
     "why": "과거 시장방향 예측 적중률과 혼조세 국면 실측을 반영해 횡보장 관점으로 보수적으로 접근합니다.",
-    "ok": null
+    "ok": false,
+    "act": -3.12
    },
    "picks": [
     {
@@ -15365,12 +15366,15 @@
       "거래량급증"
      ],
      "p0": 271000,
-     "r1": null,
+     "r1": 5.3,
      "r5": null,
      "r20": null,
      "b": 271500,
      "gap": 0.2,
-     "simOpen": 5.3
+     "simOpen": 5.3,
+     "tv": 61331,
+     "tvx": 1.8,
+     "idx": -3.12
     },
     {
      "kind": "swing",
@@ -15384,7 +15388,7 @@
       "추세지속"
      ],
      "p0": 75200,
-     "r1": null,
+     "r1": -3.4,
      "r5": null,
      "r20": null,
      "b": 72500,
@@ -15394,7 +15398,10 @@
      "simExit": "stop",
      "simD": "2026-08-24",
      "simT": "11:18",
-     "live": 1
+     "live": 1,
+     "tv": 16727,
+     "tvx": 0.8,
+     "idx": -3.12
     },
     {
      "kind": "swing",
@@ -15408,12 +15415,15 @@
       "거래량급증"
      ],
      "p0": 16200,
-     "r1": null,
+     "r1": 2.6,
      "r5": null,
      "r20": null,
      "b": 16200,
      "gap": 0,
-     "simOpen": 2.6
+     "simOpen": 2.6,
+     "tv": 4665,
+     "tvx": 1.5,
+     "idx": -3.12
     },
     {
      "kind": "day",
@@ -15431,13 +15441,19 @@
      "cAt": "09:04",
      "eTs": "2026-08-24T00:04:13.706Z",
      "cm": 4,
-     "r1": null,
-     "hit": null,
+     "r1": -1.9,
+     "hit": false,
      "simR": -3,
      "simExit": "stop",
      "simD": "2026-08-24",
      "simT": "09:30",
-     "live": 1
+     "live": 1,
+     "mfe": 3.1,
+     "mae": -4.7,
+     "tv": 3104,
+     "tvx": 1.5,
+     "touch": "stop",
+     "idx": -3.12
     },
     {
      "kind": "day",
@@ -15455,13 +15471,19 @@
      "cAt": "09:04",
      "eTs": "2026-08-24T00:04:13.706Z",
      "cm": 4,
-     "r1": null,
-     "hit": null,
+     "r1": 20.8,
+     "hit": true,
      "simR": 3,
      "simExit": "target",
      "simD": "2026-08-24",
      "simT": "09:54",
-     "live": 1
+     "live": 1,
+     "mfe": 20.8,
+     "mae": -2,
+     "tv": 277864,
+     "tvx": 8.8,
+     "touch": "target",
+     "idx": -3.12
     },
     {
      "kind": "day",
@@ -15479,13 +15501,19 @@
      "cAt": "09:04",
      "eTs": "2026-08-24T00:04:13.706Z",
      "cm": 4,
-     "r1": null,
-     "hit": null,
+     "r1": 7.3,
+     "hit": true,
      "simR": 3,
      "simExit": "target",
      "simD": "2026-08-24",
      "simT": "09:36",
-     "live": 1
+     "live": 1,
+     "mfe": 7.7,
+     "mae": -1.6,
+     "tv": 2437,
+     "tvx": 1.4,
+     "touch": "target",
+     "idx": -3.12
     }
    ],
    "day2": {
@@ -15493,6 +15521,295 @@
     "brief": "시가갭과 개장 후 흐름을 분석한 결과, 모멘텀이 유지되거나 긍정적인 반등세를 보인 종목을 엄선했습니다.",
     "n": 3
    }
+  },
+  {
+   "date": "2026-08-24",
+   "market": "US",
+   "regime": "상승",
+   "rules": [
+    "단타 실패 분해: 시장충격7·목표과다1·선정15 → 선정 강화",
+    "강도80+ 실측 0%(9) — 확신도 과장, 보수화",
+    "근거'실적' 성공32%(19) → 단독추천 지양",
+    "섹터'소프트웨어' 성공33%(9) → 회피",
+    "섹터'바이오' 성공38%(8) → 회피"
+   ],
+   "cands": [
+    {
+     "ticker": "USAR",
+     "rank": 1,
+     "verdict": "선택",
+     "why": "정책 테마와 광업 섹터 우위 결합",
+     "r1": null
+    },
+    {
+     "ticker": "SLS",
+     "rank": 90,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "IQMX",
+     "rank": 91,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "HOOD",
+     "rank": 92,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "INFQ",
+     "rank": 94,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "DK",
+     "rank": 95,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "RGTI",
+     "rank": 96,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "VIRT",
+     "rank": 97,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "CVI",
+     "rank": 98,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "FSLY",
+     "rank": 99,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "FUTU",
+     "rank": 100,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "QUBT",
+     "rank": 101,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "NEXA",
+     "rank": 102,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "ERO",
+     "rank": 103,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "MARA",
+     "rank": 104,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "NVDA",
+     "rank": 105,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "INTC",
+     "rank": 106,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "WBS",
+     "rank": 107,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    }
+   ],
+   "bl": {
+    "rand": [
+     "WBS",
+     "MARA",
+     "ERO"
+    ],
+    "mom": [
+     "SLS",
+     "IQMX",
+     "HOOD"
+    ]
+   },
+   "dayCands": [
+    {
+     "name": "SLS SELLAS Life Sciences Group, Inc",
+     "ticker": "SLS",
+     "score": 58,
+     "target_pct": 4,
+     "sector": "바이오",
+     "basis": [
+      "뉴스재료"
+     ],
+     "reason": "AML 임상 관련 월스트리트베츠(Wallstreetbets) 등의 소셜 버즈와 기대감이 유입되며 단기 모멘텀이 형성되었습니다. 바이오 섹터 과거 승률이 낮아 철저한 단기 대응이 필요합니다.",
+     "risk": "소셜 버즈 소멸 시 급격한 되돌림 가능성"
+    },
+    {
+     "name": "Infleqtion, Inc.",
+     "ticker": "INFQ",
+     "score": 57,
+     "target_pct": 4,
+     "sector": "기술",
+     "basis": [
+      "뉴스재료"
+     ],
+     "reason": "양자 관련 종목들의 급등 흐름 속에서 SEC 규정 관련 이슈와 후속 매수세가 유입되고 있습니다. 변동성이 극심하므로 목표가를 낮게 설정해 단기 대응합니다.",
+     "risk": "테마성 수급 이탈 시 큰 폭의 하락 변동성"
+    },
+    {
+     "name": "Rigetti Computing, Inc.",
+     "ticker": "RGTI",
+     "score": 56,
+     "target_pct": 4,
+     "sector": "기술",
+     "basis": [
+      "뉴스재료"
+     ],
+     "reason": "양자 컴퓨팅 섹터 전반의 주목과 함께 경고 메시지가 공존하나 단기 거래대금이 풍부합니다. 내부자 매도 뉴스가 있어 철저한 당일 단타로만 접근합니다.",
+     "risk": "고위임자 지분 매도에 따른 투자심리 악화"
+    },
+    {
+     "name": "Ero Copper Corp.",
+     "ticker": "ERO",
+     "score": 55,
+     "target_pct": 3,
+     "sector": "광업",
+     "basis": [
+      "추세지속"
+     ],
+     "reason": "AI 데이터 센터 붐에 따른 금속 수요 증가 수혜주로 광업 섹터 우위 통계와 부합합니다. 안정적인 모멘텀을 활용해 소폭의 단기 수익을 노립니다.",
+     "risk": "금속 가격 조종 시 모멘텀 둔화"
+    },
+    {
+     "name": "Futu Holdings Limited",
+     "ticker": "FUTU",
+     "score": 53,
+     "target_pct": 3,
+     "sector": "금융",
+     "basis": [
+      "실적"
+     ],
+     "reason": "역대급 거래량과 호실적 발표가 맞물리며 금융 섹터의 강세를 뒷받침하고 있습니다. 실적 기반의 안정적인 단기 반등을 기대합니다.",
+     "risk": "지수 선물 약세에 따른 대형 성장·핀테크주 동반 조정"
+    }
+   ],
+   "hold": 0,
+   "v": {
+    "m": "gemini-3.5-flash-lite",
+    "pv": "J1.0"
+   },
+   "mktF": {
+    "dir": "횡보",
+    "conf": 45,
+    "why": "지수 선물 약세와 VIX 상승으로 방향성이 제한되는 혼조세 예상",
+    "ok": null
+   },
+   "picks": [
+    {
+     "kind": "swing",
+     "name": "USA Rare Earth, Inc.",
+     "ticker": "USAR",
+     "score": 62,
+     "sector": "광업",
+     "basis": [
+      "정책테마",
+      "수주계약"
+     ],
+     "p0": 19.26,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "Robinhood Markets, Inc.",
+     "ticker": "HOOD",
+     "score": 60,
+     "sector": "금융",
+     "basis": [
+      "추세지속",
+      "거래량급증"
+     ],
+     "p0": 108.13,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "Delek US Holdings, Inc.",
+     "ticker": "DK",
+     "score": 55,
+     "sector": "에너지",
+     "basis": [
+      "실적",
+      "뉴스재료"
+     ],
+     "p0": 71.47,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    }
+   ]
   }
  ],
  "monAt": 1787553251562
