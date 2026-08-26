@@ -1,237 +1,231 @@
 {
- "date": "2026-08-25",
+ "date": "2026-08-26",
  "at": "21:29",
  "data": {
-  "brief": "전일 S&P500 조정에도 지수 선물이 반등하며 보수적인 관점 속에서도 단기 모멘텀 기회가 포착됩니다. 과거 실적 통계를 반영하여 소프트웨어, 바이오, 헬스케어 등 취약 섹터를 엄격히 회피하고 금융 및 소비재 위주로 선별했습니다. 확신도 역시 과거 과장 패턴을 교정하여 50~60대 수준으로 신중하게 설정했습니다.",
+  "brief": "S&P500 소폭 상승과 지수선물 보합세 속에서 금융 및 원자력 관련 종목들의 모멘텀이 돋보입니다. 과거 실측 통계와 확신도 교정 데이터를 반영하여 바이오·소프트웨어 섹터는 보수적으로 접근하고 금융·정책테마 위주로 선별했습니다.",
   "picks": [
    {
-    "name": "EZCORP, Inc.",
-    "ticker": "EZPW",
-    "score": 62,
-    "sector": "금융",
+    "name": "Standard Nuclear, Inc.",
+    "ticker": "STDN",
+    "score": 45,
+    "sector": "에너지",
     "basis": [
-     "실적",
-     "추세지속"
+     "수주계약",
+     "정책테마"
     ],
-    "reason": "역대급 실적과 신규 딜을 바탕으로 빠른 확장성을 입증하며 견조한 상승 추세를 이어가고 있습니다. 금융 섹터의 우위 통계와 맞물려 스윙 관점에서 안정적인 보유가 가능합니다.",
-    "catalyst": "Q3 실적 호조 및 확장 전략",
-    "risk": "광범위한 시장 변동성 및 소비 위축 가능성"
+    "reason": "Radiant Industries와의 TRISO 핵연료 공급 다중 계약 체결로 강력한 정책 및 수주 모멘텀을 확보했습니다. 다만 에너지 섹터 과거 승률 통계를 고려하여 보수적인 스코어를 부여했습니다.",
+    "catalyst": "Radiant Industries TRISO 핵연료 공급 계약",
+    "risk": "단기 급등에 따른 변동성 확대"
    },
    {
-    "name": "Sprouts Farmers Market, Inc.",
-    "ticker": "SFM",
-    "score": 58,
-    "sector": "소비재",
-    "basis": [
-     "추세지속",
-     "거래량급증"
-    ],
-    "reason": "꾸준한 상승 흐름을 보이며 경기 방어적 성격의 필수소비재 매수세가 유입되고 있습니다. 내부자 매도 노이즈가 있으나 실적 기반 모멘텀이 이를 방어하고 있습니다.",
-    "catalyst": "견조한 소비재 수급 및 실적 모멘텀",
-    "risk": "단기 차익실현 물량 출하"
-   },
-   {
-    "name": "Banco Macro S.A.",
-    "ticker": "BMA",
-    "score": 55,
+    "name": "Webster Financial Corporation",
+    "ticker": "WBS",
+    "score": 60,
     "sector": "금융",
     "basis": [
-     "실적",
-     "추세지속"
+     "뉴스재료"
     ],
-    "reason": "강한 실적 서프라이즈를 기록하며 상위 랭크된 탑티어 금융주로 기관 수급이 집중되고 있습니다. 금융 섹터 우위 패턴에 부합하여 추가 상승 여력이 있습니다.",
-    "catalyst": "강력한 실적 서프라이즈 및 수급 유입",
-    "risk": "아르헨티나 거시경제 변동성"
+    "reason": "SAN의 Webster 인수 완료를 통한 규모의 경제 및 다각화 추진이 긍정적으로 작용하고 있습니다. 금융 섹터의 상대적 우위 통계를 반영하여 안정적인 스코어를 부여했습니다.",
+    "catalyst": "SAN의 Webster 인수 완료",
+    "risk": "인수 통합 과정에서의 불확실성"
+   },
+   {
+    "name": "Madison Air Solutions Corporation",
+    "ticker": "MAIR",
+    "score": 50,
+    "sector": "제조",
+    "basis": [
+     "수주계약",
+     "뉴스재료"
+    ],
+    "reason": "ebm-papst 인수 자금 조달을 위한 22억 5천만 달러 규모의 사모 발행을 발표하며 대규모 성장 동력을 확보했습니다. 자금 조달 규모가 큰 만큼 실행 과정을 주시해야 합니다.",
+    "catalyst": "22.5억 달러 사모 발행 및 인수",
+    "risk": "대규모 자금 조달에 따른 희석 우려"
    }
   ],
   "day_cands": [
    {
-    "name": "TOP Financial Group Limited",
-    "ticker": "TOP",
-    "score": 50,
+    "name": "Centrus Energy Corp.",
+    "ticker": "LEU",
+    "score": 48,
     "target_pct": 4,
-    "sector": "핀테크",
+    "sector": "에너지",
+    "basis": [
+     "신고가",
+     "뉴스재료"
+    ],
+    "reason": "원자력 및 에너지 관련 장기 보유 선호 종목으로 꾸준한 관심을 받고 있습니다. 단타 목표는 4% 이내로 보수적으로 설정합니다.",
+    "catalyst": "원자력 에너지 섹터 지속 관심",
+    "risk": "단기 과열 진입 가능성"
+   },
+   {
+    "name": "Oklo Inc.",
+    "ticker": "OKLO",
+    "score": 52,
+    "target_pct": 4,
+    "sector": "에너지",
     "basis": [
      "정책테마",
-     "거래량급증"
+     "뉴스재료"
     ],
-    "reason": "인공지능 부문 신설 및 브로커리지 연계 등 혁신 재료가 부각되며 프리마켓에서 강한 거래 동력을 보이고 있습니다. 단기 변동성을 활용한 빠른 스캘핑 접근이 유효합니다.",
-    "catalyst": "AI 부문 전략적 확장 발표",
-    "risk": "극심한 변동성과 급격한 되돌림"
+    "reason": "일론 머스크 관련 언급 등 강력한 시장의 주목을 받으며 상승 모멘텀을 유지 중입니다. 단기 변동성을 활용한 4% 목표 스윙 트레이딩에 적합합니다.",
+    "catalyst": "원자력 및 AI 인프라 연계 기대감",
+    "risk": "뉴스 플로우에 따른 급등락"
    },
    {
-    "name": "Super Group (SGHC) Limited",
-    "ticker": "SGHC",
-    "score": 48,
-    "target_pct": 3,
-    "sector": "엔터테인먼트",
+    "name": "Nu Holdings Ltd.",
+    "ticker": "NU",
+    "score": 55,
+    "target_pct": 5,
+    "sector": "금융",
     "basis": [
-     "실적",
-     "추세지속"
+     "뉴스재료"
     ],
-    "reason": "2026년 가이드라인 상향 조정과 저평가 매력이 부각되며 상승 모멘텀을 형성했습니다. 실적 개선 추세가 단기 주가 상승을 지지할 것입니다.",
-    "catalyst": "가이드라인 상향 및 저평가 부각",
-    "risk": "시장 전체 하방 압력 시 동조화 하락"
+    "reason": "디지털 금융 서비스 확산 트렌드 속에서 핀테크 종목으로 주목받고 있습니다. 금융 섹터의 양호한 실측 성적을 바탕으로 단타 후보로 선정했습니다.",
+    "catalyst": "핀테크 및 디지털 금융 성장세",
+    "risk": "시장 전반의 금리 및 거시경제 변동"
    },
    {
-    "name": "Etsy, 인코포레이티드",
-    "ticker": "ETSY",
+    "name": "Cadeler A/S",
+    "ticker": "CDLR",
     "score": 45,
-    "target_pct": 3,
-    "sector": "커머스",
-    "basis": [
-     "낙폭과대",
-     "추세지속"
-    ],
-    "reason": "직원 감축과 실적 호조가 맞물려 비용 효율성 개선 기대감이 작용하고 있습니다. 애널리스트 업그레이드와 자사주 매입 기대감으로 반등 시도가 예상됩니다.",
-    "catalyst": "비용 구조 개선 및 투자의견 상향",
-    "risk": "성장성 둔화 우려 지속"
-   },
-   {
-    "name": "Expedia Group, Inc.",
-    "ticker": "EXPE",
-    "score": 45,
-    "target_pct": 3,
-    "sector": "여행",
-    "basis": [
-     "추세지속"
-    ],
-    "reason": "대형 투자기관의 목표주가 상향 조정 리포트가 발표되며 매수 심리가 자극되고 있습니다. 완만한 상승 추세 속에서 추가 탄력을 기대할 수 있습니다.",
-    "catalyst": "BTIG 목표가 대폭 상향 ($400)",
-    "risk": "여행 수요 둔화 시 모멘텀 약화"
-   },
-   {
-    "name": "BitMine Immersion Technologies",
-    "ticker": "BMNR",
-    "score": 42,
     "target_pct": 4,
-    "sector": "크립토",
+    "sector": "에너지",
     "basis": [
-     "거래량급증",
-     "낙폭과대"
+     "실적"
     ],
-    "reason": "크립토 포트폴리오 가치 급증과 이더리움 대량 보유 계획이 시장의 이목을 끌고 있습니다. 암호화폐 자산 가격 연동성에 따라 큰 폭의 일일 변동성이 예상됩니다.",
-    "catalyst": "이더리움 대량 보유 및 포트폴리오 가치",
-    "risk": "가상자산 시장 급등락에 따른 위험"
+    "reason": "매출이 432% 급증하는 강력한 실적과 높은 함대 가동률을 기록했습니다. 실적 호재에 반응하는 단기 모멘텀을 겨냥합니다.",
+    "catalyst": "Q2 매출 432% 급증 및 실적 발표",
+    "risk": "실적 발표 후 차익실현 매물"
+   },
+   {
+    "name": "Galaxy Digital Inc.",
+    "ticker": "GLXY",
+    "score": 50,
+    "target_pct": 4,
+    "sector": "금융",
+    "basis": [
+     "뉴스재료"
+    ],
+    "reason": "GalaxyOne을 통한 BTC, ETH, SOL 담보 크레딧 라인 출시로 암호화폐 연계 금융 서비스가 확대되고 있습니다. 가상자산 관련 수급에 연동된 단기 반등을 노립니다.",
+    "catalyst": "암호화폐 담보 크레딧 라인 출시",
+    "risk": "암호화폐 시장 변동성 노출"
    }
   ],
   "cands": [
    {
-    "ticker": "TOP",
+    "ticker": "ABCL",
     "rank": 1,
     "verdict": "관찰",
-    "why": "AI 확장 재료이나 변동성 과도"
+    "why": "바이오 섹터 회피 통계 반영하여 관찰로 분류"
+   },
+   {
+    "STDN": "",
+    "rank": 2,
+    "verdict": "선택",
+    "why": "정책테마 및 수주계약 모멘텀 보유"
    },
    {
     "ticker": "GENB",
-    "rank": 2,
-    "verdict": "제외",
-    "why": "바이오 섹터 회피 기준 적용"
-   },
-   {
-    "ticker": "SA",
     "rank": 3,
-    "verdict": "관찰",
-    "why": "골드 관련 움직임 주시 필요"
-   },
-   {
-    "ticker": "EZPW",
-    "rank": 4,
-    "verdict": "선택",
-    "why": "금융 섹터 및 실적 우위 반영"
-   },
-   {
-    "ticker": "LIFE",
-    "rank": 5,
     "verdict": "제외",
-    "why": "내부자 매도 및 소프트웨어/테크 회피"
+    "why": "보호예수 해제 물량 부담"
    },
    {
-    "ticker": "ETSY",
+    "ticker": "MRNA",
+    "rank": 4,
+    "verdict": "제외",
+    "why": "바이오 섹터 및 목표가 조정 혼조세"
+   },
+   {
+    "ticker": "MAIR",
+    "rank": 5,
+    "verdict": "선택",
+    "why": "대규모 자금 조달 및 인수 모멘텀"
+   },
+   {
+    "ticker": "PURR",
     "rank": 6,
     "verdict": "관찰",
-    "why": "성장성 우려 공존하는 단기 반등 후보"
+    "why": "밈코인 및 가상자산 랠리 연동으로 변동성 큼"
    },
    {
-    "ticker": "NG",
+    "ticker": "OKLO",
     "rank": 7,
-    "verdict": "관찰",
-    "why": "골드 마이닝 섹터 모멘텀 대기"
-   },
-   {
-    "ticker": "SFM",
-    "rank": 8,
     "verdict": "선택",
-    "why": "필수소비재 추세 유지 및 양호한 수급"
+    "why": "정책테마 및 시장 관심 집중"
    },
    {
-    "ticker": "BMNR",
+    "ticker": "BEAM",
+    "rank": 8,
+    "verdict": "제외",
+    "why": "바이오 섹터 승률 저조 반영"
+   },
+   {
+    "ticker": "SMCI",
     "rank": 9,
     "verdict": "관찰",
-    "why": "크립토 연동 변동성 장세 활용"
+    "why": "AI 트레이드 관련 정치적·시장적 노이즈"
    },
    {
-    "ticker": "SNAP",
+    "ticker": "RUM",
     "rank": 10,
-    "verdict": "제외",
-    "why": "SNS 섹터 모멘텀 부족"
+    "verdict": "관찰",
+    "why": "신고가 부근이나 단독 추천 사유 부족"
    },
    {
-    "ticker": "EXPE",
+    "ticker": "LEU",
     "rank": 11,
-    "verdict": "관찰",
-    "why": "목표가 상향에 따른 추세 연장 확인"
-   },
-   {
-    "ticker": "BMA",
-    "rank": 12,
     "verdict": "선택",
-    "why": "금융 섹터 및 강력한 실적 모멘텀"
+    "why": "장기 선호 에너지 종목 모멘텀"
    },
    {
-    "ticker": "SGHC",
+    "ticker": "FRHC",
+    "rank": 12,
+    "verdict": "제외",
+    "why": "내부자 매도 물량 출하"
+   },
+   {
+    "ticker": "CDLR",
     "rank": 13,
-    "verdict": "관찰",
-    "why": "가이드 상향 반영 단기 트레이딩"
+    "verdict": "선택",
+    "why": "실적 서프라이즈 기반 단기 반등"
    },
    {
-    "ticker": "BBAR",
+    "ticker": "GLXY",
     "rank": 14,
-    "verdict": "관찰",
-    "why": "실적 일정 대기 중인 아르헨티나 은행주"
+    "verdict": "선택",
+    "why": "신규 크레딧 라인 출시 재료"
    },
    {
     "ticker": "NVDA",
     "rank": 15,
-    "verdict": "제외",
-    "why": "7일 연속 하락세 및 실적 발표 앞둔 리스크"
+    "verdict": "관찰",
+    "why": "실적 발표 앞두고 경계감 유지"
    },
    {
     "ticker": "WBS",
     "rank": 16,
-    "verdict": "제외",
-    "why": "인수 완료에 따른 혼조세"
+    "verdict": "선택",
+    "why": "금융 섹터 우위 및 인수 완료 시너지"
+   },
+   {
+    "ticker": "NU",
+    "rank": 17,
+    "verdict": "선택",
+    "why": "핀테크 섹터 수급 유입"
    },
    {
     "ticker": "INTC",
-    "rank": 17,
-    "verdict": "제외",
-    "why": "정치인 지분 공시 노이즈 및 기술주 약세"
-   },
-   {
-    "ticker": "PLUG",
     "rank": 18,
     "verdict": "제외",
-    "why": "턴어라운드 지연 및 하락 추세"
+    "why": "상대적 모멘텀 열위"
    }
   ],
   "mkt": {
    "dir": "상승",
    "conf": 55,
-   "why": "전일 S&P500 조정에도 지수 선물이 플러스 반등하며 하방 경직성을 확보했습니다."
-  },
-  "day_picks": [],
-  "day_at": "22:34",
-  "day_brief": "실측 통계 및 개장 데이터 기준에 부합하는 종목이 없어 전량 보류합니다."
+   "why": "전일 S&P500 소폭 상승세와 지수선물의 완만한 보합세를 반영해 제한적 상승을 예상함"
+  }
  }
 }
