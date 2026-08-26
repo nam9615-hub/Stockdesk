@@ -13633,7 +13633,8 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": 6.2
+     "r1": 6.2,
+     "r5": 9.3
     },
     {
      "ticker": "247540.KQ",
@@ -15429,7 +15430,7 @@
      "r20": null,
      "b": 271500,
      "gap": 0.2,
-     "simOpen": 5.7,
+     "simOpen": 6.1,
      "tv": 61331,
      "tvx": 1.8,
      "idx": -3.12
@@ -16243,7 +16244,7 @@
      "r20": null,
      "b": 286000,
      "gap": 0,
-     "simOpen": 0.3,
+     "simOpen": 0.7,
      "tv": 24628,
      "tvx": 0.7,
      "idx": -0.53
@@ -16290,7 +16291,7 @@
      "r20": null,
      "b": 7350,
      "gap": 0,
-     "simOpen": 2.2,
+     "simOpen": 1.4,
      "tv": 806,
      "tvx": 0.4,
      "idx": -0.53
@@ -16711,63 +16712,63 @@
      "rank": 4,
      "verdict": "관찰",
      "why": "부자들 매수 뉴스 있으나 수급 혼조 및 반도체 섹터 회피 반영",
-     "r1": null
+     "r1": 1.9
     },
     {
      "ticker": "330350.KQ",
      "rank": 6,
      "verdict": "선택",
      "why": "단기 모멘텀 강하나 제약 섹터 주의 필요",
-     "r1": null
+     "r1": 2.2
     },
     {
      "ticker": "192820.KS",
      "rank": 1,
      "verdict": "선택",
      "why": "K뷰티 수출 호조 및 기관 연속 순매수로 스윙 최우선",
-     "r1": null
+     "r1": 1.8
     },
     {
      "ticker": "307180.KQ",
      "rank": 2,
      "verdict": "선택",
      "why": "로봇·피지컬 AI 모멘텀 우수",
-     "r1": null
+     "r1": -0.8
     },
     {
      "ticker": "032830.KS",
      "rank": 7,
      "verdict": "제외",
      "why": "금융 섹터 통계적 약세 및 수급 부진",
-     "r1": null
+     "r1": 5.6
     },
     {
      "ticker": "052860.KQ",
      "rank": 5,
      "verdict": "선택",
      "why": "AI 및 국방 드론 재료로 단기 변동성 활용 가능",
-     "r1": null
+     "r1": 4.7
     },
     {
      "ticker": "000810.KS",
      "rank": 8,
      "verdict": "제외",
      "why": "금융 섹터 회피 대상",
-     "r1": null
+     "r1": 3.8
     },
     {
      "ticker": "257720.KQ",
      "rank": 3,
      "verdict": "선택",
      "why": "신고가 경신 중인 K뷰티 핵심 대장주",
-     "r1": null
+     "r1": 0.8
     },
     {
      "ticker": "268280.KS",
      "rank": 9,
      "verdict": "관찰",
      "why": "거래 및 수급 유의미한 변화 부족",
-     "r1": null
+     "r1": 1.1
     },
     {
      "ticker": "260970.KQ",
@@ -16888,7 +16889,8 @@
     "dir": "횡보",
     "conf": 35,
     "why": "해외증시 완만한 상승에도 국내 수급 혼조와 약세 흐름이 지속되는 국면",
-    "ok": null
+    "ok": false,
+    "act": 0.97
    },
    "picks": [
     {
@@ -16902,12 +16904,15 @@
       "추세지속"
      ],
      "p0": 289000,
-     "r1": null,
+     "r1": 1.8,
      "r5": null,
      "r20": null,
      "b": 283000,
      "gap": -2.1,
-     "simOpen": 1.4
+     "simOpen": 1.8,
+     "tv": 49561,
+     "tvx": 1.3,
+     "idx": 0.97
     },
     {
      "kind": "swing",
@@ -16921,12 +16926,15 @@
       "거래량급증"
      ],
      "p0": 51900,
-     "r1": null,
+     "r1": 0.8,
      "r5": null,
      "r20": null,
      "b": 51400,
      "gap": -1,
-     "simOpen": 0.8
+     "simOpen": 0.8,
+     "tv": 48923,
+     "tvx": 0.7,
+     "idx": 0.97
     },
     {
      "kind": "swing",
@@ -16939,7 +16947,7 @@
       "추세지속"
      ],
      "p0": 5980,
-     "r1": null,
+     "r1": -0.8,
      "r5": null,
      "r20": null,
      "b": 6130,
@@ -16949,7 +16957,10 @@
      "simExit": "stop",
      "simD": "2026-08-26",
      "simT": "09:33",
-     "live": 1
+     "live": 1,
+     "tv": 2779,
+     "tvx": 1.3,
+     "idx": 0.97
     }
    ],
    "day2": {
@@ -16958,6 +16969,286 @@
     "n": 0
    },
    "dayHold": 1
+  },
+  {
+   "date": "2026-08-26",
+   "market": "US",
+   "regime": "상승",
+   "rules": [
+    "단타 실패 분해: 시장충격7·목표과다1·선정15 → 선정 강화",
+    "강도80+ 실측 0%(9) — 확신도 과장, 보수화",
+    "근거'실적' 성공36%(22) → 단독추천 지양",
+    "섹터'소프트웨어' 성공33%(9) → 회피",
+    "섹터'바이오' 성공38%(8) → 회피",
+    "섹터'금융' 성공67%(9) → 우위"
+   ],
+   "cands": [
+    {
+     "ticker": "ABCL",
+     "rank": 1,
+     "verdict": "관찰",
+     "why": "바이오 섹터 회피 통계 반영하여 관찰로 분류",
+     "r1": null
+    },
+    {
+     "ticker": "GENB",
+     "rank": 3,
+     "verdict": "제외",
+     "why": "보호예수 해제 물량 부담",
+     "r1": null
+    },
+    {
+     "ticker": "MRNA",
+     "rank": 4,
+     "verdict": "제외",
+     "why": "바이오 섹터 및 목표가 조정 혼조세",
+     "r1": null
+    },
+    {
+     "ticker": "MAIR",
+     "rank": 5,
+     "verdict": "선택",
+     "why": "대규모 자금 조달 및 인수 모멘텀",
+     "r1": null
+    },
+    {
+     "ticker": "PURR",
+     "rank": 6,
+     "verdict": "관찰",
+     "why": "밈코인 및 가상자산 랠리 연동으로 변동성 큼",
+     "r1": null
+    },
+    {
+     "ticker": "OKLO",
+     "rank": 7,
+     "verdict": "선택",
+     "why": "정책테마 및 시장 관심 집중",
+     "r1": null
+    },
+    {
+     "ticker": "BEAM",
+     "rank": 8,
+     "verdict": "제외",
+     "why": "바이오 섹터 승률 저조 반영",
+     "r1": null
+    },
+    {
+     "ticker": "SMCI",
+     "rank": 9,
+     "verdict": "관찰",
+     "why": "AI 트레이드 관련 정치적·시장적 노이즈",
+     "r1": null
+    },
+    {
+     "ticker": "RUM",
+     "rank": 10,
+     "verdict": "관찰",
+     "why": "신고가 부근이나 단독 추천 사유 부족",
+     "r1": null
+    },
+    {
+     "ticker": "LEU",
+     "rank": 11,
+     "verdict": "선택",
+     "why": "장기 선호 에너지 종목 모멘텀",
+     "r1": null
+    },
+    {
+     "ticker": "FRHC",
+     "rank": 12,
+     "verdict": "제외",
+     "why": "내부자 매도 물량 출하",
+     "r1": null
+    },
+    {
+     "ticker": "CDLR",
+     "rank": 13,
+     "verdict": "선택",
+     "why": "실적 서프라이즈 기반 단기 반등",
+     "r1": null
+    },
+    {
+     "ticker": "GLXY",
+     "rank": 14,
+     "verdict": "선택",
+     "why": "신규 크레딧 라인 출시 재료",
+     "r1": null
+    },
+    {
+     "ticker": "NVDA",
+     "rank": 15,
+     "verdict": "관찰",
+     "why": "실적 발표 앞두고 경계감 유지",
+     "r1": null
+    },
+    {
+     "ticker": "WBS",
+     "rank": 16,
+     "verdict": "선택",
+     "why": "금융 섹터 우위 및 인수 완료 시너지",
+     "r1": null
+    },
+    {
+     "ticker": "NU",
+     "rank": 17,
+     "verdict": "선택",
+     "why": "핀테크 섹터 수급 유입",
+     "r1": null
+    },
+    {
+     "ticker": "INTC",
+     "rank": 18,
+     "verdict": "제외",
+     "why": "상대적 모멘텀 열위",
+     "r1": null
+    },
+    {
+     "ticker": "STDN",
+     "rank": 91,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    }
+   ],
+   "bl": {
+    "rand": [
+     "ABCL",
+     "STDN",
+     "GENB"
+    ],
+    "mom": [
+     "ABCL",
+     "STDN",
+     "GENB"
+    ]
+   },
+   "dayCands": [
+    {
+     "name": "Centrus Energy Corp.",
+     "ticker": "LEU",
+     "score": 48,
+     "target_pct": 4,
+     "sector": "에너지",
+     "basis": [
+      "신고가",
+      "뉴스재료"
+     ],
+     "reason": "원자력 및 에너지 관련 장기 보유 선호 종목으로 꾸준한 관심을 받고 있습니다. 단타 목표는 4% 이내로 보수적으로 설정합니다.",
+     "catalyst": "원자력 에너지 섹터 지속 관심",
+     "risk": "단기 과열 진입 가능성"
+    },
+    {
+     "name": "Oklo Inc.",
+     "ticker": "OKLO",
+     "score": 52,
+     "target_pct": 4,
+     "sector": "에너지",
+     "basis": [
+      "정책테마",
+      "뉴스재료"
+     ],
+     "reason": "일론 머스크 관련 언급 등 강력한 시장의 주목을 받으며 상승 모멘텀을 유지 중입니다. 단기 변동성을 활용한 4% 목표 스윙 트레이딩에 적합합니다.",
+     "catalyst": "원자력 및 AI 인프라 연계 기대감",
+     "risk": "뉴스 플로우에 따른 급등락"
+    },
+    {
+     "name": "Nu Holdings Ltd.",
+     "ticker": "NU",
+     "score": 55,
+     "target_pct": 5,
+     "sector": "금융",
+     "basis": [
+      "뉴스재료"
+     ],
+     "reason": "디지털 금융 서비스 확산 트렌드 속에서 핀테크 종목으로 주목받고 있습니다. 금융 섹터의 양호한 실측 성적을 바탕으로 단타 후보로 선정했습니다.",
+     "catalyst": "핀테크 및 디지털 금융 성장세",
+     "risk": "시장 전반의 금리 및 거시경제 변동"
+    },
+    {
+     "name": "Cadeler A/S",
+     "ticker": "CDLR",
+     "score": 45,
+     "target_pct": 4,
+     "sector": "에너지",
+     "basis": [
+      "실적"
+     ],
+     "reason": "매출이 432% 급증하는 강력한 실적과 높은 함대 가동률을 기록했습니다. 실적 호재에 반응하는 단기 모멘텀을 겨냥합니다.",
+     "catalyst": "Q2 매출 432% 급증 및 실적 발표",
+     "risk": "실적 발표 후 차익실현 매물"
+    },
+    {
+     "name": "Galaxy Digital Inc.",
+     "ticker": "GLXY",
+     "score": 50,
+     "target_pct": 4,
+     "sector": "금융",
+     "basis": [
+      "뉴스재료"
+     ],
+     "reason": "GalaxyOne을 통한 BTC, ETH, SOL 담보 크레딧 라인 출시로 암호화폐 연계 금융 서비스가 확대되고 있습니다. 가상자산 관련 수급에 연동된 단기 반등을 노립니다.",
+     "catalyst": "암호화폐 담보 크레딧 라인 출시",
+     "risk": "암호화폐 시장 변동성 노출"
+    }
+   ],
+   "hold": 0,
+   "v": {
+    "m": "gemini-3.5-flash-lite",
+    "pv": "J1.0"
+   },
+   "mktF": {
+    "dir": "상승",
+    "conf": 55,
+    "why": "전일 S&P500 소폭 상승세와 지수선물의 완만한 보합세를 반영해 제한적 상승을 예상함",
+    "ok": null
+   },
+   "picks": [
+    {
+     "kind": "swing",
+     "name": "Standard Nuclear, Inc.",
+     "ticker": "STDN",
+     "score": 45,
+     "sector": "에너지",
+     "basis": [
+      "수주계약",
+      "정책테마"
+     ],
+     "p0": 13.94,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "Webster Financial Corporation",
+     "ticker": "WBS",
+     "score": 60,
+     "sector": "금융",
+     "basis": [
+      "뉴스재료"
+     ],
+     "p0": 77.57,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "Madison Air Solutions Corporation",
+     "ticker": "MAIR",
+     "score": 50,
+     "sector": "제조",
+     "basis": [
+      "수주계약",
+      "뉴스재료"
+     ],
+     "p0": 27.99,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    }
+   ]
   }
  ],
  "monAt": 1787725691359
