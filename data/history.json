@@ -17005,63 +17005,63 @@
      "rank": 1,
      "verdict": "관찰",
      "why": "바이오 섹터 회피 통계 반영하여 관찰로 분류",
-     "r1": null
+     "r1": 0.2
     },
     {
      "ticker": "GENB",
      "rank": 3,
      "verdict": "제외",
      "why": "보호예수 해제 물량 부담",
-     "r1": null
+     "r1": -18.5
     },
     {
      "ticker": "MRNA",
      "rank": 4,
      "verdict": "제외",
      "why": "바이오 섹터 및 목표가 조정 혼조세",
-     "r1": null
+     "r1": -3.1
     },
     {
      "ticker": "MAIR",
      "rank": 5,
      "verdict": "선택",
      "why": "대규모 자금 조달 및 인수 모멘텀",
-     "r1": null
+     "r1": 3.3
     },
     {
      "ticker": "PURR",
      "rank": 6,
      "verdict": "관찰",
      "why": "밈코인 및 가상자산 랠리 연동으로 변동성 큼",
-     "r1": null
+     "r1": 0.5
     },
     {
      "ticker": "OKLO",
      "rank": 7,
      "verdict": "선택",
      "why": "정책테마 및 시장 관심 집중",
-     "r1": null
+     "r1": -7.5
     },
     {
      "ticker": "BEAM",
      "rank": 8,
      "verdict": "제외",
      "why": "바이오 섹터 승률 저조 반영",
-     "r1": null
+     "r1": -2.5
     },
     {
      "ticker": "SMCI",
      "rank": 9,
      "verdict": "관찰",
      "why": "AI 트레이드 관련 정치적·시장적 노이즈",
-     "r1": null
+     "r1": -1.6
     },
     {
      "ticker": "RUM",
      "rank": 10,
      "verdict": "관찰",
      "why": "신고가 부근이나 단독 추천 사유 부족",
-     "r1": null
+     "r1": -6.9
     },
     {
      "ticker": "LEU",
@@ -17346,6 +17346,271 @@
     "n": 0
    },
    "dayHold": 1
+  },
+  {
+   "date": "2026-08-27",
+   "market": "KR",
+   "regime": "혼조",
+   "rules": [
+    "단타 실패 분해: 시장충격5·목표과다0·선정9 → 선정 강화",
+    "근거'정책테마' 성공40%(10) → 단독추천 지양",
+    "근거'수주계약' 성공33%(9) → 단독추천 지양",
+    "근거'거래량급증' 성공73%(11) → 신뢰",
+    "섹터'반도체' 성공0%(9) → 회피",
+    "섹터'화장품' 성공67%(9) → 우위"
+   ],
+   "cands": [
+    {
+     "ticker": "000880.KS",
+     "rank": 1,
+     "verdict": "선택",
+     "why": "미국 방산 투자 모멘텀 및 기관 연속순매수 유입으로 스윙 적합",
+     "r1": null
+    },
+    {
+     "ticker": "094480.KQ",
+     "rank": 91,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "000810.KS",
+     "rank": 92,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "330350.KQ",
+     "rank": 93,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "272450.KS",
+     "rank": 94,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "265740.KQ",
+     "rank": 95,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "180640.KS",
+     "rank": 96,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "462860.KQ",
+     "rank": 97,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "002840.KS",
+     "rank": 98,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "025980.KQ",
+     "rank": 99,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "078930.KS",
+     "rank": 100,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "461300.KQ",
+     "rank": 101,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "278470.KS",
+     "rank": 102,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "260970.KQ",
+     "rank": 103,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    }
+   ],
+   "bl": {
+    "rand": [
+     "025980.KQ",
+     "330350.KQ",
+     "260970.KQ"
+    ],
+    "mom": [
+     "000880.KS",
+     "094480.KQ",
+     "000810.KS"
+    ]
+   },
+   "dayCands": [
+    {
+     "name": "갤럭시아머니트리",
+     "ticker": "094480.KQ",
+     "score": 65,
+     "target_pct": 5,
+     "sector": "가상자산",
+     "basis": [
+      "정책테마",
+      "거래량급증"
+     ],
+     "reason": "트럼프 당선인 영향으로 가상자산 및 스테이블코인 관련주가 강세를 보이고 있습니다. 편의점 충전 서비스 개시 등 실질적 모멘텀이 겹쳤습니다.",
+     "risk": "변동성이 크므로 장초반 거래대금 이탈 시 즉시 대응"
+    },
+    {
+     "name": "아난티",
+     "ticker": "025980.KQ",
+     "score": 62,
+     "target_pct": 4,
+     "sector": "대북주",
+     "basis": [
+      "정책테마",
+      "거래량급증"
+     ],
+     "reason": "북미 정상회담 추진 보도 등에 힘입어 남북경협주 테마가 단기 거래 집중을 받고 있습니다.",
+     "risk": "정치적 뉴스 플로우에 따라 등락이 매우 격심함"
+    },
+    {
+     "name": "위더스제약",
+     "ticker": "330350.KQ",
+     "score": 58,
+     "target_pct": 3,
+     "sector": "제약",
+     "basis": [
+      "정책테마",
+      "거래량급증"
+     ],
+     "reason": "양대 증시 약세 속 정책 수혜주 및 개별 이슈에 따른 단기 수급 유입 조짐이 있습니다.",
+     "risk": "탈모 건보 적용 등 정책 관련 뉴스 불확실성 상존"
+    },
+    {
+     "name": "아이스크림미디어",
+     "ticker": "461300.KQ",
+     "score": 55,
+     "target_pct": 3,
+     "sector": "교육",
+     "basis": [
+      "추세지속",
+      "거래량급증"
+     ],
+     "reason": "교사 편의성을 높인 '아이스크림S' 플랫폼 개편 소식으로 매수세가 유입 중입니다.",
+     "risk": "테마 지속성이 짧을 수 있어 스윙보다는 단타 접근 유리"
+    },
+    {
+     "name": "더즌",
+     "ticker": "462860.KQ",
+     "score": 53,
+     "target_pct": 4,
+     "sector": "핀테크",
+     "basis": [
+      "정책테마",
+      "거래량급증"
+     ],
+     "reason": "트럼프 관련 가상자산·스테이블코인 법안 촉구 뉴스로 단기 변동성이 확대되었습니다.",
+     "risk": "외국인과 기관의 수급이 혼조세를 보이고 있어 주의 필요"
+    }
+   ],
+   "hold": 0,
+   "v": {
+    "m": "gemini-3.5-flash-lite",
+    "pv": "J1.0"
+   },
+   "mktF": {
+    "dir": "횡보",
+    "conf": 45,
+    "why": "미 증시 보합세 속 국내 시장은 뚜렷한 주도주 부재로 혼조 국면 지속 예상",
+    "ok": null
+   },
+   "picks": [
+    {
+     "kind": "swing",
+     "name": "엔에프씨",
+     "ticker": "265740.KQ",
+     "score": 72,
+     "sector": "화장품",
+     "basis": [
+      "실적",
+      "거래량급증",
+      "추세지속"
+     ],
+     "p0": 7690,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "진에어",
+     "ticker": "272450.KS",
+     "score": 68,
+     "sector": "항공",
+     "basis": [
+      "수주계약",
+      "추세지속",
+      "거래량급증"
+     ],
+     "p0": 5890,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "한화",
+     "ticker": "000880.KS",
+     "score": 65,
+     "sector": "방산",
+     "basis": [
+      "수주계약",
+      "추세지속"
+     ],
+     "p0": 118900,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    }
+   ]
   }
  ],
  "monAt": 1787775971132
