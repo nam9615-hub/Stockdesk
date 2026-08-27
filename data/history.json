@@ -16260,10 +16260,12 @@
      "r20": null,
      "b": 286000,
      "gap": 0,
-     "simOpen": -1,
      "tv": 24628,
      "tvx": 0.7,
-     "idx": -0.53
+     "idx": -0.53,
+     "simR": -5,
+     "simExit": "stop",
+     "simD": "2026-08-27"
     },
     {
      "kind": "swing",
@@ -17393,7 +17395,7 @@
      "rank": 1,
      "verdict": "선택",
      "why": "미국 방산 투자 모멘텀 및 기관 연속순매수 유입으로 스윙 적합",
-     "r1": null
+     "r1": 9.2
     },
     {
      "ticker": "094480.KQ",
@@ -17401,7 +17403,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": -3.9
     },
     {
      "ticker": "000810.KS",
@@ -17409,7 +17411,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": -1.4
     },
     {
      "ticker": "330350.KQ",
@@ -17417,7 +17419,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": -15.6
     },
     {
      "ticker": "272450.KS",
@@ -17425,7 +17427,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": 0.2
     },
     {
      "ticker": "265740.KQ",
@@ -17433,7 +17435,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": -1.1
     },
     {
      "ticker": "180640.KS",
@@ -17441,7 +17443,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": -1.8
     },
     {
      "ticker": "462860.KQ",
@@ -17449,7 +17451,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": 2.2
     },
     {
      "ticker": "002840.KS",
@@ -17457,7 +17459,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": -1.6
     },
     {
      "ticker": "025980.KQ",
@@ -17623,7 +17625,8 @@
     "dir": "횡보",
     "conf": 45,
     "why": "미 증시 보합세 속 국내 시장은 뚜렷한 주도주 부재로 혼조 국면 지속 예상",
-    "ok": null
+    "ok": false,
+    "act": 1.53
    },
    "picks": [
     {
@@ -17638,12 +17641,15 @@
       "추세지속"
      ],
      "p0": 7690,
-     "r1": null,
+     "r1": -1.1,
      "r5": null,
      "r20": null,
      "b": 7550,
      "gap": -1.8,
-     "simOpen": -1.1
+     "simOpen": -1.1,
+     "tv": 2206,
+     "tvx": 0.6,
+     "idx": 1.53
     },
     {
      "kind": "swing",
@@ -17657,12 +17663,15 @@
       "거래량급증"
      ],
      "p0": 5890,
-     "r1": null,
+     "r1": 0.2,
      "r5": null,
      "r20": null,
      "b": 5890,
      "gap": 0,
-     "simOpen": 0.2
+     "simOpen": 0.2,
+     "tv": 774,
+     "tvx": 1.6,
+     "idx": 1.53
     },
     {
      "kind": "swing",
@@ -17675,7 +17684,7 @@
       "추세지속"
      ],
      "p0": 118900,
-     "r1": null,
+     "r1": 9.2,
      "r5": null,
      "r20": null,
      "b": 119200,
@@ -17685,7 +17694,9 @@
      "simExit": "target",
      "simD": "2026-08-27",
      "simT": "12:45",
-     "live": 1
+     "live": 1,
+     "tv": 65251,
+     "idx": 1.53
     }
    ],
    "day2": {
@@ -17694,6 +17705,276 @@
     "n": 0
    },
    "dayHold": 1
+  },
+  {
+   "date": "2026-08-27",
+   "market": "US",
+   "regime": "혼조",
+   "rules": [
+    "단타 실패 분해: 시장충격7·목표과다1·선정15 → 선정 강화",
+    "강도80+ 실측 0%(9) — 확신도 과장, 보수화",
+    "근거'실적' 성공36%(22) → 단독추천 지양",
+    "섹터'소프트웨어' 성공33%(9) → 회피",
+    "섹터'바이오' 성공38%(8) → 회피",
+    "섹터'금융' 성공67%(9) → 우위"
+   ],
+   "cands": [
+    {
+     "ticker": "ANF",
+     "rank": 1,
+     "verdict": "선택",
+     "why": "실적 서프라이즈 및 가이드라인 상향",
+     "r1": null
+    },
+    {
+     "ticker": "URBN",
+     "rank": 2,
+     "verdict": "선택",
+     "why": "Q2 실적 호조 및 밸류에이션 부각",
+     "r1": null
+    },
+    {
+     "ticker": "TTMI",
+     "rank": 3,
+     "verdict": "선택",
+     "why": "CEO 자사주 매입 및 모멘텀 지속",
+     "r1": null
+    },
+    {
+     "ticker": "SEDG",
+     "rank": 4,
+     "verdict": "관찰",
+     "why": "IB 상향 및 야간 강세이나 신재생 변동성 주의",
+     "r1": null
+    },
+    {
+     "ticker": "SMTC",
+     "rank": 5,
+     "verdict": "관찰",
+     "why": "증권사 상향 리포트 모멘텀",
+     "r1": null
+    },
+    {
+     "ticker": "BHVN",
+     "rank": 6,
+     "verdict": "관찰",
+     "why": "신약 관련 라이선스 딜",
+     "r1": null
+    },
+    {
+     "ticker": "ERAS",
+     "rank": 7,
+     "verdict": "관찰",
+     "why": "FDA 패스트트랙 지정",
+     "r1": null
+    },
+    {
+     "ticker": "BZ",
+     "rank": 8,
+     "verdict": "관찰",
+     "why": "배당 정책 및 수익성 개선",
+     "r1": null
+    },
+    {
+     "ticker": "BBWI",
+     "rank": 9,
+     "verdict": "제외",
+     "why": "목표가 하향 리포트 존재",
+     "r1": null
+    },
+    {
+     "ticker": "SIMO",
+     "rank": 10,
+     "verdict": "제외",
+     "why": "아시아 ADR 약세 영향",
+     "r1": null
+    },
+    {
+     "ticker": "ZYME",
+     "rank": 11,
+     "verdict": "제외",
+     "why": "52주 신고가 부담",
+     "r1": null
+    },
+    {
+     "ticker": "DAVE",
+     "rank": 12,
+     "verdict": "제외",
+     "why": "핀테크 업종 변동성",
+     "r1": null
+    },
+    {
+     "ticker": "NBTX",
+     "rank": 13,
+     "verdict": "제외",
+     "why": "모멘텀 부족",
+     "r1": null
+    },
+    {
+     "ticker": "BTSG",
+     "rank": 14,
+     "verdict": "제외",
+     "why": "상승폭 제한적",
+     "r1": null
+    },
+    {
+     "ticker": "WBS",
+     "rank": 15,
+     "verdict": "제외",
+     "why": "약보합세로 모멘텀 부재",
+     "r1": null
+    },
+    {
+     "ticker": "AAL",
+     "rank": 16,
+     "verdict": "제외",
+     "why": "여행 섹터 약세",
+     "r1": null
+    },
+    {
+     "ticker": "PLUG",
+     "rank": 17,
+     "verdict": "제외",
+     "why": "수소 관련주 하락세 심화",
+     "r1": null
+    },
+    {
+     "ticker": "NVDA",
+     "rank": 18,
+     "verdict": "제외",
+     "why": "지수 전반 혼조 속 하락 마감",
+     "r1": null
+    }
+   ],
+   "bl": {
+    "rand": [
+     "WBS",
+     "BTSG",
+     "URBN"
+    ],
+    "mom": [
+     "ANF",
+     "BHVN",
+     "BZ"
+    ]
+   },
+   "dayCands": [
+    {
+     "name": "Biohaven Ltd.",
+     "ticker": "BHVN",
+     "score": 45,
+     "target_pct": 4,
+     "sector": "바이오",
+     "basis": [
+      "정책테마"
+     ],
+     "reason": "뇌전증 치료제 라이선스 딜 소식으로 단기 모멘텀이 형성되었습니다. 다만 바이오 섹터 회피 통계를 감안하여 목표가를 낮게 설정합니다.",
+     "risk": "바이오 섹터 변동성 및 차익실현"
+    },
+    {
+     "name": "SolarEdge Technologies, Inc.",
+     "ticker": "SEDG",
+     "score": 48,
+     "target_pct": 4,
+     "sector": "에너지",
+     "basis": [
+      "추세지속"
+     ],
+     "reason": "UBS의 목표가 상향 및 야간 시장 강세 흐름이 이어지고 있습니다. 기술적 반등 구간에서 단기 접근이 유효합니다.",
+     "risk": "신재생 에너지 섹터의 높은 변동성"
+    },
+    {
+     "name": "Semtech Corporation",
+     "ticker": "SMTC",
+     "score": 47,
+     "target_pct": 4,
+     "sector": "기술",
+     "basis": [
+      "수주계약"
+     ],
+     "reason": "증권사의 투자의견 상향 및 목표가 상향 조정이 단기 수급을 자극합니다. 투심 개선 효과를 활용합니다.",
+     "risk": "기술주 전반의 수급 이탈 가능성"
+    },
+    {
+     "name": "Erasca, Inc.",
+     "ticker": "ERAS",
+     "score": 46,
+     "target_pct": 4,
+     "sector": "바이오",
+     "basis": [
+      "정책테마"
+     ],
+     "reason": "FDA 패스트트랙 지정 뉴스가 단기 재료로 작용하고 있습니다. 다만 과거 통계상 바이오 신중론을 반영합니다.",
+     "risk": "임상 관련 불확실성"
+    },
+    {
+     "name": "Kanzhun Limited",
+     "ticker": "BZ",
+     "score": 45,
+     "target_pct": 4,
+     "sector": "소프트웨어",
+     "basis": [
+      "실적"
+     ],
+     "reason": "수익성 개선 및 신규 배당 정책 발표가 긍정적이나 소프트웨어 회피 통계를 고려해 보수적으로 대응합니다.",
+     "risk": "중국 ADR 종목 리스크"
+    }
+   ],
+   "hold": 0,
+   "v": {
+    "m": "gemini-3.5-flash-lite",
+    "pv": "J1.0"
+   },
+   "mktF": {
+    "dir": "횡보",
+    "conf": 45,
+    "why": "지수선물이 강보합이나 과거 혼조장 실적 및 과신 보정 반영.",
+    "ok": null
+   },
+   "picks": [
+    {
+     "kind": "swing",
+     "name": "Abercrombie & Fitch Company",
+     "ticker": "ANF",
+     "score": 55,
+     "sector": "의류",
+     "basis": [
+      "실적"
+     ],
+     "p0": 147.75,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "Urban Outfitters, Inc.",
+     "ticker": "URBN",
+     "score": 52,
+     "sector": "의류",
+     "basis": [
+      "실적"
+     ],
+     "p0": 82.95,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "TTM Technologies, Inc.",
+     "ticker": "TTMI",
+     "score": 50,
+     "sector": "제조",
+     "basis": [
+      "수주계약"
+     ],
+     "p0": 121.7,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    }
+   ]
   }
  ],
  "monAt": 1787812571640
