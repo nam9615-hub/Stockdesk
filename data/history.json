@@ -12453,7 +12453,8 @@
      "rank": 8,
      "verdict": "제외",
      "why": "바이오 섹터 리스크",
-     "r1": 0.7
+     "r1": 0.7,
+     "r5": -2.7
     },
     {
      "ticker": "MESO",
@@ -14080,7 +14081,8 @@
      "rank": 16,
      "verdict": "제외",
      "why": "하락 추세 지속",
-     "r1": -0.5
+     "r1": -0.5,
+     "r5": 1.8
     },
     {
      "ticker": "INTC",
@@ -17807,35 +17809,35 @@
      "rank": 10,
      "verdict": "제외",
      "why": "아시아 ADR 약세 영향",
-     "r1": null
+     "r1": -6.2
     },
     {
      "ticker": "ZYME",
      "rank": 11,
      "verdict": "제외",
      "why": "52주 신고가 부담",
-     "r1": null
+     "r1": -1.1
     },
     {
      "ticker": "DAVE",
      "rank": 12,
      "verdict": "제외",
      "why": "핀테크 업종 변동성",
-     "r1": null
+     "r1": 0.1
     },
     {
      "ticker": "NBTX",
      "rank": 13,
      "verdict": "제외",
      "why": "모멘텀 부족",
-     "r1": null
+     "r1": 5.5
     },
     {
      "ticker": "BTSG",
      "rank": 14,
      "verdict": "제외",
      "why": "상승폭 제한적",
-     "r1": null
+     "r1": -0.8
     },
     {
      "ticker": "WBS",
@@ -17849,21 +17851,21 @@
      "rank": 16,
      "verdict": "제외",
      "why": "여행 섹터 약세",
-     "r1": null
+     "r1": -0.6
     },
     {
      "ticker": "PLUG",
      "rank": 17,
      "verdict": "제외",
      "why": "수소 관련주 하락세 심화",
-     "r1": null
+     "r1": 2.5
     },
     {
      "ticker": "NVDA",
      "rank": 18,
      "verdict": "제외",
      "why": "지수 전반 혼조 속 하락 마감",
-     "r1": null
+     "r1": 2.4
     }
    ],
    "bl": {
@@ -18089,7 +18091,19 @@
     "brief": "제시된 5개 후보 중 원칙(개장 후 -2% 이하 붕괴 및 섹터 회피 통계)을 위배하거나 논리를 확인해주지 못해, 모든 종목을 제외하고 보류합니다.",
     "n": 0
    },
-   "dayHold": 1
+   "dayHold": 1,
+   "cstat": {
+    "n": 17,
+    "med": -0.8,
+    "ex": null,
+    "exD": null,
+    "rg": null,
+    "rej": 1,
+    "blr": {
+     "rand": -1.9,
+     "mom": -1.5
+    }
+   }
   },
   {
    "date": "2026-08-28",
