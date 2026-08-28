@@ -17680,7 +17680,7 @@
      "r20": null,
      "b": 7550,
      "gap": -1.8,
-     "simOpen": 7.2,
+     "simOpen": -1.1,
      "tv": 2206,
      "tvx": 0.6,
      "idx": 1.53
@@ -17702,7 +17702,7 @@
      "r20": null,
      "b": 5890,
      "gap": 0,
-     "simOpen": 0.3,
+     "simOpen": 0.2,
      "tv": 774,
      "tvx": 1.6,
      "idx": 1.53
@@ -18527,63 +18527,63 @@
      "rank": 1,
      "verdict": "관찰",
      "why": "목표가 상향 뉴스가 있으나 소프트웨어 섹터 회피 성향 반영",
-     "r1": null
+     "r1": -3.5
     },
     {
      "ticker": "CRWD",
      "rank": 2,
      "verdict": "제외",
      "why": "높은 밸류에이션 및 섹터 주의",
-     "r1": null
+     "r1": -4.4
     },
     {
      "ticker": "VEEV",
      "rank": 3,
      "verdict": "선택",
      "why": "주간 상승 모멘텀 유효하여 단기 후보로 선정",
-     "r1": null
+     "r1": -1.2
     },
     {
      "ticker": "SNPS",
      "rank": 4,
      "verdict": "선택",
      "why": "실적 호조 및 가이던스 상향으로 스윙 매력 우수",
-     "r1": null
+     "r1": -4.2
     },
     {
      "ticker": "FIG",
      "rank": 5,
      "verdict": "관찰",
      "why": "M&A 및 IPO 관련 뉴스 혼재",
-     "r1": null
+     "r1": -4.5
     },
     {
      "ticker": "PANW",
      "rank": 6,
      "verdict": "관찰",
      "why": "메모리 수퍼사이클 경고 등 변수 존재",
-     "r1": null
+     "r1": -1.5
     },
     {
      "ticker": "SAIL",
      "rank": 7,
      "verdict": "관찰",
      "why": "플랫폼 전환 수혜 기대감 있으나 신중 접근",
-     "r1": null
+     "r1": -2.1
     },
     {
      "ticker": "FROG",
      "rank": 8,
      "verdict": "선택",
      "why": "거래량 동반 급등세로 당일 모멘텀 활용",
-     "r1": null
+     "r1": -4.5
     },
     {
      "ticker": "MAAS",
      "rank": 9,
      "verdict": "선택",
      "why": "AI 컴퓨팅 계약 모멘텀 보유",
-     "r1": null
+     "r1": -0.1
     },
     {
      "ticker": "TENB",
