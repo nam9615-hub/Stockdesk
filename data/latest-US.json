@@ -1,225 +1,230 @@
 {
- "date": "2026-08-27",
+ "date": "2026-08-28",
  "at": "21:29",
  "data": {
-  "brief": "지수선물 강세와 VIX 하락 등 혼조 속 제한적 반등 국면이나, 과거 확신도 과장 경향을 반영해 보수적으로 접근합니다. 실적 호조 및 가이드라인 상향 종목 중심으로 선별 대응합니다.",
-  "mkt": {
-   "dir": "횡보",
-   "conf": 45,
-   "why": "지수선물이 강보합이나 과거 혼조장 실적 및 과신 보정 반영."
-  },
+  "brief": "전일 S&P500의 견조한 상승과 VIX 하락으로 위험 선호 심리가 유지되는 상승장 환경입니다. 과거 실측 통계상 고확신도(80대)의 과장 경향 및 소프트웨어/헬스케어 섹터의 낮은 성공률을 반영하여 보수적이고 선별적인 접근을 취합니다.",
   "picks": [
    {
-    "name": "Abercrombie & Fitch Company",
-    "ticker": "ANF",
-    "score": 55,
-    "sector": "의류",
+    "name": "Synopsys, Inc.",
+    "ticker": "SNPS",
+    "score": 68,
+    "sector": "소프트웨어",
     "basis": [
-     "실적"
+     "실적",
+     "추세지속"
     ],
-    "reason": "Q2 순매출 호조와 2026년 가이드라인 상향 조정으로 실적 모멘텀이 유효합니다. 다만 단독 추천 지양 통계를 고려해 리스크를 관리합니다.",
-    "catalyst": "실적 서프라이즈 및 가이드라인 상향",
-    "risk": "단기 급등에 따른 차익실현 매물 출하 압력"
+    "reason": "어닝 서프라이즈와 함께 FY26 가이던스를 상향 조정하며 밸류에이션 매력이 부각되었습니다. 강력한 펀더멘털을 바탕으로 중기적 상승 추세 지속이 기대됩니다.",
+    "catalyst": "실적 호조 및 가이던스 상향",
+    "risk": "소프트웨어 섹터 전반의 과거 낮은 성공률 고려 필요"
    },
    {
-    "name": "Urban Outfitters, Inc.",
-    "ticker": "URBN",
-    "score": 52,
-    "sector": "의류",
+    "name": "Maase Inc",
+    "ticker": "MAAS",
+    "score": 65,
+    "sector": "기술",
     "basis": [
-     "실적"
+     "수주계약",
+     "정책테마"
     ],
-    "reason": "Q2 실적이 예상치를 충족하고 광범위한 성장을 기록하며 주가가 상승했습니다. 견조한 밸류에이션 매력이 추가 상승을 지지합니다.",
-    "catalyst": "기대치 부합 실적 및 실적 가시성",
-    "risk": "소비재 섹터 전반의 변동성 확대"
+    "reason": "AI 컴퓨팅 서비스 계약 완료 및 창업 경진대회 수상 소식이 겹치며 모멘텀이 강화되었습니다. 실질적인 수주 성과가 주가 하단을 지지할 것입니다.",
+    "catalyst": "AI 컴퓨팅 서비스 계약 체결",
+    "risk": "중소형주 변동성 및 차익실현 매물 주의"
    },
    {
-    "name": "TTM Technologies, Inc.",
-    "ticker": "TTMI",
-    "score": 50,
-    "sector": "제조",
+    "name": "BlackBerry Limited",
+    "ticker": "BB",
+    "score": 62,
+    "sector": "소프트웨어",
     "basis": [
-     "수주계약"
+     "정책테마",
+     "거래량급증"
     ],
-    "reason": "CEO의 대규모 자사주 매입 뉴스가 주가 모멘텀을 강화하고 있습니다. 내부자 매수는 하방 경직성을 제공하는 요인입니다.",
-    "catalyst": "CEO 자사주 매입",
-    "risk": "단기 모멘텀 둔화 가능성"
+    "reason": "QNX-Hailo 협업 소식이 실적 발표를 앞두고 '변곡점'으로 작용하며 리테일 매수세를 자극하고 있습니다. 반전 모멘텀이 단기 스윙 관점에서 유효합니다.",
+    "catalyst": "QNX-Hailo 전략적 제휴",
+    "risk": "최근 2주간 하락세에 따른 되돌림 저항 가능성"
    }
   ],
   "day_cands": [
    {
-    "name": "Biohaven Ltd.",
-    "ticker": "BHVN",
-    "score": 45,
+    "name": "Veeva Systems Inc.",
+    "ticker": "VEEV",
+    "score": 60,
     "target_pct": 4,
-    "sector": "바이오",
+    "sector": "헬스케어",
     "basis": [
-     "정책테마"
-    ],
-    "reason": "뇌전증 치료제 라이선스 딜 소식으로 단기 모멘텀이 형성되었습니다. 다만 바이오 섹터 회피 통계를 감안하여 목표가를 낮게 설정합니다.",
-    "risk": "바이오 섹터 변동성 및 차익실현"
-   },
-   {
-    "name": "SolarEdge Technologies, Inc.",
-    "ticker": "SEDG",
-    "score": 48,
-    "target_pct": 4,
-    "sector": "에너지",
-    "basis": [
+     "뉴스재료",
      "추세지속"
     ],
-    "reason": "UBS의 목표가 상향 및 야간 시장 강세 흐름이 이어지고 있습니다. 기술적 반등 구간에서 단기 접근이 유효합니다.",
-    "risk": "신재생 에너지 섹터의 높은 변동성"
+    "reason": "주간 강한 상승 흐름을 보이며 거래가 집중되고 있어 당일 모멘텀 활용이 가능합니다. 다만 헬스케어 섹터 통계를 감안해 목표 수익률을 낮게 설정합니다.",
+    "risk": "바이오/헬스케어 섹터의 과거 부진한 성공률"
    },
    {
-    "name": "Semtech Corporation",
-    "ticker": "SMTC",
-    "score": 47,
-    "target_pct": 4,
-    "sector": "기술",
-    "basis": [
-     "수주계약"
-    ],
-    "reason": "증권사의 투자의견 상향 및 목표가 상향 조정이 단기 수급을 자극합니다. 투심 개선 효과를 활용합니다.",
-    "risk": "기술주 전반의 수급 이탈 가능성"
-   },
-   {
-    "name": "Erasca, Inc.",
-    "ticker": "ERAS",
-    "score": 46,
-    "target_pct": 4,
-    "sector": "바이오",
-    "basis": [
-     "정책테마"
-    ],
-    "reason": "FDA 패스트트랙 지정 뉴스가 단기 재료로 작용하고 있습니다. 다만 과거 통계상 바이오 신중론을 반영합니다.",
-    "risk": "임상 관련 불확실성"
-   },
-   {
-    "name": "Kanzhun Limited",
-    "ticker": "BZ",
-    "score": 45,
+    "name": "JFrog Ltd.",
+    "ticker": "FROG",
+    "score": 62,
     "target_pct": 4,
     "sector": "소프트웨어",
     "basis": [
-     "실적"
+     "뉴스재료",
+     "거래량급증"
     ],
-    "reason": "수익성 개선 및 신규 배당 정책 발표가 긍정적이나 소프트웨어 회피 통계를 고려해 보수적으로 대응합니다.",
-    "risk": "중국 ADR 종목 리스크"
+    "reason": "대형주 전반의 강세 흐름 속에서 개별 재료와 함께 급등세를 타고 있습니다. 장초반 거래량 유입 시 단기 트레이딩 기회를 제공합니다.",
+    "risk": "소프트웨어 섹터 경계감 및 급등 후 변동성"
+   },
+   {
+    "name": "Tenable Holdings, Inc.",
+    "ticker": "TENB",
+    "score": 60,
+    "target_pct": 4,
+    "sector": "보안",
+    "basis": [
+     "뉴스재료",
+     "추세지속"
+    ],
+    "reason": "사이버 보안 관련주 전반의 동반 강세 흐름에 편승하여 상승 모멘텀을 유지하고 있습니다. 보수적인 목표 수익률로 당일 접근이 적절합니다.",
+    "risk": "보안 섹터의 동조화 및 변동성 확대"
+   },
+   {
+    "name": "UiPath, Inc.",
+    "ticker": "PATH",
+    "score": 58,
+    "target_pct": 3,
+    "sector": "소프트웨어",
+    "basis": [
+     "수주계약",
+     "뉴스재료"
+    ],
+    "reason": "대형 고객사 대상 8,800개 이상의 비즈니스 프로세스 오케스트레이션 성과가 부각되었습니다. 실질적 채택 지표가 단기 매수세를 자극합니다.",
+    "risk": "소프트웨어 섹터 보수적 접근 원칙"
+   },
+   {
+    "name": "Ondas Inc",
+    "ticker": "ONDS",
+    "score": 55,
+    "target_pct": 3,
+    "sector": "방산",
+    "basis": [
+     "뉴스재료",
+     "거래량급증"
+    ],
+    "reason": "드론 관련주 전반으로 위험 선호 자금이 유입되며 동반 상승세를 기록 중입니다. 과거 방산 섹터의 낮은 성공률을 반영해 목표치를 낮춥니다.",
+    "risk": "테마성 수급 이탈 시 급락 위험"
    }
   ],
   "cands": [
    {
-    "ticker": "ANF",
+    "ticker": "OKTA",
     "rank": 1,
-    "verdict": "선택",
-    "why": "실적 서프라이즈 및 가이드라인 상향"
+    "verdict": "관찰",
+    "why": "목표가 상향 뉴스가 있으나 소프트웨어 섹터 회피 성향 반영"
    },
    {
-    "ticker": "URBN",
+    "ticker": "CRWD",
     "rank": 2,
-    "verdict": "선택",
-    "why": "Q2 실적 호조 및 밸류에이션 부각"
+    "verdict": "제외",
+    "why": "높은 밸류에이션 및 섹터 주의"
    },
    {
-    "ticker": "TTMI",
+    "ticker": "VEEV",
     "rank": 3,
     "verdict": "선택",
-    "why": "CEO 자사주 매입 및 모멘텀 지속"
+    "why": "주간 상승 모멘텀 유효하여 단기 후보로 선정"
    },
    {
-    "ticker": "SEDG",
+    "ticker": "SNPS",
     "rank": 4,
-    "verdict": "관찰",
-    "why": "IB 상향 및 야간 강세이나 신재생 변동성 주의"
+    "verdict": "선택",
+    "why": "실적 호조 및 가이던스 상향으로 스윙 매력 우수"
    },
    {
-    "ticker": "SMTC",
+    "ticker": "FIG",
     "rank": 5,
     "verdict": "관찰",
-    "why": "증권사 상향 리포트 모멘텀"
+    "why": "M&A 및 IPO 관련 뉴스 혼재"
    },
    {
-    "ticker": "BHVN",
+    "ticker": "PANW",
     "rank": 6,
     "verdict": "관찰",
-    "why": "신약 관련 라이선스 딜"
+    "why": "메모리 수퍼사이클 경고 등 변수 존재"
    },
    {
-    "ticker": "ERAS",
+    "ticker": "SAIL",
     "rank": 7,
     "verdict": "관찰",
-    "why": "FDA 패스트트랙 지정"
+    "why": "플랫폼 전환 수혜 기대감 있으나 신중 접근"
    },
    {
-    "ticker": "BZ",
+    "ticker": "FROG",
     "rank": 8,
-    "verdict": "관찰",
-    "why": "배당 정책 및 수익성 개선"
+    "verdict": "선택",
+    "why": "거래량 동반 급등세로 당일 모멘텀 활용"
    },
    {
-    "ticker": "BBWI",
+    "ticker": "MAAS",
     "rank": 9,
-    "verdict": "제외",
-    "why": "목표가 하향 리포트 존재"
+    "verdict": "선택",
+    "why": "AI 컴퓨팅 계약 모멘텀 보유"
    },
    {
-    "ticker": "SIMO",
+    "ticker": "TENB",
     "rank": 10,
-    "verdict": "제외",
-    "why": "아시아 ADR 약세 영향"
+    "verdict": "선택",
+    "why": "보안주 강세 흐름 동참"
    },
    {
-    "ticker": "ZYME",
+    "ticker": "MSTR",
     "rank": 11,
-    "verdict": "제외",
-    "why": "52주 신고가 부담"
+    "verdict": "관찰",
+    "why": "비트코인 가격 연동성 모니터링 필요"
    },
    {
-    "ticker": "DAVE",
+    "ticker": "RBRK",
     "rank": 12,
-    "verdict": "제외",
-    "why": "핀테크 업종 변동성"
+    "verdict": "관찰",
+    "why": "지수 변동성 주시"
    },
    {
-    "ticker": "NBTX",
+    "ticker": "BB",
     "rank": 13,
-    "verdict": "제외",
-    "why": "모멘텀 부족"
+    "verdict": "선택",
+    "why": "파트너십 체결 변곡점 및 리테일 유입"
    },
    {
-    "ticker": "BTSG",
+    "ticker": "PURR",
     "rank": 14,
-    "verdict": "제외",
-    "why": "상승폭 제한적"
-   },
-   {
-    "ticker": "WBS",
-    "rank": 15,
-    "verdict": "제외",
-    "why": "약보합세로 모멘텀 부재"
-   },
-   {
-    "ticker": "AAL",
-    "rank": 16,
-    "verdict": "제외",
-    "why": "여행 섹터 약세"
-   },
-   {
-    "ticker": "PLUG",
-    "rank": 17,
-    "verdict": "제외",
-    "why": "수소 관련주 하락세 심화"
+    "verdict": "관찰",
+    "why": "연간 실적 발표 이후 등락 주시"
    },
    {
     "ticker": "NVDA",
-    "rank": 18,
+    "rank": 15,
+    "verdict": "관찰",
+    "why": "지수 전반의 흐름 참조용"
+   },
+   {
+    "ticker": "INTC",
+    "rank": 16,
     "verdict": "제외",
-    "why": "지수 전반 혼조 속 하락 마감"
+    "why": "상승률 상위 대비 모멘텀 부족"
+   },
+   {
+    "ticker": "ONDS",
+    "rank": 17,
+    "verdict": "선택",
+    "why": "드론 테마 수급 유입 반영 단기 후보"
+   },
+   {
+    "ticker": "PATH",
+    "rank": 18,
+    "verdict": "선택",
+    "why": "고객사 프로세스 자동화 성과 부각"
    }
   ],
-  "day_picks": [],
-  "day_at": "22:34",
-  "day_brief": "제시된 5개 후보 중 원칙(개장 후 -2% 이하 붕괴 및 섹터 회피 통계)을 위배하거나 논리를 확인해주지 못해, 모든 종목을 제외하고 보류합니다."
+  "mkt": {
+   "dir": "상승",
+   "conf": 55,
+   "why": "전일 S&P500 상승 및 VIX 하락으로 온화한 상승장 환경이나 과거 보정치 적용"
+  }
  }
 }
