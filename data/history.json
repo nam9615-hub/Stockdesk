@@ -15447,7 +15447,7 @@
      ],
      "p0": 271000,
      "r1": 5.3,
-     "r5": null,
+     "r5": 11.6,
      "r20": null,
      "b": 271500,
      "gap": 0.2,
@@ -16947,7 +16947,7 @@
      "r20": null,
      "b": 283000,
      "gap": -2.1,
-     "simOpen": 6.9,
+     "simOpen": 7.1,
      "tv": 49561,
      "tvx": 1.3,
      "idx": 0.97
@@ -17666,7 +17666,7 @@
      "r20": null,
      "b": 7550,
      "gap": -1.8,
-     "simOpen": 6.9,
+     "simOpen": 7.2,
      "tv": 2206,
      "tvx": 0.6,
      "idx": 1.53
@@ -18130,63 +18130,63 @@
      "rank": 1,
      "verdict": "선택",
      "why": "자율주행 및 원격제어 실증 모멘텀 우수",
-     "r1": null
+     "r1": -2.4
     },
     {
      "ticker": "289080.KQ",
      "rank": 12,
      "verdict": "관찰",
      "why": "단기 모멘텀 강하나 수급 불안정",
-     "r1": null
+     "r1": -5.2
     },
     {
      "ticker": "047040.KS",
      "rank": 3,
      "verdict": "관찰",
      "why": "중동 뉴스 및 기관 수급 양호하나 건설업종 한계",
-     "r1": null
+     "r1": -1.6
     },
     {
      "ticker": "417010.KQ",
      "rank": 6,
      "verdict": "관찰",
      "why": "신규 투자 및 MOU 재료 보유",
-     "r1": null
+     "r1": 6.9
     },
     {
      "ticker": "100840.KS",
      "rank": 2,
      "verdict": "선택",
      "why": "해외 대규모 수주 계약으로 실적 가시성 높음",
-     "r1": null
+     "r1": 1.7
     },
     {
      "ticker": "091580.KQ",
      "rank": 4,
      "verdict": "관찰",
      "why": "모멘텀 강하나 이차전지 섹터 통계 고려 관망",
-     "r1": null
+     "r1": 1.6
     },
     {
      "ticker": "066970.KS",
      "rank": 5,
      "verdict": "관찰",
      "why": "기관 연속 순매수 있으나 섹터 통계상 신중 필요",
-     "r1": null
+     "r1": 4.8
     },
     {
      "ticker": "265740.KQ",
      "rank": 3,
      "verdict": "선택",
      "why": "역대 최대 실적 및 기관 연속 순매수 유입",
-     "r1": null
+     "r1": 8.3
     },
     {
      "ticker": "267270.KS",
      "rank": 9,
      "verdict": "관찰",
      "why": "노조 리스크와 해외 공략 모멘텀 공존",
-     "r1": null
+     "r1": -1.9
     },
     {
      "ticker": "468530.KQ",
@@ -18347,7 +18347,8 @@
     "dir": "횡보",
     "conf": 40,
     "why": "글로벌 증시 호조에도 불구하고 국내 시장의 수급 분산과 과거 예측 적중률 한계를 반영하여 보수적 횡보장 전망",
-    "ok": null
+    "ok": false,
+    "act": -1.79
    },
    "picks": [
     {
@@ -18361,12 +18362,15 @@
       "추세지속"
      ],
      "p0": 32400,
-     "r1": null,
+     "r1": 1.7,
      "r5": null,
      "r20": null,
      "b": 31950,
      "gap": -1.4,
-     "simOpen": 1.6
+     "simOpen": 1.7,
+     "tv": 4941,
+     "tvx": 1.1,
+     "idx": -1.79
     },
     {
      "kind": "swing",
@@ -18379,12 +18383,15 @@
       "추세지속"
      ],
      "p0": 7470,
-     "r1": null,
+     "r1": 8.3,
      "r5": null,
      "r20": null,
      "b": 7470,
      "gap": 0,
-     "simOpen": 8
+     "simOpen": 8.3,
+     "tv": 4329,
+     "tvx": 1.2,
+     "idx": -1.79
     },
     {
      "kind": "swing",
@@ -18397,12 +18404,15 @@
       "추세지속"
      ],
      "p0": 40100,
-     "r1": null,
+     "r1": -2.4,
      "r5": null,
      "r20": null,
      "b": 42350,
      "gap": 5.6,
-     "simOpen": -2.5
+     "simOpen": -2.4,
+     "tv": 8943,
+     "tvx": 2.2,
+     "idx": -1.79
     },
     {
      "kind": "day",
@@ -18420,13 +18430,19 @@
      "cAt": "09:04",
      "eTs": "2026-08-28T00:04:14.366Z",
      "cm": 4,
-     "r1": null,
-     "hit": null,
+     "r1": 2,
+     "hit": true,
      "simR": 3,
      "simExit": "target",
      "simD": "2026-08-28",
      "simT": "09:25",
-     "live": 1
+     "live": 1,
+     "mfe": 7.8,
+     "mae": -1.2,
+     "tv": 15588,
+     "tvx": 1.4,
+     "touch": "target",
+     "idx": -1.79
     },
     {
      "kind": "day",
@@ -18444,13 +18460,19 @@
      "cAt": "09:04",
      "eTs": "2026-08-28T00:04:14.366Z",
      "cm": 4,
-     "r1": null,
-     "hit": null,
+     "r1": 5.9,
+     "hit": true,
      "simR": 3,
      "simExit": "target",
      "simD": "2026-08-28",
      "simT": "10:06",
-     "live": 1
+     "live": 1,
+     "mfe": 15,
+     "mae": -3.4,
+     "tv": 19319,
+     "tvx": 6.5,
+     "touch": "target",
+     "idx": -1.79
     }
    ],
    "day2": {
@@ -18458,6 +18480,284 @@
     "brief": "개장 후 시가 대비 하락폭이 크거나 수급이 약한 종목들을 제외하고, 긍정적인 주가 흐름을 유지하는 삼아알미늄과 나노팀을 최종 선정했습니다.",
     "n": 2
    }
+  },
+  {
+   "date": "2026-08-28",
+   "market": "US",
+   "regime": "상승",
+   "rules": [
+    "단타 실패 분해: 시장충격7·목표과다1·선정15 → 선정 강화",
+    "강도80+ 실측 0%(9) — 확신도 과장, 보수화",
+    "근거'실적' 성공38%(24) → 단독추천 지양",
+    "섹터'소프트웨어' 성공33%(9) → 회피",
+    "섹터'바이오' 성공38%(8) → 회피",
+    "섹터'금융' 성공67%(9) → 우위"
+   ],
+   "cands": [
+    {
+     "ticker": "OKTA",
+     "rank": 1,
+     "verdict": "관찰",
+     "why": "목표가 상향 뉴스가 있으나 소프트웨어 섹터 회피 성향 반영",
+     "r1": null
+    },
+    {
+     "ticker": "CRWD",
+     "rank": 2,
+     "verdict": "제외",
+     "why": "높은 밸류에이션 및 섹터 주의",
+     "r1": null
+    },
+    {
+     "ticker": "VEEV",
+     "rank": 3,
+     "verdict": "선택",
+     "why": "주간 상승 모멘텀 유효하여 단기 후보로 선정",
+     "r1": null
+    },
+    {
+     "ticker": "SNPS",
+     "rank": 4,
+     "verdict": "선택",
+     "why": "실적 호조 및 가이던스 상향으로 스윙 매력 우수",
+     "r1": null
+    },
+    {
+     "ticker": "FIG",
+     "rank": 5,
+     "verdict": "관찰",
+     "why": "M&A 및 IPO 관련 뉴스 혼재",
+     "r1": null
+    },
+    {
+     "ticker": "PANW",
+     "rank": 6,
+     "verdict": "관찰",
+     "why": "메모리 수퍼사이클 경고 등 변수 존재",
+     "r1": null
+    },
+    {
+     "ticker": "SAIL",
+     "rank": 7,
+     "verdict": "관찰",
+     "why": "플랫폼 전환 수혜 기대감 있으나 신중 접근",
+     "r1": null
+    },
+    {
+     "ticker": "FROG",
+     "rank": 8,
+     "verdict": "선택",
+     "why": "거래량 동반 급등세로 당일 모멘텀 활용",
+     "r1": null
+    },
+    {
+     "ticker": "MAAS",
+     "rank": 9,
+     "verdict": "선택",
+     "why": "AI 컴퓨팅 계약 모멘텀 보유",
+     "r1": null
+    },
+    {
+     "ticker": "TENB",
+     "rank": 10,
+     "verdict": "선택",
+     "why": "보안주 강세 흐름 동참",
+     "r1": null
+    },
+    {
+     "ticker": "MSTR",
+     "rank": 11,
+     "verdict": "관찰",
+     "why": "비트코인 가격 연동성 모니터링 필요",
+     "r1": null
+    },
+    {
+     "ticker": "RBRK",
+     "rank": 12,
+     "verdict": "관찰",
+     "why": "지수 변동성 주시",
+     "r1": null
+    },
+    {
+     "ticker": "BB",
+     "rank": 13,
+     "verdict": "선택",
+     "why": "파트너십 체결 변곡점 및 리테일 유입",
+     "r1": null
+    },
+    {
+     "ticker": "PURR",
+     "rank": 14,
+     "verdict": "관찰",
+     "why": "연간 실적 발표 이후 등락 주시",
+     "r1": null
+    },
+    {
+     "ticker": "NVDA",
+     "rank": 15,
+     "verdict": "관찰",
+     "why": "지수 전반의 흐름 참조용",
+     "r1": null
+    },
+    {
+     "ticker": "INTC",
+     "rank": 16,
+     "verdict": "제외",
+     "why": "상승률 상위 대비 모멘텀 부족",
+     "r1": null
+    },
+    {
+     "ticker": "ONDS",
+     "rank": 17,
+     "verdict": "선택",
+     "why": "드론 테마 수급 유입 반영 단기 후보",
+     "r1": null
+    },
+    {
+     "ticker": "PATH",
+     "rank": 18,
+     "verdict": "선택",
+     "why": "고객사 프로세스 자동화 성과 부각",
+     "r1": null
+    }
+   ],
+   "bl": {
+    "rand": [
+     "MSTR",
+     "VEEV",
+     "OKTA"
+    ],
+    "mom": [
+     "OKTA",
+     "CRWD",
+     "VEEV"
+    ]
+   },
+   "dayCands": [
+    {
+     "name": "Veeva Systems Inc.",
+     "ticker": "VEEV",
+     "score": 60,
+     "target_pct": 4,
+     "sector": "헬스케어",
+     "basis": [
+      "뉴스재료",
+      "추세지속"
+     ],
+     "reason": "주간 강한 상승 흐름을 보이며 거래가 집중되고 있어 당일 모멘텀 활용이 가능합니다. 다만 헬스케어 섹터 통계를 감안해 목표 수익률을 낮게 설정합니다.",
+     "risk": "바이오/헬스케어 섹터의 과거 부진한 성공률"
+    },
+    {
+     "name": "JFrog Ltd.",
+     "ticker": "FROG",
+     "score": 62,
+     "target_pct": 4,
+     "sector": "소프트웨어",
+     "basis": [
+      "뉴스재료",
+      "거래량급증"
+     ],
+     "reason": "대형주 전반의 강세 흐름 속에서 개별 재료와 함께 급등세를 타고 있습니다. 장초반 거래량 유입 시 단기 트레이딩 기회를 제공합니다.",
+     "risk": "소프트웨어 섹터 경계감 및 급등 후 변동성"
+    },
+    {
+     "name": "Tenable Holdings, Inc.",
+     "ticker": "TENB",
+     "score": 60,
+     "target_pct": 4,
+     "sector": "보안",
+     "basis": [
+      "뉴스재료",
+      "추세지속"
+     ],
+     "reason": "사이버 보안 관련주 전반의 동반 강세 흐름에 편승하여 상승 모멘텀을 유지하고 있습니다. 보수적인 목표 수익률로 당일 접근이 적절합니다.",
+     "risk": "보안 섹터의 동조화 및 변동성 확대"
+    },
+    {
+     "name": "UiPath, Inc.",
+     "ticker": "PATH",
+     "score": 58,
+     "target_pct": 3,
+     "sector": "소프트웨어",
+     "basis": [
+      "수주계약",
+      "뉴스재료"
+     ],
+     "reason": "대형 고객사 대상 8,800개 이상의 비즈니스 프로세스 오케스트레이션 성과가 부각되었습니다. 실질적 채택 지표가 단기 매수세를 자극합니다.",
+     "risk": "소프트웨어 섹터 보수적 접근 원칙"
+    },
+    {
+     "name": "Ondas Inc",
+     "ticker": "ONDS",
+     "score": 55,
+     "target_pct": 3,
+     "sector": "방산",
+     "basis": [
+      "뉴스재료",
+      "거래량급증"
+     ],
+     "reason": "드론 관련주 전반으로 위험 선호 자금이 유입되며 동반 상승세를 기록 중입니다. 과거 방산 섹터의 낮은 성공률을 반영해 목표치를 낮춥니다.",
+     "risk": "테마성 수급 이탈 시 급락 위험"
+    }
+   ],
+   "hold": 0,
+   "v": {
+    "m": "gemini-3.5-flash-lite",
+    "pv": "J1.0"
+   },
+   "mktF": {
+    "dir": "상승",
+    "conf": 55,
+    "why": "전일 S&P500 상승 및 VIX 하락으로 온화한 상승장 환경이나 과거 보정치 적용",
+    "ok": null
+   },
+   "picks": [
+    {
+     "kind": "swing",
+     "name": "Synopsys, Inc.",
+     "ticker": "SNPS",
+     "score": 68,
+     "sector": "소프트웨어",
+     "basis": [
+      "실적",
+      "추세지속"
+     ],
+     "p0": 464.89,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "Maase Inc",
+     "ticker": "MAAS",
+     "score": 65,
+     "sector": "기술",
+     "basis": [
+      "수주계약",
+      "정책테마"
+     ],
+     "p0": 16.54,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "BlackBerry Limited",
+     "ticker": "BB",
+     "score": 62,
+     "sector": "소프트웨어",
+     "basis": [
+      "정책테마",
+      "거래량급증"
+     ],
+     "p0": 8.65,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    }
+   ]
   }
  ],
  "monAt": 1787898371490
