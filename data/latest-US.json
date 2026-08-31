@@ -223,6 +223,34 @@
     "verdict": "제외",
     "why": "파트너십 부인 등 부정적 뉴스 플로우"
    }
-  ]
+  ],
+  "day_picks": [
+   {
+    "name": "Elastic N.V.",
+    "ticker": "ESTC",
+    "score": 75,
+    "target_pct": 4,
+    "sector": "소프트웨어",
+    "basis": [
+     "어닝호조"
+    ],
+    "reason": "시가갭은 -2.6%로 하락 출발했으나 개장 후 +2.9% 반등하며 매수세가 유입되는 실측 확인.",
+    "risk": "소프트웨어 섹터 신중론 존재"
+   },
+   {
+    "name": "Solstice Advanced Materials Inc",
+    "ticker": "SOLS",
+    "score": 70,
+    "target_pct": 3,
+    "sector": "소재",
+    "basis": [
+     "저평가매력"
+    ],
+    "reason": "보합권 시가갭 이후 개장 후 +1.9% 상승하며 사전 근거인 저평가 매력과 매수 유입세가 일치함.",
+    "risk": "단기 변동성 주의"
+   }
+  ],
+  "day_at": "22:34",
+  "day_brief": "후보군 중 개장 후 뚜렷한 반등세를 보인 ESTC와 저평가 매력이 유입된 SOLS를 선정했습니다."
  }
 }
