@@ -18920,63 +18920,63 @@
      "rank": 1,
      "verdict": "선택",
      "why": "기관 중심의 탄탄한 수급과 우수 모멘텀 보유",
-     "r1": null
+     "r1": -4.5
     },
     {
      "ticker": "214450.KQ",
      "rank": 2,
      "verdict": "선택",
      "why": "글로벌 확장성 및 수급 우위로 스윙 최우선",
-     "r1": null
+     "r1": -7.1
     },
     {
      "ticker": "062040.KS",
      "rank": 3,
      "verdict": "선택",
      "why": "기관 연속 순매수와 전력 인프라 성장성 지속",
-     "r1": null
+     "r1": -1.4
     },
     {
      "ticker": "481070.KQ",
      "rank": 4,
      "verdict": "선택",
      "why": "일본 시장 진출 모멘텀 및 단기 거래대금 집중",
-     "r1": null
+     "r1": 3.6
     },
     {
      "ticker": "100840.KS",
      "rank": 5,
      "verdict": "선택",
      "why": "해외 대규모 수주 계약 및 플랜트 모멘텀 우수",
-     "r1": null
+     "r1": -2.7
     },
     {
      "ticker": "383310.KQ",
      "rank": 6,
      "verdict": "선택",
      "why": "미국 수주 성공 및 친환경·반도체 연계성 부각",
-     "r1": null
+     "r1": -1.7
     },
     {
      "ticker": "029460.KS",
      "rank": 7,
      "verdict": "관찰",
      "why": "거버넌스 이슈 부각되나 스윙 관점 모멘텀 제한적",
-     "r1": null
+     "r1": 2.1
     },
     {
      "ticker": "082800.KQ",
      "rank": 8,
      "verdict": "선택",
      "why": "신약 임상 및 해외 공급 모멘텀 유효",
-     "r1": null
+     "r1": 2.9
     },
     {
      "ticker": "047040.KS",
      "rank": 9,
      "verdict": "선택",
      "why": "기관 매수세 유입 속 낙폭 과대 반등 기대",
-     "r1": null
+     "r1": -5.3
     },
     {
      "ticker": "950140.KQ",
@@ -19224,6 +19224,283 @@
     "n": 0
    },
    "dayHold": 1
+  },
+  {
+   "date": "2026-08-31",
+   "market": "US",
+   "regime": "혼조",
+   "rules": [
+    "단타 실패 분해: 시장충격7·목표과다1·선정15 → 선정 강화",
+    "강도80+ 실측 0%(9) — 확신도 과장, 보수화",
+    "근거'실적' 성공36%(25) → 단독추천 지양",
+    "근거'정책테마' 성공88%(8) → 신뢰",
+    "섹터'소프트웨어' 성공36%(11) → 회피",
+    "섹터'바이오' 성공38%(8) → 회피"
+   ],
+   "cands": [
+    {
+     "ticker": "PSQL",
+     "rank": 1,
+     "verdict": "선택",
+     "why": "양자 컴퓨팅 협력 뉴스로 강한 모멘텀 보유",
+     "r1": null
+    },
+    {
+     "ticker": "GAP",
+     "rank": 3,
+     "verdict": "관찰",
+     "why": "목표가 상향 및 올드네이비 턴어라운드 기대",
+     "r1": null
+    },
+    {
+     "ticker": "SOLS",
+     "rank": 4,
+     "verdict": "관찰",
+     "why": "소재 거래 이슈에 따른 저평가 부각",
+     "r1": null
+    },
+    {
+     "ticker": "TOP",
+     "rank": 5,
+     "verdict": "선택",
+     "why": "AI 부문 신설 및 핀테크 확장 모멘텀",
+     "r1": null
+    },
+    {
+     "ticker": "TRLV",
+     "rank": 6,
+     "verdict": "관찰",
+     "why": "NYSE 상장 이벤트 및 정책 테마",
+     "r1": null
+    },
+    {
+     "ticker": "FLUT",
+     "rank": 7,
+     "verdict": "선택",
+     "why": "법적 판결 호재로 인한 섹터 랠리 수혜",
+     "r1": null
+    },
+    {
+     "ticker": "WDAY",
+     "rank": 8,
+     "verdict": "제외",
+     "why": "소프트웨어 섹터 회피 성향 반영",
+     "r1": null
+    },
+    {
+     "ticker": "DPZ",
+     "rank": 9,
+     "verdict": "관찰",
+     "why": "마케팅 뉴스로 인한 제한적 움직임",
+     "r1": null
+    },
+    {
+     "ticker": "LULU",
+     "rank": 10,
+     "verdict": "제외",
+     "why": "의류 섹터 통계적 약세 고려",
+     "r1": null
+    },
+    {
+     "ticker": "CVI",
+     "rank": 11,
+     "verdict": "관찰",
+     "why": "지분 변동 뉴스로 인한 중립적 흐름",
+     "r1": null
+    },
+    {
+     "ticker": "NWL",
+     "rank": 12,
+     "verdict": "제외",
+     "why": "낮은 주가 및 모멘텀 부족",
+     "r1": null
+    },
+    {
+     "ticker": "DAR",
+     "rank": 13,
+     "verdict": "제외",
+     "why": "뚜렷한 주도 모멘텀 부재",
+     "r1": null
+    },
+    {
+     "ticker": "POST",
+     "rank": 14,
+     "verdict": "제외",
+     "why": "최근 주가 하락세 반영",
+     "r1": null
+    },
+    {
+     "ticker": "NVDA",
+     "rank": 15,
+     "verdict": "제외",
+     "why": "전일 하락폭 및 칩 섹터 경계감",
+     "r1": null
+    },
+    {
+     "ticker": "PCG",
+     "rank": 16,
+     "verdict": "제외",
+     "why": "하락 마감 및 유틸리티 제한적 움직임",
+     "r1": null
+    },
+    {
+     "ticker": "IREN",
+     "rank": 17,
+     "verdict": "제외",
+     "why": "급락 추세 지속 중으로 낙폭과대이나 위험 높음",
+     "r1": null
+    },
+    {
+     "ticker": "INTC",
+     "rank": 18,
+     "verdict": "제외",
+     "why": "파트너십 부인 등 부정적 뉴스 플로우",
+     "r1": null
+    },
+    {
+     "ticker": "ESTC",
+     "rank": 91,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    }
+   ],
+   "bl": {
+    "rand": [
+     "PSQL",
+     "NVDA",
+     "SOLS"
+    ],
+    "mom": [
+     "PSQL",
+     "ESTC",
+     "GAP"
+    ]
+   },
+   "dayCands": [
+    {
+     "name": "Elastic N.V.",
+     "ticker": "ESTC",
+     "score": 54,
+     "target_pct": 4,
+     "sector": "소프트웨어",
+     "basis": [
+      "신고가",
+      "실적"
+     ],
+     "reason": "어닝 호조와 함께 52주 신고가 근처에서 강세를 보이고 있으나 소프트웨어 섹터 신중론을 반영해 목표수익률을 낮게 잡습니다.",
+     "risk": "소프트웨어 섹터 전반의 밸류에이션 부담"
+    },
+    {
+     "name": "Gap, Inc. (The)",
+     "ticker": "GAP",
+     "score": 52,
+     "target_pct": 3,
+     "sector": "의류",
+     "basis": [
+      "뉴스재료",
+      "추세지속"
+     ],
+     "reason": "월가의 목표가 상향 조정 및 올드네이비 턴어라운드 기대감이 지속되며 단기 모멘텀이 유지되는 모습입니다.",
+     "risk": "의류 섹터 과거 실측 성공률 저조"
+    },
+    {
+     "name": "Solstice Advanced Materials Inc",
+     "ticker": "SOLS",
+     "score": 50,
+     "target_pct": 3,
+     "sector": "소재",
+     "basis": [
+      "뉴스재료"
+     ],
+     "reason": "엘리먼트 솔루션즈와의 거래 종료 이후 저평가 매력이 부각되며 매수세가 유입되고 있습니다.",
+     "risk": "M&A 관련 이슈 종료 후 변동성 확대"
+    },
+    {
+     "name": "Trulieve Cannabis Corp. Subordi",
+     "ticker": "TRLV",
+     "score": 48,
+     "target_pct": 3,
+     "sector": "헬스케어",
+     "basis": [
+      "정책테마",
+      "뉴스재료"
+     ],
+     "reason": "NYSE 상장 최초의 미국 대마초 기업으로서 클로징 벨 행사를 앞두고 정책 및 이벤트 모멘텀이 작용합니다.",
+     "risk": "헬스케어 및 대마초 섹터의 과거 부진한 통계"
+    },
+    {
+     "name": "Domino's Pizza Inc",
+     "ticker": "DPZ",
+     "score": 45,
+     "target_pct": 2,
+     "sector": "소비재",
+     "basis": [
+      "뉴스재료"
+     ],
+     "reason": "패스트푸드 아이콘 경쟁 및 신규 마케팅 캠페인을 전개하며 안정적인 방어주 성격의 흐름을 보입니다.",
+     "risk": "상승장 모멘텀 대비 제한적인 업사이클"
+    }
+   ],
+   "hold": 0,
+   "v": {
+    "m": "gemini-3.5-flash-lite",
+    "pv": "J1.0"
+   },
+   "mktF": {
+    "dir": "횡보",
+    "conf": 45,
+    "why": "VIX 상승 및 지수 선물 약세로 인해 변동성 장세 속 횡보 흐름이 예상됨",
+    "ok": null
+   },
+   "picks": [
+    {
+     "kind": "swing",
+     "name": "Pasqal Holding SA",
+     "ticker": "PSQL",
+     "score": 55,
+     "sector": "기술",
+     "basis": [
+      "정책테마",
+      "수주계약"
+     ],
+     "p0": 19.11,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "Flutter Entertainment plc",
+     "ticker": "FLUT",
+     "score": 52,
+     "sector": "엔터테인먼트",
+     "basis": [
+      "뉴스재료",
+      "추세지속"
+     ],
+     "p0": 101.78,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "TOP Financial Group Limited",
+     "ticker": "TOP",
+     "score": 50,
+     "sector": "금융",
+     "basis": [
+      "뉴스재료",
+      "정책테마"
+     ],
+     "p0": 16.73,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    }
+   ]
   }
  ],
  "monAt": 1788157833234
