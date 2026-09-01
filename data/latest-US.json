@@ -1,256 +1,225 @@
 {
- "date": "2026-08-31",
+ "date": "2026-09-01",
  "at": "21:29",
  "data": {
-  "brief": "전일 S&P500과 지수선물이 약세를 보이고 VIX가 상승하여 시장 내 경계 매물이 출회되는 혼조 국면입니다. 과거 실측 통계와 확신도 교정 원칙에 따라 과도한 확신을 배제하고 정책테마 및 실적 모멘텀 중심의 보수적 스윙 및 단타 전략을 취합니다.",
-  "mkt": {
-   "dir": "횡보",
-   "conf": 45,
-   "why": "VIX 상승 및 지수 선물 약세로 인해 변동성 장세 속 횡보 흐름이 예상됨"
-  },
+  "brief": "S&P500 선물 및 전일 지수가 하락세를 보이고 VIX가 상승하여 보수적인 시장 접근이 필요합니다. 과거 실측 통계상 고확신도(80대)의 적중률이 낮고 혼조장 성격이 짙어, 금융 및 정책테마 등 검증된 섹터 위주로 선별 대응합니다.",
   "picks": [
    {
-    "name": "Pasqal Holding SA",
-    "ticker": "PSQL",
-    "score": 55,
-    "sector": "기술",
+    "name": "Standard Nuclear, Inc.",
+    "ticker": "STDN",
+    "score": 45,
+    "sector": "에너지",
     "basis": [
      "정책테마",
      "수주계약"
     ],
-    "reason": "사우디아라비아 진출 및 전략적 양자 연구 협력 소식이 부각되며 강한 상승 모멘텀을 형성했습니다. 양자 컴퓨팅 섹터 내 정책적 지원과 글로벌 확장성이 추가 상승 여력을 뒷받침합니다.",
-    "catalyst": "사우디 양자 연구 협력 확대",
-    "risk": "변동성이 극심한 신규 상장주 성격의 높은 낙폭 위험"
+    "reason": "UBS의 목표가 상향 조정과 멀티이어 연료 계약 체결 뉴스가 호재로 작용하고 있습니다. 원자력 섹터의 정책적 기대감이 유지되며 하방 경직성을 보이고 있습니다.",
+    "catalyst": "원자력 연료 계약 및 목표가 상향",
+    "risk": "시장 전반의 하락 압력에 따른 동반 조정 위험"
    },
    {
-    "name": "Flutter Entertainment plc",
-    "ticker": "FLUT",
-    "score": 52,
-    "sector": "엔터테인먼트",
+    "name": "Galaxy Digital Inc.",
+    "ticker": "GLXY",
+    "score": 40,
+    "sector": "금융",
+    "basis": [
+     "뉴스재료",
+     "수주계약"
+    ],
+    "reason": "GalaxyOne 플랫폼을 통한 BTC, ETH, SOL 연계 크레디트라인 출시로 사업 확장 모멘텀이 부각됩니다. 통계적으로 유리한 금융 섹터에 속해 상대적 안정성이 기대됩니다.",
+    "catalyst": "신규 크레디트라인 서비스 런칭",
+    "risk": "암호화폐 시장 변동성에 노출"
+   },
+   {
+    "name": "Strive, Inc.",
+    "ticker": "ASST",
+    "score": 38,
+    "sector": "금융",
     "basis": [
      "뉴스재료",
      "추세지속"
     ],
-    "reason": "스포츠 베팅이 스왑이 아니라는 법적 판결에 힘입어 관련 섹터 전반의 랠리가 이어지고 있습니다. 규제 불확실성 해소와 함께 글로벌 시장 지배력이 부각되며 추세 지속 가능성이 높습니다.",
-    "catalyst": "스포츠 베팅 규제 관련 우호적 법적 판결",
-    "risk": "단기 급등에 따른 차익실현 매물 압박"
-   },
-   {
-    "name": "TOP Financial Group Limited",
-    "ticker": "TOP",
-    "score": 50,
-    "sector": "금융",
-    "basis": [
-     "뉴스재료",
-     "정책테마"
-    ],
-    "reason": "인공지능(AI) 부문 신설 및 핵심 브로커리지 플랫폼 통합 전략을 발표하며 시장의 관심을 받았습니다. 금융 섹터의 상대적 우위 통계를 바탕으로 단기 모멘텀 유입을 기대합니다.",
-    "catalyst": "AI 부문 전략적 신설 및 핀테크 통합 발표",
-    "risk": "저가주 특유의 심한 가격 등락과 유동성 변화"
+    "reason": "트래저리 기업들의 비트코인 및 이더리움 매집 흐름 속에서 대규모 추가 매입 소식이 전해졌습니다. 암호화폐 자산 확충에 따른 밸류에이션 리레이팅 기대가 유효합니다.",
+    "catalyst": "비트코인 추가 매입",
+    "risk": "가상자산 가격 하락 시 연동 하락 위험"
    }
   ],
   "day_cands": [
    {
-    "name": "Elastic N.V.",
-    "ticker": "ESTC",
-    "score": 54,
+    "name": "Circle Internet Group, Inc.",
+    "ticker": "CRCL",
+    "score": 42,
     "target_pct": 4,
-    "sector": "소프트웨어",
-    "basis": [
-     "신고가",
-     "실적"
-    ],
-    "reason": "어닝 호조와 함께 52주 신고가 근처에서 강세를 보이고 있으나 소프트웨어 섹터 신중론을 반영해 목표수익률을 낮게 잡습니다.",
-    "risk": "소프트웨어 섹터 전반의 밸류에이션 부담"
-   },
-   {
-    "name": "Gap, Inc. (The)",
-    "ticker": "GAP",
-    "score": 52,
-    "target_pct": 3,
-    "sector": "의류",
-    "basis": [
-     "뉴스재료",
-     "추세지속"
-    ],
-    "reason": "월가의 목표가 상향 조정 및 올드네이비 턴어라운드 기대감이 지속되며 단기 모멘텀이 유지되는 모습입니다.",
-    "risk": "의류 섹터 과거 실측 성공률 저조"
-   },
-   {
-    "name": "Solstice Advanced Materials Inc",
-    "ticker": "SOLS",
-    "score": 50,
-    "target_pct": 3,
-    "sector": "소재",
+    "sector": "금융",
     "basis": [
      "뉴스재료"
     ],
-    "reason": "엘리먼트 솔루션즈와의 거래 종료 이후 저평가 매력이 부각되며 매수세가 유입되고 있습니다.",
-    "risk": "M&A 관련 이슈 종료 후 변동성 확대"
+    "reason": "암호화폐 시장의 자금 유입 속에서 관련 기업들의 동반 강세 흐름을 타고 있습니다. 단기 모멘텀이 살아 있으나 보수적인 목표 설정을 권장합니다.",
+    "risk": "인플레이션 우려에 따른 지수 하락 충격"
    },
    {
-    "name": "Trulieve Cannabis Corp. Subordi",
-    "ticker": "TRLV",
-    "score": 48,
-    "target_pct": 3,
-    "sector": "헬스케어",
+    "name": "BitMine Immersion Technologies",
+    "ticker": "BMNR",
+    "score": 40,
+    "target_pct": 4,
+    "sector": "금융",
     "basis": [
-     "정책테마",
      "뉴스재료"
     ],
-    "reason": "NYSE 상장 최초의 미국 대마초 기업으로서 클로징 벨 행사를 앞두고 정책 및 이벤트 모멘텀이 작용합니다.",
-    "risk": "헬스케어 및 대마초 섹터의 과거 부진한 통계"
+    "reason": "대규모 이더리움 매입 소식에 힘입어 관련 자산 보유 확정 모멘텀이 작용 중입니다. 단기 거래대금 유입을 활용한 트레이딩이 가능합니다.",
+    "risk": "암호화폐 시세 급등락에 따른 변동성"
    },
    {
-    "name": "Domino's Pizza Inc",
-    "ticker": "DPZ",
-    "score": 45,
-    "target_pct": 2,
+    "name": "X-Energy, Inc.",
+    "ticker": "XE",
+    "score": 38,
+    "target_pct": 3,
+    "sector": "에너지",
+    "basis": [
+     "정책테마"
+    ],
+    "reason": "원자력 인프라 구축 및 AI 활용 설계 가속화에 대한 시장 관심이 지속되고 있습니다. 정책 테마의 순환매 속에서 단기 반등을 노릴 수 있습니다.",
+    "risk": "최근 상승에 따른 차익실현 매물 출회"
+   },
+   {
+    "name": "Chagee Holdings Limited",
+    "ticker": "CHA",
+    "score": 35,
+    "target_pct": 3,
     "sector": "소비재",
     "basis": [
+     "실적"
+    ],
+    "reason": "해외 시장에서의 수익성 급증을 기록한 양호한 실적 발표 모멘텀이 남아 있습니다. 다만, 약세장 분위기 속에서 상승 폭이 제한될 수 있습니다.",
+    "risk": "실적 모멘텀 소멸 후 수급 이탈"
+   },
+   {
+    "name": "Avis Budget Group, Inc.",
+    "ticker": "CAR",
+    "score": 30,
+    "target_pct": 3,
+    "sector": "서비스",
+    "basis": [
      "뉴스재료"
     ],
-    "reason": "패스트푸드 아이콘 경쟁 및 신규 마케팅 캠페인을 전개하며 안정적인 방어주 성격의 흐름을 보입니다.",
-    "risk": "상승장 모멘텀 대비 제한적인 업사이클"
+    "reason": "규제 관련 이슈와 실적 대비 저평가 논란이 혼재되어 있으나 낙폭 과대에 따른 기술적 반등 여지가 있습니다. 엄격한 리스크 관리가 필요합니다.",
+    "risk": "규제 당국의 추가 제재 및 벌금 리스크"
    }
   ],
   "cands": [
    {
-    "ticker": "PSQL",
+    "ticker": "EGIEY",
+    "rank": 16,
+    "verdict": "제외",
+    "why": "관련 뉴스 부재 및 거래 유동성 부족"
+   },
+   {
+    "ticker": "STDN",
     "rank": 1,
     "verdict": "선택",
-    "why": "양자 컴퓨팅 협력 뉴스로 강한 모멘텀 보유"
+    "why": "목표가 상향 및 수주 계약 모멘텀"
    },
    {
-    "s": "ESTC",
-    "rank": 2,
-    "verdict": "관찰",
-    "why": "실적 호조이나 소프트웨어 섹터 신중 접근"
-   },
-   {
-    "ticker": "GAP",
+    "ticker": "ASST",
     "rank": 3,
-    "verdict": "관찰",
-    "why": "목표가 상향 및 올드네이비 턴어라운드 기대"
+    "verdict": "선택",
+    "why": "가상자산 보유 확대 모멘텀"
    },
    {
-    "ticker": "SOLS",
+    "ticker": "CRCL",
     "rank": 4,
     "verdict": "관찰",
-    "why": "소재 거래 이슈에 따른 저평가 부각"
+    "why": "시장 전반 하락 속 단기 변동성 관찰"
    },
    {
-    "ticker": "TOP",
+    "ticker": "CHA",
     "rank": 5,
-    "verdict": "선택",
-    "why": "AI 부문 신설 및 핀테크 확장 모멘텀"
-   },
-   {
-    "ticker": "TRLV",
-    "rank": 6,
     "verdict": "관찰",
-    "why": "NYSE 상장 이벤트 및 정책 테마"
+    "why": "실적 호조이나 약세장 영향 제한적"
    },
    {
-    "ticker": "FLUT",
-    "rank": 7,
-    "verdict": "선택",
-    "why": "법적 판결 호재로 인한 섹터 랠리 수혜"
-   },
-   {
-    "ticker": "WDAY",
-    "rank": 8,
+    "ticker": "RBLX",
+    "rank": 6,
     "verdict": "제외",
-    "why": "소프트웨어 섹터 회피 성향 반영"
+    "why": "소프트웨어/플랫폼 섹터 회피 및 규제 우려"
    },
    {
-    "ticker": "DPZ",
+    "ticker": "XE",
+    "rank": 7,
+    "verdict": "관찰",
+    "why": "원자력 테마 단기 모멘텀 추적"
+   },
+   {
+    "ticker": "CAR",
+    "rank": 8,
+    "verdict": "관찰",
+    "why": "규제 리스크와 저평가 매력 혼재"
+   },
+   {
+    "ticker": "BMNR",
     "rank": 9,
     "verdict": "관찰",
-    "why": "마케팅 뉴스로 인한 제한적 움직임"
+    "why": "이더리움 매입 연동 단기 트레이딩"
    },
    {
-    "ticker": "LULU",
+    "ticker": "ASND",
     "rank": 10,
     "verdict": "제외",
-    "why": "의류 섹터 통계적 약세 고려"
+    "why": "헬스케어 섹터 회피"
    },
    {
-    "ticker": "CVI",
+    "ticker": "GLXY",
+    "rank": 2,
+    "verdict": "선택",
+    "why": "금융 섹터 및 신규 서비스 런칭 모멘텀"
+   },
+   {
+    "ticker": "HNGE",
     "rank": 11,
-    "verdict": "관찰",
-    "why": "지분 변동 뉴스로 인한 중립적 흐름"
+    "verdict": "제외",
+    "why": "헬스케어 섹터 회피"
    },
    {
-    "ticker": "NWL",
+    "ticker": "PLSE",
     "rank": 12,
     "verdict": "제외",
-    "why": "낮은 주가 및 모멘텀 부족"
+    "why": "헬스케어 섹터 회피"
    },
    {
-    "ticker": "DAR",
+    "ticker": "CRWD",
     "rank": 13,
     "verdict": "제외",
-    "why": "뚜렷한 주도 모멘텀 부재"
+    "why": "소프트웨어 섹터 회피"
    },
    {
-    "ticker": "POST",
+    "ticker": "PCG",
+    "rank": 17,
+    "verdict": "제외",
+    "why": "투자의견 하향 및 급락 종목"
+   },
+   {
+    "ticker": "CNH",
     "rank": 14,
     "verdict": "제외",
-    "why": "최근 주가 하락세 반영"
+    "why": "상승 모멘텀 미흡"
    },
    {
     "ticker": "NVDA",
     "rank": 15,
     "verdict": "제외",
-    "why": "전일 하락폭 및 칩 섹터 경계감"
+    "why": "지수 약세 영향 동반 조정 우려"
    },
    {
-    "ticker": "PCG",
-    "rank": 16,
-    "verdict": "제외",
-    "why": "하락 마감 및 유틸리티 제한적 움직임"
-   },
-   {
-    "ticker": "IREN",
-    "rank": 17,
-    "verdict": "제외",
-    "why": "급락 추세 지속 중으로 낙폭과대이나 위험 높음"
-   },
-   {
-    "ticker": "INTC",
+    "ticker": "NU",
     "rank": 18,
     "verdict": "제외",
-    "why": "파트너십 부인 등 부정적 뉴스 플로우"
+    "why": "상승률 및 모멘텀 미흡"
    }
   ],
-  "day_picks": [
-   {
-    "name": "Elastic N.V.",
-    "ticker": "ESTC",
-    "score": 75,
-    "target_pct": 4,
-    "sector": "소프트웨어",
-    "basis": [
-     "어닝호조"
-    ],
-    "reason": "시가갭은 -2.6%로 하락 출발했으나 개장 후 +2.9% 반등하며 매수세가 유입되는 실측 확인.",
-    "risk": "소프트웨어 섹터 신중론 존재"
-   },
-   {
-    "name": "Solstice Advanced Materials Inc",
-    "ticker": "SOLS",
-    "score": 70,
-    "target_pct": 3,
-    "sector": "소재",
-    "basis": [
-     "저평가매력"
-    ],
-    "reason": "보합권 시가갭 이후 개장 후 +1.9% 상승하며 사전 근거인 저평가 매력과 매수 유입세가 일치함.",
-    "risk": "단기 변동성 주의"
-   }
-  ],
-  "day_at": "22:34",
-  "day_brief": "후보군 중 개장 후 뚜렷한 반등세를 보인 ESTC와 저평가 매력이 유입된 SOLS를 선정했습니다."
+  "mkt": {
+   "dir": "하락",
+   "conf": 50,
+   "why": "S&P500 선물 및 전일 지수 하락, VIX 급등으로 보수적 관점 유지"
+  }
  }
 }
