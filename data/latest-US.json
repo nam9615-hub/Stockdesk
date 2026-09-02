@@ -1,242 +1,229 @@
 {
- "date": "2026-09-01",
+ "date": "2026-09-02",
  "at": "21:29",
  "data": {
-  "brief": "S&P500 선물 및 전일 지수가 하락세를 보이고 VIX가 상승하여 보수적인 시장 접근이 필요합니다. 과거 실측 통계상 고확신도(80대)의 적중률이 낮고 혼조장 성격이 짙어, 금융 및 정책테마 등 검증된 섹터 위주로 선별 대응합니다.",
+  "brief": "전일 S&P500 하락과 선물 강보합, VIX 하락이 겹친 혼조장 국면입니다. 과거 혼조장 실측 성적과 과도한 확신을 보정하여 방어적으로 접근하며, 검증된 수주 계약 및 정책 테마 위주로 선별합니다.",
   "picks": [
    {
-    "name": "Standard Nuclear, Inc.",
-    "ticker": "STDN",
-    "score": 45,
+    "name": "Fervo Energy Company",
+    "ticker": "FRVO",
+    "score": 62,
     "sector": "에너지",
     "basis": [
-     "정책테마",
-     "수주계약"
+     "수주계약",
+     "정책테마"
     ],
-    "reason": "UBS의 목표가 상향 조정과 멀티이어 연료 계약 체결 뉴스가 호재로 작용하고 있습니다. 원자력 섹터의 정책적 기대감이 유지되며 하방 경직성을 보이고 있습니다.",
-    "catalyst": "원자력 연료 계약 및 목표가 상향",
-    "risk": "시장 전반의 하락 압력에 따른 동반 조정 위험"
+    "reason": "구글과의 396MW 대규모 지열 PPA 체결로 확실한 펀더멘털 모멘텀을 확보했습니다. 신재생에너지 정책 테마와 맞물려 중기 스윙 관점의 지속 성장이 기대됩니다.",
+    "catalyst": "구글 396MW 지열 PPA 계약",
+    "risk": "단기 급등에 따른 차익실현 매물 출하 가능성"
    },
    {
-    "name": "Galaxy Digital Inc.",
-    "ticker": "GLXY",
-    "score": 40,
-    "sector": "금융",
+    "name": "Comstock Resources, Inc.",
+    "ticker": "CRK",
+    "score": 58,
+    "sector": "에너지",
     "basis": [
-     "뉴스재료",
-     "수주계약"
+     "수주계약",
+     "실적"
     ],
-    "reason": "GalaxyOne 플랫폼을 통한 BTC, ETH, SOL 연계 크레디트라인 출시로 사업 확장 모멘텀이 부각됩니다. 통계적으로 유리한 금융 섹터에 속해 상대적 안정성이 기대됩니다.",
-    "catalyst": "신규 크레디트라인 서비스 런칭",
-    "risk": "암호화폐 시장 변동성에 노출"
+    "reason": "SOCAR와의 대규모 LoI 체결로 자산 가치가 재평가되며 강한 상승세를 보이고 있습니다. 에너지 섹터 내 탄탄한 계약 모멘텀이 이어지고 있습니다.",
+    "catalyst": "SOCAR 대상 16.5억 달러 규모 LoI 체결",
+    "risk": "원자재 가격 변동성 및 글로벌 에너지 수요 둔화 우려"
    },
    {
-    "name": "Strive, Inc.",
-    "ticker": "ASST",
-    "score": 38,
-    "sector": "금융",
+    "name": "BWX Technologies, Inc.",
+    "ticker": "BWXT",
+    "score": 52,
+    "sector": "방산",
     "basis": [
-     "뉴스재료",
-     "추세지속"
+     "수주계약"
     ],
-    "reason": "트래저리 기업들의 비트코인 및 이더리움 매집 흐름 속에서 대규모 추가 매입 소식이 전해졌습니다. 암호화폐 자산 확충에 따른 밸류에이션 리레이팅 기대가 유효합니다.",
-    "catalyst": "비트코인 추가 매입",
-    "risk": "가상자산 가격 하락 시 연동 하락 위험"
+    "reason": "미 육군 제누스 마이크로 reactor 수주 성공과 리더십 개편 효과로 방산 및 원자력 모멘텀이 유효합니다. 다만 방산 섹터 과거 통계를 고려해 보수적으로 관리합니다.",
+    "catalyst": "육군 제누스 마이크로리액터 수주 및 경영진 개편",
+    "risk": "방산 섹터 전반의 제한적인 단기 상승 탄력"
    }
   ],
   "day_cands": [
    {
-    "name": "Circle Internet Group, Inc.",
-    "ticker": "CRCL",
-    "score": 42,
-    "target_pct": 4,
-    "sector": "금융",
-    "basis": [
-     "뉴스재료"
-    ],
-    "reason": "암호화폐 시장의 자금 유입 속에서 관련 기업들의 동반 강세 흐름을 타고 있습니다. 단기 모멘텀이 살아 있으나 보수적인 목표 설정을 권장합니다.",
-    "risk": "인플레이션 우려에 따른 지수 하락 충격"
-   },
-   {
-    "name": "BitMine Immersion Technologies",
-    "ticker": "BMNR",
-    "score": 40,
-    "target_pct": 4,
-    "sector": "금융",
-    "basis": [
-     "뉴스재료"
-    ],
-    "reason": "대규모 이더리움 매입 소식에 힘입어 관련 자산 보유 확정 모멘텀이 작용 중입니다. 단기 거래대금 유입을 활용한 트레이딩이 가능합니다.",
-    "risk": "암호화폐 시세 급등락에 따른 변동성"
-   },
-   {
-    "name": "X-Energy, Inc.",
-    "ticker": "XE",
-    "score": 38,
+    "name": "MiniMed Group, Inc.",
+    "ticker": "MMED",
+    "score": 55,
     "target_pct": 3,
+    "sector": "헬스케어",
+    "basis": [
+     "실적"
+    ],
+    "reason": "다수의 월가 주요 은행으로부터 목표가 상향 조정을 받으며 매수세가 유입되고 있습니다. 다만 헬스케어 섹터 보수적 통계를 반영해 목표가를 낮게 잡습니다.",
+    "catalyst": "UBS 및 도이체방크의 목표가 상향 조정",
+    "risk": "헬스케어 섹터 전반의 과거 부진한 단타 성적"
+   },
+   {
+    "name": "Duolingo, Inc.",
+    "ticker": "DUOL",
+    "score": 53,
+    "target_pct": 3,
+    "sector": "소프트웨어",
+    "basis": [
+     "추세지속"
+    ],
+    "reason": "에버코어의 업그레이드 및 자사주 매입 발표로 AI 방어력 평가가 부각되고 있습니다. 소프트웨어 섹터 회피 성향을 감안해 보수적 단타로 대응합니다.",
+    "catalyst": "에버코어 투자 의견 상향 및 자사주 매입",
+    "risk": "소프트웨어 업종의 과거 낮은 단타 성공률"
+   },
+   {
+    "name": "Kailera Therapeutics, Inc.",
+    "ticker": "KLRA",
+    "score": 50,
+    "target_pct": 3,
+    "sector": "바이오",
+    "basis": [
+     "정책테마"
+    ],
+    "reason": "비만 치료제 시장의 대형 IPO로 지속적인 시장 관심을 받고 있습니다. 바이오 섹터 리스크를 고려하여 짧은 목표가로 접근합니다.",
+    "catalyst": "비만 치료제 신규 IPO 및 시장 관심 지속",
+    "risk": "확대된 손실 폭과 바이오 섹터의 낮은 성공 통계"
+   },
+   {
+    "name": "Pacific Gas & Electric Co.",
+    "ticker": "PCG",
+    "score": 48,
+    "target_pct": 2,
     "sector": "에너지",
     "basis": [
      "정책테마"
     ],
-    "reason": "원자력 인프라 구축 및 AI 활용 설계 가속화에 대한 시장 관심이 지속되고 있습니다. 정책 테마의 순환매 속에서 단기 반등을 노릴 수 있습니다.",
-    "risk": "최근 상승에 따른 차익실현 매물 출회"
+    "reason": "캘리포니아 고객을 위한 전략적 검토와 에너지 미래 비전 발표로 안정적인 흐름이 예상됩니다. 변동성이 낮은 유틸리티 성격의 단타 후보입니다.",
+    "catalyst": "전략적 리뷰 발표 및 에너지 인프라 개선",
+    "risk": "규제 리스크 및 캘리포니아 화재 관련 잠재적 불확실성"
    },
    {
-    "name": "Chagee Holdings Limited",
-    "ticker": "CHA",
-    "score": 35,
-    "target_pct": 3,
-    "sector": "소비재",
+    "name": "CNH Industrial N.V.",
+    "ticker": "CNH",
+    "score": 45,
+    "target_pct": 2,
+    "sector": "소재",
     "basis": [
-     "실적"
+     "수주계약"
     ],
-    "reason": "해외 시장에서의 수익성 급증을 기록한 양호한 실적 발표 모멘텀이 남아 있습니다. 다만, 약세장 분위기 속에서 상승 폭이 제한될 수 있습니다.",
-    "risk": "실적 모멘텀 소멸 후 수급 이탈"
-   },
-   {
-    "name": "Avis Budget Group, Inc.",
-    "ticker": "CAR",
-    "score": 30,
-    "target_pct": 3,
-    "sector": "서비스",
-    "basis": [
-     "뉴스재료"
-    ],
-    "reason": "규제 관련 이슈와 실적 대비 저평가 논란이 혼재되어 있으나 낙폭 과대에 따른 기술적 반등 여지가 있습니다. 엄격한 리스크 관리가 필요합니다.",
-    "risk": "규제 당국의 추가 제재 및 벌금 리스크"
+    "reason": "브루고lt와의 파트너십을 통한 공동 브랜드 씨딩 라인 확장이 호재로 작용했습니다. 소재 섹터 보수적 통계를 반영해 최소 목표가로 설정합니다.",
+    "catalyst": "브루고lt 파트너십 및 신제품 라인업 확장",
+    "risk": "소재 섹터의 낮은 단타 적중률 통계"
    }
   ],
   "cands": [
    {
-    "ticker": "EGIEY",
-    "rank": 16,
-    "verdict": "제외",
-    "why": "관련 뉴스 부재 및 거래 유동성 부족"
-   },
-   {
-    "ticker": "STDN",
+    "ticker": "FRVO",
     "rank": 1,
     "verdict": "선택",
-    "why": "목표가 상향 및 수주 계약 모멘텀"
+    "why": "구글 대규모 지열 PPA 체결로 최상위 모멘텀 보유"
    },
    {
-    "ticker": "ASST",
-    "rank": 3,
-    "verdict": "선택",
-    "why": "가상자산 보유 확대 모멘텀"
-   },
-   {
-    "ticker": "CRCL",
-    "rank": 4,
-    "verdict": "관찰",
-    "why": "시장 전반 하락 속 단기 변동성 관찰"
-   },
-   {
-    "ticker": "CHA",
-    "rank": 5,
-    "verdict": "관찰",
-    "why": "실적 호조이나 약세장 영향 제한적"
-   },
-   {
-    "ticker": "RBLX",
-    "rank": 6,
-    "verdict": "제외",
-    "why": "소프트웨어/플랫폼 섹터 회피 및 규제 우려"
-   },
-   {
-    "ticker": "XE",
-    "rank": 7,
-    "verdict": "관찰",
-    "why": "원자력 테마 단기 모멘텀 추적"
-   },
-   {
-    "ticker": "CAR",
-    "rank": 8,
-    "verdict": "관찰",
-    "why": "규제 리스크와 저평가 매력 혼재"
-   },
-   {
-    "ticker": "BMNR",
-    "rank": 9,
-    "verdict": "관찰",
-    "why": "이더리움 매입 연동 단기 트레이딩"
-   },
-   {
-    "ticker": "ASND",
-    "rank": 10,
-    "verdict": "제외",
-    "why": "헬스케어 섹터 회피"
-   },
-   {
-    "ticker": "GLXY",
+    "nd": "CRK",
     "rank": 2,
     "verdict": "선택",
-    "why": "금융 섹터 및 신규 서비스 런칭 모멘텀"
+    "why": "조 단위 자산 계약으로 강한 실적 및 수주 모멘텀"
    },
    {
-    "ticker": "HNGE",
-    "rank": 11,
-    "verdict": "제외",
-    "why": "헬스케어 섹터 회피"
+    "ticker": "MMED",
+    "rank": 3,
+    "verdict": "관찰",
+    "why": "월가 목표가 상향이나 헬스케어 섹터 신중 접근 필요"
    },
    {
-    "ticker": "PLSE",
-    "rank": 12,
-    "verdict": "제외",
-    "why": "헬스케어 섹터 회피"
+    "ticker": "MRNA",
+    "rank": 4,
+    "verdict": "관찰",
+    "why": "제약사 백신/암 백신 경쟁 구도 및 시장 지수 압박 혼재"
    },
    {
-    "ticker": "CRWD",
-    "rank": 13,
+    "ticker": "EIX",
+    "rank": 5,
+    "verdict": "관찰",
+    "why": "캘리포니아 입법 및 목표가 조정으로 중립적 흐름"
+   },
+   {
+    "ticker": "DUOL",
+    "rank": 6,
+    "verdict": "관찰",
+    "why": "AI 방어력 부각되나 소프트웨어 업종 통계 열세 반영"
+   },
+   {
+    "ticker": "KLRA",
+    "rank": 7,
+    "verdict": "관찰",
+    "why": "비만 치료제 IPO이나 확대된 손실과 바이오 리스크 존재"
+   },
+   {
+    "ticker": "BWXT",
+    "rank": 8,
+    "verdict": "선택",
+    "why": "마이크로리액터 수주 성공으로 방산/원자력 모멘텀 확보"
+   },
+   {
+    "ticker": "NVS",
+    "rank": 9,
     "verdict": "제외",
-    "why": "소프트웨어 섹터 회피"
+    "why": "임상 일시 중지 및 섹터 관망세"
+   },
+   {
+    "ticker": "HP",
+    "rank": 10,
+    "verdict": "제외",
+    "why": "모멘텀 지속성 검증 필요"
    },
    {
     "ticker": "PCG",
-    "rank": 17,
-    "verdict": "제외",
-    "why": "투자의견 하향 및 급락 종목"
+    "rank": 11,
+    "verdict": "관찰",
+    "why": "전략적 리뷰 진행 중이나 변동성 제한적"
    },
    {
     "ticker": "CNH",
+    "rank": 12,
+    "verdict": "관찰",
+    "why": "파트너십 호재 있으나 소재 섹터 통계적 열세"
+   },
+   {
+    "ticker": "SEB",
+    "rank": 13,
+    "verdict": "제외",
+    "why": "초고가 주식으로 유동성 및 스윙 효율성 저하"
+   },
+   {
+    "ticker": "ORA",
     "rank": 14,
     "verdict": "제외",
-    "why": "상승 모멘텀 미흡"
+    "why": "Fervo 관련 동반 상승이나 후발주자 성격"
    },
    {
     "ticker": "NVDA",
     "rank": 15,
     "verdict": "제외",
-    "why": "지수 약세 영향 동반 조정 우려"
+    "why": "월가 기대치 재조정 및 하락 압박(-1.4%)"
+   },
+   {
+    "ticker": "NIO",
+    "rank": 16,
+    "verdict": "제외",
+    "why": "뚜렷한 악재 및 하락세(-4.0%)로 제외"
+   },
+   {
+    "ticker": "ONDS",
+    "rank": 17,
+    "verdict": "제외",
+    "why": "드론 테마 리스크 오프 매도로 급락(-8.0%)"
    },
    {
     "ticker": "NU",
     "rank": 18,
     "verdict": "제외",
-    "why": "상승률 및 모멘텀 미흡"
+    "why": "실적 및 대출 관련 주식 보합권 정체(-0.6%)"
    }
   ],
   "mkt": {
-   "dir": "하락",
-   "conf": 50,
-   "why": "S&P500 선물 및 전일 지수 하락, VIX 급등으로 보수적 관점 유지"
-  },
-  "day_picks": [
-   {
-    "name": "X-Energy, Inc.",
-    "ticker": "XE",
-    "score": 78,
-    "target_pct": 3,
-    "sector": "에너지",
-    "basis": [
-     "정책테마",
-     "개장후반등"
-    ],
-    "reason": "시가갭 -3.6%로 출발했으나 개장 후 +3.5% 상승 반전하며 정책 테마의 높은 성공 확률 통계와 일치하는 강한 매수세를 증명함.",
-    "risk": "단기 변동성이 크므로 장초반 추세 이탈 시 즉시 대응 필요"
-   }
-  ],
-  "day_at": "22:34",
-  "day_brief": "제시된 후보 중 원자력 및 AI 인프라 정책 테마의 순환매 흐름을 유일하게 확인시켜 준 XE를 제외하고, 나머지 종목들은 시가갭 음수 기록 및 개장 후 반등 부족 등으로 인해 원칙에 부합하지 않아 제외했습니다."
+   "dir": "횡보",
+   "conf": 45,
+   "why": "전일 S&P500 하락과 선물 보합세가 혼재되어 방향성 탐색 국면"
+  }
  }
 }
