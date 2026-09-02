@@ -20071,7 +20071,7 @@
      "r20": null,
      "b": 8410,
      "gap": 0,
-     "simOpen": 5.7,
+     "simOpen": 2,
      "tv": 11114,
      "tvx": 2,
      "idx": null
@@ -20912,63 +20912,63 @@
      "rank": 1,
      "verdict": "선택",
      "why": "구글 대규모 지열 PPA 체결로 최상위 모멘텀 보유",
-     "r1": null
+     "r1": -2.3
     },
     {
      "ticker": "MMED",
      "rank": 3,
      "verdict": "관찰",
      "why": "월가 목표가 상향이나 헬스케어 섹터 신중 접근 필요",
-     "r1": null
+     "r1": 4.3
     },
     {
      "ticker": "MRNA",
      "rank": 4,
      "verdict": "관찰",
      "why": "제약사 백신/암 백신 경쟁 구도 및 시장 지수 압박 혼재",
-     "r1": null
+     "r1": -0.4
     },
     {
      "ticker": "EIX",
      "rank": 5,
      "verdict": "관찰",
      "why": "캘리포니아 입법 및 목표가 조정으로 중립적 흐름",
-     "r1": null
+     "r1": -2.8
     },
     {
      "ticker": "DUOL",
      "rank": 6,
      "verdict": "관찰",
      "why": "AI 방어력 부각되나 소프트웨어 업종 통계 열세 반영",
-     "r1": null
+     "r1": 1.1
     },
     {
      "ticker": "KLRA",
      "rank": 7,
      "verdict": "관찰",
      "why": "비만 치료제 IPO이나 확대된 손실과 바이오 리스크 존재",
-     "r1": null
+     "r1": -3.3
     },
     {
      "ticker": "BWXT",
      "rank": 8,
      "verdict": "선택",
      "why": "마이크로리액터 수주 성공으로 방산/원자력 모멘텀 확보",
-     "r1": null
+     "r1": -3.3
     },
     {
      "ticker": "NVS",
      "rank": 9,
      "verdict": "제외",
      "why": "임상 일시 중지 및 섹터 관망세",
-     "r1": null
+     "r1": 1
     },
     {
      "ticker": "HP",
      "rank": 10,
      "verdict": "제외",
      "why": "모멘텀 지속성 검증 필요",
-     "r1": null
+     "r1": 4.3
     },
     {
      "ticker": "PCG",
