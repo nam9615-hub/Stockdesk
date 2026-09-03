@@ -225,6 +225,34 @@
    "dir": "횡보",
    "conf": 52,
    "why": "VIX 상승과 혼조세 환경을 반영하여 보수적인 횡보세 전망"
-  }
+  },
+  "day_picks": [
+   {
+    "name": "Comstock Resources, Inc.",
+    "ticker": "CRK",
+    "score": 75,
+    "target_pct": 3,
+    "sector": "에너지",
+    "basis": [
+     "NEWS_M&A"
+    ],
+    "reason": "시가갭 -1%로 출발했으나 개장 후 +1.9% 상승하며 저가 매수세 유입이라는 사전 근거를 시장 데이터가 확인해 주었습니다.",
+    "risk": "에너지 업종 변동성 주의"
+   },
+   {
+    "name": "NVIDIA Corporation",
+    "ticker": "NVDA",
+    "score": 80,
+    "target_pct": 4,
+    "sector": "반도체",
+    "basis": [
+     "NEWS_M&A"
+    ],
+    "reason": "시가갭 0.7%와 개장 후 0.4% 상승으로 안정적인 흐름을 보이며 시장 주도주 수급 집중 논리를 뒷받침합니다.",
+    "risk": "대형주 특유의 느린 탄력 주의"
+   }
+  ],
+  "day_at": "22:34",
+  "day_brief": "제시된 5개 종목 중 개장 후 유의미한 상승세를 보이고, 실측 통계와 부합하는 종목인 CRK와 NVDA를 선정했습니다. SEB는 데이터 누락으로 제외했습니다."
  }
 }
