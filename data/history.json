@@ -22516,63 +22516,63 @@
      "rank": 1,
      "verdict": "관찰",
      "why": "재료는 좋으나 변동성 과도",
-     "r1": null
+     "r1": 4.1
     },
     {
      "ticker": "SMMT",
      "rank": 2,
      "verdict": "제외",
      "why": "헬스케어 섹터 성공률 저조",
-     "r1": null
+     "r1": 4
     },
     {
      "ticker": "HCM",
      "rank": 3,
      "verdict": "제외",
      "why": "헬스케어 섹터 성공률 저조",
-     "r1": null
+     "r1": -1.1
     },
     {
      "ticker": "HOOD",
      "rank": 4,
      "verdict": "선택",
      "why": "금융 섹터 우위 입증",
-     "r1": null
+     "r1": 1.4
     },
     {
      "ticker": "SNOW",
      "rank": 5,
      "verdict": "제외",
      "why": "소프트웨어 섹터 회피",
-     "r1": null
+     "r1": -4.7
     },
     {
      "ticker": "CRCL",
      "rank": 6,
      "verdict": "관찰",
      "why": "비트코인 연동성",
-     "r1": null
+     "r1": 4.2
     },
     {
      "ticker": "BMNR",
      "rank": 7,
      "verdict": "선택",
      "why": "강한 모멘텀",
-     "r1": null
+     "r1": -1.4
     },
     {
      "ticker": "CIFR",
      "rank": 8,
      "verdict": "선택",
      "why": "낙폭과대 반등",
-     "r1": null
+     "r1": 2.4
     },
     {
      "ticker": "RIOT",
      "rank": 9,
      "verdict": "관찰",
      "why": "비트코인 섹터 중복",
-     "r1": null
+     "r1": 5.1
     },
     {
      "ticker": "PURR",
