@@ -1,258 +1,225 @@
 {
- "date": "2026-09-03",
+ "date": "2026-09-04",
  "at": "21:29",
  "data": {
-  "brief": "S&P500이 전일 소폭 상승했으나 VIX가 상승하고 혼조세가 지속되어 보수적인 접근이 필요합니다. 과거 유사 국면의 실측 성적과 통계를 반영해 금융 및 정책 테마 중심의 종목을 선별하고 확신도를 낮췄습니다.",
+  "brief": "시장 전반의 비트코인 관련주 강세가 지속되나, 과거 실측 데이터를 고려해 소프트웨어와 헬스케어 섹터는 보수적으로 접근합니다. 금융 섹터의 높은 성공률을 바탕으로 시장 주도주를 선별하되, 단타 전략은 보수적 목표치로 조정합니다.",
   "picks": [
    {
-    "name": "CNH Industrial N.V.",
-    "ticker": "CNH",
-    "score": 62,
-    "sector": "산업재",
-    "basis": [
-     "수주계약",
-     "추세지속"
-    ],
-    "reason": "Evercore ISI가 투자의견을 상향 조정하고 목표주가를 대폭 상향하면서 강한 상승 모멘텀을 형성했습니다. 실적 개선 기대감과 기관 매수세가 유입되며 추가 상승 여력이 돋보입니다.",
-    "catalyst": "투자 의견 및 목표가 상향",
-    "risk": "시장 변동성에 따른 차익실현 매물 출화"
-   },
-   {
-    "name": "Nu Holdings Ltd.",
-    "ticker": "NU",
+    "name": "Robinhood Markets, Inc.",
+    "ticker": "HOOD",
+    "score": 65,
     "sector": "금융",
     "basis": [
-     "실적",
-     "추세지속"
+     "정책테마",
+     "거래량급증"
     ],
-    "reason": "금융 섹터의 상대적 우위 통계와 견조한 실적 성장세를 바탕으로 안정적인 상승 흐름을 보이고 있습니다. 중남미 시장에서의 디지털 금융 확장이 지속적인 성장 동력으로 작용합니다.",
-    "catalyst": "디지털 금융 성장성 및 실적 호조",
-    "risk": "신흥국 통화 및 거시경제 변동성",
-    "score": 50
+    "reason": "금융 섹터의 높은 성공률과 시장 내 강력한 모멘텀이 결합된 종목입니다. 암호화폐 시장 활황에 따른 직접적인 수혜와 거래대금 증가 기대감이 큽니다.",
+    "catalyst": "암호화폐 상승세 및 거래량 급증",
+    "risk": "시장 변동성 확대 시 높은 베타값"
    },
    {
-    "name": "Ondas Inc",
-    "ticker": "ONDS",
+    "name": "BitMine Immersion Technologies",
+    "ticker": "BMNR",
+    "score": 58,
     "sector": "기술",
     "basis": [
-     "거래량급증",
-     "낙폭과대"
+     "낙폭과대",
+     "추세지속"
     ],
-    "reason": "높은 공스베팅 물량에도 불구하고 강력한 거래량이 유입되며 단기 반등 모멘텀을 형성했습니다. 과도한 낙폭 이후 기술적 반발 매수세가 유입될 가능성이 높습니다.",
-    "catalyst": "숏스퀴즈 가능성 및 거래량 증가",
-    "risk": "단기 변동성 및 수급 불안정",
-    "score": 50
+    "reason": "과거 급락 이후 강력한 반등세를 보이고 있으며, 비트코인 가격 상승과 맞물린 재료가 견고합니다. 기술주 중에서도 암호화폐 채굴 인프라 관련주로 차별화된 움직임을 보입니다.",
+    "catalyst": "비트코인 가격 8만 달러 돌파",
+    "risk": "변동성 매우 높음"
+   },
+   {
+    "name": "Cipher Digital Inc.",
+    "ticker": "CIFR",
+    "score": 55,
+    "sector": "기술",
+    "basis": [
+     "낙폭과대",
+     "추세지속"
+    ],
+    "reason": "지난달 낙폭을 만회하며 반등하는 흐름이 뚜렷하며, AI 및 데이터 인프라 관련 수혜가 기대됩니다. 단기 조정 이후 재상승 국면에 진입했다고 판단됩니다.",
+    "catalyst": "AI 데이터센터 수요 증가",
+    "risk": "금리 상승 시 자금조달 압박"
    }
   ],
   "day_cands": [
    {
-    "name": "MiniMed Group, Inc.",
-    "ticker": "MMED",
-    "sector": "헬스케어",
+    "name": "Webull Corporation",
+    "ticker": "BULL",
+    "score": 50,
     "target_pct": 4,
+    "sector": "금융",
     "basis": [
-     "실적",
-     "정책테마"
+     "거래량급증"
     ],
-    "reason": "다수의 투자은행이 목표주가를 상향 조정하며 매수 의견을 유지해 단기 모멘텀이 유효합니다.",
-    "risk": "바이오 섹터 전반의 투자 심리 위축 가능성",
-    "score": 50
+    "reason": "금융 섹터의 강세 흐름에 편승하여 기술적 돌파를 시도하고 있습니다. 동종 업계의 호재가 긍정적 모멘텀을 형성 중입니다.",
+    "risk": "단기 과열"
    },
    {
-    "name": "Helmerich & Payne, Inc.",
-    "ticker": "HP",
-    "sector": "에너지",
+    "name": "Celestica, Inc.",
+    "ticker": "CLS",
+    "score": 48,
     "target_pct": 3,
-    "basis": [
-     "실적",
-     "추세지속"
-    ],
-    "reason": "최근 실적 발표 이후 유가 관련 서비스 업종 내에서 긍정적인 평가를 받고 있습니다.",
-    "risk": "원자재 가격 변동성 확대",
-    "score": 50
-   },
-   {
-    "name": "Comstock Resources, Inc.",
-    "ticker": "CRK",
-    "sector": "에너지",
-    "target_pct": 3,
-    "basis": [
-     "수주계약",
-     "낙폭과대"
-    ],
-    "reason": "대규모 자산 관련 양해각서 체결 소식으로 저가 매수세가 유입될 수 있습니다.",
-    "risk": "전일 주가 하락에 따른 기술적 저항",
-    "score": 50
-   },
-   {
-    "name": "Seaboard Corporation",
-    "ticker": "SEB",
-    "sector": "유틸리티",
-    "target_pct": 3,
-    "basis": [
-     "수주계약",
-     "정책테마"
-    ],
-    "reason": "신재생에너지 설비 투자 확대 뉴스가 전해지며 친환경 관련 모멘텀을 받고 있습니다.",
-    "risk": "낮은 유동성으로 인한 슬리피지 위험",
-    "score": 50
-   },
-   {
-    "name": "NVIDIA Corporation",
-    "ticker": "NVDA",
     "sector": "기술",
-    "target_pct": 4,
     "basis": [
-     "수주계약",
+     "수주계약"
+    ],
+    "reason": "AI 관련 AI 콜 및 수주 모멘텀이 시장의 관심을 받고 있습니다. 안정적인 상승세를 유지할 가능성이 높습니다.",
+    "risk": "기술적 저항선 근접"
+   },
+   {
+    "name": "Twenty One Capital, Inc.",
+    "ticker": "XXI",
+    "score": 45,
+    "target_pct": 4,
+    "sector": "금융",
+    "basis": [
+     "수주계약"
+    ],
+    "reason": "경영진 개편 등 내부 모멘텀이 작용하며 단기 수급이 유입되고 있습니다. 차트상 안정적인 우상향 흐름을 보입니다.",
+    "risk": "거래량 부족 가능성"
+   },
+   {
+    "name": "Hesai Group",
+    "ticker": "HSAI",
+    "score": 42,
+    "target_pct": 3,
+    "sector": "기술",
+    "basis": [
      "추세지속"
     ],
-    "reason": "대규모 인수합병 뉴스와 함께 시장 주도주로서의 수급이 집중되고 있습니다.",
-    "risk": "지수 연동성 높음으로 인한 시장 동반 하락 위험",
-    "score": 50
+    "reason": "파트너십을 통한 시장 점유율 확대 기대감이 주가에 반영되고 있습니다. 기술적 반등 시점이 유효합니다.",
+    "risk": "업종 내 경쟁 심화"
+   },
+   {
+    "name": "Riot Platforms, Inc.",
+    "ticker": "RIOT",
+    "score": 40,
+    "target_pct": 5,
+    "sector": "기술",
+    "basis": [
+     "정책테마"
+    ],
+    "reason": "비트코인 직접 투자와 채굴의 결합으로 시장의 자금이 강하게 집중되는 형태입니다. 대규모 자금 유입이 긍정적입니다.",
+    "risk": "비트코인 가격 연동성 위험"
    }
   ],
   "cands": [
    {
-    "ticker": "CNH",
+    "ticker": "MSTR",
     "rank": 1,
-    "verdict": "선택",
-    "why": "목표가 상향 및 강한 수급 유입"
+    "verdict": "관찰",
+    "why": "재료는 좋으나 변동성 과도"
    },
    {
-    "tekier": "NU",
+    "ticker": "SMMT",
     "rank": 2,
-    "verdict": "선택",
-    "why": "금융 섹터 우위 및 안정적 추세"
+    "verdict": "제외",
+    "why": "헬스케어 섹터 성공률 저조"
    },
    {
-    "ticker": "ONDS",
+    "ticker": "HCM",
     "rank": 3,
-    "verdict": "선택",
-    "why": "낙폭 과대 및 거래량 급증에 따른 반등 기대"
+    "verdict": "제외",
+    "why": "헬스케어 섹터 성공률 저조"
    },
    {
-    "ticker": "MMED",
+    "ticker": "HOOD",
     "rank": 4,
-    "verdict": "관찰",
-    "why": "목표가 상향 리포트 반영 중"
+    "verdict": "선택",
+    "why": "금융 섹터 우위 입증"
    },
    {
-    "ticker": "HP",
+    "ticker": "SNOW",
     "rank": 5,
-    "verdict": "관찰",
-    "why": "실적 모멘텀 유지 여부 확인 필요"
+    "verdict": "제외",
+    "why": "소프트웨어 섹터 회피"
    },
    {
-    "ticker": "CRK",
+    "ticker": "CRCL",
     "rank": 6,
     "verdict": "관찰",
-    "why": "대규모 계약 모멘텀의 지속성 주시"
+    "why": "비트코인 연동성"
    },
    {
-    "ticker": "SEB",
+    "ticker": "BMNR",
     "rank": 7,
+    "verdict": "선택",
+    "why": "강한 모멘텀"
+   },
+   {
+    "ticker": "CIFR",
+    "rank": 8,
+    "verdict": "선택",
+    "why": "낙폭과대 반등"
+   },
+   {
+    "ticker": "RIOT",
+    "rank": 9,
     "verdict": "관찰",
-    "why": "신재생 관련 수급 체크"
+    "why": "비트코인 섹터 중복"
+   },
+   {
+    "ticker": "PURR",
+    "rank": 10,
+    "verdict": "관찰",
+    "why": "단기 급등"
+   },
+   {
+    "ticker": "CLS",
+    "rank": 11,
+    "verdict": "선택",
+    "why": "기술적 지지"
+   },
+   {
+    "ticker": "XXI",
+    "rank": 12,
+    "verdict": "선택",
+    "why": "금융 섹터 수급"
+   },
+   {
+    "ticker": "HSAI",
+    "rank": 13,
+    "verdict": "선택",
+    "why": "기술적 반등"
+   },
+   {
+    "ticker": "BULL",
+    "rank": 14,
+    "verdict": "선택",
+    "why": "금융 섹터 우위"
+   },
+   {
+    "ticker": "SPCX",
+    "rank": 15,
+    "verdict": "관찰",
+    "why": "지수 연동"
    },
    {
     "ticker": "NVDA",
-    "rank": 8,
-    "verdict": "관찰",
-    "why": "대형 기술주 수급 변동성 주시"
-   },
-   {
-    "ticker": "NVS",
-    "rank": 9,
-    "verdict": "관찰",
-    "why": "제휴 계약 호재와 안전성 이슈 공존"
-   },
-   {
-    "ticker": "DUOL",
-    "rank": 10,
-    "verdict": "관찰",
-    "why": "저평가 분석 있으나 단기 모멘텀 부족"
-   },
-   {
-    "ticker": "BWXT",
-    "rank": 11,
-    "verdict": "제외",
-    "why": "방산 섹터 부진 통계 반영"
-   },
-   {
-    "ticker": "MRNA",
-    "rank": 12,
-    "verdict": "제외",
-    "why": "투자의견 하향 및 바이오 회피"
-   },
-   {
-    "ticker": "KLRA",
-    "rank": 13,
-    "verdict": "제외",
-    "why": "확대된 손실과 바이오 섹터 약세"
-   },
-   {
-    "ticker": "NIO",
-    "rank": 14,
-    "verdict": "제외",
-    "why": "전기차 섹터 변동성 및 하락세"
-   },
-   {
-    "ticker": "ORA",
-    "rank": 15,
-    "verdict": "제외",
-    "why": "전일 급등에 따른 피로감"
-   },
-   {
-    "ticker": "FRVO",
     "rank": 16,
-    "verdict": "제외",
-    "why": "급락세 진정 여부 확인 필요"
+    "verdict": "관찰",
+    "why": "대형주 정체"
    },
    {
-    "ticker": "EIX",
+    "ticker": "NOK",
     "rank": 17,
     "verdict": "제외",
-    "why": "유틸리티 리스크 및 하락 추세"
+    "why": "헬스케어 연관성"
    },
    {
-    "ticker": "PCG",
+    "ticker": "NU",
     "rank": 18,
-    "verdict": "제외",
-    "why": "화재 책임 우려 및 하락 추세"
+    "verdict": "관찰",
+    "why": "AI 성장주"
    }
   ],
   "mkt": {
-   "dir": "횡보",
-   "conf": 52,
-   "why": "VIX 상승과 혼조세 환경을 반영하여 보수적인 횡보세 전망"
-  },
-  "day_picks": [
-   {
-    "name": "Comstock Resources, Inc.",
-    "ticker": "CRK",
-    "score": 75,
-    "target_pct": 3,
-    "sector": "에너지",
-    "basis": [
-     "NEWS_M&A"
-    ],
-    "reason": "시가갭 -1%로 출발했으나 개장 후 +1.9% 상승하며 저가 매수세 유입이라는 사전 근거를 시장 데이터가 확인해 주었습니다.",
-    "risk": "에너지 업종 변동성 주의"
-   },
-   {
-    "name": "NVIDIA Corporation",
-    "ticker": "NVDA",
-    "score": 80,
-    "target_pct": 4,
-    "sector": "반도체",
-    "basis": [
-     "NEWS_M&A"
-    ],
-    "reason": "시가갭 0.7%와 개장 후 0.4% 상승으로 안정적인 흐름을 보이며 시장 주도주 수급 집중 논리를 뒷받침합니다.",
-    "risk": "대형주 특유의 느린 탄력 주의"
-   }
-  ],
-  "day_at": "22:34",
-  "day_brief": "제시된 5개 종목 중 개장 후 유의미한 상승세를 보이고, 실측 통계와 부합하는 종목인 CRK와 NVDA를 선정했습니다. SEB는 데이터 누락으로 제외했습니다."
+   "dir": "상승",
+   "conf": 55,
+   "why": "지수선물 하락에도 불구하고 섹터별 강한 개별 모멘텀이 시장 전체를 견인하는 흐름 지속 예상"
+  }
  }
 }
