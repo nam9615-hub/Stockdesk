@@ -21356,7 +21356,7 @@
      "r20": null,
      "b": 161.54,
      "gap": 0,
-     "simOpen": -3.6,
+     "simOpen": -0.8,
      "tv": 6,
      "tvx": 0,
      "idx": 0.11
@@ -22176,63 +22176,63 @@
      "rank": 1,
      "verdict": "선택",
      "why": "시총 상위 및 AI 체험 행사이슈 보유",
-     "r1": null
+     "r1": 0.6
     },
     {
      "ticker": "196170.KQ",
      "rank": 2,
      "verdict": "관찰",
      "why": "수급 공백 및 증시 변동성 영향 주시",
-     "r1": null
+     "r1": -0.7
     },
     {
      "ticker": "000660.KS",
      "rank": 3,
      "verdict": "선택",
      "why": "반도체 수출 호조 및 경상수지 흑자 실적 모멘텀",
-     "r1": null
+     "r1": 1.7
     },
     {
      "ticker": "086520.KQ",
      "rank": 4,
      "verdict": "관찰",
      "why": "코스닥 약세장 영향으로 보류",
-     "r1": null
+     "r1": -0.2
     },
     {
      "ticker": "005935.KS",
      "rank": 5,
      "verdict": "선택",
      "why": "기관 일부 수급 유입 및 우선주 매력도",
-     "r1": null
+     "r1": 3.3
     },
     {
      "ticker": "247540.KQ",
      "rank": 6,
      "verdict": "선택",
      "why": "유럽 전기차 투자 관련 뉴스 재료 보유",
-     "r1": null
+     "r1": -1.4
     },
     {
      "ticker": "402340.KS",
      "rank": 7,
      "verdict": "제외",
      "why": "기관 물량 출하 및 급락세 영향",
-     "r1": null
+     "r1": 5.2
     },
     {
      "ticker": "277810.KQ",
      "rank": 8,
      "verdict": "선택",
      "why": "정부 로봇 정책 수혜 기대감 유효",
-     "r1": null
+     "r1": 1.3
     },
     {
      "ticker": "009150.KS",
      "rank": 9,
      "verdict": "관찰",
      "why": "피지컬AI 등 관련 뉴스 있으나 수급 미흡",
-     "r1": null
+     "r1": 2.5
     },
     {
      "ticker": "036930.KQ",
@@ -22407,7 +22407,8 @@
     "dir": "횡보",
     "conf": 45,
     "why": "글로벌 지수 상승에도 국내 증시 자체의 수급 공백과 롤러코스터 장세 지속",
-    "ok": null
+    "ok": false,
+    "act": 1.64
    },
    "picks": [
     {
@@ -22421,12 +22422,15 @@
       "실적"
      ],
      "p0": 1596000,
-     "r1": null,
+     "r1": 1.7,
      "r5": null,
      "r20": null,
      "b": 1620000,
      "gap": 1.5,
-     "simOpen": 1.8
+     "simOpen": 1.7,
+     "tv": 5055254,
+     "tvx": 0.8,
+     "idx": 1.64
     },
     {
      "kind": "swing",
@@ -22439,12 +22443,15 @@
       "정책테마"
      ],
      "p0": 365500,
-     "r1": null,
+     "r1": -2,
      "r5": null,
      "r20": null,
      "b": 366000,
      "gap": 0.1,
-     "simOpen": -2
+     "simOpen": -2,
+     "tv": 103415,
+     "tvx": 0.9,
+     "idx": 1.64
     },
     {
      "kind": "swing",
@@ -22457,12 +22464,15 @@
       "정책테마"
      ],
      "p0": 436500,
-     "r1": null,
+     "r1": 1.3,
      "r5": null,
      "r20": null,
      "b": 453000,
      "gap": 3.8,
-     "simOpen": 1.3
+     "simOpen": 1.3,
+     "tv": 58948,
+     "tvx": 1.3,
+     "idx": 1.64
     }
    ],
    "day2": {
@@ -22471,6 +22481,279 @@
     "n": 0
    },
    "dayHold": 1
+  },
+  {
+   "date": "2026-09-04",
+   "market": "US",
+   "regime": "상승",
+   "rules": [
+    "단타 실패 분해: 시장충격8·목표과다1·선정19 → 선정 강화",
+    "강도80+ 실측 0%(10) — 확신도 과장, 보수화",
+    "근거'실적' 성공37%(27) → 단독추천 지양",
+    "근거'정책테마' 성공77%(13) → 신뢰",
+    "섹터'소프트웨어' 성공33%(12) → 회피",
+    "섹터'바이오' 성공38%(8) → 회피"
+   ],
+   "cands": [
+    {
+     "ticker": "MSTR",
+     "rank": 1,
+     "verdict": "관찰",
+     "why": "재료는 좋으나 변동성 과도",
+     "r1": null
+    },
+    {
+     "ticker": "SMMT",
+     "rank": 2,
+     "verdict": "제외",
+     "why": "헬스케어 섹터 성공률 저조",
+     "r1": null
+    },
+    {
+     "ticker": "HCM",
+     "rank": 3,
+     "verdict": "제외",
+     "why": "헬스케어 섹터 성공률 저조",
+     "r1": null
+    },
+    {
+     "ticker": "HOOD",
+     "rank": 4,
+     "verdict": "선택",
+     "why": "금융 섹터 우위 입증",
+     "r1": null
+    },
+    {
+     "ticker": "SNOW",
+     "rank": 5,
+     "verdict": "제외",
+     "why": "소프트웨어 섹터 회피",
+     "r1": null
+    },
+    {
+     "ticker": "CRCL",
+     "rank": 6,
+     "verdict": "관찰",
+     "why": "비트코인 연동성",
+     "r1": null
+    },
+    {
+     "ticker": "BMNR",
+     "rank": 7,
+     "verdict": "선택",
+     "why": "강한 모멘텀",
+     "r1": null
+    },
+    {
+     "ticker": "CIFR",
+     "rank": 8,
+     "verdict": "선택",
+     "why": "낙폭과대 반등",
+     "r1": null
+    },
+    {
+     "ticker": "RIOT",
+     "rank": 9,
+     "verdict": "관찰",
+     "why": "비트코인 섹터 중복",
+     "r1": null
+    },
+    {
+     "ticker": "PURR",
+     "rank": 10,
+     "verdict": "관찰",
+     "why": "단기 급등",
+     "r1": null
+    },
+    {
+     "ticker": "CLS",
+     "rank": 11,
+     "verdict": "선택",
+     "why": "기술적 지지",
+     "r1": null
+    },
+    {
+     "ticker": "XXI",
+     "rank": 12,
+     "verdict": "선택",
+     "why": "금융 섹터 수급",
+     "r1": null
+    },
+    {
+     "ticker": "HSAI",
+     "rank": 13,
+     "verdict": "선택",
+     "why": "기술적 반등",
+     "r1": null
+    },
+    {
+     "ticker": "BULL",
+     "rank": 14,
+     "verdict": "선택",
+     "why": "금융 섹터 우위",
+     "r1": null
+    },
+    {
+     "ticker": "SPCX",
+     "rank": 15,
+     "verdict": "관찰",
+     "why": "지수 연동",
+     "r1": null
+    },
+    {
+     "ticker": "NVDA",
+     "rank": 16,
+     "verdict": "관찰",
+     "why": "대형주 정체",
+     "r1": null
+    },
+    {
+     "ticker": "NOK",
+     "rank": 17,
+     "verdict": "제외",
+     "why": "헬스케어 연관성",
+     "r1": null
+    },
+    {
+     "ticker": "NU",
+     "rank": 18,
+     "verdict": "관찰",
+     "why": "AI 성장주",
+     "r1": null
+    }
+   ],
+   "bl": {
+    "rand": [
+     "SPCX",
+     "SMMT",
+     "NVDA"
+    ],
+    "mom": [
+     "MSTR",
+     "SMMT",
+     "HCM"
+    ]
+   },
+   "dayCands": [
+    {
+     "name": "Webull Corporation",
+     "ticker": "BULL",
+     "score": 50,
+     "target_pct": 4,
+     "sector": "금융",
+     "basis": [
+      "거래량급증"
+     ],
+     "reason": "금융 섹터의 강세 흐름에 편승하여 기술적 돌파를 시도하고 있습니다. 동종 업계의 호재가 긍정적 모멘텀을 형성 중입니다.",
+     "risk": "단기 과열"
+    },
+    {
+     "name": "Celestica, Inc.",
+     "ticker": "CLS",
+     "score": 48,
+     "target_pct": 3,
+     "sector": "기술",
+     "basis": [
+      "수주계약"
+     ],
+     "reason": "AI 관련 AI 콜 및 수주 모멘텀이 시장의 관심을 받고 있습니다. 안정적인 상승세를 유지할 가능성이 높습니다.",
+     "risk": "기술적 저항선 근접"
+    },
+    {
+     "name": "Twenty One Capital, Inc.",
+     "ticker": "XXI",
+     "score": 45,
+     "target_pct": 4,
+     "sector": "금융",
+     "basis": [
+      "수주계약"
+     ],
+     "reason": "경영진 개편 등 내부 모멘텀이 작용하며 단기 수급이 유입되고 있습니다. 차트상 안정적인 우상향 흐름을 보입니다.",
+     "risk": "거래량 부족 가능성"
+    },
+    {
+     "name": "Hesai Group",
+     "ticker": "HSAI",
+     "score": 42,
+     "target_pct": 3,
+     "sector": "기술",
+     "basis": [
+      "추세지속"
+     ],
+     "reason": "파트너십을 통한 시장 점유율 확대 기대감이 주가에 반영되고 있습니다. 기술적 반등 시점이 유효합니다.",
+     "risk": "업종 내 경쟁 심화"
+    },
+    {
+     "name": "Riot Platforms, Inc.",
+     "ticker": "RIOT",
+     "score": 40,
+     "target_pct": 5,
+     "sector": "기술",
+     "basis": [
+      "정책테마"
+     ],
+     "reason": "비트코인 직접 투자와 채굴의 결합으로 시장의 자금이 강하게 집중되는 형태입니다. 대규모 자금 유입이 긍정적입니다.",
+     "risk": "비트코인 가격 연동성 위험"
+    }
+   ],
+   "hold": 0,
+   "v": {
+    "m": "gemini-3.1-flash-lite",
+    "pv": "J1.0"
+   },
+   "mktF": {
+    "dir": "상승",
+    "conf": 55,
+    "why": "지수선물 하락에도 불구하고 섹터별 강한 개별 모멘텀이 시장 전체를 견인하는 흐름 지속 예상",
+    "ok": null
+   },
+   "picks": [
+    {
+     "kind": "swing",
+     "name": "Robinhood Markets, Inc.",
+     "ticker": "HOOD",
+     "score": 65,
+     "sector": "금융",
+     "basis": [
+      "정책테마",
+      "거래량급증"
+     ],
+     "p0": 124.72,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "BitMine Immersion Technologies",
+     "ticker": "BMNR",
+     "score": 58,
+     "sector": "기술",
+     "basis": [
+      "낙폭과대",
+      "추세지속"
+     ],
+     "p0": 26.45,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "Cipher Digital Inc.",
+     "ticker": "CIFR",
+     "score": 55,
+     "sector": "기술",
+     "basis": [
+      "낙폭과대",
+      "추세지속"
+     ],
+     "p0": 17.37,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    }
+   ]
   }
  ],
  "monAt": 1788503052376
