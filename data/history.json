@@ -23218,7 +23218,7 @@
      "r20": null,
      "b": 1105000,
      "gap": 6.1,
-     "simOpen": 1.8,
+     "simOpen": 2.4,
      "tv": 611773,
      "tvx": 1,
      "idx": 4.61
@@ -23302,63 +23302,63 @@
      "rank": 1,
      "verdict": "선택",
      "why": "방산 테마 우위 및 미 해군 관련 강력한 재료 보유",
-     "r1": null
+     "r1": -2.6
     },
     {
      "ticker": "181710.KS",
      "rank": 2,
      "verdict": "선택",
      "why": "외인 연속 순매수 및 AI 데이터센터 성장성 부각",
-     "r1": null
+     "r1": -15
     },
     {
      "ticker": "003530.KS",
      "rank": 3,
      "verdict": "선택",
      "why": "단기 모멘텀 및 거래량 집중",
-     "r1": null
+     "r1": -0.9
     },
     {
      "ticker": "233740.KS",
      "rank": 4,
      "verdict": "관찰",
      "why": "레버리지 상품으로 하락장 변동성 대응 필요",
-     "r1": null
+     "r1": -4.8
     },
     {
      "ticker": "034730.KS",
      "rank": 5,
      "verdict": "관찰",
      "why": "지주사 섹터 통계적 한계 감안 관찰 필요",
-     "r1": null
+     "r1": -1.5
     },
     {
      "ticker": "008930.KS",
      "rank": 6,
      "verdict": "관찰",
      "why": "제약/바이오 섹터 회피 성향 고려",
-     "r1": null
+     "r1": 6.1
     },
     {
      "ticker": "267270.KS",
      "rank": 7,
      "verdict": "관찰",
      "why": "모멘텀은 있으나 섹터 탄력성 부족",
-     "r1": null
+     "r1": -2.7
     },
     {
      "ticker": "396500.KS",
      "rank": 8,
      "verdict": "제외",
      "why": "반도체 섹터 낮은 성공 통계로 회피",
-     "r1": null
+     "r1": -0.5
     },
     {
      "ticker": "445290.KS",
      "rank": 9,
      "verdict": "제외",
      "why": "상대적 모멘텀 및 수급 강도 우선순위 밀림",
-     "r1": null
+     "r1": -1.9
     }
    ],
    "bl": {
@@ -23484,7 +23484,8 @@
     "dir": "하락",
     "conf": 35,
     "why": "미 증시 약세 및 환율 안정세에도 불구하고 지수 방향성 신뢰도가 낮은 혼조·하락 국면입니다.",
-    "ok": null
+    "ok": true,
+    "act": -0.58
    },
    "picks": [
     {
@@ -23499,12 +23500,15 @@
       "추세지속"
      ],
      "p0": 13190,
-     "r1": null,
+     "r1": -2.6,
      "r5": null,
      "r20": null,
      "b": 13230,
      "gap": 0.3,
-     "simOpen": -2.5
+     "simOpen": -2.6,
+     "tv": 10936,
+     "tvx": 0.6,
+     "idx": -0.58
     },
     {
      "kind": "swing",
@@ -23518,7 +23522,7 @@
       "신고가"
      ],
      "p0": 70800,
-     "r1": null,
+     "r1": -15,
      "r5": null,
      "r20": null,
      "b": 70500,
@@ -23528,7 +23532,10 @@
      "simExit": "stop",
      "simD": "2026-09-08",
      "simT": "09:05",
-     "live": 1
+     "live": 1,
+     "tv": 44835,
+     "tvx": 1.9,
+     "idx": -0.58
     },
     {
      "kind": "swing",
@@ -23541,12 +23548,15 @@
       "거래량급증"
      ],
      "p0": 4915,
-     "r1": null,
+     "r1": -0.9,
      "r5": null,
      "r20": null,
      "b": 4915,
      "gap": 0,
-     "simOpen": -0.5
+     "simOpen": -0.9,
+     "tv": 6474,
+     "tvx": 0.6,
+     "idx": -0.58
     }
    ],
    "day2": {
@@ -23554,7 +23564,312 @@
     "brief": "혼조장 국면에서 모든 후보가 갭상승 제한 및 약보합세를 보여 확률 우위가 부족합니다. 실측 통계상 지주사·반도체 섹터 및 뉴스재료 기반 종목의 성공률이 낮고, 원칙(확률 우위 없음)에 부합하므로 전 종목 보류합니다.",
     "n": 0
    },
-   "dayHold": 1
+   "dayHold": 1,
+   "cstat": {
+    "n": 9,
+    "med": -1.9,
+    "ex": null,
+    "exD": null,
+    "rg": null,
+    "rej": 0.7,
+    "blr": {
+     "rand": -0.4,
+     "mom": 0.1
+    }
+   }
+  },
+  {
+   "date": "2026-09-08",
+   "market": "US",
+   "regime": "상승",
+   "rules": [
+    "단타 실패 분해: 시장충격9·목표과다1·선정20 → 선정 강화",
+    "강도80+ 실측 0%(10) — 확신도 과장, 보수화",
+    "근거'실적' 성공37%(27) → 단독추천 지양",
+    "근거'정책테마' 성공79%(14) → 신뢰",
+    "섹터'소프트웨어' 성공33%(12) → 회피",
+    "섹터'바이오' 성공38%(8) → 회피"
+   ],
+   "cands": [
+    {
+     "ticker": "BLTE",
+     "rank": 1,
+     "verdict": "선택",
+     "why": "일본 신약 허가 신청 모멘텀 강함",
+     "r1": null
+    },
+    {
+     "ticker": "AEHR",
+     "rank": 91,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "SNDK",
+     "rank": 92,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "COHU",
+     "rank": 93,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "CBRS",
+     "rank": 94,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "ALAB",
+     "rank": 95,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "AXTI",
+     "rank": 96,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "SMTC",
+     "rank": 97,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "TARS",
+     "rank": 98,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "TTMI",
+     "rank": 99,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "UCTT",
+     "rank": 100,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "SIMO",
+     "rank": 101,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "SKHY",
+     "rank": 102,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "DPC",
+     "rank": 103,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "NVDA",
+     "rank": 104,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "PATH",
+     "rank": 105,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "INTC",
+     "rank": 106,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "AAL",
+     "rank": 107,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    }
+   ],
+   "bl": {
+    "rand": [
+     "SMTC",
+     "PATH",
+     "AAL"
+    ],
+    "mom": [
+     "BLTE",
+     "AEHR",
+     "SNDK"
+    ]
+   },
+   "dayCands": [
+    {
+     "name": "Sandisk Corporation",
+     "ticker": "SNDK",
+     "score": 55,
+     "target_pct": 4,
+     "sector": "반도체",
+     "basis": [
+      "뉴스재료",
+      "추세지속"
+     ],
+     "reason": "AI 메모리 시장에서의 우위 평가와 함께 높은 상승률을 기록하며 모멘텀을 유지하고 있습니다.",
+     "risk": "단기 급등에 따른 차익실현 매물"
+    },
+    {
+     "name": "Aehr Test Systems",
+     "ticker": "AEHR",
+     "score": 52,
+     "target_pct": 3,
+     "sector": "반도체",
+     "basis": [
+      "뉴스재료",
+      "거래량급증"
+     ],
+     "reason": "AI 프로세서 테스트 관련 장비 수요 장기화 전망으로 거래량이 유입되고 있습니다.",
+     "risk": "일부 증권가의 부정적 시각 및 변동성"
+    },
+    {
+     "name": "Cohu, Inc.",
+     "ticker": "COHU",
+     "score": 50,
+     "target_pct": 3,
+     "sector": "반도체",
+     "basis": [
+      "뉴스재료",
+      "낙폭과대"
+     ],
+     "reason": "반도체 테스트 장비 섹터 내 상대적 저가 매력과 경쟁사 이슈에 따른 순환매 기회가 있습니다.",
+     "risk": "동종 업계 하락세 전이 가능성"
+    },
+    {
+     "name": "AXT Inc",
+     "ticker": "AXTI",
+     "score": 48,
+     "target_pct": 3,
+     "sector": "소재",
+     "basis": [
+      "수주계약",
+      "뉴스재료"
+     ],
+     "reason": "공급 계약 확대로 인한 매출 성장 기대감이 반영되며 단기 모멘텀이 형성되었습니다.",
+     "risk": "소재 섹터 과거 승률 제한적"
+    },
+    {
+     "name": "TTM Technologies, Inc.",
+     "ticker": "TTMI",
+     "score": 48,
+     "target_pct": 3,
+     "sector": "전자",
+     "basis": [
+      "실적"
+     ],
+     "reason": "견조한 실적 발표와 어닝 서프라이즈로 밸류에이션 내러티브가 주목받고 있습니다.",
+     "risk": "현금 흐름 대비 고평가 우려"
+    }
+   ],
+   "hold": 0,
+   "v": {
+    "m": "gemini-3.5-flash-lite",
+    "pv": "J1.0"
+   },
+   "mktF": {
+    "dir": "하락",
+    "conf": 45,
+    "why": "전일 지수 하락 및 VIX 상승에 따른 보수적 접근 필요",
+    "ok": null
+   },
+   "picks": [
+    {
+     "kind": "swing",
+     "name": "Cerebras Systems Inc.",
+     "ticker": "CBRS",
+     "score": 62,
+     "sector": "반도체",
+     "basis": [
+      "수주계약",
+      "뉴스재료"
+     ],
+     "p0": 210.05,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "Belite Bio, Inc",
+     "ticker": "BLTE",
+     "score": 55,
+     "sector": "제약",
+     "basis": [
+      "뉴스재료"
+     ],
+     "p0": 193.61,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "Astera Labs, Inc.",
+     "ticker": "ALAB",
+     "score": 58,
+     "sector": "반도체",
+     "basis": [
+      "추세지속",
+      "뉴스재료"
+     ],
+     "p0": 310.4,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    }
+   ]
   }
  ],
  "monAt": 1788848892153
