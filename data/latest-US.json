@@ -1,258 +1,226 @@
 {
- "date": "2026-09-08",
+ "date": "2026-09-09",
  "at": "21:29",
  "data": {
-  "brief": "전일 S&P 500과 지수선물이 하락하고 VIX가 상승하는 등 시장 변동성이 확대되는 국면입니다. 과거 실측 통계에 기반하여 바이오·소프트웨어 섹터는 회피하고, 확실한 수주 계약 및 규제 승인 모멘텀을 가진 종목 중심로 선별했습니다.",
+  "brief": "전일 S&P500 하락과 VIX 상승 속에서 지수선물이 약세를 보이고 있어 보수적인 접근이 필요합니다. 과거 유사 혼조장 실측 결과와 섹터별 통계를 반영하여 리스크가 높은 소프트웨어 및 헬스케어는 회피합니다.",
   "picks": [
    {
-    "name": "Cerebras Systems Inc.",
-    "ticker": "CBRS",
-    "score": 62,
-    "sector": "반도체",
+    "name": "Solaris Energy Infrastructure",
+    "ticker": "SEI",
+    "score": 45,
+    "sector": "에너지",
     "basis": [
      "수주계약",
-     "뉴스재료"
+     "정책테마"
     ],
-    "reason": "OpenAI와의 계약을 바탕으로 254억 달러 규모의 막대한 백로그를 보유하고 있어 지속적인 성장이 기대됩니다. 코투의 신규 포지션 편입 소식도 긍정적 모멘텀으로 작용합니다.",
-    "catalyst": "OpenAI 계약 및 대규모 백로그",
-    "risk": "AI 칩 관련 밸류에이션 부담"
+    "reason": "헤지펀드 보유 지분 증가와 상반기 실적 호조 모멘텀이 이어지고 있습니다. 에너지 섹터의 정책 및 수주 모멘텀을 바탕으로 스윙 관점에서 접근합니다.",
+    "catalyst": "헤지펀드 지분 확대 및 실적 호조",
+    "risk": "시장 전반의 하방 압력에 따른 변동성"
    },
    {
-    "name": "Belite Bio, Inc",
-    "ticker": "BLTE",
-    "score": 55,
-    "sector": "제약",
+    "name": "NuScale Power Corporation",
+    "ticker": "SMR",
+    "score": 42,
+    "sector": "유틸리티",
     "basis": [
-     "뉴스재료"
+     "정책테마",
+     "거래량급증"
     ],
-    "reason": "일본에서 스타가르트병 치료제 '틴라레반트'에 대해 사키가케 지정 시스템을 통한 신약 허가 신청을 완료했습니다. 규제 승인 기대감이 주가에 강한 상승 모멘텀을 부여하고 있습니다.",
-    "catalyst": "일본 신약 허가 신청(Sakigake)",
-    "risk": "바이오 섹터 과거 부진 및 임상 리스크"
+    "reason": "원자력 관련 정책 테마와 월스트리트의 관심 속에서 거래량이 유입되고 있습니다. 낙폭 과대 이후 반등 시도를 모니터링할 필요가 있습니다.",
+    "catalyst": "원자력 에너지 테마 지속성",
+    "risk": "단기 급등락에 따른 차익실현 매물"
    },
    {
-    "name": "Astera Labs, Inc.",
-    "ticker": "ALAB",
-    "score": 58,
-    "sector": "반도체",
+    "name": "DigitalOcean Holdings, Inc.",
+    "ticker": "DOCN",
+    "score": 40,
+    "sector": "IT",
     "basis": [
-     "추세지속",
-     "뉴스재료"
+     "실적",
+     "추세지속"
     ],
-    "reason": "S&P 500 편입 기대감과 함께 AI 커넥티비티 수요 확대로 강한 주가 흐름을 보이고 있습니다. 엔비디아 관련 수혜주로서의 매력도 유효합니다.",
-    "catalyst": "S&P 500 편입 기대 및 AI 커넥티비티 수요",
-    "risk": "시장 전반의 하락 압력 연동 가능성"
+    "reason": "AI 관련 사업의 성과가 숫자로 가시화되면서 실적 개선 기대감이 작용하고 있습니다. 다만 소프트웨어 및 기술주 전반의 통계적 부진을 감안해 보수적으로 봅니다.",
+    "catalyst": "AI 사업 실적 기여 가시화",
+    "risk": "기술주 조정 압력"
    }
   ],
   "day_cands": [
    {
-    "name": "Sandisk Corporation",
-    "ticker": "SNDK",
-    "score": 55,
+    "name": "Fermi Inc.",
+    "ticker": "FRMI",
     "target_pct": 4,
-    "sector": "반도체",
+    "sector": "에너지",
     "basis": [
-     "뉴스재료",
-     "추세지속"
+     "수주계약"
     ],
-    "reason": "AI 메모리 시장에서의 우위 평가와 함께 높은 상승률을 기록하며 모멘텀을 유지하고 있습니다.",
-    "risk": "단기 급등에 따른 차익실현 매물"
-   },
-   {
-    "name": "Aehr Test Systems",
-    "ticker": "AEHR",
-    "score": 52,
-    "target_pct": 3,
-    "sector": "반도체",
-    "basis": [
-     "뉴스재료",
-     "거래량급증"
-    ],
-    "reason": "AI 프로세서 테스트 관련 장비 수요 장기화 전망으로 거래량이 유입되고 있습니다.",
-    "risk": "일부 증권가의 부정적 시각 및 변동성"
-   },
-   {
-    "name": "Cohu, Inc.",
-    "ticker": "COHU",
-    "score": 50,
-    "target_pct": 3,
-    "sector": "반도체",
-    "basis": [
-     "뉴스재료",
-     "낙폭과대"
-    ],
-    "reason": "반도체 테스트 장비 섹터 내 상대적 저가 매력과 경쟁사 이슈에 따른 순환매 기회가 있습니다.",
-    "risk": "동종 업계 하락세 전이 가능성"
+    "reason": "대규모 전력 공급 계약 체결 뉴스로 장중 모멘텀이 발생할 수 있습니다.",
+    "risk": "단기 변동성 확대",
+    "score": 50
    },
    {
     "name": "AXT Inc",
     "ticker": "AXTI",
-    "score": 48,
     "target_pct": 3,
     "sector": "소재",
     "basis": [
-     "수주계약",
-     "뉴스재료"
+     "거래량급증"
     ],
-    "reason": "공급 계약 확대로 인한 매출 성장 기대감이 반영되며 단기 모멘텀이 형성되었습니다.",
-    "risk": "소재 섹터 과거 승률 제한적"
+    "reason": "공급 계약 확대 뉴스와 함께 거래가 집중되며 단기 탄력이 기대됩니다.",
+    "risk": "소재 섹터 통계적 약세",
+    "score": 50
    },
    {
-    "name": "TTM Technologies, Inc.",
-    "ticker": "TTMI",
-    "score": 48,
+    "name": "Semtech Corporation",
+    "ticker": "SMTC",
     "target_pct": 3,
-    "sector": "전자",
+    "sector": "반도체",
     "basis": [
-     "실적"
+     "수주계약"
     ],
-    "reason": "견조한 실적 발표와 어닝 서프라이즈로 밸류에이션 내러티브가 주목받고 있습니다.",
-    "risk": "현금 흐름 대비 고평가 우려"
+    "reason": "신규 10G PON 칩셋 출시 모멘텀으로 장중 기술적 반등을 노립니다.",
+    "risk": "반도체 섹터 회피 성향",
+    "score": 50
+   },
+   {
+    "name": "Nokia Corporation Sponsored",
+    "ticker": "NOK",
+    "target_pct": 3,
+    "sector": "통신",
+    "basis": [
+     "수주계약"
+    ],
+    "reason": "대규모 대출 계약을 통한 AI 팩토리 인프라 투자 뉴스가 부각되고 있습니다.",
+    "risk": "제한적인 탄력성",
+    "score": 50
+   },
+   {
+    "name": "Viavi Solutions Inc.",
+    "ticker": "VIAV",
+    "target_pct": 3,
+    "sector": "통신",
+    "basis": [
+     "거래량급증"
+    ],
+    "reason": "데이터 센터 테스트 포트폴리오 쇼케이스 관련 뉴스로 단기 관심이 집중됩니다.",
+    "risk": "실적 발표 이후 변동성",
+    "score": 50
    }
   ],
   "cands": [
    {
-    "ticker": "BLTE",
+    "ticker": "ROIV",
     "rank": 1,
     "verdict": "선택",
-    "why": "일본 신약 허가 신청 모멘텀 강함"
+    "why": "52주 신고가 경신 및 기업 뉴스로 강한 모멘텀 보유"
    },
    {
-    "name": "AEHR",
+    "title": "",
+    "ticker": "SEI",
     "rank": 2,
-    "verdict": "관찰",
-    "why": "AI 테스트 장비 모멘텀 있으나 변동성 큼"
+    "verdict": "선택",
+    "why": "헤지펀드 매수 유입 및 상반기 호실적"
    },
    {
-    "name": "SNDK",
+    "ticker": "SMR",
     "rank": 3,
     "verdict": "선택",
-    "why": "AI 메모리 우위 부각 및 강한 상승세"
+    "why": "원자력 테마 및 거래량 집중"
    },
    {
-    "name": "COHU",
+    "ticker": "AXT",
     "rank": 4,
     "verdict": "관찰",
-    "why": "반도체 테스트 장비 순환매 대비"
+    "why": "공급 계약 확대 및 지수 편입 기대감 혼재"
    },
    {
-    "name": "CBRS",
+    "ticker": "DOCN",
     "rank": 5,
-    "verdict": "선택",
-    "why": "대규모 백로그 및 OpenAI 계약 모멘텀 탁월"
+    "verdict": "관찰",
+    "why": "AI 실적 가시화이나 기술주 조정 우려"
    },
    {
-    "name": "ALAB",
+    "ticker": "CRWV",
     "rank": 6,
-    "verdict": "선택",
-    "why": "S&P 500 편입 기대 및 AI 커넥티비티 수혜"
+    "verdict": "제외",
+    "why": "시장 환경 대비 불확실성 상존"
    },
    {
-    "name": "AXTI",
+    "ticker": "FRMI",
     "rank": 7,
     "verdict": "관찰",
-    "why": "공급 계약 확대 있으나 소재 섹터 주의"
+    "why": "전력 계약 모멘텀 있으나 변동성 큼"
    },
    {
-    "name": "SMTC",
+    "ticker": "VIAV",
     "rank": 8,
     "verdict": "관찰",
-    "why": "성장주이나 고평가 부담 상존"
+    "why": "실적 부진 이력과 이벤트 교차"
    },
    {
-    "name": "TARS",
+    "ticker": "LITE",
     "rank": 9,
     "verdict": "제외",
-    "why": "헬스케어 및 바이오 회피 원칙 적용"
+    "why": "고가 주식으로 리스크 관리상 제외"
    },
    {
-    "name": "TTMI",
+    "ticker": "MLYS",
     "rank": 10,
-    "verdict": "관찰",
-    "why": "실적 양호하나 현금흐름 주의"
+    "verdict": "제외",
+    "why": "바이오 섹터 통계적 회피"
    },
    {
-    "name": "UCTT",
+    "ticker": "BRVE",
     "rank": 11,
-    "verdict": "관찰",
-    "why": "전자 제조 장비 관련주"
+    "verdict": "제외",
+    "why": "순손실 확대 실적 악재"
    },
    {
-    "name": "SIMO",
+    "ticker": "SMTC",
     "rank": 12,
     "verdict": "관찰",
-    "why": "투자자 컨퍼런스 일정 대기"
+    "why": "신제품 출시 있으나 반도체 섹터 신중"
    },
    {
-    "name": "SKHY",
+    "ticker": "BE",
     "rank": 13,
     "verdict": "제외",
-    "why": "차트상 약세 신호 및 주의 필요"
+    "why": "유가 및 시장 하방 압력 영향"
    },
    {
-    "name": "DPC",
+    "ticker": "INTC",
     "rank": 14,
     "verdict": "제외",
-    "why": "채무 리프레이낸싱 외 모멘텀 부족"
+    "why": "52주 신저가 부근으로 하락 추세"
    },
    {
-    "name": "NVDA",
+    "ticker": "ATAI",
     "rank": 15,
-    "verdict": "관찰",
-    "why": "변동성 제한적, 관망 필요"
+    "verdict": "제외",
+    "why": "하락 마감 종목 및 섹터 리스크"
    },
    {
-    "name": "PATH",
+    "ticker": "NVDA",
     "rank": 16,
     "verdict": "제외",
-    "why": "소프트웨어 섹터 회피 원칙 및 큰 낙폭"
+    "why": "지수 하락 및 반도체 보수적 접근"
    },
    {
-    "name": "INTC",
+    "ticker": "NOK",
     "rank": 17,
     "verdict": "관찰",
-    "why": "반도체주 동조화 흐름"
+    "why": "자금 조달 계약 있으나 모멘텀 제한적"
    },
    {
-    "name": "AAL",
+    "ticker": "SPCX",
     "rank": 18,
     "verdict": "제외",
-    "why": "항공주 약세 추세"
+    "why": "우주 항공 테마 변동성 높음"
    }
   ],
   "mkt": {
    "dir": "하락",
    "conf": 45,
-   "why": "전일 지수 하락 및 VIX 상승에 따른 보수적 접근 필요"
-  },
-  "day_picks": [
-   {
-    "name": "Aehr Test Systems",
-    "ticker": "AEHR",
-    "score": 72,
-    "target_pct": 3,
-    "sector": "반도체",
-    "basis": [
-     "AI프로세서",
-     "장비수요"
-    ],
-    "reason": "시가갭 5.2%에 개장 후 +2.2% 추가 상승하며 강한 매수세를 확인했으나 과도한 갭 주의가 필요함",
-    "risk": "시가 대비 변동성 확대 주의"
-   },
-   {
-    "name": "TTM Technologies, Inc.",
-    "ticker": "TTMI",
-    "score": 68,
-    "target_pct": 3,
-    "sector": "하드웨어",
-    "basis": [
-     "실적호조",
-     "어닝서프라이즈"
-    ],
-    "reason": "시가갭 2%에 개장 후 +0.9% 안정적 우상향 흐름을 보이며 실적 모멘텀이 유효함",
-    "risk": "단기 차익실현 물량 출회 가능성"
-   }
-  ],
-  "day_at": "22:34",
-  "day_brief": "AEHR과 TTMI는 시가갭과 개장 후 흐름이 양호하여 선정하였으나, 나머지 종목은 갭 대비 약세 또는 원칙 기준 미달로 제외합니다."
+   "why": "전일 S&P500 하락 및 VIX 상승에 따른 보수적 관점 적용"
+  }
  }
 }
