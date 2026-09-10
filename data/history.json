@@ -5772,7 +5772,8 @@
      "rank": 16,
      "verdict": "제외",
      "why": "상승률 미미하여 모멘텀 부족",
-     "r1": 0.5
+     "r1": 0.5,
+     "r5": 0.3
     },
     {
      "ticker": "NVDA",
@@ -7257,7 +7258,8 @@
      "rank": 6,
      "verdict": "선택",
      "why": "흑자 전환 및 가이던스 상향에 따른 실적 모멘텀",
-     "r1": -4.6
+     "r1": -4.6,
+     "r5": 5
     },
     {
      "ticker": "FTDR",
@@ -7615,7 +7617,7 @@
    "cstat": {
     "n": 18,
     "med": 0.5,
-    "ex": null,
+    "ex": 2.8,
     "exD": -1.6,
     "rg": 16.9,
     "rej": 3.3,
@@ -25381,7 +25383,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": -0.6
     },
     {
      "ticker": "CHYM",
@@ -25389,7 +25391,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": -3.8
     },
     {
      "ticker": "COHU",
@@ -25397,7 +25399,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": 0.1
     },
     {
      "ticker": "META",
@@ -25405,7 +25407,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": -1.4
     },
     {
      "ticker": "SUNB",
@@ -25413,7 +25415,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": 1.4
     },
     {
      "ticker": "GRAB",
@@ -25421,7 +25423,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": 0
     },
     {
      "ticker": "SPCX",
@@ -25429,7 +25431,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": 2.1
     },
     {
      "ticker": "INTC",
@@ -25437,7 +25439,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": -2.1
     },
     {
      "ticker": "NOK",
@@ -25445,7 +25447,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": 0.8
     }
    ],
    "bl": {
@@ -25665,7 +25667,19 @@
     "brief": "제시된 5개 후보 모두 개장 후 데이터가 사전 논리를 뒷받침하지 못하거나 회피 섹터에 해당하여 기준을 충족하지 않습니다.",
     "n": 0
    },
-   "dayHold": 1
+   "dayHold": 1,
+   "cstat": {
+    "n": 18,
+    "med": 0.1,
+    "ex": null,
+    "exD": null,
+    "rg": null,
+    "rej": null,
+    "blr": {
+     "rand": -1.5,
+     "mom": 2.4
+    }
+   }
   },
   {
    "date": "2026-09-11",
