@@ -1,254 +1,216 @@
 {
- "date": "2026-09-09",
+ "date": "2026-09-10",
  "at": "21:29",
  "data": {
-  "brief": "전일 S&P500 하락과 VIX 상승 속에서 지수선물이 약세를 보이고 있어 보수적인 접근이 필요합니다. 과거 유사 혼조장 실측 결과와 섹터별 통계를 반영하여 리스크가 높은 소프트웨어 및 헬스케어는 회피합니다.",
+  "brief": "전일 S&P500 하락과 VIX 상승 등 혼조장 국면을 반영하여 보수적인 관점으로 접근합니다. 소프트웨어 및 반도체 섹터의 과거 부진 통계를 고려해 스윙 및 단타 포트폴리오를 엄격히 선별했습니다.",
   "picks": [
    {
-    "name": "Solaris Energy Infrastructure",
-    "ticker": "SEI",
-    "score": 45,
-    "sector": "에너지",
+    "name": "Academy Sports and Outdoors, Inc",
+    "ticker": "ASO",
+    "score": 62,
+    "sector": "유통",
     "basis": [
-     "수주계약",
-     "정책테마"
+     "실적"
     ],
-    "reason": "헤지펀드 보유 지분 증가와 상반기 실적 호조 모멘텀이 이어지고 있습니다. 에너지 섹터의 정책 및 수주 모멘텀을 바탕으로 스윙 관점에서 접근합니다.",
-    "catalyst": "헤지펀드 지분 확대 및 실적 호조",
-    "risk": "시장 전반의 하방 압력에 따른 변동성"
+    "reason": "어닝 서프라이즈와 긍정적인 실적 발표로 견조한 모멘텀을 형성했습니다. 하방 압력 우려에도 불구하고 양호한 Q2 실적이 주가 지지력을 제공하고 있습니다.",
+    "catalyst": "Q2 실적 호조",
+    "risk": "저소득층 소비 위축 압력"
    },
    {
-    "name": "NuScale Power Corporation",
-    "ticker": "SMR",
-    "score": 42,
-    "sector": "유틸리티",
+    "name": "Sasol Ltd.",
+    "ticker": "SSL",
+    "score": 58,
+    "sector": "소재",
     "basis": [
-     "정책테마",
-     "거래량급증"
+     "낙폭과대"
     ],
-    "reason": "원자력 관련 정책 테마와 월스트리트의 관심 속에서 거래량이 유입되고 있습니다. 낙폭 과대 이후 반등 시도를 모니터링할 필요가 있습니다.",
-    "catalyst": "원자력 에너지 테마 지속성",
-    "risk": "단기 급등락에 따른 차익실현 매물"
+    "reason": "부채 감축과 10년래 최저 수준의 부채 관리 노력이 부각되며 반등세를 보였습니다. 낙폭 과대에 따른 저가 매수세 유입 가능성이 있습니다.",
+    "catalyst": "부채 감축 가속화",
+    "risk": "원자재 가격 변동성"
    },
    {
-    "name": "DigitalOcean Holdings, Inc.",
-    "ticker": "DOCN",
-    "score": 40,
-    "sector": "IT",
+    "name": "Meta Platforms, Inc.",
+    "ticker": "META",
+    "score": 55,
+    "sector": "기술",
     "basis": [
-     "실적",
-     "추세지속"
+     "수주계약"
     ],
-    "reason": "AI 관련 사업의 성과가 숫자로 가시화되면서 실적 개선 기대감이 작용하고 있습니다. 다만 소프트웨어 및 기술주 전반의 통계적 부진을 감안해 보수적으로 봅니다.",
-    "catalyst": "AI 사업 실적 기여 가시화",
-    "risk": "기술주 조정 압력"
+    "reason": "AI 관련 대규모 투자와 자본 재배치 이슈가 지속적으로 긍정적 영향을 미치고 있습니다. 대형주 중 상대적 수급 안정성이 돋보입니다.",
+    "catalyst": "AI 투자 및 포트폴리오 재편",
+    "risk": "빅테크 전반의 조정 압력"
    }
   ],
   "day_cands": [
    {
-    "name": "Fermi Inc.",
-    "ticker": "FRMI",
+    "name": "Cloudflare, Inc.",
+    "ticker": "NET",
     "target_pct": 4,
-    "sector": "에너지",
+    "sector": "소프트웨어",
     "basis": [
-     "수주계약"
+     "실적"
     ],
-    "reason": "대규모 전력 공급 계약 체결 뉴스로 장중 모멘텀이 발생할 수 있습니다.",
-    "risk": "단기 변동성 확대",
+    "reason": "긍정적인 가이던스와 사업 기회 확대 발표로 강한 상승세를 보이고 있습니다. 10% 넘는 급등 후 추가 모멘텀을 노리나 변동성에 유의합니다.",
+    "risk": "기술주 전반의 하락 압력",
     "score": 50
    },
    {
-    "name": "AXT Inc",
-    "ticker": "AXTI",
-    "target_pct": 3,
-    "sector": "소재",
+    "name": "Pulse Biosciences, Inc",
+    "ticker": "PLSE",
+    "target_pct": 4,
+    "sector": "바이오",
     "basis": [
-     "거래량급증"
+     "정책테마"
     ],
-    "reason": "공급 계약 확대 뉴스와 함께 거래가 집중되며 단기 탄력이 기대됩니다.",
-    "risk": "소재 섹터 통계적 약세",
+    "reason": "유상증자 및 주식 유도 교부금 발표 이후 강한 변동성 거래가 형성되었습니다. 단기 급등에 따른 차익실현 매물 주의가 필요합니다.",
+    "risk": "바이오 섹터 부진 통계",
     "score": 50
    },
    {
-    "name": "Semtech Corporation",
-    "ticker": "SMTC",
+    "name": "MaxLinear, Inc",
+    "ticker": "MXL",
     "target_pct": 3,
     "sector": "반도체",
     "basis": [
-     "수주계약"
-    ],
-    "reason": "신규 10G PON 칩셋 출시 모멘텀으로 장중 기술적 반등을 노립니다.",
-    "risk": "반도체 섹터 회피 성향",
-    "score": 50
-   },
-   {
-    "name": "Nokia Corporation Sponsored",
-    "ticker": "NOK",
-    "target_pct": 3,
-    "sector": "통신",
-    "basis": [
-     "수주계약"
-    ],
-    "reason": "대규모 대출 계약을 통한 AI 팩토리 인프라 투자 뉴스가 부각되고 있습니다.",
-    "risk": "제한적인 탄력성",
-    "score": 50
-   },
-   {
-    "name": "Viavi Solutions Inc.",
-    "ticker": "VIAV",
-    "target_pct": 3,
-    "sector": "통신",
-    "basis": [
      "거래량급증"
     ],
-    "reason": "데이터 센터 테스트 포트폴리오 쇼케이스 관련 뉴스로 단기 관심이 집중됩니다.",
-    "risk": "실적 발표 이후 변동성",
+    "reason": "AI 인프라 관련 수혜 기대감으로 거래량이 집중되며 상승했습니다. 반도체 섹터의 제한적 성공률을 감안해 짧은 목표가를 설정합니다.",
+    "risk": "반도체 섹터 약세",
+    "score": 50
+   },
+   {
+    "name": "Jersey Mike's Subs Inc.",
+    "ticker": "JMKE",
+    "target_pct": 3,
+    "sector": "유통",
+    "basis": [
+     "실적"
+    ],
+    "reason": "증권사의 잇따른 목표주가 상향 조정이 매수세를 자극했습니다. 안정적인 펀더멘털을 바탕으로 한 단기 반등이 기대됩니다.",
+    "risk": "제한적인 거래량",
+    "score": 50
+   },
+   {
+    "name": "Chime Financial, Inc.",
+    "ticker": "CHYM",
+    "target_pct": 3,
+    "sector": "금융",
+    "basis": [
+     "추세지속"
+    ],
+    "reason": "금융 서비스 섹터의 상대적 우위 통계를 바탕으로 완만한 상승세가 예상됩니다. 변동성이 낮아 안정적인 단타 접근이 가능합니다.",
+    "risk": "매크로 지표 부담",
     "score": 50
    }
   ],
   "cands": [
    {
-    "ticker": "ROIV",
+    "ticker": "ASO",
     "rank": 1,
     "verdict": "선택",
-    "why": "52주 신고가 경신 및 기업 뉴스로 강한 모멘텀 보유"
+    "why": "실적 호조와 소비 둔화 우려 돌파"
    },
    {
-    "title": "",
-    "ticker": "SEI",
+    "name": "NET",
     "rank": 2,
     "verdict": "선택",
-    "why": "헤지펀드 매수 유입 및 상반기 호실적"
+    "why": "어닝 서프라이즈 및 성장성 부각"
    },
    {
-    "ticker": "SMR",
+    "name": "SSL",
     "rank": 3,
     "verdict": "선택",
-    "why": "원자력 테마 및 거래량 집중"
+    "why": "부채 축소 모멘텀"
    },
    {
-    "ticker": "AXT",
+    "name": "META",
     "rank": 4,
-    "verdict": "관찰",
-    "why": "공급 계약 확대 및 지수 편입 기대감 혼재"
+    "verdict": "선택",
+    "why": "AI 관련 수급 유입"
    },
    {
-    "ticker": "DOCN",
+    "name": "JMKE",
     "rank": 5,
     "verdict": "관찰",
-    "why": "AI 실적 가시화이나 기술주 조정 우려"
+    "why": "목표주가 상향이나 추가 모멘텀 확인 필요"
    },
    {
-    "ticker": "CRWV",
+    "name": "MXL",
     "rank": 6,
-    "verdict": "제외",
-    "why": "시장 환경 대비 불확실성 상존"
+    "verdict": "관찰",
+    "why": "반도체 섹터 회피 성향 고려"
    },
    {
-    "ticker": "FRMI",
+    "name": "PLSE",
     "rank": 7,
     "verdict": "관찰",
-    "why": "전력 계약 모멘텀 있으나 변동성 큼"
+    "why": "바이오 섹터 과거 부진 반영"
    },
    {
-    "ticker": "VIAV",
+    "name": "AMBA",
     "rank": 8,
-    "verdict": "관찰",
-    "why": "실적 부진 이력과 이벤트 교차"
+    "verdict": "제외",
+    "why": "목표주가 하향 조정 발생"
    },
    {
-    "ticker": "LITE",
+    "name": "CMPS",
     "rank": 9,
     "verdict": "제외",
-    "why": "고가 주식으로 리스크 관리상 제외"
+    "why": "임상 및 교육 프로그램 관련 제한적 영향"
    },
    {
-    "ticker": "MLYS",
+    "name": "DDOG",
     "rank": 10,
     "verdict": "제외",
-    "why": "바이오 섹터 통계적 회피"
+    "why": "내부자 매도 물량 출회"
    },
    {
-    "ticker": "BRVE",
+    "name": "SKHY",
     "rank": 11,
     "verdict": "제외",
-    "why": "순손실 확대 실적 악재"
+    "why": "AI 과열 경고 및 반도체 보수적 접근"
    },
    {
-    "ticker": "SMTC",
+    "name": "COHU",
     "rank": 12,
-    "verdict": "관찰",
-    "why": "신제품 출시 있으나 반도체 섹터 신중"
+    "verdict": "제외",
+    "why": "섹터 내 선두주자 대비 모멘텀 열위"
    },
    {
-    "ticker": "BE",
+    "name": "SUNB",
     "rank": 13,
     "verdict": "제외",
-    "why": "유가 및 시장 하방 압력 영향"
+    "why": "상승폭 제한적"
    },
    {
-    "ticker": "INTC",
+    "name": "GRAB",
     "rank": 14,
     "verdict": "제외",
-    "why": "52주 신저가 부근으로 하락 추세"
+    "why": "지분 인수 협상에 따른 하락세"
    },
    {
-    "ticker": "ATAI",
+    "name": "SPCX",
     "rank": 15,
     "verdict": "제외",
-    "why": "하락 마감 종목 및 섹터 리스크"
+    "why": "하락 모멘텀 지속"
    },
    {
-    "ticker": "NVDA",
+    "name": "INTC",
     "rank": 16,
     "verdict": "제외",
-    "why": "지수 하락 및 반도체 보수적 접근"
+    "why": "상승 모멘텀 미약"
    },
    {
-    "ticker": "NOK",
+    "name": "NOK",
     "rank": 17,
-    "verdict": "관찰",
-    "why": "자금 조달 계약 있으나 모멘텀 제한적"
-   },
-   {
-    "ticker": "SPCX",
-    "rank": 18,
     "verdict": "제외",
-    "why": "우주 항공 테마 변동성 높음"
+    "why": "거래량 및 변동성 부족"
    }
   ],
   "mkt": {
-   "dir": "하락",
-   "conf": 45,
-   "why": "전일 S&P500 하락 및 VIX 상승에 따른 보수적 관점 적용"
-  },
-  "day_picks": [
-   {
-    "name": "Fermi Inc.",
-    "ticker": "FRMI",
-    "score": 75,
-    "target_pct": 4,
-    "sector": "유틸리티",
-    "basis": [
-     "공급계약"
-    ],
-    "reason": "시가갭 -1.9%로 시작했으나 개장 후 +3.4% 반등하며 전력 공급 계약 모멘텀이 유효함을 입증함.",
-    "risk": "시가 대비 하락세 전환 시 즉시 손절 필요"
-   },
-   {
-    "name": "Viavi Solutions Inc.",
-    "ticker": "VIAV",
-    "score": 70,
-    "target_pct": 3,
-    "sector": "기술",
-    "basis": [
-     "신제품출시"
-    ],
-    "reason": "시가갭 -0.1% 보합권 출발 후 개장 후 +2.6% 상승하며 단기 수급 유입 확인.",
-    "risk": "변동성 확대 시 빠른 이익 실현 요망"
-   }
-  ],
-  "day_at": "22:35",
-  "day_brief": "개장 후 양호한 흐름을 보인 종목 중 원칙에 부합하는 FRMI와 VIAV를 선정했습니다. 두 종목 모두 시가갭 조건 및 개장 후 모멘텀을 충족합니다."
+   "dir": "횡보",
+   "conf": 53,
+   "why": "전일 지수 하락과 VIX 상승 속에서 혼조세가 예상됨"
+  }
  }
 }
