@@ -1,219 +1,240 @@
 {
- "date": "2026-09-10",
+ "date": "2026-09-11",
  "at": "21:29",
  "data": {
-  "brief": "전일 S&P500 하락과 VIX 상승 등 혼조장 국면을 반영하여 보수적인 관점으로 접근합니다. 소프트웨어 및 반도체 섹터의 과거 부진 통계를 고려해 스윙 및 단타 포트폴리오를 엄격히 선별했습니다.",
+  "brief": "전일 S&P500 하락에도 지수선물이 반등하며 혼조세를 보이는 국면입니다. 과거 실측 통계에 따라 반도체와 소프트웨어 섹터는 회피하고 M&A 및 대형 계약 모멘텀이 있는 종목 중심의 선별적 접근을 취합니다.",
   "picks": [
    {
-    "name": "Academy Sports and Outdoors, Inc",
+    "name": "Skyworks Solutions, Inc.",
+    "ticker": "SWKS",
+    "score": 55,
+    "sector": "반도체",
+    "basis": [
+     "뉴스재료"
+    ],
+    "reason": "220억 달러 규모의 Qorvo 인수 합병 기대감이 부각되며 주가가 급등했습니다. 다만 과거 반도체 섹터 성공률 통계를 감안하여 보수적인 관점에서 접근합니다.",
+    "catalyst": "220억 달러 Qorvo 인수 합병 승인 기대감",
+    "risk": "반도체 섹터 전반의 약세 및 M&A 무산 리스크"
+   },
+   {
+    "name": "Space Exploration Technologies",
+    "ticker": "SPCX",
+    "score": 52,
+    "sector": "우주항공",
+    "basis": [
+     "수주계약"
+    ],
+    "reason": "연간 130억 달러 규모의 대형 AI 계약을 체결하며 강력한 성장 동력을 확보했습니다. 대규모 수주 모멘텀이 장기 스윙 관점에서 긍정적으로 작용합니다.",
+    "catalyst": "연간 130억 달러 규모의 AI 관련 대형 계약 체결",
+    "risk": "단기 급등에 따른 차익실현 매물 출회 가능성"
+   },
+   {
+    "name": "Academy Sports and Outdoors, In",
     "ticker": "ASO",
-    "score": 62,
+    "score": 48,
     "sector": "유통",
     "basis": [
      "실적"
     ],
-    "reason": "어닝 서프라이즈와 긍정적인 실적 발표로 견조한 모멘텀을 형성했습니다. 하방 압력 우려에도 불구하고 양호한 Q2 실적이 주가 지지력을 제공하고 있습니다.",
-    "catalyst": "Q2 실적 호조",
-    "risk": "저소득층 소비 위축 압력"
-   },
-   {
-    "name": "Sasol Ltd.",
-    "ticker": "SSL",
-    "score": 58,
-    "sector": "소재",
-    "basis": [
-     "낙폭과대"
-    ],
-    "reason": "부채 감축과 10년래 최저 수준의 부채 관리 노력이 부각되며 반등세를 보였습니다. 낙폭 과대에 따른 저가 매수세 유입 가능성이 있습니다.",
-    "catalyst": "부채 감축 가속화",
-    "risk": "원자재 가격 변동성"
-   },
-   {
-    "name": "Meta Platforms, Inc.",
-    "ticker": "META",
-    "score": 55,
-    "sector": "기술",
-    "basis": [
-     "수주계약"
-    ],
-    "reason": "AI 관련 대규모 투자와 자본 재배치 이슈가 지속적으로 긍정적 영향을 미치고 있습니다. 대형주 중 상대적 수급 안정성이 돋보입니다.",
-    "catalyst": "AI 투자 및 포트폴리오 재편",
-    "risk": "빅테크 전반의 조정 압력"
+    "reason": "실적 발표와 함께 UBS의 목표가 상향 조정을 받으며 안정적인 흐름을 보이고 있습니다. 실적 안정성과 주주환원 기조가 혼조장에서 방어력을 제공합니다.",
+    "catalyst": "UBS 목표가 상향 ($58) 및 실적 기대감",
+    "risk": "소비재 섹터 변동성 및 시장 전체의 방향성 혼조"
    }
   ],
   "day_cands": [
    {
-    "name": "Cloudflare, Inc.",
-    "ticker": "NET",
-    "target_pct": 4,
-    "sector": "소프트웨어",
-    "basis": [
-     "실적"
-    ],
-    "reason": "긍정적인 가이던스와 사업 기회 확대 발표로 강한 상승세를 보이고 있습니다. 10% 넘는 급등 후 추가 모멘텀을 노리나 변동성에 유의합니다.",
-    "risk": "기술주 전반의 하락 압력",
-    "score": 50
-   },
-   {
-    "name": "Pulse Biosciences, Inc",
-    "ticker": "PLSE",
-    "target_pct": 4,
-    "sector": "바이오",
-    "basis": [
-     "정책테마"
-    ],
-    "reason": "유상증자 및 주식 유도 교부금 발표 이후 강한 변동성 거래가 형성되었습니다. 단기 급등에 따른 차익실현 매물 주의가 필요합니다.",
-    "risk": "바이오 섹터 부진 통계",
-    "score": 50
-   },
-   {
-    "name": "MaxLinear, Inc",
-    "ticker": "MXL",
+    "name": "Qorvo, Inc.",
+    "ticker": "QRVO",
+    "score": 50,
     "target_pct": 3,
     "sector": "반도체",
     "basis": [
-     "거래량급증"
+     "뉴스재료"
     ],
-    "reason": "AI 인프라 관련 수혜 기대감으로 거래량이 집중되며 상승했습니다. 반도체 섹터의 제한적 성공률을 감안해 짧은 목표가를 설정합니다.",
-    "risk": "반도체 섹터 약세",
-    "score": 50
+    "reason": "Skyworks와의 대규모 합병 기대감으로 동반 상승세를 기록 중입니다. 장 초반 모멘텀을 활용한 단기 트레이딩 관점으로 적합합니다.",
+    "risk": "반도체 섹터 회피 성향 및 변동성 확대",
+    "catalyst": "22억 달러 합병 노드 부각"
    },
    {
-    "name": "Jersey Mike's Subs Inc.",
-    "ticker": "JMKE",
+    "name": "VEON Ltd.",
+    "ticker": "VEON",
+    "score": 45,
     "target_pct": 3,
-    "sector": "유통",
+    "sector": "통신",
     "basis": [
-     "실적"
+     "뉴스재료"
     ],
-    "reason": "증권사의 잇따른 목표주가 상향 조정이 매수세를 자극했습니다. 안정적인 펀더멘털을 바탕으로 한 단기 반등이 기대됩니다.",
-    "risk": "제한적인 거래량",
-    "score": 50
+    "reason": "자회사 JazzCash의 10주년 AI 핀테크 서비스 출시 및 다가오는 3분기 실적 발표 기대감이 있습니다. 단기 뉴스 플로우에 따른 주가 변동성을 활용합니다.",
+    "risk": "이흥국면 내 신흥국 통신주 투자 심리 약화",
+    "catalyst": "AI 핀테크 파운드리 런칭"
    },
    {
-    "name": "Chime Financial, Inc.",
-    "ticker": "CHYM",
+    "name": "Reddit, Inc.",
+    "ticker": "RDDT",
+    "score": 43,
     "target_pct": 3,
-    "sector": "금융",
+    "sector": "소프트웨어",
     "basis": [
      "추세지속"
     ],
-    "reason": "금융 서비스 섹터의 상대적 우위 통계를 바탕으로 완만한 상승세가 예상됩니다. 변동성이 낮아 안정적인 단타 접근이 가능합니다.",
-    "risk": "매크로 지표 부담",
-    "score": 50
+    "reason": "월스트리트베츠 등 소셜 버즈 유입과 함께 주가 상방 압력이 지속되고 있습니다. 밈 주식 성향의 단기 모멘텀이 작용 중입니다.",
+    "risk": "소프트웨어 섹터 약세 및 높은 밸류에이션 부담",
+    "catalyst": "소셜 미디어 버즈 및 리테일 매수세 유입"
+   },
+   {
+    "name": "PagSeguro Digital Ltd.",
+    "ticker": "PAGS",
+    "score": 42,
+    "target_pct": 3,
+    "sector": "금융",
+    "basis": [
+     "뉴스재료"
+    ],
+    "reason": "배당 및 자사주 매입 계획 발표로 주가가 지지력을 확보했습니다. 과거 금융 섹터 성공 우위 통계를 참고하여 단기 반등을 노립니다.",
+    "risk": "경영진 변동 (회장 사임)에 따른 불확실성",
+    "catalyst": "주주환원 정책 (배당 및 자사주 매입)"
+   },
+   {
+    "name": "StoneCo Ltd.",
+    "ticker": "STNE",
+    "score": 40,
+    "target_pct": 3,
+    "sector": "금융",
+    "basis": [
+     "실적"
+    ],
+    "reason": "UBS의 목표가 조정과 매수 의견 유지 속에서 긍정적인 수급이 유입되고 있습니다. 금융 섹터의 상대적 우위를 활용한 단타 후보입니다.",
+    "risk": "신흥국 핀테크 시장 경쟁 심화",
+    "catalyst": "UBS 목표가 $13 유지"
    }
   ],
   "cands": [
    {
-    "ticker": "ASO",
+    "ticker": "SWKS",
     "rank": 1,
     "verdict": "선택",
-    "why": "실적 호조와 소비 둔화 우려 돌파"
+    "why": "M&A 재료 보유"
    },
    {
-    "name": "NET",
+    "name": "Qorvo, Inc.",
+    "ticker": "QRVO",
     "rank": 2,
     "verdict": "선택",
-    "why": "어닝 서프라이즈 및 성장성 부각"
+    "why": "합병 동반 상승"
    },
    {
-    "name": "SSL",
+    "name": "VEON Ltd.",
+    "ticker": "VEON",
     "rank": 3,
     "verdict": "선택",
-    "why": "부채 축소 모멘텀"
+    "why": "AI 및 실적 일정"
    },
    {
-    "name": "META",
+    "name": "Reddit, Inc.",
+    "ticker": "RDDT",
     "rank": 4,
     "verdict": "선택",
-    "why": "AI 관련 수급 유입"
+    "why": "소셜 버즈 지속"
    },
    {
-    "name": "JMKE",
+    "name": "Academy Sports and Outdoors, In",
+    "ticker": "ASO",
     "rank": 5,
-    "verdict": "관찰",
-    "why": "목표주가 상향이나 추가 모멘텀 확인 필요"
+    "verdict": "선택",
+    "why": "목표가 상향 및 실적"
    },
    {
-    "name": "MXL",
+    "name": "Vista Energy S.A.B. de C.V.",
+    "ticker": "VIST",
     "rank": 6,
     "verdict": "관찰",
-    "why": "반도체 섹터 회피 성향 고려"
+    "why": "목표가 조정 및 밸류에이션 부담"
    },
    {
-    "name": "PLSE",
+    "name": "Inter & Co. Inc.",
+    "ticker": "INTR",
     "rank": 7,
-    "verdict": "관찰",
-    "why": "바이오 섹터 과거 부진 반영"
+    "verdict": "제외",
+    "why": "기관 이탈 매물 출회"
    },
    {
-    "name": "AMBA",
+    "name": "PagSeguro Digital Ltd.",
+    "ticker": "PAGS",
     "rank": 8,
-    "verdict": "제외",
-    "why": "목표주가 하향 조정 발생"
+    "verdict": "선택",
+    "why": "배당 및 자사주 매입"
    },
    {
-    "name": "CMPS",
+    "name": "Elevance Health, Inc.",
+    "ticker": "ELV",
     "rank": 9,
-    "verdict": "제외",
-    "why": "임상 및 교육 프로그램 관련 제한적 영향"
+    "verdict": "관찰",
+    "why": "헬스케어 섹터 부진"
    },
    {
-    "name": "DDOG",
+    "name": "Cirrus Logic, Inc.",
+    "ticker": "CRUS",
     "rank": 10,
     "verdict": "제외",
-    "why": "내부자 매도 물량 출회"
+    "why": "실적 부진 및 PC 역풍"
    },
    {
-    "name": "SKHY",
+    "name": "Bending Spoons S.p.A.",
+    "ticker": "BSP",
     "rank": 11,
-    "verdict": "제외",
-    "why": "AI 과열 경고 및 반도체 보수적 접근"
+    "verdict": "관찰",
+    "why": "M&A 뉴스 단기 영향"
    },
    {
-    "name": "COHU",
+    "name": "monday.com Ltd.",
+    "ticker": "MNDY",
     "rank": 12,
     "verdict": "제외",
-    "why": "섹터 내 선두주자 대비 모멘텀 열위"
+    "why": "소프트웨어 섹터 회피"
    },
    {
-    "name": "SUNB",
+    "name": "Charter Communications, Inc.",
+    "ticker": "CHTR",
     "rank": 13,
-    "verdict": "제외",
-    "why": "상승폭 제한적"
+    "verdict": "관찰",
+    "why": "뚜렷한 모멘텀 부족"
    },
    {
-    "name": "GRAB",
+    "name": "StoneCo Ltd.",
+    "ticker": "STNE",
     "rank": 14,
-    "verdict": "제외",
-    "why": "지분 인수 협상에 따른 하락세"
+    "verdict": "선택",
+    "why": "금융 섹터 우위 및 목표가 유지"
    },
    {
     "name": "SPCX",
     "rank": 15,
+    "verdict": "선택",
+    "why": "대형 AI 수주 계약"
+   },
+   {
+    "name": "NVDA",
+    "rank": 16,
     "verdict": "제외",
-    "why": "하락 모멘텀 지속"
+    "why": "하락세 및 섹터 회피"
    },
    {
     "name": "INTC",
-    "rank": 16,
-    "verdict": "제외",
-    "why": "상승 모멘텀 미약"
-   },
-   {
-    "name": "NOK",
     "rank": 17,
     "verdict": "제외",
-    "why": "거래량 및 변동성 부족"
+    "why": "급락 추세 지속"
+   },
+   {
+    "name": "GRAB",
+    "rank": 18,
+    "verdict": "제외",
+    "why": "인수 이슈로 인한 약세"
    }
   ],
   "mkt": {
    "dir": "횡보",
-   "conf": 53,
-   "why": "전일 지수 하락과 VIX 상승 속에서 혼조세가 예상됨"
-  },
-  "day_picks": [],
-  "day_at": "22:34",
-  "day_brief": "제시된 5개 후보 모두 개장 후 데이터가 사전 논리를 뒷받침하지 못하거나 회피 섹터에 해당하여 기준을 충족하지 않습니다."
+   "conf": 45,
+   "why": "전일 S&P500 하락과 지수선물 반등이 맞물려 방향성 탐색 국면 지속"
+  }
  }
 }
