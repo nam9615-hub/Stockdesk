@@ -26058,63 +26058,63 @@
      "rank": 1,
      "verdict": "선택",
      "why": "M&A 재료 보유",
-     "r1": null
+     "r1": 4.6
     },
     {
      "ticker": "QRVO",
      "rank": 2,
      "verdict": "선택",
      "why": "합병 동반 상승",
-     "r1": null
+     "r1": 3.3
     },
     {
      "ticker": "VEON",
      "rank": 3,
      "verdict": "선택",
      "why": "AI 및 실적 일정",
-     "r1": null
+     "r1": -1.8
     },
     {
      "ticker": "RDDT",
      "rank": 4,
      "verdict": "선택",
      "why": "소셜 버즈 지속",
-     "r1": null
+     "r1": 0.1
     },
     {
      "ticker": "ASO",
      "rank": 5,
      "verdict": "선택",
      "why": "목표가 상향 및 실적",
-     "r1": null
+     "r1": 1.2
     },
     {
      "ticker": "VIST",
      "rank": 6,
      "verdict": "관찰",
      "why": "목표가 조정 및 밸류에이션 부담",
-     "r1": null
+     "r1": -1.4
     },
     {
      "ticker": "INTR",
      "rank": 7,
      "verdict": "제외",
      "why": "기관 이탈 매물 출회",
-     "r1": null
+     "r1": -1.2
     },
     {
      "ticker": "PAGS",
      "rank": 8,
      "verdict": "선택",
      "why": "배당 및 자사주 매입",
-     "r1": null
+     "r1": 0.1
     },
     {
      "ticker": "ELV",
      "rank": 9,
      "verdict": "관찰",
      "why": "헬스케어 섹터 부진",
-     "r1": null
+     "r1": -0.3
     },
     {
      "ticker": "CRUS",
