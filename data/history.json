@@ -24835,7 +24835,7 @@
      "r20": null,
      "b": 66.30999755859375,
      "gap": 3.7,
-     "simOpen": 2.1,
+     "simOpen": -3.3,
      "tv": 11,
      "tvx": 0.1,
      "idx": -0.29
@@ -24882,7 +24882,7 @@
      "r20": null,
      "b": 125.84500122070312,
      "gap": -0.7,
-     "simOpen": 5.4,
+     "simOpen": 4.1,
      "tv": 16,
      "tvx": 0.1,
      "idx": -0.29
@@ -25699,63 +25699,63 @@
      "rank": 1,
      "verdict": "제외",
      "why": "반도체·레버리지 ETF는 과거 통계상 성공률이 낮아 스윙에서 제외",
-     "r1": null
+     "r1": 3.4
     },
     {
      "ticker": "131290.KQ",
      "rank": 2,
      "verdict": "제외",
      "why": "반도체 소부장 섹터 회피 원칙 적용",
-     "r1": null
+     "r1": -10.5
     },
     {
      "ticker": "700028.KS",
      "rank": 3,
      "verdict": "제외",
      "why": "레버리지 ETN 상품으로 스윙 기준 부적합",
-     "r1": null
+     "r1": -1.1
     },
     {
      "ticker": "095610.KQ",
      "rank": 4,
      "verdict": "제외",
      "why": "반도체 관련 종목으로 통계적 열위",
-     "r1": null
+     "r1": -1.4
     },
     {
      "ticker": "243880.KS",
      "rank": 5,
      "verdict": "제외",
      "why": "IT 레버리지 ETF 상품으로 회피",
-     "r1": null
+     "r1": 1.9
     },
     {
      "ticker": "058610.KQ",
      "rank": 6,
      "verdict": "선택",
      "why": "휴머노이드 정밀감속기 수주 모멘텀 유효",
-     "r1": null
+     "r1": 3.4
     },
     {
      "ticker": "017900.KS",
      "rank": 7,
      "verdict": "관찰",
      "why": "거래상위 종목으로 단기 단타 후보로 분류",
-     "r1": null
+     "r1": 1.2
     },
     {
      "ticker": "190510.KQ",
      "rank": 8,
      "verdict": "선택",
      "why": "북미 휴머노이드 3D 카메라 공급 계약 확보",
-     "r1": null
+     "r1": -0.3
     },
     {
      "ticker": "001820.KS",
      "rank": 9,
      "verdict": "관찰",
      "why": "AI 부품 순환매 관찰 필요",
-     "r1": null
+     "r1": 22.6
     },
     {
      "ticker": "263750.KQ",
@@ -25914,7 +25914,8 @@
     "dir": "횡보",
     "conf": 35,
     "why": "미 증시 약세와 국내 혼조장 특성을 반영하여 보수적인 횡보 관점 유지",
-    "ok": null
+    "ok": false,
+    "act": -1.76
    },
    "picks": [
     {
@@ -25928,12 +25929,15 @@
       "추세지속"
      ],
      "p0": 97400,
-     "r1": null,
+     "r1": 3.4,
      "r5": null,
      "r20": null,
      "b": 93600,
      "gap": -3.9,
-     "simOpen": 3.4
+     "simOpen": 3.4,
+     "tv": 56702,
+     "tvx": 1.3,
+     "idx": -1.76
     },
     {
      "kind": "swing",
@@ -25946,12 +25950,15 @@
       "신사업"
      ],
      "p0": 15010,
-     "r1": null,
+     "r1": -0.3,
      "r5": null,
      "r20": null,
      "b": 14930,
      "gap": -0.5,
-     "simOpen": -0.3
+     "simOpen": -0.3,
+     "tv": 1300,
+     "tvx": 0.6,
+     "idx": -1.76
     },
     {
      "kind": "swing",
@@ -25964,12 +25971,17 @@
       "낙폭과대"
      ],
      "p0": 154900,
-     "r1": null,
+     "r1": -3.7,
      "r5": null,
      "r20": null,
      "b": 155800,
      "gap": 0.6,
-     "simOpen": -3.7
+     "tv": 78274,
+     "tvx": 1.2,
+     "idx": -1.76,
+     "simR": -5,
+     "simExit": "stop",
+     "simD": "2026-09-11"
     },
     {
      "kind": "day",
@@ -25988,13 +26000,19 @@
      "cAt": "09:04",
      "eTs": "2026-09-11T00:04:13.883Z",
      "cm": 4,
-     "r1": null,
-     "hit": null,
+     "r1": 11.4,
+     "hit": true,
      "simR": 3,
      "simExit": "target",
      "simD": "2026-09-11",
      "simT": "09:08",
-     "live": 1
+     "live": 1,
+     "mfe": 19.6,
+     "mae": -9.2,
+     "tv": 549217,
+     "tvx": 6.1,
+     "touch": "target",
+     "idx": -1.76
     }
    ],
    "day2": {
@@ -26002,6 +26020,285 @@
     "brief": "오늘 시장은 혼조장 국면이며 대부분의 후보가 마이너스 시가 갭을 기록했습니다. 그중 삼화콘덴서는 개장 후 +10% 급등하며 강한 수급을 입증하여 유일하게 단타 기준을 충족합니다.",
     "n": 1
    }
+  },
+  {
+   "date": "2026-09-11",
+   "market": "US",
+   "regime": "혼조",
+   "rules": [
+    "단타 실패 분해: 시장충격10·목표과다1·선정23 → 선정 강화",
+    "강도80+ 실측 0%(10) — 확신도 과장, 보수화",
+    "근거'정책테마' 성공81%(16) → 신뢰",
+    "섹터'소프트웨어' 성공33%(12) → 회피",
+    "섹터'바이오' 성공38%(8) → 회피",
+    "섹터'금융' 성공67%(15) → 우위"
+   ],
+   "cands": [
+    {
+     "ticker": "SWKS",
+     "rank": 1,
+     "verdict": "선택",
+     "why": "M&A 재료 보유",
+     "r1": null
+    },
+    {
+     "ticker": "QRVO",
+     "rank": 2,
+     "verdict": "선택",
+     "why": "합병 동반 상승",
+     "r1": null
+    },
+    {
+     "ticker": "VEON",
+     "rank": 3,
+     "verdict": "선택",
+     "why": "AI 및 실적 일정",
+     "r1": null
+    },
+    {
+     "ticker": "RDDT",
+     "rank": 4,
+     "verdict": "선택",
+     "why": "소셜 버즈 지속",
+     "r1": null
+    },
+    {
+     "ticker": "ASO",
+     "rank": 5,
+     "verdict": "선택",
+     "why": "목표가 상향 및 실적",
+     "r1": null
+    },
+    {
+     "ticker": "VIST",
+     "rank": 6,
+     "verdict": "관찰",
+     "why": "목표가 조정 및 밸류에이션 부담",
+     "r1": null
+    },
+    {
+     "ticker": "INTR",
+     "rank": 7,
+     "verdict": "제외",
+     "why": "기관 이탈 매물 출회",
+     "r1": null
+    },
+    {
+     "ticker": "PAGS",
+     "rank": 8,
+     "verdict": "선택",
+     "why": "배당 및 자사주 매입",
+     "r1": null
+    },
+    {
+     "ticker": "ELV",
+     "rank": 9,
+     "verdict": "관찰",
+     "why": "헬스케어 섹터 부진",
+     "r1": null
+    },
+    {
+     "ticker": "CRUS",
+     "rank": 10,
+     "verdict": "제외",
+     "why": "실적 부진 및 PC 역풍",
+     "r1": null
+    },
+    {
+     "ticker": "BSP",
+     "rank": 11,
+     "verdict": "관찰",
+     "why": "M&A 뉴스 단기 영향",
+     "r1": null
+    },
+    {
+     "ticker": "MNDY",
+     "rank": 12,
+     "verdict": "제외",
+     "why": "소프트웨어 섹터 회피",
+     "r1": null
+    },
+    {
+     "ticker": "CHTR",
+     "rank": 13,
+     "verdict": "관찰",
+     "why": "뚜렷한 모멘텀 부족",
+     "r1": null
+    },
+    {
+     "ticker": "STNE",
+     "rank": 14,
+     "verdict": "선택",
+     "why": "금융 섹터 우위 및 목표가 유지",
+     "r1": null
+    },
+    {
+     "ticker": "SPCX",
+     "rank": 104,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "NVDA",
+     "rank": 105,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "INTC",
+     "rank": 106,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "GRAB",
+     "rank": 107,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    }
+   ],
+   "bl": {
+    "rand": [
+     "VIST",
+     "SPCX",
+     "SWKS"
+    ],
+    "mom": [
+     "SWKS",
+     "QRVO",
+     "VEON"
+    ]
+   },
+   "dayCands": [
+    {
+     "name": "Qorvo, Inc.",
+     "ticker": "QRVO",
+     "score": 50,
+     "target_pct": 3,
+     "sector": "반도체",
+     "basis": [
+      "뉴스재료"
+     ],
+     "reason": "Skyworks와의 대규모 합병 기대감으로 동반 상승세를 기록 중입니다. 장 초반 모멘텀을 활용한 단기 트레이딩 관점으로 적합합니다.",
+     "risk": "반도체 섹터 회피 성향 및 변동성 확대",
+     "catalyst": "22억 달러 합병 노드 부각"
+    },
+    {
+     "name": "VEON Ltd.",
+     "ticker": "VEON",
+     "score": 45,
+     "target_pct": 3,
+     "sector": "통신",
+     "basis": [
+      "뉴스재료"
+     ],
+     "reason": "자회사 JazzCash의 10주년 AI 핀테크 서비스 출시 및 다가오는 3분기 실적 발표 기대감이 있습니다. 단기 뉴스 플로우에 따른 주가 변동성을 활용합니다.",
+     "risk": "이흥국면 내 신흥국 통신주 투자 심리 약화",
+     "catalyst": "AI 핀테크 파운드리 런칭"
+    },
+    {
+     "name": "Reddit, Inc.",
+     "ticker": "RDDT",
+     "score": 43,
+     "target_pct": 3,
+     "sector": "소프트웨어",
+     "basis": [
+      "추세지속"
+     ],
+     "reason": "월스트리트베츠 등 소셜 버즈 유입과 함께 주가 상방 압력이 지속되고 있습니다. 밈 주식 성향의 단기 모멘텀이 작용 중입니다.",
+     "risk": "소프트웨어 섹터 약세 및 높은 밸류에이션 부담",
+     "catalyst": "소셜 미디어 버즈 및 리테일 매수세 유입"
+    },
+    {
+     "name": "PagSeguro Digital Ltd.",
+     "ticker": "PAGS",
+     "score": 42,
+     "target_pct": 3,
+     "sector": "금융",
+     "basis": [
+      "뉴스재료"
+     ],
+     "reason": "배당 및 자사주 매입 계획 발표로 주가가 지지력을 확보했습니다. 과거 금융 섹터 성공 우위 통계를 참고하여 단기 반등을 노립니다.",
+     "risk": "경영진 변동 (회장 사임)에 따른 불확실성",
+     "catalyst": "주주환원 정책 (배당 및 자사주 매입)"
+    },
+    {
+     "name": "StoneCo Ltd.",
+     "ticker": "STNE",
+     "score": 40,
+     "target_pct": 3,
+     "sector": "금융",
+     "basis": [
+      "실적"
+     ],
+     "reason": "UBS의 목표가 조정과 매수 의견 유지 속에서 긍정적인 수급이 유입되고 있습니다. 금융 섹터의 상대적 우위를 활용한 단타 후보입니다.",
+     "risk": "신흥국 핀테크 시장 경쟁 심화",
+     "catalyst": "UBS 목표가 $13 유지"
+    }
+   ],
+   "hold": 0,
+   "v": {
+    "m": "gemini-3.5-flash-lite",
+    "pv": "J1.0"
+   },
+   "mktF": {
+    "dir": "횡보",
+    "conf": 45,
+    "why": "전일 S&P500 하락과 지수선물 반등이 맞물려 방향성 탐색 국면 지속",
+    "ok": null
+   },
+   "picks": [
+    {
+     "kind": "swing",
+     "name": "Skyworks Solutions, Inc.",
+     "ticker": "SWKS",
+     "score": 55,
+     "sector": "반도체",
+     "basis": [
+      "뉴스재료"
+     ],
+     "p0": 84.03,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "Space Exploration Technologies",
+     "ticker": "SPCX",
+     "score": 52,
+     "sector": "우주항공",
+     "basis": [
+      "수주계약"
+     ],
+     "p0": 148.18,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "Academy Sports and Outdoors, In",
+     "ticker": "ASO",
+     "score": 48,
+     "sector": "유통",
+     "basis": [
+      "실적"
+     ],
+     "p0": 54.215,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    }
+   ]
   }
  ],
  "monAt": 1789108334150
