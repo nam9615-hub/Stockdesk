@@ -1325,7 +1325,7 @@ function paperSim(h, market) {
   const COST = market === "KR" ? 0.25 : 0.10; // 왕복 거래비용 %p: 수수료+거래세+슬리피지 보수 추정
   const trades = [], open = [];
   h.filter((e) => e.market === market).forEach((e) => (e.picks || []).forEach((p) => {
-    const w = p.kind === "day" ? 0.15 : 0.10; // 배분: 단타 15% · 스윙 10%
+    const w = p.plan?.weightPct != null ? p.plan.weightPct / 100 : (p.kind === "day" ? 0.15 : 0.10);
     if (p.simR != null) trades.push({ d: p.simD || e.date, r: p.simR - COST, w, kind: p.kind, name: p.name, exit: p.simExit });
     else if (p.simOpen != null) open.push({ r: p.simOpen - COST, w, name: p.name }); // 평가분도 청산 비용 선반영
   }));
@@ -1960,6 +1960,9 @@ export default function App() {
                   <div style={{ display: "flex", flexDirection: "column", gap: 5, marginTop: 10, fontSize: 12.5 }}>
                     {p.catalyst && <div><span style={{ color: T.buy, fontFamily: T.mono }}>재료</span> <span style={{ color: T.sub }}>{p.catalyst}</span></div>}
                     {p.risk && <div><span style={{ color: T.sell, fontFamily: T.mono }}>리스크</span> <span style={{ color: T.sub }}>{p.risk}</span></div>}
+                    {p.plan && <div style={{ marginTop: 7, color: T.info, fontFamily: T.mono, fontSize: 12 }}>
+                      위험관리 R1.0 · {p.plan.qty != null ? `${p.plan.qty}주` : "수량 계산 대기"} · 손절 -{p.plan.stopPct}% · 목표 +{p.plan.targetPct}% · 계좌위험 {p.plan.riskPct}%
+                    </div>}
                   </div>
                   <BudgetLine p={p} kind="swing" />
                   <button onClick={() => { const q = `${p.name} (${p.ticker})`; setQuery(q); run(q); }} style={{
@@ -2001,6 +2004,9 @@ export default function App() {
                           </div>
                           <div style={{ fontSize: 13, color: T.ink, lineHeight: 1.6, marginTop: 6 }}>{p.reason}</div>
                           {p.risk && <div style={{ fontSize: 12, color: T.sub, marginTop: 4 }}><span style={{ color: T.sell, fontFamily: T.mono }}>주의</span> {p.risk}</div>}
+                          {p.plan && <div style={{ fontSize: 11.5, color: T.info, marginTop: 5, fontFamily: T.mono }}>
+                            {p.plan.qty != null ? `${p.plan.qty}주` : "수량 대기"} · 손절 -{p.plan.stopPct}% · 목표 +{p.plan.targetPct}%
+                          </div>}
                         </div>
                         <div style={{ textAlign: "center", flexShrink: 0 }}>
                           <div style={{ border: `1px solid ${T.buy}66`, borderRadius: 12, padding: "7px 11px" }}>
