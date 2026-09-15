@@ -1,4 +1,5 @@
 import React, { useState, useMemo, useEffect, useRef } from "react";
+import { replayPortfolio } from "../lib/strategy.js";
 
 /* ─────────────────────────────────────────────
    STOCK DESK — 매수·매도·재진입 종합 분석기
@@ -560,7 +561,7 @@ const T = {
   bg: "#07090F", card: "#0E1219", card2: "#131926", line: "#1D2636",
   ink: "#E8EDF5", sub: "#8A97AC", faint: "#5A6579",
   buy: "#3DDC97", sell: "#FF6B6B", warn: "#F5B94A", info: "#6FC3FF",
-  serif: '"Nanum Myeongjo", Georgia, "Times New Roman", serif',
+  serif: '-apple-system, "Pretendard", "Apple SD Gothic Neo", sans-serif',
   mono: '"IBM Plex Mono", "Courier New", monospace',
   sans: '-apple-system, "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif',
 };
@@ -571,8 +572,24 @@ const Eyebrow = ({ children, color = T.buy }) => (
   <div style={{ fontFamily: T.mono, fontSize: 10.5, letterSpacing: "0.14em", color, textTransform: "uppercase", marginBottom: 8, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{children}</div>
 );
 const Card = ({ children, style }) => (
-  <div style={{ background: T.card, border: `1px solid ${T.line}`, borderRadius: 16, padding: "18px 16px", ...style }}>{children}</div>
+  <div style={{ background: T.card, border: `1px solid ${T.line}`, borderRadius: 20, padding: "20px 18px", boxShadow: "0 8px 28px rgba(0,0,0,.12)", ...style }}>{children}</div>
 );
+
+function StrategySummary({ plan }) {
+  const d = plan?.decision;
+  if (!d) return <div style={{color:T.sub,fontSize:12,marginTop:10}}>기존 추천 · 전략 분류 데이터 없음 · 실제 주문 불가</div>;
+  const label = d.action === 'watch' ? '관찰 / 신규 진입 보류' : d.strategy === 'day' ? '당일 전략 · 조건 확인 필요' : `스윙 · 최대 ${d.maxHoldDays}거래일`;
+  return <div style={{background:T.bg,borderRadius:12,padding:12,marginTop:10,fontSize:12,lineHeight:1.7}}>
+    <div style={{color:d.action==='watch'?T.warn:T.info,fontWeight:700}}>{label}</div>
+    <div style={{color:T.sub}}>{d.reasons?.[0]}</div>
+    <div>손절 −{plan.stopPct}% · 목표 +{plan.targetPct}%</div>
+    <details style={{marginTop:6,color:T.sub}}><summary style={{cursor:'pointer'}}>진입·보유·청산 원칙</summary>
+      <div>{d.entryRule}</div><div>{d.exitRule}</div>
+      <div>{d.reviewAfterDays ? `${d.reviewAfterDays}거래일 후 재검토 · ` : ''}휴장일 제외 · 기간 연장·추가매수 자동 실행 없음</div>
+      <div>정책 {d.version} · 가설 기반 규칙, 수익 확률 아님</div>
+    </details>
+  </div>;
+}
 
 function Gauge({ value, tone }) {
   const c = toneColor(tone);
@@ -1460,21 +1477,23 @@ function TrackRecord({ refreshKey }) {
       )}
       {open && (<div style={{ maxHeight: 470, overflowY: "auto", WebkitOverflowScrolling: "touch", marginTop: 6, paddingRight: 6, overscrollBehavior: "contain" }}>
       {(() => {
-        const pk = paperSim(hist, "KR"), pu = paperSim(hist, "US");
+        const pk = replayPortfolio(hist, "KR", 5000000), pu = replayPortfolio(hist, "US", 5000);
         if (!pk && !pu) return null;
         const line = (f, s) => s && (
           <div style={{ fontFamily: T.mono, fontSize: 12, color: T.sub, lineHeight: 1.8 }}>
-            {f} <b style={{ fontFamily: T.serif, fontSize: 15, color: T.ink }}>{fmt(s.evalEq)}원</b>
+            {f} <b style={{ fontFamily: T.serif, fontSize: 15, color: T.ink }}>{fmt(s.evalEq)}{f === '🇺🇸' ? ' USD' : '원'}</b>
             <b style={{ color: s.ret >= 0 ? T.buy : T.sell }}> ({s.ret >= 0 ? "+" : ""}{s.ret}%)</b>
             <span style={{ color: T.faint }}> · 청산 {s.nT}건(승 {s.wins}){s.nOpen ? ` · 보유 ${s.nOpen}건 평가 포함` : ""}</span>
           </div>
         );
         return (
           <div style={{ background: "rgba(93,211,158,0.05)", border: `1px solid ${T.buy}33`, borderRadius: 12, padding: 12, marginBottom: 12 }}>
-            <div style={{ fontFamily: T.mono, fontSize: 10.5, color: T.buy, letterSpacing: "0.14em", marginBottom: 6, whiteSpace: "nowrap" }}>🤖 가상 자동매매 · 시장별 초기 500만원</div>
+            <div style={{ fontFamily: T.mono, fontSize: 10.5, color: T.buy, marginBottom: 6 }}>과거 기록 재생 · 국내 500만원 / 미국 5,000 USD</div>
             {line("🇰🇷", pk)}{line("🇺🇸", pu)}
             <div style={{ fontSize: 10.5, color: T.faint, marginTop: 6, lineHeight: 1.6 }}>
-              규칙: 시가 매수 · 단타 −3%손절/목표 익절/종가 청산 · 스윙 −5%손절/+10% 익절/20일 청산 · 배분 단타15%/스윙10% 복리 · 동시터치 시 손절 가정(보수적) · 거래비용 차감(🇰🇷 0.25%p·🇺🇸 0.10%p)
+              현금·정수 주수·중복 보유 제한 · 1회 위험 0.5%, 총 위험 2%, 최대 8종목. 저장된 청산 결과를 재생하며 실제 체결·진입 조건을 검증한 백테스트는 아닙니다. 평가가 없는 보유분은 원가 표시.
+              <div>제외 🇰🇷 {pk.skipped} / 🇺🇸 {pu.skipped}건 · 평가 미확인 🇰🇷 {pk.unmarked} / 🇺🇸 {pu.unmarked}건</div>
+              <details><summary style={{cursor:'pointer'}}>기존 계산 참고 (실계좌 수익률 아님)</summary><div>비중 복리 방식: 국내 {paperSim(hist,'KR')?.ret}% / 미국 {paperSim(hist,'US')?.ret}% · 새로운 현금 제약 재생과 직접 비교 금지</div></details>
             </div>
           </div>
         );
@@ -1871,9 +1890,10 @@ export default function App() {
         {/* 헤더 */}
         <header style={{ padding: "30px 2px 18px" }}>
           <h1 style={{ fontFamily: T.serif, fontSize: 34, margin: 0, letterSpacing: "-0.01em" }}>
-            Yoon's <span style={{ color: T.info }}>가이드</span>
+            Stock<span style={{ color: T.info }}>Desk</span>
           </h1>
           <LiveClock />
+          <div style={{color:T.sub,fontSize:12,marginTop:8}}>판단은 간결하게, 근거는 깊게 · 모의 검증 중 / 실계좌 주문 꺼짐</div>
         </header>
 
         {/* AI 추천 성적표 */}
@@ -1928,9 +1948,10 @@ export default function App() {
               </div>
               {!parseFloat(capMan) && <div style={{ fontSize: 11.5, color: T.faint, marginBottom: 10 }}>투자금을 입력하면 종목별 투입금액·주수 가이드가 표시됩니다 (원화 기준, 한 번만 입력하면 저장돼요)</div>}
               {picks.brief && (
-                <div style={{ background: T.card2, borderRadius: 12, padding: 13, fontSize: 13.5, lineHeight: 1.7, color: T.ink, marginBottom: 14 }}>
+                <details style={{ background: T.card2, borderRadius: 12, padding: 13, fontSize: 13.5, lineHeight: 1.7, color: T.ink, marginBottom: 14 }}>
+                  <summary style={{cursor:'pointer'}}>시장 브리핑 · 상세 근거 보기</summary>
                   {picks.brief}
-                </div>
+                </details>
               )}
               {!(picks.picks || []).length && !(picks.day_cands || []).length && !(picks.day_picks || []).length && (
                 <div style={{ border: `1.5px solid ${T.warn}66`, background: "rgba(255,190,90,0.06)", borderRadius: 14, padding: 15, marginBottom: 14 }}>
@@ -1942,7 +1963,7 @@ export default function App() {
                   <div style={{ fontSize: 11.5, color: T.faint, marginTop: 7, lineHeight: 1.6 }}>보류도 채점됩니다 — 오늘 후보들이 실제로 하락하면 "보류 성공", 상승하면 "기회손실"로 기록되어 다음 판단에 반영돼요.</div>
                 </div>
               )}
-              {picks.picks.map((p, i) => (
+              {(picks.picks || []).map((p, i) => (
                 <div key={i} style={{ border: `1px solid ${T.line}`, borderRadius: 14, padding: 14, marginBottom: 12, background: T.card2 }}>
                   <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 10 }}>
                     <div style={{ flex: 1 }}>
@@ -1956,6 +1977,8 @@ export default function App() {
                       <div style={{ fontFamily: T.mono, fontSize: 10, color: T.faint }}>관심강도</div>
                     </div>
                   </div>
+                  <StrategySummary plan={p.plan} />
+                  <details style={{fontSize:12,marginTop:10,color:T.sub}}><summary style={{cursor:'pointer'}}>추천 근거·재료·리스크</summary>
                   <div style={{ fontSize: 13.5, color: T.ink, lineHeight: 1.65, marginTop: 10 }}>{p.reason}</div>
                   <div style={{ display: "flex", flexDirection: "column", gap: 5, marginTop: 10, fontSize: 12.5 }}>
                     {p.catalyst && <div><span style={{ color: T.buy, fontFamily: T.mono }}>재료</span> <span style={{ color: T.sub }}>{p.catalyst}</span></div>}
@@ -1964,6 +1987,7 @@ export default function App() {
                       위험관리 R1.0 · {p.plan.qty != null ? `${p.plan.qty}주` : "수량 계산 대기"} · 손절 -{p.plan.stopPct}% · 목표 +{p.plan.targetPct}% · 계좌위험 {p.plan.riskPct}%
                     </div>}
                   </div>
+                  </details>
                   <BudgetLine p={p} kind="swing" />
                   <button onClick={() => { const q = `${p.name} (${p.ticker})`; setQuery(q); run(q); }} style={{
                     marginTop: 12, width: "100%", padding: "11px 8px", borderRadius: 10, cursor: "pointer",
