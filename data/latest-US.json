@@ -1,225 +1,267 @@
 {
- "date": "2026-09-14",
+ "date": "2026-09-15",
  "at": "21:29",
  "data": {
-  "brief": "전일 S&P500 상승에도 지수선물 하락 및 VIX 상승의 혼조세 속에서, 과거 확신도 보정 규칙(80대 실측 0%)을 반영해 보수적으로 접근합니다. IT 및 인프라 관련 종목 중 실적과 모멘텀이 유지되는 종목을 선별했습니다.",
+  "brief": "전일 S&P500 하락과 국채 금리 상승 등 혼조세 속에서 사이버보안 및 소프트웨어 섹터가 강세를 보이고 있습니다. 과거 통계상 소프트웨어 및 추세지속 종목의 성공률이 낮고 확신도 보정(80대 실측 0%)이 필요하므로, 보수적인 관점에서 모멘텀이 뚜렷한 종목 위주로 선별합니다. 시장 방향성은 금리 경계감과 선물의 반등을 종합하여 횡보로 전망합니다.",
   "picks": [
    {
-    "name": "Dell Technologies Inc.",
-    "ticker": "DELL",
-    "score": 62,
-    "sector": "기술",
+    "name": "Tenable Holdings, Inc.",
+    "ticker": "TENB",
+    "score": 45,
+    "sector": "보안",
+    "basis": [
+     "뉴스재료",
+     "낙폭과대"
+    ],
+    "reason": "16.5% 급등세를 기록하며 저평가 매력이 부각되고 있습니다. 다만 과거 소프트웨어 섹터의 낮은 성공률을 고려해 보수적으로 접근합니다.",
+    "catalyst": "실적 및 저평가 매력 부각",
+    "risk": "변동성 확대 및 차익실현 매물",
+    "plan": {
+     "engine": "R1.0",
+     "strategy": "swing",
+     "atrPct": 6.81,
+     "stopPct": 9,
+     "targetPct": 18,
+     "rr": 2,
+     "maxHoldDays": 20,
+     "riskPct": 0.5,
+     "maxWeightPct": 10,
+     "weightPct": 4.91,
+     "qty": 7,
+     "notional": 246
+    }
+   },
+   {
+    "name": "Roblox Corporation",
+    "ticker": "RBLX",
+    "score": 45,
+    "sector": "엔터테인먼트",
     "basis": [
      "뉴스재료"
     ],
-    "reason": "RBC의 'Outperform' 신규 커버리지 개시와 사상 최고가 경신으로 기관 매수세가 유입되고 있습니다. 델 가문의 인수 루머 등 복합적 호재가 작용 중입니다.",
-    "catalyst": "RBC 커버리지 및 인수 루머",
-    "risk": "지수 선물 하락에 따른 단기 변동성 확대"
+    "reason": "개발자 콘퍼런스를 통해 다음 성장 단계를 위한 기반을 다지며 주가가 반등했습니다. 단기 모멘텀이 유효하나 신중한 접근이 필요합니다.",
+    "catalyst": "개발자 콘퍼런스 성장 기대감",
+    "risk": "단기 급등에 따른 조정 압력",
+    "plan": {
+     "engine": "R1.0",
+     "strategy": "swing",
+     "atrPct": 4.39,
+     "stopPct": 6.58,
+     "targetPct": 13.17,
+     "rr": 2,
+     "maxHoldDays": 20,
+     "riskPct": 0.5,
+     "maxWeightPct": 10,
+     "weightPct": 7.18,
+     "qty": 7,
+     "notional": 359
+    }
    },
    {
-    "name": "Vicor Corporation",
-    "ticker": "VICR",
-    "score": 60,
-    "sector": "제조",
+    "name": "Samsara Inc.",
+    "ticker": "IOT",
+    "score": 45,
+    "sector": "소프트웨어",
     "basis": [
+     "뉴스재료",
      "수주계약"
     ],
-    "reason": "뉴햄프셔주 제조 시설 확장 및 부동산 취득 소식이 전해지며 설비 투자와 생산능력 확대 기대감이 커졌습니다. 실적 성장의 기반이 마련되는 국면입니다.",
-    "catalyst": "제조 시설 확장 및 부동산 인수",
-    "risk": "지수 혼조세 속 차익실현 매물 주의"
-   },
-   {
-    "name": "Boyd Group Services Inc.",
-    "ticker": "BGSI",
-    "score": 58,
-    "sector": "유통",
-    "basis": [
-     "뉴스재료"
-    ],
-    "reason": "TSX로부터 정상 코스 발행자 입찰(NCIB) 승인을 받으며 주주환원 정책이 강화되었습니다. 유통 섹터의 우위 통계를 뒷받침합니다.",
-    "catalyst": "TSX NCIB 승인",
-    "risk": "시장 전체 하방 압력"
+    "reason": "카나토 피츠제럴드가 비중확대 의견과 함께 높은 목표주가를 제시하며 주목받았습니다. 투자의견 상향에 따른 수급 유입을 주시합니다.",
+    "catalyst": "신규 목표가 제시 및 투자의견 상향",
+    "risk": "시장 전체의 하방 압력 연동",
+    "plan": {
+     "engine": "R1.0",
+     "strategy": "swing",
+     "atrPct": 6.11,
+     "stopPct": 9,
+     "targetPct": 18,
+     "rr": 2,
+     "maxHoldDays": 20,
+     "riskPct": 0.5,
+     "maxWeightPct": 10,
+     "weightPct": 5.15,
+     "qty": 6,
+     "notional": 257
+    }
    }
   ],
   "day_cands": [
    {
-    "name": "Hewlett Packard Enterprise Comp",
-    "ticker": "HPE",
-    "score": 60,
-    "target_pct": 4,
-    "sector": "기술",
-    "basis": [
-     "추세지속"
-    ],
-    "reason": "최근 주가 급등에도 불구하고 AI 인프라 관련 모멘텀이 강하게 유지되고 있습니다. 갭 상승 추격은 자제하되 눌림목에서 단기 반등을 노립니다.",
-    "risk": "단기 급등에 따른 피로감"
-   },
-   {
-    "name": "ON Semiconductor Corporation",
-    "ticker": "ON",
-    "score": 58,
-    "sector": "반도체",
+    "name": "Zscaler, Inc.",
+    "ticker": "ZS",
+    "score": 40,
+    "target_pct": 3,
+    "sector": "보안",
     "basis": [
      "뉴스재료"
     ],
-    "reason": "장기 투자자 관점에서의 가치와 실적 안정성이 부각되며 검색량이 급증했습니다. 반도체 섹터 내 수급 유입 여부를 주시합니다.",
-    "risk": "전반적 기술주 부진 영향",
-    "target_pct": 3
+    "reason": "AI 스토리 가속화 뉴스와 함께 강한 상승률을 보였으나 큰 갭 추격은 자제합니다.",
+    "risk": "금리 상승 및 전반적인 지수 조정 부담"
    },
    {
-    "name": "HP Inc.",
-    "ticker": "HPQ",
-    "score": 57,
-    "sector": "기술",
+    "name": "Rubrik, Inc.",
+    "ticker": "RBRK",
+    "score": 40,
+    "target_pct": 3,
+    "sector": "보안",
     "basis": [
      "뉴스재료"
     ],
-    "reason": "배당 매력과 함께 신규 추천주로 편입되며 안정적인 매수세가 유입되고 있습니다. 방어적 성격의 테크주로 접근합니다.",
-    "risk": "상승 모멘텀 둔화 가능성",
-    "target_pct": 3
+    "reason": "AI 사이버보안 관련 수혜 기대감으로 급등했으나 단기 과열 여부를 확인해야 합니다.",
+    "risk": "변동성 장세 속 급락 가능성"
    },
    {
-    "name": "Synaptics Incorporated",
-    "ticker": "SYNA",
-    "score": 55,
-    "sector": "기술",
+    "name": "Okta, Inc.",
+    "ticker": "OKTA",
+    "score": 40,
+    "target_pct": 3,
+    "sector": "보안",
+    "basis": [
+     "뉴스재료",
+     "신고가"
+    ],
+    "reason": "52주 신고가 근처에서 움직이며 강세를 보이고 있으나 신고가 추격 매수는 신중해야 합니다.",
+    "risk": "저항선 도달 후 차익실현 매물 출회"
+   },
+   {
+    "name": "Ondas Inc",
+    "ticker": "ONDS",
+    "score": 35,
+    "target_pct": 3,
+    "sector": "방산",
+    "basis": [
+     "수주계약"
+    ],
+    "reason": "대규모 정밀 타격 기술 관련 계약을 확보했으나 방산 섹터의 과거 통계적 부진을 반영합니다.",
+    "risk": "재료 소멸 후 변동성 주의"
+   },
+   {
+    "name": "Netskope, Inc.",
+    "ticker": "NTSK",
+    "score": 40,
+    "target_pct": 3,
+    "sector": "보안",
     "basis": [
      "뉴스재료"
     ],
-    "reason": "아날로그디바이스의 알리프 세미컨덕터 인수 관련 뉴스가 긍정적 자극을 주고 있습니다. 관련 섹터의 동조화 흐름을 활용합니다.",
-    "risk": "인수합병 뉴스에 따른 변동성",
-    "target_pct": 3
-   },
-   {
-    "name": "Macy's Inc",
-    "ticker": "M",
-    "score": 54,
-    "sector": "유통",
-    "basis": [
-     "뉴스재료"
-    ],
-    "reason": "배당 투자 관점에서 워런 버핏 관련 관심주로 부각되며 유통 섹터 우위 통계와 부합합니다. 저가 매수세 유입 가능성이 있습니다.",
-    "risk": "소비재 업황 부진 우려",
-    "target_pct": 3
+    "reason": "월스트리트 애널리스트의 신규 커버리지 개시와 높은 목표가 제시로 관심이 집중됩니다.",
+    "risk": "단기 모멘텀 둔화 가능성"
    }
   ],
   "cands": [
    {
-    "ticker": "HPE",
+    "ticker": "ZS",
     "rank": 1,
-    "verdict": "선택",
-    "why": "모멘텀 유지"
+    "verdict": "관찰",
+    "why": "강한 상승이나 갭 부담 및 소프트웨어 섹터 회피 성향 반영"
    },
    {
-    "ticker": "DELL",
+    "ticker": "TENB",
     "rank": 2,
     "verdict": "선택",
-    "why": "실적 및 리포트 호재"
+    "why": "저평가 매력과 낙폭 과대 보완 관점 접근"
    },
    {
-    "ticker": "VICR",
+    "ticker": "NTSK",
     "rank": 3,
-    "verdict": "선택",
-    "why": "제조 시설 확장"
+    "verdict": "관찰",
+    "why": "신규 분석가 커버리지 있으나 신중 접근"
    },
    {
-    "ticker": "BGSI",
+    "ticker": "RBRK",
     "rank": 4,
-    "verdict": "선택",
-    "why": "자사주 매입 승인"
+    "verdict": "관찰",
+    "why": "AI 보안 테마이나 단기 과열 주의"
    },
    {
-    "ticker": "HTFL",
+    "ticker": "SAIL",
     "rank": 5,
     "verdict": "관찰",
-    "why": "내부자 매도 존재"
+    "why": "소프트웨어 랠리 동참하나 통계적 한계"
    },
    {
-    "ticker": "FPS",
+    "ticker": "QLYS",
     "rank": 6,
     "verdict": "관찰",
-    "why": "실적 발표 임박"
+    "why": "사이버보안 테마 연동 관찰"
    },
    {
-    "ticker": "HUT",
+    "ticker": "S",
     "rank": 7,
     "verdict": "관찰",
-    "why": "지분 확대 및 리스크 공존"
+    "why": "소프트웨어 섹터 동반 상승"
    },
    {
-    "ticker": "NTAP",
+    "ticker": "CRWD",
     "rank": 8,
     "verdict": "관찰",
-    "why": "기술주 하락 압력"
+    "why": "SIEM 통합 뉴스가 있으나 소프트웨어 회피"
    },
    {
-    "ticker": "ON",
+    "ticker": "PANW",
     "rank": 9,
-    "verdict": "선택",
-    "why": "관심도 집중"
+    "verdict": "관찰",
+    "why": "보안 모델 발표이나 지수 하방 압력 고려"
    },
    {
-    "ticker": "HPQ",
+    "ticker": "RBLX",
     "rank": 10,
     "verdict": "선택",
-    "why": "배당 및 매수 추천"
+    "why": "성장 모멘텀 유효하나 보수적 스윙 적용"
    },
    {
-    "ticker": "IESC",
+    "ticker": "OKTA",
     "rank": 11,
     "verdict": "관찰",
-    "why": "변동성 주시"
+    "why": "신고가 근접 종목으로 추격 자제"
    },
    {
-    "ticker": "SYNA",
+    "ticker": "IOT",
     "rank": 12,
     "verdict": "선택",
-    "why": "반도체 M&A 모멘텀"
+    "why": "투자의견 상향 모멘텀 활용"
    },
    {
-    "ticker": "CDW",
+    "ticker": "RUM",
     "rank": 13,
-    "verdict": "관찰",
-    "why": "보통의 유동성"
+    "verdict": "제외",
+    "why": "위험 종목 분류 및 섹터 특성 고려"
    },
    {
-    "ticker": "M",
+    "ticker": "HUBS",
     "rank": 14,
-    "verdict": "선택",
-    "why": "배당 및 유통 우위"
+    "verdict": "관찰",
+    "why": "소프트웨어 급등 종목으로 추격 자제"
    },
    {
-    "ticker": "KHC",
+    "ticker": "NOK",
     "rank": 15,
-    "verdict": "제조",
-    "why": "변동성 미미"
-   },
-   {
-    "ticker": "SMR",
-    "rank": 16,
-    "verdict": "제조",
-    "why": "낙폭 과대이나 불확실성 큼"
+    "verdict": "제외",
+    "why": "급락세로 모멘텀 부재"
    },
    {
     "ticker": "NVDA",
-    "rank": 17,
-    "verdict": "관찰",
-    "why": "AI 안전성 경고 영향"
+    "rank": 16,
+    "verdict": "제외",
+    "why": "하락 추세 및 반도체 섹터 회피"
    },
    {
     "ticker": "INTC",
+    "rank": 17,
+    "verdict": "제외",
+    "why": "실적 및 경쟁력 열세 지속"
+   },
+   {
+    "ticker": "ONDS",
     "rank": 18,
     "verdict": "관찰",
-    "why": "제한적 상승"
+    "why": "대규모 계약 있으나 방산 섹터 부진 반영"
    }
   ],
   "mkt": {
    "dir": "횡보",
-   "conf": 50,
-   "why": "지수선물 하락과 VIX 상승 속에서 뚜렷한 방향성 부재"
-  },
-  "day_picks": [],
-  "day_at": "22:34",
-  "day_brief": "제시된 5개 후보 모두 시가갭이 음수(-)로 출발하여 갭 상승 추격 원칙에 부합하지 않으며, 실측 데이터상 단타 성공 확률 우위와 일치하는 종목이 없어 전량 제외합니다."
+   "conf": 45,
+   "why": "선물 반등과 금리 상승 경계감이 팽팽히 맞서는 혼조 국면"
+  }
  }
 }
