@@ -1,5 +1,6 @@
 // Vercel Cron — 매일 자동: 추천 생성(개장 전) + 과거 추천 자동 채점
 import { atrPctFromRows, buildRiskPlan } from "../lib/risk.js";
+import { decideStrategy } from "../lib/strategy.js";
 // 필요 환경변수: GEMINI_API_KEY(또는 ANTHROPIC_API_KEY), GH_TOKEN, GH_REPO(예: nam9615-hub/Stockdesk)
 const UA = { headers: { "User-Agent": "Mozilla/5.0" } };
 const kstDate = () => new Date(Date.now() + 9 * 3600e3).toISOString().slice(0, 10);
@@ -24,19 +25,9 @@ async function ghWrite(path, obj, sha) {
     body: JSON.stringify(body),
   });
   if (r.status === 409) {
-    // 동시 저장 충돌: 최신 SHA 재취득 후 1회 재시도 (모니터·크론 병행 대비)
-    const r2 = await fetch(`https://api.github.com/repos/${process.env.GH_REPO}/contents/${path}`, {
-      headers: { Authorization: `Bearer ${process.env.GH_TOKEN}`, "User-Agent": "stockdesk", Accept: "application/vnd.github+json" },
-    });
-    const j2 = r2.ok ? await r2.json() : null;
-    if (j2?.sha) {
-      body.sha = j2.sha;
-      const r3 = await fetch(`https://api.github.com/repos/${process.env.GH_REPO}/contents/${path}`, {
-        method: "PUT", headers: { Authorization: `Bearer ${process.env.GH_TOKEN}`, "User-Agent": "stockdesk", Accept: "application/vnd.github+json" },
-        body: JSON.stringify(body),
-      });
-      if (r3.ok) return;
-    }
+    // Never overwrite a concurrent monitor update with an old whole-file snapshot.
+    // The next scheduled run reads fresh data and recalculates its changes.
+    throw new Error('GitHub 저장 충돌: 최신 기록 보존, 다음 실행에서 재계산');
   }
   if (!r.ok) throw new Error("GitHub 저장 실패: " + (await r.text()).slice(0, 120));
 }
@@ -410,7 +401,7 @@ async function grade(entries) {
   }
   entries.forEach((e) => e.picks.forEach((p) => {
     // 소급 가상체결: 기능 배포 전 이미 채점된 단타 (차트 없이 저장값으로 계산)
-    if (p.kind === "day" && p.r1 != null && p.simR == null && p.mae != null) {
+    if (p.kind === "day" && p.r1 != null && p.simR == null && p.mae != null && p.plan?.decision?.action !== 'watch') {
       const stopPct = +(p.plan?.stopPct || 3), targetPct = +(p.plan?.targetPct || p.target || 3);
       p.simR = p.mae <= -stopPct ? -stopPct : p.hit ? targetPct : p.r1;
       p.simExit = p.mae <= -stopPct ? "stop" : p.hit ? "target" : "close";
@@ -420,7 +411,7 @@ async function grade(entries) {
     const d = charts[p.ticker] || charts[Object.keys(fixmap).find((k) => fixmap[k] === p.ticker)]; if (!d) return; // p0(추천시점가)는 참고값 — 없어도 시가 기준 채점 진행
     if (p.kind === "day") {
       if (p.r1 != null) return;
-      const row = d.find((x) => x.date >= e.date); if (!row) return;
+      const row = d.find((x) => x.date >= e.date && x.date < kstDate()); if (!row) return;
       const base = p.b || row.open || p.p0; // 2차 확정가(b) 우선, 없으면 시가 진입
       const stopPct = +(p.plan?.stopPct || 3), targetPct = +(p.plan?.targetPct || p.target || 3);
       p.b = base;
@@ -442,7 +433,7 @@ async function grade(entries) {
       if (p.live && p.simExit) { p.hit = p.simExit === "target"; p.touch = p.hit ? "target" : "stop"; }
       // 가상매매: 시가 매수 → 손절 -3% / 목표 익절 / 종가 청산 (동시 터치 시 손절 가정)
       // 단, 장중 모니터가 실시간 체결한 기록(live)은 보존
-      if (p.simR == null) {
+      if (p.simR == null && p.plan?.decision?.action !== 'watch') {
         p.simR = hitStop ? -stopPct : p.hit ? targetPct : p.r1;
         p.simExit = hitStop ? "stop" : p.hit ? "target" : "close";
         p.simD = row.date;
@@ -473,7 +464,9 @@ async function grade(entries) {
     }
     // 가상매매(스윙): 시가 매수 → -5% 손절 / +10% 익절 / 20일 후 종가 청산 (동시 터치 시 손절 가정)
     if (p.simR == null) {
-      const seg = d.slice(i0, i0 + 20);
+      if (p.plan?.decision?.action === 'watch') return;
+      const holdDays = Math.max(1, Math.min(20, p.plan?.maxHoldDays || 20));
+      const seg = d.slice(i0, i0 + holdDays).filter(s => s.date < kstDate());
       const stopPct = +(p.plan?.stopPct || 5), targetPct = +(p.plan?.targetPct || 10);
       let exited = false;
       for (const s of seg) {
@@ -481,7 +474,7 @@ async function grade(entries) {
         if (s.high >= base * (1 + targetPct / 100)) { p.simR = targetPct; p.simExit = "target"; p.simD = s.date; exited = true; changed = true; break; }
       }
       if (!exited) {
-        if (seg.length >= 20) { p.simR = +(((seg[19].close - base) / base) * 100).toFixed(1); p.simExit = "time"; p.simD = seg[19].date; changed = true; }
+        if (seg.length >= holdDays) { p.simR = +(((seg[holdDays - 1].close - base) / base) * 100).toFixed(1); p.simExit = "time"; p.simD = seg[holdDays - 1].date; changed = true; }
         else if (seg.length) {
           const u = +(((seg[seg.length - 1].close - base) / base) * 100).toFixed(1);
           if (p.simOpen !== u) { p.simOpen = u; changed = true; }
@@ -700,13 +693,18 @@ async function fetchDaily(t, range = "3mo") {
   return { rows, ticker: KRFIX[t] || t0 };
 }
 
-async function riskPlanFor(ticker, kind, price) {
+async function riskPlanFor(ticker, kind, price, context = {}) {
   const market = /^\d{6}\.(KS|KQ)$/i.test(ticker) ? "KR" : "US";
   const capital = market === "KR" ? +(process.env.PAPER_CAPITAL_KR || 5000000) : +(process.env.PAPER_CAPITAL_US || 5000);
   const riskPct = +(process.env.PAPER_RISK_PCT || 0.5);
   const { rows } = await fetchDaily(ticker, "3mo");
-  const px = +price || rows?.at(-1)?.close || null;
-  return buildRiskPlan({ kind, price: px, atrPct: atrPctFromRows(rows), capital, riskPct });
+  // Only completed prior sessions inform the advisory holding policy.
+  const closed = (rows || []).filter(r => r.date < kstDate());
+  const px = +price || closed.at(-1)?.close || null;
+  const atrPct = atrPctFromRows(closed);
+  const decision = decideStrategy({kind,price:px,rows:closed,atrPct,...context});
+  const plan = buildRiskPlan({ kind, price: px, atrPct, capital, riskPct });
+  return {...plan, decision, maxHoldDays: decision.maxHoldDays, engine: 'R2.0'};
 }
 
 function cronAuthorized(req) {
@@ -794,11 +792,11 @@ export default async function handler(req, res) {
           const bl = { rand: shuf.slice(0, 3), mom: allowTk.slice(0, 3) };
           const prices = {};
           for (const p of [...new Set(j.picks.map((x) => x.ticker))]) prices[p] = await quotePrice(p);
-          for (const p of j.picks) p.plan = await riskPlanFor(p.ticker, "swing", prices[p.ticker]);
+          for (const p of j.picks) p.plan = await riskPlanFor(p.ticker, "swing", prices[p.ticker], {basis:p.basis || [],regime:regimeNow});
           const regime = regimeNow;
           hist.entries.push({
             date: today, market: job, regime, rules: ci.rules.slice(0, 6), // 이날 적용된 규칙 스냅샷 (효과 검증용)
-            cands, bl, dayCands: j.day_cands, hold: j.picks.length === 0 && j.day_cands.length === 0 ? 1 : 0, v: { m: USED_MODEL, pv: "J1.0" },
+            cands, bl, dayCands: j.day_cands, hold: j.picks.length === 0 && j.day_cands.length === 0 ? 1 : 0, v: { m: USED_MODEL, pv: "J1.0-S2.0", policy:'S2.0' },
             mktF: j.mkt && ["상승", "하락", "횡보"].includes(j.mkt.dir) ? { dir: j.mkt.dir, conf: Math.max(0, Math.min(100, Math.round(+j.mkt.conf) || 50)), why: String(j.mkt.why || "").slice(0, 80), ok: null } : null,
             picks: j.picks.map((p) => ({ kind: "swing", name: p.name, ticker: p.ticker, score: p.score, sector: p.sector || null, basis: p.basis || [], plan: p.plan, p0: prices[p.ticker] || null, r1: null, r5: null, r20: null })),
           });
@@ -892,7 +890,7 @@ export default async function handler(req, res) {
       for (const p of fin) {
         const c = entry.dayCands.find((x) => x.ticker === p.ticker) || {};
         const base = c.o?.px || null;
-        const plan = await riskPlanFor(p.ticker, "day", base);
+        const plan = await riskPlanFor(p.ticker, "day", base, {basis:p.basis || c.basis || [],gap:c.o?.gap ?? null,regime:entry.regime});
         entry.picks.push({
           kind: "day", name: p.name, ticker: p.ticker, score: p.score, target: Math.max(2, Math.min(+p.target_pct || 3, 8)),
           sector: p.sector || c.sector || null, basis: p.basis || c.basis || [],
