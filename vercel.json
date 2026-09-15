@@ -1,6 +1,15 @@
 {
   "crons": [
-    { "path": "/api/cron?job=kr", "schedule": "0 23 * * 0-4" },
-    { "path": "/api/cron?job=us", "schedule": "30 12 * * 1-5" }
-  ]
+    {
+      "path": "/api/cron?job=kr",
+      "schedule": "0 23 * * 0-4"
+    },
+    {
+      "path": "/api/cron?job=us",
+      "schedule": "30 12 * * 1-5"
+    }
+  ],
+  "git": {
+    "deploymentEnabled": false
+  }
 }
