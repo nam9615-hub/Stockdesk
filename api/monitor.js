@@ -1,6 +1,7 @@
 // 장중 가상매매 모니터 — 외부 스케줄러(cron-job.org)가 장중 1분마다 호출
 // 역할: 오늘 픽의 시가(진입가) 확정 → 실시간 가격으로 손절/목표 터치 시 즉시 가상 체결(live)
-// 자동매매 전환 시: fill() 안의 "기록"을 "실제 주문"으로 바꾸면 그대로 실전 코드가 됨
+// Simulation only. A real broker requires independent authorization and reconciliation.
+import { runPaper } from '../lib/paper-store.js';
 const UA = { headers: { "User-Agent": "Mozilla/5.0" } };
 const kstNow = () => new Date(Date.now() + 9 * 3600e3);
 const kstDate = () => kstNow().toISOString().slice(0, 10);
@@ -79,6 +80,10 @@ export default async function handler(req, res) {
   try {
     const { data: histRaw, sha } = await ghRead("data/history.json");
     const hist = histRaw || { entries: [] };
+    // Keep new forward paper trading independent from legacy historical grading.
+    let paper;
+    try { paper = await runPaper(market, hist.entries); }
+    catch (error) { return res.status(503).json({error:'모의계좌 실행 실패',detail:error.message}); }
     const today = kstDate();
     // 미국 세션은 KST 자정을 넘으므로 전일 날짜 픽도 포함
     const yday = new Date(Date.now() + 9 * 3600e3 - 864e5).toISOString().slice(0, 10);
@@ -94,7 +99,7 @@ export default async function handler(req, res) {
         targets.push({ e, p });
       });
     });
-    if (!targets.length) return res.status(200).json({ ok: true, market, watched: 0, at: kstTime() });
+    if (!targets.length) return res.status(200).json({ ok: true, market, watched: 0, paper, at: kstTime() });
 
     let hard = false, soft = false; // hard=진입가 확정·체결, soft=평가손익 갱신
     const fills = [];
@@ -131,7 +136,7 @@ export default async function handler(req, res) {
       hist.monAt = Date.now();
       await ghWrite("data/history.json", hist, sha);
     }
-    return res.status(200).json({ ok: true, market, watched: targets.length, fills, saved: hard || (soft && snapDue), at: kstTime() });
+    return res.status(200).json({ ok: true, market, watched: targets.length, fills, paper, saved: hard || (soft && snapDue), at: kstTime() });
   } catch (e) {
     return res.status(500).json({ error: e.message });
   }
