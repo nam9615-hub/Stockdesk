@@ -6,6 +6,14 @@ const kstNow = () => new Date(Date.now() + 9 * 3600e3);
 const kstDate = () => kstNow().toISOString().slice(0, 10);
 const kstTime = () => kstNow().toISOString().slice(11, 16);
 
+function cronAuthorized(req) {
+  const expected = process.env.CRON_KEY;
+  if (!expected) return process.env.REQUIRE_CRON_AUTH !== "1";
+  const bearer = String(req.headers?.authorization || "").replace(/^Bearer\s+/i, "");
+  const supplied = req.headers?.["x-cron-key"] || bearer || req.query?.key;
+  return supplied === expected;
+}
+
 async function ghRead(path) {
   const r = await fetch(`https://api.github.com/repos/${process.env.GH_REPO}/contents/${path}`, {
     headers: { Authorization: `Bearer ${process.env.GH_TOKEN}`, "User-Agent": "stockdesk", Accept: "application/vnd.github+json" },
@@ -54,7 +62,7 @@ async function priceOpen(ticker) {
 }
 
 export default async function handler(req, res) {
-  if (process.env.CRON_KEY && req.query.key !== process.env.CRON_KEY) return res.status(401).json({ error: "key 필요" });
+  if (!cronAuthorized(req)) return res.status(401).json({ error: "cron 인증 필요" });
   if (process.env.PAUSE === "1") return res.status(200).json({ ok: true, paused: true });
   if (!process.env.GH_TOKEN || !process.env.GH_REPO) return res.status(501).json({ error: "GH_TOKEN / GH_REPO 필요" });
 
@@ -103,8 +111,8 @@ export default async function handler(req, res) {
         if (p.p0) p.gap = +(((base - p.p0) / p.p0) * 100).toFixed(1);
         hard = true;
       }
-      const stopPct = p.kind === "day" ? 3 : 5;
-      const tgtPct = p.kind === "day" ? (p.target || 3) : 10;
+      const stopPct = +(p.plan?.stopPct || (p.kind === "day" ? 3 : 5));
+      const tgtPct = +(p.plan?.targetPct || (p.kind === "day" ? (p.target || 3) : 10));
       const r = ((px - p.b) / p.b) * 100;
       if (px <= p.b * (1 - stopPct / 100)) {
         p.simR = -stopPct; p.simExit = "stop"; p.simD = today; p.simT = kstTime(); p.live = 1;

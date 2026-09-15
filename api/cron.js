@@ -1,4 +1,5 @@
 // Vercel Cron — 매일 자동: 추천 생성(개장 전) + 과거 추천 자동 채점
+import { atrPctFromRows, buildRiskPlan } from "../lib/risk.js";
 // 필요 환경변수: GEMINI_API_KEY(또는 ANTHROPIC_API_KEY), GH_TOKEN, GH_REPO(예: nam9615-hub/Stockdesk)
 const UA = { headers: { "User-Agent": "Mozilla/5.0" } };
 const kstDate = () => new Date(Date.now() + 9 * 3600e3).toISOString().slice(0, 10);
@@ -101,6 +102,8 @@ function screenUniverse(uni, today) {
   if (!fresh) return null;
   const sum = (a, n) => a.slice(-n).reduce((s, x) => s + x, 0);
   const rows = Object.entries(uni.stocks).map(([code, s]) => {
+    const stockFresh = s.d && (Date.parse(today) - Date.parse(s.d)) <= 7 * 864e5;
+    if (!stockFresh) return null;
     if (!s.h || s.h.length < 6 || !s.mr || s.mr > 700) return null; // 유동성 하한(시총 700위) + 이력 최소 6일
     const m1 = s.h[s.h.length - 1] || 0;
     const m5 = sum(s.h, 5), m20 = s.h.length >= 15 ? sum(s.h, 20) : m5 * 2;
@@ -294,9 +297,10 @@ function historySummary(entries, market) {
   }
   // 시장 방향 예측 적중률
   const mf = entries.filter((e) => e.market === market && e.mktF && e.mktF.ok != null);
-  if (mf.length >= 3) {
+  if (mf.length >= 20) {
     const hit = mf.filter((e) => e.mktF.ok).length;
-    parts.push(`시장방향 예측 적중률 ${Math.round((hit / mf.length) * 100)}%(${mf.length}건) — 이 적중률만큼만 지수 방향 확신을 반영하라.`);
+    const acc = Math.round((hit / mf.length) * 100);
+    parts.push(acc >= 55 ? `시장방향 예측 적중률 ${acc}%(${mf.length}건) — 보조 신호로만 반영하라.` : `시장방향 예측 적중률 ${acc}%(${mf.length}건) — 검증 실패 신호이므로 종목 선정·비중 결정에 사용하지 마라.`);
   }
   // 확신도 교정 (강도 구간별 실측)
   const dyA = flat0.filter((p) => p.kind === "day" && p.r1 != null && p.score != null);
@@ -336,15 +340,19 @@ function similarCases(entries, market, regime) {
 
 /* ── 채점 ── */
 async function grade(entries) {
-  // 우선순위 대기줄: 미채점(r1 없음) 최우선 → r5 대기 → r20 대기, 같은 급은 최신부터 (신규 픽 기아 방지)
+  // 만기별 자리를 예약하고 오래된 항목부터 처리해 r5/r20 기아를 막는다.
   const pendQ = [];
   entries.forEach((e) => (e.picks || []).forEach((p) => {
     if (p.kind === "day" ? p.r1 == null : p.r20 == null) {
       pendQ.push({ t: p.ticker, pri: p.r1 == null ? 0 : p.r5 == null ? 1 : 2, d: e.date });
     }
   }));
-  pendQ.sort((a, b) => a.pri - b.pri || (a.d < b.d ? 1 : -1));
-  const need = [...new Set(pendQ.map((x) => x.t))].slice(0, 16);
+  pendQ.sort((a, b) => a.pri - b.pri || (a.d < b.d ? -1 : 1));
+  const need = [];
+  for (const [pri, quota] of [[0, 10], [1, 8], [2, 6]]) {
+    const group = [...new Set(pendQ.filter((x) => x.pri === pri).map((x) => x.t))].slice(0, quota);
+    group.forEach((t) => { if (!need.includes(t)) need.push(t); });
+  }
   // 시장 지수 일별 등락 맵 (실패 원인 귀속용)
   const idxMap = {};
   const mkts = [...new Set(entries.filter((e) => (e.picks || []).some((p) => (p.kind === "day" ? p.r1 == null : p.r20 == null)) || (e.mktF && e.mktF.ok == null)).map((e) => e.market))];
@@ -361,10 +369,10 @@ async function grade(entries) {
   }
   const charts = {};
   const fixmap = {};
-  for (const t of need) {
+  await Promise.all(need.slice(0, 24).map(async (t) => {
     const { rows, ticker } = await fetchDaily(t, "3mo");
     if (rows) { charts[t] = rows; fixmap[t] = ticker; }
-  }
+  }));
   let changed = false;
   let changedT = false;
   // 시장 방향 예측 채점: 실제 지수 등락과 대조 (±0.3% 기준 3분류)
@@ -403,8 +411,9 @@ async function grade(entries) {
   entries.forEach((e) => e.picks.forEach((p) => {
     // 소급 가상체결: 기능 배포 전 이미 채점된 단타 (차트 없이 저장값으로 계산)
     if (p.kind === "day" && p.r1 != null && p.simR == null && p.mae != null) {
-      p.simR = p.mae <= -3 ? -3 : p.hit ? (p.target || 3) : p.r1;
-      p.simExit = p.mae <= -3 ? "stop" : p.hit ? "target" : "close";
+      const stopPct = +(p.plan?.stopPct || 3), targetPct = +(p.plan?.targetPct || p.target || 3);
+      p.simR = p.mae <= -stopPct ? -stopPct : p.hit ? targetPct : p.r1;
+      p.simExit = p.mae <= -stopPct ? "stop" : p.hit ? "target" : "close";
       p.simD = e.date;
       changed = true;
     }
@@ -413,10 +422,11 @@ async function grade(entries) {
       if (p.r1 != null) return;
       const row = d.find((x) => x.date >= e.date); if (!row) return;
       const base = p.b || row.open || p.p0; // 2차 확정가(b) 우선, 없으면 시가 진입
+      const stopPct = +(p.plan?.stopPct || 3), targetPct = +(p.plan?.targetPct || p.target || 3);
       p.b = base;
       if (p.gap == null) p.gap = row.open && p.p0 ? +(((row.open - p.p0) / p.p0) * 100).toFixed(1) : null;
       p.r1 = +(((row.close - base) / base) * 100).toFixed(1);
-      p.hit = row.high >= base * (1 + (p.target || 3) / 100);
+      p.hit = row.high >= base * (1 + targetPct / 100);
       p.mfe = +(((row.high - base) / base) * 100).toFixed(1);
       p.mae = +(((row.low - base) / base) * 100).toFixed(1);
       // 유동성 스냅샷: 당일 거래대금(백만) + 20일 평균 대비 배율 — 자동매매 자금 규모 설계용
@@ -426,14 +436,14 @@ async function grade(entries) {
         const prev = d.slice(Math.max(0, i0v - 20), i0v).map((x) => (x.vol || 0) * x.close).filter((x) => x > 0);
         if (prev.length >= 5) p.tvx = +((row.vol * row.close) / (prev.reduce((a, b) => a + b, 0) / prev.length)).toFixed(1);
       }
-      const hitStop = row.low <= base * 0.97; // 손절 가정 -3%
+      const hitStop = row.low <= base * (1 - stopPct / 100);
       p.touch = p.hit && hitStop ? "both" : p.hit ? "target" : hitStop ? "stop" : "none";
       // 장중 실시간 체결이 이미 확정된 픽은 그 결과가 최종 — 일봉 추론으로 뒤집지 않음
       if (p.live && p.simExit) { p.hit = p.simExit === "target"; p.touch = p.hit ? "target" : "stop"; }
       // 가상매매: 시가 매수 → 손절 -3% / 목표 익절 / 종가 청산 (동시 터치 시 손절 가정)
       // 단, 장중 모니터가 실시간 체결한 기록(live)은 보존
       if (p.simR == null) {
-        p.simR = hitStop ? -3 : p.hit ? (p.target || 3) : p.r1;
+        p.simR = hitStop ? -stopPct : p.hit ? targetPct : p.r1;
         p.simExit = hitStop ? "stop" : p.hit ? "target" : "close";
         p.simD = row.date;
       }
@@ -464,10 +474,11 @@ async function grade(entries) {
     // 가상매매(스윙): 시가 매수 → -5% 손절 / +10% 익절 / 20일 후 종가 청산 (동시 터치 시 손절 가정)
     if (p.simR == null) {
       const seg = d.slice(i0, i0 + 20);
+      const stopPct = +(p.plan?.stopPct || 5), targetPct = +(p.plan?.targetPct || 10);
       let exited = false;
       for (const s of seg) {
-        if (s.low <= base * 0.95) { p.simR = -5; p.simExit = "stop"; p.simD = s.date; exited = true; changed = true; break; }
-        if (s.high >= base * 1.10) { p.simR = 10; p.simExit = "target"; p.simD = s.date; exited = true; changed = true; break; }
+        if (s.low <= base * (1 - stopPct / 100)) { p.simR = -stopPct; p.simExit = "stop"; p.simD = s.date; exited = true; changed = true; break; }
+        if (s.high >= base * (1 + targetPct / 100)) { p.simR = targetPct; p.simExit = "target"; p.simD = s.date; exited = true; changed = true; break; }
       }
       if (!exited) {
         if (seg.length >= 20) { p.simR = +(((seg[19].close - base) / base) * 100).toFixed(1); p.simExit = "time"; p.simD = seg[19].date; changed = true; }
@@ -507,13 +518,17 @@ const promptDay2 = (mkt, rows, learn) => `너는 ${mkt === "KR" ? "한국" : "�
 async function gradeCands(entries) {
   let changed = false;
   const pend = [];
-  entries.forEach((e) => (e.cands || []).forEach((c) => { if (c.r1 == null && c.ticker && !c.na) pend.push({ e, c }); }));
-  const tickers = [...new Set(pend.map((x) => x.c.ticker))].slice(0, 10);
+  entries.forEach((e) => (e.cands || []).forEach((c) => {
+    if (c.ticker && !c.na && (c.r1 == null || c.r5 == null)) pend.push({ e, c, pri: c.r1 == null ? 0 : 1 });
+  }));
+  pend.sort((a, b) => a.pri - b.pri || (a.e.date < b.e.date ? -1 : 1));
+  const pickQuota = (pri, n) => [...new Set(pend.filter((x) => x.pri === pri).map((x) => x.c.ticker))].slice(0, n);
+  const tickers = [...new Set([...pickQuota(0, 12), ...pickQuota(1, 12)])];
   const charts = {};
-  for (const t of tickers) {
+  await Promise.all(tickers.map(async (t) => {
     const { rows, ticker } = await fetchDaily(t, "3mo");
     if (rows) { charts[t] = rows; charts[ticker] = rows; if (ticker !== t) pend.forEach((x) => { if (x.c.ticker === t) x.c.ticker = ticker; }); }
-  }
+  }));
   // 조회 실패 누적 3회면 제외 처리 — 실패 티커가 채점 큐를 영원히 막지 않게
   pend.forEach(({ c }) => {
     if (tickers.includes(c.ticker) && !charts[c.ticker]) {
@@ -611,7 +626,8 @@ async function refine5m(entries) {
       let bars = cache[p.ticker].filter((b) => b.date === e.date);
       if (p.cm) bars = bars.slice(Math.ceil(p.cm / 5)); // 진입 이전·진입 걸친 봉 제외 (보수적)
       if (!bars.length) continue;
-      const tgtP = p.b * (1 + (p.target || 3) / 100), stpP = p.b * 0.97;
+      const stopPct = +(p.plan?.stopPct || 3), targetPct = +(p.plan?.targetPct || p.target || 3);
+      const tgtP = p.b * (1 + targetPct / 100), stpP = p.b * (1 - stopPct / 100);
       if (mode === "post") {
         // 진입 후 구간만으로 MFE/MAE·터치·체결 재계산 (진입 전 고저 오염 제거)
         p.mfe = +(((Math.max(...bars.map((b) => b.h)) - p.b) / p.b) * 100).toFixed(1);
@@ -619,8 +635,8 @@ async function refine5m(entries) {
         let ex = null;
         for (const b of bars) {
           const hT = b.h >= tgtP, hS = b.l <= stpP;
-          if (hS) { ex = ["stop", -3, "stop-first"]; break; }
-          if (hT) { ex = ["target", p.target || 3, "target-first"]; break; }
+          if (hS) { ex = ["stop", -stopPct, "stop-first"]; break; }
+          if (hT) { ex = ["target", targetPct, "target-first"]; break; }
         }
         p.hit = !!(ex && ex[0] === "target");
         p.touch = ex ? (ex[0] === "target" ? "target" : "stop") : "none";
@@ -637,8 +653,8 @@ async function refine5m(entries) {
         }
         if (!seq) continue;
         p.seq = seq;
-        if (seq === "target-first") { p.simR = p.target || 3; p.simExit = "target"; }
-        else { p.simR = -3; p.simExit = "stop"; }
+        if (seq === "target-first") { p.simR = targetPct; p.simExit = "target"; }
+        else { p.simR = -stopPct; p.simExit = "stop"; }
         changed = true;
       }
     } catch {}
@@ -683,6 +699,23 @@ async function fetchDaily(t, range = "3mo") {
   }
   return { rows, ticker: KRFIX[t] || t0 };
 }
+
+async function riskPlanFor(ticker, kind, price) {
+  const market = /^\d{6}\.(KS|KQ)$/i.test(ticker) ? "KR" : "US";
+  const capital = market === "KR" ? +(process.env.PAPER_CAPITAL_KR || 5000000) : +(process.env.PAPER_CAPITAL_US || 5000);
+  const riskPct = +(process.env.PAPER_RISK_PCT || 0.5);
+  const { rows } = await fetchDaily(ticker, "3mo");
+  const px = +price || rows?.at(-1)?.close || null;
+  return buildRiskPlan({ kind, price: px, atrPct: atrPctFromRows(rows), capital, riskPct });
+}
+
+function cronAuthorized(req) {
+  const expected = process.env.CRON_KEY;
+  if (!expected) return process.env.REQUIRE_CRON_AUTH !== "1";
+  const bearer = String(req.headers?.authorization || "").replace(/^Bearer\s+/i, "");
+  const supplied = req.headers?.["x-cron-key"] || bearer || req.query?.key;
+  return supplied === expected;
+}
 function isUsDST(d = new Date()) {
   const y = d.getFullYear(), m = d.getMonth(), day = d.getDate();
   if (m > 2 && m < 10) return true;
@@ -693,7 +726,7 @@ function isUsDST(d = new Date()) {
 export default async function handler(req, res) {
   const job = String(req.query.job || "").toUpperCase();
   const today = kstDate();
-  if (process.env.CRON_KEY && req.query.key !== process.env.CRON_KEY) return res.status(401).json({ error: "key 필요" });
+  if (!cronAuthorized(req)) return res.status(401).json({ error: "cron 인증 필요" });
   if (process.env.PAUSE === "1") return res.status(200).json({ ok: true, paused: true, note: "킬스위치 작동 중 — Vercel 환경변수 PAUSE 삭제 후 Redeploy로 재개" });
   if (!process.env.GH_TOKEN || !process.env.GH_REPO) return res.status(501).json({ error: "GH_TOKEN / GH_REPO 환경변수 필요" });
   try {
@@ -761,12 +794,13 @@ export default async function handler(req, res) {
           const bl = { rand: shuf.slice(0, 3), mom: allowTk.slice(0, 3) };
           const prices = {};
           for (const p of [...new Set(j.picks.map((x) => x.ticker))]) prices[p] = await quotePrice(p);
+          for (const p of j.picks) p.plan = await riskPlanFor(p.ticker, "swing", prices[p.ticker]);
           const regime = regimeNow;
           hist.entries.push({
             date: today, market: job, regime, rules: ci.rules.slice(0, 6), // 이날 적용된 규칙 스냅샷 (효과 검증용)
             cands, bl, dayCands: j.day_cands, hold: j.picks.length === 0 && j.day_cands.length === 0 ? 1 : 0, v: { m: USED_MODEL, pv: "J1.0" },
             mktF: j.mkt && ["상승", "하락", "횡보"].includes(j.mkt.dir) ? { dir: j.mkt.dir, conf: Math.max(0, Math.min(100, Math.round(+j.mkt.conf) || 50)), why: String(j.mkt.why || "").slice(0, 80), ok: null } : null,
-            picks: j.picks.map((p) => ({ kind: "swing", name: p.name, ticker: p.ticker, score: p.score, sector: p.sector || null, basis: p.basis || [], p0: prices[p.ticker] || null, r1: null, r5: null, r20: null })),
+            picks: j.picks.map((p) => ({ kind: "swing", name: p.name, ticker: p.ticker, score: p.score, sector: p.sector || null, basis: p.basis || [], plan: p.plan, p0: prices[p.ticker] || null, r1: null, r5: null, r20: null })),
           });
           const { sha: ls } = await ghRead(`data/latest-${job}.json`);
           await ghWrite(`data/latest-${job}.json`, { date: today, at: kstTime(), data: j }, ls);
@@ -793,10 +827,20 @@ export default async function handler(req, res) {
       for (let step = 0; step < 8; step++) {
         const url = `https://finance.naver.com/sise/sise_market_sum.naver?sosok=${uni.cursor.kq}&page=${uni.cursor.page}`;
         let rows = [];
-        try { rows = parseRows(new TextDecoder("euc-kr").decode(await (await fetch(url, UA)).arrayBuffer())); } catch {}
+        let fetched = false;
+        try {
+          const rr = await fetch(url, UA);
+          if (!rr.ok) throw new Error(`scanner HTTP ${rr.status}`);
+          fetched = true;
+          rows = parseRows(new TextDecoder("euc-kr").decode(await rr.arrayBuffer()));
+        } catch {}
         if (!rows.length) {
+          if (!fetched || uni.cursor.page === 1) {
+            uni.lastError = { at: new Date().toISOString(), kq: uni.cursor.kq, page: uni.cursor.page };
+            break;
+          }
           if (uni.cursor.kq === 0) { uni.cursor = { kq: 1, page: 1 }; continue; }
-          uni.cursor = { kq: 0, page: 1 }; uni.day = today; break; // 전체 순회 완료
+          uni.cursor = { kq: 0, page: 1 }; uni.day = today; uni.completedAt = new Date().toISOString(); delete uni.lastError; break;
         }
         rows.forEach((r, idx) => {
           const st = uni.stocks[r.code] || (uni.stocks[r.code] = { n: r.name, h: [] });
@@ -845,16 +889,19 @@ export default async function handler(req, res) {
       const j2 = await askAI(promptDay2(mkt, rows.join("\n"), learn2));
       const fin = (j2.day_picks || []).slice(0, 3).filter((p) => entry.dayCands.some((c) => c.ticker === p.ticker));
       const cAt = kstTime();
-      fin.forEach((p) => {
+      for (const p of fin) {
         const c = entry.dayCands.find((x) => x.ticker === p.ticker) || {};
+        const base = c.o?.px || null;
+        const plan = await riskPlanFor(p.ticker, "day", base);
         entry.picks.push({
           kind: "day", name: p.name, ticker: p.ticker, score: p.score, target: Math.max(2, Math.min(+p.target_pct || 3, 8)),
           sector: p.sector || c.sector || null, basis: p.basis || c.basis || [],
-          p0: c.o?.px || null, b: c.o?.px || null, gap: c.o?.gap ?? null, cAt, eTs: new Date().toISOString(),
+          p0: base, b: base, plan, gap: c.o?.gap ?? null, cAt, eTs: new Date().toISOString(),
           cm: Math.max(0, Math.round((nowT - openH) * 60)), // 개장 후 경과분 (5분봉 필터용)
           r1: null, hit: null,
         });
-      });
+        p.plan = plan;
+      }
       entry.day2 = { at: cAt, brief: String(j2.brief || "").slice(0, 200), n: fin.length };
       if (!fin.length) { entry.dayHold = 1; if (!(entry.picks || []).some((p) => p.kind === "swing")) entry.hold = 1; }
       const { data: lat, sha: ls2 } = await ghRead(`data/latest-${mkt}.json`);
