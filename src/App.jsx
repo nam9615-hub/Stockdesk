@@ -1,3 +1,4 @@
+import PaperDesk from "./PaperDesk.jsx";
 import React, { useState, useMemo, useEffect, useRef } from "react";
 import { replayPortfolio } from "../lib/strategy.js";
 
@@ -1897,6 +1898,7 @@ export default function App() {
         </header>
 
         {/* AI 추천 성적표 */}
+        <PaperDesk />
         <TrackRecord refreshKey={picks ? 1 : 0} />
 
         {/* 관심종목 실시간 */}
