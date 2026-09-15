@@ -89,7 +89,7 @@ export default async function handler(req, res) {
     hist.entries.forEach((e) => {
       if (e.market !== market) return;
       (e.picks || []).forEach((p) => {
-        if (p.simR != null || !p.ticker) return;
+        if (p.simR != null || !p.ticker || p.plan?.decision?.action === 'watch') return;
         if (p.kind === "day" && !sessDates.includes(e.date)) return; // 단타는 당일 세션만
         targets.push({ e, p });
       });
