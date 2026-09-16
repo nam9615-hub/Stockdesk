@@ -11,5 +11,6 @@
   ],
   "git": {
     "deploymentEnabled": true
-  }
+  },
+  "ignoreCommand": "git diff HEAD^ HEAD --quiet -- api lib src public index.html package.json package-lock.json vite.config.js vercel.json"
 }
