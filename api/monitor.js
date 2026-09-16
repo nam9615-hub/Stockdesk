@@ -1,4 +1,4 @@
-// 장중 가상매매 모니터 — 외부 스케줄러(cron-job.org)가 장중 1분마다 호출
+// 장중 가상매매 모니터 — 인증된 외부 스케줄러 또는 동일 출처 PaperDesk가 호출
 // 역할: 오늘 픽의 시가(진입가) 확정 → 실시간 가격으로 손절/목표 터치 시 즉시 가상 체결(live)
 // Simulation only. A real broker requires independent authorization and reconciliation.
 import { runPaper } from '../lib/paper-store.js';
@@ -14,6 +14,18 @@ function cronAuthorized(req) {
   const bearer = String(req.headers?.authorization || "").replace(/^Bearer\s+/i, "");
   const supplied = req.headers?.["x-cron-key"] || bearer || req.query?.key;
   return supplied === expected;
+}
+
+function sameOriginPaperDesk(req) {
+  if (req.method !== 'GET' || req.headers?.['x-stockdesk-client'] !== 'paper-desk') return false;
+  if (String(req.headers?.['sec-fetch-site'] || '').toLowerCase() !== 'same-origin') return false;
+  const forwarded = String(req.headers?.['x-forwarded-host'] || '').split(',')[0].trim();
+  const host = (forwarded || String(req.headers?.host || '')).toLowerCase();
+  try {
+    return Boolean(host) && new URL(String(req.headers?.referer || '')).host.toLowerCase() === host;
+  } catch {
+    return false;
+  }
 }
 
 async function ghRead(path) {
@@ -64,7 +76,7 @@ async function priceOpen(ticker) {
 }
 
 export default async function handler(req, res) {
-  if (!cronAuthorized(req)) return res.status(401).json({ error: "cron 인증 필요" });
+  if (!cronAuthorized(req) && !sameOriginPaperDesk(req)) return res.status(401).json({ error: "모니터 인증 필요" });
   if (process.env.PAUSE === "1") return res.status(200).json({ ok: true, paused: true });
   if (!process.env.GH_TOKEN || !process.env.GH_REPO) return res.status(501).json({ error: "GH_TOKEN / GH_REPO 필요" });
 
