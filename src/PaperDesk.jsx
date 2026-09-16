@@ -2,6 +2,14 @@ import React, {useEffect,useState} from 'react';
 const money=(n,c)=>Number.isFinite(n)?new Intl.NumberFormat('ko-KR',{style:'currency',currency:c,maximumFractionDigits:c==='KRW'?0:2}).format(n):'—';
 const setup={pullback:'눌림 회복',breakout:'가격대 돌파',opening:'개장 수급'};
 const box={background:'#111a27',border:'1px solid #263346',borderRadius:14,padding:14};
+const krPhase=()=>{
+  const d=new Date(Date.now()+9*3600000),m=d.getUTCHours()*60+d.getUTCMinutes(),day=d.getUTCDay();
+  if(day===0||day===6)return 'closed';
+  if(m>=480&&m<530)return 'nxt-pre';
+  if(m>=540&&m<930)return 'krx';
+  if(m>=940&&m<1200)return 'nxt-after';
+  return 'closed';
+};
 export default function PaperDesk(){
   const [market,setMarket]=useState('KR'),[data,setData]=useState(null),[error,setError]=useState(''),[loading,setLoading]=useState(false),[monitorError,setMonitorError]=useState('');
   useEffect(()=>{
@@ -21,6 +29,9 @@ export default function PaperDesk(){
   },[market]);
   const s=data?.summary;
   const ago=data?.lastRun?Math.floor((Date.now()-data.lastRun)/60000):null;
+  const phase=market==='KR'?krPhase():null;
+  const nxtPaused=phase==='nxt-pre'||phase==='nxt-after';
+  const staleWarning=market==='KR'?phase==='krx'&&ago>15:ago>15;
   return <section aria-label="조건부 주문과 모의계좌" style={{background:'linear-gradient(140deg,#111e31,#0e141f)',border:'1px solid #293c56',borderRadius:22,padding:20,marginBottom:18}}>
     <div style={{display:'flex',justifyContent:'space-between',gap:12,alignItems:'center'}}>
       <div><div style={{fontSize:10,letterSpacing:2,color:'#80c6ff'}}>PAPER COMMAND CENTER</div><h2 style={{fontSize:22,margin:'7px 0'}}>오늘의 판단</h2></div>
@@ -36,8 +47,8 @@ export default function PaperDesk(){
         <div style={box}><div style={{fontSize:11,color:'#96a7bf'}}>모의 평가자산</div><div style={{fontSize:20,fontWeight:700,marginTop:6}}>{money(s.equity,s.currency)}</div><div style={{fontSize:12,color:s.returnPct>=0?'#3ddc97':'#ff8a8a',marginTop:4}}>{s.returnPct.toFixed(2)}% · 시작 이후</div></div>
         <div style={box}><div style={{fontSize:11,color:'#96a7bf'}}>사용 가능한 현금</div><div style={{fontSize:20,fontWeight:700,marginTop:6}}>{money(s.cash,s.currency)}</div><div style={{fontSize:12,color:'#96a7bf',marginTop:4}}>보유 {s.positions} · 대기 {s.waiting}</div></div>
       </div>
-      <div role="status" style={{fontSize:12,color:!data.enabled||ago>15?'#f5b94a':'#96a7bf',margin:'12px 0',lineHeight:1.7}}>
-        {!data.enabled?'모의 실행 꺼짐 · PAPER_TRADING_ENABLED=1 설정과 인증된 모니터 호출이 필요합니다.':!data.initialized?'첫 인증된 모니터 실행을 기다립니다.':s.paused?'손실 방어: 신규 진입 중단 · 기존 포지션 청산 감시 유지':`마지막 실행 ${ago}분 전 · ${ago>15?'장외 또는 스케줄·데이터 확인 필요':'기록 저장됨'}`}
+      <div role="status" style={{fontSize:12,color:!data.enabled||staleWarning?'#f5b94a':'#96a7bf',margin:'12px 0',lineHeight:1.7}}>
+        {!data.enabled?'모의 실행 꺼짐 · PAPER_TRADING_ENABLED=1 설정과 인증된 모니터 호출이 필요합니다.':!data.initialized?'첫 인증된 모니터 실행을 기다립니다.':s.paused?'손실 방어: 신규 진입 중단 · 기존 포지션 청산 감시 유지':nxtPaused?`NXT ${phase==='nxt-pre'?'프리':'애프터'}마켓 · 전용 시세 미연결로 체결 보류 · 정규장 마지막 기록 ${ago}분 전 · 모니터 호출 정상`:market==='KR'&&phase==='closed'?`장외 시간 · 정규장 마지막 기록 ${ago}분 전`: `마지막 실행 ${ago}분 전 · ${staleWarning?'스케줄·데이터 확인 필요':'기록 저장됨'}`}
         {!!data.feedErrors.length&&<div>가격 조회 실패 {data.feedErrors.length}종목 · 해당 종목 체결 보류</div>}
       </div>
       <h3 style={{fontSize:14,margin:'18px 0 8px'}}>보유 관리</h3>
