@@ -96,7 +96,7 @@ export default async function handler(req, res) {
     const hist = histRaw || { entries: [] };
     // Keep new forward paper trading independent from legacy historical grading.
     let paper;
-    try { paper = await runPaper(market, hist.entries); }
+    try { paper = await runPaper(market, hist.entries, Date.now(), {authorized:true}); }
     catch (error) { return res.status(503).json({error:'모의계좌 실행 실패',detail:error.message}); }
     // Legacy Naver prices have no verified NXT venue/timestamp contract either.
     if(market==='KR' && krPhase!=='krx-regular') return res.status(200).json({ok:true,market,session:krPhase,paper,watched:0,at:kstTime()});
