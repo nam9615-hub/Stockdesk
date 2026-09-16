@@ -2,6 +2,7 @@
 // 역할: 오늘 픽의 시가(진입가) 확정 → 실시간 가격으로 손절/목표 터치 시 즉시 가상 체결(live)
 // Simulation only. A real broker requires independent authorization and reconciliation.
 import { runPaper } from '../lib/paper-store.js';
+import { krSession, krSettlement } from '../lib/sessions.js';
 const UA = { headers: { "User-Agent": "Mozilla/5.0" } };
 const kstNow = () => new Date(Date.now() + 9 * 3600e3);
 const kstDate = () => kstNow().toISOString().slice(0, 10);
@@ -72,7 +73,8 @@ export default async function handler(req, res) {
   const day = n.getUTCDay(); // kstNow는 이미 +9h 보정된 UTC 표현
   const t = n.getUTCHours() + n.getUTCMinutes() / 60;
   const usOpen = isUsDST(new Date()) ? 22.5 : 23.5;
-  const krActive = day >= 1 && day <= 5 && t >= 9 && t <= 15.6;
+  const krPhase = krSession(Date.now());
+  const krActive = krPhase !== 'closed' || krSettlement(Date.now());
   const usActive = (day >= 1 && day <= 5 && t >= usOpen) || (day >= 2 && day <= 6 && t <= 6.2);
   if (!krActive && !usActive) return res.status(200).json({ ok: true, idle: true, at: kstTime() });
   const market = krActive ? "KR" : "US";
@@ -84,6 +86,8 @@ export default async function handler(req, res) {
     let paper;
     try { paper = await runPaper(market, hist.entries); }
     catch (error) { return res.status(503).json({error:'모의계좌 실행 실패',detail:error.message}); }
+    // Legacy Naver prices have no verified NXT venue/timestamp contract either.
+    if(market==='KR' && krPhase!=='krx-regular') return res.status(200).json({ok:true,market,session:krPhase,paper,watched:0,at:kstTime()});
     const today = kstDate();
     // 미국 세션은 KST 자정을 넘으므로 전일 날짜 픽도 포함
     const yday = new Date(Date.now() + 9 * 3600e3 - 864e5).toISOString().slice(0, 10);
