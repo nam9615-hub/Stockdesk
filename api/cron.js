@@ -932,6 +932,11 @@ export default async function handler(req, res) {
     const qCands = hist.entries.reduce((n, e) => n + (e.cands || []).filter((c) => c.r1 == null && !c.na).length, 0);
     return res.status(200).json({ ok: true, job, made, graded, refined, queue: { picks: qPicks, cands: qCands }, at: kstTime() });
   } catch (e) {
+    if (String(e.message || '').startsWith('GitHub 저장 충돌:')) {
+      console.warn('[cron] concurrent write deferred', { job, at: kstTime() });
+      return res.status(200).json({ ok: true, job, deferred: 'concurrent-write', note: '최신 기록 보존 · 다음 실행에서 재계산', at: kstTime() });
+    }
+    console.error('[cron] failed', { job, error: String(e.message || e) });
     return res.status(500).json({ error: e.message });
   }
 }
