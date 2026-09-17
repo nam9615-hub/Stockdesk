@@ -1,0 +1,46 @@
+name: Paper monitor (5 minute)
+
+on:
+  schedule:
+    # Completed 5-minute bars arrive near :00/:05. Offset by two minutes to
+    # avoid GitHub's busiest boundary and to let the quote feed settle.
+    - cron: '2/5 9-15 * * 1-5'
+      timezone: 'Asia/Seoul'
+    - cron: '2/5 9-16 * * 1-5'
+      timezone: 'America/New_York'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+
+concurrency:
+  group: stockdesk-paper-monitor
+  cancel-in-progress: true
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Request short-lived GitHub identity token
+        id: oidc
+        shell: bash
+        run: |
+          response="$(curl --silent --show-error --fail-with-body --max-time 20 \
+            -H "Authorization: bearer ${ACTIONS_ID_TOKEN_REQUEST_TOKEN}" \
+            "${ACTIONS_ID_TOKEN_REQUEST_URL}&audience=stockdesk-paper-monitor")"
+          token="$(jq -r '.value // empty' <<<"$response")"
+          test -n "$token"
+          echo "token=$token" >> "$GITHUB_OUTPUT"
+
+      - name: Run Stockdesk paper monitor
+        shell: bash
+        env:
+          MONITOR_TOKEN: ${{ steps.oidc.outputs.token }}
+        run: |
+          curl --silent --show-error --fail-with-body --max-time 55 \
+            -H "Authorization: Bearer ${MONITOR_TOKEN}" \
+            -H "User-Agent: stockdesk-github-monitor/1.0" \
+            https://stockdesk-ivory.vercel.app/api/monitor
+
