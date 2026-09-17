@@ -1,6 +1,12 @@
 name: Paper monitor (5 minute)
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/paper-monitor.yml'
+      - 'api/monitor.js'
+      - 'lib/monitor-auth.js'
   schedule:
     # Completed 5-minute bars arrive near :00/:05. Offset by two minutes to
     # avoid GitHub's busiest boundary and to let the quote feed settle.
@@ -43,4 +49,3 @@ jobs:
             -H "Authorization: Bearer ${MONITOR_TOKEN}" \
             -H "User-Agent: stockdesk-github-monitor/1.0" \
             https://stockdesk-ivory.vercel.app/api/monitor
-
