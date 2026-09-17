@@ -7,6 +7,7 @@ on:
       - '.github/workflows/paper-monitor.yml'
       - 'api/monitor.js'
       - 'lib/monitor-auth.js'
+      - 'lib/intraday-scout.js'
   schedule:
     # Completed 5-minute bars arrive near :00/:05. Offset by two minutes to
     # avoid GitHub's busiest boundary. UTC avoids scheduler timezone drift.
