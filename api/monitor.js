@@ -4,6 +4,7 @@
 import { runPaper } from '../lib/paper-store.js';
 import { krSession, krSettlement } from '../lib/sessions.js';
 import { githubActionsAuthorized } from '../lib/monitor-auth.js';
+import { runIntradayScout } from '../lib/intraday-scout.js';
 const UA = { headers: { "User-Agent": "Mozilla/5.0" } };
 const kstNow = () => new Date(Date.now() + 9 * 3600e3);
 const kstDate = () => kstNow().toISOString().slice(0, 10);
@@ -104,12 +105,22 @@ export default async function handler(req, res) {
   try {
     const { data: histRaw, sha } = await ghRead("data/history.json");
     const hist = histRaw || { entries: [] };
+    let scout = null;
+    if (source === 'github-actions' && (market !== 'KR' || krPhase === 'krx-regular')) {
+      try {
+        scout = await runIntradayScout(market, hist.entries, Date.now(), { authorized: true });
+        console.log('[scout] completed', { market, ...scout });
+      } catch (error) {
+        scout = { enabled: true, observedOnly: true, error: String(error.message || error) };
+        console.error('[scout] failed', { market, error: scout.error });
+      }
+    }
     // Keep new forward paper trading independent from legacy historical grading.
     let paper;
     try { paper = await runPaper(market, hist.entries, Date.now(), {authorized:true}); }
     catch (error) { return res.status(503).json({error:'모의계좌 실행 실패',detail:error.message}); }
     // Legacy Naver prices have no verified NXT venue/timestamp contract either.
-    if(market==='KR' && krPhase!=='krx-regular') return res.status(200).json({ok:true,market,session:krPhase,paper,watched:0,at:kstTime()});
+    if(market==='KR' && krPhase!=='krx-regular') return res.status(200).json({ok:true,market,session:krPhase,paper,scout,watched:0,at:kstTime()});
     const today = kstDate();
     // 미국 세션은 KST 자정을 넘으므로 전일 날짜 픽도 포함
     const yday = new Date(Date.now() + 9 * 3600e3 - 864e5).toISOString().slice(0, 10);
@@ -125,7 +136,7 @@ export default async function handler(req, res) {
         targets.push({ e, p });
       });
     });
-    if (!targets.length) return res.status(200).json({ ok: true, market, watched: 0, paper, at: kstTime() });
+    if (!targets.length) return res.status(200).json({ ok: true, market, watched: 0, paper, scout, at: kstTime() });
 
     let hard = false, soft = false; // hard=진입가 확정·체결, soft=평가손익 갱신
     const fills = [];
@@ -162,7 +173,7 @@ export default async function handler(req, res) {
       hist.monAt = Date.now();
       await ghWrite("data/history.json", hist, sha);
     }
-    const result = { ok: true, market, watched: targets.length, fills, paper, saved: hard || (soft && snapDue), at: kstTime() };
+    const result = { ok: true, market, watched: targets.length, fills, paper, scout, saved: hard || (soft && snapDue), at: kstTime() };
     console.log('[monitor] completed', { source, market, watched: targets.length, fills: fills.length, saved: result.saved, at: result.at });
     return res.status(200).json(result);
   } catch (e) {
