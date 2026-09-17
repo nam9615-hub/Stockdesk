@@ -77,8 +77,13 @@ async function priceOpen(ticker) {
 }
 
 export default async function handler(req, res) {
-  const authorized = cronAuthorized(req) || sameOriginPaperDesk(req) || await githubActionsAuthorized(req);
+  const secret = cronAuthorized(req);
+  const browser = sameOriginPaperDesk(req);
+  const github = !secret && !browser && await githubActionsAuthorized(req);
+  const authorized = secret || browser || github;
   if (!authorized) return res.status(401).json({ error: "모니터 인증 필요" });
+  const source = github ? 'github-actions' : browser ? 'paper-desk' : 'shared-secret';
+  console.log('[monitor] accepted', { source, at: kstTime() });
   if (process.env.PAUSE === "1") return res.status(200).json({ ok: true, paused: true });
   if (!process.env.GH_TOKEN || !process.env.GH_REPO) return res.status(501).json({ error: "GH_TOKEN / GH_REPO 필요" });
 
@@ -90,7 +95,10 @@ export default async function handler(req, res) {
   const krPhase = krSession(Date.now());
   const krActive = krPhase !== 'closed' || krSettlement(Date.now());
   const usActive = (day >= 1 && day <= 5 && t >= usOpen) || (day >= 2 && day <= 6 && t <= 6.2);
-  if (!krActive && !usActive) return res.status(200).json({ ok: true, idle: true, at: kstTime() });
+  if (!krActive && !usActive) {
+    console.log('[monitor] idle', { source, at: kstTime() });
+    return res.status(200).json({ ok: true, idle: true, at: kstTime() });
+  }
   const market = krActive ? "KR" : "US";
 
   try {
@@ -154,8 +162,11 @@ export default async function handler(req, res) {
       hist.monAt = Date.now();
       await ghWrite("data/history.json", hist, sha);
     }
-    return res.status(200).json({ ok: true, market, watched: targets.length, fills, paper, saved: hard || (soft && snapDue), at: kstTime() });
+    const result = { ok: true, market, watched: targets.length, fills, paper, saved: hard || (soft && snapDue), at: kstTime() };
+    console.log('[monitor] completed', { source, market, watched: targets.length, fills: fills.length, saved: result.saved, at: result.at });
+    return res.status(200).json(result);
   } catch (e) {
+    console.error('[monitor] failed', { source, error: String(e.message || e), at: kstTime() });
     return res.status(500).json({ error: e.message });
   }
 }
