@@ -9,11 +9,12 @@ on:
       - 'lib/monitor-auth.js'
   schedule:
     # Completed 5-minute bars arrive near :00/:05. Offset by two minutes to
-    # avoid GitHub's busiest boundary and to let the quote feed settle.
-    - cron: '2/5 9-15 * * 1-5'
-      timezone: 'Asia/Seoul'
-    - cron: '2/5 9-16 * * 1-5'
-      timezone: 'America/New_York'
+    # avoid GitHub's busiest boundary. UTC avoids scheduler timezone drift.
+    # KR 09:00-15:50 KST = 00:00-06:50 UTC.
+    - cron: '2/5 0-6 * * 1-5'
+    # US regular session spans 13:30-21:00 UTC across daylight/standard time.
+    # The API performs the exact DST/session gate, so off-session calls idle.
+    - cron: '2/5 13-21 * * 1-5'
   workflow_dispatch:
 
 permissions:
