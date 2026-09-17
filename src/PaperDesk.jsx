@@ -38,7 +38,7 @@ export default function PaperDesk(){
       <div style={{display:'flex',gap:4}}>{['KR','US'].map(m=><button key={m} aria-pressed={market===m} onClick={()=>setMarket(m)} style={{padding:'8px 10px',borderRadius:9,border:'1px solid #314561',background:market===m?'#203b5c':'transparent',color:'#e8edf5',cursor:'pointer'}}>{m==='KR'?'국내':'미국'}</button>)}</div>
     </div>
     <div style={{color:'#96a7bf',fontSize:12,lineHeight:1.7,marginBottom:14}}>실계좌 주문 없음 · AI 설명보다 확인된 조건을 우선합니다.</div>
-    <div style={{color:'#96a7bf',fontSize:11,lineHeight:1.7,marginBottom:12}}>앱 접속 중 5분마다 반복 판단 · 완료된 5분봉 기준{market==='KR'?' / NXT 프리 08:00–08:50 · 애프터 15:40–20:00: 전용 시세 미연결, 체결 보류':''}</div>
+    <div style={{color:'#96a7bf',fontSize:11,lineHeight:1.7,marginBottom:12}}>앱을 꺼도 서버가 장중 5분마다 반복 판단 · 앱 접속 중에도 즉시 보조 확인 · 완료된 5분봉 기준{market==='KR'?' / NXT 프리 08:00–08:50 · 애프터 15:40–20:00: 전용 시세 미연결, 체결 보류':''}</div>
     {monitorError&&<div role="alert" style={{...box,color:'#f5b94a',marginBottom:8}}>장중 모니터 실행 실패: {monitorError}</div>}
     {error&&<div role="alert" style={{...box,color:'#f5b94a'}}>{error} · 기존 기록을 초기화하지 않습니다.</div>}
     {!data&&!error&&<div role="status">{loading?'모의계좌 확인 중…':'데이터 대기'}</div>}
