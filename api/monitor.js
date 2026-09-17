@@ -3,6 +3,7 @@
 // Simulation only. A real broker requires independent authorization and reconciliation.
 import { runPaper } from '../lib/paper-store.js';
 import { krSession, krSettlement } from '../lib/sessions.js';
+import { githubActionsAuthorized } from '../lib/monitor-auth.js';
 const UA = { headers: { "User-Agent": "Mozilla/5.0" } };
 const kstNow = () => new Date(Date.now() + 9 * 3600e3);
 const kstDate = () => kstNow().toISOString().slice(0, 10);
@@ -10,7 +11,7 @@ const kstTime = () => kstNow().toISOString().slice(11, 16);
 
 function cronAuthorized(req) {
   const expected = process.env.CRON_KEY;
-  if (!expected) return process.env.REQUIRE_CRON_AUTH !== "1";
+  if (!expected) return false;
   const bearer = String(req.headers?.authorization || "").replace(/^Bearer\s+/i, "");
   const supplied = req.headers?.["x-cron-key"] || bearer || req.query?.key;
   return supplied === expected;
@@ -76,7 +77,8 @@ async function priceOpen(ticker) {
 }
 
 export default async function handler(req, res) {
-  if (!cronAuthorized(req) && !sameOriginPaperDesk(req)) return res.status(401).json({ error: "모니터 인증 필요" });
+  const authorized = cronAuthorized(req) || sameOriginPaperDesk(req) || await githubActionsAuthorized(req);
+  if (!authorized) return res.status(401).json({ error: "모니터 인증 필요" });
   if (process.env.PAUSE === "1") return res.status(200).json({ ok: true, paused: true });
   if (!process.env.GH_TOKEN || !process.env.GH_REPO) return res.status(501).json({ error: "GH_TOKEN / GH_REPO 필요" });
 
