@@ -22,9 +22,12 @@ test('accepts manual workflow dispatch for verification', () => {
   assert.equal(validateMonitorClaims({ ...valid, event_name: 'workflow_dispatch' }, now), true);
 });
 
+test('accepts a protected main-branch push smoke test', () => {
+  assert.equal(validateMonitorClaims({ ...valid, event_name: 'push' }, now), true);
+});
+
 test('rejects expired, foreign-repository and pull-request claims', () => {
   assert.equal(validateMonitorClaims({ ...valid, exp: now }, now), false);
   assert.equal(validateMonitorClaims({ ...valid, repository: 'someone/else' }, now), false);
   assert.equal(validateMonitorClaims({ ...valid, event_name: 'pull_request' }, now), false);
 });
-
