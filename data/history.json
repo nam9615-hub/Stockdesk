@@ -16179,7 +16179,7 @@
      "p0": 271000,
      "r1": 5.3,
      "r5": 11.6,
-     "r20": null,
+     "r20": -0.7,
      "b": 271500,
      "gap": 0.2,
      "simOpen": 9,
@@ -16190,7 +16190,9 @@
      "simExit": "target",
      "simD": "2026-08-28",
      "simT": "10:54",
-     "live": 1
+     "live": 1,
+     "mfe": 12.9,
+     "mae": -5.7
     },
     {
      "kind": "swing",
@@ -16206,7 +16208,7 @@
      "p0": 75200,
      "r1": -3.4,
      "r5": -3.9,
-     "r20": null,
+     "r20": -21.5,
      "b": 72500,
      "gap": -3.6,
      "simOpen": -5,
@@ -16217,7 +16219,9 @@
      "live": 1,
      "tv": 16727,
      "tvx": 0.8,
-     "idx": -3.12
+     "idx": -3.12,
+     "mfe": 4.1,
+     "mae": -27.2
     },
     {
      "kind": "swing",
@@ -16233,7 +16237,7 @@
      "p0": 16200,
      "r1": 2.6,
      "r5": 1.1,
-     "r20": null,
+     "r20": -1.2,
      "b": 16200,
      "gap": 0,
      "simOpen": -4.1,
@@ -16244,7 +16248,9 @@
      "simExit": "stop",
      "simD": "2026-09-15",
      "simT": "09:43",
-     "live": 1
+     "live": 1,
+     "mfe": 6.4,
+     "mae": -12
     },
     {
      "kind": "day",
@@ -27751,7 +27757,7 @@
      ],
      "p0": 96800,
      "r1": -2.2,
-     "r5": null,
+     "r5": 7.9,
      "r20": null,
      "b": 92700,
      "gap": -4.2,
@@ -27778,7 +27784,7 @@
      ],
      "p0": 14890,
      "r1": 1.1,
-     "r5": null,
+     "r5": 9.8,
      "r20": null,
      "b": 14800,
      "gap": -0.6,
@@ -27804,7 +27810,7 @@
      ],
      "p0": 35300,
      "r1": -0.1,
-     "r5": null,
+     "r5": -0.1,
      "r20": null,
      "b": 34650,
      "gap": -1.8,
@@ -30651,6 +30657,347 @@
      "mom": -1.2
     }
    }
+  },
+  {
+   "date": "2026-09-18",
+   "market": "KR",
+   "regime": "혼조",
+   "rules": [
+    "단타 실패 분해: 시장충격7·목표과다1·선정11 → 선정 강화",
+    "강도80+ 실측 50%(10) — 확신도 과장, 보수화",
+    "근거'뉴스재료' 성공37%(68) → 단독추천 지양",
+    "섹터'반도체' 성공33%(12) → 회피",
+    "섹터'이차전지' 성공13%(8) → 회피",
+    "섹터'바이오' 성공25%(8) → 회피"
+   ],
+   "cands": [
+    {
+     "ticker": "005930.KS",
+     "rank": 1,
+     "verdict": "관찰",
+     "why": "AI 키 없음 · 규칙 기반 관찰",
+     "r1": null
+    },
+    {
+     "ticker": "196170.KQ",
+     "rank": 2,
+     "verdict": "관찰",
+     "why": "AI 키 없음 · 규칙 기반 관찰",
+     "r1": null
+    },
+    {
+     "ticker": "000660.KS",
+     "rank": 3,
+     "verdict": "관찰",
+     "why": "AI 키 없음 · 규칙 기반 관찰",
+     "r1": null
+    },
+    {
+     "ticker": "086520.KQ",
+     "rank": 4,
+     "verdict": "관찰",
+     "why": "AI 키 없음 · 규칙 기반 관찰",
+     "r1": null
+    },
+    {
+     "ticker": "005935.KS",
+     "rank": 5,
+     "verdict": "관찰",
+     "why": "AI 키 없음 · 규칙 기반 관찰",
+     "r1": null
+    },
+    {
+     "ticker": "247540.KQ",
+     "rank": 6,
+     "verdict": "관찰",
+     "why": "AI 키 없음 · 규칙 기반 관찰",
+     "r1": null
+    },
+    {
+     "ticker": "402340.KS",
+     "rank": 7,
+     "verdict": "관찰",
+     "why": "AI 키 없음 · 규칙 기반 관찰",
+     "r1": null
+    },
+    {
+     "ticker": "036930.KQ",
+     "rank": 8,
+     "verdict": "관찰",
+     "why": "AI 키 없음 · 규칙 기반 관찰",
+     "r1": null
+    },
+    {
+     "ticker": "009150.KS",
+     "rank": 9,
+     "verdict": "관찰",
+     "why": "AI 키 없음 · 규칙 기반 관찰",
+     "r1": null
+    },
+    {
+     "ticker": "277810.KQ",
+     "rank": 10,
+     "verdict": "관찰",
+     "why": "AI 키 없음 · 규칙 기반 관찰",
+     "r1": null
+    },
+    {
+     "ticker": "373220.KS",
+     "rank": 11,
+     "verdict": "관찰",
+     "why": "AI 키 없음 · 규칙 기반 관찰",
+     "r1": null
+    },
+    {
+     "ticker": "240810.KQ",
+     "rank": 12,
+     "verdict": "관찰",
+     "why": "AI 키 없음 · 규칙 기반 관찰",
+     "r1": null
+    },
+    {
+     "ticker": "005380.KS",
+     "rank": 13,
+     "verdict": "관찰",
+     "why": "AI 키 없음 · 규칙 기반 관찰",
+     "r1": null
+    },
+    {
+     "ticker": "039030.KQ",
+     "rank": 14,
+     "verdict": "관찰",
+     "why": "AI 키 없음 · 규칙 기반 관찰",
+     "r1": null
+    },
+    {
+     "ticker": "207940.KS",
+     "rank": 15,
+     "verdict": "관찰",
+     "why": "AI 키 없음 · 규칙 기반 관찰",
+     "r1": null
+    },
+    {
+     "ticker": "058470.KQ",
+     "rank": 16,
+     "verdict": "관찰",
+     "why": "AI 키 없음 · 규칙 기반 관찰",
+     "r1": null
+    }
+   ],
+   "bl": {
+    "rand": [
+     "000660.KS",
+     "196170.KQ",
+     "247540.KQ"
+    ],
+    "mom": [
+     "005930.KS",
+     "196170.KQ",
+     "000660.KS"
+    ]
+   },
+   "dayCands": [
+    {
+     "name": "에코프로",
+     "ticker": "086520.KQ",
+     "score": 30,
+     "target_pct": 2,
+     "sector": "시장대표",
+     "basis": [
+      "유동성"
+     ],
+     "reason": "무료 안전 대체 모드의 관찰 후보입니다.",
+     "risk": "AI 검증 미적용"
+    },
+    {
+     "name": "삼성전자우",
+     "ticker": "005935.KS",
+     "score": 30,
+     "target_pct": 2,
+     "sector": "시장대표",
+     "basis": [
+      "유동성"
+     ],
+     "reason": "무료 안전 대체 모드의 관찰 후보입니다.",
+     "risk": "AI 검증 미적용"
+    },
+    {
+     "name": "에코프로비엠",
+     "ticker": "247540.KQ",
+     "score": 30,
+     "target_pct": 2,
+     "sector": "시장대표",
+     "basis": [
+      "유동성"
+     ],
+     "reason": "무료 안전 대체 모드의 관찰 후보입니다.",
+     "risk": "AI 검증 미적용"
+    },
+    {
+     "name": "SK스퀘어",
+     "ticker": "402340.KS",
+     "score": 30,
+     "target_pct": 2,
+     "sector": "시장대표",
+     "basis": [
+      "유동성"
+     ],
+     "reason": "무료 안전 대체 모드의 관찰 후보입니다.",
+     "risk": "AI 검증 미적용"
+    },
+    {
+     "name": "주성엔지니어링",
+     "ticker": "036930.KQ",
+     "score": 30,
+     "target_pct": 2,
+     "sector": "시장대표",
+     "basis": [
+      "유동성"
+     ],
+     "reason": "무료 안전 대체 모드의 관찰 후보입니다.",
+     "risk": "AI 검증 미적용"
+    }
+   ],
+   "hold": 0,
+   "v": {
+    "m": "rules-fallback",
+    "pv": "J1.0-S2.0",
+    "policy": "S2.0"
+   },
+   "mktF": {
+    "dir": "횡보",
+    "conf": 50,
+    "why": "AI 키 없음 · 시장 방향 판단 미사용",
+    "ok": null
+   },
+   "picks": [
+    {
+     "kind": "swing",
+     "name": "삼성전자",
+     "ticker": "005930.KS",
+     "score": 35,
+     "sector": "시장대표",
+     "basis": [
+      "유동성"
+     ],
+     "plan": {
+      "engine": "R2.0",
+      "strategy": "swing",
+      "atrPct": 3.89,
+      "stopPct": 5.83,
+      "targetPct": 11.67,
+      "rr": 2,
+      "maxHoldDays": 5,
+      "riskPct": 0.5,
+      "maxWeightPct": 10,
+      "weightPct": 5.2,
+      "qty": 1,
+      "notional": 259750,
+      "decision": {
+       "version": "S2.0",
+       "action": "watch",
+       "strategy": "watch",
+       "reasons": [
+        "AI 키 없음: 안전 대체 모드는 관찰·채점만 수행"
+       ],
+       "plannedHoldDays": 5,
+       "reviewAfterDays": 3,
+       "maxHoldDays": 5,
+       "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+       "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+       "allowAutoOrder": false
+      }
+     },
+     "p0": 259750,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "알테오젠",
+     "ticker": "196170.KQ",
+     "score": 35,
+     "sector": "시장대표",
+     "basis": [
+      "유동성"
+     ],
+     "plan": {
+      "engine": "R2.0",
+      "strategy": "swing",
+      "atrPct": 5.83,
+      "stopPct": 8.75,
+      "targetPct": 17.49,
+      "rr": 2,
+      "maxHoldDays": 5,
+      "riskPct": 0.5,
+      "maxWeightPct": 10,
+      "weightPct": 5.07,
+      "qty": 1,
+      "notional": 253500,
+      "decision": {
+       "version": "S2.0",
+       "action": "watch",
+       "strategy": "watch",
+       "reasons": [
+        "AI 키 없음: 안전 대체 모드는 관찰·채점만 수행"
+       ],
+       "plannedHoldDays": 5,
+       "reviewAfterDays": 3,
+       "maxHoldDays": 5,
+       "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+       "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+       "allowAutoOrder": false
+      }
+     },
+     "p0": 253500,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "SK하이닉스",
+     "ticker": "000660.KS",
+     "score": 35,
+     "sector": "시장대표",
+     "basis": [
+      "유동성"
+     ],
+     "plan": {
+      "engine": "R2.0",
+      "strategy": "swing",
+      "atrPct": 5.02,
+      "stopPct": 7.53,
+      "targetPct": 15.06,
+      "rr": 2,
+      "maxHoldDays": 5,
+      "riskPct": 0.5,
+      "maxWeightPct": 10,
+      "weightPct": 0,
+      "qty": 0,
+      "notional": 0,
+      "decision": {
+       "version": "S2.0",
+       "action": "watch",
+       "strategy": "watch",
+       "reasons": [
+        "AI 키 없음: 안전 대체 모드는 관찰·채점만 수행"
+       ],
+       "plannedHoldDays": 5,
+       "reviewAfterDays": 3,
+       "maxHoldDays": 5,
+       "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+       "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+       "allowAutoOrder": false
+      }
+     },
+     "p0": 1819000,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    }
+   ]
   }
  ],
  "monAt": 1789690437026
