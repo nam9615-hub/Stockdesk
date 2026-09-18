@@ -38,14 +38,44 @@ async function ghRead(path) {
   const j = await r.json();
   try { return { data: JSON.parse(Buffer.from(j.content, "base64").toString("utf8")), sha: j.sha }; } catch { return { data: null, sha: j.sha }; }
 }
+function mergeMonitorHistory(latest, local) {
+  const out = latest || { entries: [] };
+  const fields = ["b", "gap", "simR", "simExit", "simD", "simT", "live", "simOpen"];
+  for (const le of local?.entries || []) {
+    const re = (out.entries || []).find((e) => e.date === le.date && e.market === le.market);
+    if (!re) continue; // Never recreate an entry deleted or replaced by another writer.
+    for (const lp of le.picks || []) {
+      const rp = (re.picks || []).find((p) => p.ticker === lp.ticker && p.kind === lp.kind && (p.cAt || "") === (lp.cAt || ""));
+      if (!rp) continue;
+      for (const key of fields) if (lp[key] !== undefined) rp[key] = lp[key];
+    }
+  }
+  out.monAt = Math.max(Number(out.monAt || 0), Number(local?.monAt || 0));
+  return out;
+}
 async function ghWrite(path, obj, sha) {
-  const body = { message: `monitor: ${kstDate()} ${kstTime()}`, content: Buffer.from(JSON.stringify(obj, null, 1)).toString("base64") };
-  if (sha) body.sha = sha;
-  const r = await fetch(`https://api.github.com/repos/${process.env.GH_REPO}/contents/${path}`, {
-    method: "PUT", headers: { Authorization: `Bearer ${process.env.GH_TOKEN}`, "User-Agent": "stockdesk", Accept: "application/vnd.github+json" },
-    body: JSON.stringify(body),
-  });
-  if (!r.ok) throw new Error("GitHub 저장 실패");
+  let payload = obj, currentSha = sha;
+  for (let attempt = 0; attempt < 4; attempt++) {
+    const body = { message: `monitor: ${kstDate()} ${kstTime()}`, content: Buffer.from(JSON.stringify(payload, null, 1)).toString("base64") };
+    if (currentSha) body.sha = currentSha;
+    const r = await fetch(`https://api.github.com/repos/${process.env.GH_REPO}/contents/${path}`, {
+      method: "PUT", headers: { Authorization: `Bearer ${process.env.GH_TOKEN}`, "User-Agent": "stockdesk", Accept: "application/vnd.github+json" },
+      body: JSON.stringify(body),
+    });
+    if (r.ok) return { saved: true, retries: attempt };
+    const detail = (await r.text()).slice(0, 180);
+    if (r.status !== 409 || path !== "data/history.json") {
+      throw new Error(`GitHub 저장 실패 HTTP ${r.status}: ${detail}`);
+    }
+    const fresh = await ghRead(path);
+    if (!fresh.data || !fresh.sha) throw new Error("GitHub 충돌 복구용 최신 기록 조회 실패");
+    payload = mergeMonitorHistory(fresh.data, payload);
+    currentSha = fresh.sha;
+    await new Promise((resolve) => setTimeout(resolve, 80 * (attempt + 1)));
+  }
+  const error = new Error("GitHub 동시 저장 충돌: 다음 감시에서 재시도");
+  error.code = "GH_CONFLICT_DEFERRED";
+  throw error;
 }
 
 function isUsDST(d) {
@@ -177,6 +207,10 @@ export default async function handler(req, res) {
     console.log('[monitor] completed', { source, market, watched: targets.length, fills: fills.length, saved: result.saved, at: result.at });
     return res.status(200).json(result);
   } catch (e) {
+    if (e.code === "GH_CONFLICT_DEFERRED") {
+      console.warn('[monitor] save deferred', { source, reason: e.message, at: kstTime() });
+      return res.status(200).json({ ok: true, deferred: true, saved: false, note: "동시 저장 충돌 · 다음 감시에서 자동 재시도", at: kstTime() });
+    }
     console.error('[monitor] failed', { source, error: String(e.message || e), at: kstTime() });
     return res.status(500).json({ error: e.message });
   }
