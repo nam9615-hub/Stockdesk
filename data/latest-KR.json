@@ -1,41 +1,39 @@
 {
- "date": "2026-09-17",
- "at": "08:07",
+ "date": "2026-09-18",
+ "at": "09:23",
  "data": {
-  "brief": "미 증시 혼조세와 원/달러 환율 상승 등 불안정한 매크로 환경 속에서 코스피는 변동성을 보이고 있습니다. 과거 통계에 따르면 하락장 및 혼조 국면에서의 단타 및 특정 섹터(반도체·게임 등) 접근은 신중해야 하며, 에너지 등 상대적 우위 섹터 중심의 선별적 접근이 필요합니다. 확신도를 보수적으로 낮추어 리스크 관리에 집중합니다.",
+  "brief": "AI 키가 없어 유동성 상위 후보를 보수적으로 관찰합니다. 자동 주문은 금지됩니다.",
   "picks": [
    {
-    "name": "S-Oil",
-    "ticker": "010950.KS",
-    "score": 55,
-    "sector": "에너지",
+    "name": "삼성전자",
+    "ticker": "005930.KS",
+    "score": 35,
+    "sector": "시장대표",
     "basis": [
-     "뉴스재료",
-     "추세지속"
+     "유동성"
     ],
-    "reason": "유가 급등 및 고유가 수혜 설비를 갖춰 증권가에서 목표가를 상향하는 등 실적 모멘텀이 유지되고 있습니다. 유사 하락장 실측에서도 비교적 방어력을 보여 스윙 관점의 접근이 유효합니다.",
-    "catalyst": "고유가 장기화 및 정제마진 개선",
-    "risk": "글로벌 경기 침체 우려에 따른 수요 위축 가능성",
+    "reason": "저장된 당일 유니버스의 유동성 상위 후보입니다. AI 검증 전에는 관찰만 합니다.",
+    "catalyst": "시장 수급 확인",
+    "risk": "AI 뉴스·재료 검증 미적용",
     "plan": {
      "engine": "R2.0",
      "strategy": "swing",
-     "atrPct": 6.75,
-     "stopPct": 9,
-     "targetPct": 18,
+     "atrPct": 3.89,
+     "stopPct": 5.83,
+     "targetPct": 11.67,
      "rr": 2,
      "maxHoldDays": 5,
      "riskPct": 0.5,
      "maxWeightPct": 10,
-     "weightPct": 2.88,
+     "weightPct": 5.2,
      "qty": 1,
-     "notional": 144100,
+     "notional": 259750,
      "decision": {
       "version": "S2.0",
       "action": "watch",
-      "strategy": "day-watch",
+      "strategy": "watch",
       "reasons": [
-       "하락 국면: 신규 진입 보류",
-       "단기 수급만 확인: 단타 재평가 후보, 자동 전환 아님"
+       "AI 키 없음: 안전 대체 모드는 관찰·채점만 수행"
       ],
       "plannedHoldDays": 5,
       "reviewAfterDays": 3,
@@ -47,36 +45,35 @@
     }
    },
    {
-    "name": "나무가",
-    "ticker": "190510.KQ",
-    "score": 52,
-    "sector": "IT부품",
+    "name": "알테오젠",
+    "ticker": "196170.KQ",
+    "score": 35,
+    "sector": "시장대표",
     "basis": [
-     "뉴스재료",
-     "추세지속"
+     "유동성"
     ],
-    "reason": "로봇, 라이다, 드론 등 신사업 확장 모멘텀과 함께 하반기 턴어라운드 기대감이 유입되고 있습니다. 최근 변동성 장세에서도 견조한 흐름을 보이며 중기 성장성이 부각되고 있습니다.",
-    "catalyst": "로봇 및 라이다 등 신사업 본격 확장",
-    "risk": "코스닥 전반의 외국인·기관 매도세 영향",
+    "reason": "저장된 당일 유니버스의 유동성 상위 후보입니다. AI 검증 전에는 관찰만 합니다.",
+    "catalyst": "시장 수급 확인",
+    "risk": "AI 뉴스·재료 검증 미적용",
     "plan": {
      "engine": "R2.0",
      "strategy": "swing",
-     "atrPct": 5.75,
-     "stopPct": 8.63,
-     "targetPct": 17.25,
+     "atrPct": 5.83,
+     "stopPct": 8.75,
+     "targetPct": 17.49,
      "rr": 2,
      "maxHoldDays": 5,
      "riskPct": 0.5,
      "maxWeightPct": 10,
-     "weightPct": 5.63,
-     "qty": 17,
-     "notional": 281520,
+     "weightPct": 5.07,
+     "qty": 1,
+     "notional": 253500,
      "decision": {
       "version": "S2.0",
       "action": "watch",
-      "strategy": "swing",
+      "strategy": "watch",
       "reasons": [
-       "하락 국면: 신규 진입 보류"
+       "AI 키 없음: 안전 대체 모드는 관찰·채점만 수행"
       ],
       "plannedHoldDays": 5,
       "reviewAfterDays": 3,
@@ -88,37 +85,35 @@
     }
    },
    {
-    "name": "펄어비스",
-    "ticker": "263750.KQ",
-    "score": 50,
-    "sector": "게임",
+    "name": "SK하이닉스",
+    "ticker": "000660.KS",
+    "score": 35,
+    "sector": "시장대표",
     "basis": [
-     "뉴스재료",
-     "추세지속"
+     "유동성"
     ],
-    "reason": "글로벌 게임쇼 참가를 통한 신작 및 콘텐츠 기대감이 지속되고 있으며, 최근 5일간 모멘텀이 강하게 형성되었습니다. 다만 게임 섹터의 과거 승률을 감안하여 보수적 비중 조절이 필요합니다.",
-    "catalyst": "글로벌 시장 공략 및 대형 업데이트",
-    "risk": "섹터 전반의 투자 심리 약화 및 변동성",
+    "reason": "저장된 당일 유니버스의 유동성 상위 후보입니다. AI 검증 전에는 관찰만 합니다.",
+    "catalyst": "시장 수급 확인",
+    "risk": "AI 뉴스·재료 검증 미적용",
     "plan": {
      "engine": "R2.0",
      "strategy": "swing",
-     "atrPct": 4.53,
-     "stopPct": 6.79,
-     "targetPct": 13.59,
+     "atrPct": 5.02,
+     "stopPct": 7.53,
+     "targetPct": 15.06,
      "rr": 2,
      "maxHoldDays": 5,
      "riskPct": 0.5,
      "maxWeightPct": 10,
-     "weightPct": 6.95,
-     "qty": 10,
-     "notional": 347500,
+     "weightPct": 0,
+     "qty": 0,
+     "notional": 0,
      "decision": {
       "version": "S2.0",
       "action": "watch",
-      "strategy": "day-watch",
+      "strategy": "watch",
       "reasons": [
-       "하락 국면: 신규 진입 보류",
-       "단기 수급만 확인: 단타 재평가 후보, 자동 전환 아님"
+       "AI 키 없음: 안전 대체 모드는 관찰·채점만 수행"
       ],
       "plannedHoldDays": 5,
       "reviewAfterDays": 3,
@@ -132,164 +127,168 @@
   ],
   "day_cands": [
    {
-    "name": "KODEX 레버리지",
-    "ticker": "122630.KS",
-    "score": 48,
-    "target_pct": 3,
-    "sector": "ETF",
+    "name": "에코프로",
+    "ticker": "086520.KQ",
+    "score": 30,
+    "target_pct": 2,
+    "sector": "시장대표",
     "basis": [
-     "거래량급증",
-     "추세지속"
+     "유동성"
     ],
-    "reason": "지수 변동성 확대에 따라 개인 및 기관의 거래대금이 집중되며 단기 트레이딩 기회를 제공합니다.",
-    "risk": "방향성 예측 실패 시 큰 손실 위험"
+    "reason": "무료 안전 대체 모드의 관찰 후보입니다.",
+    "risk": "AI 검증 미적용"
    },
    {
-    "name": "테스",
-    "ticker": "095610.KQ",
-    "score": 45,
-    "target_pct": 3,
-    "sector": "반도체",
+    "name": "삼성전자우",
+    "ticker": "005935.KS",
+    "score": 30,
+    "target_pct": 2,
+    "sector": "시장대표",
     "basis": [
-     "추세지속",
-     "거래량급증"
+     "유동성"
     ],
-    "reason": "반도체 장비 관련 모멘텀이 이어지고 있으나, 최근 섹터 승률 저조로 철저한 단기 대응이 요구됩니다.",
-    "risk": "차익실현 매물 출회 및 외국인 매도세"
+    "reason": "무료 안전 대체 모드의 관찰 후보입니다.",
+    "risk": "AI 검증 미적용"
    },
    {
-    "name": "원익IPS",
-    "ticker": "240810.KQ",
-    "score": 45,
-    "target_pct": 3,
-    "sector": "반도체",
+    "name": "에코프로비엠",
+    "ticker": "247540.KQ",
+    "score": 30,
+    "target_pct": 2,
+    "sector": "시장대표",
     "basis": [
-     "추세지속",
-     "거래량급증"
+     "유동성"
     ],
-    "reason": "외국인 매도 공세 속에서도 주가 방어력을 보이며 거래가 몰리고 있습니다.",
-    "risk": "변동성 장세 속 급등락 가능성"
+    "reason": "무료 안전 대체 모드의 관찰 후보입니다.",
+    "risk": "AI 검증 미적용"
    },
    {
-    "name": "에스피지",
-    "ticker": "058610.KQ",
-    "score": 46,
-    "target_pct": 4,
-    "sector": "로봇",
+    "name": "SK스퀘어",
+    "ticker": "402340.KS",
+    "score": 30,
+    "target_pct": 2,
+    "sector": "시장대표",
     "basis": [
-     "뉴스재료",
-     "추세지속"
+     "유동성"
     ],
-    "reason": "로봇 관련 테마 순환매 시 단기 자금이 유입되며 변동성을 활용한 매매가 가능합니다.",
-    "risk": "테마 소멸 시 빠른 하락 전환"
+    "reason": "무료 안전 대체 모드의 관찰 후보입니다.",
+    "risk": "AI 검증 미적용"
    },
    {
-    "name": "자화전자",
-    "ticker": "033240.KS",
-    "score": 45,
-    "target_pct": 3,
-    "sector": "IT부품",
+    "name": "주성엔지니어링",
+    "ticker": "036930.KQ",
+    "score": 30,
+    "target_pct": 2,
+    "sector": "시장대표",
     "basis": [
-     "뉴스재료",
-     "거래량급증"
+     "유동성"
     ],
-    "reason": "정책 및 테마성 뉴스가 혼재된 가운데 단기 거래량이 유입되고 있습니다.",
-    "risk": "테마성 수급 이탈 시 리스크 증가"
+    "reason": "무료 안전 대체 모드의 관찰 후보입니다.",
+    "risk": "AI 검증 미적용"
    }
   ],
   "cands": [
    {
-    "ticker": "122630.KS",
+    "ticker": "005930.KS",
     "rank": 1,
     "verdict": "관찰",
-    "why": "지수 변동성 활용 단기 관찰"
+    "why": "AI 키 없음 · 규칙 기반 관찰"
    },
    {
-    "ticker": "131290.KQ",
+    "ticker": "196170.KQ",
     "rank": 2,
-    "verdict": "제외",
-    "why": "반도체 장비 섹터 차익실현 매물 주의"
+    "verdict": "관찰",
+    "why": "AI 키 없음 · 규칙 기반 관찰"
    },
    {
-    "ticker": "700028.KS",
+    "ticker": "000660.KS",
     "rank": 3,
-    "verdict": "제외",
-    "why": "ETN 상품으로 스윙 관점 적합성 낮음"
+    "verdict": "관찰",
+    "why": "AI 키 없음 · 규칙 기반 관찰"
    },
    {
-    "ticker": "095610.KQ",
+    "ticker": "086520.KQ",
     "rank": 4,
     "verdict": "관찰",
-    "why": "변동성 장세 단기 트레이딩 대상"
+    "why": "AI 키 없음 · 규칙 기반 관찰"
    },
    {
-    "ticker": "243880.KS",
+    "ticker": "005935.KS",
     "rank": 5,
-    "verdict": "제외",
-    "why": "공시 관련 이슈 및 레버리지 리스크"
+    "verdict": "관찰",
+    "why": "AI 키 없음 · 규칙 기반 관찰"
    },
    {
-    "ticker": "058610.KQ",
+    "ticker": "247540.KQ",
     "rank": 6,
     "verdict": "관찰",
-    "why": "로봇 테마 순환매 모니터링"
+    "why": "AI 키 없음 · 규칙 기반 관찰"
    },
    {
-    "ticker": "017900.KS",
+    "ticker": "402340.KS",
     "rank": 7,
-    "verdict": "제외",
-    "why": "뚜렷한 중기 재료 부족"
+    "verdict": "관찰",
+    "why": "AI 키 없음 · 규칙 기반 관찰"
    },
    {
-    "ticker": "190510.KQ",
+    "ticker": "036930.KQ",
     "rank": 8,
-    "verdict": "선택",
-    "why": "신사업 확장 및 하반기 턴어라운드 기대"
+    "verdict": "관찰",
+    "why": "AI 키 없음 · 규칙 기반 관찰"
    },
    {
-    "ticker": "001820.KS",
+    "ticker": "009150.KS",
     "rank": 9,
-    "verdict": "제외",
-    "why": "거래대금 부진 및 순환매 실종"
+    "verdict": "관찰",
+    "why": "AI 키 없음 · 규칙 기반 관찰"
    },
    {
-    "ticker": "263750.KQ",
+    "ticker": "277810.KQ",
     "rank": 10,
-    "verdict": "선택",
-    "why": "글로벌 게임쇼 및 신작 모멘텀"
+    "verdict": "관찰",
+    "why": "AI 키 없음 · 규칙 기반 관찰"
    },
    {
-    "ticker": "033240.KS",
+    "ticker": "373220.KS",
     "rank": 11,
-    "verdict": "제외",
-    "why": "테마성 변동성 과다"
+    "verdict": "관찰",
+    "why": "AI 키 없음 · 규칙 기반 관찰"
    },
    {
     "ticker": "240810.KQ",
     "rank": 12,
     "verdict": "관찰",
-    "why": "반도체 주가 방어력 확인 필요"
+    "why": "AI 키 없음 · 규칙 기반 관찰"
    },
    {
-    "ticker": "010950.KS",
+    "ticker": "005380.KS",
     "rank": 13,
-    "verdict": "선택",
-    "why": "고유가 수혜 및 목표가 상향 리포트"
+    "verdict": "관찰",
+    "why": "AI 키 없음 · 규칙 기반 관찰"
    },
    {
-    "ticker": "127120.KQ",
+    "ticker": "039030.KQ",
     "rank": 14,
-    "verdict": "제외",
-    "why": "모멘텀 및 거래대금 미흡"
+    "verdict": "관찰",
+    "why": "AI 키 없음 · 규칙 기반 관찰"
+   },
+   {
+    "ticker": "207940.KS",
+    "rank": 15,
+    "verdict": "관찰",
+    "why": "AI 키 없음 · 규칙 기반 관찰"
+   },
+   {
+    "ticker": "058470.KQ",
+    "rank": 16,
+    "verdict": "관찰",
+    "why": "AI 키 없음 · 규칙 기반 관찰"
    }
   ],
   "mkt": {
    "dir": "횡보",
-   "conf": 30,
-   "why": "미 증시 혼조세와 환율 상승 압력으로 방향성 탐색 국면"
-  },
-  "day_picks": [],
-  "day_at": "09:04",
-  "day_brief": "제시된 5개 종목 모두 반도체 섹터 승률 저조, 갭 상승 후 약세 전환 등 실측 통계의 부정적 요인과 개장 후 흐름이 부합하여 확률 우위가 부족하므로 보류합니다."
+   "conf": 0,
+   "why": "AI 키 없음 · 시장 방향 판단 미사용"
+  }
  }
 }
