@@ -26266,7 +26266,7 @@
      "r20": null,
      "b": 35000,
      "gap": -0.4,
-     "simOpen": -2.4,
+     "simOpen": -0.4,
      "tv": 15618,
      "tvx": 0.9,
      "idx": -0.25
@@ -27847,7 +27847,7 @@
      "r20": null,
      "b": 34650,
      "gap": -1.8,
-     "simOpen": -1.4,
+     "simOpen": 0.6,
      "tv": 7352,
      "tvx": 0.5,
      "idx": -3.26
@@ -27970,35 +27970,40 @@
      "rank": 11,
      "verdict": "관찰",
      "why": "변동성 주시",
-     "r1": -1.1
+     "r1": -1.1,
+     "r5": -0.4
     },
     {
      "ticker": "SYNA",
      "rank": 12,
      "verdict": "선택",
      "why": "반도체 M&A 모멘텀",
-     "r1": -0.8
+     "r1": -0.8,
+     "r5": -2.7
     },
     {
      "ticker": "CDW",
      "rank": 13,
      "verdict": "관찰",
      "why": "보통의 유동성",
-     "r1": -1.4
+     "r1": -1.4,
+     "r5": -4.9
     },
     {
      "ticker": "M",
      "rank": 14,
      "verdict": "선택",
      "why": "배당 및 유통 우위",
-     "r1": 3.7
+     "r1": 3.7,
+     "r5": 0.8
     },
     {
      "ticker": "KHC",
      "rank": 15,
      "verdict": "관찰",
      "why": "변동성 미미",
-     "r1": -2.1
+     "r1": -2.1,
+     "r5": 0.1
     },
     {
      "ticker": "SMR",
@@ -28545,7 +28550,7 @@
      "r20": null,
      "b": 145700,
      "gap": -2,
-     "simOpen": 4.5,
+     "simOpen": 2.6,
      "tv": 27442,
      "tvx": 0.4,
      "idx": 0.45
@@ -28921,7 +28926,7 @@
      "r20": null,
      "b": 34.02000045776367,
      "gap": -3,
-     "simOpen": 4.4,
+     "simOpen": 4.1,
      "tv": 7,
      "tvx": 0,
      "idx": -0.24
@@ -28995,10 +29000,12 @@
      "r20": null,
      "b": 43.04999923706055,
      "gap": 0.3,
-     "simOpen": -8.5,
      "tv": 11,
      "tvx": 0,
-     "idx": -0.24
+     "idx": -0.24,
+     "simR": -9,
+     "simExit": "stop",
+     "simD": "2026-09-18"
     }
    ],
    "day2": {
@@ -29291,7 +29298,7 @@
      "r20": null,
      "b": 14970,
      "gap": 0,
-     "simOpen": 7.9,
+     "simOpen": 9.6,
      "tv": 3747,
      "tvx": 1.6,
      "idx": null
@@ -29327,7 +29334,7 @@
      "r20": null,
      "b": 35600,
      "gap": -0.3,
-     "simOpen": -4.1,
+     "simOpen": -2.1,
      "tv": 260,
      "tvx": 0,
      "idx": null
@@ -29363,7 +29370,7 @@
      "r20": null,
      "b": 149900,
      "gap": 0.8,
-     "simOpen": 1.5,
+     "simOpen": -0.3,
      "tv": 1002,
      "tvx": 0,
      "idx": null
@@ -31088,77 +31095,77 @@
      "rank": 1,
      "verdict": "제외",
      "why": "바이오 섹터 및 과거 통계상 취약한 조건 반영",
-     "r1": null
+     "r1": -1
     },
     {
      "ticker": "GNRC",
      "rank": 2,
      "verdict": "제외",
      "why": "목표가 상향 뉴스이나 혼조장 실측 결과 참고하여 제외",
-     "r1": null
+     "r1": -1
     },
     {
      "ticker": "VICR",
      "rank": 3,
      "verdict": "제외",
      "why": "녹색주 급등이나 추세 지속 신뢰도 낮음",
-     "r1": null
+     "r1": 1
     },
     {
      "ticker": "BHVN",
      "rank": 4,
      "verdict": "제외",
      "why": "FDA 임상 보류 및 악재 발생",
-     "r1": null
+     "r1": -3.2
     },
     {
      "ticker": "TEM",
      "rank": 5,
      "verdict": "제외",
      "why": "AI/헬스케어 혼조장 실측 사례 감안 관망",
-     "r1": null
+     "r1": -4.4
     },
     {
      "ticker": "PURR",
      "rank": 6,
      "verdict": "제외",
      "why": "프리마켓 상승폭 과도 및 변동성 주의",
-     "r1": null
+     "r1": 2.2
     },
     {
      "ticker": "XE",
      "rank": 7,
      "verdict": "제외",
      "why": "현금 흐름 우려 및 원자력 테마 보수적 접근",
-     "r1": null
+     "r1": -3.1
     },
     {
      "ticker": "INIO",
      "rank": 8,
      "verdict": "관찰",
      "why": "450 MW 데이터센터 전력 수주 계약이나 단기 과열 확인 필요",
-     "r1": null
+     "r1": 1.7
     },
     {
      "ticker": "OKLO",
      "rank": 9,
      "verdict": "제외",
      "why": "정책 테마주 성공률 저조 반영",
-     "r1": null
+     "r1": -4.8
     },
     {
      "ticker": "PBLS",
      "rank": 10,
      "verdict": "제외",
      "why": "헬스케어 섹터 회피 원칙 적용",
-     "r1": null
+     "r1": 1.8
     },
     {
      "ticker": "TH",
      "rank": 11,
      "verdict": "제외",
      "why": "내부자 매수 있으나 모멘텀 부족",
-     "r1": null
+     "r1": 2.5
     },
     {
      "ticker": "CRSP",
