@@ -776,7 +776,36 @@ export default async function handler(req, res) {
             ci.rules.length ? `[실측 통계 증거(표본8+) — 강한 가중으로 반영하되 소표본임을 유념해 일괄 배제 대신 현재 시장 조건과 결합해 판단하고, 명백한 반대 증거가 있으면 사유를 명시하고 벗어날 수 있다] ${ci.rules.join(" / ")}` : "",
             ci.watch.length ? `[관찰 중 패턴(참고만, 강제 아님)] ${ci.watch.join(" / ")}` : "",
           ].filter(Boolean).join("\n");
-          const j = await askAI(job === "KR" ? promptKR(data, learn) : promptUS(data, learn));
+          let safeFallback = false;
+          let j;
+          try {
+            j = await askAI(job === "KR" ? promptKR(data, learn) : promptUS(data, learn));
+          } catch (e) {
+            if (String(e?.message || e) !== "AI 키 없음") throw e;
+            // Keep the daily observation series alive without inventing an AI
+            // opinion. These low-confidence candidates are observation-only and
+            // are never eligible for automatic paper/live orders.
+            safeFallback = true;
+            USED_MODEL = "rules-fallback";
+            const base = allowedT.slice(0, 8);
+            j = {
+              brief: "AI 키가 없어 유동성 상위 후보를 보수적으로 관찰합니다. 자동 주문은 금지됩니다.",
+              picks: base.slice(0, 3).map((x) => ({
+                name: x.n, ticker: x.t, score: 35, sector: "시장대표",
+                basis: ["유동성"], reason: "저장된 당일 유니버스의 유동성 상위 후보입니다. AI 검증 전에는 관찰만 합니다.",
+                catalyst: "시장 수급 확인", risk: "AI 뉴스·재료 검증 미적용",
+              })),
+              day_cands: base.slice(3, 8).map((x) => ({
+                name: x.n, ticker: x.t, score: 30, target_pct: 2, sector: "시장대표",
+                basis: ["유동성"], reason: "무료 안전 대체 모드의 관찰 후보입니다.",
+                risk: "AI 검증 미적용",
+              })),
+              cands: allowedT.map((x, i) => ({
+                ticker: x.t, rank: i + 1, verdict: "관찰", why: "AI 키 없음 · 규칙 기반 관찰",
+              })),
+              mkt: { dir: "횡보", conf: 0, why: "AI 키 없음 · 시장 방향 판단 미사용" },
+            };
+          }
           // 출력 검증: 후보 화이트리스트(코스닥 접미사 오기 허용)·중복 제거·점수 클램프
           const allow = allowedT.map((x) => ({ t: String(x.t || x).toUpperCase(), n: String(x.n || "").replace(/\s/g, "") }));
           const allowTk = allow.map((a) => a.t);
@@ -814,7 +843,17 @@ export default async function handler(req, res) {
           const bl = { rand: shuf.slice(0, 3), mom: allowTk.slice(0, 3) };
           const prices = {};
           for (const p of [...new Set(j.picks.map((x) => x.ticker))]) prices[p] = await quotePrice(p);
-          for (const p of j.picks) p.plan = await riskPlanFor(p.ticker, "swing", prices[p.ticker], {basis:p.basis || [],regime:regimeNow});
+          for (const p of j.picks) {
+            p.plan = await riskPlanFor(p.ticker, "swing", prices[p.ticker], {basis:p.basis || [],regime:regimeNow});
+            if (safeFallback) {
+              p.plan.decision = {
+                ...(p.plan.decision || {}),
+                action: "watch",
+                allowAutoOrder: false,
+                reasons: ["AI 키 없음: 안전 대체 모드는 관찰·채점만 수행"],
+              };
+            }
+          }
           const regime = regimeNow;
           hist.entries.push({
             date: today, market: job, regime, rules: ci.rules.slice(0, 6), // 이날 적용된 규칙 스냅샷 (효과 검증용)
