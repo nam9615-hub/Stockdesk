@@ -27185,14 +27185,16 @@
      "rank": 13,
      "verdict": "관찰",
      "why": "뚜렷한 모멘텀 부족",
-     "r1": 2.6
+     "r1": 2.6,
+     "r5": -6.1
     },
     {
      "ticker": "STNE",
      "rank": 14,
      "verdict": "선택",
      "why": "금융 섹터 우위 및 목표가 유지",
-     "r1": -2.1
+     "r1": -2.1,
+     "r5": -5.5
     },
     {
      "ticker": "SPCX",
@@ -27209,7 +27211,8 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": -1.3
+     "r1": -1.3,
+     "r5": -0.9
     },
     {
      "ticker": "INTC",
@@ -27226,7 +27229,8 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": 0.3
+     "r1": 0.3,
+     "r5": -7.6
     }
    ],
    "bl": {
@@ -27518,7 +27522,8 @@
      "rank": 1,
      "verdict": "관찰",
      "why": "파킹형 ETF 및 시장 자금 이동 모니터링 필요",
-     "r1": -0.4
+     "r1": -0.4,
+     "r5": 6.6
     },
     {
      "ticker": "131290.KQ",
@@ -28507,7 +28512,7 @@
      "r20": null,
      "b": 145700,
      "gap": -2,
-     "simOpen": 3.5,
+     "simOpen": 4.5,
      "tv": 27442,
      "tvx": 0.4,
      "idx": 0.45
@@ -29253,7 +29258,7 @@
      "r20": null,
      "b": 14970,
      "gap": 0,
-     "simOpen": 9.5,
+     "simOpen": 7.9,
      "tv": 3747,
      "tvx": 1.6,
      "idx": null
@@ -29325,7 +29330,7 @@
      "r20": null,
      "b": 149900,
      "gap": 0.8,
-     "simOpen": 0.6,
+     "simOpen": 1.5,
      "tv": 1002,
      "tvx": 0,
      "idx": null
@@ -30681,77 +30686,77 @@
      "rank": 1,
      "verdict": "관찰",
      "why": "AI 키 없음 · 규칙 기반 관찰",
-     "r1": null
+     "r1": 0
     },
     {
      "ticker": "196170.KQ",
      "rank": 2,
      "verdict": "관찰",
      "why": "AI 키 없음 · 규칙 기반 관찰",
-     "r1": null
+     "r1": -1
     },
     {
      "ticker": "000660.KS",
      "rank": 3,
      "verdict": "관찰",
      "why": "AI 키 없음 · 규칙 기반 관찰",
-     "r1": null
+     "r1": 2.6
     },
     {
      "ticker": "086520.KQ",
      "rank": 4,
      "verdict": "관찰",
      "why": "AI 키 없음 · 규칙 기반 관찰",
-     "r1": null
+     "r1": -2.9
     },
     {
      "ticker": "005935.KS",
      "rank": 5,
      "verdict": "관찰",
      "why": "AI 키 없음 · 규칙 기반 관찰",
-     "r1": null
+     "r1": -1.9
     },
     {
      "ticker": "247540.KQ",
      "rank": 6,
      "verdict": "관찰",
      "why": "AI 키 없음 · 규칙 기반 관찰",
-     "r1": null
+     "r1": 0.1
     },
     {
      "ticker": "402340.KS",
      "rank": 7,
      "verdict": "관찰",
      "why": "AI 키 없음 · 규칙 기반 관찰",
-     "r1": null
+     "r1": 2.4
     },
     {
      "ticker": "036930.KQ",
      "rank": 8,
      "verdict": "관찰",
      "why": "AI 키 없음 · 규칙 기반 관찰",
-     "r1": null
+     "r1": -2.1
     },
     {
      "ticker": "009150.KS",
      "rank": 9,
      "verdict": "관찰",
      "why": "AI 키 없음 · 규칙 기반 관찰",
-     "r1": null
+     "r1": -0.4
     },
     {
      "ticker": "277810.KQ",
      "rank": 10,
      "verdict": "관찰",
      "why": "AI 키 없음 · 규칙 기반 관찰",
-     "r1": null
+     "r1": -0.8
     },
     {
      "ticker": "373220.KS",
      "rank": 11,
      "verdict": "관찰",
      "why": "AI 키 없음 · 규칙 기반 관찰",
-     "r1": null
+     "r1": -1.8
     },
     {
      "ticker": "240810.KQ",
