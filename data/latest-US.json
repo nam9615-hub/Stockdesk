@@ -1,310 +1,124 @@
 {
- "date": "2026-09-17",
+ "date": "2026-09-18",
  "at": "21:29",
  "data": {
-  "brief": "전일 S&P500 하락에도 지수선물이 강세를 보이고 VIX가 하락하며 반등 기대감이 있으나, 과거 실측 승률과 과확신 보정 교훈을 반영하여 철저히 보수적인 스윙 및 단타 접근을 취합니다. 반도체, 소프트웨어, 바이오 등 과거 부진 섹터는 회피하고 선별된 종목 위주로 구성했습니다.",
-  "picks": [
-   {
-    "name": "Worthington Enterprises, Inc.",
-    "ticker": "WOR",
-    "score": 45,
-    "sector": "제조",
-    "basis": [
-     "실적"
-    ],
-    "reason": "지속 가능한 지속가능성 보고서 발표와 견조한 실적 흐름을 바탕으로 안정적인 방어력이 기대됩니다. 변동성이 높은 장세에서 실적 기반의 안정성을 보고 접근합니다.",
-    "catalyst": "기업 시민의식 및 지속가능성 보고서",
-    "risk": "전반적인 제조업 섹터의 과거 부진 이력",
-    "plan": {
-     "engine": "R2.0",
-     "strategy": "swing",
-     "atrPct": 3.69,
-     "stopPct": 5.54,
-     "targetPct": 11.07,
-     "rr": 2,
-     "maxHoldDays": 15,
-     "riskPct": 0.5,
-     "maxWeightPct": 10,
-     "weightPct": 8.24,
-     "qty": 7,
-     "notional": 412,
-     "decision": {
-      "version": "S2.0",
-      "action": "watch",
-      "strategy": "swing",
-      "reasons": [
-       "하락 국면: 신규 진입 보류"
-      ],
-      "plannedHoldDays": 15,
-      "reviewAfterDays": 3,
-      "maxHoldDays": 15,
-      "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
-      "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
-      "allowAutoOrder": false
-     }
-    }
-   },
-   {
-    "name": "Nokia Corporation Sponsored",
-    "ticker": "NOK",
-    "score": 48,
-    "sector": "통신",
-    "basis": [
-     "수주계약"
-    ],
-    "reason": "마이크로소프트와의 AI 데이터 파트너십 확장 소식이 전해지며 실질적인 모멘텀을 확보했습니다. 대형 테크 협력 뉴스로 하락장에서도 방어력과 상승 여력이 있습니다.",
-    "catalyst": "마이크로소프트 AI 데이터 파트너십 확장",
-    "risk": "통신 장비 업황의 변동성",
-    "plan": {
-     "engine": "R2.0",
-     "strategy": "swing",
-     "atrPct": 4.87,
-     "stopPct": 7.3,
-     "targetPct": 14.61,
-     "rr": 2,
-     "maxHoldDays": 10,
-     "riskPct": 0.5,
-     "maxWeightPct": 10,
-     "weightPct": 6.69,
-     "qty": 33,
-     "notional": 335,
-     "decision": {
-      "version": "S2.0",
-      "action": "watch",
-      "strategy": "swing",
-      "reasons": [
-       "하락 국면: 신규 진입 보류"
-      ],
-      "plannedHoldDays": 10,
-      "reviewAfterDays": 3,
-      "maxHoldDays": 10,
-      "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
-      "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
-      "allowAutoOrder": false
-     }
-    }
-   },
-   {
-    "name": "FTAI Aviation Ltd.",
-    "ticker": "FTAI",
-    "score": 46,
-    "sector": "항공",
-    "basis": [
-     "거래량급증"
-    ],
-    "reason": "5억 달러 규모의 대규모 자사주 매입 프로그램 발표와 함께 강한 주가 상승 흐름을 보이고 있습니다. 주주 환원 정책이 하락장 속에서 강력한 하방 지지선 역할을 합니다.",
-    "catalyst": "5억 달러 자사주 매입 프로그램",
-    "risk": "항공 및 운송 섹터의 단기 과열",
-    "plan": {
-     "engine": "R2.0",
-     "strategy": "swing",
-     "atrPct": 4.96,
-     "stopPct": 7.44,
-     "targetPct": 14.88,
-     "rr": 2,
-     "maxHoldDays": 5,
-     "riskPct": 0.5,
-     "maxWeightPct": 10,
-     "weightPct": 3.8,
-     "qty": 1,
-     "notional": 190,
-     "decision": {
-      "version": "S2.0",
-      "action": "watch",
-      "strategy": "day-watch",
-      "reasons": [
-       "하락 국면: 신규 진입 보류",
-       "단기 수급만 확인: 단타 재평가 후보, 자동 전환 아님"
-      ],
-      "plannedHoldDays": 5,
-      "reviewAfterDays": 3,
-      "maxHoldDays": 5,
-      "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
-      "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
-      "allowAutoOrder": false
-     }
-    }
-   }
-  ],
-  "day_cands": [
-   {
-    "name": "Forgent Power Solutions, Inc.",
-    "ticker": "FPS",
-    "score": 42,
-    "target_pct": 4,
-    "sector": "에너지",
-    "basis": [
-     "실적"
-    ],
-    "reason": "흑자 전환 성공과 긍정적인 가이던스로 11% 급등세를 보였으나, 단타 관점에서 과도한 추격 매수는 자제해야 합니다.",
-    "risk": "에너지 섹터 과거 실측 부진"
-   },
-   {
-    "name": "Space Exploration Technologies",
-    "ticker": "SPCX",
-    "score": 44,
-    "target_pct": 4,
-    "sector": "우주",
-    "basis": [
-     "추세지속"
-    ],
-    "reason": "시장 주요 이벤트를 앞두고 얼리 무버로 강세를 보이고 있으나 갭상승 시초가 진입은 주의가 필요합니다.",
-    "risk": "변동성 확대에 따른 되돌림 위험"
-   },
-   {
-    "name": "Intel Corporation",
-    "ticker": "INTC",
-    "score": 40,
-    "target_pct": 3,
-    "sector": "반도체",
-    "basis": [
-     "수주계약"
-    ],
-    "reason": "SK하이닉스와의 미국 메모리 칩 파트너십 탐색 뉴스로 모멘텀이 있으나 반도체 섹터의 낮은 성공 통계를 고려해 보수적으로 봅니다.",
-    "risk": "반도체 섹터 약세 기조"
-   },
-   {
-    "name": "Quantinuum Inc.",
-    "ticker": "QNT",
-    "score": 41,
-    "target_pct": 4,
-    "sector": "기술",
-    "basis": [
-     "정책테마"
-    ],
-    "reason": "IBM의 1실달러 규모 CHIPS 어워드 매칭 소식으로 양자 컴퓨팅 테마의 수혜가 예상됩니다.",
-    "risk": "정책 테마주 높은 변동성"
-   },
-   {
-    "name": "Amneal Pharmaceuticals, Inc.",
-    "ticker": "AMRX",
-    "score": 39,
-    "target_pct": 3,
-    "sector": "바이오",
-    "basis": [
-     "실적"
-    ],
-    "reason": "실적 발표 후 상승세를 보였으나 바이오 섹터 과거 승률이 낮아 철저한 단기 대응이 필요합니다.",
-    "risk": "바이오 섹터 회피 성향 반영"
-   }
-  ],
+  "brief": "전일 S&P500 지수 상승 및 선물 호조에도 불구하고 과거 실측 성적의 승률 저조와 혼조장 유사 사례를 반영하여 보수적인 관점을 유지합니다. 특히 소프트웨어, 바이오, 반도체 등 취약 섹터와 과도한 확신을 철저히 배제하고 데이터 중심의 방어적 트레이딩을 수행합니다.",
+  "picks": [],
+  "day_cands": [],
   "cands": [
    {
-    "ticker": "AXTI",
-    "rank": 11,
+    "ticker": "SDGR",
+    "rank": 1,
     "verdict": "제외",
-    "why": "과거 3년 런 이후 밸류에이션 부담 우려"
+    "why": "바이오 섹터 및 과거 통계상 취약한 조건 반영"
    },
    {
-    "ticker": "ARQT",
-    "rank": 10,
+    "ticker": "GNRC",
+    "rank": 2,
     "verdict": "제외",
-    "why": "유상증자 및 주식 보상 관련 뉴스"
+    "why": "목표가 상향 뉴스이나 혼조장 실측 결과 참고하여 제외"
    },
    {
-    "ticker": "FPS",
+    "ticker": "VICR",
+    "rank": 3,
+    "verdict": "제외",
+    "why": "녹색주 급등이나 추세 지속 신뢰도 낮음"
+   },
+   {
+    "ticker": "BHVN",
     "rank": 4,
-    "verdict": "관찰",
-    "why": "흑자 전환 모멘텀 있으나 단기 과열"
-   },
-   {
-    "ticker": "SMTC",
-    "rank": 12,
     "verdict": "제외",
-    "why": "급등 후 차익실현 매물 주의"
+    "why": "FDA 임상 보류 및 악재 발생"
    },
    {
-    "ticker": "CIFR",
+    "ticker": "TEM",
+    "rank": 5,
+    "verdict": "제외",
+    "why": "AI/헬스케어 혼조장 실측 사례 감안 관망"
+   },
+   {
+    "ticker": "PURR",
+    "rank": 6,
+    "verdict": "제외",
+    "why": "프리마켓 상승폭 과도 및 변동성 주의"
+   },
+   {
+    "ticker": "XE",
+    "rank": 7,
+    "verdict": "제외",
+    "why": "현금 흐름 우려 및 원자력 테마 보수적 접근"
+   },
+   {
+    "ticker": "INIO",
     "rank": 8,
     "verdict": "관찰",
-    "why": "목표주가 상향 있으나 암호화폐 연동성 높음"
+    "why": "450 MW 데이터센터 전력 수주 계약이나 단기 과열 확인 필요"
    },
    {
-    "ticker": "LITE",
+    "ticker": "OKLO",
     "rank": 9,
     "verdict": "제외",
-    "why": "고가 주식으로 스윙 변동성 큼"
+    "why": "정책 테마주 성공률 저조 반영"
    },
    {
-    "ticker": "BRKR",
+    "ticker": "PBLS",
+    "rank": 10,
+    "verdict": "제외",
+    "why": "헬스케어 섹터 회피 원칙 적용"
+   },
+   {
+    "ticker": "TH",
+    "rank": 11,
+    "verdict": "제외",
+    "why": "내부자 매수 있으나 모멘텀 부족"
+   },
+   {
+    "ticker": "CRSP",
+    "rank": 12,
+    "verdict": "제외",
+    "why": "바이오 및 유전자 편집 섹터 회피"
+   },
+   {
+    "ticker": "BFLY",
     "rank": 13,
     "verdict": "제외",
-    "why": "목표가 하조정 및 주가 하락세"
+    "why": "임원 매도 물량 출하"
    },
    {
-    "ticker": "AMRX",
-    "rank": 7,
-    "verdict": "관찰",
-    "why": "실적 호조이나 바이오 섹터 회피 대상"
-   },
-   {
-    "ticker": "WOR",
-    "rank": 1,
-    "verdict": "선택",
-    "why": "안정적 실적 및 지속가능성 보고서 모멘텀"
-   },
-   {
-    "ticker": "FTAI",
-    "rank": 2,
-    "verdict": "선택",
-    "why": "대규모 자사주 매입으로 하방 지지"
-   },
-   {
-    "ticker": "CRDO",
+    "ticker": "CAI",
     "rank": 14,
     "verdict": "제외",
-    "why": "이익 대비 잉여현금흐름 괴리"
-   },
-   {
-    "ticker": "COHR",
-    "rank": 6,
-    "verdict": "관찰",
-    "why": "AI 데이터센터 관련주이나 반도체 연계성 부담"
-   },
-   {
-    "ticker": "QNT",
-    "rank": 5,
-    "verdict": "관찰",
-    "why": "양자 파운드리 테마 수혜"
-   },
-   {
-    "ticker": "ALAB",
-    "rank": 15,
-    "verdict": "제외",
-    "why": "반도체 섹터 회피 원칙 적용"
-   },
-   {
-    "ticker": "AAL",
-    "rank": 18,
-    "verdict": "제외",
-    "why": "연료비 상승 우려 및 하락 마감"
+    "why": "대규모 내부자 매도 공시"
    },
    {
     "ticker": "NOK",
-    "rank": 3,
-    "verdict": "선택",
-    "why": "마이크로소프트 AI 파트너십 확장"
+    "rank": 15,
+    "verdict": "제외",
+    "why": "상승 모멘텀 미흡"
    },
    {
     "ticker": "INTC",
     "rank": 16,
-    "verdict": "관찰",
-    "why": "반도체 파트너십 뉴스 있으나 섹터 부진"
+    "verdict": "제외",
+    "why": "반도체 섹터 회피 원칙 적용"
    },
    {
-    "ticker": "SPCX",
+    "ticker": "NVDA",
     "rank": 17,
-    "verdict": "관찰",
-    "why": "초반 모멘텀 있으나 추격 매수 주의"
+    "verdict": "제외",
+    "why": "반도체 섹터 회피 원칙 적용 및 대형주 지루한 흐름"
+   },
+   {
+    "ticker": "NU",
+    "rank": 18,
+    "verdict": "제외",
+    "why": "금융 섹터 회피 원칙 적용"
    }
   ],
   "mkt": {
-   "dir": "상승",
-   "conf": 40,
-   "why": "지수선물 강세이나 과거 예측 적중률 저조로 보수적 관점 유지"
-  },
-  "day_picks": [],
-  "day_at": "22:34",
-  "day_brief": "모든 후보가 갭상승 후 개장 초기 모멘텀이 약화되었거나 섹터 통계상 승률이 낮아 단타 기준에 부합하지 않습니다."
+   "dir": "횡보",
+   "conf": 45,
+   "why": "지수 선물은 상승세이나 혼조장 패턴과 과거 예측 적중률 한계를 고려해 신중한 접근 필요"
+  }
  }
 }
