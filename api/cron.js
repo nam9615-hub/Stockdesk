@@ -122,8 +122,12 @@ async function gatherKR() {
     top("https://finance.naver.com/sise/sise_quant.naver?sosok=1", 8).catch(() => []),   // 코스닥 거래량
   ]);
   // 자체 스크리너(전 종목 유니버스) 우선 — 초입 모멘텀 발굴, 급등·거래량 목록은 보조
-  let scr = [];
-  try { const { data: uni } = await ghRead("data/universe.json"); scr = screenUniverse(uni, kstDate()) || []; } catch {}
+  let scr = [], uni = null;
+  try {
+    const r = await ghRead("data/universe.json");
+    uni = r.data;
+    scr = screenUniverse(uni, kstDate()) || [];
+  } catch {}
   // 코스피·코스닥 균형 병합 (교차로 섞어 어느 한쪽 쏠림 방지)
   const inter = [];
   const maxL = Math.max(riseKP.length, riseKQ.length, volKP.length, volKQ.length);
@@ -131,6 +135,23 @@ async function gatherKR() {
   const seen = new Set(); let cands = [];
   for (const s of [...scr, ...upper, ...inter]) if (!seen.has(s.code) && cands.length < 20) { seen.add(s.code); cands.push(s); }
   let note = "";
+  // Naver ranking HTML can change or temporarily reject server requests. In that
+  // case use the persisted, daily-refreshed market-cap universe instead of
+  // silently skipping the whole morning recommendation.
+  if (!cands.length && uni?.stocks) {
+    const ranked = Object.entries(uni.stocks)
+      .map(([code, s]) => ({ code, name: s.n, kq: !!s.kq, mr: +s.mr || 9999 }))
+      .filter((s) => s.name && s.mr <= 700)
+      .sort((a, b) => a.mr - b.mr);
+    const kp = ranked.filter((s) => !s.kq).slice(0, 10);
+    const kq = ranked.filter((s) => s.kq).slice(0, 10);
+    for (let i = 0; i < 10 && cands.length < 16; i++) {
+      for (const s of [kp[i], kq[i]]) {
+        if (s && !seen.has(s.code)) { seen.add(s.code); cands.push(s); }
+      }
+    }
+    if (cands.length) note = "(실시간 순위 수집 지연 — 저장된 당일 유니버스의 유동성 상위 종목을 대체 후보군으로 사용. 뉴스와 리스크를 더 보수적으로 검증하라)\n";
+  }
   if (!cands.length) {
     // 개장 전 등으로 상승률 데이터가 비어 있으면: 시가총액 상위로 대체 (뉴스 재료 중심 선별)
     const [mkKP, mkKQ] = await Promise.all([
@@ -744,7 +765,8 @@ export default async function handler(req, res) {
       if (!hist.entries.some((e) => e.date === today && e.market === job)) {
         const g = job === "KR" ? await gatherKR() : await gatherUS();
         const data = g.text, allowedT = g.allowed || [];
-        if (data) {
+        if (!data || !allowedT.length) throw new Error(`${job} 후보 수집 실패: 추천 미생성을 정상으로 숨기지 않고 재시도 필요`);
+        {
           const ci = condRules(hist.entries, job);
           const regimeNow = await regimeOf(job);
           const learn = [
