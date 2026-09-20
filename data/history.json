@@ -31260,6 +31260,356 @@
     }
    },
    "holdEval": "보류 성공 (후보 중앙 -1%)"
+  },
+  {
+   "date": "2026-09-21",
+   "market": "KR",
+   "regime": "혼조",
+   "rules": [
+    "단타 실패 분해: 시장충격7·목표과다1·선정11 → 선정 강화",
+    "강도80+ 실측 50%(10) — 확신도 과장, 보수화",
+    "근거'뉴스재료' 성공37%(68) → 단독추천 지양",
+    "섹터'반도체' 성공33%(12) → 회피",
+    "섹터'이차전지' 성공13%(8) → 회피",
+    "섹터'바이오' 성공25%(8) → 회피"
+   ],
+   "cands": [
+    {
+     "ticker": "005930.KS",
+     "rank": 1,
+     "verdict": "관찰",
+     "why": "대형주 수급 모니터링 필요",
+     "r1": null
+    },
+    {
+     "ticker": "196170.KQ",
+     "rank": 91,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "000660.KS",
+     "rank": 92,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "086520.KQ",
+     "rank": 93,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "005935.KS",
+     "rank": 94,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "247540.KQ",
+     "rank": 95,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "402340.KS",
+     "rank": 96,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "036930.KQ",
+     "rank": 97,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "009150.KS",
+     "rank": 98,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "277810.KQ",
+     "rank": 99,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "373220.KS",
+     "rank": 100,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "240810.KQ",
+     "rank": 101,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "005380.KS",
+     "rank": 102,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "039030.KQ",
+     "rank": 103,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "207940.KS",
+     "rank": 104,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "058470.KQ",
+     "rank": 105,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    }
+   ],
+   "bl": {
+    "rand": [
+     "036930.KQ",
+     "005930.KS",
+     "277810.KQ"
+    ],
+    "mom": [
+     "005930.KS",
+     "196170.KQ",
+     "000660.KS"
+    ]
+   },
+   "dayCands": [
+    {
+     "name": "알테오젠",
+     "ticker": "196170.KQ",
+     "score": 45,
+     "target_pct": 4,
+     "sector": "바이오",
+     "basis": [
+      "뉴스재료",
+      "거래량급증"
+     ],
+     "reason": "글로벌 제약사 관련 긍정적 리포트와 수급 집중 가능성이 있으나 바이오 섹터 과거 승률이 낮아 철저한 단기 대응이 필요합니다.",
+     "risk": "바이오 섹터 변동성 및 뉴스 소멸 리스크"
+    },
+    {
+     "name": "에코프로비엠",
+     "ticker": "247540.KQ",
+     "score": 42,
+     "target_pct": 4,
+     "sector": "에너지",
+     "basis": [
+      "뉴스재료",
+      "추세지속"
+     ],
+     "reason": "북미 ESS 및 LFP 공급망 재편 관련 모멘텀이 있으나 이차전지 섹터 승률이 부진하므로 엄격한 손절 기준이 필수적입니다.",
+     "risk": "이차전지 업종 투자 심리 약화"
+    },
+    {
+     "name": "삼성전자",
+     "ticker": "005930.KS",
+     "score": 40,
+     "target_pct": 3,
+     "sector": "시장대표",
+     "basis": [
+      "낙폭과대",
+      "거래량급증"
+     ],
+     "reason": "지수 방어력과 함께 저가 매수세 유입 가능성이 있으나 시장 대표주 과거 승률이 낮아 제한적인 반등 노림수로만 활용합니다.",
+     "risk": "외국인 수급 지속성 부재"
+    },
+    {
+     "name": "현대차",
+     "ticker": "005380.KS",
+     "score": 40,
+     "target_pct": 3,
+     "sector": "자동차",
+     "basis": [
+      "낙폭과대"
+     ],
+     "reason": "주주환원 이슈 및 저평가 매력이 있으나 자동차 섹터 과거 승률을 고려해 보수적으로 접근합니다.",
+     "risk": "글로벌 수요 둔화 우려"
+    }
+   ],
+   "hold": 0,
+   "v": {
+    "m": "gemini-3.5-flash-lite",
+    "pv": "J1.0-S2.0",
+    "policy": "S2.0"
+   },
+   "mktF": {
+    "dir": "횡보",
+    "conf": 40,
+    "why": "야간 선물 반등에도 불구하고 과거 혼조장 실측 승률 부진과 업종별 차별화 장세 지속으로 횡보장 전망",
+    "ok": null
+   },
+   "picks": [
+    {
+     "kind": "swing",
+     "name": "SK스퀘어",
+     "ticker": "402340.KS",
+     "score": 45,
+     "sector": "지주사",
+     "basis": [
+      "추세지속",
+      "거래량급증"
+     ],
+     "plan": {
+      "engine": "R2.0",
+      "strategy": "swing",
+      "atrPct": 5.87,
+      "stopPct": 8.8,
+      "targetPct": 17.61,
+      "rr": 2,
+      "maxHoldDays": 5,
+      "riskPct": 0.5,
+      "maxWeightPct": 10,
+      "weightPct": 0,
+      "qty": 0,
+      "notional": 0,
+      "decision": {
+       "version": "S2.0",
+       "action": "watch",
+       "strategy": "day-watch",
+       "reasons": [
+        "단기 수급만 확인: 단타 재평가 후보, 자동 전환 아님"
+       ],
+       "plannedHoldDays": 5,
+       "reviewAfterDays": 3,
+       "maxHoldDays": 5,
+       "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+       "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+       "allowAutoOrder": false
+      }
+     },
+     "p0": 1079000,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "레인보우로보틱스",
+     "ticker": "277810.KQ",
+     "score": 42,
+     "sector": "부품",
+     "basis": [
+      "추세지속",
+      "신고가"
+     ],
+     "plan": {
+      "engine": "R2.0",
+      "strategy": "swing",
+      "atrPct": 4.98,
+      "stopPct": 7.47,
+      "targetPct": 14.94,
+      "rr": 2,
+      "maxHoldDays": 5,
+      "riskPct": 0.5,
+      "maxWeightPct": 10,
+      "weightPct": 0,
+      "qty": 0,
+      "notional": 0,
+      "decision": {
+       "version": "S2.0",
+       "action": "watch",
+       "strategy": "day-watch",
+       "reasons": [
+        "단기 수급만 확인: 단타 재평가 후보, 자동 전환 아님"
+       ],
+       "plannedHoldDays": 5,
+       "reviewAfterDays": 3,
+       "maxHoldDays": 5,
+       "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+       "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+       "allowAutoOrder": false
+      }
+     },
+     "p0": 436000,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "주성엔지니어링",
+     "ticker": "036930.KQ",
+     "score": 40,
+     "sector": "부품",
+     "basis": [
+      "추세지속",
+      "거래량급증"
+     ],
+     "plan": {
+      "engine": "R2.0",
+      "strategy": "swing",
+      "atrPct": 8,
+      "stopPct": 9,
+      "targetPct": 18,
+      "rr": 2,
+      "maxHoldDays": 5,
+      "riskPct": 0.5,
+      "maxWeightPct": 10,
+      "weightPct": 4.11,
+      "qty": 1,
+      "notional": 205500,
+      "decision": {
+       "version": "S2.0",
+       "action": "conditional",
+       "strategy": "swing",
+       "reasons": [
+        "추세 중심의 짧은 스윙"
+       ],
+       "plannedHoldDays": 5,
+       "reviewAfterDays": 3,
+       "maxHoldDays": 5,
+       "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+       "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+       "allowAutoOrder": false
+      }
+     },
+     "p0": 205500,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    }
+   ]
   }
  ],
  "monAt": 1789760019345
