@@ -1,124 +1,306 @@
 {
- "date": "2026-09-18",
+ "date": "2026-09-21",
  "at": "21:29",
  "data": {
-  "brief": "전일 S&P500 지수 상승 및 선물 호조에도 불구하고 과거 실측 성적의 승률 저조와 혼조장 유사 사례를 반영하여 보수적인 관점을 유지합니다. 특히 소프트웨어, 바이오, 반도체 등 취약 섹터와 과도한 확신을 철저히 배제하고 데이터 중심의 방어적 트레이딩을 수행합니다.",
-  "picks": [],
-  "day_cands": [],
+  "brief": "지수선물이 강세를 보이는 가운데 비트코인 반등에 힘입어 크립토 관련주가 강세를 보이고 있습니다. 과거 승률 통계와 섹터별 부진을 감안하여 변동성이 높은 종목은 보수적으로 접근합니다.",
+  "picks": [
+   {
+    "name": "Pershing Square Inc.",
+    "ticker": "PS",
+    "score": 35,
+    "sector": "금융",
+    "basis": [
+     "뉴스재료"
+    ],
+    "reason": "빌 아크마ンの 마이크로소프트 대규모 지분 인수 소식이 호재로 작용했습니다. 다만 금융 섹터 실적 통계를 고려해 보수적으로 접근합니다.",
+    "catalyst": "마이크로소프트 지분 인수",
+    "risk": "금융 섹터 전반의 부진 가능성",
+    "plan": {
+     "engine": "R2.0",
+     "strategy": "swing",
+     "atrPct": 7.09,
+     "stopPct": 9,
+     "targetPct": 18,
+     "rr": 2,
+     "maxHoldDays": 5,
+     "riskPct": 0.5,
+     "maxWeightPct": 10,
+     "weightPct": 4.98,
+     "qty": 5,
+     "notional": 249,
+     "decision": {
+      "version": "S2.0",
+      "action": "conditional",
+      "strategy": "swing",
+      "reasons": [
+       "추세 중심의 짧은 스윙"
+      ],
+      "plannedHoldDays": 5,
+      "reviewAfterDays": 3,
+      "maxHoldDays": 5,
+      "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+      "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+      "allowAutoOrder": false
+     }
+    }
+   },
+   {
+    "name": "Alvotech",
+    "ticker": "ALVO",
+    "score": 35,
+    "sector": "바이오",
+    "basis": [
+     "뉴스재료"
+    ],
+    "reason": "바클레이즈의 더블 업그레이드와 59% 상승 여력 분석이 발표되었습니다. 바이오 섹터 과거 승률이 낮아 신중한 접근이 필요합니다.",
+    "catalyst": "바클레이즈 더블 업그레이드",
+    "risk": "바이오 섹터 약세",
+    "plan": {
+     "engine": "R2.0",
+     "strategy": "swing",
+     "atrPct": 4.72,
+     "stopPct": 7.08,
+     "targetPct": 14.16,
+     "rr": 2,
+     "maxHoldDays": 5,
+     "riskPct": 0.5,
+     "maxWeightPct": 10,
+     "weightPct": 7.04,
+     "qty": 60,
+     "notional": 352,
+     "decision": {
+      "version": "S2.0",
+      "action": "conditional",
+      "strategy": "swing",
+      "reasons": [
+       "추세 중심의 짧은 스윙"
+      ],
+      "plannedHoldDays": 5,
+      "reviewAfterDays": 3,
+      "maxHoldDays": 5,
+      "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+      "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+      "allowAutoOrder": false
+     }
+    }
+   },
+   {
+    "name": "Robinhood Markets, Inc.",
+    "ticker": "HOOD",
+    "score": 30,
+    "sector": "핀테크",
+    "basis": [
+     "뉴스재료"
+    ],
+    "reason": "크립토 시장 반등의 수혜를 받고 있으나 단기 급등에 따른 피로감이 존재합니다. 시장 변동성에 유의해야 합니다.",
+    "catalyst": "비트코인 반등 수혜",
+    "risk": "변동성 확대",
+    "plan": {
+     "engine": "R2.0",
+     "strategy": "swing",
+     "atrPct": 6.02,
+     "stopPct": 9,
+     "targetPct": 18,
+     "rr": 2,
+     "maxHoldDays": 5,
+     "riskPct": 0.5,
+     "maxWeightPct": 10,
+     "weightPct": 4.79,
+     "qty": 2,
+     "notional": 240,
+     "decision": {
+      "version": "S2.0",
+      "action": "conditional",
+      "strategy": "swing",
+      "reasons": [
+       "추세 중심의 짧은 스윙"
+      ],
+      "plannedHoldDays": 5,
+      "reviewAfterDays": 3,
+      "maxHoldDays": 5,
+      "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+      "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+      "allowAutoOrder": false
+     }
+    }
+   }
+  ],
+  "day_cands": [
+   {
+    "name": "MSTR Strategy Inc",
+    "ticker": "MSTR",
+    "score": 35,
+    "target_pct": 3,
+    "sector": "크립토",
+    "basis": [
+     "뉴스재료"
+    ],
+    "reason": "비트코인 추가 매수 소식으로 강한 모멘텀을 보이고 있습니다. 갭 상승 추격을 자제하고 눌림목을 공략합니다.",
+    "risk": "단기 과열 우려"
+   },
+   {
+    "name": "MARA Holdings, Inc.",
+    "ticker": "MARA",
+    "score": 33,
+    "target_pct": 3,
+    "sector": "크립토",
+    "basis": [
+     "뉴스재료"
+    ],
+    "reason": "숏 스퀴즈와 비트코인 반등으로 프리마켓 상승세를 보이고 있습니다. 전일 고점 부근 저항에 유의합니다.",
+    "risk": "높은 변동성"
+   },
+   {
+    "name": "Coinbase Global, Inc.",
+    "ticker": "COIN",
+    "score": 33,
+    "target_pct": 3,
+    "sector": "크립토",
+    "basis": [
+     "뉴스재료"
+    ],
+    "reason": "크립토 대장주로서 시장 거래대금 증가 수혜를 기대합니다. 지수 연동성에 주목합니다.",
+    "risk": "섹터 동반 하락 리스크"
+   },
+   {
+    "name": "Pershing Square Inc.",
+    "ticker": "PS",
+    "score": 30,
+    "target_pct": 3,
+    "sector": "금융",
+    "basis": [
+     "뉴스재료"
+    ],
+    "reason": "대형 투자자 지분 공시 효과로 단기 수급이 유입되고 있습니다. 차익실현 매물 출회의 가능성이 있습니다.",
+    "risk": "단기 재료 소멸"
+   },
+   {
+    "name": "Alvotech",
+    "ticker": "ALVO",
+    "score": 30,
+    "target_pct": 3,
+    "sector": "바이오",
+    "basis": [
+     "뉴스재료"
+    ],
+    "reason": "목표가 상향 리포트에 따른 단기 모멘텀이 유효합니다. 추세 지속 여부를 확인해야 합니다.",
+    "risk": "수급 이탈 가능성"
+   }
+  ],
   "cands": [
    {
-    "ticker": "SDGR",
+    "ticker": "MSTR",
     "rank": 1,
-    "verdict": "제외",
-    "why": "바이오 섹터 및 과거 통계상 취약한 조건 반영"
+    "verdict": "관찰",
+    "why": "비트코인 매수 모멘텀 있으나 갭 부담 존재"
    },
    {
-    "ticker": "GNRC",
+    "ticker": "BTDR",
     "rank": 2,
-    "verdict": "제외",
-    "why": "목표가 상향 뉴스이나 혼조장 실측 결과 참고하여 제외"
+    "verdict": "관찰",
+    "why": "AI 및 크립토 복합 재료이나 단기 과열"
    },
    {
-    "ticker": "VICR",
+    "ticker": "MARA",
     "rank": 3,
-    "verdict": "제외",
-    "why": "녹색주 급등이나 추세 지속 신뢰도 낮음"
+    "verdict": "관찰",
+    "why": "숏 스퀴즈 효과 있으나 변동성 큼"
    },
    {
-    "ticker": "BHVN",
+    "ticker": "PS",
     "rank": 4,
-    "verdict": "제외",
-    "why": "FDA 임상 보류 및 악재 발생"
+    "verdict": "선택",
+    "why": "빌 아크만 빅테크 지분 인수 호재"
    },
    {
-    "ticker": "TEM",
+    "ticker": "SBET",
     "rank": 5,
+    "verdict": "관찰",
+    "why": "크립토 섹터 동조화 흐름"
+   },
+   {
+    "ticker": "COIN",
+    "rank": 6,
+    "verdict": "관찰",
+    "why": "비트코인 반등 연동 움직임"
+   },
+   {
+    "ticker": "IMOS",
+    "rank": 7,
     "verdict": "제외",
-    "why": "AI/헬스케어 혼조장 실측 사례 감안 관망"
+    "why": "실적 부진 및 반도체 섹터 약세"
+   },
+   {
+    "ticker": "SNDK",
+    "rank": 8,
+    "verdict": "제외",
+    "why": "변동성 과도 및 섹터 회피 대상"
+   },
+   {
+    "ticker": "GLXY",
+    "rank": 9,
+    "verdict": "관찰",
+    "why": "크립토 생태계 확장 기대감"
+   },
+   {
+    "ticker": "ALVO",
+    "rank": 10,
+    "verdict": "선택",
+    "why": "바클레이즈 더블 업그레이드 호재"
+   },
+   {
+    "ticker": "BLSH",
+    "rank": 11,
+    "verdict": "관찰",
+    "why": "비트코인 가격 연동"
    },
    {
     "ticker": "PURR",
-    "rank": 6,
-    "verdict": "제외",
-    "why": "프리마켓 상승폭 과도 및 변동성 주의"
-   },
-   {
-    "ticker": "XE",
-    "rank": 7,
-    "verdict": "제외",
-    "why": "현금 흐름 우려 및 원자력 테마 보수적 접근"
-   },
-   {
-    "ticker": "INIO",
-    "rank": 8,
-    "verdict": "관찰",
-    "why": "450 MW 데이터센터 전력 수주 계약이나 단기 과열 확인 필요"
-   },
-   {
-    "ticker": "OKLO",
-    "rank": 9,
-    "verdict": "제외",
-    "why": "정책 테마주 성공률 저조 반영"
-   },
-   {
-    "ticker": "PBLS",
-    "rank": 10,
-    "verdict": "제외",
-    "why": "헬스케어 섹터 회피 원칙 적용"
-   },
-   {
-    "ticker": "TH",
-    "rank": 11,
-    "verdict": "제외",
-    "why": "내부자 매수 있으나 모멘텀 부족"
-   },
-   {
-    "ticker": "CRSP",
     "rank": 12,
-    "verdict": "제외",
-    "why": "바이오 및 유전자 편집 섹터 회피"
+    "verdict": "관찰",
+    "why": "프리마켓 상승 종목"
    },
    {
-    "ticker": "BFLY",
+    "ticker": "HOOD",
     "rank": 13,
-    "verdict": "제외",
-    "why": "임원 매도 물량 출하"
+    "verdict": "선택",
+    "why": "크립토 거래 활성화 수혜"
    },
    {
-    "ticker": "CAI",
+    "ticker": "ALMR",
     "rank": 14,
     "verdict": "제외",
-    "why": "대규모 내부자 매도 공시"
+    "why": "헬스케어 섹터 회피 대상"
    },
    {
     "ticker": "NOK",
     "rank": 15,
     "verdict": "제외",
-    "why": "상승 모멘텀 미흡"
+    "why": "지수 편출 압력 및 모멘텀 부족"
    },
    {
-    "ticker": "INTC",
+    "ticker": "TTD",
     "rank": 16,
     "verdict": "제외",
-    "why": "반도체 섹터 회피 원칙 적용"
+    "why": "하락 추세 지속 및 소프트웨어 회피"
    },
    {
-    "ticker": "NVDA",
+    "ticker": "SPCX",
     "rank": 17,
     "verdict": "제외",
-    "why": "반도체 섹터 회피 원칙 적용 및 대형주 지루한 흐름"
+    "why": "지수 편입 관련 변동성 주의"
    },
    {
-    "ticker": "NU",
+    "ticker": "GRAB",
     "rank": 18,
     "verdict": "제외",
-    "why": "금융 섹터 회피 원칙 적용"
+    "why": "가치 평가 하락 리포트"
    }
   ],
   "mkt": {
    "dir": "횡보",
-   "conf": 45,
-   "why": "지수 선물은 상승세이나 혼조장 패턴과 과거 예측 적중률 한계를 고려해 신중한 접근 필요"
+   "conf": 40,
+   "why": "지수선물은 강하나 혼조세 국면과 과거 예측 적중률을 고려해 보수적 관점 유지"
   }
  }
 }
