@@ -28403,7 +28403,8 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": 2.1
+     "r1": 2.1,
+     "r5": 5.6
     },
     {
      "ticker": "127120.KQ",
@@ -28411,7 +28412,8 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": -1.8
+     "r1": -1.8,
+     "r5": 11.3
     }
    ],
    "bl": {
@@ -31690,6 +31692,361 @@
      "mom": 1.3
     }
    }
+  },
+  {
+   "date": "2026-09-21",
+   "market": "US",
+   "regime": "혼조",
+   "rules": [
+    "단타 실패 분해: 시장충격10·목표과다1·선정23 → 선정 강화",
+    "강도80+ 실측 0%(10) — 확신도 과장, 보수화",
+    "근거'추세지속' 성공33%(33) → 단독추천 지양",
+    "근거'거래량급증' 성공33%(21) → 단독추천 지양",
+    "근거'실적' 성공39%(31) → 단독추천 지양",
+    "근거'정책테마' 성공19%(16) → 단독추천 지양"
+   ],
+   "cands": [
+    {
+     "ticker": "MSTR",
+     "rank": 1,
+     "verdict": "관찰",
+     "why": "비트코인 매수 모멘텀 있으나 갭 부담 존재",
+     "r1": null
+    },
+    {
+     "ticker": "BTDR",
+     "rank": 2,
+     "verdict": "관찰",
+     "why": "AI 및 크립토 복합 재료이나 단기 과열",
+     "r1": null
+    },
+    {
+     "ticker": "MARA",
+     "rank": 3,
+     "verdict": "관찰",
+     "why": "숏 스퀴즈 효과 있으나 변동성 큼",
+     "r1": null
+    },
+    {
+     "ticker": "PS",
+     "rank": 4,
+     "verdict": "선택",
+     "why": "빌 아크만 빅테크 지분 인수 호재",
+     "r1": null
+    },
+    {
+     "ticker": "SBET",
+     "rank": 5,
+     "verdict": "관찰",
+     "why": "크립토 섹터 동조화 흐름",
+     "r1": null
+    },
+    {
+     "ticker": "COIN",
+     "rank": 6,
+     "verdict": "관찰",
+     "why": "비트코인 반등 연동 움직임",
+     "r1": null
+    },
+    {
+     "ticker": "IMOS",
+     "rank": 7,
+     "verdict": "제외",
+     "why": "실적 부진 및 반도체 섹터 약세",
+     "r1": null
+    },
+    {
+     "ticker": "SNDK",
+     "rank": 8,
+     "verdict": "제외",
+     "why": "변동성 과도 및 섹터 회피 대상",
+     "r1": null
+    },
+    {
+     "ticker": "GLXY",
+     "rank": 9,
+     "verdict": "관찰",
+     "why": "크립토 생태계 확장 기대감",
+     "r1": null
+    },
+    {
+     "ticker": "ALVO",
+     "rank": 10,
+     "verdict": "선택",
+     "why": "바클레이즈 더블 업그레이드 호재",
+     "r1": null
+    },
+    {
+     "ticker": "BLSH",
+     "rank": 11,
+     "verdict": "관찰",
+     "why": "비트코인 가격 연동",
+     "r1": null
+    },
+    {
+     "ticker": "PURR",
+     "rank": 12,
+     "verdict": "관찰",
+     "why": "프리마켓 상승 종목",
+     "r1": null
+    },
+    {
+     "ticker": "HOOD",
+     "rank": 13,
+     "verdict": "선택",
+     "why": "크립토 거래 활성화 수혜",
+     "r1": null
+    },
+    {
+     "ticker": "ALMR",
+     "rank": 14,
+     "verdict": "제외",
+     "why": "헬스케어 섹터 회피 대상",
+     "r1": null
+    },
+    {
+     "ticker": "NOK",
+     "rank": 15,
+     "verdict": "제외",
+     "why": "지수 편출 압력 및 모멘텀 부족",
+     "r1": null
+    },
+    {
+     "ticker": "TTD",
+     "rank": 16,
+     "verdict": "제외",
+     "why": "하락 추세 지속 및 소프트웨어 회피",
+     "r1": null
+    },
+    {
+     "ticker": "SPCX",
+     "rank": 17,
+     "verdict": "제외",
+     "why": "지수 편입 관련 변동성 주의",
+     "r1": null
+    },
+    {
+     "ticker": "GRAB",
+     "rank": 18,
+     "verdict": "제외",
+     "why": "가치 평가 하락 리포트",
+     "r1": null
+    }
+   ],
+   "bl": {
+    "rand": [
+     "COIN",
+     "HOOD",
+     "BTDR"
+    ],
+    "mom": [
+     "MSTR",
+     "BTDR",
+     "MARA"
+    ]
+   },
+   "dayCands": [
+    {
+     "name": "MSTR Strategy Inc",
+     "ticker": "MSTR",
+     "score": 35,
+     "target_pct": 3,
+     "sector": "크립토",
+     "basis": [
+      "뉴스재료"
+     ],
+     "reason": "비트코인 추가 매수 소식으로 강한 모멘텀을 보이고 있습니다. 갭 상승 추격을 자제하고 눌림목을 공략합니다.",
+     "risk": "단기 과열 우려"
+    },
+    {
+     "name": "MARA Holdings, Inc.",
+     "ticker": "MARA",
+     "score": 33,
+     "target_pct": 3,
+     "sector": "크립토",
+     "basis": [
+      "뉴스재료"
+     ],
+     "reason": "숏 스퀴즈와 비트코인 반등으로 프리마켓 상승세를 보이고 있습니다. 전일 고점 부근 저항에 유의합니다.",
+     "risk": "높은 변동성"
+    },
+    {
+     "name": "Coinbase Global, Inc.",
+     "ticker": "COIN",
+     "score": 33,
+     "target_pct": 3,
+     "sector": "크립토",
+     "basis": [
+      "뉴스재료"
+     ],
+     "reason": "크립토 대장주로서 시장 거래대금 증가 수혜를 기대합니다. 지수 연동성에 주목합니다.",
+     "risk": "섹터 동반 하락 리스크"
+    },
+    {
+     "name": "Pershing Square Inc.",
+     "ticker": "PS",
+     "score": 30,
+     "target_pct": 3,
+     "sector": "금융",
+     "basis": [
+      "뉴스재료"
+     ],
+     "reason": "대형 투자자 지분 공시 효과로 단기 수급이 유입되고 있습니다. 차익실현 매물 출회의 가능성이 있습니다.",
+     "risk": "단기 재료 소멸"
+    },
+    {
+     "name": "Alvotech",
+     "ticker": "ALVO",
+     "score": 30,
+     "target_pct": 3,
+     "sector": "바이오",
+     "basis": [
+      "뉴스재료"
+     ],
+     "reason": "목표가 상향 리포트에 따른 단기 모멘텀이 유효합니다. 추세 지속 여부를 확인해야 합니다.",
+     "risk": "수급 이탈 가능성"
+    }
+   ],
+   "hold": 0,
+   "v": {
+    "m": "gemini-3.5-flash-lite",
+    "pv": "J1.0-S2.0",
+    "policy": "S2.0"
+   },
+   "mktF": {
+    "dir": "횡보",
+    "conf": 40,
+    "why": "지수선물은 강하나 혼조세 국면과 과거 예측 적중률을 고려해 보수적 관점 유지",
+    "ok": null
+   },
+   "picks": [
+    {
+     "kind": "swing",
+     "name": "Pershing Square Inc.",
+     "ticker": "PS",
+     "score": 35,
+     "sector": "금융",
+     "basis": [
+      "뉴스재료"
+     ],
+     "plan": {
+      "engine": "R2.0",
+      "strategy": "swing",
+      "atrPct": 7.09,
+      "stopPct": 9,
+      "targetPct": 18,
+      "rr": 2,
+      "maxHoldDays": 5,
+      "riskPct": 0.5,
+      "maxWeightPct": 10,
+      "weightPct": 4.98,
+      "qty": 5,
+      "notional": 249,
+      "decision": {
+       "version": "S2.0",
+       "action": "conditional",
+       "strategy": "swing",
+       "reasons": [
+        "추세 중심의 짧은 스윙"
+       ],
+       "plannedHoldDays": 5,
+       "reviewAfterDays": 3,
+       "maxHoldDays": 5,
+       "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+       "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+       "allowAutoOrder": false
+      }
+     },
+     "p0": 49.83,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "Alvotech",
+     "ticker": "ALVO",
+     "score": 35,
+     "sector": "바이오",
+     "basis": [
+      "뉴스재료"
+     ],
+     "plan": {
+      "engine": "R2.0",
+      "strategy": "swing",
+      "atrPct": 4.72,
+      "stopPct": 7.08,
+      "targetPct": 14.16,
+      "rr": 2,
+      "maxHoldDays": 5,
+      "riskPct": 0.5,
+      "maxWeightPct": 10,
+      "weightPct": 7.04,
+      "qty": 60,
+      "notional": 352,
+      "decision": {
+       "version": "S2.0",
+       "action": "conditional",
+       "strategy": "swing",
+       "reasons": [
+        "추세 중심의 짧은 스윙"
+       ],
+       "plannedHoldDays": 5,
+       "reviewAfterDays": 3,
+       "maxHoldDays": 5,
+       "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+       "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+       "allowAutoOrder": false
+      }
+     },
+     "p0": 5.87,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "Robinhood Markets, Inc.",
+     "ticker": "HOOD",
+     "score": 30,
+     "sector": "핀테크",
+     "basis": [
+      "뉴스재료"
+     ],
+     "plan": {
+      "engine": "R2.0",
+      "strategy": "swing",
+      "atrPct": 6.02,
+      "stopPct": 9,
+      "targetPct": 18,
+      "rr": 2,
+      "maxHoldDays": 5,
+      "riskPct": 0.5,
+      "maxWeightPct": 10,
+      "weightPct": 4.79,
+      "qty": 2,
+      "notional": 240,
+      "decision": {
+       "version": "S2.0",
+       "action": "conditional",
+       "strategy": "swing",
+       "reasons": [
+        "추세 중심의 짧은 스윙"
+       ],
+       "plannedHoldDays": 5,
+       "reviewAfterDays": 3,
+       "maxHoldDays": 5,
+       "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+       "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+       "allowAutoOrder": false
+      }
+     },
+     "p0": 119.82,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    }
+   ]
   }
  ],
  "monAt": 1789959488883
