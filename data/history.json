@@ -29142,35 +29142,40 @@
      "rank": 6,
      "verdict": "관찰",
      "why": "거래대금 상위이나 혼조세 지속",
-     "r1": -0.4
+     "r1": -0.4,
+     "r5": -2.9
     },
     {
      "ticker": "033240.KS",
      "rank": 7,
      "verdict": "관찰",
      "why": "테마성 변동성 커서 스윙보다는 단타 위주",
-     "r1": -0.8
+     "r1": -0.8,
+     "r5": 3.1
     },
     {
      "ticker": "127120.KQ",
      "rank": 8,
      "verdict": "관찰",
      "why": "모멘텀은 있으나 후순위",
-     "r1": 2.8
+     "r1": 2.8,
+     "r5": 8.3
     },
     {
      "ticker": "122630.KS",
      "rank": 9,
      "verdict": "제외",
      "why": "레버리지 ETF로 하락장 리스크 과도",
-     "r1": 3.9
+     "r1": 3.9,
+     "r5": 14.8
     },
     {
      "ticker": "131290.KQ",
      "rank": 10,
      "verdict": "제외",
      "why": "반도체 약세 및 차익실현 매물 출회",
-     "r1": 2.5
+     "r1": 2.5,
+     "r5": 18.6
     },
     {
      "ticker": "700028.KS",
@@ -32291,28 +32296,28 @@
      "rank": 13,
      "verdict": "선택",
      "why": "데이터센터 수혜 모멘텀과 상대적 안정성 반영",
-     "r1": null
+     "r1": -1
     },
     {
      "ticker": "039030.KQ",
      "rank": 14,
      "verdict": "관찰",
      "why": "반도체 장비주 흐름 동조 관찰",
-     "r1": null
+     "r1": -3.6
     },
     {
      "ticker": "207940.KS",
      "rank": 15,
      "verdict": "제외",
      "why": "노사 리스크 및 바이오 섹터 회피 원칙 적용",
-     "r1": null
+     "r1": -1.1
     },
     {
      "ticker": "058470.KQ",
      "rank": 16,
      "verdict": "관찰",
      "why": "지수 반등 시 연동 흐름 관찰",
-     "r1": null
+     "r1": 5.2
     },
     {
      "ticker": "000660.KS",
@@ -32320,7 +32325,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": -3.6
     }
    ],
    "bl": {
@@ -32601,7 +32606,374 @@
     "brief": "반도체 및 지주사 후보들은 시가갭 대비 급락하거나 회피 섹터에 해당하여 제외하였으며, 조건에 부합하는 종목이 없어 보류합니다.",
     "n": 0
    },
-   "dayHold": 1
+   "dayHold": 1,
+   "cstat": {
+    "n": 16,
+    "med": -1.6,
+    "ex": null,
+    "exD": null,
+    "rg": null,
+    "rej": 0.2,
+    "blr": {
+     "rand": -1.4,
+     "mom": -1.3
+    }
+   }
+  },
+  {
+   "date": "2026-09-22",
+   "market": "US",
+   "regime": "상승",
+   "rules": [
+    "단타 실패 분해: 시장충격10·목표과다1·선정23 → 선정 강화",
+    "강도80+ 실측 0%(10) — 확신도 과장, 보수화",
+    "근거'추세지속' 성공33%(33) → 단독추천 지양",
+    "근거'거래량급증' 성공33%(21) → 단독추천 지양",
+    "근거'실적' 성공39%(31) → 단독추천 지양",
+    "근거'정책테마' 성공19%(16) → 단독추천 지양"
+   ],
+   "cands": [
+    {
+     "ticker": "GRAL",
+     "rank": 1,
+     "verdict": "관찰",
+     "why": "FDA 승인 기대감으로 강하나 바이오 섹터 회피 필요",
+     "r1": null
+    },
+    {
+     "ticker": "SECZ",
+     "rank": 2,
+     "verdict": "선택",
+     "why": "토큰화 증권 정책 수혜 및 캔터 피츠제럴드 호평",
+     "r1": null
+    },
+    {
+     "ticker": "ARM",
+     "rank": 3,
+     "verdict": "제외",
+     "why": "반도체 섹터 회피 권고 및 갭 상승 부담",
+     "r1": null
+    },
+    {
+     "ticker": "PLBL",
+     "rank": 4,
+     "verdict": "선택",
+     "why": "동남아 AI 데이터센터 MOU 체결 모멘텀 유효",
+     "r1": null
+    },
+    {
+     "ticker": "FSLY",
+     "rank": 5,
+     "verdict": "관찰",
+     "why": "소프트웨어 섹터 및 내부자 매도 우려",
+     "r1": null
+    },
+    {
+     "ticker": "AXTI",
+     "rank": 6,
+     "verdict": "관찰",
+     "why": "소재 섹터 회피 및 지수 편입 효과 단기성 주의",
+     "r1": null
+    },
+    {
+     "ticker": "FIVN",
+     "rank": 7,
+     "verdict": "제외",
+     "why": "혼조세 및 뚜렷한 주도 모멘텀 부족",
+     "r1": null
+    },
+    {
+     "ticker": "XXI",
+     "rank": 8,
+     "verdict": "선택",
+     "why": "비트코인 대량 매입에 따른 우선주 강세 연동",
+     "r1": null
+    },
+    {
+     "ticker": "LUNR",
+     "rank": 9,
+     "verdict": "관찰",
+     "why": "우주 테마 변동성 높으나 단기 모멘텀 존재",
+     "r1": null
+    },
+    {
+     "ticker": "ALAB",
+     "rank": 10,
+     "verdict": "제외",
+     "why": "반도체 섹터 회피 권고 대상",
+     "r1": null
+    },
+    {
+     "ticker": "AKAM",
+     "rank": 11,
+     "verdict": "제외",
+     "why": "소프트웨어 섹터 회피 권고 대상",
+     "r1": null
+    },
+    {
+     "ticker": "DOCN",
+     "rank": 12,
+     "verdict": "관찰",
+     "why": "실적 호조이나 이미 반영된 가능성 높음",
+     "r1": null
+    },
+    {
+     "ticker": "MRNA",
+     "rank": 13,
+     "verdict": "제외",
+     "why": "바이오 및 헬스케어 섹터 회피 권고 대상",
+     "r1": null
+    },
+    {
+     "ticker": "INTC",
+     "rank": 14,
+     "verdict": "제외",
+     "why": "반도체 섹터 회피 권고 대상",
+     "r1": null
+    },
+    {
+     "ticker": "WBD",
+     "rank": 15,
+     "verdict": "제외",
+     "why": "엔터테인먼트 섹터 회피 권고 및 하락세",
+     "r1": null
+    },
+    {
+     "ticker": "NVDA",
+     "rank": 16,
+     "verdict": "제외",
+     "why": "반도체 섹터 회피 대상 및 상승폭 제한적",
+     "r1": null
+    },
+    {
+     "ticker": "NOK",
+     "rank": 17,
+     "verdict": "제외",
+     "why": "인덱스 제거 압력 및 통신 장비 부진",
+     "r1": null
+    },
+    {
+     "ticker": "AAL",
+     "rank": 18,
+     "verdict": "제외",
+     "why": "항공 섹터 모멘텀 미흡",
+     "r1": null
+    }
+   ],
+   "bl": {
+    "rand": [
+     "FSLY",
+     "ALAB",
+     "LUNR"
+    ],
+    "mom": [
+     "GRAL",
+     "SECZ",
+     "ARM"
+    ]
+   },
+   "dayCands": [
+    {
+     "name": "GRAIL, Inc.",
+     "ticker": "GRAL",
+     "score": 50,
+     "target_pct": 4,
+     "sector": "바이오",
+     "basis": [
+      "뉴스재료"
+     ],
+     "reason": "FDA의 갈레리(Galleri) 승인 기대감 관련 서류 공개로 전일 34% 급등하며 1년 반 내 최고의 하루를 기록했다. 단기 모멘텀이 강하나 바이오 섹터 회피 성향을 고려해 목표 수익률을 보수적으로 설정한다.",
+     "risk": "바이오 섹터 변동성 및 규제 리스크"
+    },
+    {
+     "name": "Intuitive Machines, Inc.",
+     "ticker": "LUNR",
+     "score": 48,
+     "target_pct": 4,
+     "sector": "우주항공",
+     "basis": [
+      "수주계약"
+     ],
+     "reason": "IM 300 플랫폼을 위한 새로운 시장 개척 소식과 애널리스트의 100% 상승 여력 전망으로 급등했다. 우주 테마의 강한 거래대금을 바탕으로 단기 트레이딩이 유효하다.",
+     "risk": "성장주 전반의 금리 민감도 증가"
+    },
+    {
+     "name": "Fastly, Inc.",
+     "ticker": "FSLY",
+     "score": 45,
+     "target_pct": 3,
+     "sector": "소프트웨어",
+     "basis": [
+      "뉴스재료"
+     ],
+     "reason": "AI 보안 신제품 출시로 전일 15% 상승했으나 내부자 매도 및 헷지펀드 확신 약화가 공존한다. 소프트웨어 섹터 회피 권고를 감안하여 짧은 구간의 단타 대응만 고려한다.",
+     "risk": "내부자 매도 물량 출회 및 밸류에이션 부담"
+    },
+    {
+     "name": "AXT Inc",
+     "ticker": "AXTI",
+     "score": 45,
+     "target_pct": 3,
+     "sector": "소재",
+     "basis": [
+      "뉴스재료"
+     ],
+     "reason": "S&P 600 지수 편입 효과로 전일 16% 상승세를 보였다. 지수 편입에 따른 패시브 자금 유입 기대를 활용하되 소재 섹터의 과거 저조한 실적을 유념한다.",
+     "risk": "지수 편입 이후 단기 차익실현 매물"
+    },
+    {
+     "name": "DigitalOcean Holdings, Inc.",
+     "ticker": "DOCN",
+     "score": 42,
+     "target_pct": 3,
+     "sector": "소프트웨어",
+     "basis": [
+      "실적"
+     ],
+     "reason": "어닝 서프라이즈와 가이드라인 상향 조정에도 불구하고 이미 호재가 상당 부분 선반영되었을 가능성이 있다. 소프트웨어 섹터 회피 기준에 따라 소폭의 단기 목표가로 한정한다.",
+     "risk": "실적 발표 후 재료 소멸 가능성"
+    }
+   ],
+   "hold": 0,
+   "v": {
+    "m": "gemini-3.5-flash-lite",
+    "pv": "J1.0-S2.0",
+    "policy": "S2.0"
+   },
+   "mktF": {
+    "dir": "상승",
+    "conf": 55,
+    "why": "전일 S&P500의 +1.5% 상승 및 VIX 하락으로 심리는 안정적이나 개별 주도 섹터의 제한으로 완만한 상승 예상",
+    "ok": null
+   },
+   "picks": [
+    {
+     "kind": "swing",
+     "name": "Securitize Corp.",
+     "ticker": "SECZ",
+     "score": 55,
+     "sector": "금융",
+     "basis": [
+      "정책테마"
+     ],
+     "plan": {
+      "engine": "R2.0",
+      "strategy": "swing",
+      "atrPct": 7.48,
+      "stopPct": 9,
+      "targetPct": 18,
+      "rr": 2,
+      "maxHoldDays": 10,
+      "riskPct": 0.5,
+      "maxWeightPct": 10,
+      "weightPct": 5.4,
+      "qty": 20,
+      "notional": 270,
+      "decision": {
+       "version": "S2.0",
+       "action": "conditional",
+       "strategy": "swing",
+       "reasons": [
+        "재료 지속성 확인, 짧은 주기로 추세 재평가"
+       ],
+       "plannedHoldDays": 10,
+       "reviewAfterDays": 3,
+       "maxHoldDays": 10,
+       "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+       "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+       "allowAutoOrder": false
+      }
+     },
+     "p0": 13.5,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "Polibeli Group Ltd",
+     "ticker": "PLBL",
+     "score": 52,
+     "sector": "기술",
+     "basis": [
+      "수주계약"
+     ],
+     "plan": {
+      "engine": "R2.0",
+      "strategy": "swing",
+      "atrPct": 5.27,
+      "stopPct": 7.9,
+      "targetPct": 15.81,
+      "rr": 2,
+      "maxHoldDays": 10,
+      "riskPct": 0.5,
+      "maxWeightPct": 10,
+      "weightPct": 6.24,
+      "qty": 49,
+      "notional": 312,
+      "decision": {
+       "version": "S2.0",
+       "action": "conditional",
+       "strategy": "swing",
+       "reasons": [
+        "재료 지속성 확인, 짧은 주기로 추세 재평가"
+       ],
+       "plannedHoldDays": 10,
+       "reviewAfterDays": 3,
+       "maxHoldDays": 10,
+       "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+       "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+       "allowAutoOrder": false
+      }
+     },
+     "p0": 6.37,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "Twenty One Capital, Inc.",
+     "ticker": "XXI",
+     "score": 48,
+     "sector": "금융",
+     "basis": [
+      "뉴스재료"
+     ],
+     "plan": {
+      "engine": "R2.0",
+      "strategy": "swing",
+      "atrPct": 6.16,
+      "stopPct": 9,
+      "targetPct": 18,
+      "rr": 2,
+      "maxHoldDays": 5,
+      "riskPct": 0.5,
+      "maxWeightPct": 10,
+      "weightPct": 5.55,
+      "qty": 42,
+      "notional": 278,
+      "decision": {
+       "version": "S2.0",
+       "action": "conditional",
+       "strategy": "swing",
+       "reasons": [
+        "추세 중심의 짧은 스윙"
+       ],
+       "plannedHoldDays": 5,
+       "reviewAfterDays": 3,
+       "maxHoldDays": 5,
+       "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+       "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+       "allowAutoOrder": false
+      }
+     },
+     "p0": 6.61,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    }
+   ]
   }
  ],
  "monAt": 1790050210216
