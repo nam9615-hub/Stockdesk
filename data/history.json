@@ -26290,7 +26290,7 @@
      "r20": null,
      "b": 35000,
      "gap": -0.4,
-     "simOpen": -0.7,
+     "simOpen": -2.4,
      "tv": 15618,
      "tvx": 0.9,
      "idx": -0.25
@@ -27876,7 +27876,7 @@
      "r20": null,
      "b": 34650,
      "gap": -1.8,
-     "simOpen": 0.3,
+     "simOpen": -1.4,
      "tv": 7352,
      "tvx": 0.5,
      "idx": -3.26
@@ -28595,7 +28595,7 @@
      "r20": null,
      "b": 145700,
      "gap": -2,
-     "simOpen": 5.6,
+     "simOpen": 5.9,
      "tv": 27442,
      "tvx": 0.4,
      "idx": 0.45
@@ -29374,7 +29374,7 @@
      "r20": null,
      "b": 14970,
      "gap": 0,
-     "simOpen": 6.8,
+     "simOpen": 5.1,
      "tv": 3747,
      "tvx": 1.6,
      "idx": null
@@ -29410,7 +29410,7 @@
      "r20": null,
      "b": 35600,
      "gap": -0.3,
-     "simOpen": -2.4,
+     "simOpen": -4.1,
      "tv": 260,
      "tvx": 0,
      "idx": null
@@ -29446,7 +29446,7 @@
      "r20": null,
      "b": 149900,
      "gap": 0.8,
-     "simOpen": 2.7,
+     "simOpen": 2.9,
      "tv": 1002,
      "tvx": 0,
      "idx": null
@@ -29569,35 +29569,40 @@
      "rank": 11,
      "verdict": "관찰",
      "why": "컨퍼런스 참여 예정",
-     "r1": 2.1
+     "r1": 2.1,
+     "r5": 3.6
     },
     {
      "ticker": "MRCY",
      "rank": 12,
      "verdict": "관찰",
      "why": "CEO 연장 및 가이드라인 재확인",
-     "r1": -0.3
+     "r1": -0.3,
+     "r5": -4.2
     },
     {
      "ticker": "CVI",
      "rank": 13,
      "verdict": "제외",
      "why": "내부자 지분 변동성",
-     "r1": 3.9
+     "r1": 3.9,
+     "r5": 2.1
     },
     {
      "ticker": "NOK",
      "rank": 14,
      "verdict": "제외",
      "why": "상승 모멘텀 약함",
-     "r1": -2.5
+     "r1": -2.5,
+     "r5": 4
     },
     {
      "ticker": "AAL",
      "rank": 15,
      "verdict": "제외",
      "why": "시장 대비 하락세",
-     "r1": -1.6
+     "r1": -1.6,
+     "r5": 5.4
     },
     {
      "ticker": "INTC",
@@ -32656,77 +32661,77 @@
      "rank": 1,
      "verdict": "관찰",
      "why": "FDA 승인 기대감으로 강하나 바이오 섹터 회피 필요",
-     "r1": null
+     "r1": 1.7
     },
     {
      "ticker": "SECZ",
      "rank": 2,
      "verdict": "선택",
      "why": "토큰화 증권 정책 수혜 및 캔터 피츠제럴드 호평",
-     "r1": null
+     "r1": 0.3
     },
     {
      "ticker": "ARM",
      "rank": 3,
      "verdict": "제외",
      "why": "반도체 섹터 회피 권고 및 갭 상승 부담",
-     "r1": null
+     "r1": 4.3
     },
     {
      "ticker": "PLBL",
      "rank": 4,
      "verdict": "선택",
      "why": "동남아 AI 데이터센터 MOU 체결 모멘텀 유효",
-     "r1": null
+     "r1": -8.5
     },
     {
      "ticker": "FSLY",
      "rank": 5,
      "verdict": "관찰",
      "why": "소프트웨어 섹터 및 내부자 매도 우려",
-     "r1": null
+     "r1": -6.9
     },
     {
      "ticker": "AXTI",
      "rank": 6,
      "verdict": "관찰",
      "why": "소재 섹터 회피 및 지수 편입 효과 단기성 주의",
-     "r1": null
+     "r1": 1.5
     },
     {
      "ticker": "FIVN",
      "rank": 7,
      "verdict": "제외",
      "why": "혼조세 및 뚜렷한 주도 모멘텀 부족",
-     "r1": null
+     "r1": 4.1
     },
     {
      "ticker": "XXI",
      "rank": 8,
      "verdict": "선택",
      "why": "비트코인 대량 매입에 따른 우선주 강세 연동",
-     "r1": null
+     "r1": 4.4
     },
     {
      "ticker": "LUNR",
      "rank": 9,
      "verdict": "관찰",
      "why": "우주 테마 변동성 높으나 단기 모멘텀 존재",
-     "r1": null
+     "r1": 3.2
     },
     {
      "ticker": "ALAB",
      "rank": 10,
      "verdict": "제외",
      "why": "반도체 섹터 회피 권고 대상",
-     "r1": null
+     "r1": 8.2
     },
     {
      "ticker": "AKAM",
      "rank": 11,
      "verdict": "제외",
      "why": "소프트웨어 섹터 회피 권고 대상",
-     "r1": null
+     "r1": 0.4
     },
     {
      "ticker": "DOCN",
@@ -32768,14 +32773,14 @@
      "rank": 17,
      "verdict": "제외",
      "why": "인덱스 제거 압력 및 통신 장비 부진",
-     "r1": null
+     "r1": 2.5
     },
     {
      "ticker": "AAL",
      "rank": 18,
      "verdict": "제외",
      "why": "항공 섹터 모멘텀 미흡",
-     "r1": null
+     "r1": -3.2
     }
    ],
    "bl": {
