@@ -18550,7 +18550,7 @@
      "p0": 7690,
      "r1": -1.1,
      "r5": -6.2,
-     "r20": null,
+     "r20": -1.3,
      "b": 7550,
      "gap": -1.8,
      "simOpen": -4.4,
@@ -18561,7 +18561,9 @@
      "simExit": "stop",
      "simD": "2026-09-01",
      "simT": "09:51",
-     "live": 1
+     "live": 1,
+     "mfe": 10.9,
+     "mae": -16.4
     },
     {
      "kind": "swing",
@@ -18577,7 +18579,7 @@
      "p0": 5890,
      "r1": 0.2,
      "r5": -2.5,
-     "r20": null,
+     "r20": 2.5,
      "b": 5890,
      "gap": 0,
      "simOpen": 7.8,
@@ -18588,7 +18590,9 @@
      "simExit": "target",
      "simD": "2026-09-08",
      "simT": "11:44",
-     "live": 1
+     "live": 1,
+     "mfe": 12.1,
+     "mae": -4.1
     },
     {
      "kind": "swing",
@@ -18603,7 +18607,7 @@
      "p0": 118900,
      "r1": 9.2,
      "r5": 6.1,
-     "r20": null,
+     "r20": 9.1,
      "b": 119200,
      "gap": 0.3,
      "simOpen": 10,
@@ -18613,7 +18617,9 @@
      "simT": "12:45",
      "live": 1,
      "tv": 65251,
-     "idx": 1.53
+     "idx": 1.53,
+     "mfe": 21.5,
+     "mae": -0.3
     }
    ],
    "day2": {
@@ -24245,7 +24251,7 @@
      "r20": null,
      "b": 360500,
      "gap": 0.6,
-     "simOpen": -2.6,
+     "simOpen": -2.8,
      "tv": 64299,
      "tvx": 0.6,
      "idx": 4.61
@@ -26290,7 +26296,7 @@
      "r20": null,
      "b": 35000,
      "gap": -0.4,
-     "simOpen": -3.4,
+     "simOpen": -2.4,
      "tv": 15618,
      "tvx": 0.9,
      "idx": -0.25
@@ -27876,7 +27882,7 @@
      "r20": null,
      "b": 34650,
      "gap": -1.8,
-     "simOpen": -2.5,
+     "simOpen": -1.4,
      "tv": 7352,
      "tvx": 0.5,
      "idx": -3.26
@@ -28595,7 +28601,7 @@
      "r20": null,
      "b": 145700,
      "gap": -2,
-     "simOpen": 6.6,
+     "simOpen": 5.9,
      "tv": 27442,
      "tvx": 0.4,
      "idx": 0.45
@@ -29374,7 +29380,7 @@
      "r20": null,
      "b": 14970,
      "gap": 0,
-     "simOpen": 4.9,
+     "simOpen": 5.1,
      "tv": 3747,
      "tvx": 1.6,
      "idx": null
@@ -29410,7 +29416,7 @@
      "r20": null,
      "b": 35600,
      "gap": -0.3,
-     "simOpen": -5.1,
+     "simOpen": -4.1,
      "tv": 260,
      "tvx": 0,
      "idx": null
@@ -29446,7 +29452,7 @@
      "r20": null,
      "b": 149900,
      "gap": 0.8,
-     "simOpen": 3.6,
+     "simOpen": 2.9,
      "tv": 1002,
      "tvx": 0,
      "idx": null
@@ -29969,14 +29975,16 @@
      "rank": 1,
      "verdict": "관찰",
      "why": "지수 변동성 활용 단기 관찰",
-     "r1": -2.2
+     "r1": -2.2,
+     "r5": 10.6
     },
     {
      "ticker": "131290.KQ",
      "rank": 2,
      "verdict": "제외",
      "why": "반도체 장비 섹터 차익실현 매물 주의",
-     "r1": 0.6
+     "r1": 0.6,
+     "r5": 17
     },
     {
      "ticker": "700028.KS",
@@ -29990,21 +29998,24 @@
      "rank": 4,
      "verdict": "관찰",
      "why": "변동성 장세 단기 트레이딩 대상",
-     "r1": 0
+     "r1": 0,
+     "r5": 18.8
     },
     {
      "ticker": "243880.KS",
      "rank": 5,
      "verdict": "제외",
      "why": "공시 관련 이슈 및 레버리지 리스크",
-     "r1": -4.6
+     "r1": -4.6,
+     "r5": 14.6
     },
     {
      "ticker": "058610.KQ",
      "rank": 6,
      "verdict": "관찰",
      "why": "로봇 테마 순환매 모니터링",
-     "r1": 0.1
+     "r1": 0.1,
+     "r5": 2.3
     },
     {
      "ticker": "017900.KS",
@@ -30232,7 +30243,7 @@
      },
      "p0": 144100,
      "r1": 6.4,
-     "r5": null,
+     "r5": 8.4,
      "r20": null,
      "tv": 38337,
      "tvx": 0.6,
@@ -30280,7 +30291,7 @@
      },
      "p0": 16560,
      "r1": 1.4,
-     "r5": null,
+     "r5": -2.4,
      "r20": null,
      "tv": 7616,
      "tvx": 2.8,
@@ -30329,7 +30340,7 @@
      },
      "p0": 34750,
      "r1": -2.1,
-     "r5": null,
+     "r5": -3.3,
      "r20": null,
      "tv": 2072,
      "tvx": 0.2,
@@ -32525,7 +32536,7 @@
      "r20": null,
      "b": 364000,
      "gap": 1.4,
-     "simOpen": -3.2,
+     "simOpen": -1,
      "tv": 166618,
      "tvx": 0.8,
      "idx": 0.15
@@ -33126,7 +33137,7 @@
      "rank": 1,
      "verdict": "관찰",
      "why": "실적 우려와 파운드리 주목 시각 공존",
-     "r1": null
+     "r1": 0.4
     },
     {
      "ticker": "196170.KQ",
@@ -33134,7 +33145,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": 0
     },
     {
      "ticker": "000660.KS",
@@ -33142,7 +33153,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": -1.9
     },
     {
      "ticker": "086520.KQ",
@@ -33150,7 +33161,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": -0.6
     },
     {
      "ticker": "005935.KS",
@@ -33158,7 +33169,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": 1.4
     },
     {
      "ticker": "247540.KQ",
@@ -33166,7 +33177,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": 0.6
     },
     {
      "ticker": "402340.KS",
@@ -33174,7 +33185,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": 0.9
     },
     {
      "ticker": "036930.KQ",
@@ -33182,7 +33193,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": 1.9
     },
     {
      "ticker": "009150.KS",
@@ -33190,7 +33201,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": -2.3
     },
     {
      "ticker": "277810.KQ",
@@ -33198,7 +33209,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": -3.8
     },
     {
      "ticker": "373220.KS",
@@ -33206,7 +33217,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": -0.6
     },
     {
      "ticker": "240810.KQ",
@@ -33411,12 +33422,15 @@
       }
      },
      "p0": 350500,
-     "r1": null,
+     "r1": -0.6,
      "r5": null,
      "r20": null,
      "b": 353500,
      "gap": 0.9,
-     "simOpen": -0.7
+     "simOpen": -0.7,
+     "tv": 78289,
+     "tvx": 0.7,
+     "idx": null
     },
     {
      "kind": "swing",
@@ -33457,12 +33471,15 @@
       }
      },
      "p0": 1486000,
-     "r1": null,
+     "r1": -2.3,
      "r5": null,
      "r20": null,
      "b": 1543000,
      "gap": 3.8,
-     "simOpen": -3.8
+     "simOpen": -3.8,
+     "tv": 780285,
+     "tvx": 0.9,
+     "idx": null
     },
     {
      "kind": "swing",
@@ -33502,9 +33519,14 @@
       }
      },
      "p0": 360500,
-     "r1": null,
+     "r1": -2.9,
      "r5": null,
-     "r20": null
+     "r20": null,
+     "tv": 209991,
+     "tvx": 1,
+     "b": 364000,
+     "gap": 1,
+     "idx": null
     }
    ],
    "day2": {
@@ -33513,6 +33535,364 @@
     "n": 0
    },
    "dayHold": 1
+  },
+  {
+   "date": "2026-09-23",
+   "market": "US",
+   "regime": "상승",
+   "rules": [
+    "단타 실패 분해: 시장충격10·목표과다1·선정23 → 선정 강화",
+    "강도80+ 실측 0%(10) — 확신도 과장, 보수화",
+    "근거'추세지속' 성공36%(33) → 단독추천 지양",
+    "근거'거래량급증' 성공33%(21) → 단독추천 지양",
+    "근거'실적' 성공39%(31) → 단독추천 지양",
+    "근거'정책테마' 성공24%(17) → 단독추천 지양"
+   ],
+   "cands": [
+    {
+     "ticker": "VKTX",
+     "rank": 1,
+     "verdict": "선택",
+     "why": "임상 데이터 호조 및 강한 거래대금 유지",
+     "r1": null
+    },
+    {
+     "ticker": "BFLY",
+     "rank": 2,
+     "verdict": "선택",
+     "why": "AI 헬스케어 테마 속 강한 상승 모멘텀",
+     "r1": null
+    },
+    {
+     "ticker": "VICR",
+     "rank": 3,
+     "verdict": "선택",
+     "why": "가이드라인 상향으로 인한 실적 모멘텀 지속",
+     "r1": null
+    },
+    {
+     "ticker": "SGRY",
+     "rank": 4,
+     "verdict": "관찰",
+     "why": "의료 서비스 관련 동반 상승 흐름 관찰 필요",
+     "r1": null
+    },
+    {
+     "ticker": "INOD",
+     "rank": 5,
+     "verdict": "선택",
+     "why": "메타 연계성 부각 및 거래량 급증",
+     "r1": null
+    },
+    {
+     "ticker": "TNGX",
+     "rank": 6,
+     "verdict": "제외",
+     "why": "최근 실적 부진 및 밸류에이션 부담",
+     "r1": null
+    },
+    {
+     "ticker": "BLLN",
+     "rank": 7,
+     "verdict": "관찰",
+     "why": "내부자 매도 물량 존재로 신중 접근",
+     "r1": null
+    },
+    {
+     "ticker": "HYMC",
+     "rank": 8,
+     "verdict": "선택",
+     "why": "프로젝트 업데이트에 따른 단기 변동성",
+     "r1": null
+    },
+    {
+     "ticker": "IBRX",
+     "rank": 9,
+     "verdict": "선택",
+     "why": "해외 확장 기대감 및 투기적 수급 유입",
+     "r1": null
+    },
+    {
+     "ticker": "TTAN",
+     "rank": 10,
+     "verdict": "관찰",
+     "why": "소프트웨어 섹터 회피 통계 반영",
+     "r1": null
+    },
+    {
+     "ticker": "RMBS",
+     "rank": 11,
+     "verdict": "관찰",
+     "why": "반도체 섹터 주의 필요",
+     "r1": null
+    },
+    {
+     "ticker": "SRAD",
+     "rank": 12,
+     "verdict": "제외",
+     "why": "모멘텀 부족 및 관망세",
+     "r1": null
+    },
+    {
+     "ticker": "TRLV",
+     "rank": 13,
+     "verdict": "선택",
+     "why": "주요 지수 편입 호재 반영",
+     "r1": null
+    },
+    {
+     "ticker": "DKS",
+     "rank": 14,
+     "verdict": "선택",
+     "why": "유통 섹터 내 견조한 추세 유지",
+     "r1": null
+    },
+    {
+     "ticker": "GRAB",
+     "rank": 15,
+     "verdict": "관찰",
+     "why": "상승폭 제한적",
+     "r1": null
+    },
+    {
+     "ticker": "WBD",
+     "rank": 16,
+     "verdict": "제외",
+     "why": "합병 관련 불확실성 및 약보합",
+     "r1": null
+    },
+    {
+     "ticker": "NOK",
+     "rank": 17,
+     "verdict": "제외",
+     "why": "ADR 하락 압력 및 약세 흐름",
+     "r1": null
+    },
+    {
+     "ticker": "SOFI",
+     "rank": 18,
+     "verdict": "관찰",
+     "why": "신규 서비스 런칭이나 상승 모멘텀 미흡",
+     "r1": null
+    }
+   ],
+   "bl": {
+    "rand": [
+     "SGRY",
+     "BFLY",
+     "INOD"
+    ],
+    "mom": [
+     "VKTX",
+     "BFLY",
+     "VICR"
+    ]
+   },
+   "dayCands": [
+    {
+     "name": "Viking Therapeutics, Inc.",
+     "ticker": "VKTX",
+     "score": 50,
+     "target_pct": 3,
+     "sector": "바이오",
+     "basis": [
+      "뉴스재료"
+     ],
+     "reason": "임상 데이터 발표 이후 높은 거래대금이 유지되고 있어 단기 트레이딩 관점 접근이 가능합니다. 바이오 섹터의 과거 낮은 승률을 감안해 목표가를 낮게 설정합니다.",
+     "risk": "임상 결과 해석에 따른 변동성"
+    },
+    {
+     "name": "Butterfly Network, Inc.",
+     "ticker": "BFLY",
+     "score": 48,
+     "target_pct": 3,
+     "sector": "의료기기",
+     "basis": [
+      "뉴스재료",
+      "거래량급증"
+     ],
+     "reason": "AI 헬스케어 테마로 자금이 유입되며 강한 변동성을 보이고 있습니다. 헬스케어 섹터 주의 통계를 반영하여 철저한 단기 대응이 필요합니다.",
+     "risk": "급등 후 차익실현 매물 출하"
+    },
+    {
+     "name": "Hycroft Mining Holding Corporat",
+     "ticker": "HYMC",
+     "score": 45,
+     "target_pct": 3,
+     "sector": "광업",
+     "basis": [
+      "뉴스재료"
+     ],
+     "reason": "프로젝트 업데이트 뉴스와 함께 거래가 집중되며 단기 모멘텀이 발생했습니다. 광업 섹터의 과거 저조한 성적을 고려해 보수적으로 봅니다.",
+     "risk": "테마 소멸 시 급락 위험"
+    },
+    {
+     "name": "ImmunityBio, Inc.",
+     "ticker": "IBRX",
+     "score": 46,
+     "target_pct": 3,
+     "sector": "바이오",
+     "basis": [
+      "뉴스재료"
+     ],
+     "reason": "해외 확장 기대감과 경영진 관련 이슈로 투심이 집중되었습니다. 바이오 섹터 회피 성향을 고려해 목표가를 3%로 제한합니다.",
+     "risk": "투기적 수급 이탈 가능성"
+    },
+    {
+     "name": "Trulieve Cannabis Corp. Subordi",
+     "ticker": "TRLV",
+     "score": 48,
+     "target_pct": 3,
+     "sector": "소재",
+     "basis": [
+      "뉴스재료"
+     ],
+     "reason": "주요 지수 편입 뉴스가 호재로 작용하며 수급이 유입되었습니다. 소재 섹터의 과거 부진 이력을 감안하여 짧게 대응합니다.",
+     "risk": "지수 편입 효과 단기 소멸"
+    }
+   ],
+   "hold": 0,
+   "v": {
+    "m": "gemini-3.5-flash-lite",
+    "pv": "J1.0-S2.0",
+    "policy": "S2.0"
+   },
+   "mktF": {
+    "dir": "상승",
+    "conf": 55,
+    "why": "전일 S&P500 상승세와 낮은 VIX 환경이나 선물 소폭 약세를 고려해 신중한 상승을 전망함",
+    "ok": null
+   },
+   "picks": [
+    {
+     "kind": "swing",
+     "name": "Vicor Corporation",
+     "ticker": "VICR",
+     "score": 55,
+     "sector": "반도체",
+     "basis": [
+      "실적",
+      "거래량급증"
+     ],
+     "plan": {
+      "engine": "R2.0",
+      "strategy": "swing",
+      "atrPct": 6.39,
+      "stopPct": 9,
+      "targetPct": 18,
+      "rr": 2,
+      "maxHoldDays": 10,
+      "riskPct": 0.5,
+      "maxWeightPct": 10,
+      "weightPct": 5.37,
+      "qty": 1,
+      "notional": 268,
+      "decision": {
+       "version": "S2.0",
+       "action": "conditional",
+       "strategy": "swing",
+       "reasons": [
+        "재료 지속성 확인, 짧은 주기로 추세 재평가"
+       ],
+       "plannedHoldDays": 10,
+       "reviewAfterDays": 3,
+       "maxHoldDays": 10,
+       "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+       "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+       "allowAutoOrder": false
+      }
+     },
+     "p0": 268.34,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "Innodata Inc.",
+     "ticker": "INOD",
+     "score": 50,
+     "sector": "소프트웨어",
+     "basis": [
+      "뉴스재료",
+      "거래량급증"
+     ],
+     "plan": {
+      "engine": "R2.0",
+      "strategy": "swing",
+      "atrPct": 3.85,
+      "stopPct": 5.78,
+      "targetPct": 11.55,
+      "rr": 2,
+      "maxHoldDays": 5,
+      "riskPct": 0.5,
+      "maxWeightPct": 10,
+      "weightPct": 8.4,
+      "qty": 6,
+      "notional": 420,
+      "decision": {
+       "version": "S2.0",
+       "action": "watch",
+       "strategy": "day-watch",
+       "reasons": [
+        "단기 수급만 확인: 단타 재평가 후보, 자동 전환 아님"
+       ],
+       "plannedHoldDays": 5,
+       "reviewAfterDays": 3,
+       "maxHoldDays": 5,
+       "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+       "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+       "allowAutoOrder": false
+      }
+     },
+     "p0": 69.97,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "Dick's Sporting Goods Inc",
+     "ticker": "DKS",
+     "score": 52,
+     "sector": "유통",
+     "basis": [
+      "추세지속"
+     ],
+     "plan": {
+      "engine": "R2.0",
+      "strategy": "swing",
+      "atrPct": 4.04,
+      "stopPct": 6.06,
+      "targetPct": 12.12,
+      "rr": 2,
+      "maxHoldDays": 5,
+      "riskPct": 0.5,
+      "maxWeightPct": 10,
+      "weightPct": 8.04,
+      "qty": 3,
+      "notional": 402,
+      "decision": {
+       "version": "S2.0",
+       "action": "watch",
+       "strategy": "day-watch",
+       "reasons": [
+        "단기 수급만 확인: 단타 재평가 후보, 자동 전환 아님"
+       ],
+       "plannedHoldDays": 5,
+       "reviewAfterDays": 3,
+       "maxHoldDays": 5,
+       "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+       "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+       "allowAutoOrder": false
+      }
+     },
+     "p0": 133.94,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    }
+   ]
   }
  ],
  "monAt": 1790132294443
