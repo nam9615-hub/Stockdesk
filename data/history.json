@@ -34032,6 +34032,361 @@
      "mom": 1.2
     }
    }
+  },
+  {
+   "date": "2026-09-24",
+   "market": "US",
+   "regime": "상승",
+   "rules": [
+    "단타 실패 분해: 시장충격10·목표과다1·선정23 → 선정 강화",
+    "강도80+ 실측 0%(10) — 확신도 과장, 보수화",
+    "근거'추세지속' 성공38%(34) → 단독추천 지양",
+    "근거'거래량급증' 성공35%(23) → 단독추천 지양",
+    "근거'실적' 성공38%(32) → 단독추천 지양",
+    "근거'정책테마' 성공24%(17) → 단독추천 지양"
+   ],
+   "cands": [
+    {
+     "ticker": "FSLY",
+     "rank": 1,
+     "verdict": "관찰",
+     "why": "AI 방화벽 뉴스로 강세이나 갭 추격 주의",
+     "r1": null
+    },
+    {
+     "ticker": "SECZ",
+     "rank": 2,
+     "verdict": "선택",
+     "why": "신고가 경신 및 토큰화 모멘텀 지속",
+     "r1": null
+    },
+    {
+     "ticker": "ACMR",
+     "rank": 3,
+     "verdict": "관찰",
+     "why": "주가 변동성 속 저가 매수 심리 관찰",
+     "r1": null
+    },
+    {
+     "ticker": "KVYO",
+     "rank": 4,
+     "verdict": "관찰",
+     "why": "현금 흐름 우수하나 소프트웨어 섹터 회피",
+     "r1": null
+    },
+    {
+     "ticker": "VICR",
+     "rank": 5,
+     "verdict": "선택",
+     "why": "가이드 상향에 따른 모멘텀 유효",
+     "r1": null
+    },
+    {
+     "ticker": "PANW",
+     "rank": 6,
+     "verdict": "제외",
+     "why": "시장 전반 금리·유가 부담 영향",
+     "r1": null
+    },
+    {
+     "ticker": "CRWD",
+     "rank": 7,
+     "verdict": "제외",
+     "why": "소프트웨어 섹터 회피 지침 적용",
+     "r1": null
+    },
+    {
+     "ticker": "BETA",
+     "rank": 8,
+     "verdict": "선택",
+     "why": "eIPP 운영 개시 재료 보유",
+     "r1": null
+    },
+    {
+     "ticker": "OKTA",
+     "rank": 9,
+     "verdict": "제외",
+     "why": "소프트웨어 섹터 및 고점 부담",
+     "r1": null
+    },
+    {
+     "ticker": "IONQ",
+     "rank": 10,
+     "verdict": "관찰",
+     "why": "양자 장벽 제거 이슈 있으나 보수적 접근",
+     "r1": null
+    },
+    {
+     "ticker": "RRR",
+     "rank": 11,
+     "verdict": "관찰",
+     "why": "가치주 매력 있으나 지수 하방 압력",
+     "r1": null
+    },
+    {
+     "ticker": "ASAN",
+     "rank": 12,
+     "verdict": "제외",
+     "why": "내부자 매도 공시 악재",
+     "r1": null
+    },
+    {
+     "ticker": "FORM",
+     "rank": 13,
+     "verdict": "관찰",
+     "why": "반도체 섹터 회피 대상이나 거래량 유입",
+     "r1": null
+    },
+    {
+     "ticker": "VIA",
+     "rank": 14,
+     "verdict": "관찰",
+     "why": "실적 발표 이후 방향성 탐색",
+     "r1": null
+    },
+    {
+     "ticker": "GRAB",
+     "rank": 15,
+     "verdict": "제외",
+     "why": "모멘텀 부족",
+     "r1": null
+    },
+    {
+     "ticker": "WBD",
+     "rank": 16,
+     "verdict": "제외",
+     "why": "약보합세 및 시장 하방 압력",
+     "r1": null
+    },
+    {
+     "ticker": "NVDA",
+     "rank": 17,
+     "verdict": "제외",
+     "why": "지수 집중도 우려 및 하락세",
+     "r1": null
+    },
+    {
+     "ticker": "INTC",
+     "rank": 18,
+     "verdict": "제외",
+     "why": "반도체 섹터 약세 및 경쟁 심화",
+     "r1": null
+    }
+   ],
+   "bl": {
+    "rand": [
+     "ACMR",
+     "SECZ",
+     "FORM"
+    ],
+    "mom": [
+     "FSLY",
+     "SECZ",
+     "ACMR"
+    ]
+   },
+   "dayCands": [
+    {
+     "name": "Fastly, Inc.",
+     "ticker": "FSLY",
+     "target_pct": 3,
+     "sector": "기술",
+     "basis": [
+      "뉴스재료"
+     ],
+     "reason": "AI 방화벽 출시 뉴스로 주목받고 있으나 갭상승 추격 매매의 낮은 성공률을 고려해 신중한 접근이 필요합니다. 개장 후 변동성을 확인한 뒤 대응해야 합니다.",
+     "risk": "높은 시초가 형성 후 둔화 가능성",
+     "score": 50
+    },
+    {
+     "name": "ACM Research, Inc.",
+     "ticker": "ACMR",
+     "target_pct": 3,
+     "sector": "반도체",
+     "basis": [
+      "낙폭과대"
+     ],
+     "reason": "최근 주가 스윙 이후 저가 매수세 유입 가능성이 있으나 반도체 섹터 회피 지침을 반영하여 엄선된 타점에서만 관망합니다.",
+     "risk": "섹터 전반의 약세 연동 위험",
+     "score": 50
+    },
+    {
+     "name": "Klaviyo, Inc. Series A",
+     "ticker": "KVYO",
+     "target_pct": 3,
+     "sector": "소프트웨어",
+     "basis": [
+      "뉴스재료"
+     ],
+     "reason": "AI 플랫폼 업데이트와 현금 흐름 창출력이 부각되고 있으나 소프트웨어 섹터의 낮은 성공 통계를 고려해 목표가를 낮게 설정합니다.",
+     "risk": "매크로 환경에 따른 밸류데이션 압박",
+     "score": 50
+    },
+    {
+     "name": "Red Rock Resorts, Inc.",
+     "ticker": "RRR",
+     "target_pct": 3,
+     "sector": "경기소비재",
+     "basis": [
+      "뉴스재료"
+     ],
+     "reason": "가치주 대안으로 거론되며 수급이 유입되고 있으나 전체 시장 하방 압력을 고려하여 짧은 목표가로 대응합니다.",
+     "risk": "소비 심리 위축 및 지수 하락 연동",
+     "score": 50
+    },
+    {
+     "name": "FormFactor, Inc.",
+     "ticker": "FORM",
+     "target_pct": 3,
+     "sector": "반도체",
+     "basis": [
+      "거래량급증"
+     ],
+     "reason": "반도체 관련주 동반 강세 속 거래량이 유입되었으나, 섹터 통계를 감안하여 단기 트레이딩 관점으로만 제한합니다.",
+     "risk": "변동성 확대 및 차익실현 물량",
+     "score": 50
+    }
+   ],
+   "hold": 0,
+   "v": {
+    "m": "gemini-3.5-flash-lite",
+    "pv": "J1.0-S2.0",
+    "policy": "S2.0"
+   },
+   "mktF": {
+    "dir": "하락",
+    "conf": 51,
+    "why": "전일 S&P500 하락 및 VIX 상승에 따른 보수적 접근 필요",
+    "ok": null
+   },
+   "picks": [
+    {
+     "kind": "swing",
+     "name": "Securitize Corp.",
+     "ticker": "SECZ",
+     "score": 45,
+     "sector": "금융",
+     "basis": [
+      "신고가"
+     ],
+     "plan": {
+      "engine": "R2.0",
+      "strategy": "swing",
+      "atrPct": 8.39,
+      "stopPct": 9,
+      "targetPct": 18,
+      "rr": 2,
+      "maxHoldDays": 5,
+      "riskPct": 0.5,
+      "maxWeightPct": 10,
+      "weightPct": 5.46,
+      "qty": 19,
+      "notional": 273,
+      "decision": {
+       "version": "S2.0",
+       "action": "watch",
+       "strategy": "day-watch",
+       "reasons": [
+        "단기 수급만 확인: 단타 재평가 후보, 자동 전환 아님"
+       ],
+       "plannedHoldDays": 5,
+       "reviewAfterDays": 3,
+       "maxHoldDays": 5,
+       "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+       "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+       "allowAutoOrder": false
+      }
+     },
+     "p0": 14.36,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "Vicor Corporation",
+     "ticker": "VICR",
+     "score": 42,
+     "sector": "산업재",
+     "basis": [
+      "실적"
+     ],
+     "plan": {
+      "engine": "R2.0",
+      "strategy": "swing",
+      "atrPct": 6.31,
+      "stopPct": 9,
+      "targetPct": 18,
+      "rr": 2,
+      "maxHoldDays": 10,
+      "riskPct": 0.5,
+      "maxWeightPct": 10,
+      "weightPct": 0,
+      "qty": 0,
+      "notional": 0,
+      "decision": {
+       "version": "S2.0",
+       "action": "conditional",
+       "strategy": "swing",
+       "reasons": [
+        "재료 지속성 확인, 짧은 주기로 추세 재평가"
+       ],
+       "plannedHoldDays": 10,
+       "reviewAfterDays": 3,
+       "maxHoldDays": 10,
+       "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+       "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+       "allowAutoOrder": false
+      }
+     },
+     "p0": 283.16,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "Beta Technologies, Inc.",
+     "ticker": "BETA",
+     "score": 40,
+     "sector": "항공우주",
+     "basis": [
+      "정책테마"
+     ],
+     "plan": {
+      "engine": "R2.0",
+      "strategy": "swing",
+      "atrPct": 6.67,
+      "stopPct": 9,
+      "targetPct": 18,
+      "rr": 2,
+      "maxHoldDays": 15,
+      "riskPct": 0.5,
+      "maxWeightPct": 10,
+      "weightPct": 5.35,
+      "qty": 11,
+      "notional": 268,
+      "decision": {
+       "version": "S2.0",
+       "action": "conditional",
+       "strategy": "swing",
+       "reasons": [
+        "지속 재료와 중기 추세가 함께 확인됨"
+       ],
+       "plannedHoldDays": 15,
+       "reviewAfterDays": 3,
+       "maxHoldDays": 15,
+       "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+       "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+       "allowAutoOrder": false
+      }
+     },
+     "p0": 24.34,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    }
+   ]
   }
  ],
  "monAt": 1790218139588
