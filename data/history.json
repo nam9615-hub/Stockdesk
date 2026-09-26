@@ -34620,49 +34620,49 @@
      "rank": 12,
      "verdict": "제외",
      "why": "소셜 버즈 기반 변동성 과다",
-     "r1": null
+     "r1": -3.4
     },
     {
      "ticker": "TEM",
      "rank": 13,
      "verdict": "제외",
      "why": "내부자 매도 및 헬스케어 리스크",
-     "r1": null
+     "r1": 1.6
     },
     {
      "ticker": "BRKR",
      "rank": 14,
      "verdict": "제외",
      "why": "바이오 섹터 회피",
-     "r1": null
+     "r1": -0.2
     },
     {
      "ticker": "INTC",
      "rank": 15,
      "verdict": "관찰",
      "why": "반도체 회피 권고이나 지수 연동 반등 기대",
-     "r1": null
+     "r1": -3
     },
     {
      "ticker": "ONDS",
      "rank": 16,
      "verdict": "관찰",
      "why": "드론 테마 순환매 단기 대응",
-     "r1": null
+     "r1": -1.1
     },
     {
      "ticker": "AAL",
      "rank": 17,
      "verdict": "선택",
      "why": "낙폭과대 저평가 매력 스윙 관점 유효",
-     "r1": null
+     "r1": 2.1
     },
     {
      "ticker": "NVDA",
      "rank": 18,
      "verdict": "제외",
      "why": "경고 시그널 및 마이너스 수익률",
-     "r1": null
+     "r1": 0
     }
    ],
    "bl": {
@@ -34964,7 +34964,19 @@
     "brief": "제시된 5개 종목 모두 반도체·바이오 섹터 회피 지침 및 개장 후 하락세로 인해 단타 확률 우위 기준을 충족하지 못해 전부 제외합니다.",
     "n": 0
    },
-   "dayHold": 1
+   "dayHold": 1,
+   "cstat": {
+    "n": 18,
+    "med": -0.2,
+    "ex": null,
+    "exD": null,
+    "rg": null,
+    "rej": -1.4,
+    "blr": {
+     "rand": 2.7,
+     "mom": 0.4
+    }
+   }
   }
  ],
  "monAt": 1790358825565
