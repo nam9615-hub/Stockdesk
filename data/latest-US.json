@@ -1,43 +1,44 @@
 {
- "date": "2026-09-25",
+ "date": "2026-09-28",
  "at": "21:29",
  "data": {
-  "brief": "지수 선물 강세와 VIX 하락으로 투심은 안정적이나, 과거 실측 성적의 낮은 적중률과 과도한 확신 교정 지침을 반영하여 보수적인 관점으로 접근합니다. 바이오 및 반도체 등 특정 섹터의 회피 권고를 고려해 철저한 리스크 관리 위주로 종목을 선별했습니다.",
+  "brief": "S&P500 전일 상승에도 지수선물 하락 및 VIX 급등으로 시장 변동성이 확대되었습니다. 과거 검증 통계를 반영하여 반도체 및 추세지속 단독 근거를 배제하고 보수적인 스윙·단타 포트폴리오를 구성합니다.",
   "picks": [
    {
-    "name": "Warby Parker Inc.",
-    "ticker": "WRBY",
+    "name": "Almonty Industries Inc.",
+    "ticker": "ALM",
     "score": 45,
-    "sector": "유통",
+    "sector": "소재",
     "basis": [
-     "뉴스재료"
+     "수주계약",
+     "실적"
     ],
-    "reason": "옵션 시장에서 커버드콜 배팅 등 특이 거래 활동이 포착되며 성장 기대감이 유지되고 있습니다. 밸류에이션 부담에도 불구하고 박스권 상단 돌파 시도가 이어질 수 있습니다.",
-    "catalyst": "옵션 특이 거래 및 성장 기대감",
-    "risk": "밸류에이션 부담에 따른 변동성",
+    "reason": "최종 공장 승인과 함께 웨스턴 텅스텐 확장 기대감이 반영되어 있습니다. Stifel의 높은 목표가 제시는 중장기 실적 전환 가능성을 높입니다.",
+    "catalyst": "생산 현금화 및 텅스텐 확장",
+    "risk": "소재 섹터 과거 실적 부진 유의",
     "plan": {
      "engine": "R2.0",
      "strategy": "swing",
-     "atrPct": 5.93,
-     "stopPct": 8.89,
-     "targetPct": 17.79,
+     "atrPct": 9.47,
+     "stopPct": 9,
+     "targetPct": 18,
      "rr": 2,
-     "maxHoldDays": 5,
+     "maxHoldDays": 10,
      "riskPct": 0.5,
      "maxWeightPct": 10,
-     "weightPct": 5.25,
-     "qty": 10,
-     "notional": 263,
+     "weightPct": 5.49,
+     "qty": 20,
+     "notional": 274,
      "decision": {
       "version": "S2.0",
-      "action": "watch",
-      "strategy": "watch",
+      "action": "conditional",
+      "strategy": "swing",
       "reasons": [
-       "지속 재료·추세 확인 전 관찰"
+       "재료 지속성 확인, 짧은 주기로 추세 재평가"
       ],
-      "plannedHoldDays": 5,
+      "plannedHoldDays": 10,
       "reviewAfterDays": 3,
-      "maxHoldDays": 5,
+      "maxHoldDays": 10,
       "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
       "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
       "allowAutoOrder": false
@@ -45,75 +46,76 @@
     }
    },
    {
-    "name": "Planet Labs PBC",
-    "ticker": "PL",
+    "name": "Maase Inc.",
+    "ticker": "MAAS",
     "score": 42,
-    "sector": "우주항공",
+    "sector": "소프트웨어",
+    "basis": [
+     "수주계약",
+     "정책테마"
+    ],
+    "reason": "글로벌 AI 서비스 플랫폼 구축 계약 체결로 신사업 모멘텀이 발생했습니다. 다만 소프트웨어 섹터의 낮은 과거 승률을 감안하여 비중을 조절합니다.",
+    "catalyst": "싱가포르 AI 플랫폼 계약",
+    "risk": "소프트웨어 섹터 약세 및 변동성",
+    "plan": {
+     "engine": "R2.0",
+     "strategy": "swing",
+     "atrPct": 9.44,
+     "stopPct": 9,
+     "targetPct": 18,
+     "rr": 2,
+     "maxHoldDays": 10,
+     "riskPct": 0.5,
+     "maxWeightPct": 10,
+     "weightPct": 5.53,
+     "qty": 18,
+     "notional": 277,
+     "decision": {
+      "version": "S2.0",
+      "action": "conditional",
+      "strategy": "swing",
+      "reasons": [
+       "재료 지속성 확인, 짧은 주기로 추세 재평가"
+      ],
+      "plannedHoldDays": 10,
+      "reviewAfterDays": 3,
+      "maxHoldDays": 10,
+      "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+      "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+      "allowAutoOrder": false
+     }
+    }
+   },
+   {
+    "name": "Pershing Square Inc.",
+    "ticker": "PS",
+    "score": 40,
+    "sector": "금융",
     "basis": [
      "추세지속"
     ],
-    "reason": "우주 및 위성 관련 섹터 내에서 상대적 아웃퍼폼 흐름을 보이며 모멘텀이 유지되고 있습니다. 단기 상승 추세선 하단 지지 여부를 확인하며 접근할 필요가 있습니다.",
-    "catalyst": "우주 테마 섹터 강세",
-    "risk": "실적 가시성 부족 및 테마성 변동성",
+    "reason": "빌 아크먼 주도 하에 IPO 후 매수 구간에 재진입하며 강세를 보이고 있습니다. 경영진의 지속적인 매수세가 하방을 지지합니다.",
+    "catalyst": "경영진 지분 매수 및 IPO 모멘텀",
+    "risk": "시장 조정 시 동반 하락 위험",
     "plan": {
      "engine": "R2.0",
      "strategy": "swing",
-     "atrPct": 5.72,
-     "stopPct": 8.58,
-     "targetPct": 17.16,
+     "atrPct": 7.04,
+     "stopPct": 9,
+     "targetPct": 18,
      "rr": 2,
      "maxHoldDays": 5,
      "riskPct": 0.5,
      "maxWeightPct": 10,
-     "weightPct": 5.64,
-     "qty": 16,
-     "notional": 282,
+     "weightPct": 4.49,
+     "qty": 4,
+     "notional": 225,
      "decision": {
       "version": "S2.0",
-      "action": "watch",
-      "strategy": "day-watch",
+      "action": "conditional",
+      "strategy": "swing",
       "reasons": [
-       "단기 수급만 확인: 단타 재평가 후보, 자동 전환 아님"
-      ],
-      "plannedHoldDays": 5,
-      "reviewAfterDays": 3,
-      "maxHoldDays": 5,
-      "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
-      "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
-      "allowAutoOrder": false
-     }
-    }
-   },
-   {
-    "name": "American Airlines Group, Inc.",
-    "ticker": "AAL",
-    "score": 40,
-    "sector": "운송",
-    "basis": [
-     "낙폭과대"
-    ],
-    "reason": "5년간의 큰 폭의 하락 이후 공정 가치 대비 저평가 분석이 제기되며 반발 매수세 유입 가능성이 있습니다. 장기 바닥 다지기 구간에서의 기술적 반등을 노리는 스윙 전략이 유효합니다.",
-    "catalyst": "저평가 매력 및 기술적 반등",
-    "risk": "업황 회복 지연 시 지루한 횡보 가능성",
-    "plan": {
-     "engine": "R2.0",
-     "strategy": "swing",
-     "atrPct": 3.3,
-     "stopPct": 4.95,
-     "targetPct": 9.9,
-     "rr": 2,
-     "maxHoldDays": 5,
-     "riskPct": 0.5,
-     "maxWeightPct": 10,
-     "weightPct": 9.88,
-     "qty": 37,
-     "notional": 494,
-     "decision": {
-      "version": "S2.0",
-      "action": "watch",
-      "strategy": "watch",
-      "reasons": [
-       "지속 재료·추세 확인 전 관찰"
+       "추세 중심의 짧은 스윙"
       ],
       "plannedHoldDays": 5,
       "reviewAfterDays": 3,
@@ -127,183 +129,185 @@
   ],
   "day_cands": [
    {
-    "name": "Intel Corporation",
-    "ticker": "INTC",
-    "score": 45,
-    "target_pct": 3,
-    "sector": "반도체",
-    "basis": [
-     "뉴스재료"
-    ],
-    "reason": "AI 열풍에 따른 시장 전반의 온기가 반도체 대형주로 확산될 수 있습니다. 단기 낙폭 과대에 따른 기술적 반등 모멘텀을 활용합니다.",
-    "risk": "반도체 섹터 전반의 회피 권고 및 변동성"
-   },
-   {
-    "name": "Ondas Inc",
-    "ticker": "ONDS",
-    "score": 43,
+    "name": "People Incorporated",
+    "ticker": "PPLI",
+    "score": 35,
     "target_pct": 4,
-    "sector": "방산",
+    "sector": "기타",
     "basis": [
      "거래량급증"
     ],
-    "reason": "드론 관련주들의 동반 상승 흐름 속에서 거래량이 유입되며 단기 탄력성이 기대됩니다. 변동성이 높으므로 짧은 손절 라인 설정이 필수적입니다.",
-    "risk": "방산 섹터 회피 권고 및 급등락 위험"
+    "reason": "급등 이후 추가 상승 여력에 대한 단기 모멘텀이 관찰됩니다. 다만 거래량급증 단독 근거의 낮은 성공률을 고려해 목표가를 낮게 설정합니다.",
+    "catalyst": "거래량 유입 및 변동성",
+    "risk": "단기 차익실현 매물 압박"
    },
    {
-    "name": "Securitize Corp.",
-    "ticker": "SECZ",
-    "score": 48,
-    "target_pct": 5,
-    "sector": "금융",
-    "basis": [
-     "정책테마"
-    ],
-    "reason": "SEC의 토큰화 예외 조치와 관련된 실제 거래 현실화 뉴스로 강한 모멘텀이 형성되어 있습니다. 다만 신규 테마 특유의 급격한 되돌림에 주의해야 합니다.",
-    "risk": "단기 과열 및 차익실현 매물 압박"
-   },
-   {
-    "name": "CareDx, Inc.",
-    "ticker": "CDNA",
-    "score": 44,
+    "name": "Veeco Instruments Inc.",
+    "ticker": "VECO",
+    "score": 35,
     "target_pct": 4,
-    "sector": "헬스케어",
+    "sector": "장비",
     "basis": [
-     "뉴스재료"
+     "낙폭과대"
     ],
-    "reason": "상향 조정된 애널리스트 목표가와 함께 거래량이 동반되며 상승 탄력을 받고 있습니다. 헬스케어 섹터 회피 권고를 감안하여 비중은 축소해야 합니다.",
-    "risk": "헬스케어 섹터 약세 및 단기 차익실현"
+    "reason": "현금 흐름 대비 저평가 분석과 함께 반등 시도가 나타나고 있습니다. 과거 낙폭과대 패턴의 낮은 성공률을 감안하여 짧은 목표가로 대응합니다.",
+    "catalyst": "현금 흐름 가치 재평가",
+    "risk": "변동성 확대 시 추세 이탈"
    },
    {
-    "name": "Twist Bioscience Corporation",
-    "ticker": "TWST",
-    "score": 46,
-    "target_pct": 4,
-    "sector": "바이오",
+    "name": "Viavi Solutions Inc.",
+    "ticker": "VIAV",
+    "score": 33,
+    "target_pct": 3,
+    "sector": "통신",
     "basis": [
-     "수주계약"
+     "추세지속"
     ],
-    "reason": "AI 신약 개발 협력 및 파트너십 뉴스로 강력한 재료가 부각되었습니다. 바이오 섹터 회피 지침이 있으므로 당일 단기 트레이딩 관점으로만 대응합니다.",
-    "risk": "바이오 섹터 회피 권고 및 변동성 확대"
+    "reason": "일부 동종 업종 주가 급등과 함께 동반 상승 흐름을 보이고 있습니다. 50불 미만 주식에 대한 시장 관심이 유입 중입니다.",
+    "catalyst": "섹터 동반 수급 유입",
+    "risk": "단기 모멘텀 둔화 가능성"
+   },
+   {
+    "name": "Bloom Energy Corporation",
+    "ticker": "BE",
+    "score": 32,
+    "target_pct": 3,
+    "sector": "에너지",
+    "basis": [
+     "추세지속"
+    ],
+    "reason": "AI 전력 수요 기대감으로 매수 구간에 근접해 있으나 에너지 섹터의 낮은 과거 승률을 반영합니다.",
+    "catalyst": "AI 인프라 전력 수요",
+    "risk": "에너지 섹터 과거 승률 부진"
+   },
+   {
+    "name": "American Airlines Group, Inc.",
+    "ticker": "AAL",
+    "score": 30,
+    "target_pct": 3,
+    "sector": "항공",
+    "basis": [
+     "실적"
+    ],
+    "reason": "프리미엄 전략 추진에 따른 실적 개선 기대가 반영되고 있습니다. 지수선물 하락 국면에서 방어력 점검이 필요합니다.",
+    "catalyst": "프리미엄 고객 수요 증가",
+    "risk": "항공 업종 외부 변수 민감도 높음"
    }
   ],
   "cands": [
    {
-    "ticker": "TWST",
+    "ticker": "PPLI",
     "rank": 1,
     "verdict": "관찰",
-    "why": "재료는 강력하나 바이오 섹터 회피 권고 반영"
+    "why": "거래량 급증이나 단독 근거 한계"
    },
    {
-    "ticker": "GRAL",
+    "ticker": "ALM",
     "rank": 2,
-    "verdict": "제외",
-    "why": "헬스케어 섹터 회피 및 과도한 단기 급등"
-   },
-   {
-    "ticker": "SECZ",
-    "rank": 3,
-    "verdict": "관찰",
-    "why": "정책 테마 모멘텀 있으나 변동성 주의"
-   },
-   {
-    "ticker": "CDNA",
-    "rank": 4,
-    "verdict": "관찰",
-    "why": "목표가 상향이나 헬스케어 섹터 리스크"
-   },
-   {
-    "ticker": "WRBY",
-    "rank": 5,
     "verdict": "선택",
-    "why": "유통 섹터 및 옵션 특이 활동 주목"
+    "why": "최종 공장 승인 및 수주 모멘텀"
    },
    {
-    "ticker": "TXG",
-    "rank": 6,
+    "ticker": "MXL",
+    "rank": 3,
     "verdict": "제외",
-    "why": "내부자 매도 및 하락세 겹침"
+    "why": "반도체 섹터 회피 기준 적용"
    },
    {
-    "ticker": "P",
+    "ticker": "MAAS",
+    "rank": 4,
+    "verdict": "선택",
+    "why": "AI 플랫폼 수주 계약 반영"
+   },
+   {
+    "ticker": "VECO",
+    "rank": 5,
+    "verdict": "관찰",
+    "why": "현금 흐름 양호하나 낙폭과대 패턴 주의"
+   },
+   {
+    "ticker": "VIAV",
+    "rank": 6,
+    "verdict": "관찰",
+    "why": "단기 급등 후 모멘텀 확인 필요"
+   },
+   {
+    "ticker": "BE",
     "rank": 7,
     "verdict": "제외",
-    "why": "지수 관련 혼조세로 관망 필요"
+    "why": "에너지 섹터 회피 기준 적용"
    },
    {
-    "ticker": "VCYT",
+    "ticker": "CRDO",
     "rank": 8,
     "verdict": "제외",
-    "why": "헬스케어 섹터 회피"
+    "why": "반도체 섹터 회피 기준 적용"
    },
    {
-    "ticker": "BLLN",
+    "ticker": "FIGS",
     "rank": 9,
     "verdict": "제외",
-    "why": "밸류에이션 및 섹터 부담"
+    "why": "의류 섹터 과거 승률 부진"
    },
    {
-    "ticker": "BRVE",
+    "ticker": "PS",
     "rank": 10,
-    "verdict": "제외",
-    "why": "실적 부진 및 바이오 리스크"
-   },
-   {
-    "ticker": "PL",
-    "rank": 11,
     "verdict": "선택",
-    "why": "우주 테마 추세 유지로 스윙 적합"
+    "why": "경영진 매수 및 IPO 모멘텀 지속"
    },
    {
-    "ticker": "NBIS",
+    "ticker": "AEHR",
+    "rank": 11,
+    "verdict": "제외",
+    "why": "반도체 섹터 회피 기준 적용"
+   },
+   {
+    "ticker": "EQPT",
     "rank": 12,
     "verdict": "제외",
-    "why": "소셜 버즈 기반 변동성 과다"
+    "why": "숏 리포트 이슈 대응 관망"
    },
    {
-    "ticker": "TEM",
+    "ticker": "SYNA",
     "rank": 13,
     "verdict": "제외",
-    "why": "내부자 매도 및 헬스케어 리스크"
+    "why": "반도체 섹터 회피 기준 적용"
    },
    {
-    "ticker": "BRKR",
+    "ticker": "TSEM",
     "rank": 14,
     "verdict": "제외",
-    "why": "바이오 섹터 회피"
+    "why": "반도체 섹터 회피 기준 적용"
    },
    {
     "ticker": "INTC",
     "rank": 15,
-    "verdict": "관찰",
-    "why": "반도체 회피 권고이나 지수 연동 반등 기대"
+    "verdict": "제외",
+    "why": "하락세 및 반도체 회피"
    },
    {
-    "ticker": "ONDS",
+    "ticker": "NVDA",
     "rank": 16,
     "verdict": "관찰",
-    "why": "드론 테마 순환매 단기 대응"
+    "why": "지수선물 하락 속 보수적 접근"
    },
    {
     "ticker": "AAL",
     "rank": 17,
-    "verdict": "선택",
-    "why": "낙폭과대 저평가 매력 스윙 관점 유효"
+    "verdict": "관찰",
+    "why": "프리미엄 전략 진행 중이나 변동성 유의"
    },
    {
-    "ticker": "NVDA",
+    "ticker": "ONDS",
     "rank": 18,
     "verdict": "제외",
-    "why": "경고 시그널 및 마이너스 수익률"
+    "why": "모멘텀 부족"
    }
   ],
   "mkt": {
    "dir": "횡보",
-   "conf": 45,
-   "why": "전일 지수 보합 및 지수선물 소폭 상승이나 과거 예측 적중률 저조로 보수적 관점 유지"
-  },
-  "day_picks": [],
-  "day_at": "22:35",
-  "day_brief": "제시된 5개 종목 모두 반도체·바이오 섹터 회피 지침 및 개장 후 하락세로 인해 단타 확률 우위 기준을 충족하지 못해 전부 제외합니다."
+   "conf": 48,
+   "why": "전일 S&P500 상승에도 지수선물 하락과 VIX 급등이 겹쳐 방향성 탐색 국면임"
+  }
  }
 }
