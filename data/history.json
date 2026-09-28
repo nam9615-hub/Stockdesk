@@ -30941,35 +30941,40 @@
      "rank": 6,
      "verdict": "관찰",
      "why": "AI 키 없음 · 규칙 기반 관찰",
-     "r1": 0.1
+     "r1": 0.1,
+     "r5": 6.2
     },
     {
      "ticker": "402340.KS",
      "rank": 7,
      "verdict": "관찰",
      "why": "AI 키 없음 · 규칙 기반 관찰",
-     "r1": 2.4
+     "r1": 2.4,
+     "r5": 4.4
     },
     {
      "ticker": "036930.KQ",
      "rank": 8,
      "verdict": "관찰",
      "why": "AI 키 없음 · 규칙 기반 관찰",
-     "r1": -2.1
+     "r1": -2.1,
+     "r5": -0.5
     },
     {
      "ticker": "009150.KS",
      "rank": 9,
      "verdict": "관찰",
      "why": "AI 키 없음 · 규칙 기반 관찰",
-     "r1": -0.4
+     "r1": -0.4,
+     "r5": 7.5
     },
     {
      "ticker": "277810.KQ",
      "rank": 10,
      "verdict": "관찰",
      "why": "AI 키 없음 · 규칙 기반 관찰",
-     "r1": -0.8
+     "r1": -0.8,
+     "r5": -4.1
     },
     {
      "ticker": "373220.KS",
@@ -34997,6 +35002,368 @@
      "mom": 0.4
     }
    }
+  },
+  {
+   "date": "2026-09-28",
+   "market": "US",
+   "regime": "상승",
+   "rules": [
+    "단타 실패 분해: 시장충격10·목표과다1·선정23 → 선정 강화",
+    "강도80+ 실측 0%(10) — 확신도 과장, 보수화",
+    "근거'추세지속' 성공40%(35) → 단독추천 지양",
+    "근거'거래량급증' 성공30%(23) → 단독추천 지양",
+    "근거'실적' 성공36%(33) → 단독추천 지양",
+    "근거'정책테마' 성공28%(18) → 단독추천 지양"
+   ],
+   "cands": [
+    {
+     "ticker": "PPLI",
+     "rank": 1,
+     "verdict": "관찰",
+     "why": "거래량 급증이나 단독 근거 한계",
+     "r1": null
+    },
+    {
+     "ticker": "ALM",
+     "rank": 2,
+     "verdict": "선택",
+     "why": "최종 공장 승인 및 수주 모멘텀",
+     "r1": null
+    },
+    {
+     "ticker": "MXL",
+     "rank": 3,
+     "verdict": "제외",
+     "why": "반도체 섹터 회피 기준 적용",
+     "r1": null
+    },
+    {
+     "ticker": "MAAS",
+     "rank": 4,
+     "verdict": "선택",
+     "why": "AI 플랫폼 수주 계약 반영",
+     "r1": null
+    },
+    {
+     "ticker": "VECO",
+     "rank": 5,
+     "verdict": "관찰",
+     "why": "현금 흐름 양호하나 낙폭과대 패턴 주의",
+     "r1": null
+    },
+    {
+     "ticker": "VIAV",
+     "rank": 6,
+     "verdict": "관찰",
+     "why": "단기 급등 후 모멘텀 확인 필요",
+     "r1": null
+    },
+    {
+     "ticker": "BE",
+     "rank": 7,
+     "verdict": "제외",
+     "why": "에너지 섹터 회피 기준 적용",
+     "r1": null
+    },
+    {
+     "ticker": "CRDO",
+     "rank": 8,
+     "verdict": "제외",
+     "why": "반도체 섹터 회피 기준 적용",
+     "r1": null
+    },
+    {
+     "ticker": "FIGS",
+     "rank": 9,
+     "verdict": "제외",
+     "why": "의류 섹터 과거 승률 부진",
+     "r1": null
+    },
+    {
+     "ticker": "PS",
+     "rank": 10,
+     "verdict": "선택",
+     "why": "경영진 매수 및 IPO 모멘텀 지속",
+     "r1": null
+    },
+    {
+     "ticker": "AEHR",
+     "rank": 11,
+     "verdict": "제외",
+     "why": "반도체 섹터 회피 기준 적용",
+     "r1": null
+    },
+    {
+     "ticker": "EQPT",
+     "rank": 12,
+     "verdict": "제외",
+     "why": "숏 리포트 이슈 대응 관망",
+     "r1": null
+    },
+    {
+     "ticker": "SYNA",
+     "rank": 13,
+     "verdict": "제외",
+     "why": "반도체 섹터 회피 기준 적용",
+     "r1": null
+    },
+    {
+     "ticker": "TSEM",
+     "rank": 14,
+     "verdict": "제외",
+     "why": "반도체 섹터 회피 기준 적용",
+     "r1": null
+    },
+    {
+     "ticker": "INTC",
+     "rank": 15,
+     "verdict": "제외",
+     "why": "하락세 및 반도체 회피",
+     "r1": null
+    },
+    {
+     "ticker": "NVDA",
+     "rank": 16,
+     "verdict": "관찰",
+     "why": "지수선물 하락 속 보수적 접근",
+     "r1": null
+    },
+    {
+     "ticker": "AAL",
+     "rank": 17,
+     "verdict": "관찰",
+     "why": "프리미엄 전략 진행 중이나 변동성 유의",
+     "r1": null
+    },
+    {
+     "ticker": "ONDS",
+     "rank": 18,
+     "verdict": "제외",
+     "why": "모멘텀 부족",
+     "r1": null
+    }
+   ],
+   "bl": {
+    "rand": [
+     "MAAS",
+     "PPLI",
+     "VIAV"
+    ],
+    "mom": [
+     "PPLI",
+     "ALM",
+     "MXL"
+    ]
+   },
+   "dayCands": [
+    {
+     "name": "People Incorporated",
+     "ticker": "PPLI",
+     "score": 35,
+     "target_pct": 4,
+     "sector": "기타",
+     "basis": [
+      "거래량급증"
+     ],
+     "reason": "급등 이후 추가 상승 여력에 대한 단기 모멘텀이 관찰됩니다. 다만 거래량급증 단독 근거의 낮은 성공률을 고려해 목표가를 낮게 설정합니다.",
+     "catalyst": "거래량 유입 및 변동성",
+     "risk": "단기 차익실현 매물 압박"
+    },
+    {
+     "name": "Veeco Instruments Inc.",
+     "ticker": "VECO",
+     "score": 35,
+     "target_pct": 4,
+     "sector": "장비",
+     "basis": [
+      "낙폭과대"
+     ],
+     "reason": "현금 흐름 대비 저평가 분석과 함께 반등 시도가 나타나고 있습니다. 과거 낙폭과대 패턴의 낮은 성공률을 감안하여 짧은 목표가로 대응합니다.",
+     "catalyst": "현금 흐름 가치 재평가",
+     "risk": "변동성 확대 시 추세 이탈"
+    },
+    {
+     "name": "Viavi Solutions Inc.",
+     "ticker": "VIAV",
+     "score": 33,
+     "target_pct": 3,
+     "sector": "통신",
+     "basis": [
+      "추세지속"
+     ],
+     "reason": "일부 동종 업종 주가 급등과 함께 동반 상승 흐름을 보이고 있습니다. 50불 미만 주식에 대한 시장 관심이 유입 중입니다.",
+     "catalyst": "섹터 동반 수급 유입",
+     "risk": "단기 모멘텀 둔화 가능성"
+    },
+    {
+     "name": "Bloom Energy Corporation",
+     "ticker": "BE",
+     "score": 32,
+     "target_pct": 3,
+     "sector": "에너지",
+     "basis": [
+      "추세지속"
+     ],
+     "reason": "AI 전력 수요 기대감으로 매수 구간에 근접해 있으나 에너지 섹터의 낮은 과거 승률을 반영합니다.",
+     "catalyst": "AI 인프라 전력 수요",
+     "risk": "에너지 섹터 과거 승률 부진"
+    },
+    {
+     "name": "American Airlines Group, Inc.",
+     "ticker": "AAL",
+     "score": 30,
+     "target_pct": 3,
+     "sector": "항공",
+     "basis": [
+      "실적"
+     ],
+     "reason": "프리미엄 전략 추진에 따른 실적 개선 기대가 반영되고 있습니다. 지수선물 하락 국면에서 방어력 점검이 필요합니다.",
+     "catalyst": "프리미엄 고객 수요 증가",
+     "risk": "항공 업종 외부 변수 민감도 높음"
+    }
+   ],
+   "hold": 0,
+   "v": {
+    "m": "gemini-3.5-flash-lite",
+    "pv": "J1.0-S2.0",
+    "policy": "S2.0"
+   },
+   "mktF": {
+    "dir": "횡보",
+    "conf": 48,
+    "why": "전일 S&P500 상승에도 지수선물 하락과 VIX 급등이 겹쳐 방향성 탐색 국면임",
+    "ok": null
+   },
+   "picks": [
+    {
+     "kind": "swing",
+     "name": "Almonty Industries Inc.",
+     "ticker": "ALM",
+     "score": 45,
+     "sector": "소재",
+     "basis": [
+      "수주계약",
+      "실적"
+     ],
+     "plan": {
+      "engine": "R2.0",
+      "strategy": "swing",
+      "atrPct": 9.47,
+      "stopPct": 9,
+      "targetPct": 18,
+      "rr": 2,
+      "maxHoldDays": 10,
+      "riskPct": 0.5,
+      "maxWeightPct": 10,
+      "weightPct": 5.49,
+      "qty": 20,
+      "notional": 274,
+      "decision": {
+       "version": "S2.0",
+       "action": "conditional",
+       "strategy": "swing",
+       "reasons": [
+        "재료 지속성 확인, 짧은 주기로 추세 재평가"
+       ],
+       "plannedHoldDays": 10,
+       "reviewAfterDays": 3,
+       "maxHoldDays": 10,
+       "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+       "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+       "allowAutoOrder": false
+      }
+     },
+     "p0": 13.72,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "Maase Inc.",
+     "ticker": "MAAS",
+     "score": 42,
+     "sector": "소프트웨어",
+     "basis": [
+      "수주계약",
+      "정책테마"
+     ],
+     "plan": {
+      "engine": "R2.0",
+      "strategy": "swing",
+      "atrPct": 9.44,
+      "stopPct": 9,
+      "targetPct": 18,
+      "rr": 2,
+      "maxHoldDays": 10,
+      "riskPct": 0.5,
+      "maxWeightPct": 10,
+      "weightPct": 5.53,
+      "qty": 18,
+      "notional": 277,
+      "decision": {
+       "version": "S2.0",
+       "action": "conditional",
+       "strategy": "swing",
+       "reasons": [
+        "재료 지속성 확인, 짧은 주기로 추세 재평가"
+       ],
+       "plannedHoldDays": 10,
+       "reviewAfterDays": 3,
+       "maxHoldDays": 10,
+       "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+       "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+       "allowAutoOrder": false
+      }
+     },
+     "p0": 15.37,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "Pershing Square Inc.",
+     "ticker": "PS",
+     "score": 40,
+     "sector": "금융",
+     "basis": [
+      "추세지속"
+     ],
+     "plan": {
+      "engine": "R2.0",
+      "strategy": "swing",
+      "atrPct": 7.04,
+      "stopPct": 9,
+      "targetPct": 18,
+      "rr": 2,
+      "maxHoldDays": 5,
+      "riskPct": 0.5,
+      "maxWeightPct": 10,
+      "weightPct": 4.49,
+      "qty": 4,
+      "notional": 225,
+      "decision": {
+       "version": "S2.0",
+       "action": "conditional",
+       "strategy": "swing",
+       "reasons": [
+        "추세 중심의 짧은 스윙"
+       ],
+       "plannedHoldDays": 5,
+       "reviewAfterDays": 3,
+       "maxHoldDays": 5,
+       "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+       "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+       "allowAutoOrder": false
+      }
+     },
+     "p0": 56.16,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    }
+   ]
   }
  ],
  "monAt": 1790576096484
