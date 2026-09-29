@@ -24287,7 +24287,7 @@
      "r20": null,
      "b": 360500,
      "gap": 0.6,
-     "simOpen": 1,
+     "simOpen": -1.5,
      "tv": 64299,
      "tvx": 0.6,
      "idx": 4.61
@@ -26335,7 +26335,12 @@
      "simOpen": -4.7,
      "tv": 15618,
      "tvx": 0.9,
-     "idx": -0.25
+     "idx": -0.25,
+     "simR": -5,
+     "simExit": "stop",
+     "simD": "2026-09-29",
+     "simT": "09:21",
+     "live": 1
     }
    ],
    "day2": {
@@ -27918,7 +27923,7 @@
      "r20": null,
      "b": 34650,
      "gap": -1.8,
-     "simOpen": -3.8,
+     "simOpen": -4.9,
      "tv": 7352,
      "tvx": 0.5,
      "idx": -3.26
@@ -29421,7 +29426,7 @@
      "r20": null,
      "b": 14970,
      "gap": 0,
-     "simOpen": 4.5,
+     "simOpen": 4.9,
      "tv": 3747,
      "tvx": 1.6,
      "idx": null
@@ -29460,7 +29465,12 @@
      "simOpen": -6.3,
      "tv": 260,
      "tvx": 0,
-     "idx": null
+     "idx": null,
+     "simR": -6.64,
+     "simExit": "stop",
+     "simD": "2026-09-29",
+     "simT": "09:21",
+     "live": 1
     },
     {
      "kind": "swing",
@@ -29493,7 +29503,7 @@
      "r20": null,
      "b": 149900,
      "gap": 0.8,
-     "simOpen": 8,
+     "simOpen": 8.1,
      "tv": 1002,
      "tvx": 0,
      "idx": null
@@ -33547,7 +33557,7 @@
      "r20": null,
      "b": 353500,
      "gap": 0.9,
-     "simOpen": 3,
+     "simOpen": 0.4,
      "tv": 78289,
      "tvx": 0.7,
      "idx": null
@@ -33596,7 +33606,7 @@
      "r20": null,
      "b": 1543000,
      "gap": 3.8,
-     "simOpen": -2.9,
+     "simOpen": -0.3,
      "tv": 780285,
      "tvx": 0.9,
      "idx": null
@@ -35483,5 +35493,5 @@
    "dayHold": 1
   }
  ],
- "monAt": 1790625927401
+ "monAt": 1790641272051
 }
