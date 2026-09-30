@@ -306,6 +306,92 @@
    "dir": "횡보",
    "conf": 40,
    "why": "전일 S&P500 소폭 하락 및 VIX 상승으로 방향성이 불투명한 혼조 국면임"
-  }
+  },
+  "day_picks": [
+   {
+    "name": "Warby Parker Inc.",
+    "ticker": "WRBY",
+    "score": 65,
+    "target_pct": 4,
+    "sector": "소비재",
+    "basis": [
+     "메타AI수혜",
+     "스마트아이웨어"
+    ],
+    "reason": "시가갭 2.4%로 안정적이며 개장 후 +0.1% 상승세를 유지하여 메타 AI 안경 트렌드 모멘텀이 유효함.",
+    "risk": "단기 변동성 확대 시 빠른 이익실현 필요",
+    "plan": {
+     "engine": "R2.0",
+     "strategy": "day",
+     "atrPct": 6.44,
+     "stopPct": 4,
+     "targetPct": 5.4,
+     "rr": 1.35,
+     "maxHoldDays": 0,
+     "riskPct": 0.5,
+     "maxWeightPct": 8,
+     "weightPct": 7.89,
+     "qty": 14,
+     "notional": 395,
+     "decision": {
+      "version": "S2.0",
+      "action": "conditional",
+      "strategy": "day",
+      "reasons": [
+       "개장 후 가격·수급 확인이 필요한 당일 전략"
+      ],
+      "plannedHoldDays": 0,
+      "reviewAfterDays": 0,
+      "maxHoldDays": 0,
+      "entryRule": "확정 시점 이후 가격만 사용 · 갭 과열·시가 붕괴 시 보류",
+      "exitRule": "손절·목표 중 먼저 도달한 조건 또는 당일 종가",
+      "allowAutoOrder": false
+     }
+    }
+   },
+   {
+    "name": "Magnite, Inc.",
+    "ticker": "MGNI",
+    "score": 63,
+    "target_pct": 4,
+    "sector": "광고테크",
+    "basis": [
+     "구글반독점소송",
+     "성장전망"
+    ],
+    "reason": "시가갭 0.1%로 보합권 출발 후 개장 후 +1.4% 상승하며 매수세가 유입되고 있음.",
+    "risk": "광고 섹터 수급 변동 주의",
+    "plan": {
+     "engine": "R2.0",
+     "strategy": "day",
+     "atrPct": 4.36,
+     "stopPct": 3.92,
+     "targetPct": 5.3,
+     "rr": 1.35,
+     "maxHoldDays": 0,
+     "riskPct": 0.5,
+     "maxWeightPct": 8,
+     "weightPct": 7.82,
+     "qty": 15,
+     "notional": 391,
+     "decision": {
+      "version": "S2.0",
+      "action": "conditional",
+      "strategy": "day",
+      "reasons": [
+       "개장 후 가격·수급 확인이 필요한 당일 전략"
+      ],
+      "plannedHoldDays": 0,
+      "reviewAfterDays": 0,
+      "maxHoldDays": 0,
+      "entryRule": "확정 시점 이후 가격만 사용 · 갭 과열·시가 붕괴 시 보류",
+      "exitRule": "손절·목표 중 먼저 도달한 조건 또는 당일 종가",
+      "allowAutoOrder": false
+     }
+    }
+   }
+  ],
+  "day_at": "22:34",
+  "day_brief": "개장 후 시가 대비 -2% 하락이나 과도한 갭 상승 없이 안정적인 흐름을 보인 종목 중 실측 통계상 회피 섹터에 해당하지 않는 종목들을 선별했습니다."
  }
 }
