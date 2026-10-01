@@ -21826,7 +21826,7 @@
      "p0": 51900,
      "r1": 1,
      "r5": -8.2,
-     "r20": null,
+     "r20": -24,
      "b": 50400,
      "gap": -2.9,
      "simOpen": -4.8,
@@ -21837,7 +21837,9 @@
      "simExit": "stop",
      "simD": "2026-09-04",
      "simT": "10:14",
-     "live": 1
+     "live": 1,
+     "mfe": 5,
+     "mae": -26.1
     },
     {
      "kind": "swing",
@@ -21852,7 +21854,7 @@
      "p0": 8890,
      "r1": -2.3,
      "r5": -7.2,
-     "r20": null,
+     "r20": -17.1,
      "b": 8780,
      "gap": -1.2,
      "simOpen": -4.7,
@@ -21863,7 +21865,9 @@
      "simExit": "stop",
      "simD": "2026-09-04",
      "simT": "10:36",
-     "live": 1
+     "live": 1,
+     "mfe": 5.8,
+     "mae": -18.3
     },
     {
      "kind": "swing",
@@ -21878,7 +21882,7 @@
      "p0": 135300,
      "r1": -1.6,
      "r5": 3.3,
-     "r20": null,
+     "r20": 4.5,
      "b": 133600,
      "gap": -1.3,
      "simOpen": -1.6,
@@ -21889,7 +21893,9 @@
      "simExit": "stop",
      "simD": "2026-09-03",
      "simT": "09:14",
-     "live": 1
+     "live": 1,
+     "mfe": 23.3,
+     "mae": -5.6
     },
     {
      "kind": "day",
@@ -24318,7 +24324,7 @@
      "r20": null,
      "b": 360500,
      "gap": 0.6,
-     "simOpen": 0.1,
+     "simOpen": -1,
      "tv": 64299,
      "tvx": 0.6,
      "idx": 4.61
@@ -33366,7 +33372,8 @@
      "rank": 1,
      "verdict": "관찰",
      "why": "실적 우려와 파운드리 주목 시각 공존",
-     "r1": 0.4
+     "r1": 0.4,
+     "r5": -3
     },
     {
      "ticker": "196170.KQ",
@@ -33374,7 +33381,8 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": 0
+     "r1": 0,
+     "r5": 6
     },
     {
      "ticker": "000660.KS",
@@ -33382,7 +33390,8 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": -1.9
+     "r1": -1.9,
+     "r5": -3.5
     },
     {
      "ticker": "086520.KQ",
@@ -33390,7 +33399,8 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": -0.6
+     "r1": -0.6,
+     "r5": 5.6
     },
     {
      "ticker": "005935.KS",
@@ -33398,7 +33408,8 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": 1.4
+     "r1": 1.4,
+     "r5": -5.8
     },
     {
      "ticker": "247540.KQ",
@@ -33653,11 +33664,11 @@
      },
      "p0": 350500,
      "r1": -0.6,
-     "r5": null,
+     "r5": 2,
      "r20": null,
      "b": 353500,
      "gap": 0.9,
-     "simOpen": 2.1,
+     "simOpen": 1,
      "tv": 78289,
      "tvx": 0.7,
      "idx": null
@@ -33702,11 +33713,11 @@
      },
      "p0": 1486000,
      "r1": -2.3,
-     "r5": null,
+     "r5": 1.2,
      "r20": null,
      "b": 1543000,
      "gap": 3.8,
-     "simOpen": 0.7,
+     "simOpen": -1.9,
      "tv": 780285,
      "tvx": 0.9,
      "idx": null
@@ -33750,7 +33761,7 @@
      },
      "p0": 360500,
      "r1": -2.9,
-     "r5": null,
+     "r5": -4.1,
      "r20": null,
      "tv": 209991,
      "tvx": 1,
@@ -35489,7 +35500,7 @@
      "b": 13.210000038146973,
      "gap": -3.7,
      "idx": -0.5,
-     "simOpen": -0.2
+     "simOpen": -0.4
     },
     {
      "kind": "swing",
@@ -36111,77 +36122,77 @@
      "rank": 1,
      "verdict": "제외",
      "why": "바이오 섹터 회피 및 과거 데이터 반영",
-     "r1": null
+     "r1": 1.2
     },
     {
      "ticker": "CCL",
      "rank": 2,
      "verdict": "선택",
      "why": "실적 및 수주 가시성 우수",
-     "r1": null
+     "r1": -3.3
     },
     {
      "ticker": "WRBY",
      "rank": 3,
      "verdict": "관찰",
      "why": "메타 AI 안경 테마 단기 모멘텀",
-     "r1": null
+     "r1": -0.5
     },
     {
      "ticker": "BE",
      "rank": 4,
      "verdict": "제외",
      "why": "에너지 섹터 회피",
-     "r1": null
+     "r1": -6.4
     },
     {
      "ticker": "MGNI",
      "rank": 5,
      "verdict": "관찰",
      "why": "구글 판결 수혜 및 목표가 상향",
-     "r1": null
+     "r1": -1.9
     },
     {
      "ticker": "RCL",
      "rank": 6,
      "verdict": "관찰",
      "why": "CCL과 유사한 크루즈 업황 호조",
-     "r1": null
+     "r1": 2.2
     },
     {
      "ticker": "CAMT",
      "rank": 7,
      "verdict": "선택",
      "why": "6억불 이상 수주 가시성",
-     "r1": null
+     "r1": -1.7
     },
     {
      "ticker": "WING",
      "rank": 8,
      "verdict": "관찰",
      "why": "실적 발표 기대감",
-     "r1": null
+     "r1": -2
     },
     {
      "ticker": "VEON",
      "rank": 9,
      "verdict": "선택",
      "why": "스타링크 서비스 런칭 모멘텀",
-     "r1": null
+     "r1": 0.4
     },
     {
      "ticker": "AGX",
      "rank": 10,
      "verdict": "관찰",
      "why": "천연가스 수주 백로그 보유",
-     "r1": null
+     "r1": -0.5
     },
     {
      "ticker": "ABCL",
      "rank": 11,
      "verdict": "제외",
      "why": "바이오 섹터 회피",
-     "r1": null
+     "r1": -1.3
     },
     {
      "ticker": "DUOL",
@@ -36577,8 +36588,19 @@
      "cAt": "22:34",
      "eTs": "2026-09-30T13:34:10.652Z",
      "cm": 4,
-     "r1": null,
-     "hit": null
+     "r1": -1.4,
+     "hit": false,
+     "mfe": 0.2,
+     "mae": -4.1,
+     "tv": 114,
+     "tvx": 1.4,
+     "touch": "stop",
+     "simR": -4,
+     "simExit": "stop",
+     "simD": "2026-09-30",
+     "idx": -0.25,
+     "seq": "stop-first",
+     "postFixed": 1
     },
     {
      "kind": "day",
@@ -36625,8 +36647,18 @@
      "cAt": "22:34",
      "eTs": "2026-09-30T13:34:10.757Z",
      "cm": 4,
-     "r1": null,
-     "hit": null
+     "r1": -3.1,
+     "hit": false,
+     "mfe": -0.1,
+     "mae": -3.4,
+     "tv": 64,
+     "tvx": 1,
+     "touch": "none",
+     "simR": -3.1,
+     "simExit": "close",
+     "simD": "2026-09-30",
+     "idx": -0.25,
+     "postFixed": 1
     }
    ],
    "day2": {
@@ -36634,6 +36666,364 @@
     "brief": "개장 후 시가 대비 -2% 하락이나 과도한 갭 상승 없이 안정적인 흐름을 보인 종목 중 실측 통계상 회피 섹터에 해당하지 않는 종목들을 선별했습니다.",
     "n": 2
    }
+  },
+  {
+   "date": "2026-10-01",
+   "market": "US",
+   "regime": "혼조",
+   "rules": [
+    "단타 실패 분해: 시장충격10·목표과다1·선정25 → 선정 강화",
+    "강도80+ 실측 0%(10) — 확신도 과장, 보수화",
+    "근거'거래량급증' 성공30%(23) → 단독추천 지양",
+    "근거'정책테마' 성공24%(21) → 단독추천 지양",
+    "섹터'소프트웨어' 성공29%(17) → 회피",
+    "섹터'바이오' 성공40%(10) → 회피"
+   ],
+   "cands": [
+    {
+     "ticker": "UTHR",
+     "rank": 1,
+     "verdict": "선택",
+     "why": "분석가 의견 상향 및 강한 추세 유지",
+     "r1": null
+    },
+    {
+     "ticker": "FORM",
+     "rank": 2,
+     "verdict": "선택",
+     "why": "AI 인프라 테마 및 수급 강세",
+     "r1": null
+    },
+    {
+     "ticker": "ZETA",
+     "rank": 3,
+     "verdict": "선택",
+     "why": "3분기 강력한 모멘텀 지속",
+     "r1": null
+    },
+    {
+     "ticker": "ROG",
+     "rank": 4,
+     "verdict": "선택",
+     "why": "목표가 상향 및 산업재 우위",
+     "r1": null
+    },
+    {
+     "ticker": "SPCX",
+     "rank": 5,
+     "verdict": "선택",
+     "why": "우주항공 섹터 우위",
+     "r1": null
+    },
+    {
+     "ticker": "ACMR",
+     "rank": 6,
+     "verdict": "선택",
+     "why": "실적 지표 우수",
+     "r1": null
+    },
+    {
+     "ticker": "NWCL",
+     "rank": 7,
+     "verdict": "관찰",
+     "why": "핵심 인사 영입 이슈",
+     "r1": null
+    },
+    {
+     "ticker": "NU",
+     "rank": 8,
+     "verdict": "관찰",
+     "why": "불확실성 해소 구간",
+     "r1": null
+    },
+    {
+     "ticker": "PGEN",
+     "rank": 9,
+     "verdict": "제외",
+     "why": "바이오 섹터 회피",
+     "r1": null
+    },
+    {
+     "ticker": "IBRX",
+     "rank": 10,
+     "verdict": "제외",
+     "why": "바이오 섹터 회피",
+     "r1": null
+    },
+    {
+     "ticker": "SLS",
+     "rank": 11,
+     "verdict": "제외",
+     "why": "바이오 섹터 회피",
+     "r1": null
+    },
+    {
+     "ticker": "DOCS",
+     "rank": 12,
+     "verdict": "제외",
+     "why": "소프트웨어 섹터 회피",
+     "r1": null
+    },
+    {
+     "ticker": "BRZE",
+     "rank": 13,
+     "verdict": "제외",
+     "why": "소프트웨어 섹터 회피",
+     "r1": null
+    },
+    {
+     "ticker": "FROG",
+     "rank": 14,
+     "verdict": "제외",
+     "why": "소프트웨어 섹터 회피",
+     "r1": null
+    },
+    {
+     "ticker": "IMOS",
+     "rank": 15,
+     "verdict": "제외",
+     "why": "반도체 섹터 회피",
+     "r1": null
+    },
+    {
+     "ticker": "EPR-PG",
+     "rank": 101,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "WBD",
+     "rank": 105,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "NVDA",
+     "rank": 106,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    }
+   ],
+   "bl": {
+    "rand": [
+     "UTHR",
+     "ROG",
+     "NVDA"
+    ],
+    "mom": [
+     "UTHR",
+     "ROG",
+     "FORM"
+    ]
+   },
+   "dayCands": [
+    {
+     "name": "United Therapeutics Corporation",
+     "ticker": "UTHR",
+     "score": 55,
+     "target_pct": 4,
+     "sector": "헬스케어",
+     "basis": [
+      "추세지속"
+     ],
+     "reason": "분석가들의 매수 의견 상향과 강력한 추세가 유지되고 있어 당일 변동성을 활용한 단타 접근이 유효합니다.",
+     "risk": "바이오 섹터 전반의 높은 변동성"
+    },
+    {
+     "name": "FormFactor, Inc.",
+     "ticker": "FORM",
+     "score": 50,
+     "target_pct": 3,
+     "sector": "기술",
+     "basis": [
+      "추세지속"
+     ],
+     "reason": "AI 인프라 지출 증가라는 강력한 시장 테마에 편승하고 있어 단기 수급이 강하게 집중될 수 있습니다.",
+     "risk": "기술주 전반의 조정 압력"
+    },
+    {
+     "name": "Zeta Global Holdings Corp.",
+     "ticker": "ZETA",
+     "score": 45,
+     "target_pct": 4,
+     "sector": "기술",
+     "basis": [
+      "추세지속"
+     ],
+     "reason": "3분기 강력한 랠리 이후에도 모멘텀이 살아있어 당일 추가 상승 탄력을 기대할 수 있습니다.",
+     "risk": "단기 과열에 따른 급락 위험"
+    },
+    {
+     "name": "newcleo plc",
+     "ticker": "NWCL",
+     "score": 40,
+     "target_pct": 3,
+     "sector": "에너지",
+     "basis": [
+      "정책테마"
+     ],
+     "reason": "원자력 산업의 명망 있는 인사 영입은 장기 재료이나, 당일 거래량 동반 시 단기 탄력이 발생할 수 있습니다.",
+     "risk": "시장 관심도 저조"
+    },
+    {
+     "name": "Nu Holdings Ltd.",
+     "ticker": "NU",
+     "score": 35,
+     "target_pct": 2,
+     "sector": "금융",
+     "basis": [
+      "뉴스재료"
+     ],
+     "reason": "인수설 부인 후 오히려 불확실성 해소로 해석되며 주가가 상승 중입니다. 하락장 방어 성격으로 활용 가능합니다.",
+     "risk": "상승 모멘텀 약함"
+    }
+   ],
+   "hold": 0,
+   "v": {
+    "m": "gemini-3.1-flash-lite",
+    "pv": "J1.0-S2.0",
+    "policy": "S2.0"
+   },
+   "mktF": {
+    "dir": "횡보",
+    "conf": 51,
+    "why": "지수 선물은 플러스이나 과거 실적 기준 예측력이 낮아 보수적 접근이 필요함",
+    "ok": null
+   },
+   "picks": [
+    {
+     "kind": "swing",
+     "name": "Rogers Corporation",
+     "ticker": "ROG",
+     "score": 45,
+     "sector": "산업재",
+     "basis": [
+      "실적"
+     ],
+     "plan": {
+      "engine": "R2.0",
+      "strategy": "swing",
+      "atrPct": 4.55,
+      "stopPct": 6.82,
+      "targetPct": 13.65,
+      "rr": 2,
+      "maxHoldDays": 15,
+      "riskPct": 0.5,
+      "maxWeightPct": 10,
+      "weightPct": 6.12,
+      "qty": 2,
+      "notional": 306,
+      "decision": {
+       "version": "S2.0",
+       "action": "conditional",
+       "strategy": "swing",
+       "reasons": [
+        "지속 재료와 중기 추세가 함께 확인됨"
+       ],
+       "plannedHoldDays": 15,
+       "reviewAfterDays": 3,
+       "maxHoldDays": 15,
+       "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+       "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+       "allowAutoOrder": false
+      }
+     },
+     "p0": 152.99,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "Space Exploration Technologies",
+     "ticker": "SPCX",
+     "score": 40,
+     "sector": "우주항공",
+     "basis": [
+      "수주계약"
+     ],
+     "plan": {
+      "engine": "R2.0",
+      "strategy": "swing",
+      "atrPct": 3.78,
+      "stopPct": 5.67,
+      "targetPct": 11.34,
+      "rr": 2,
+      "maxHoldDays": 15,
+      "riskPct": 0.5,
+      "maxWeightPct": 10,
+      "weightPct": 6.03,
+      "qty": 2,
+      "notional": 302,
+      "decision": {
+       "version": "S2.0",
+       "action": "conditional",
+       "strategy": "swing",
+       "reasons": [
+        "지속 재료와 중기 추세가 함께 확인됨"
+       ],
+       "plannedHoldDays": 15,
+       "reviewAfterDays": 3,
+       "maxHoldDays": 15,
+       "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+       "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+       "allowAutoOrder": false
+      }
+     },
+     "p0": 150.86,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "ACM Research, Inc.",
+     "ticker": "ACMR",
+     "score": 35,
+     "sector": "산업재",
+     "basis": [
+      "실적"
+     ],
+     "plan": {
+      "engine": "R2.0",
+      "strategy": "swing",
+      "atrPct": 5.91,
+      "stopPct": 8.87,
+      "targetPct": 17.73,
+      "rr": 2,
+      "maxHoldDays": 10,
+      "riskPct": 0.5,
+      "maxWeightPct": 10,
+      "weightPct": 4.86,
+      "qty": 3,
+      "notional": 243,
+      "decision": {
+       "version": "S2.0",
+       "action": "conditional",
+       "strategy": "swing",
+       "reasons": [
+        "재료 지속성 확인, 짧은 주기로 추세 재평가"
+       ],
+       "plannedHoldDays": 10,
+       "reviewAfterDays": 3,
+       "maxHoldDays": 10,
+       "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+       "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+       "allowAutoOrder": false
+      }
+     },
+     "p0": 80.92,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    }
+   ]
   }
  ],
  "monAt": 1790834277338
