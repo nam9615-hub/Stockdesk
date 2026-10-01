@@ -1,116 +1,33 @@
 {
- "date": "2026-09-30",
+ "date": "2026-10-01",
  "at": "21:29",
  "data": {
-  "brief": "전일 S&P500 소폭 하락 및 VIX 상승 등 혼조세 속에서 과거 검증 통계를 반영하여 바이오·소프트웨어·에너지 등의 취약 섹터는 보수적으로 회피했습니다. 이에 따라 명확한 수주 가시성과 실적 모멘텀을 보유한 우량 종목 위주로 스윙 및 단타 후보를 선별했습니다.",
+  "brief": "시장 전반의 불확실성이 지속되는 혼조 국면입니다. 통계적으로 성공률이 입증된 우주항공 및 산업재 섹터에 집중하고, 성과가 저조했던 소프트웨어와 바이오 섹터는 철저히 배제하는 전략을 취합니다.",
   "picks": [
    {
-    "name": "Carnival Corporation Ltd.",
-    "ticker": "CCL",
-    "score": 55,
-    "sector": "여행",
+    "name": "Rogers Corporation",
+    "ticker": "ROG",
+    "score": 45,
+    "sector": "산업재",
     "basis": [
-     "실적",
-     "수주계약"
-    ],
-    "reason": "2027년 부킹이 역대 최고치를 기록하며 강력한 실적 가시성을 확보했습니다. 씨티그룹의 목표가 상향 조정 및 매수 유지 의견이 긍정적 모멘텀을 뒷받침합니다.",
-    "catalyst": "2027년 레코드 북킹 및 목표가 상향",
-    "risk": "경기 소비재 섹터 변동성",
-    "plan": {
-     "engine": "R2.0",
-     "strategy": "swing",
-     "atrPct": 3.68,
-     "stopPct": 5.52,
-     "targetPct": 11.04,
-     "rr": 2,
-     "maxHoldDays": 10,
-     "riskPct": 0.5,
-     "maxWeightPct": 10,
-     "weightPct": 9.04,
-     "qty": 18,
-     "notional": 452,
-     "decision": {
-      "version": "S2.0",
-      "action": "conditional",
-      "strategy": "swing",
-      "reasons": [
-       "재료 지속성 확인, 짧은 주기로 추세 재평가"
-      ],
-      "plannedHoldDays": 10,
-      "reviewAfterDays": 3,
-      "maxHoldDays": 10,
-      "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
-      "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
-      "allowAutoOrder": false
-     }
-    }
-   },
-   {
-    "name": "Camtek Ltd.",
-    "ticker": "CAMT",
-    "score": 52,
-    "sector": "반도체",
-    "basis": [
-     "수주계약",
      "실적"
     ],
-    "reason": "2027년 말까지 6억 달러를 초과하는 강력한 수주 가시성을 확보하여 견조한 실적 성장이 예상됩니다. 다만 반도체 섹터의 과거 통계적 약세를 고려해 비중을 조절합니다.",
-    "catalyst": "2026-2027년 6억 달러 이상 수주 잔고",
-    "risk": "반도체 업황 및 변동성",
+    "reason": "B. Riley의 목표주가 상향은 강력한 모멘텀을 제공하며, 우위가 확인된 산업재 섹터에 속해있어 스윙 적합성이 높습니다. 높은 실적 기대감이 주가 하단을 지지할 것으로 판단됩니다.",
+    "catalyst": "목표주가 상향",
+    "risk": "단기 급등에 따른 차익 실현 매물 출회",
     "plan": {
      "engine": "R2.0",
      "strategy": "swing",
-     "atrPct": 4.58,
-     "stopPct": 6.87,
-     "targetPct": 13.74,
-     "rr": 2,
-     "maxHoldDays": 10,
-     "riskPct": 0.5,
-     "maxWeightPct": 10,
-     "weightPct": 6.11,
-     "qty": 2,
-     "notional": 306,
-     "decision": {
-      "version": "S2.0",
-      "action": "conditional",
-      "strategy": "swing",
-      "reasons": [
-       "재료 지속성 확인, 짧은 주기로 추세 재평가"
-      ],
-      "plannedHoldDays": 10,
-      "reviewAfterDays": 3,
-      "maxHoldDays": 10,
-      "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
-      "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
-      "allowAutoOrder": false
-     }
-    }
-   },
-   {
-    "name": "VEON Ltd.",
-    "ticker": "VEON",
-    "score": 50,
-    "sector": "통신",
-    "basis": [
-     "정책테마",
-     "수주계약"
-    ],
-    "reason": "카자흐스탄 자회사 비라인이 스타링크의 위성 모바일 서비스를 국내 최초로 런칭하며 신사업 모멘텀을 확보했습니다. 글로벌 투자자 대상 컨퍼런스를 통한 성장성 부각도 유효합니다.",
-    "catalyst": "스타링크 위성 모바일 서비스 최초 런칭",
-    "risk": "신흥국 시장 환율 및 정치적 리스크",
-    "plan": {
-     "engine": "R2.0",
-     "strategy": "swing",
-     "atrPct": 4.03,
-     "stopPct": 6.04,
-     "targetPct": 12.09,
+     "atrPct": 4.55,
+     "stopPct": 6.82,
+     "targetPct": 13.65,
      "rr": 2,
      "maxHoldDays": 15,
      "riskPct": 0.5,
      "maxWeightPct": 10,
-     "weightPct": 7.4,
-     "qty": 5,
-     "notional": 370,
+     "weightPct": 6.12,
+     "qty": 2,
+     "notional": 306,
      "decision": {
       "version": "S2.0",
       "action": "conditional",
@@ -126,272 +43,246 @@
       "allowAutoOrder": false
      }
     }
+   },
+   {
+    "name": "Space Exploration Technologies",
+    "ticker": "SPCX",
+    "score": 40,
+    "sector": "우주항공",
+    "basis": [
+     "수주계약"
+    ],
+    "reason": "과거 실적 데이터에서 우주항공 섹터는 높은 성공률을 보였습니다. Transporter-18 미션 수행이라는 구체적인 재료가 주가 변동성을 뒷받침할 것입니다.",
+    "catalyst": "Falcon 9 미션 수행",
+    "risk": "우주 탐사 프로젝트의 기술적 실패 가능성",
+    "plan": {
+     "engine": "R2.0",
+     "strategy": "swing",
+     "atrPct": 3.78,
+     "stopPct": 5.67,
+     "targetPct": 11.34,
+     "rr": 2,
+     "maxHoldDays": 15,
+     "riskPct": 0.5,
+     "maxWeightPct": 10,
+     "weightPct": 6.03,
+     "qty": 2,
+     "notional": 302,
+     "decision": {
+      "version": "S2.0",
+      "action": "conditional",
+      "strategy": "swing",
+      "reasons": [
+       "지속 재료와 중기 추세가 함께 확인됨"
+      ],
+      "plannedHoldDays": 15,
+      "reviewAfterDays": 3,
+      "maxHoldDays": 15,
+      "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+      "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+      "allowAutoOrder": false
+     }
+    }
+   },
+   {
+    "name": "ACM Research, Inc.",
+    "ticker": "ACMR",
+    "score": 35,
+    "sector": "산업재",
+    "basis": [
+     "실적"
+    ],
+    "reason": "상하이 사업부의 수주잔고(Backlog)가 88% 급증하며 실질적인 성장세가 확인되었습니다. 펀더멘털 개선이 뚜렷하여 스윙 포지션 구축에 적합합니다.",
+    "catalyst": "수주잔고 88% 급증",
+    "risk": "중국 사업 비중이 높아 지정학적 리스크 노출",
+    "plan": {
+     "engine": "R2.0",
+     "strategy": "swing",
+     "atrPct": 5.91,
+     "stopPct": 8.87,
+     "targetPct": 17.73,
+     "rr": 2,
+     "maxHoldDays": 10,
+     "riskPct": 0.5,
+     "maxWeightPct": 10,
+     "weightPct": 4.86,
+     "qty": 3,
+     "notional": 243,
+     "decision": {
+      "version": "S2.0",
+      "action": "conditional",
+      "strategy": "swing",
+      "reasons": [
+       "재료 지속성 확인, 짧은 주기로 추세 재평가"
+      ],
+      "plannedHoldDays": 10,
+      "reviewAfterDays": 3,
+      "maxHoldDays": 10,
+      "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+      "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+      "allowAutoOrder": false
+     }
+    }
    }
   ],
   "day_cands": [
    {
-    "name": "Warby Parker Inc.",
-    "ticker": "WRBY",
-    "score": 53,
+    "name": "United Therapeutics Corporation",
+    "ticker": "UTHR",
+    "score": 55,
     "target_pct": 4,
-    "sector": "소비재",
-    "basis": [
-     "뉴스재료"
-    ],
-    "reason": "메타의 AI 안경 푸시 수혜 기대감으로 스마트 아이웨어 트렌드가 부각되며 주가가 급등세를 보이고 있습니다. 단기 모멘텀이 집중되는 국면이나 추격 매수 시 주의가 필요합니다.",
-    "risk": "단기 급등에 따른 변동성"
-   },
-   {
-    "name": "Magnite, Inc.",
-    "ticker": "MGNI",
-    "score": 51,
-    "target_pct": 4,
-    "sector": "소프트웨어",
-    "basis": [
-     "뉴스재료",
-     "실적"
-    ],
-    "reason": "구글 반독점 소송 판결 이후 광고 테크 환경 변화로 성장 전망이 대폭 개선되었습니다. 뱅크오브아메리카 등의 목표가 상향 조정이 단기 수급을 지지합니다.",
-    "risk": "빅테크 규제 환경 변화"
-   },
-   {
-    "name": "Duolingo, Inc.",
-    "ticker": "DUOL",
-    "score": 48,
-    "target_pct": 3,
-    "sector": "소프트웨어",
-    "basis": [
-     "뉴스재료"
-    ],
-    "reason": "에듀테크 대표 종목으로서 양호한 시장 관심을 받고 있으나 소프트웨어 섹터의 과거 보수적 통계를 반영하여 목표 수익률을 낮게 설정했습니다.",
-    "risk": "소프트웨어 섹터 전반의 밸류에이션 부담"
-   },
-   {
-    "name": "AXT Inc",
-    "ticker": "AXTI",
-    "score": 46,
-    "target_pct": 3,
-    "sector": "소재",
+    "sector": "헬스케어",
     "basis": [
      "추세지속"
     ],
-    "reason": "최근 주간 단위로 강한 상승세를 보이며 모멘텀을 유지하고 있습니다. 다만 소재 섹터의 과거 실적 통계가 부진하여 보수적으로 접근합니다.",
-    "risk": "소재 섹터 변동성"
+    "reason": "분석가들의 매수 의견 상향과 강력한 추세가 유지되고 있어 당일 변동성을 활용한 단타 접근이 유효합니다.",
+    "risk": "바이오 섹터 전반의 높은 변동성"
    },
    {
-    "name": "Argan, Inc.",
-    "ticker": "AGX",
+    "name": "FormFactor, Inc.",
+    "ticker": "FORM",
+    "score": 50,
+    "target_pct": 3,
+    "sector": "기술",
+    "basis": [
+     "추세지속"
+    ],
+    "reason": "AI 인프라 지출 증가라는 강력한 시장 테마에 편승하고 있어 단기 수급이 강하게 집중될 수 있습니다.",
+    "risk": "기술주 전반의 조정 압력"
+   },
+   {
+    "name": "Zeta Global Holdings Corp.",
+    "ticker": "ZETA",
     "score": 45,
+    "target_pct": 4,
+    "sector": "기술",
+    "basis": [
+     "추세지속"
+    ],
+    "reason": "3분기 강력한 랠리 이후에도 모멘텀이 살아있어 당일 추가 상승 탄력을 기대할 수 있습니다.",
+    "risk": "단기 과열에 따른 급락 위험"
+   },
+   {
+    "name": "newcleo plc",
+    "ticker": "NWCL",
+    "score": 40,
     "target_pct": 3,
     "sector": "에너지",
     "basis": [
-     "수주계약"
+     "정책테마"
     ],
-    "reason": "백로그의 80%가 천연가스 관련으로 안정적인 수주 잔고를 보유하고 있습니다. 에너지 섹터의 과거 통계를 감안하여 신중한 접근이 필요합니다.",
-    "risk": "에너지 원자재 가격 변동"
+    "reason": "원자력 산업의 명망 있는 인사 영입은 장기 재료이나, 당일 거래량 동반 시 단기 탄력이 발생할 수 있습니다.",
+    "risk": "시장 관심도 저조"
+   },
+   {
+    "name": "Nu Holdings Ltd.",
+    "ticker": "NU",
+    "score": 35,
+    "target_pct": 2,
+    "sector": "금융",
+    "basis": [
+     "뉴스재료"
+    ],
+    "reason": "인수설 부인 후 오히려 불확실성 해소로 해석되며 주가가 상승 중입니다. 하락장 방어 성격으로 활용 가능합니다.",
+    "risk": "상승 모멘텀 약함"
    }
   ],
   "cands": [
    {
-    "ticker": "IOVA",
+    "ticker": "UTHR",
     "rank": 1,
-    "verdict": "제외",
-    "why": "바이오 섹터 회피 및 과거 데이터 반영"
+    "verdict": "선택",
+    "why": "분석가 의견 상향 및 강한 추세 유지"
    },
    {
-    "valid": true,
-    "ticker": "CCL",
+    "ticker": "FORM",
     "rank": 2,
     "verdict": "선택",
-    "why": "실적 및 수주 가시성 우수"
+    "why": "AI 인프라 테마 및 수급 강세"
    },
    {
-    "ticker": "WRBY",
+    "ticker": "ZETA",
     "rank": 3,
-    "verdict": "관찰",
-    "why": "메타 AI 안경 테마 단기 모멘텀"
-   },
-   {
-    "ticker": "BE",
-    "rank": 4,
-    "verdict": "제외",
-    "why": "에너지 섹터 회피"
-   },
-   {
-    "ticker": "MGNI",
-    "rank": 5,
-    "verdict": "관찰",
-    "why": "구글 판결 수혜 및 목표가 상향"
-   },
-   {
-    "ticker": "RCL",
-    "rank": 6,
-    "verdict": "관찰",
-    "why": "CCL과 유사한 크루즈 업황 호조"
-   },
-   {
-    "ticker": "CAMT",
-    "rank": 7,
     "verdict": "선택",
-    "why": "6억불 이상 수주 가시성"
+    "why": "3분기 강력한 모멘텀 지속"
    },
    {
-    "ticker": "WING",
+    "ticker": "ROG",
+    "rank": 4,
+    "verdict": "선택",
+    "why": "목표가 상향 및 산업재 우위"
+   },
+   {
+    "ticker": "SPCX",
+    "rank": 5,
+    "verdict": "선택",
+    "why": "우주항공 섹터 우위"
+   },
+   {
+    "ticker": "ACMR",
+    "rank": 6,
+    "verdict": "선택",
+    "why": "실적 지표 우수"
+   },
+   {
+    "ticker": "NWCL",
+    "rank": 7,
+    "verdict": "관찰",
+    "why": "핵심 인사 영입 이슈"
+   },
+   {
+    "ticker": "NU",
     "rank": 8,
     "verdict": "관찰",
-    "why": "실적 발표 기대감"
+    "why": "불확실성 해소 구간"
    },
    {
-    "ticker": "VEON",
+    "ticker": "PGEN",
     "rank": 9,
-    "verdict": "선택",
-    "why": "스타링크 서비스 런칭 모멘텀"
+    "verdict": "제외",
+    "why": "바이오 섹터 회피"
    },
    {
-    "ticker": "AGX",
+    "ticker": "IBRX",
     "rank": 10,
-    "verdict": "관찰",
-    "why": "천연가스 수주 백로그 보유"
+    "verdict": "제외",
+    "why": "바이오 섹터 회피"
    },
    {
-    "ticker": "ABCL",
+    "ticker": "SLS",
     "rank": 11,
     "verdict": "제외",
     "why": "바이오 섹터 회피"
    },
    {
-    "ticker": "DUOL",
+    "ticker": "DOCS",
     "rank": 12,
-    "verdict": "관찰",
-    "why": "소프트웨어 섹터 주의 속 단기 모멘텀"
+    "verdict": "제외",
+    "why": "소프트웨어 섹터 회피"
    },
    {
-    "ticker": "AXTI",
+    "ticker": "BRZE",
     "rank": 13,
-    "verdict": "관찰",
-    "why": "단기 상승 추세 지속"
+    "verdict": "제외",
+    "why": "소프트웨어 섹터 회피"
    },
    {
-    "ticker": "BRVE",
+    "ticker": "FROG",
     "rank": 14,
     "verdict": "제외",
-    "why": "바이오 섹터 회피"
+    "why": "소프트웨어 섹터 회피"
    },
    {
-    "ticker": "NVDA",
+    "ticker": "IMOS",
     "rank": 15,
     "verdict": "제외",
-    "why": "반도체 섹터 회피 및 소폭 하락"
-   },
-   {
-    "ticker": "INTC",
-    "rank": 16,
-    "verdict": "제외",
     "why": "반도체 섹터 회피"
-   },
-   {
-    "ticker": "NU",
-    "rank": 17,
-    "verdict": "제외",
-    "why": "모멘텀 부족"
-   },
-   {
-    "ticker": "GRAB",
-    "rank": 18,
-    "verdict": "제외",
-    "why": "모멘텀 부족"
    }
   ],
   "mkt": {
    "dir": "횡보",
-   "conf": 40,
-   "why": "전일 S&P500 소폭 하락 및 VIX 상승으로 방향성이 불투명한 혼조 국면임"
-  },
-  "day_picks": [
-   {
-    "name": "Warby Parker Inc.",
-    "ticker": "WRBY",
-    "score": 65,
-    "target_pct": 4,
-    "sector": "소비재",
-    "basis": [
-     "메타AI수혜",
-     "스마트아이웨어"
-    ],
-    "reason": "시가갭 2.4%로 안정적이며 개장 후 +0.1% 상승세를 유지하여 메타 AI 안경 트렌드 모멘텀이 유효함.",
-    "risk": "단기 변동성 확대 시 빠른 이익실현 필요",
-    "plan": {
-     "engine": "R2.0",
-     "strategy": "day",
-     "atrPct": 6.44,
-     "stopPct": 4,
-     "targetPct": 5.4,
-     "rr": 1.35,
-     "maxHoldDays": 0,
-     "riskPct": 0.5,
-     "maxWeightPct": 8,
-     "weightPct": 7.89,
-     "qty": 14,
-     "notional": 395,
-     "decision": {
-      "version": "S2.0",
-      "action": "conditional",
-      "strategy": "day",
-      "reasons": [
-       "개장 후 가격·수급 확인이 필요한 당일 전략"
-      ],
-      "plannedHoldDays": 0,
-      "reviewAfterDays": 0,
-      "maxHoldDays": 0,
-      "entryRule": "확정 시점 이후 가격만 사용 · 갭 과열·시가 붕괴 시 보류",
-      "exitRule": "손절·목표 중 먼저 도달한 조건 또는 당일 종가",
-      "allowAutoOrder": false
-     }
-    }
-   },
-   {
-    "name": "Magnite, Inc.",
-    "ticker": "MGNI",
-    "score": 63,
-    "target_pct": 4,
-    "sector": "광고테크",
-    "basis": [
-     "구글반독점소송",
-     "성장전망"
-    ],
-    "reason": "시가갭 0.1%로 보합권 출발 후 개장 후 +1.4% 상승하며 매수세가 유입되고 있음.",
-    "risk": "광고 섹터 수급 변동 주의",
-    "plan": {
-     "engine": "R2.0",
-     "strategy": "day",
-     "atrPct": 4.36,
-     "stopPct": 3.92,
-     "targetPct": 5.3,
-     "rr": 1.35,
-     "maxHoldDays": 0,
-     "riskPct": 0.5,
-     "maxWeightPct": 8,
-     "weightPct": 7.82,
-     "qty": 15,
-     "notional": 391,
-     "decision": {
-      "version": "S2.0",
-      "action": "conditional",
-      "strategy": "day",
-      "reasons": [
-       "개장 후 가격·수급 확인이 필요한 당일 전략"
-      ],
-      "plannedHoldDays": 0,
-      "reviewAfterDays": 0,
-      "maxHoldDays": 0,
-      "entryRule": "확정 시점 이후 가격만 사용 · 갭 과열·시가 붕괴 시 보류",
-      "exitRule": "손절·목표 중 먼저 도달한 조건 또는 당일 종가",
-      "allowAutoOrder": false
-     }
-    }
-   }
-  ],
-  "day_at": "22:34",
-  "day_brief": "개장 후 시가 대비 -2% 하락이나 과도한 갭 상승 없이 안정적인 흐름을 보인 종목 중 실측 통계상 회피 섹터에 해당하지 않는 종목들을 선별했습니다."
+   "conf": 51,
+   "why": "지수 선물은 플러스이나 과거 실적 기준 예측력이 낮아 보수적 접근이 필요함"
+  }
  }
 }
