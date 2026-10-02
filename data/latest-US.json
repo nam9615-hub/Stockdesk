@@ -1,33 +1,34 @@
 {
- "date": "2026-10-01",
+ "date": "2026-10-02",
  "at": "21:29",
  "data": {
-  "brief": "시장 전반의 불확실성이 지속되는 혼조 국면입니다. 통계적으로 성공률이 입증된 우주항공 및 산업재 섹터에 집중하고, 성과가 저조했던 소프트웨어와 바이오 섹터는 철저히 배제하는 전략을 취합니다.",
+  "brief": "전일 S&P500 소폭 상승과 혼조장 국면을 반영하여, 과거 검증 실패 신호에 따라 섣부른 지수 방향 예측은 배제하고 개별 모멘텀과 산업재·우주항공 등 우위 섹터 중심의 선별적 접근을 취합니다. 확신도 70~80대 종목의 실제 성적 부진을 감안하여 보수적인 스코어로 조정했습니다.",
   "picks": [
    {
-    "name": "Rogers Corporation",
-    "ticker": "ROG",
+    "name": "Enerflex Ltd",
+    "ticker": "EFXT",
     "score": 45,
-    "sector": "산업재",
+    "sector": "에너지",
     "basis": [
-     "실적"
+     "수주계약",
+     "뉴스재료"
     ],
-    "reason": "B. Riley의 목표주가 상향은 강력한 모멘텀을 제공하며, 우위가 확인된 산업재 섹터에 속해있어 스윙 적합성이 높습니다. 높은 실적 기대감이 주가 하단을 지지할 것으로 판단됩니다.",
-    "catalyst": "목표주가 상향",
-    "risk": "단기 급등에 따른 차익 실현 매물 출회",
+    "reason": "450메가와트 데이터 센터 전력 계약 체결로 실적 기대감이 부각되며 상승세를 보였습니다. 다만 에너지 섹터의 과거 승률 제한을 고려해 보수적으로 접근합니다.",
+    "catalyst": "450MW 데이터 센터 전력 공급 계약",
+    "risk": "에너지 섹터 변동성 및 단기 급등에 따른 차익실현 매물",
     "plan": {
      "engine": "R2.0",
      "strategy": "swing",
-     "atrPct": 4.55,
-     "stopPct": 6.82,
-     "targetPct": 13.65,
+     "atrPct": 4.03,
+     "stopPct": 6.04,
+     "targetPct": 12.09,
      "rr": 2,
      "maxHoldDays": 15,
      "riskPct": 0.5,
      "maxWeightPct": 10,
-     "weightPct": 6.12,
-     "qty": 2,
-     "notional": 306,
+     "weightPct": 8.14,
+     "qty": 16,
+     "notional": 407,
      "decision": {
       "version": "S2.0",
       "action": "conditional",
@@ -45,69 +46,71 @@
     }
    },
    {
-    "name": "Space Exploration Technologies",
-    "ticker": "SPCX",
+    "name": "Innodata Inc.",
+    "ticker": "INOD",
+    "score": 42,
+    "sector": "기술",
+    "basis": [
+     "뉴스재료",
+     "추세지속"
+    ],
+    "reason": "휴머노이드 로봇의 자연스러운 움직임을 돕기 위한 모션 캡처 AI 실험실을 개소하여 주목받고 있습니다. AI 로보틱스 테마의 지속성을 모니터링해야 합니다.",
+    "catalyst": "휴머노이드 모션 캡처 AI 랩 런칭",
+    "risk": "고평가 논란 및 기술주 전반의 수급 변화",
+    "plan": {
+     "engine": "R2.0",
+     "strategy": "swing",
+     "atrPct": 6.92,
+     "stopPct": 9,
+     "targetPct": 18,
+     "rr": 2,
+     "maxHoldDays": 5,
+     "riskPct": 0.5,
+     "maxWeightPct": 10,
+     "weightPct": 4.31,
+     "qty": 3,
+     "notional": 216,
+     "decision": {
+      "version": "S2.0",
+      "action": "watch",
+      "strategy": "day-watch",
+      "reasons": [
+       "단기 수급만 확인: 단타 재평가 후보, 자동 전환 아님"
+      ],
+      "plannedHoldDays": 5,
+      "reviewAfterDays": 3,
+      "maxHoldDays": 5,
+      "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+      "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+      "allowAutoOrder": false
+     }
+    }
+   },
+   {
+    "name": "Guidewire Software, Inc.",
+    "ticker": "GWRE",
     "score": 40,
-    "sector": "우주항공",
+    "sector": "소프트웨어",
     "basis": [
-     "수주계약"
+     "수주계약",
+     "추세지속"
     ],
-    "reason": "과거 실적 데이터에서 우주항공 섹터는 높은 성공률을 보였습니다. Transporter-18 미션 수행이라는 구체적인 재료가 주가 변동성을 뒷받침할 것입니다.",
-    "catalyst": "Falcon 9 미션 수행",
-    "risk": "우주 탐사 프로젝트의 기술적 실패 가능성",
+    "reason": "주요 미국 보험사를 클라우드 폴리시센터 고객으로 신규 확보하며 클라우드 전환 성과를 입증했습니다. 소프트웨어 섹터 회피 경향을 감안해 신중한 접근이 필요합니다.",
+    "catalyst": "대형 미국 보험사의 클라우드 계약 추가",
+    "risk": "소프트웨어 섹터 전반의 과거 부진한 실측 성적",
     "plan": {
      "engine": "R2.0",
      "strategy": "swing",
-     "atrPct": 3.78,
-     "stopPct": 5.67,
-     "targetPct": 11.34,
-     "rr": 2,
-     "maxHoldDays": 15,
-     "riskPct": 0.5,
-     "maxWeightPct": 10,
-     "weightPct": 6.03,
-     "qty": 2,
-     "notional": 302,
-     "decision": {
-      "version": "S2.0",
-      "action": "conditional",
-      "strategy": "swing",
-      "reasons": [
-       "지속 재료와 중기 추세가 함께 확인됨"
-      ],
-      "plannedHoldDays": 15,
-      "reviewAfterDays": 3,
-      "maxHoldDays": 15,
-      "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
-      "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
-      "allowAutoOrder": false
-     }
-    }
-   },
-   {
-    "name": "ACM Research, Inc.",
-    "ticker": "ACMR",
-    "score": 35,
-    "sector": "산업재",
-    "basis": [
-     "실적"
-    ],
-    "reason": "상하이 사업부의 수주잔고(Backlog)가 88% 급증하며 실질적인 성장세가 확인되었습니다. 펀더멘털 개선이 뚜렷하여 스윙 포지션 구축에 적합합니다.",
-    "catalyst": "수주잔고 88% 급증",
-    "risk": "중국 사업 비중이 높아 지정학적 리스크 노출",
-    "plan": {
-     "engine": "R2.0",
-     "strategy": "swing",
-     "atrPct": 5.91,
-     "stopPct": 8.87,
-     "targetPct": 17.73,
+     "atrPct": 4.45,
+     "stopPct": 6.68,
+     "targetPct": 13.35,
      "rr": 2,
      "maxHoldDays": 10,
      "riskPct": 0.5,
      "maxWeightPct": 10,
-     "weightPct": 4.86,
-     "qty": 3,
-     "notional": 243,
+     "weightPct": 6.21,
+     "qty": 2,
+     "notional": 311,
      "decision": {
       "version": "S2.0",
       "action": "conditional",
@@ -127,165 +130,183 @@
   ],
   "day_cands": [
    {
-    "name": "United Therapeutics Corporation",
-    "ticker": "UTHR",
-    "score": 55,
-    "target_pct": 4,
-    "sector": "헬스케어",
-    "basis": [
-     "추세지속"
-    ],
-    "reason": "분석가들의 매수 의견 상향과 강력한 추세가 유지되고 있어 당일 변동성을 활용한 단타 접근이 유효합니다.",
-    "risk": "바이오 섹터 전반의 높은 변동성"
-   },
-   {
-    "name": "FormFactor, Inc.",
-    "ticker": "FORM",
-    "score": 50,
-    "target_pct": 3,
-    "sector": "기술",
-    "basis": [
-     "추세지속"
-    ],
-    "reason": "AI 인프라 지출 증가라는 강력한 시장 테마에 편승하고 있어 단기 수급이 강하게 집중될 수 있습니다.",
-    "risk": "기술주 전반의 조정 압력"
-   },
-   {
-    "name": "Zeta Global Holdings Corp.",
-    "ticker": "ZETA",
+    "name": "Mattel, Inc.",
+    "ticker": "MAT",
     "score": 45,
     "target_pct": 4,
+    "sector": "소비재",
+    "basis": [
+     "뉴스재료",
+     "수주계약"
+    ],
+    "reason": "어센틱 브랜즈 그룹의 60억 달러 인수 제안설이 제기되며 강한 모멘텀이 발생했습니다. 단기 변동성을 활용한 트레이딩이 가능합니다.",
+    "risk": "인수 관련 공식 확정 여부에 따른 급변동 가능성"
+   },
+   {
+    "name": "Coherent Corp.",
+    "ticker": "COHR",
+    "score": 42,
+    "target_pct": 4,
+    "sector": "기술",
+    "basis": [
+     "뉴스재료",
+     "거래량급증"
+    ],
+    "reason": "번스탱의 긍정적 리포트와 월스트리트의 지지를 바탕으로 광학 및 AI 인프라 관련 수혜가 기대됩니다. 갭 상승 추격에 주의해야 합니다.",
+    "risk": "광학 및 반도체 관련주 수급 순환매 속도"
+   },
+   {
+    "name": "Credo Technology Group Holding",
+    "ticker": "CRDO",
+    "score": 40,
+    "target_pct": 3,
     "sector": "기술",
     "basis": [
      "추세지속"
     ],
-    "reason": "3분기 강력한 랠리 이후에도 모멘텀이 살아있어 당일 추가 상승 탄력을 기대할 수 있습니다.",
-    "risk": "단기 과열에 따른 급락 위험"
+    "reason": "AI 인프라 및 고속 연결성 수요 증가로 주목받고 있으나 최근 내부자 매도 공시가 있어 주의가 필요합니다.",
+    "risk": "내부자 매도 물량 출하 우려"
    },
    {
-    "name": "newcleo plc",
-    "ticker": "NWCL",
-    "score": 40,
+    "name": "Applied Optoelectronics, Inc.",
+    "ticker": "AAOI",
+    "score": 38,
     "target_pct": 3,
-    "sector": "에너지",
+    "sector": "기술",
     "basis": [
-     "정책테마"
+     "뉴스재료",
+     "추세지속"
     ],
-    "reason": "원자력 산업의 명망 있는 인사 영입은 장기 재료이나, 당일 거래량 동반 시 단기 탄력이 발생할 수 있습니다.",
-    "risk": "시장 관심도 저조"
+    "reason": "광학 섹터 전반의 강세 흐름과 연동되어 가파른 상승세를 보이고 있습니다. 이미 단기 상승폭이 커 철저한 리스크 관리가 요구됩니다.",
+    "risk": "높은 변동성과 단기 과열 부담"
    },
    {
-    "name": "Nu Holdings Ltd.",
-    "ticker": "NU",
-    "score": 35,
-    "target_pct": 2,
-    "sector": "금융",
+    "name": "Ubiquiti Inc.",
+    "ticker": "UI",
+    "score": 38,
+    "target_pct": 3,
+    "sector": "기술",
     "basis": [
      "뉴스재료"
     ],
-    "reason": "인수설 부인 후 오히려 불확실성 해소로 해석되며 주가가 상승 중입니다. 하락장 방어 성격으로 활용 가능합니다.",
-    "risk": "상승 모멘텀 약함"
+    "reason": "AI 인프라 강세에 힘입은 동종 업계의 호실적 발표 여파로 동반 수혜 기대를 받고 있습니다.",
+    "risk": "실적 모멘텀 지속성 검증 필요"
    }
   ],
   "cands": [
    {
-    "ticker": "UTHR",
+    "ticker": "MAT",
     "rank": 1,
     "verdict": "선택",
-    "why": "분석가 의견 상향 및 강한 추세 유지"
+    "why": "인수 제안설에 따른 강한 거래량과 모멘텀"
    },
    {
-    "ticker": "FORM",
+    "ticker": "ACN",
     "rank": 2,
-    "verdict": "선택",
-    "why": "AI 인프라 테마 및 수급 강세"
+    "verdict": "관찰",
+    "why": "목표가 상향 조정이나 혼조세 지속"
    },
    {
-    "ticker": "ZETA",
+    "ticker": "SNPS",
     "rank": 3,
-    "verdict": "선택",
-    "why": "3분기 강력한 모멘텀 지속"
+    "verdict": "관찰",
+    "why": "반도체/소프트웨어 섹터 회피 기조 속 관망"
    },
    {
-    "ticker": "ROG",
+    "ticker": "FICO",
     "rank": 4,
-    "verdict": "선택",
-    "why": "목표가 상향 및 산업재 우위"
+    "verdict": "제외",
+    "why": "목표가 하향 및 투자의견 하향 조정 공존"
    },
    {
-    "ticker": "SPCX",
+    "ticker": "EFXT",
     "rank": 5,
     "verdict": "선택",
-    "why": "우주항공 섹터 우위"
+    "why": "데이터 센터 전력 대형 계약 모멘텀"
    },
    {
-    "ticker": "ACMR",
+    "ticker": "COHR",
     "rank": 6,
     "verdict": "선택",
-    "why": "실적 지표 우수"
+    "why": "증권사 호평 및 인프라 수혜 기대"
    },
    {
-    "ticker": "NWCL",
+    "ticker": "INOD",
     "rank": 7,
+    "verdict": "선택",
+    "why": "AI 휴머노이드 모션 캡처 랩 신설 테마"
+   },
+   {
+    "ticker": "GWRE",
+    "rank": 8,
+    "verdict": "선택",
+    "why": "클라우드 고객 신규 계약 확보"
+   },
+   {
+    "ticker": "AAOI",
+    "rank": 9,
+    "verdict": "선택",
+    "why": "광학 섹터 강세 및 연동 모멘텀"
+   },
+   {
+    "ticker": "CRDO",
+    "rank": 10,
     "verdict": "관찰",
-    "why": "핵심 인사 영입 이슈"
+    "why": "내부자 매도 공시로 인해 신중 접근"
+   },
+   {
+    "ticker": "CIEN",
+    "rank": 11,
+    "verdict": "관찰",
+    "why": "동종 업계 호재 연동이나 단독 모멘텀 제한적"
+   },
+   {
+    "ticker": "LITE",
+    "rank": 12,
+    "verdict": "제외",
+    "why": "거시 지표 혼조 및 지수 선물 영향권"
+   },
+   {
+    "ticker": "KD",
+    "rank": 13,
+    "verdict": "제외",
+    "why": "펀더멘털 우려 제기 종목"
+   },
+   {
+    "ticker": "UI",
+    "rank": 14,
+    "verdict": "관찰",
+    "why": "AI 인프라 강세 심리 연동"
    },
    {
     "ticker": "NU",
-    "rank": 8,
-    "verdict": "관찰",
-    "why": "불확실성 해소 구간"
-   },
-   {
-    "ticker": "PGEN",
-    "rank": 9,
-    "verdict": "제외",
-    "why": "바이오 섹터 회피"
-   },
-   {
-    "ticker": "IBRX",
-    "rank": 10,
-    "verdict": "제외",
-    "why": "바이오 섹터 회피"
-   },
-   {
-    "ticker": "SLS",
-    "rank": 11,
-    "verdict": "제외",
-    "why": "바이오 섹터 회피"
-   },
-   {
-    "ticker": "DOCS",
-    "rank": 12,
-    "verdict": "제외",
-    "why": "소프트웨어 섹터 회피"
-   },
-   {
-    "ticker": "BRZE",
-    "rank": 13,
-    "verdict": "제외",
-    "why": "소프트웨어 섹터 회피"
-   },
-   {
-    "ticker": "FROG",
-    "rank": 14,
-    "verdict": "제외",
-    "why": "소프트웨어 섹터 회피"
-   },
-   {
-    "ticker": "IMOS",
     "rank": 15,
+    "verdict": "관찰",
+    "why": "중립적 흐름 유지"
+   },
+   {
+    "ticker": "INTC",
+    "rank": 16,
     "verdict": "제외",
-    "why": "반도체 섹터 회피"
+    "why": "박스권 정체 및 모멘텀 부족"
+   },
+   {
+    "ticker": "CTVA",
+    "rank": 17,
+    "verdict": "제외",
+    "why": "급락 및 지수 편입 이슈 외 특이사항 없음"
+   },
+   {
+    "ticker": "NVDA",
+    "rank": 18,
+    "verdict": "관찰",
+    "why": "AI 칩 경쟁 구도 속 소폭 상승"
    }
   ],
   "mkt": {
    "dir": "횡보",
-   "conf": 51,
-   "why": "지수 선물은 플러스이나 과거 실적 기준 예측력이 낮아 보수적 접근이 필요함"
-  },
-  "day_picks": [],
-  "day_at": "22:34",
-  "day_brief": "개장 후 시가 대비 급락하거나 원칙에 부합하지 않는 종목이 많아 전면 보류합니다."
+   "conf": 50,
+   "why": "과거 시장방향 예측 적중률 50% 한계로 인해 중립적 횡보 전망"
+  }
  }
 }
