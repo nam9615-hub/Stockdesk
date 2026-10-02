@@ -22641,7 +22641,7 @@
      "p0": 298500,
      "r1": -7.8,
      "r5": -9,
-     "r20": null,
+     "r20": -15.5,
      "b": 307000,
      "gap": 2.8,
      "simOpen": -4.2,
@@ -22652,7 +22652,9 @@
      "live": 1,
      "tv": 360612,
      "tvx": 1.8,
-     "idx": 0.26
+     "idx": 0.26,
+     "mfe": 2.1,
+     "mae": -20.5
     },
     {
      "kind": "swing",
@@ -22667,7 +22669,7 @@
      "p0": 982000,
      "r1": -2.1,
      "r5": 13.6,
-     "r20": null,
+     "r20": 15.8,
      "b": 1002000,
      "gap": 2,
      "simOpen": -4.2,
@@ -22678,7 +22680,9 @@
      "live": 1,
      "tv": 394523,
      "tvx": 0.6,
-     "idx": 0.26
+     "idx": 0.26,
+     "mfe": 19.9,
+     "mae": -5.5
     },
     {
      "kind": "swing",
@@ -22693,7 +22697,7 @@
      "p0": 173700,
      "r1": -5.5,
      "r5": 16.2,
-     "r20": null,
+     "r20": 33.4,
      "b": 177700,
      "gap": 2.3,
      "simOpen": -2.6,
@@ -22704,7 +22708,9 @@
      "live": 1,
      "tv": 120940,
      "tvx": 0.6,
-     "idx": 0.26
+     "idx": 0.26,
+     "mfe": 42.9,
+     "mae": -7.1
     }
    ],
    "day2": {
@@ -24330,7 +24336,7 @@
      "r20": null,
      "b": 360500,
      "gap": 0.6,
-     "simOpen": 1,
+     "simOpen": 0,
      "tv": 64299,
      "tvx": 0.6,
      "idx": 4.61
@@ -33685,7 +33691,7 @@
      "r20": null,
      "b": 353500,
      "gap": 0.9,
-     "simOpen": 3,
+     "simOpen": 2,
      "tv": 78289,
      "tvx": 0.7,
      "idx": null
@@ -33960,7 +33966,8 @@
      "rank": 18,
      "verdict": "관찰",
      "why": "신규 서비스 런칭이나 상승 모멘텀 미흡",
-     "r1": -2.8
+     "r1": -2.8,
+     "r5": -6.5
     }
    ],
    "bl": {
@@ -34327,7 +34334,8 @@
      "rank": 4,
      "verdict": "관찰",
      "why": "현금 흐름 우수하나 소프트웨어 섹터 회피",
-     "r1": -4.5
+     "r1": -4.5,
+     "r5": -6.8
     },
     {
      "ticker": "VICR",
@@ -34342,21 +34350,24 @@
      "rank": 6,
      "verdict": "제외",
      "why": "시장 전반 금리·유가 부담 영향",
-     "r1": -0.6
+     "r1": -0.6,
+     "r5": 1.2
     },
     {
      "ticker": "CRWD",
      "rank": 7,
      "verdict": "제외",
      "why": "소프트웨어 섹터 회피 지침 적용",
-     "r1": -0.8
+     "r1": -0.8,
+     "r5": 1.1
     },
     {
      "ticker": "BETA",
      "rank": 8,
      "verdict": "선택",
      "why": "eIPP 운영 개시 재료 보유",
-     "r1": -3.3
+     "r1": -3.3,
+     "r5": -7.7
     },
     {
      "ticker": "OKTA",
@@ -35544,7 +35555,7 @@
      "b": 13.210000038146973,
      "gap": -3.7,
      "idx": -0.5,
-     "simOpen": -0.4
+     "simOpen": -0.2
     },
     {
      "kind": "swing",
@@ -35643,7 +35654,7 @@
      "b": 52.959999084472656,
      "gap": -5.7,
      "idx": -0.5,
-     "simOpen": 5.6
+     "simOpen": 0.5
     }
    ],
    "day2": {
@@ -36126,7 +36137,7 @@
      "b": 7.940000057220459,
      "gap": -9.8,
      "idx": -0.02,
-     "simOpen": 13.9
+     "simOpen": 15.6
     }
    ],
    "day2": {
@@ -36487,7 +36498,7 @@
      "b": 24.389999389648438,
      "gap": -2.9,
      "idx": 0.32,
-     "simOpen": 0.6
+     "simOpen": 2.8
     },
     {
      "kind": "swing",
@@ -36536,7 +36547,7 @@
      "b": 157.8699951171875,
      "gap": 3.3,
      "idx": 0.32,
-     "simOpen": -1.7
+     "simOpen": -2.6
     },
     {
      "kind": "swing",
@@ -36741,77 +36752,77 @@
      "rank": 1,
      "verdict": "선택",
      "why": "분석가 의견 상향 및 강한 추세 유지",
-     "r1": null
+     "r1": 2.5
     },
     {
      "ticker": "FORM",
      "rank": 2,
      "verdict": "선택",
      "why": "AI 인프라 테마 및 수급 강세",
-     "r1": null
+     "r1": -0.7
     },
     {
      "ticker": "ZETA",
      "rank": 3,
      "verdict": "선택",
      "why": "3분기 강력한 모멘텀 지속",
-     "r1": null
+     "r1": 1.2
     },
     {
      "ticker": "ROG",
      "rank": 4,
      "verdict": "선택",
      "why": "목표가 상향 및 산업재 우위",
-     "r1": null
+     "r1": 1.3
     },
     {
      "ticker": "SPCX",
      "rank": 5,
      "verdict": "선택",
      "why": "우주항공 섹터 우위",
-     "r1": null
+     "r1": -1.7
     },
     {
      "ticker": "ACMR",
      "rank": 6,
      "verdict": "선택",
      "why": "실적 지표 우수",
-     "r1": null
+     "r1": 2.6
     },
     {
      "ticker": "NWCL",
      "rank": 7,
      "verdict": "관찰",
      "why": "핵심 인사 영입 이슈",
-     "r1": null
+     "r1": -3.8
     },
     {
      "ticker": "NU",
      "rank": 8,
      "verdict": "관찰",
      "why": "불확실성 해소 구간",
-     "r1": null
+     "r1": 0.4
     },
     {
      "ticker": "PGEN",
      "rank": 9,
      "verdict": "제외",
      "why": "바이오 섹터 회피",
-     "r1": null
+     "r1": -3.4
     },
     {
      "ticker": "IBRX",
      "rank": 10,
      "verdict": "제외",
      "why": "바이오 섹터 회피",
-     "r1": null
+     "r1": 0
     },
     {
      "ticker": "SLS",
      "rank": 11,
      "verdict": "제외",
      "why": "바이오 섹터 회피",
-     "r1": null
+     "r1": -6.7
     },
     {
      "ticker": "DOCS",
@@ -37168,6 +37179,367 @@
     "n": 0
    },
    "dayHold": 1
+  },
+  {
+   "date": "2026-10-02",
+   "market": "US",
+   "regime": "혼조",
+   "rules": [
+    "단타 실패 분해: 시장충격10·목표과다1·선정25 → 선정 강화",
+    "강도80+ 실측 0%(10) — 확신도 과장, 보수화",
+    "근거'거래량급증' 성공30%(23) → 단독추천 지양",
+    "근거'정책테마' 성공24%(21) → 단독추천 지양",
+    "섹터'소프트웨어' 성공29%(17) → 회피",
+    "섹터'바이오' 성공40%(10) → 회피"
+   ],
+   "cands": [
+    {
+     "ticker": "MAT",
+     "rank": 1,
+     "verdict": "선택",
+     "why": "인수 제안설에 따른 강한 거래량과 모멘텀",
+     "r1": null
+    },
+    {
+     "ticker": "ACN",
+     "rank": 2,
+     "verdict": "관찰",
+     "why": "목표가 상향 조정이나 혼조세 지속",
+     "r1": null
+    },
+    {
+     "ticker": "SNPS",
+     "rank": 3,
+     "verdict": "관찰",
+     "why": "반도체/소프트웨어 섹터 회피 기조 속 관망",
+     "r1": null
+    },
+    {
+     "ticker": "FICO",
+     "rank": 4,
+     "verdict": "제외",
+     "why": "목표가 하향 및 투자의견 하향 조정 공존",
+     "r1": null
+    },
+    {
+     "ticker": "EFXT",
+     "rank": 5,
+     "verdict": "선택",
+     "why": "데이터 센터 전력 대형 계약 모멘텀",
+     "r1": null
+    },
+    {
+     "ticker": "COHR",
+     "rank": 6,
+     "verdict": "선택",
+     "why": "증권사 호평 및 인프라 수혜 기대",
+     "r1": null
+    },
+    {
+     "ticker": "INOD",
+     "rank": 7,
+     "verdict": "선택",
+     "why": "AI 휴머노이드 모션 캡처 랩 신설 테마",
+     "r1": null
+    },
+    {
+     "ticker": "GWRE",
+     "rank": 8,
+     "verdict": "선택",
+     "why": "클라우드 고객 신규 계약 확보",
+     "r1": null
+    },
+    {
+     "ticker": "AAOI",
+     "rank": 9,
+     "verdict": "선택",
+     "why": "광학 섹터 강세 및 연동 모멘텀",
+     "r1": null
+    },
+    {
+     "ticker": "CRDO",
+     "rank": 10,
+     "verdict": "관찰",
+     "why": "내부자 매도 공시로 인해 신중 접근",
+     "r1": null
+    },
+    {
+     "ticker": "CIEN",
+     "rank": 11,
+     "verdict": "관찰",
+     "why": "동종 업계 호재 연동이나 단독 모멘텀 제한적",
+     "r1": null
+    },
+    {
+     "ticker": "LITE",
+     "rank": 12,
+     "verdict": "제외",
+     "why": "거시 지표 혼조 및 지수 선물 영향권",
+     "r1": null
+    },
+    {
+     "ticker": "KD",
+     "rank": 13,
+     "verdict": "제외",
+     "why": "펀더멘털 우려 제기 종목",
+     "r1": null
+    },
+    {
+     "ticker": "UI",
+     "rank": 14,
+     "verdict": "관찰",
+     "why": "AI 인프라 강세 심리 연동",
+     "r1": null
+    },
+    {
+     "ticker": "NU",
+     "rank": 15,
+     "verdict": "관찰",
+     "why": "중립적 흐름 유지",
+     "r1": null
+    },
+    {
+     "ticker": "INTC",
+     "rank": 16,
+     "verdict": "제외",
+     "why": "박스권 정체 및 모멘텀 부족",
+     "r1": null
+    },
+    {
+     "ticker": "CTVA",
+     "rank": 17,
+     "verdict": "제외",
+     "why": "급락 및 지수 편입 이슈 외 특이사항 없음",
+     "r1": null
+    },
+    {
+     "ticker": "NVDA",
+     "rank": 18,
+     "verdict": "관찰",
+     "why": "AI 칩 경쟁 구도 속 소폭 상승",
+     "r1": null
+    }
+   ],
+   "bl": {
+    "rand": [
+     "MAT",
+     "INTC",
+     "AAOI"
+    ],
+    "mom": [
+     "MAT",
+     "ACN",
+     "SNPS"
+    ]
+   },
+   "dayCands": [
+    {
+     "name": "Mattel, Inc.",
+     "ticker": "MAT",
+     "score": 45,
+     "target_pct": 4,
+     "sector": "소비재",
+     "basis": [
+      "뉴스재료",
+      "수주계약"
+     ],
+     "reason": "어센틱 브랜즈 그룹의 60억 달러 인수 제안설이 제기되며 강한 모멘텀이 발생했습니다. 단기 변동성을 활용한 트레이딩이 가능합니다.",
+     "risk": "인수 관련 공식 확정 여부에 따른 급변동 가능성"
+    },
+    {
+     "name": "Coherent Corp.",
+     "ticker": "COHR",
+     "score": 42,
+     "target_pct": 4,
+     "sector": "기술",
+     "basis": [
+      "뉴스재료",
+      "거래량급증"
+     ],
+     "reason": "번스탱의 긍정적 리포트와 월스트리트의 지지를 바탕으로 광학 및 AI 인프라 관련 수혜가 기대됩니다. 갭 상승 추격에 주의해야 합니다.",
+     "risk": "광학 및 반도체 관련주 수급 순환매 속도"
+    },
+    {
+     "name": "Credo Technology Group Holding",
+     "ticker": "CRDO",
+     "score": 40,
+     "target_pct": 3,
+     "sector": "기술",
+     "basis": [
+      "추세지속"
+     ],
+     "reason": "AI 인프라 및 고속 연결성 수요 증가로 주목받고 있으나 최근 내부자 매도 공시가 있어 주의가 필요합니다.",
+     "risk": "내부자 매도 물량 출하 우려"
+    },
+    {
+     "name": "Applied Optoelectronics, Inc.",
+     "ticker": "AAOI",
+     "score": 38,
+     "target_pct": 3,
+     "sector": "기술",
+     "basis": [
+      "뉴스재료",
+      "추세지속"
+     ],
+     "reason": "광학 섹터 전반의 강세 흐름과 연동되어 가파른 상승세를 보이고 있습니다. 이미 단기 상승폭이 커 철저한 리스크 관리가 요구됩니다.",
+     "risk": "높은 변동성과 단기 과열 부담"
+    },
+    {
+     "name": "Ubiquiti Inc.",
+     "ticker": "UI",
+     "score": 38,
+     "target_pct": 3,
+     "sector": "기술",
+     "basis": [
+      "뉴스재료"
+     ],
+     "reason": "AI 인프라 강세에 힘입은 동종 업계의 호실적 발표 여파로 동반 수혜 기대를 받고 있습니다.",
+     "risk": "실적 모멘텀 지속성 검증 필요"
+    }
+   ],
+   "hold": 0,
+   "v": {
+    "m": "gemini-3.5-flash-lite",
+    "pv": "J1.0-S2.0",
+    "policy": "S2.0"
+   },
+   "mktF": {
+    "dir": "횡보",
+    "conf": 50,
+    "why": "과거 시장방향 예측 적중률 50% 한계로 인해 중립적 횡보 전망",
+    "ok": null
+   },
+   "picks": [
+    {
+     "kind": "swing",
+     "name": "Enerflex Ltd",
+     "ticker": "EFXT",
+     "score": 45,
+     "sector": "에너지",
+     "basis": [
+      "수주계약",
+      "뉴스재료"
+     ],
+     "plan": {
+      "engine": "R2.0",
+      "strategy": "swing",
+      "atrPct": 4.03,
+      "stopPct": 6.04,
+      "targetPct": 12.09,
+      "rr": 2,
+      "maxHoldDays": 15,
+      "riskPct": 0.5,
+      "maxWeightPct": 10,
+      "weightPct": 8.14,
+      "qty": 16,
+      "notional": 407,
+      "decision": {
+       "version": "S2.0",
+       "action": "conditional",
+       "strategy": "swing",
+       "reasons": [
+        "지속 재료와 중기 추세가 함께 확인됨"
+       ],
+       "plannedHoldDays": 15,
+       "reviewAfterDays": 3,
+       "maxHoldDays": 15,
+       "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+       "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+       "allowAutoOrder": false
+      }
+     },
+     "p0": 25.44,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "Innodata Inc.",
+     "ticker": "INOD",
+     "score": 42,
+     "sector": "기술",
+     "basis": [
+      "뉴스재료",
+      "추세지속"
+     ],
+     "plan": {
+      "engine": "R2.0",
+      "strategy": "swing",
+      "atrPct": 6.92,
+      "stopPct": 9,
+      "targetPct": 18,
+      "rr": 2,
+      "maxHoldDays": 5,
+      "riskPct": 0.5,
+      "maxWeightPct": 10,
+      "weightPct": 4.31,
+      "qty": 3,
+      "notional": 216,
+      "decision": {
+       "version": "S2.0",
+       "action": "watch",
+       "strategy": "day-watch",
+       "reasons": [
+        "단기 수급만 확인: 단타 재평가 후보, 자동 전환 아님"
+       ],
+       "plannedHoldDays": 5,
+       "reviewAfterDays": 3,
+       "maxHoldDays": 5,
+       "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+       "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+       "allowAutoOrder": false
+      }
+     },
+     "p0": 71.85,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "Guidewire Software, Inc.",
+     "ticker": "GWRE",
+     "score": 40,
+     "sector": "소프트웨어",
+     "basis": [
+      "수주계약",
+      "추세지속"
+     ],
+     "plan": {
+      "engine": "R2.0",
+      "strategy": "swing",
+      "atrPct": 4.45,
+      "stopPct": 6.68,
+      "targetPct": 13.35,
+      "rr": 2,
+      "maxHoldDays": 10,
+      "riskPct": 0.5,
+      "maxWeightPct": 10,
+      "weightPct": 6.21,
+      "qty": 2,
+      "notional": 311,
+      "decision": {
+       "version": "S2.0",
+       "action": "conditional",
+       "strategy": "swing",
+       "reasons": [
+        "재료 지속성 확인, 짧은 주기로 추세 재평가"
+       ],
+       "plannedHoldDays": 10,
+       "reviewAfterDays": 3,
+       "maxHoldDays": 10,
+       "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+       "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+       "allowAutoOrder": false
+      }
+     },
+     "p0": 155.32,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    }
+   ]
   }
  ],
  "monAt": 1790912618886
