@@ -24342,7 +24342,7 @@
      "r20": null,
      "b": 360500,
      "gap": 0.6,
-     "simOpen": 2.4,
+     "simOpen": 2.9,
      "tv": 64299,
      "tvx": 0.6,
      "idx": 4.61
@@ -33702,7 +33702,7 @@
      "r20": null,
      "b": 353500,
      "gap": 0.9,
-     "simOpen": 4.4,
+     "simOpen": 5,
      "tv": 78289,
      "tvx": 0.7,
      "idx": null
@@ -37710,6 +37710,366 @@
      "mom": -2.4
     }
    }
+  },
+  {
+   "date": "2026-10-05",
+   "market": "US",
+   "regime": "상승",
+   "rules": [
+    "단타 실패 분해: 시장충격10·목표과다1·선정25 → 선정 강화",
+    "강도80+ 실측 0%(10) — 확신도 과장, 보수화",
+    "근거'거래량급증' 성공30%(23) → 단독추천 지양",
+    "근거'정책테마' 성공29%(21) → 단독추천 지양",
+    "섹터'소프트웨어' 성공39%(18) → 회피",
+    "섹터'바이오' 성공40%(10) → 회피"
+   ],
+   "cands": [
+    {
+     "ticker": "MXL",
+     "rank": 1,
+     "verdict": "선택",
+     "why": "실적 앞둔 강력한 모멘텀",
+     "r1": null
+    },
+    {
+     "ticker": "IMOS",
+     "rank": 2,
+     "verdict": "관찰",
+     "why": "실적 호조이나 반도체 주의",
+     "r1": null
+    },
+    {
+     "ticker": "SYNA",
+     "rank": 3,
+     "verdict": "선택",
+     "why": "상승 추세 지속",
+     "r1": null
+    },
+    {
+     "ticker": "PENG",
+     "rank": 4,
+     "verdict": "선택",
+     "why": "AI 수주 잔고 증가",
+     "r1": null
+    },
+    {
+     "ticker": "VSH",
+     "rank": 5,
+     "verdict": "관찰",
+     "why": "아날로그 반도체 리포트 주목",
+     "r1": null
+    },
+    {
+     "ticker": "IBRX",
+     "rank": 6,
+     "verdict": "제외",
+     "why": "바이오 섹터 회피",
+     "r1": null
+    },
+    {
+     "ticker": "MTRN",
+     "rank": 7,
+     "verdict": "관찰",
+     "why": "소재/광물 가격 상승 연동",
+     "r1": null
+    },
+    {
+     "ticker": "RXO",
+     "rank": 8,
+     "verdict": "선택",
+     "why": "C.H. Robinson 인수합병 프리미엄",
+     "r1": null
+    },
+    {
+     "ticker": "INIO",
+     "rank": 9,
+     "verdict": "선택",
+     "why": "APAC 사업 인수 완료",
+     "r1": null
+    },
+    {
+     "ticker": "PPC",
+     "rank": 10,
+     "verdict": "제외",
+     "why": "소비재 섹터 회피",
+     "r1": null
+    },
+    {
+     "ticker": "ALGM",
+     "rank": 11,
+     "verdict": "제외",
+     "why": "반도체 섹터 회피",
+     "r1": null
+    },
+    {
+     "ticker": "OUST",
+     "rank": 12,
+     "verdict": "선택",
+     "why": "드론 라이다 공급 계약",
+     "r1": null
+    },
+    {
+     "ticker": "PL",
+     "rank": 13,
+     "verdict": "선택",
+     "why": "우주항공 섹터 우위 반영",
+     "r1": null
+    },
+    {
+     "ticker": "ACLS",
+     "rank": 14,
+     "verdict": "제외",
+     "why": "반도체 CapEx 관련 변동성",
+     "r1": null
+    },
+    {
+     "ticker": "NKE",
+     "rank": 15,
+     "verdict": "제외",
+     "why": "하락 마감 종목",
+     "r1": null
+    },
+    {
+     "ticker": "NVDA",
+     "rank": 16,
+     "verdict": "제외",
+     "why": "모멘텀 부족",
+     "r1": null
+    },
+    {
+     "ticker": "SPCX",
+     "rank": 17,
+     "verdict": "관찰",
+     "why": "일론 머스크 유닛 변경 이슈",
+     "r1": null
+    },
+    {
+     "ticker": "INTC",
+     "rank": 18,
+     "verdict": "제외",
+     "why": "하락세 및 반도체 회피",
+     "r1": null
+    }
+   ],
+   "bl": {
+    "rand": [
+     "IBRX",
+     "MXL",
+     "IMOS"
+    ],
+    "mom": [
+     "MXL",
+     "IMOS",
+     "SYNA"
+    ]
+   },
+   "dayCands": [
+    {
+     "name": "MaxLinear, Inc",
+     "ticker": "MXL",
+     "score": 58,
+     "target_pct": 4,
+     "sector": "반도체",
+     "basis": [
+      "실적/수주계약"
+     ],
+     "reason": "Q3 실적 발표를 앞두고 주가가 급등세를 보이며 강한 모멘텀을 형성하고 있습니다. 다만 반도체 섹터 주의 통계를 감안해 짧은 목표 수익률로 대응합니다.",
+     "catalyst": "Q3 실적 발표 기대감",
+     "risk": "실적 컨센서스 미달 시 급락 위험"
+    },
+    {
+     "name": "Synaptics Incorporated",
+     "ticker": "SYNA",
+     "score": 57,
+     "target_pct": 4,
+     "sector": "반도체",
+     "basis": [
+      "추세지속"
+     ],
+     "reason": "전일 큰 폭의 상승세를 기록하며 단기 모멘텀이 이어지고 있습니다. 추세 지속성을 활용한 당일 트레이딩 관점에서 접근합니다.",
+     "catalyst": "연속 상승 모멘텀",
+     "risk": "단기 과열에 따른 되돌림 가능성"
+    },
+    {
+     "name": "ChipMOS TECHNOLOGIES INC.",
+     "ticker": "IMOS",
+     "score": 56,
+     "target_pct": 4,
+     "sector": "반도체",
+     "basis": [
+      "실적/수주계약"
+     ],
+     "reason": "실적 급증 소식과 함께 매수세가 유입되며 강한 상위 후보에 올랐습니다. 단기 변동성을 활용한 트레이딩이 가능합니다.",
+     "catalyst": "실적 263% 급증 뉴스",
+     "risk": "차익 실현 매물 압박"
+    },
+    {
+     "name": "Ouster, Inc.",
+     "ticker": "OUST",
+     "score": 55,
+     "target_pct": 4,
+     "sector": "기술",
+     "basis": [
+      "수주계약"
+     ],
+     "reason": "자율주행 드론 라이다 장비 공급 계약 등 실질적인 재료가 부각되고 있습니다. 모멘텀을 이용한 단기 접근이 유효합니다.",
+     "catalyst": "산불 대응 자율주행 드론 라이다 공급 파트너십",
+     "risk": "테마성 수급 변동성"
+    },
+    {
+     "name": "Planet Labs PBC",
+     "ticker": "PL",
+     "score": 54,
+     "target_pct": 4,
+     "sector": "우주항공",
+     "basis": [
+      "추세지속"
+     ],
+     "reason": "우주항공 섹터의 우위 통계를 참고하여 긍정적인 관심이 이어지는 종목입니다. 장 초반 수급 흐름에 따라 단기 변동성을 공략합니다.",
+     "catalyst": "우주 섹터 내 차별화된 성장 기대",
+     "risk": "섹터 전반의 수급 이탈 가능성"
+    }
+   ],
+   "hold": 0,
+   "v": {
+    "m": "gemini-3.5-flash-lite",
+    "pv": "J1.0-S2.0",
+    "policy": "S2.0"
+   },
+   "mktF": {
+    "dir": "상승",
+    "conf": 50,
+    "why": "전일 S&P500 상승세를 이어받으나 VIX 상승과 선물 보합세로 인해 신중한 접근이 필요합니다.",
+    "ok": null
+   },
+   "picks": [
+    {
+     "kind": "swing",
+     "name": "RXO, Inc.",
+     "ticker": "RXO",
+     "score": 65,
+     "sector": "물류",
+     "basis": [
+      "M&A/인수합병"
+     ],
+     "plan": {
+      "engine": "R2.0",
+      "strategy": "swing",
+      "atrPct": 4.88,
+      "stopPct": 7.32,
+      "targetPct": 14.64,
+      "rr": 2,
+      "maxHoldDays": 5,
+      "riskPct": 0.5,
+      "maxWeightPct": 10,
+      "weightPct": 6.55,
+      "qty": 14,
+      "notional": 327,
+      "decision": {
+       "version": "S2.0",
+       "action": "watch",
+       "strategy": "watch",
+       "reasons": [
+        "지속 재료·추세 확인 전 관찰"
+       ],
+       "plannedHoldDays": 5,
+       "reviewAfterDays": 3,
+       "maxHoldDays": 5,
+       "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+       "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+       "allowAutoOrder": false
+      }
+     },
+     "p0": 23.38,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "INNIO N.V.",
+     "ticker": "INIO",
+     "score": 60,
+     "sector": "산업재",
+     "basis": [
+      "M&A/인수합병"
+     ],
+     "plan": {
+      "engine": "R2.0",
+      "strategy": "swing",
+      "atrPct": 6.52,
+      "stopPct": 9,
+      "targetPct": 18,
+      "rr": 2,
+      "maxHoldDays": 5,
+      "riskPct": 0.5,
+      "maxWeightPct": 10,
+      "weightPct": 5.2,
+      "qty": 13,
+      "notional": 260,
+      "decision": {
+       "version": "S2.0",
+       "action": "watch",
+       "strategy": "watch",
+       "reasons": [
+        "지속 재료·추세 확인 전 관찰"
+       ],
+       "plannedHoldDays": 5,
+       "reviewAfterDays": 3,
+       "maxHoldDays": 5,
+       "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+       "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+       "allowAutoOrder": false
+      }
+     },
+     "p0": 19.99,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "Penguin Solutions, Inc.",
+     "ticker": "PENG",
+     "score": 55,
+     "sector": "기술",
+     "basis": [
+      "실적/수주계약"
+     ],
+     "plan": {
+      "engine": "R2.0",
+      "strategy": "swing",
+      "atrPct": 5.02,
+      "stopPct": 7.53,
+      "targetPct": 15.06,
+      "rr": 2,
+      "maxHoldDays": 5,
+      "riskPct": 0.5,
+      "maxWeightPct": 10,
+      "weightPct": 6.14,
+      "qty": 5,
+      "notional": 307,
+      "decision": {
+       "version": "S2.0",
+       "action": "watch",
+       "strategy": "watch",
+       "reasons": [
+        "지속 재료·추세 확인 전 관찰"
+       ],
+       "plannedHoldDays": 5,
+       "reviewAfterDays": 3,
+       "maxHoldDays": 5,
+       "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+       "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+       "allowAutoOrder": false
+      }
+     },
+     "p0": 61.36,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    }
+   ]
   }
  ],
  "monAt": 1791171661840
