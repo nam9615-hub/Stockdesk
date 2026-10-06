@@ -24348,7 +24348,7 @@
      "r20": null,
      "b": 360500,
      "gap": 0.6,
-     "simOpen": 7.9,
+     "simOpen": 2.9,
      "tv": 64299,
      "tvx": 0.6,
      "idx": 4.61
@@ -33711,7 +33711,7 @@
      "r20": null,
      "b": 353500,
      "gap": 0.9,
-     "simOpen": 10,
+     "simOpen": 5,
      "tv": 78289,
      "tvx": 0.7,
      "idx": null
@@ -35890,7 +35890,8 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": -1.6
+     "r1": -1.6,
+     "r5": 3.4
     },
     {
      "ticker": "INTC",
@@ -35898,7 +35899,8 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": -0.7
+     "r1": -0.7,
+     "r5": -0.4
     },
     {
      "ticker": "SPCX",
@@ -35906,7 +35908,8 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": 1.7
+     "r1": 1.7,
+     "r5": 16.6
     }
    ],
    "bl": {
@@ -36576,7 +36579,7 @@
      "b": 24.389999389648438,
      "gap": -2.9,
      "idx": 0.32,
-     "simOpen": 5.6
+     "simOpen": 4.8
     },
     {
      "kind": "swing",
@@ -36625,7 +36628,7 @@
      "b": 157.8699951171875,
      "gap": 3.3,
      "idx": 0.32,
-     "simOpen": 4.6
+     "simOpen": 2.6
     },
     {
      "kind": "swing",
@@ -36674,7 +36677,7 @@
      "b": 73.66000366210938,
      "gap": -0.4,
      "idx": 0.32,
-     "simOpen": 2.7
+     "simOpen": 4.5
     },
     {
      "kind": "day",
@@ -37256,7 +37259,7 @@
      "b": 81.5,
      "gap": 0.7,
      "idx": 0.31,
-     "simOpen": 2.3
+     "simOpen": -6.5
     }
    ],
    "day2": {
@@ -37619,7 +37622,7 @@
      "b": 25.75,
      "gap": 1.2,
      "idx": 0.81,
-     "simOpen": -4.5
+     "simOpen": -2.8
     },
     {
      "kind": "swing",
@@ -37833,49 +37836,49 @@
      "rank": 12,
      "verdict": "선택",
      "why": "드론 라이다 공급 계약",
-     "r1": null
+     "r1": -0.6
     },
     {
      "ticker": "PL",
      "rank": 13,
      "verdict": "선택",
      "why": "우주항공 섹터 우위 반영",
-     "r1": null
+     "r1": -1.6
     },
     {
      "ticker": "ACLS",
      "rank": 14,
      "verdict": "제외",
      "why": "반도체 CapEx 관련 변동성",
-     "r1": null
+     "r1": -3.7
     },
     {
      "ticker": "NKE",
      "rank": 15,
      "verdict": "제외",
      "why": "하락 마감 종목",
-     "r1": null
+     "r1": 0.4
     },
     {
      "ticker": "NVDA",
      "rank": 16,
      "verdict": "제외",
      "why": "모멘텀 부족",
-     "r1": null
+     "r1": 1.2
     },
     {
      "ticker": "SPCX",
      "rank": 17,
      "verdict": "관찰",
      "why": "일론 머스크 유닛 변경 이슈",
-     "r1": null
+     "r1": 7.6
     },
     {
      "ticker": "INTC",
      "rank": 18,
      "verdict": "제외",
      "why": "하락세 및 반도체 회피",
-     "r1": null
+     "r1": 0.7
     }
    ],
    "bl": {
@@ -38182,7 +38185,381 @@
     "brief": "모든 후보가 개장 직후 시가 대비 마이너스로 전환하거나 하락세를 보여 단타 기준인 확률 우위를 충족하지 못했습니다.",
     "n": 0
    },
-   "dayHold": 1
+   "dayHold": 1,
+   "cstat": {
+    "n": 18,
+    "med": -0.6,
+    "ex": null,
+    "exD": null,
+    "rg": null,
+    "rej": -0.2,
+    "blr": {
+     "rand": -2,
+     "mom": -1.1
+    }
+   }
+  },
+  {
+   "date": "2026-10-06",
+   "market": "US",
+   "regime": "상승",
+   "rules": [
+    "단타 실패 분해: 시장충격10·목표과다1·선정25 → 선정 강화",
+    "강도80+ 실측 0%(10) — 확신도 과장, 보수화",
+    "근거'거래량급증' 성공30%(23) → 단독추천 지양",
+    "근거'정책테마' 성공29%(21) → 단독추천 지양",
+    "섹터'소프트웨어' 성공39%(18) → 회피",
+    "섹터'바이오' 성공40%(10) → 회피"
+   ],
+   "cands": [
+    {
+     "ticker": "PTC",
+     "rank": 1,
+     "verdict": "제외",
+     "why": "소프트웨어 섹터 회피 및 M&A 가치 희석 우려",
+     "r1": null
+    },
+    {
+     "ticker": "XP",
+     "rank": 2,
+     "verdict": "선택",
+     "why": "브라질 선거 모멘텀 반영",
+     "r1": null
+    },
+    {
+     "ticker": "PCVX",
+     "rank": 3,
+     "verdict": "제외",
+     "why": "바이오 섹터 회피 기준 적용",
+     "r1": null
+    },
+    {
+     "ticker": "RXO",
+     "rank": 4,
+     "verdict": "선택",
+     "why": "산업재 우위 및 M&A 뉴스 반영",
+     "r1": null
+    },
+    {
+     "ticker": "PAGS",
+     "rank": 5,
+     "verdict": "관찰",
+     "why": "단타 후보군으로 활용",
+     "r1": null
+    },
+    {
+     "ticker": "STNE",
+     "rank": 6,
+     "verdict": "관찰",
+     "why": "단타 후보군으로 활용",
+     "r1": null
+    },
+    {
+     "ticker": "NVAX",
+     "rank": 7,
+     "verdict": "관찰",
+     "why": "거래량 급증 단기 모멘텀 관찰",
+     "r1": null
+    },
+    {
+     "ticker": "INTR",
+     "rank": 8,
+     "verdict": "관찰",
+     "why": "핀테크 성장성 지속 여부 확인",
+     "r1": null
+    },
+    {
+     "ticker": "SBS",
+     "rank": 9,
+     "verdict": "제외",
+     "why": "모멘텀 및 거래대금 상대적 열세",
+     "r1": null
+    },
+    {
+     "ticker": "ITUB",
+     "rank": 10,
+     "verdict": "선택",
+     "why": "브라질 대형 금융주 랠리 편승",
+     "r1": null
+    },
+    {
+     "ticker": "BDORY",
+     "rank": 11,
+     "verdict": "제외",
+     "why": "유사 종목 대비 유동성 부족",
+     "r1": null
+    },
+    {
+     "ticker": "NU",
+     "rank": 12,
+     "verdict": "제외",
+     "why": "상승폭 대비 추가 모멘텀 제한적",
+     "r1": null
+    },
+    {
+     "ticker": "PBR-A",
+     "rank": 13,
+     "verdict": "제외",
+     "why": "뉴스 부재 및 에너지 섹터 회피",
+     "r1": null
+    },
+    {
+     "ticker": "ALVO",
+     "rank": 14,
+     "verdict": "관찰",
+     "why": "바이오 섹터이나 FDA 승인 재료 보유",
+     "r1": null
+    },
+    {
+     "ticker": "WBD",
+     "rank": 15,
+     "verdict": "제외",
+     "why": "상승률 미미 및 엔터테인먼트 회피",
+     "r1": null
+    },
+    {
+     "ticker": "CTVA",
+     "rank": 16,
+     "verdict": "제외",
+     "why": "소재 섹터 회피 및 모멘텀 부족",
+     "r1": null
+    },
+    {
+     "ticker": "BBD",
+     "rank": 17,
+     "verdict": "제외",
+     "why": "동종 브라질 금융주(ITUB, XP) 우선",
+     "r1": null
+    },
+    {
+     "ticker": "SPCX",
+     "rank": 18,
+     "verdict": "제외",
+     "why": "우주항공 우위이나 상승 여력 점검 필요",
+     "r1": null
+    }
+   ],
+   "bl": {
+    "rand": [
+     "RXO",
+     "PBR-A",
+     "NU"
+    ],
+    "mom": [
+     "PTC",
+     "XP",
+     "PCVX"
+    ]
+   },
+   "dayCands": [
+    {
+     "name": "Alvotech",
+     "ticker": "ALVO",
+     "score": 38,
+     "target_pct": 3,
+     "sector": "바이오",
+     "basis": [
+      "뉴스재료"
+     ],
+     "reason": "FDA 승인으로 미국 내 바이오시밀러 생산 능력이 배가되었다는 호재가 발생했습니다. 다만 바이오 섹터의 낮은 실측 승률을 감안하여 보수적 목표가를 설정합니다.",
+     "catalyst": "FDA 승인",
+     "risk": "바이오 섹터 전반의 높은 변동성"
+    },
+    {
+     "name": "PagSeguro Digital Ltd.",
+     "ticker": "PAGS",
+     "score": 42,
+     "target_pct": 4,
+     "sector": "금융",
+     "basis": [
+      "뉴스재료"
+     ],
+     "reason": "현지 핀테크 주식들의 동반 급등세와 실적 기대감이 주가를 견인하고 있습니다. 투자의견 유지 뉴스가 하방을 지지합니다.",
+     "catalyst": "핀테크 섹터 순환매",
+     "risk": "목표가 하향 조정 이력 존재"
+    },
+    {
+     "name": "StoneCo Ltd.",
+     "ticker": "STNE",
+     "score": 40,
+     "target_pct": 3,
+     "sector": "금융",
+     "basis": [
+      "뉴스재료"
+     ],
+     "reason": "시중 지수를 상회하는 강한 거래량과 브라질 관련주 상승 흐름에 편승하고 있습니다. 단기 모멘텀 중심의 접근이 유효합니다.",
+     "catalyst": "브라질 관련주 동반 강세",
+     "risk": "차익실현 매물 출회 가능성"
+    },
+    {
+     "name": "Inter & Co. Inc.",
+     "ticker": "INTR",
+     "score": 39,
+     "target_pct": 3,
+     "sector": "금융",
+     "basis": [
+      "추세지속"
+     ],
+     "reason": "디지털 핀테크 슈퍼앱 전략에 대한 장기 성장 기대감이 유효합니다. 이자율 환경 변화에 민감한 미국 상장 브라질 은행주입니다.",
+     "catalyst": "핀테크 성장성 부각",
+     "risk": "금리 변동에 따른 민감도"
+    },
+    {
+     "name": "Novavax, Inc.",
+     "ticker": "NVAX",
+     "score": 35,
+     "target_pct": 2,
+     "sector": "바이오",
+     "basis": [
+      "거래량급증",
+      "뉴스재료"
+     ],
+     "reason": "테마성 수급과 거래량 급증으로 단기 모멘텀이 형성되었습니다. 과거 바이오 섹터의 낮은 승률 통계에 따라 비중을 엄격히 통제합니다.",
+     "catalyst": "뉴스 및 리테일 수급",
+     "risk": "테마 소멸 시 급락 위험"
+    }
+   ],
+   "hold": 0,
+   "v": {
+    "m": "gemini-3.5-flash-lite",
+    "pv": "J1.0-S2.0",
+    "policy": "S2.0"
+   },
+   "mktF": {
+    "dir": "상승",
+    "conf": 48,
+    "why": "전일 S&P500 및 지수선물 상승세이나 과거 예측 적중률을 고려해 중립적으로 대응합니다.",
+    "ok": null
+   },
+   "picks": [
+    {
+     "kind": "swing",
+     "name": "XP Inc.",
+     "ticker": "XP",
+     "score": 45,
+     "sector": "금융",
+     "basis": [
+      "뉴스재료"
+     ],
+     "plan": {
+      "engine": "R2.0",
+      "strategy": "swing",
+      "atrPct": 4.62,
+      "stopPct": 6.93,
+      "targetPct": 13.86,
+      "rr": 2,
+      "maxHoldDays": 5,
+      "riskPct": 0.5,
+      "maxWeightPct": 10,
+      "weightPct": 6.76,
+      "qty": 12,
+      "notional": 338,
+      "decision": {
+       "version": "S2.0",
+       "action": "conditional",
+       "strategy": "swing",
+       "reasons": [
+        "추세 중심의 짧은 스윙"
+       ],
+       "plannedHoldDays": 5,
+       "reviewAfterDays": 3,
+       "maxHoldDays": 5,
+       "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+       "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+       "allowAutoOrder": false
+      }
+     },
+     "p0": 28.15,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "RXO, Inc.",
+     "ticker": "RXO",
+     "score": 42,
+     "sector": "산업재",
+     "basis": [
+      "뉴스재료",
+      "수주계약"
+     ],
+     "plan": {
+      "engine": "R2.0",
+      "strategy": "swing",
+      "atrPct": 5.21,
+      "stopPct": 7.81,
+      "targetPct": 15.63,
+      "rr": 2,
+      "maxHoldDays": 10,
+      "riskPct": 0.5,
+      "maxWeightPct": 10,
+      "weightPct": 6.3,
+      "qty": 11,
+      "notional": 315,
+      "decision": {
+       "version": "S2.0",
+       "action": "conditional",
+       "strategy": "swing",
+       "reasons": [
+        "재료 지속성 확인, 짧은 주기로 추세 재평가"
+       ],
+       "plannedHoldDays": 10,
+       "reviewAfterDays": 3,
+       "maxHoldDays": 10,
+       "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+       "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+       "allowAutoOrder": false
+      }
+     },
+     "p0": 28.65,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "Itau Unibanco Banco Holding SA",
+     "ticker": "ITUB",
+     "score": 40,
+     "sector": "금융",
+     "basis": [
+      "뉴스재료"
+     ],
+     "plan": {
+      "engine": "R2.0",
+      "strategy": "swing",
+      "atrPct": 3.54,
+      "stopPct": 5.31,
+      "targetPct": 10.62,
+      "rr": 2,
+      "maxHoldDays": 5,
+      "riskPct": 0.5,
+      "maxWeightPct": 10,
+      "weightPct": 9.32,
+      "qty": 47,
+      "notional": 466,
+      "decision": {
+       "version": "S2.0",
+       "action": "conditional",
+       "strategy": "swing",
+       "reasons": [
+        "추세 중심의 짧은 스윙"
+       ],
+       "plannedHoldDays": 5,
+       "reviewAfterDays": 3,
+       "maxHoldDays": 5,
+       "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+       "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+       "allowAutoOrder": false
+      }
+     },
+     "p0": 9.92,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    }
+   ]
   }
  ],
  "monAt": 1791260946625
