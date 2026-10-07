@@ -24320,7 +24320,7 @@
      "p0": 1041000,
      "r1": 1.8,
      "r5": -1.4,
-     "r20": null,
+     "r20": 3.3,
      "b": 1105000,
      "gap": 6.1,
      "simOpen": -1.4,
@@ -24331,7 +24331,9 @@
      "simExit": "stop",
      "simD": "2026-09-14",
      "simT": "09:00",
-     "live": 1
+     "live": 1,
+     "mfe": 8.7,
+     "mae": -10.6
     },
     {
      "kind": "swing",
@@ -24345,13 +24347,15 @@
      "p0": 358500,
      "r1": 0.6,
      "r5": -0.1,
-     "r20": null,
+     "r20": 8.5,
      "b": 360500,
      "gap": 0.6,
-     "simOpen": 9.2,
+     "simOpen": 8.2,
      "tv": 64299,
      "tvx": 0.6,
-     "idx": 4.61
+     "idx": 4.61,
+     "mfe": 9.6,
+     "mae": -3.7
     },
     {
      "kind": "swing",
@@ -24366,7 +24370,7 @@
      "p0": 383500,
      "r1": 0.9,
      "r5": -1.8,
-     "r20": null,
+     "r20": -13.7,
      "b": 389500,
      "gap": 1.6,
      "simOpen": -4.7,
@@ -24377,7 +24381,9 @@
      "simExit": "stop",
      "simD": "2026-09-14",
      "simT": "09:01",
-     "live": 1
+     "live": 1,
+     "mfe": 1.4,
+     "mae": -14
     }
    ],
    "day2": {
@@ -33711,7 +33717,7 @@
      "r20": null,
      "b": 353500,
      "gap": 0.9,
-     "simOpen": 11.3,
+     "simOpen": 10.3,
      "tv": 78289,
      "tvx": 0.7,
      "idx": null
@@ -36338,35 +36344,40 @@
      "rank": 11,
      "verdict": "제외",
      "why": "바이오 섹터 회피",
-     "r1": -1.3
+     "r1": -1.3,
+     "r5": -11
     },
     {
      "ticker": "DUOL",
      "rank": 12,
      "verdict": "관찰",
      "why": "소프트웨어 섹터 주의 속 단기 모멘텀",
-     "r1": -0.8
+     "r1": -0.8,
+     "r5": 3.2
     },
     {
      "ticker": "AXTI",
      "rank": 13,
      "verdict": "관찰",
      "why": "단기 상승 추세 지속",
-     "r1": -3
+     "r1": -3,
+     "r5": 5.4
     },
     {
      "ticker": "BRVE",
      "rank": 14,
      "verdict": "제외",
      "why": "바이오 섹터 회피",
-     "r1": -9.4
+     "r1": -9.4,
+     "r5": -11.3
     },
     {
      "ticker": "NVDA",
      "rank": 15,
      "verdict": "제외",
      "why": "반도체 섹터 회피 및 소폭 하락",
-     "r1": -0.4
+     "r1": -0.4,
+     "r5": 4.3
     },
     {
      "ticker": "INTC",
@@ -36380,7 +36391,8 @@
      "rank": 17,
      "verdict": "제외",
      "why": "모멘텀 부족",
-     "r1": 2.2
+     "r1": 2.2,
+     "r5": 26.4
     },
     {
      "ticker": "GRAB",
@@ -37269,7 +37281,7 @@
      "b": 81.5,
      "gap": 0.7,
      "idx": 0.31,
-     "simOpen": -6.5
+     "simOpen": -7.5
     }
    ],
    "day2": {
@@ -37632,7 +37644,9 @@
      "b": 25.75,
      "gap": 1.2,
      "idx": 0.81,
-     "simOpen": -2.8
+     "simR": -6.04,
+     "simExit": "stop",
+     "simD": "2026-10-06"
     },
     {
      "kind": "swing",
@@ -37729,7 +37743,7 @@
      "b": 149,
      "gap": -4.1,
      "idx": 0.81,
-     "simOpen": 9.6
+     "simOpen": 10.4
     }
    ],
    "day2": {
@@ -38227,70 +38241,70 @@
      "rank": 1,
      "verdict": "제외",
      "why": "소프트웨어 섹터 회피 및 M&A 가치 희석 우려",
-     "r1": null
+     "r1": 0
     },
     {
      "ticker": "XP",
      "rank": 2,
      "verdict": "선택",
      "why": "브라질 선거 모멘텀 반영",
-     "r1": null
+     "r1": 1.6
     },
     {
      "ticker": "PCVX",
      "rank": 3,
      "verdict": "제외",
      "why": "바이오 섹터 회피 기준 적용",
-     "r1": null
+     "r1": -9.1
     },
     {
      "ticker": "RXO",
      "rank": 4,
      "verdict": "선택",
      "why": "산업재 우위 및 M&A 뉴스 반영",
-     "r1": null
+     "r1": -0.7
     },
     {
      "ticker": "PAGS",
      "rank": 5,
      "verdict": "관찰",
      "why": "단타 후보군으로 활용",
-     "r1": null
+     "r1": -2.2
     },
     {
      "ticker": "STNE",
      "rank": 6,
      "verdict": "관찰",
      "why": "단타 후보군으로 활용",
-     "r1": null
+     "r1": -0.4
     },
     {
      "ticker": "NVAX",
      "rank": 7,
      "verdict": "관찰",
      "why": "거래량 급증 단기 모멘텀 관찰",
-     "r1": null
+     "r1": -8.3
     },
     {
      "ticker": "INTR",
      "rank": 8,
      "verdict": "관찰",
      "why": "핀테크 성장성 지속 여부 확인",
-     "r1": null
+     "r1": 3.2
     },
     {
      "ticker": "SBS",
      "rank": 9,
      "verdict": "제외",
      "why": "모멘텀 및 거래대금 상대적 열세",
-     "r1": null
+     "r1": 0
     },
     {
      "ticker": "ITUB",
      "rank": 10,
      "verdict": "선택",
      "why": "브라질 대형 금융주 랠리 편승",
-     "r1": null
+     "r1": 0.4
     },
     {
      "ticker": "BDORY",
@@ -38304,7 +38318,7 @@
      "rank": 12,
      "verdict": "제외",
      "why": "상승폭 대비 추가 모멘텀 제한적",
-     "r1": null
+     "r1": 1.4
     },
     {
      "ticker": "PBR-A",
@@ -38601,7 +38615,7 @@
      "b": 29,
      "gap": 1.2,
      "idx": 0.5,
-     "simOpen": -1.4
+     "simOpen": -1.6
     },
     {
      "kind": "swing",
@@ -38658,6 +38672,361 @@
     "n": 0
    },
    "dayHold": 1
+  },
+  {
+   "date": "2026-10-07",
+   "market": "US",
+   "regime": "상승",
+   "rules": [
+    "단타 실패 분해: 시장충격10·목표과다1·선정25 → 선정 강화",
+    "강도80+ 실측 0%(10) — 확신도 과장, 보수화",
+    "근거'거래량급증' 성공30%(23) → 단독추천 지양",
+    "근거'정책테마' 성공33%(21) → 단독추천 지양",
+    "섹터'소프트웨어' 성공39%(18) → 회피",
+    "섹터'바이오' 성공40%(10) → 회피"
+   ],
+   "cands": [
+    {
+     "ticker": "OPCH",
+     "rank": 1,
+     "verdict": "관찰",
+     "why": "투자의견 하향 속 낙폭 과대",
+     "r1": null
+    },
+    {
+     "ticker": "STDN",
+     "rank": 2,
+     "verdict": "선택",
+     "why": "원자력 테마 및 신규 매수 의견",
+     "r1": null
+    },
+    {
+     "ticker": "CIEN",
+     "rank": 3,
+     "verdict": "제외",
+     "why": "지수 선물 하락 및 고가 부담",
+     "r1": null
+    },
+    {
+     "ticker": "INIO",
+     "rank": 4,
+     "verdict": "선택",
+     "why": "APAC 애프터마켓 인수 완료",
+     "r1": null
+    },
+    {
+     "ticker": "TLN",
+     "rank": 5,
+     "verdict": "선택",
+     "why": "전력 인프라 재편 기대감 지속",
+     "r1": null
+    },
+    {
+     "ticker": "CTVA",
+     "rank": 6,
+     "verdict": "선택",
+     "why": "분사 후 애널리스트 상향 조정",
+     "r1": null
+    },
+    {
+     "ticker": "CEG",
+     "rank": 7,
+     "verdict": "선택",
+     "why": "AI 전력 수혜 및 강세 지속",
+     "r1": null
+    },
+    {
+     "ticker": "VST",
+     "rank": 8,
+     "verdict": "관찰",
+     "why": "원자력 관련 뉴스 소화 중단기 변동성",
+     "r1": null
+    },
+    {
+     "ticker": "MIR",
+     "rank": 9,
+     "verdict": "제외",
+     "why": "소표본 및 불확실성 상존",
+     "r1": null
+    },
+    {
+     "ticker": "FTAI",
+     "rank": 10,
+     "verdict": "선택",
+     "why": "실적 발표 앞둔 우주항공 모멘텀",
+     "r1": null
+    },
+    {
+     "ticker": "PS",
+     "rank": 11,
+     "verdict": "제외",
+     "why": "장기 투자 관점 종목으로 스윙 부적합",
+     "r1": null
+    },
+    {
+     "ticker": "LEU",
+     "rank": 12,
+     "verdict": "관찰",
+     "why": "밸류에이션 부담 상존하나 거래량 유입",
+     "r1": null
+    },
+    {
+     "ticker": "SECZ",
+     "rank": 13,
+     "verdict": "제외",
+     "why": "토큰화 펀드 테마 단기성 검증 필요",
+     "r1": null
+    },
+    {
+     "ticker": "AGX",
+     "rank": 14,
+     "verdict": "제외",
+     "why": "고가 주식으로 유동성 제한적",
+     "r1": null
+    },
+    {
+     "ticker": "SPCX",
+     "rank": 15,
+     "verdict": "제외",
+     "why": "변동폭 미미",
+     "r1": null
+    },
+    {
+     "ticker": "INTC",
+     "rank": 16,
+     "verdict": "제외",
+     "why": "하락세 반전 시그널 부재",
+     "r1": null
+    },
+    {
+     "ticker": "NVDA",
+     "rank": 17,
+     "verdict": "제외",
+     "why": "기술주 선물 약세 영향 피함",
+     "r1": null
+    },
+    {
+     "ticker": "NU",
+     "rank": 18,
+     "verdict": "제외",
+     "why": "크립토 연동성 위험",
+     "r1": null
+    }
+   ],
+   "bl": {
+    "rand": [
+     "INIO",
+     "LEU",
+     "CIEN"
+    ],
+    "mom": [
+     "OPCH",
+     "STDN",
+     "CIEN"
+    ]
+   },
+   "dayCands": [
+    {
+     "name": "Option Care Health, Inc.",
+     "ticker": "OPCH",
+     "score": 48,
+     "target_pct": 3,
+     "sector": "헬스케어",
+     "basis": [
+      "낙폭과대"
+     ],
+     "reason": "투자의견 하향 조정으로 인한 단기 낙폭을 활용한 반등 노림수입니다. 개장 후 호가창을 확인하며 신중히 접근합니다.",
+     "risk": "추가 하향 리스크"
+    },
+    {
+     "name": "Standard Nuclear, Inc.",
+     "ticker": "STDN",
+     "score": 47,
+     "target_pct": 4,
+     "sector": "에너지",
+     "basis": [
+      "정책테마"
+     ],
+     "reason": "원자력 관련주 강세 흐름과 신규 투자 의견 개시 효과가 맞물려 있습니다. 모멘텀 지속 여부를 짧게 확인합니다.",
+     "risk": "테마 순환매 이탈"
+    },
+    {
+     "name": "INNIO N.V.",
+     "ticker": "INIO",
+     "score": 46,
+     "target_pct": 3,
+     "sector": "산업재",
+     "basis": [
+      "수주계약"
+     ],
+     "reason": "호주 및 아시아 지역의 애프터마켓 운영권 인수를 완료하며 외형 성장이 기대됩니다. 인수 효과에 따른 단기 수급을 타겟으로 합니다.",
+     "risk": "인수 통합 리스크"
+    },
+    {
+     "name": "Constellation Energy Corporation",
+     "ticker": "CEG",
+     "score": 45,
+     "target_pct": 3,
+     "sector": "에너지",
+     "basis": [
+      "추세지속"
+     ],
+     "reason": "AI 관련 전력 수요 급증 테마 속에서 강세를 유지하고 있습니다. 대형 에너지 종목의 장중 변동성을 활용합니다.",
+     "risk": "AI 테마 전반의 변동성"
+    },
+    {
+     "name": "Centrus Energy Corp.",
+     "ticker": "LEU",
+     "score": 44,
+     "target_pct": 3,
+     "sector": "에너지",
+     "basis": [
+      "거래량급증"
+     ],
+     "reason": "실적 대비 프리미엄 논란 속에서도 거래량이 유지되며 등락을 거듭하고 있습니다. 장중 단기 모멘텀 매매에 국한합니다.",
+     "risk": "밸류에이션 부담"
+    }
+   ],
+   "hold": 0,
+   "v": {
+    "m": "gemini-3.5-flash-lite",
+    "pv": "J1.0-S2.0",
+    "policy": "S2.0"
+   },
+   "mktF": {
+    "dir": "횡보",
+    "conf": 45,
+    "why": "S&P500 전일 상승에도 선물 하락과 VIX 상승이 겹쳐 방향성 탐색 국면",
+    "ok": null
+   },
+   "picks": [
+    {
+     "kind": "swing",
+     "name": "Talen Energy Corporation",
+     "ticker": "TLN",
+     "score": 55,
+     "sector": "에너지",
+     "basis": [
+      "수주계약"
+     ],
+     "plan": {
+      "engine": "R2.0",
+      "strategy": "swing",
+      "atrPct": 4.33,
+      "stopPct": 6.5,
+      "targetPct": 12.99,
+      "rr": 2,
+      "maxHoldDays": 10,
+      "riskPct": 0.5,
+      "maxWeightPct": 10,
+      "weightPct": 7.46,
+      "qty": 1,
+      "notional": 373,
+      "decision": {
+       "version": "S2.0",
+       "action": "conditional",
+       "strategy": "swing",
+       "reasons": [
+        "재료 지속성 확인, 짧은 주기로 추세 재평가"
+       ],
+       "plannedHoldDays": 10,
+       "reviewAfterDays": 3,
+       "maxHoldDays": 10,
+       "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+       "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+       "allowAutoOrder": false
+      }
+     },
+     "p0": 373.11,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "Corteva, Inc.",
+     "ticker": "CTVA",
+     "score": 52,
+     "sector": "소재",
+     "basis": [
+      "뉴스재료"
+     ],
+     "plan": {
+      "engine": "R2.0",
+      "strategy": "swing",
+      "atrPct": 46.4,
+      "stopPct": 9,
+      "targetPct": 18,
+      "rr": 2,
+      "maxHoldDays": 5,
+      "riskPct": 0.5,
+      "maxWeightPct": 10,
+      "weightPct": 5.29,
+      "qty": 19,
+      "notional": 264,
+      "decision": {
+       "version": "S2.0",
+       "action": "watch",
+       "strategy": "watch",
+       "reasons": [
+        "지속 재료·추세 확인 전 관찰"
+       ],
+       "plannedHoldDays": 5,
+       "reviewAfterDays": 3,
+       "maxHoldDays": 5,
+       "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+       "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+       "allowAutoOrder": false
+      }
+     },
+     "p0": 13.91,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "FTAI Aviation Ltd.",
+     "ticker": "FTAI",
+     "score": 50,
+     "sector": "우주항공",
+     "basis": [
+      "추세지속"
+     ],
+     "plan": {
+      "engine": "R2.0",
+      "strategy": "swing",
+      "atrPct": 4.22,
+      "stopPct": 6.33,
+      "targetPct": 12.66,
+      "rr": 2,
+      "maxHoldDays": 5,
+      "riskPct": 0.5,
+      "maxWeightPct": 10,
+      "weightPct": 7.18,
+      "qty": 2,
+      "notional": 359,
+      "decision": {
+       "version": "S2.0",
+       "action": "watch",
+       "strategy": "day-watch",
+       "reasons": [
+        "단기 수급만 확인: 단타 재평가 후보, 자동 전환 아님"
+       ],
+       "plannedHoldDays": 5,
+       "reviewAfterDays": 3,
+       "maxHoldDays": 5,
+       "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+       "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+       "allowAutoOrder": false
+      }
+     },
+     "p0": 179.44,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    }
+   ]
   }
  ],
  "monAt": 1791345297796
