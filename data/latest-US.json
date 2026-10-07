@@ -1,74 +1,33 @@
 {
- "date": "2026-10-06",
+ "date": "2026-10-07",
  "at": "21:29",
  "data": {
-  "brief": "S&P500 상승 및 VIX 하락의 우호적인 시장 환경이나, 과거 데이터상 높은 확신도와 소프트웨어·바이오·반도체 섹터의 낮은 승률을 반영하여 보수적으로 종목을 선정했습니다. 브라질 관련주와 M&A 및 실적 모멘텀이 있는 산업재·금융 섹터 위주로 위험을 통제합니다.",
+  "brief": "전일 S&P500 상승과 지수선물 하락, VIX 상승이 혼재되어 변동성이 확대된 국면입니다. 과거 실적 통계와 확신도 교정(고확신 실패 반영)을 감안하여 보수적이고 선별적인 접근을 취합니다.",
   "picks": [
    {
-    "name": "XP Inc.",
-    "ticker": "XP",
-    "score": 45,
-    "sector": "금융",
+    "name": "Talen Energy Corporation",
+    "ticker": "TLN",
+    "score": 55,
+    "sector": "에너지",
     "basis": [
-     "뉴스재료"
-    ],
-    "reason": "브라질 선거 결과에 따른 라틴아메리카 금융주 급등 모멘텀이 유입되었습니다. 단기 급등에 따른 변동성 확대에 유의해야 합니다.",
-    "catalyst": "브라질 선거 결과 호재",
-    "risk": "단기 과열 및 정치 이벤트 변동성",
-    "plan": {
-     "engine": "R2.0",
-     "strategy": "swing",
-     "atrPct": 4.62,
-     "stopPct": 6.93,
-     "targetPct": 13.86,
-     "rr": 2,
-     "maxHoldDays": 5,
-     "riskPct": 0.5,
-     "maxWeightPct": 10,
-     "weightPct": 6.76,
-     "qty": 12,
-     "notional": 338,
-     "decision": {
-      "version": "S2.0",
-      "action": "conditional",
-      "strategy": "swing",
-      "reasons": [
-       "추세 중심의 짧은 스윙"
-      ],
-      "plannedHoldDays": 5,
-      "reviewAfterDays": 3,
-      "maxHoldDays": 5,
-      "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
-      "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
-      "allowAutoOrder": false
-     }
-    }
-   },
-   {
-    "name": "RXO, Inc.",
-    "ticker": "RXO",
-    "score": 42,
-    "sector": "산업재",
-    "basis": [
-     "뉴스재료",
      "수주계약"
     ],
-    "reason": "경쟁사의 인수합병(M&A) 뉴스로 인한 섹터 내 기대감이 반영되었습니다. 유사 국면에서 강한 거래대금이 유입된 이력이 있습니다.",
-    "catalyst": "물류업계 M&A 소식",
-    "risk": "M&A 무산 및 피인수 구조 리스크",
+    "reason": "전력 및 인프라 리스크 프로필 변화에 대한 기대감과 함께 강한 주가 흐름을 보이고 있습니다. 2027년 CEO 전환 이슈가 구조적 재편의 모멘텀으로 작용하고 있습니다.",
+    "catalyst": "CEO 전환 및 전력 인프라 재편",
+    "risk": "변동성 확대에 따른 조정 가능성",
     "plan": {
      "engine": "R2.0",
      "strategy": "swing",
-     "atrPct": 5.21,
-     "stopPct": 7.81,
-     "targetPct": 15.63,
+     "atrPct": 4.33,
+     "stopPct": 6.5,
+     "targetPct": 12.99,
      "rr": 2,
      "maxHoldDays": 10,
      "riskPct": 0.5,
      "maxWeightPct": 10,
-     "weightPct": 6.3,
-     "qty": 11,
-     "notional": 315,
+     "weightPct": 7.46,
+     "qty": 1,
+     "notional": 373,
      "decision": {
       "version": "S2.0",
       "action": "conditional",
@@ -86,35 +45,75 @@
     }
    },
    {
-    "name": "Itau Unibanco Banco Holding SA",
-    "ticker": "ITUB",
-    "score": 40,
-    "sector": "금융",
+    "name": "Corteva, Inc.",
+    "ticker": "CTVA",
+    "score": 52,
+    "sector": "소재",
     "basis": [
      "뉴스재료"
     ],
-    "reason": "브라질 선거 쇼크 이후 미국 상장 브라질 기업들의 동반 랠리가 이어지고 있습니다. 글로벌 자금 유입세를 주시할 필요가 있습니다.",
-    "catalyst": "브라질 증시 반등",
-    "risk": "신흥국 환율 및 매크로 변동성",
+    "reason": "애널리스트의 목표주가 상향 조정과 분사(Spin-off) 이후 긍정적인 수급이 유입되고 있습니다. 실적 개선 기대감이 주가 상승을 견인 중입니다.",
+    "catalyst": "애널리스트 등급 상향 및 분사 효과",
+    "risk": "단기 급등에 따른 차익실현 매물",
     "plan": {
      "engine": "R2.0",
      "strategy": "swing",
-     "atrPct": 3.54,
-     "stopPct": 5.31,
-     "targetPct": 10.62,
+     "atrPct": 46.4,
+     "stopPct": 9,
+     "targetPct": 18,
      "rr": 2,
      "maxHoldDays": 5,
      "riskPct": 0.5,
      "maxWeightPct": 10,
-     "weightPct": 9.32,
-     "qty": 47,
-     "notional": 466,
+     "weightPct": 5.29,
+     "qty": 19,
+     "notional": 264,
      "decision": {
       "version": "S2.0",
-      "action": "conditional",
-      "strategy": "swing",
+      "action": "watch",
+      "strategy": "watch",
       "reasons": [
-       "추세 중심의 짧은 스윙"
+       "지속 재료·추세 확인 전 관찰"
+      ],
+      "plannedHoldDays": 5,
+      "reviewAfterDays": 3,
+      "maxHoldDays": 5,
+      "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+      "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+      "allowAutoOrder": false
+     }
+    }
+   },
+   {
+    "name": "FTAI Aviation Ltd.",
+    "ticker": "FTAI",
+    "score": 50,
+    "sector": "우주항공",
+    "basis": [
+     "추세지속"
+    ],
+    "reason": "견조한 업종 내에서 상승 모멘텀을 유지하며 거래되고 있습니다. 다가오는 3분기 실적 발표와 컨퍼런스 콜 기대감이 반영되고 있습니다.",
+    "catalyst": "3분기 실적 발표 임박",
+    "risk": "지수 선물 약세 연동 위험",
+    "plan": {
+     "engine": "R2.0",
+     "strategy": "swing",
+     "atrPct": 4.22,
+     "stopPct": 6.33,
+     "targetPct": 12.66,
+     "rr": 2,
+     "maxHoldDays": 5,
+     "riskPct": 0.5,
+     "maxWeightPct": 10,
+     "weightPct": 7.18,
+     "qty": 2,
+     "notional": 359,
+     "decision": {
+      "version": "S2.0",
+      "action": "watch",
+      "strategy": "day-watch",
+      "reasons": [
+       "단기 수급만 확인: 단타 재평가 후보, 자동 전환 아님"
       ],
       "plannedHoldDays": 5,
       "reviewAfterDays": 3,
@@ -128,189 +127,180 @@
   ],
   "day_cands": [
    {
-    "name": "Alvotech",
-    "ticker": "ALVO",
-    "score": 38,
+    "name": "Option Care Health, Inc.",
+    "ticker": "OPCH",
+    "score": 48,
     "target_pct": 3,
-    "sector": "바이오",
+    "sector": "헬스케어",
     "basis": [
-     "뉴스재료"
+     "낙폭과대"
     ],
-    "reason": "FDA 승인으로 미국 내 바이오시밀러 생산 능력이 배가되었다는 호재가 발생했습니다. 다만 바이오 섹터의 낮은 실측 승률을 감안하여 보수적 목표가를 설정합니다.",
-    "catalyst": "FDA 승인",
-    "risk": "바이오 섹터 전반의 높은 변동성"
+    "reason": "투자의견 하향 조정으로 인한 단기 낙폭을 활용한 반등 노림수입니다. 개장 후 호가창을 확인하며 신중히 접근합니다.",
+    "risk": "추가 하향 리스크"
    },
    {
-    "name": "PagSeguro Digital Ltd.",
-    "ticker": "PAGS",
-    "score": 42,
+    "name": "Standard Nuclear, Inc.",
+    "ticker": "STDN",
+    "score": 47,
     "target_pct": 4,
-    "sector": "금융",
+    "sector": "에너지",
     "basis": [
-     "뉴스재료"
+     "정책테마"
     ],
-    "reason": "현지 핀테크 주식들의 동반 급등세와 실적 기대감이 주가를 견인하고 있습니다. 투자의견 유지 뉴스가 하방을 지지합니다.",
-    "catalyst": "핀테크 섹터 순환매",
-    "risk": "목표가 하향 조정 이력 존재"
+    "reason": "원자력 관련주 강세 흐름과 신규 투자 의견 개시 효과가 맞물려 있습니다. 모멘텀 지속 여부를 짧게 확인합니다.",
+    "risk": "테마 순환매 이탈"
    },
    {
-    "name": "StoneCo Ltd.",
-    "ticker": "STNE",
-    "score": 40,
+    "name": "INNIO N.V.",
+    "ticker": "INIO",
+    "score": 46,
     "target_pct": 3,
-    "sector": "금융",
+    "sector": "산업재",
     "basis": [
-     "뉴스재료"
+     "수주계약"
     ],
-    "reason": "시중 지수를 상회하는 강한 거래량과 브라질 관련주 상승 흐름에 편승하고 있습니다. 단기 모멘텀 중심의 접근이 유효합니다.",
-    "catalyst": "브라질 관련주 동반 강세",
-    "risk": "차익실현 매물 출회 가능성"
+    "reason": "호주 및 아시아 지역의 애프터마켓 운영권 인수를 완료하며 외형 성장이 기대됩니다. 인수 효과에 따른 단기 수급을 타겟으로 합니다.",
+    "risk": "인수 통합 리스크"
    },
    {
-    "name": "Inter & Co. Inc.",
-    "ticker": "INTR",
-    "score": 39,
+    "name": "Constellation Energy Corporation",
+    "ticker": "CEG",
+    "score": 45,
     "target_pct": 3,
-    "sector": "금융",
+    "sector": "에너지",
     "basis": [
      "추세지속"
     ],
-    "reason": "디지털 핀테크 슈퍼앱 전략에 대한 장기 성장 기대감이 유효합니다. 이자율 환경 변화에 민감한 미국 상장 브라질 은행주입니다.",
-    "catalyst": "핀테크 성장성 부각",
-    "risk": "금리 변동에 따른 민감도"
+    "reason": "AI 관련 전력 수요 급증 테마 속에서 강세를 유지하고 있습니다. 대형 에너지 종목의 장중 변동성을 활용합니다.",
+    "risk": "AI 테마 전반의 변동성"
    },
    {
-    "name": "Novavax, Inc.",
-    "ticker": "NVAX",
-    "score": 35,
-    "target_pct": 2,
-    "sector": "바이오",
+    "name": "Centrus Energy Corp.",
+    "ticker": "LEU",
+    "score": 44,
+    "target_pct": 3,
+    "sector": "에너지",
     "basis": [
-     "거래량급증",
-     "뉴스재료"
+     "거래량급증"
     ],
-    "reason": "테마성 수급과 거래량 급증으로 단기 모멘텀이 형성되었습니다. 과거 바이오 섹터의 낮은 승률 통계에 따라 비중을 엄격히 통제합니다.",
-    "catalyst": "뉴스 및 리테일 수급",
-    "risk": "테마 소멸 시 급락 위험"
+    "reason": "실적 대비 프리미엄 논란 속에서도 거래량이 유지되며 등락을 거듭하고 있습니다. 장중 단기 모멘텀 매매에 국한합니다.",
+    "risk": "밸류에이션 부담"
    }
   ],
   "cands": [
    {
-    "ticker": "PTC",
+    "ticker": "OPCH",
     "rank": 1,
-    "verdict": "제외",
-    "why": "소프트웨어 섹터 회피 및 M&A 가치 희석 우려"
+    "verdict": "관찰",
+    "why": "투자의견 하향 속 낙폭 과대"
    },
    {
-    "ticker": "XP",
+    "ticker": "STDN",
     "rank": 2,
     "verdict": "선택",
-    "why": "브라질 선거 모멘텀 반영"
+    "why": "원자력 테마 및 신규 매수 의견"
    },
    {
-    "ticker": "PCVX",
+    "ticker": "CIEN",
     "rank": 3,
     "verdict": "제외",
-    "why": "바이오 섹터 회피 기준 적용"
+    "why": "지수 선물 하락 및 고가 부담"
    },
    {
-    "ticker": "RXO",
+    "ticker": "INIO",
     "rank": 4,
     "verdict": "선택",
-    "why": "산업재 우위 및 M&A 뉴스 반영"
+    "why": "APAC 애프터마켓 인수 완료"
    },
    {
-    "ticker": "PAGS",
+    "ticker": "TLN",
     "rank": 5,
-    "verdict": "관찰",
-    "why": "단타 후보군으로 활용"
-   },
-   {
-    "ticker": "STNE",
-    "rank": 6,
-    "verdict": "관찰",
-    "why": "단타 후보군으로 활용"
-   },
-   {
-    "ticker": "NVAX",
-    "rank": 7,
-    "verdict": "관찰",
-    "why": "거래량 급증 단기 모멘텀 관찰"
-   },
-   {
-    "ticker": "INTR",
-    "rank": 8,
-    "verdict": "관찰",
-    "why": "핀테크 성장성 지속 여부 확인"
-   },
-   {
-    "ticker": "SBS",
-    "rank": 9,
-    "verdict": "제외",
-    "why": "모멘텀 및 거래대금 상대적 열세"
-   },
-   {
-    "ticker": "ITUB",
-    "rank": 10,
     "verdict": "선택",
-    "why": "브라질 대형 금융주 랠리 편승"
-   },
-   {
-    "ticker": "BDORY",
-    "rank": 11,
-    "verdict": "제외",
-    "why": "유사 종목 대비 유동성 부족"
-   },
-   {
-    "ticker": "NU",
-    "rank": 12,
-    "verdict": "제외",
-    "why": "상승폭 대비 추가 모멘텀 제한적"
-   },
-   {
-    "ticker": "PBR-A",
-    "rank": 13,
-    "verdict": "제외",
-    "why": "뉴스 부재 및 에너지 섹터 회피"
-   },
-   {
-    "ticker": "ALVO",
-    "rank": 14,
-    "verdict": "관찰",
-    "why": "바이오 섹터이나 FDA 승인 재료 보유"
-   },
-   {
-    "ticker": "WBD",
-    "rank": 15,
-    "verdict": "제외",
-    "why": "상승률 미미 및 엔터테인먼트 회피"
+    "why": "전력 인프라 재편 기대감 지속"
    },
    {
     "ticker": "CTVA",
-    "rank": 16,
-    "verdict": "제외",
-    "why": "소재 섹터 회피 및 모멘텀 부족"
+    "rank": 6,
+    "verdict": "선택",
+    "why": "분사 후 애널리스트 상향 조정"
    },
    {
-    "ticker": "BBD",
-    "rank": 17,
+    "ticker": "CEG",
+    "rank": 7,
+    "verdict": "선택",
+    "why": "AI 전력 수혜 및 강세 지속"
+   },
+   {
+    "ticker": "VST",
+    "rank": 8,
+    "verdict": "관찰",
+    "why": "원자력 관련 뉴스 소화 중단기 변동성"
+   },
+   {
+    "ticker": "MIR",
+    "rank": 9,
     "verdict": "제외",
-    "why": "동종 브라질 금융주(ITUB, XP) 우선"
+    "why": "소표본 및 불확실성 상존"
+   },
+   {
+    "ticker": "FTAI",
+    "rank": 10,
+    "verdict": "선택",
+    "why": "실적 발표 앞둔 우주항공 모멘텀"
+   },
+   {
+    "ticker": "PS",
+    "rank": 11,
+    "verdict": "제외",
+    "why": "장기 투자 관점 종목으로 스윙 부적합"
+   },
+   {
+    "ticker": "LEU",
+    "rank": 12,
+    "verdict": "관찰",
+    "why": "밸류에이션 부담 상존하나 거래량 유입"
+   },
+   {
+    "ticker": "SECZ",
+    "rank": 13,
+    "verdict": "제외",
+    "why": "토큰화 펀드 테마 단기성 검증 필요"
+   },
+   {
+    "ticker": "AGX",
+    "rank": 14,
+    "verdict": "제외",
+    "why": "고가 주식으로 유동성 제한적"
    },
    {
     "ticker": "SPCX",
+    "rank": 15,
+    "verdict": "제외",
+    "why": "변동폭 미미"
+   },
+   {
+    "ticker": "INTC",
+    "rank": 16,
+    "verdict": "제외",
+    "why": "하락세 반전 시그널 부재"
+   },
+   {
+    "ticker": "NVDA",
+    "rank": 17,
+    "verdict": "제외",
+    "why": "기술주 선물 약세 영향 피함"
+   },
+   {
+    "ticker": "NU",
     "rank": 18,
     "verdict": "제외",
-    "why": "우주항공 우위이나 상승 여력 점검 필요"
+    "why": "크립토 연동성 위험"
    }
   ],
   "mkt": {
-   "dir": "상승",
-   "conf": 48,
-   "why": "전일 S&P500 및 지수선물 상승세이나 과거 예측 적중률을 고려해 중립적으로 대응합니다."
-  },
-  "day_picks": [],
-  "day_at": "22:36",
-  "day_brief": "제시된 5개 종목 모두 갭 상승 부족, 음전 하락세, 혹은 통계상 회피 대상인 바이오 섹터에 해당하여 원칙 및 실측 통계에 부적합합니다."
+   "dir": "횡보",
+   "conf": 45,
+   "why": "S&P500 전일 상승에도 선물 하락과 VIX 상승이 겹쳐 방향성 탐색 국면"
+  }
  }
 }
