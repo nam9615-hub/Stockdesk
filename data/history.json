@@ -37937,28 +37937,32 @@
      "rank": 9,
      "verdict": "선택",
      "why": "APAC 사업 인수 완료",
-     "r1": -5.5
+     "r1": -5.5,
+     "r5": -1.5
     },
     {
      "ticker": "PPC",
      "rank": 10,
      "verdict": "제외",
      "why": "소비재 섹터 회피",
-     "r1": 2
+     "r1": 2,
+     "r5": 4.4
     },
     {
      "ticker": "ALGM",
      "rank": 11,
      "verdict": "제외",
      "why": "반도체 섹터 회피",
-     "r1": -2.5
+     "r1": -2.5,
+     "r5": -9.8
     },
     {
      "ticker": "OUST",
      "rank": 12,
      "verdict": "선택",
      "why": "드론 라이다 공급 계약",
-     "r1": -0.6
+     "r1": -0.6,
+     "r5": -10.1
     },
     {
      "ticker": "PL",
@@ -38664,7 +38668,7 @@
      "b": 29.200000762939453,
      "gap": 3.7,
      "idx": 0.5,
-     "simOpen": 9.1
+     "simOpen": 10.3
     },
     {
      "kind": "swing",
@@ -38761,7 +38765,7 @@
      "b": 9.829999923706055,
      "gap": -0.9,
      "idx": 0.5,
-     "simOpen": 3
+     "simOpen": 3.4
     }
    ],
    "day2": {
@@ -39119,7 +39123,7 @@
      "b": 364.6712951660156,
      "gap": -2.3,
      "idx": -0.41,
-     "simOpen": 2.8
+     "simOpen": 3.8
     },
     {
      "kind": "swing",
@@ -39663,77 +39667,77 @@
      "rank": 1,
      "verdict": "선택",
      "why": "목표가 상향과 강한 거래량 동반 급등",
-     "r1": null
+     "r1": -0.9
     },
     {
      "ticker": "MANE",
      "rank": 2,
      "verdict": "관찰",
      "why": "탈모 치료제 테마이나 바이오 섹터 리스크 존재",
-     "r1": null
+     "r1": 4.1
     },
     {
      "ticker": "SECZ",
      "rank": 3,
      "verdict": "선택",
      "why": "온체인 주식 론칭이라는 신선한 모멘텀",
-     "r1": null
+     "r1": 4.7
     },
     {
      "ticker": "COCO",
      "rank": 4,
      "verdict": "관찰",
      "why": "실적 및 목표가 상향이나 소비재 섹터 주의",
-     "r1": null
+     "r1": 5.4
     },
     {
      "ticker": "ERAS",
      "rank": 5,
      "verdict": "관찰",
      "why": "바이오 파이프라인 연동이나 과거 승률 낮음",
-     "r1": null
+     "r1": 4
     },
     {
      "ticker": "CSGP",
      "rank": 6,
      "verdict": "관찰",
      "why": "목표가 하향 조정 사례 존재",
-     "r1": null
+     "r1": -1.2
     },
     {
      "ticker": "FLUT",
      "rank": 7,
      "verdict": "선택",
      "why": "꾸준한 상승 추세와 상대적 강세",
-     "r1": null
+     "r1": -2.5
     },
     {
      "ticker": "ECO",
      "rank": 8,
      "verdict": "관찰",
      "why": "해운 섹터 과거 통계 고려 신중 접근",
-     "r1": null
+     "r1": -0.6
     },
     {
      "ticker": "Z",
      "rank": 9,
      "verdict": "제외",
      "why": "부동산 시장 침체 우려",
-     "r1": null
+     "r1": -1
     },
     {
      "ticker": "ZG",
      "rank": 10,
      "verdict": "제외",
      "why": "중복 종목 및 부동산 섹터",
-     "r1": null
+     "r1": -0.1
     },
     {
      "ticker": "PBF",
      "rank": 11,
      "verdict": "관찰",
      "why": "에너지 섹터 승률 저조 통계",
-     "r1": null
+     "r1": -4.6
     },
     {
      "ticker": "SSL",
