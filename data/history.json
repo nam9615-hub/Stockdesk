@@ -29524,7 +29524,7 @@
      "r20": null,
      "b": 14970,
      "gap": 0,
-     "simOpen": 2.4,
+     "simOpen": 2.9,
      "tv": 3747,
      "tvx": 1.6,
      "idx": null
@@ -38651,7 +38651,7 @@
      "b": 29.200000762939453,
      "gap": 3.7,
      "idx": 0.5,
-     "simOpen": 1.1
+     "simOpen": 3.5
     },
     {
      "kind": "swing",
@@ -38700,7 +38700,7 @@
      "b": 29,
      "gap": 1.2,
      "idx": 0.5,
-     "simOpen": -2.2
+     "simOpen": -0.2
     },
     {
      "kind": "swing",
@@ -38748,7 +38748,7 @@
      "b": 9.829999923706055,
      "gap": -0.9,
      "idx": 0.5,
-     "simOpen": -0.9
+     "simOpen": 0
     }
    ],
    "day2": {
@@ -39106,7 +39106,7 @@
      "b": 364.6712951660156,
      "gap": -2.3,
      "idx": -0.41,
-     "simOpen": 3.7
+     "simOpen": -1.5
     },
     {
      "kind": "swing",
@@ -39629,6 +39629,365 @@
      "mom": -1.9
     }
    }
+  },
+  {
+   "date": "2026-10-09",
+   "market": "US",
+   "regime": "상승",
+   "rules": [
+    "단타 실패 분해: 시장충격10·목표과다1·선정25 → 선정 강화",
+    "강도80+ 실측 0%(10) — 확신도 과장, 보수화",
+    "근거'거래량급증' 성공30%(23) → 단독추천 지양",
+    "근거'정책테마' 성공33%(21) → 단독추천 지양",
+    "섹터'소프트웨어' 성공39%(18) → 회피",
+    "섹터'바이오' 성공40%(10) → 회피"
+   ],
+   "cands": [
+    {
+     "ticker": "HAE",
+     "rank": 1,
+     "verdict": "선택",
+     "why": "목표가 상향과 강한 거래량 동반 급등",
+     "r1": null
+    },
+    {
+     "ticker": "MANE",
+     "rank": 2,
+     "verdict": "관찰",
+     "why": "탈모 치료제 테마이나 바이오 섹터 리스크 존재",
+     "r1": null
+    },
+    {
+     "ticker": "SECZ",
+     "rank": 3,
+     "verdict": "선택",
+     "why": "온체인 주식 론칭이라는 신선한 모멘텀",
+     "r1": null
+    },
+    {
+     "ticker": "COCO",
+     "rank": 4,
+     "verdict": "관찰",
+     "why": "실적 및 목표가 상향이나 소비재 섹터 주의",
+     "r1": null
+    },
+    {
+     "ticker": "ERAS",
+     "rank": 5,
+     "verdict": "관찰",
+     "why": "바이오 파이프라인 연동이나 과거 승률 낮음",
+     "r1": null
+    },
+    {
+     "ticker": "CSGP",
+     "rank": 6,
+     "verdict": "관찰",
+     "why": "목표가 하향 조정 사례 존재",
+     "r1": null
+    },
+    {
+     "ticker": "FLUT",
+     "rank": 7,
+     "verdict": "선택",
+     "why": "꾸준한 상승 추세와 상대적 강세",
+     "r1": null
+    },
+    {
+     "ticker": "ECO",
+     "rank": 8,
+     "verdict": "관찰",
+     "why": "해운 섹터 과거 통계 고려 신중 접근",
+     "r1": null
+    },
+    {
+     "ticker": "Z",
+     "rank": 9,
+     "verdict": "제외",
+     "why": "부동산 시장 침체 우려",
+     "r1": null
+    },
+    {
+     "ticker": "ZG",
+     "rank": 10,
+     "verdict": "제외",
+     "why": "중복 종목 및 부동산 섹터",
+     "r1": null
+    },
+    {
+     "ticker": "PBF",
+     "rank": 11,
+     "verdict": "관찰",
+     "why": "에너지 섹터 승률 저조 통계",
+     "r1": null
+    },
+    {
+     "ticker": "SSL",
+     "rank": 12,
+     "verdict": "제외",
+     "why": "경영진 변경 외 모멘텀 부족",
+     "r1": null
+    },
+    {
+     "ticker": "FIGS",
+     "rank": 13,
+     "verdict": "제외",
+     "why": "의류 섹터 과거 승률 0%",
+     "r1": null
+    },
+    {
+     "ticker": "MNDY",
+     "rank": 14,
+     "verdict": "제외",
+     "why": "소프트웨어 섹터 회피",
+     "r1": null
+    },
+    {
+     "ticker": "INTC",
+     "rank": 15,
+     "verdict": "제외",
+     "why": "반도체 섹터 약세 및 하락 추세",
+     "r1": null
+    },
+    {
+     "ticker": "NVDA",
+     "rank": 16,
+     "verdict": "제외",
+     "why": "반도체 섹터 하락세",
+     "r1": null
+    },
+    {
+     "ticker": "MDT",
+     "rank": 17,
+     "verdict": "제외",
+     "why": "상승폭 미미",
+     "r1": null
+    },
+    {
+     "ticker": "BBD",
+     "rank": 18,
+     "verdict": "제외",
+     "why": "하락 마감 종목",
+     "r1": null
+    }
+   ],
+   "bl": {
+    "rand": [
+     "ECO",
+     "MANE",
+     "PBF"
+    ],
+    "mom": [
+     "HAE",
+     "MANE",
+     "SECZ"
+    ]
+   },
+   "dayCands": [
+    {
+     "name": "Veradermics, Incorporated",
+     "ticker": "MANE",
+     "target_pct": 4,
+     "sector": "바이오",
+     "basis": [
+      "뉴스재료"
+     ],
+     "reason": "오젬픽과 유사한 비만·탈모 치료제 모멘텀으로 14% 이상 상승하며 거래 집중도가 높습니다.",
+     "risk": "바이오 섹터 과거 통계상 낮은 승률 유의",
+     "score": 50
+    },
+    {
+     "name": "The Vita Coco Company, Inc.",
+     "target_pct": 3,
+     "ticker": "COCO",
+     "sector": "소비재",
+     "basis": [
+      "뉴스재료",
+      "추세지속"
+     ],
+     "reason": "BofA의 목표가 상향과 함께 두 자릿수 상승률을 기록하며 안정적인 매수세를 증명했습니다.",
+     "risk": "소비재 섹터 보수적 접근 필요",
+     "score": 50
+    },
+    {
+     "name": "Erasca, Inc.",
+     "target_pct": 3,
+     "ticker": "ERAS",
+     "sector": "바이오",
+     "basis": [
+      "뉴스재료"
+     ],
+     "reason": "췌장암 관련 임상 데이터 및 경쟁사 파이프라인 부각으로 단기 모멘텀이 형성되었습니다.",
+     "risk": "변동성 큰 바이오 종목 특성",
+     "score": 50
+    },
+    {
+     "name": "Okeanis Eco Tankers Corp.",
+     "target_pct": 4,
+     "sector": "에너지",
+     "basis": [
+      "뉴스재료"
+     ],
+     "reason": "해운 및 에너지 관련 신선한 매수세가 유입되며 강한 거래량을 동반한 상승을 보였습니다.",
+     "risk": "에너지 섹터 승률 저조 통계 고려",
+     "ticker": "ECO",
+     "score": 50
+    },
+    {
+     "name": "PBF Energy Inc.",
+     "target_pct": 3,
+     "ticker": "PBF",
+     "sector": "에너지",
+     "basis": [
+      "낙폭과대"
+     ],
+     "reason": "저PBR 매력과 함께 유가 관련 저가 매수세가 유입될 가능성이 있습니다.",
+     "risk": "에너지 섹터 회피 성향 반영",
+     "score": 50
+    }
+   ],
+   "hold": 0,
+   "v": {
+    "m": "gemini-3.5-flash-lite",
+    "pv": "J1.0-S2.0",
+    "policy": "S2.0"
+   },
+   "mktF": {
+    "dir": "상승",
+    "conf": 49,
+    "why": "지수선물 반등과 VIX 하락세이나 과거 예측 적중률 한계 감안 보수적 접근",
+    "ok": null
+   },
+   "picks": [
+    {
+     "kind": "swing",
+     "name": "Haemonetics Corporation",
+     "ticker": "HAE",
+     "score": 52,
+     "sector": "의료기기",
+     "basis": [
+      "뉴스재료",
+      "추세지속"
+     ],
+     "plan": {
+      "engine": "R2.0",
+      "strategy": "swing",
+      "atrPct": 3,
+      "stopPct": 4.5,
+      "targetPct": 9,
+      "rr": 2,
+      "maxHoldDays": 5,
+      "riskPct": 0.5,
+      "maxWeightPct": 10,
+      "weightPct": 9.56,
+      "qty": 4,
+      "notional": 478,
+      "decision": {
+       "version": "S2.0",
+       "action": "conditional",
+       "strategy": "swing",
+       "reasons": [
+        "추세 중심의 짧은 스윙"
+       ],
+       "plannedHoldDays": 5,
+       "reviewAfterDays": 3,
+       "maxHoldDays": 5,
+       "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+       "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+       "allowAutoOrder": false
+      }
+     },
+     "p0": 119.47,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "Securitize Corp.",
+     "ticker": "SECZ",
+     "score": 48,
+     "sector": "핀테크",
+     "basis": [
+      "뉴스재료",
+      "신고가"
+     ],
+     "plan": {
+      "engine": "R2.0",
+      "strategy": "swing",
+      "atrPct": 14.49,
+      "stopPct": 9,
+      "targetPct": 18,
+      "rr": 2,
+      "maxHoldDays": 5,
+      "riskPct": 0.5,
+      "maxWeightPct": 10,
+      "weightPct": 5.32,
+      "qty": 21,
+      "notional": 266,
+      "decision": {
+       "version": "S2.0",
+       "action": "conditional",
+       "strategy": "swing",
+       "reasons": [
+        "추세 중심의 짧은 스윙"
+       ],
+       "plannedHoldDays": 5,
+       "reviewAfterDays": 3,
+       "maxHoldDays": 5,
+       "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+       "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+       "allowAutoOrder": false
+      }
+     },
+     "p0": 12.66,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "Flutter Entertainment plc",
+     "ticker": "FLUT",
+     "score": 45,
+     "sector": "엔터테인먼트",
+     "basis": [
+      "뉴스재료",
+      "추세지속"
+     ],
+     "plan": {
+      "engine": "R2.0",
+      "strategy": "swing",
+      "atrPct": 5.16,
+      "stopPct": 7.74,
+      "targetPct": 15.48,
+      "rr": 2,
+      "maxHoldDays": 5,
+      "riskPct": 0.5,
+      "maxWeightPct": 10,
+      "weightPct": 4.89,
+      "qty": 3,
+      "notional": 245,
+      "decision": {
+       "version": "S2.0",
+       "action": "watch",
+       "strategy": "day-watch",
+       "reasons": [
+        "단기 수급만 확인: 단타 재평가 후보, 자동 전환 아님"
+       ],
+       "plannedHoldDays": 5,
+       "reviewAfterDays": 3,
+       "maxHoldDays": 5,
+       "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+       "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+       "allowAutoOrder": false
+      }
+     },
+     "p0": 81.58,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    }
+   ]
   }
  ],
  "monAt": 1791519219056
