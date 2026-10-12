@@ -25484,7 +25484,7 @@
      "p0": 15190,
      "r1": -3.9,
      "r5": -18,
-     "r20": null,
+     "r20": -11.8,
      "b": 15060,
      "gap": -0.9,
      "simOpen": -4.9,
@@ -25495,7 +25495,9 @@
      "live": 1,
      "tv": 1210,
      "tvx": 1,
-     "idx": 1.4
+     "idx": 1.4,
+     "mfe": 1.6,
+     "mae": -25.6
     },
     {
      "kind": "swing",
@@ -25510,7 +25512,7 @@
      "p0": 12890,
      "r1": 0,
      "r5": -6.6,
-     "r20": null,
+     "r20": -12.1,
      "b": 13010,
      "gap": 0.9,
      "simOpen": -4.1,
@@ -25521,7 +25523,9 @@
      "simExit": "stop",
      "simD": "2026-09-14",
      "simT": "09:00",
-     "live": 1
+     "live": 1,
+     "mfe": 1.9,
+     "mae": -13.5
     },
     {
      "kind": "swing",
@@ -25536,7 +25540,7 @@
      "p0": 7870,
      "r1": 5,
      "r5": -4.8,
-     "r20": null,
+     "r20": 27.4,
      "b": 7950,
      "gap": 1,
      "simOpen": -3.8,
@@ -25547,7 +25551,9 @@
      "live": 1,
      "tv": 45574,
      "tvx": 2.6,
-     "idx": 1.4
+     "idx": 1.4,
+     "mfe": 45.9,
+     "mae": -8.7
     },
     {
      "kind": "day",
@@ -29529,7 +29535,7 @@
      "r20": null,
      "b": 14970,
      "gap": 0,
-     "simOpen": -2.3,
+     "simOpen": 2.9,
      "tv": 3747,
      "tvx": 1.6,
      "idx": null
@@ -40109,6 +40115,381 @@
      "mom": 2.6
     }
    }
+  },
+  {
+   "date": "2026-10-12",
+   "market": "US",
+   "regime": "상승",
+   "rules": [
+    "단타 실패 분해: 시장충격10·목표과다1·선정25 → 선정 강화",
+    "강도80+ 실측 0%(10) — 확신도 과장, 보수화",
+    "근거'거래량급증' 성공30%(23) → 단독추천 지양",
+    "근거'정책테마' 성공33%(21) → 단독추천 지양",
+    "섹터'소프트웨어' 성공39%(18) → 회피",
+    "섹터'바이오' 성공40%(10) → 회피"
+   ],
+   "cands": [
+    {
+     "ticker": "FSLY",
+     "rank": 1,
+     "verdict": "선택",
+     "why": "컴캐스트 파트너십 뉴스와 거래량 급증으로 단기 모멘텀 보유",
+     "r1": null
+    },
+    {
+     "ticker": "NVAX",
+     "rank": 91,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "CCI",
+     "rank": 92,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "MRNA",
+     "rank": 93,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "HUM",
+     "rank": 94,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "AUGO",
+     "rank": 95,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "HIMS",
+     "rank": 96,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "IOVA",
+     "rank": 97,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "PCVX",
+     "rank": 98,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "SEZL",
+     "rank": 99,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "AMT",
+     "rank": 100,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "SECZ",
+     "rank": 101,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "PLNT",
+     "rank": 102,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "DOCN",
+     "rank": 103,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "T",
+     "rank": 104,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "VZ",
+     "rank": 105,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "SPCX",
+     "rank": 106,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "NVDA",
+     "rank": 107,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    }
+   ],
+   "bl": {
+    "rand": [
+     "AUGO",
+     "MRNA",
+     "IOVA"
+    ],
+    "mom": [
+     "FSLY",
+     "NVAX",
+     "CCI"
+    ]
+   },
+   "dayCands": [
+    {
+     "name": "Fastly, Inc.",
+     "ticker": "FSLY",
+     "score": 48,
+     "target_pct": 4,
+     "sector": "소프트웨어",
+     "basis": [
+      "뉴스재료",
+      "거래량급증"
+     ],
+     "reason": "컴캐스트와의 파트너십 및 엣지 플랫폼 확장 이슈로 거래량이 급증하며 단기 모멘텀이 형성되었습니다. 갭상승 추격 매수는 자제하고 눌림목 위주로 접근합니다.",
+     "risk": "단기 차익실현 물량 출회"
+    },
+    {
+     "name": "Humana Inc.",
+     "ticker": "HUM",
+     "score": 46,
+     "target_pct": 4,
+     "sector": "의료기기",
+     "basis": [
+      "뉴스재료"
+     ],
+     "reason": "레이몬드 제임스의 투자의견 상향 및 목표가 상향 조정(520달러) 뉴스가 단기 수급을 강하게 자극하고 있습니다. 다만 의료 섹터의 과거 승률을 고려해 보수적으로 대응합니다.",
+     "risk": "정책적 규제 및 실적 불확실성"
+    },
+    {
+     "name": "Hims & Hers Health, Inc.",
+     "ticker": "HIMS",
+     "score": 44,
+     "target_pct": 4,
+     "sector": "헬스케어",
+     "basis": [
+      "뉴스재료",
+      "거래량급증"
+     ],
+     "reason": "대규모 거래량 동반과 함께 2030년 성장 기대감이 부각되며 소매 투자자의 관심이 집중되고 있습니다. 변동성이 크므로 짧은 호흡으로 대응해야 합니다.",
+     "risk": "높은 밸류에이션 및 변동성"
+    },
+    {
+     "name": "Sezzle Inc.",
+     "ticker": "SEZL",
+     "score": 42,
+     "target_pct": 3,
+     "sector": "금융",
+     "basis": [
+      "뉴스재료"
+     ],
+     "reason": "BNPL(선구매 후결제) 체크아웃 설문조사 결과 및 시장 관심 지속으로 상방 압력을 받고 있습니다. 추세 지속 여부를 장중 거래량으로 확인해야 합니다.",
+     "risk": "규제 환경 변화 및 신용 리스크"
+    },
+    {
+     "name": "DigitalOcean Holdings, Inc.",
+     "ticker": "DOCN",
+     "score": 40,
+     "target_pct": 3,
+     "sector": "소프트웨어",
+     "basis": [
+      "뉴스재료"
+     ],
+     "reason": "동종 소프트웨어 주들의 동반 강세 흐름 속에서 기술적 반등 시도가 나타나고 있습니다. 다만 소프트웨어 섹터의 낮은 성공 통계를 감안해 비중을 낮춥니다.",
+     "risk": "섹터 전반의 수급 부진"
+    }
+   ],
+   "hold": 0,
+   "v": {
+    "m": "gemini-3.5-flash-lite",
+    "pv": "J1.0-S2.0",
+    "policy": "S2.0"
+   },
+   "mktF": {
+    "dir": "상승",
+    "conf": 50,
+    "why": "전일 S&P500 상승세와 지수선물 강보합이나 과거 예측 적중률을 고려해 중립적 관점 유지",
+    "ok": null
+   },
+   "picks": [
+    {
+     "kind": "swing",
+     "name": "Crown Castle Inc.",
+     "ticker": "CCI",
+     "score": 45,
+     "sector": "인프라",
+     "basis": [
+      "뉴스재료",
+      "실적"
+     ],
+     "plan": {
+      "engine": "R2.0",
+      "strategy": "swing",
+      "atrPct": 3.14,
+      "stopPct": 4.71,
+      "targetPct": 9.42,
+      "rr": 2,
+      "maxHoldDays": 10,
+      "riskPct": 0.5,
+      "maxWeightPct": 10,
+      "weightPct": 9.56,
+      "qty": 6,
+      "notional": 478,
+      "decision": {
+       "version": "S2.0",
+       "action": "conditional",
+       "strategy": "swing",
+       "reasons": [
+        "재료 지속성 확인, 짧은 주기로 추세 재평가"
+       ],
+       "plannedHoldDays": 10,
+       "reviewAfterDays": 3,
+       "maxHoldDays": 10,
+       "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+       "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+       "allowAutoOrder": false
+      }
+     },
+     "p0": 79.64,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "American Tower Corporation",
+     "ticker": "AMT",
+     "score": 42,
+     "sector": "인프라",
+     "basis": [
+      "뉴스재료"
+     ],
+     "plan": {
+      "engine": "R2.0",
+      "strategy": "swing",
+      "atrPct": 2.52,
+      "stopPct": 4,
+      "targetPct": 8,
+      "rr": 2,
+      "maxHoldDays": 5,
+      "riskPct": 0.5,
+      "maxWeightPct": 10,
+      "weightPct": 7.29,
+      "qty": 2,
+      "notional": 364,
+      "decision": {
+       "version": "S2.0",
+       "action": "watch",
+       "strategy": "watch",
+       "reasons": [
+        "지속 재료·추세 확인 전 관찰"
+       ],
+       "plannedHoldDays": 5,
+       "reviewAfterDays": 3,
+       "maxHoldDays": 5,
+       "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+       "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+       "allowAutoOrder": false
+      }
+     },
+     "p0": 182.24,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "Planet Fitness, Inc.",
+     "ticker": "PLNT",
+     "score": 40,
+     "sector": "소비재",
+     "basis": [
+      "뉴스재료"
+     ],
+     "plan": {
+      "engine": "R2.0",
+      "strategy": "swing",
+      "atrPct": 4.63,
+      "stopPct": 6.95,
+      "targetPct": 13.89,
+      "rr": 2,
+      "maxHoldDays": 5,
+      "riskPct": 0.5,
+      "maxWeightPct": 10,
+      "weightPct": 6.72,
+      "qty": 7,
+      "notional": 336,
+      "decision": {
+       "version": "S2.0",
+       "action": "watch",
+       "strategy": "watch",
+       "reasons": [
+        "지속 재료·추세 확인 전 관찰"
+       ],
+       "plannedHoldDays": 5,
+       "reviewAfterDays": 3,
+       "maxHoldDays": 5,
+       "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+       "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+       "allowAutoOrder": false
+      }
+     },
+     "p0": 47.98,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    }
+   ]
   }
  ],
  "monAt": 1791777441914
