@@ -29558,7 +29558,7 @@
      "r20": null,
      "b": 14970,
      "gap": 0,
-     "simOpen": 2.9,
+     "simOpen": -6.5,
      "tv": 3747,
      "tvx": 1.6,
      "idx": null
@@ -29635,7 +29635,7 @@
      "r20": null,
      "b": 149900,
      "gap": 0.8,
-     "simOpen": 12.5,
+     "simOpen": 2.8,
      "tv": 1002,
      "tvx": 0,
      "idx": null
@@ -33836,7 +33836,12 @@
      "simOpen": -3,
      "tv": 780285,
      "tvx": 0.9,
-     "idx": null
+     "idx": null,
+     "simR": -7.86,
+     "simExit": "stop",
+     "simD": "2026-10-13",
+     "simT": "11:43",
+     "live": 1
     },
     {
      "kind": "swing",
@@ -40612,5 +40617,5 @@
    "dayHold": 1
   }
  ],
- "monAt": 1791777441914
+ "monAt": 1791859430045
 }
