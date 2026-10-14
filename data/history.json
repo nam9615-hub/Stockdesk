@@ -27154,7 +27154,7 @@
      "p0": 97400,
      "r1": 3.4,
      "r5": 6.1,
-     "r20": null,
+     "r20": -10.4,
      "b": 93600,
      "gap": -3.9,
      "simOpen": 9.6,
@@ -27165,7 +27165,9 @@
      "simExit": "target",
      "simD": "2026-09-15",
      "simT": "09:45",
-     "live": 1
+     "live": 1,
+     "mfe": 17.2,
+     "mae": -13.4
     },
     {
      "kind": "swing",
@@ -27180,7 +27182,7 @@
      "p0": 15010,
      "r1": -0.3,
      "r5": 9.1,
-     "r20": null,
+     "r20": -2.5,
      "b": 14930,
      "gap": -0.5,
      "simOpen": 0.3,
@@ -27191,7 +27193,9 @@
      "simExit": "target",
      "simD": "2026-09-16",
      "simT": "09:03",
-     "live": 1
+     "live": 1,
+     "mfe": 15.8,
+     "mae": -8.5
     },
     {
      "kind": "swing",
@@ -27206,7 +27210,7 @@
      "p0": 154900,
      "r1": -3.7,
      "r5": -1.9,
-     "r20": null,
+     "r20": 4.3,
      "b": 155800,
      "gap": 0.6,
      "tv": 78274,
@@ -27214,7 +27218,9 @@
      "idx": -1.76,
      "simR": -5,
      "simExit": "stop",
-     "simD": "2026-09-11"
+     "simD": "2026-09-11",
+     "mfe": 11.5,
+     "mae": -8.7
     },
     {
      "kind": "day",
@@ -29647,7 +29653,7 @@
      "r20": null,
      "b": 149900,
      "gap": 0.8,
-     "simOpen": 8.1,
+     "simOpen": 5.6,
      "tv": 1002,
      "tvx": 0,
      "idx": null
@@ -38956,28 +38962,32 @@
      "rank": 9,
      "verdict": "제외",
      "why": "소표본 및 불확실성 상존",
-     "r1": 2
+     "r1": 2,
+     "r5": 1.8
     },
     {
      "ticker": "FTAI",
      "rank": 10,
      "verdict": "선택",
      "why": "실적 발표 앞둔 우주항공 모멘텀",
-     "r1": -0.4
+     "r1": -0.4,
+     "r5": -4.9
     },
     {
      "ticker": "PS",
      "rank": 11,
      "verdict": "제외",
      "why": "장기 투자 관점 종목으로 스윙 부적합",
-     "r1": -1.4
+     "r1": -1.4,
+     "r5": -19.9
     },
     {
      "ticker": "LEU",
      "rank": 12,
      "verdict": "관찰",
      "why": "밸류에이션 부담 상존하나 거래량 유입",
-     "r1": 0.1
+     "r1": 0.1,
+     "r5": -8.7
     },
     {
      "ticker": "SECZ",
@@ -39722,7 +39732,7 @@
      "b": 72.5,
      "gap": -0.2,
      "idx": -0.29,
-     "simOpen": 9.2
+     "simOpen": 7.9
     }
    ],
    "day2": {
@@ -40080,7 +40090,7 @@
      "b": 115,
      "gap": -3.7,
      "idx": 0.36,
-     "simOpen": 6.1
+     "simOpen": 5.8
     },
     {
      "kind": "swing",
@@ -40556,7 +40566,9 @@
      "b": 74.31500244140625,
      "gap": -6.7,
      "idx": 0.07,
-     "simOpen": 9
+     "simR": 9.42,
+     "simExit": "target",
+     "simD": "2026-10-13"
     },
     {
      "kind": "swing",
@@ -40690,77 +40702,77 @@
      "rank": 1,
      "verdict": "관찰",
      "why": "어패럴 섹터 급등이나 과거 승률 저조",
-     "r1": null
+     "r1": 1.1
     },
     {
      "ticker": "FICO",
      "rank": 2,
      "verdict": "관찰",
      "why": "목표주가 하향 조정 후 변동성 확대",
-     "r1": null
+     "r1": -2.6
     },
     {
      "ticker": "CCC",
      "rank": 3,
      "verdict": "선택",
      "why": "인수합병 협상 모멘텀 보유",
-     "r1": null
+     "r1": 2.5
     },
     {
      "ticker": "VSXY",
      "rank": 4,
      "verdict": "제외",
      "why": "밸류에이션 부담 및 상승폭 제한적",
-     "r1": null
+     "r1": -2.1
     },
     {
      "ticker": "DHT",
      "rank": 5,
      "verdict": "선택",
      "why": "VLCC 운임 상승 및 예약 강세 재료",
-     "r1": null
+     "r1": 1.7
     },
     {
      "ticker": "CHA",
      "rank": 6,
      "verdict": "제외",
      "why": "모멘텀 부족 및 관망 필요",
-     "r1": null
+     "r1": 5.6
     },
     {
      "ticker": "MANH",
      "rank": 7,
      "verdict": "선택",
      "why": "대규모 클라우드 수주 계약 확보",
-     "r1": null
+     "r1": 2.1
     },
     {
      "ticker": "ECO",
      "rank": 8,
      "verdict": "관찰",
      "why": "탱커 섹터 동반 움직임 관찰 필요",
-     "r1": null
+     "r1": 1.5
     },
     {
      "ticker": "FRO",
      "rank": 9,
      "verdict": "관찰",
      "why": "유조선 테마 순환매 대응",
-     "r1": null
+     "r1": 0.9
     },
     {
      "ticker": "PBLS",
      "rank": 10,
      "verdict": "제외",
      "why": "신규 상장 포트폴리오 변동성 큼",
-     "r1": null
+     "r1": -8.8
     },
     {
      "ticker": "FIZZ",
      "rank": 11,
      "verdict": "제외",
      "why": "모멘텀 약함",
-     "r1": null
+     "r1": 1.6
     },
     {
      "ticker": "VFC",
@@ -41120,6 +41132,378 @@
     "n": 0
    },
    "dayHold": 1
+  },
+  {
+   "date": "2026-10-14",
+   "market": "US",
+   "regime": "상승",
+   "rules": [
+    "단타 실패 분해: 시장충격10·목표과다1·선정25 → 선정 강화",
+    "강도80+ 실측 0%(10) — 확신도 과장, 보수화",
+    "근거'거래량급증' 성공30%(23) → 단독추천 지양",
+    "근거'정책테마' 성공33%(21) → 단독추천 지양",
+    "섹터'바이오' 성공40%(10) → 회피",
+    "섹터'반도체' 성공40%(15) → 회피"
+   ],
+   "cands": [
+    {
+     "ticker": "RGC",
+     "rank": 15,
+     "verdict": "제외",
+     "why": "연간 적자 확대 및 고평가 논란으로 매력도 낮음",
+     "r1": null
+    },
+    {
+     "ticker": "EFXT",
+     "rank": 91,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "PARR",
+     "rank": 92,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "PBF",
+     "rank": 93,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "CVI",
+     "rank": 94,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "LIFE",
+     "rank": 95,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "NSIT",
+     "rank": 96,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "CDW",
+     "rank": 97,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "VG",
+     "rank": 98,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "INFY",
+     "rank": 99,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "TTMI",
+     "rank": 100,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "VRNS",
+     "rank": 101,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "ECPG",
+     "rank": 102,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "VLO",
+     "rank": 103,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "CIFR",
+     "rank": 104,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "FRMI",
+     "rank": 105,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "NOK",
+     "rank": 106,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "INTC",
+     "rank": 107,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    }
+   ],
+   "bl": {
+    "rand": [
+     "VG",
+     "VLO",
+     "CDW"
+    ],
+    "mom": [
+     "RGC",
+     "EFXT",
+     "PARR"
+    ]
+   },
+   "dayCands": [
+    {
+     "name": "Fermi Inc.",
+     "ticker": "FRMI",
+     "score": 40,
+     "target_pct": 4,
+     "sector": "기술",
+     "basis": [
+      "정책테마"
+     ],
+     "reason": "AMD와의 계약 소식으로 급등세를 보였으나 신중한 접근이 필요합니다. 분석가들이 향후 허들을 지적한 만큼 단기 변동성에 주의해야 합니다.",
+     "risk": "애널리스트들의 규제 및 실현 가능성 우려"
+    },
+    {
+     "name": "Varonis Systems, Inc.",
+     "ticker": "VRNS",
+     "score": 40,
+     "target_pct": 4,
+     "sector": "보안",
+     "basis": [
+      "거래량급증"
+     ],
+     "reason": "뚜렷한 거래량 증가와 함께 주가가 강한 상승 탄력을 받고 있습니다. 당일 모멘텀을 활용한 단기 접근이 유효합니다.",
+     "risk": "단기 급등 후 변동성 확대"
+    },
+    {
+     "name": "Par Pacific Holdings, Inc.",
+     "ticker": "PARR",
+     "score": 38,
+     "target_pct": 3,
+     "sector": "에너지",
+     "basis": [
+      "추세지속"
+     ],
+     "reason": "정유 및 에너지 섹터 전반의 강세 분위기에 올라타 있으며 추가 상승 시도가 예상됩니다. 실적 성장성에 대한 기대감이 유효합니다.",
+     "risk": "유가 변동성 및 정제마진 하락 리스크"
+    },
+    {
+     "name": "CVR Energy Inc.",
+     "ticker": "CVI",
+     "score": 38,
+     "target_pct": 3,
+     "sector": "에너지",
+     "basis": [
+      "추세지속"
+     ],
+     "reason": "오일 및 에너지 피어 그룹 대비 견조한 아웃퍼폼 흐름을 보이고 있습니다. 동종 업계 강세와 함께 수급 유입이 기대됩니다.",
+     "risk": "원자재 가격 변동에 따른 리스크"
+    },
+    {
+     "name": "Encore Capital Group Inc",
+     "ticker": "ECPG",
+     "score": 35,
+     "target_pct": 3,
+     "sector": "금융",
+     "basis": [
+      "낙폭과대"
+     ],
+     "reason": "저평가 매력과 리스크 우려가 공존하는 국면으로 반발 매수세 유입 가능성이 있습니다. 단기 기술적 반등을 노릴 수 있습니다.",
+     "risk": "신용 리스크 및 금리 환경 변화"
+    }
+   ],
+   "hold": 0,
+   "v": {
+    "m": "gemini-3.5-flash-lite",
+    "pv": "J1.0-S2.0",
+    "policy": "S2.0"
+   },
+   "mktF": {
+    "dir": "상승",
+    "conf": 50,
+    "why": "S&P500 및 지수선물이 완만한 상승 우위를 보이고 있으나 과거 검증 실패 신호에 따라 중립적 시각 유지",
+    "ok": null
+   },
+   "picks": [
+    {
+     "kind": "swing",
+     "name": "Enerflex Ltd",
+     "ticker": "EFXT",
+     "score": 45,
+     "sector": "에너지",
+     "basis": [
+      "실적/수주계약"
+     ],
+     "plan": {
+      "engine": "R2.0",
+      "strategy": "swing",
+      "atrPct": 5.13,
+      "stopPct": 7.7,
+      "targetPct": 15.39,
+      "rr": 2,
+      "maxHoldDays": 5,
+      "riskPct": 0.5,
+      "maxWeightPct": 10,
+      "weightPct": 6.06,
+      "qty": 11,
+      "notional": 303,
+      "decision": {
+       "version": "S2.0",
+       "action": "conditional",
+       "strategy": "swing",
+       "reasons": [
+        "추세 중심의 짧은 스윙"
+       ],
+       "plannedHoldDays": 5,
+       "reviewAfterDays": 3,
+       "maxHoldDays": 5,
+       "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+       "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+       "allowAutoOrder": false
+      }
+     },
+     "p0": 27.54,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "CDW Corporation",
+     "ticker": "CDW",
+     "score": 50,
+     "sector": "기술",
+     "basis": [
+      "추세지속"
+     ],
+     "plan": {
+      "engine": "R2.0",
+      "strategy": "swing",
+      "atrPct": 3.6,
+      "stopPct": 5.4,
+      "targetPct": 10.8,
+      "rr": 2,
+      "maxHoldDays": 5,
+      "riskPct": 0.5,
+      "maxWeightPct": 10,
+      "weightPct": 9.12,
+      "qty": 3,
+      "notional": 456,
+      "decision": {
+       "version": "S2.0",
+       "action": "watch",
+       "strategy": "day-watch",
+       "reasons": [
+        "단기 수급만 확인: 단타 재평가 후보, 자동 전환 아님"
+       ],
+       "plannedHoldDays": 5,
+       "reviewAfterDays": 3,
+       "maxHoldDays": 5,
+       "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+       "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+       "allowAutoOrder": false
+      }
+     },
+     "p0": 151.97,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "Infosys Limited",
+     "ticker": "INFY",
+     "score": 50,
+     "sector": "기술",
+     "basis": [
+      "추세지속"
+     ],
+     "plan": {
+      "engine": "R2.0",
+      "strategy": "swing",
+      "atrPct": 3.35,
+      "stopPct": 5.03,
+      "targetPct": 10.05,
+      "rr": 2,
+      "maxHoldDays": 5,
+      "riskPct": 0.5,
+      "maxWeightPct": 10,
+      "weightPct": 9.8,
+      "qty": 43,
+      "notional": 490,
+      "decision": {
+       "version": "S2.0",
+       "action": "watch",
+       "strategy": "day-watch",
+       "reasons": [
+        "단기 수급만 확인: 단타 재평가 후보, 자동 전환 아님"
+       ],
+       "plannedHoldDays": 5,
+       "reviewAfterDays": 3,
+       "maxHoldDays": 5,
+       "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+       "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+       "allowAutoOrder": false
+      }
+     },
+     "p0": 11.4,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    }
+   ]
   }
  ],
  "monAt": 1791947637227
