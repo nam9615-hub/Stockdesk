@@ -1,119 +1,119 @@
 {
- "date": "2026-10-13",
+ "date": "2026-10-14",
  "at": "21:29",
  "data": {
-  "brief": "전일 S&P500이 소폭 하락하고 VIX가 상승하는 등 관망세가 짙은 혼조 국면입니다. 과거 실적 통계와 섹터별 승률을 반영하여 보수적인 관점에서 모멘텀과 펀더멘털을 검토했습니다.",
+  "brief": "시장 전반이 완만한 상승 흐름을 보이고 있으나, 과거 실측 성적과 확신도 교정 통계에 기반하여 보수적인 관점을 유지합니다. 변동성이 높은 종목은 제외하고 확실한 모멘텀과 실적 가시성이 있는 종목 위주로 선별했습니다.",
   "picks": [
    {
-    "name": "Manhattan Associates, Inc.",
-    "ticker": "MANH",
+    "name": "Enerflex Ltd",
+    "ticker": "EFXT",
     "score": 45,
-    "sector": "소프트웨어",
+    "sector": "에너지",
     "basis": [
-     "수주계약"
+     "실적/수주계약"
     ],
-    "reason": "Kesko의 클라우드 네이티브 및 AI 기반 창고 관리 시스템 구축 파트너로 선정되었습니다. 실질적인 대형 수주 계약이 모멘텀을 뒷받침합니다.",
-    "catalyst": "Kesko 창고 소프트웨어 계약",
-    "risk": "과거 소프트웨어 섹터의 낮은 승률 유의",
+    "reason": "CIBC의 아웃퍼퍼 등급 상향과 RBC의 목표가 상향 조정이 긍정적인 모멘텀을 제공하고 있습니다. 애널리스트들의 신뢰가 이어지며 추가적인 상승 여력이 기대됩니다.",
+    "catalyst": "IB 투자등급 및 목표가 상향",
+    "risk": "단기 급등에 따른 차익실현 매물 출회 가능성",
     "plan": {
      "engine": "R2.0",
      "strategy": "swing",
-     "atrPct": 2.82,
-     "stopPct": 4.23,
-     "targetPct": 8.46,
-     "rr": 2,
-     "maxHoldDays": 15,
-     "riskPct": 0.5,
-     "maxWeightPct": 10,
-     "weightPct": 8.72,
-     "qty": 2,
-     "notional": 436,
-     "decision": {
-      "version": "S2.0",
-      "action": "conditional",
-      "strategy": "swing",
-      "reasons": [
-       "지속 재료와 중기 추세가 함께 확인됨"
-      ],
-      "plannedHoldDays": 15,
-      "reviewAfterDays": 3,
-      "maxHoldDays": 15,
-      "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
-      "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
-      "allowAutoOrder": false
-     }
-    }
-   },
-   {
-    "name": "Shopify Inc.",
-    "ticker": "SHOP",
-    "score": 42,
-    "sector": "이커머스",
-    "basis": [
-     "실적"
-    ],
-    "reason": "인상적인 펀더멘털을 바탕으로 견조한 성장세를 보이고 있습니다. 이커머스 시장 내 경쟁 우위가 지속되고 있습니다.",
-    "catalyst": "견조한 펀더멘털",
-    "risk": "시장 전반의 변동성 확대",
-    "plan": {
-     "engine": "R2.0",
-     "strategy": "swing",
-     "atrPct": 3.87,
-     "stopPct": 5.8,
-     "targetPct": 11.61,
-     "rr": 2,
-     "maxHoldDays": 15,
-     "riskPct": 0.5,
-     "maxWeightPct": 10,
-     "weightPct": 7.17,
-     "qty": 2,
-     "notional": 358,
-     "decision": {
-      "version": "S2.0",
-      "action": "conditional",
-      "strategy": "swing",
-      "reasons": [
-       "지속 재료와 중기 추세가 함께 확인됨"
-      ],
-      "plannedHoldDays": 15,
-      "reviewAfterDays": 3,
-      "maxHoldDays": 15,
-      "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
-      "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
-      "allowAutoOrder": false
-     }
-    }
-   },
-   {
-    "name": "Fair Isaac Corporation",
-    "ticker": "FICO",
-    "score": 40,
-    "sector": "금융",
-    "basis": [
-     "뉴스재료"
-    ],
-    "reason": "목표주가 조정 과정에서 변동성이 컸으나 견고한 비즈니스 모델을 유지하고 있습니다. 단기 조정 후 반등 여력을 주시해야 합니다.",
-    "catalyst": "애널리스트 목표가 조정",
-    "risk": "목표가 하향 조정 뉴스에 따른 압박",
-    "plan": {
-     "engine": "R2.0",
-     "strategy": "swing",
-     "atrPct": 7.99,
-     "stopPct": 9,
-     "targetPct": 18,
+     "atrPct": 5.13,
+     "stopPct": 7.7,
+     "targetPct": 15.39,
      "rr": 2,
      "maxHoldDays": 5,
      "riskPct": 0.5,
      "maxWeightPct": 10,
-     "weightPct": 0,
-     "qty": 0,
-     "notional": 0,
+     "weightPct": 6.06,
+     "qty": 11,
+     "notional": 303,
+     "decision": {
+      "version": "S2.0",
+      "action": "conditional",
+      "strategy": "swing",
+      "reasons": [
+       "추세 중심의 짧은 스윙"
+      ],
+      "plannedHoldDays": 5,
+      "reviewAfterDays": 3,
+      "maxHoldDays": 5,
+      "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+      "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+      "allowAutoOrder": false
+     }
+    }
+   },
+   {
+    "name": "CDW Corporation",
+    "ticker": "CDW",
+    "sector": "기술",
+    "basis": [
+     "추세지속"
+    ],
+    "reason": "견조한 기술주 흐름 속에서 안정적인 가치주 매력을 지니고 있습니다. 시장의 변동성 속에서도 꾸준한 방어력을 보여줄 것으로 기대됩니다.",
+    "catalyst": "안정적 기술 유통 및 서비스 수요",
+    "risk": "IT 지출 둔화 우려",
+    "score": 50,
+    "plan": {
+     "engine": "R2.0",
+     "strategy": "swing",
+     "atrPct": 3.6,
+     "stopPct": 5.4,
+     "targetPct": 10.8,
+     "rr": 2,
+     "maxHoldDays": 5,
+     "riskPct": 0.5,
+     "maxWeightPct": 10,
+     "weightPct": 9.12,
+     "qty": 3,
+     "notional": 456,
      "decision": {
       "version": "S2.0",
       "action": "watch",
-      "strategy": "watch",
+      "strategy": "day-watch",
       "reasons": [
-       "지속 재료·추세 확인 전 관찰"
+       "단기 수급만 확인: 단타 재평가 후보, 자동 전환 아님"
+      ],
+      "plannedHoldDays": 5,
+      "reviewAfterDays": 3,
+      "maxHoldDays": 5,
+      "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+      "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+      "allowAutoOrder": false
+     }
+    }
+   },
+   {
+    "name": "Infosys Limited",
+    "ticker": "INFY",
+    "sector": "기술",
+    "basis": [
+     "추세지속"
+    ],
+    "reason": "미국 증시에 상장된 아시아 주요 ADR 종목들의 완만한 상승세와 동조화되고 있습니다. 글로벌 IT 서비스 수요가 유지되며 안정적인 흐름을 보이고 있습니다.",
+    "catalyst": "미국 상장 아시아 ADR 강세 동조화",
+    "risk": "환율 변동 및 글로벌 IT 예산 축소",
+    "score": 50,
+    "plan": {
+     "engine": "R2.0",
+     "strategy": "swing",
+     "atrPct": 3.35,
+     "stopPct": 5.03,
+     "targetPct": 10.05,
+     "rr": 2,
+     "maxHoldDays": 5,
+     "riskPct": 0.5,
+     "maxWeightPct": 10,
+     "weightPct": 9.8,
+     "qty": 43,
+     "notional": 490,
+     "decision": {
+      "version": "S2.0",
+      "action": "watch",
+      "strategy": "day-watch",
+      "reasons": [
+       "단기 수급만 확인: 단타 재평가 후보, 자동 전환 아님"
       ],
       "plannedHoldDays": 5,
       "reviewAfterDays": 3,
@@ -127,188 +127,180 @@
   ],
   "day_cands": [
    {
-    "name": "FIGS, Inc.",
-    "ticker": "FIGS",
-    "score": 35,
+    "name": "Fermi Inc.",
+    "ticker": "FRMI",
+    "score": 40,
     "target_pct": 4,
-    "sector": "의류",
+    "sector": "기술",
+    "basis": [
+     "정책테마"
+    ],
+    "reason": "AMD와의 계약 소식으로 급등세를 보였으나 신중한 접근이 필요합니다. 분석가들이 향후 허들을 지적한 만큼 단기 변동성에 주의해야 합니다.",
+    "risk": "애널리스트들의 규제 및 실현 가능성 우려"
+   },
+   {
+    "name": "Varonis Systems, Inc.",
+    "ticker": "VRNS",
+    "score": 40,
+    "target_pct": 4,
+    "sector": "보안",
     "basis": [
      "거래량급증"
     ],
-    "reason": "소형주 어패럴 부문에서 급부상하며 거래량이 대거 유입되었습니다. 다만 의류 섹터의 과거 부진한 승률을 감안해 목표가를 낮게 잡았습니다.",
-    "catalyst": "어패럴 섹터 급등",
-    "risk": "의류 섹터 낮은 성공 확률"
+    "reason": "뚜렷한 거래량 증가와 함께 주가가 강한 상승 탄력을 받고 있습니다. 당일 모멘텀을 활용한 단기 접근이 유효합니다.",
+    "risk": "단기 급등 후 변동성 확대"
    },
    {
-    "name": "CCC Intelligent Solutions Holdi",
-    "ticker": "CCC",
+    "name": "Par Pacific Holdings, Inc.",
+    "ticker": "PARR",
     "score": 38,
-    "target_pct": 4,
-    "sector": "소프트웨어",
+    "target_pct": 3,
+    "sector": "에너지",
     "basis": [
-     "뉴스재료"
+     "추세지속"
     ],
-    "reason": "고급 인수합병(Buyout) 협상 소식으로 주가가 급등했습니다. M&A 관련 단기 모멘텀이 유효합니다.",
-    "catalyst": "인수합병 협상 소식",
-    "risk": "협상 결렬 시 급락 위험"
+    "reason": "정유 및 에너지 섹터 전반의 강세 분위기에 올라타 있으며 추가 상승 시도가 예상됩니다. 실적 성장성에 대한 기대감이 유효합니다.",
+    "risk": "유가 변동성 및 정제마진 하락 리스크"
    },
    {
-    "name": "DHT Holdings, 인코포레이티드",
-    "ticker": "DHT",
+    "name": "CVR Energy Inc.",
+    "ticker": "CVI",
+    "score": 38,
+    "target_pct": 3,
+    "sector": "에너지",
+    "basis": [
+     "추세지속"
+    ],
+    "reason": "오일 및 에너지 피어 그룹 대비 견조한 아웃퍼폼 흐름을 보이고 있습니다. 동종 업계 강세와 함께 수급 유입이 기대됩니다.",
+    "risk": "원자재 가격 변동에 따른 리스크"
+   },
+   {
+    "name": "Encore Capital Group Inc",
+    "ticker": "ECPG",
     "score": 35,
-    "target_pct": 4,
-    "sector": "에너지",
-    "basis": [
-     "수주계약"
-    ],
-    "reason": "VLCC TCE 상승과 4분기 예약 강세 소식으로 상승세를 기록했습니다. 운임 지표 개선이 단기 모멘텀을 제공합니다.",
-    "catalyst": "VLCC 운임 및 예약 강세",
-    "risk": "에너지 섹터 과거 승률 참고 필요"
-   },
-   {
-    "name": "Frontline Plc",
-    "ticker": "FRO",
-    "score": 32,
     "target_pct": 3,
-    "sector": "에너지",
+    "sector": "금융",
     "basis": [
-     "거래량급증"
+     "낙폭과대"
     ],
-    "reason": "유조선 섹터에 대한 리테일 투자자들의 관심이 집중되며 상승 흐름에 동참했습니다. 변동성이 커 보수적 접근이 필요합니다.",
-    "catalyst": "유조선 테마 관심",
-    "risk": "단기 급등 후 차익실현 매물"
-   },
-   {
-    "name": "V.F. Corporation",
-    "ticker": "VFC",
-    "score": 30,
-    "target_pct": 3,
-    "sector": "의류",
-    "basis": [
-     "뉴스재료"
-    ],
-    "reason": "반스 및 노스페이스 브랜드에 대한 애널리스트의 낙관론이 제기되었습니다. 브랜드 내러티브 회복 여부가 관건입니다.",
-    "catalyst": "브랜드 성장 기대감",
-    "risk": "의류 섹터 리스크 주의"
+    "reason": "저평가 매력과 리스크 우려가 공존하는 국면으로 반발 매수세 유입 가능성이 있습니다. 단기 기술적 반등을 노릴 수 있습니다.",
+    "risk": "신용 리스크 및 금리 환경 변화"
    }
   ],
   "cands": [
    {
-    "ticker": "FIGS",
-    "rank": 1,
-    "verdict": "관찰",
-    "why": "어패럴 섹터 급등이나 과거 승률 저조"
-   },
-   {
-    "ticker": "FICO",
-    "rank": 2,
-    "verdict": "관찰",
-    "why": "목표주가 하향 조정 후 변동성 확대"
-   },
-   {
-    "ticker": "CCC",
-    "rank": 3,
-    "verdict": "선택",
-    "why": "인수합병 협상 모멘텀 보유"
-   },
-   {
-    "ticker": "VSXY",
-    "rank": 4,
-    "verdict": "제외",
-    "why": "밸류에이션 부담 및 상승폭 제한적"
-   },
-   {
-    "ticker": "DHT",
-    "rank": 5,
-    "verdict": "선택",
-    "why": "VLCC 운임 상승 및 예약 강세 재료"
-   },
-   {
-    "ticker": "CHA",
-    "rank": 6,
-    "verdict": "제외",
-    "why": "모멘텀 부족 및 관망 필요"
-   },
-   {
-    "ticker": "MANH",
-    "rank": 7,
-    "verdict": "선택",
-    "why": "대규모 클라우드 수주 계약 확보"
-   },
-   {
-    "ticker": "ECO",
-    "rank": 8,
-    "verdict": "관찰",
-    "why": "탱커 섹터 동반 움직임 관찰 필요"
-   },
-   {
-    "ticker": "FRO",
-    "rank": 9,
-    "verdict": "관찰",
-    "why": "유조선 테마 순환매 대응"
-   },
-   {
-    "ticker": "PBLS",
-    "rank": 10,
-    "verdict": "제외",
-    "why": "신규 상장 포트폴리오 변동성 큼"
-   },
-   {
-    "ticker": "FIZZ",
-    "rank": 11,
-    "verdict": "제외",
-    "why": "모멘텀 약함"
-   },
-   {
-    "ticker": "VFC",
-    "rank": 12,
-    "verdict": "관찰",
-    "why": "브랜드 턴어라운드 재료 확인 필요"
-   },
-   {
-    "ticker": "VEON",
-    "rank": 13,
-    "verdict": "제외",
-    "why": "이미 밸류에이션 부담 구간 진입"
-   },
-   {
-    "ticker": "SHOP",
-    "rank": 14,
-    "verdict": "선택",
-    "why": "우수한 펀더멘털과 이커머스 주도력"
-   },
-   {
-    "ticker": "ONDS",
+    "ticker": "RGC",
     "rank": 15,
     "verdict": "제외",
-    "why": "마이너스 등락률 및 모멘텀 부재"
+    "why": "연간 적자 확대 및 고평가 논란으로 매력도 낮음"
    },
    {
-    "ticker": "INTC",
-    "rank": 16,
+    "name": "EFXT",
+    "rank": 1,
+    "verdict": "선택",
+    "why": "IB 목표가 상향 및 투자등급 상향으로 모멘텀 우수"
+   },
+   {
+    "name": "PARR",
+    "rank": 3,
+    "verdict": "선택",
+    "why": "성장성 부각 및 정유 섹터 강세 동참"
+   },
+   {
+    "name": "PBF",
+    "rank": 4,
+    "verdict": "관찰",
+    "why": "연간 급등 이후 추가 상승 여력 점검 필요"
+   },
+   {
+    "name": "CVI",
+    "rank": 5,
+    "verdict": "관찰",
+    "why": "오일에너지 피어 대비 강세이나 단기 과열 주의"
+   },
+   {
+    "name": "LIFE",
+    "rank": 10,
     "verdict": "제외",
-    "why": "반도체 섹터 회피 권장 및 하락세"
+    "why": "JPM 실적 하향 및 다운그레이드 여파"
    },
    {
-    "ticker": "SPCX",
-    "rank": 17,
-    "verdict": "제외",
-    "why": "변동성 낮고 횡보세"
+    "name": "NSIT",
+    "rank": 7,
+    "verdict": "관찰",
+    "why": "AI 데이터센터 테마 유효하나 단기 변동성 존재"
    },
    {
-    "ticker": "NU",
+    "name": "CDW",
+    "rank": 2,
+    "verdict": "선택",
+    "why": "안정적인 가치 및 기술주 수급 흐름 반영"
+   },
+   {
+    "name": "VG",
+    "rank": 8,
+    "verdict": "관찰",
+    "why": "LNG 확장 모멘텀 있으나 추가 할인율 확인 필요"
+   },
+   {
+    "name": "INFY",
+    "rank": 6,
+    "verdict": "선택",
+    "why": "ADR 강세 동조화 및 안정적 기술 서비스 흐름"
+   },
+   {
+    "name": "TTMI",
+    "rank": 11,
+    "verdict": "관찰",
+    "why": "컨퍼런스 콜 앞두고 관망세 우세"
+   },
+   {
+    "name": "VRNS",
+    "rank": 9,
+    "verdict": "관찰",
+    "why": "급등 주가에 따른 거래량 및 모멘텀 지속 여부 확인"
+   },
+   {
+    "name": "ECPG",
+    "rank": 12,
+    "verdict": "관찰",
+    "why": "저평가 매력과 리스크 혼조"
+   },
+   {
+    "name": "VLO",
+    "rank": 13,
+    "verdict": "관찰",
+    "why": "디포짓리시트 관련 뉴스 영향 제한적"
+   },
+   {
+    "name": "CIFR",
     "rank": 18,
     "verdict": "제외",
-    "why": "마이너스 등락률 기록"
+    "why": "52주 신저가 기록 및 하락세 뚜렷"
+   },
+   {
+    "name": "FRMI",
+    "rank": 14,
+    "verdict": "관찰",
+    "why": "AMD 계약 호재 있으나 애널리스트 경계감 공존"
+   },
+   {
+    "name": "NOK",
+    "rank": 16,
+    "verdict": "제외",
+    "why": "보합권 등락으로 모멘텀 부족"
+   },
+   {
+    "name": "INTC",
+    "rank": 17,
+    "verdict": "제외",
+    "why": "중요한 갈림길에 위치하여 변동성 과도"
    }
   ],
   "mkt": {
-   "dir": "횡보",
-   "conf": 49,
-   "why": "전일 지수 소폭 하락 및 VIX 상승으로 방향성 탐색 국면"
-  },
-  "day_picks": [],
-  "day_at": "22:35",
-  "day_brief": "개장 후 데이터와 실측 통계를 반영할 때, VFC는 갭 5.5% 상승 후 추가 상승이 제한되어 원칙에 따라 제외하며, 나머지 종목들은 뚜렷한 거래 모멘텀과 데이터 부합성을 보여주지 못해 보류합니다."
+   "dir": "상승",
+   "conf": 50,
+   "why": "S&P500 및 지수선물이 완만한 상승 우위를 보이고 있으나 과거 검증 실패 신호에 따라 중립적 시각 유지"
+  }
  }
 }
