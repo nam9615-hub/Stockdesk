@@ -29653,7 +29653,7 @@
      "r20": null,
      "b": 149900,
      "gap": 0.8,
-     "simOpen": 5.6,
+     "simOpen": 8.4,
      "tv": 1002,
      "tvx": 0,
      "idx": null
@@ -40110,7 +40110,7 @@
      "b": 115,
      "gap": -3.7,
      "idx": 0.36,
-     "simOpen": 5
+     "simOpen": 5.8
     },
     {
      "kind": "swing",
@@ -41048,7 +41048,7 @@
      "b": 218.22000122070312,
      "gap": 0.2,
      "idx": -0.08,
-     "simOpen": 0
+     "simOpen": 2.1
     },
     {
      "kind": "swing",
