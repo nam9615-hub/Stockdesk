@@ -29665,7 +29665,7 @@
      "r20": null,
      "b": 149900,
      "gap": 0.8,
-     "simOpen": 6.3,
+     "simOpen": 2.5,
      "tv": 1002,
      "tvx": 0,
      "idx": null
@@ -40381,7 +40381,8 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": -0.6
+     "r1": -0.6,
+     "r5": -10.5
     },
     {
      "ticker": "SEZL",
@@ -40389,7 +40390,8 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": 2.1
+     "r1": 2.1,
+     "r5": -0.1
     },
     {
      "ticker": "AMT",
@@ -40397,7 +40399,8 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": 0.2
+     "r1": 0.2,
+     "r5": 1.7
     },
     {
      "ticker": "SECZ",
@@ -40405,7 +40408,8 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": -14.1
+     "r1": -14.1,
+     "r5": -28.6
     },
     {
      "ticker": "PLNT",
@@ -42172,77 +42176,77 @@
      "rank": 1,
      "verdict": "선택",
      "why": "금리 하락 수혜",
-     "r1": null
+     "r1": -1.6
     },
     {
      "ticker": "APPN",
      "rank": 2,
      "verdict": "선택",
      "why": "소프트웨어 내 상대 강도",
-     "r1": null
+     "r1": -7.1
     },
     {
      "ticker": "ERIC",
      "rank": 3,
      "verdict": "선택",
      "why": "실적 개선 모멘텀",
-     "r1": null
+     "r1": -0.2
     },
     {
      "ticker": "TRU",
      "rank": 4,
      "verdict": "관찰",
      "why": "단기 모멘텀",
-     "r1": null
+     "r1": -1.1
     },
     {
      "ticker": "COMP",
      "rank": 5,
      "verdict": "관찰",
      "why": "부동산 테마 동조",
-     "r1": null
+     "r1": -5.5
     },
     {
      "ticker": "INTA",
      "rank": 6,
      "verdict": "관찰",
      "why": "AI 기대감",
-     "r1": null
+     "r1": -0.8
     },
     {
      "ticker": "SIG",
      "rank": 7,
      "verdict": "관찰",
      "why": "수급 개선",
-     "r1": null
+     "r1": 0.1
     },
     {
      "ticker": "WULF",
      "rank": 8,
      "verdict": "관찰",
      "why": "낙폭과대 반등",
-     "r1": null
+     "r1": -4.9
     },
     {
      "ticker": "ZG",
      "rank": 9,
      "verdict": "제외",
      "why": "Z와 중복",
-     "r1": null
+     "r1": -2.7
     },
     {
      "ticker": "ARQT",
      "rank": 10,
      "verdict": "제외",
      "why": "바이오 섹터 회피",
-     "r1": null
+     "r1": -1.2
     },
     {
      "ticker": "RGC",
      "rank": 11,
      "verdict": "제외",
      "why": "바이오 섹터 회피",
-     "r1": null
+     "r1": -5.8
     },
     {
      "ticker": "KD",
