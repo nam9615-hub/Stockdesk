@@ -1,79 +1,40 @@
 {
- "date": "2026-10-16",
+ "date": "2026-10-19",
  "at": "21:29",
  "data": {
-  "brief": "전일 S&P500의 견조한 흐름과 VIX 하락으로 인해 시장은 완만한 상승세를 이어갈 것으로 보입니다. 다만, 과거 추천 데이터의 낮은 적중률을 고려하여 바이오 및 반도체 섹터를 피하고, 금리 하락 수혜가 예상되는 부동산 플랫폼 위주로 보수적 포트폴리오를 구성했습니다.",
+  "brief": "전일 S&P500 하락에도 지수선물이 반등하며 에너지 섹터 중심의 상승 압력이 유입되고 있습니다. 과거 통계상 고확신도 오류와 하락장 제약을 감안하여 보수적 관점에서 종목을 선별합니다.",
   "picks": [
    {
-    "name": "Zillow Group, Inc.",
-    "ticker": "Z",
-    "score": 65,
-    "sector": "부동산",
+    "name": "Ovintiv Inc. (DE)",
+    "ticker": "OVV",
+    "score": 45,
+    "sector": "에너지",
     "basis": [
-     "실적"
+     "실적/수주계약"
     ],
-    "reason": "금리 하락으로 인한 주택 담보 대출 시장 회복의 직접적인 수혜가 예상됩니다. 기술적 반등과 함께 매크로 환경 개선이 주가 상승을 견인할 것입니다.",
-    "catalyst": "장기 금리 하락",
-    "risk": "주택 시장 수요 회복 지연",
+    "reason": "RBC의 목표가 상향 조정과 퍼미안 지역의 견조한 현금흐름 창출 능력이 긍정적으로 작용하고 있습니다. 투자의견 아웃퍼폼 유지와 함께 펀더멘털 개선 모멘텀이 유효합니다.",
+    "catalyst": "RBC 목표가 상향 ($90) 및 퍼미안 생산 호조",
+    "risk": "유가 변동성 및 에너지 섹터 전반의 수급 변화",
     "plan": {
      "engine": "R2.0",
      "strategy": "swing",
-     "atrPct": 3.87,
-     "stopPct": 5.8,
-     "targetPct": 11.61,
-     "rr": 2,
-     "maxHoldDays": 10,
-     "riskPct": 0.5,
-     "maxWeightPct": 10,
-     "weightPct": 8.18,
-     "qty": 13,
-     "notional": 409,
-     "decision": {
-      "version": "S2.0",
-      "action": "conditional",
-      "strategy": "swing",
-      "reasons": [
-       "재료 지속성 확인, 짧은 주기로 추세 재평가"
-      ],
-      "plannedHoldDays": 10,
-      "reviewAfterDays": 3,
-      "maxHoldDays": 10,
-      "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
-      "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
-      "allowAutoOrder": false
-     }
-    }
-   },
-   {
-    "name": "Appian Corporation",
-    "ticker": "APPN",
-    "score": 60,
-    "sector": "소프트웨어",
-    "basis": [
-     "추세지속"
-    ],
-    "reason": "AI 소프트웨어 부문에서 시티 등 주요 기관의 긍정적인 평가가 이어지고 있습니다. 업종 내 변동성에도 불구하고 기술적 추세가 강하게 유지되고 있습니다.",
-    "catalyst": "AI 업사이드 주목",
-    "risk": "실적 및 실행 리스크",
-    "plan": {
-     "engine": "R2.0",
-     "strategy": "swing",
-     "atrPct": 4.91,
-     "stopPct": 7.37,
-     "targetPct": 14.73,
+     "atrPct": 2.65,
+     "stopPct": 4,
+     "targetPct": 8,
      "rr": 2,
      "maxHoldDays": 5,
      "riskPct": 0.5,
      "maxWeightPct": 10,
-     "weightPct": 6.13,
+     "weightPct": 9.71,
      "qty": 7,
-     "notional": 307,
+     "notional": 485,
      "decision": {
       "version": "S2.0",
-      "action": "conditional",
-      "strategy": "swing",
+      "action": "watch",
+      "strategy": "watch",
       "reasons": [
-       "추세 중심의 짧은 스윙"
+       "하락 국면: 신규 진입 보류",
+       "지속 재료·추세 확인 전 관찰"
       ],
       "plannedHoldDays": 5,
       "reviewAfterDays": 3,
@@ -85,39 +46,81 @@
     }
    },
    {
-    "name": "Ericsson",
-    "ticker": "ERIC",
-    "score": 55,
-    "sector": "통신장비",
+    "name": "Northern Oil and Gas, Inc.",
+    "ticker": "NOG",
+    "score": 42,
+    "sector": "에너지",
     "basis": [
-     "실적"
+     "추세지속"
     ],
-    "reason": "어닝 서프라이즈 이후 시장의 평가가 변화하고 있어 추가 상승 동력이 확보되었습니다. 시장 전반의 참여 부족 속에서도 펀더멘털 개선이 확인되고 있습니다.",
-    "catalyst": "실적 모멘텀",
-    "risk": "기술주 전반의 수급 변동성",
+    "reason": "견조한 실적 기반의 가치주 매력이 부각되며 신규 매수 리포트가 유입되고 있습니다. 안정적인 자산 포트폴리오를 바탕으로 매수세가 지속될 가능성이 있습니다.",
+    "catalyst": "신규 매수 추천 및 밸류에이션 매력",
+    "risk": "원자재 가격 하락 시 주가 조정 압력",
     "plan": {
      "engine": "R2.0",
      "strategy": "swing",
-     "atrPct": 2.43,
-     "stopPct": 4,
-     "targetPct": 8,
+     "atrPct": 3.23,
+     "stopPct": 4.84,
+     "targetPct": 9.69,
      "rr": 2,
-     "maxHoldDays": 10,
+     "maxHoldDays": 5,
      "riskPct": 0.5,
      "maxWeightPct": 10,
-     "weightPct": 9.85,
-     "qty": 46,
-     "notional": 493,
+     "weightPct": 9.78,
+     "qty": 18,
+     "notional": 489,
      "decision": {
       "version": "S2.0",
-      "action": "conditional",
-      "strategy": "swing",
+      "action": "watch",
+      "strategy": "day-watch",
       "reasons": [
-       "재료 지속성 확인, 짧은 주기로 추세 재평가"
+       "하락 국면: 신규 진입 보류",
+       "단기 수급만 확인: 단타 재평가 후보, 자동 전환 아님"
       ],
-      "plannedHoldDays": 10,
+      "plannedHoldDays": 5,
       "reviewAfterDays": 3,
-      "maxHoldDays": 10,
+      "maxHoldDays": 5,
+      "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+      "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+      "allowAutoOrder": false
+     }
+    }
+   },
+   {
+    "name": "Matador Resources Company",
+    "ticker": "MTDR",
+    "score": 40,
+    "sector": "에너지",
+    "basis": [
+     "실적/수주계약"
+    ],
+    "reason": "스코티아뱅크의 커버리지 개시와 함께 구체적인 목표가가 제시되며 투자 심리가 개선되었습니다. 3분기 실적 발표를 앞두고 기대감이 반영되는 국면입니다.",
+    "catalyst": "스코티아뱅크 커버리지 개시 ($59 PT)",
+    "risk": "섹터 전반의 단기 차익실현 물량 출회 가능성",
+    "plan": {
+     "engine": "R2.0",
+     "strategy": "swing",
+     "atrPct": 3.05,
+     "stopPct": 4.57,
+     "targetPct": 9.15,
+     "rr": 2,
+     "maxHoldDays": 5,
+     "riskPct": 0.5,
+     "maxWeightPct": 10,
+     "weightPct": 9.2,
+     "qty": 8,
+     "notional": 460,
+     "decision": {
+      "version": "S2.0",
+      "action": "watch",
+      "strategy": "watch",
+      "reasons": [
+       "하락 국면: 신규 진입 보류",
+       "지속 재료·추세 확인 전 관찰"
+      ],
+      "plannedHoldDays": 5,
+      "reviewAfterDays": 3,
+      "maxHoldDays": 5,
       "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
       "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
       "allowAutoOrder": false
@@ -127,183 +130,180 @@
   ],
   "day_cands": [
    {
-    "name": "TransUnion",
-    "ticker": "TRU",
-    "score": 50,
-    "target_pct": 4,
-    "sector": "금융서비스",
-    "basis": [
-     "실적"
-    ],
-    "reason": "타임지 선정 혁신 기술 보유 및 아웃퍼폼 유지로 단기 모멘텀이 양호합니다. 목표가 하향에도 불구하고 기술적 지지력이 강합니다.",
-    "risk": "목표가 조정 리스크"
-   },
-   {
-    "name": "Compass, Inc.",
-    "ticker": "COMP",
-    "score": 45,
-    "target_pct": 5,
-    "sector": "부동산",
-    "basis": [
-     "추세지속"
-    ],
-    "reason": "Zillow와 함께 금리 하락 테마로 동반 상승 중이며 거래량 유입이 관찰됩니다. 낮은 주가 수준으로 인해 단기 변동성 매매에 적합합니다.",
-    "risk": "현금 흐름 가치 불확실성"
-   },
-   {
-    "name": "Intapp, Inc.",
-    "ticker": "INTA",
+    "name": "Crescent Energy Company",
+    "ticker": "CRGY",
     "score": 45,
     "target_pct": 3,
-    "sector": "소프트웨어",
+    "sector": "에너지",
     "basis": [
-     "실적"
+     "실적/수주계약"
     ],
-    "reason": "AI 워크플로우 신뢰도 강화와 실적 발표 기대감이 공존합니다. 기술적 반등 흐름이 뚜렷하여 단기 차익 실현이 가능합니다.",
-    "risk": "실적 발표 전 경계감"
+    "reason": "두 자릿수 상승률을 기록하며 강한 모멘텀을 형성하고 있어 단기 트레이딩 관점에서 접근 가능합니다. 실적 발표 일정과 연계된 변동성을 활용합니다.",
+    "risk": "급등에 따른 단기 피로감 및 차익실현"
    },
    {
-    "name": "Signet Jewelers Limited",
-    "ticker": "SIG",
+    "name": "Antero Resources Corporation",
+    "ticker": "AR",
+    "score": 43,
+    "target_pct": 3,
+    "sector": "에너지",
+    "basis": [
+     "정책테마"
+    ],
+    "reason": "유럽의 천연가스 수요 증가와 U.S. LNG 관련 수혜 기대감으로 거래가 집중되고 있습니다. 섹터 내 상대적 강세가 유지되는 중입니다.",
+    "risk": "천연가스 선물 가격 변동성에 민감"
+   },
+   {
+    "name": "Murphy Oil Corporation",
+    "ticker": "MUR",
     "score": 40,
-    "target_pct": 4,
-    "sector": "소비재",
+    "target_pct": 3,
+    "sector": "에너지",
     "basis": [
-     "거래량급증"
+     "실적/수주계약"
     ],
-    "reason": "큰 폭의 거래량과 함께 급등세를 보이고 있어 단기 모멘텀 매매 구간에 진입했습니다. 급등 후 추가 상승 기대가 유효합니다.",
-    "risk": "급등 후 차익 실현 매물"
+    "reason": "생산량 성장과 해상 탐사 진척 소식이 전해지며 견조한 흐름을 보이고 있습니다. 50달러 미만의 주가 수준에서 펀더멘털 대비 저평가 인식이 존재합니다.",
+    "risk": "글로벌 에너지 시추 환경 변화"
    },
    {
-    "name": "TeraWulf Inc.",
-    "ticker": "WULF",
-    "score": 35,
-    "target_pct": 6,
+    "name": "Talos Energy, Inc.",
+    "ticker": "TALO",
+    "score": 38,
+    "target_pct": 3,
     "sector": "에너지",
     "basis": [
      "낙폭과대"
     ],
-    "reason": "주간 최대 낙폭 기록 후 기관의 저평가 분석이 나오고 있어 기술적 반등 구간입니다. 낙폭 과대에 따른 반발 매수세 유입 가능성이 있습니다.",
-    "risk": "추세 하락 심화 가능성"
+    "reason": "소형주 중 성장 잠재력이 부각되며 저가 매수세가 유입되고 있습니다. 탄탄한 자산 가치에 기반한 변동성 매매가 가능합니다.",
+    "risk": "소형주 특유의 높은 변동성 및 유동성 리스크"
+   },
+   {
+    "name": "Vermilion Energy Inc.",
+    "ticker": "VET",
+    "score": 35,
+    "target_pct": 2,
+    "sector": "에너지",
+    "basis": [
+     "실적/수주계약"
+    ],
+    "reason": "매출 호조를 바탕으로 저평가 매력이 부각되며 상승세를 기록 중입니다. 안정적인 실적 모멘텀이 단기 지지력을 제공합니다.",
+    "risk": "환율 및 에너지 가격 하락 위험"
    }
   ],
   "cands": [
    {
-    "ticker": "Z",
+    "ticker": "CRGY",
     "rank": 1,
     "verdict": "선택",
-    "why": "금리 하락 수혜"
+    "why": "에너지 섹터 상승률 최상위 및 실적 일정 모멘텀"
    },
    {
-    "ticker": "APPN",
+    "ticker": "PAYP",
     "rank": 2,
-    "verdict": "선택",
-    "why": "소프트웨어 내 상대 강도"
+    "verdict": "관찰",
+    "why": "대형주 밸류에이션 이슈 혼재"
    },
    {
-    "ticker": "ERIC",
+    "ticker": "MTDR",
     "rank": 3,
     "verdict": "선택",
-    "why": "실적 개선 모멘텀"
+    "why": "목표가 제시된 신규 커버리지 종목"
    },
    {
-    "ticker": "TRU",
+    "ticker": "AR",
     "rank": 4,
-    "verdict": "관찰",
-    "why": "단기 모멘텀"
+    "verdict": "선택",
+    "why": "LNG 및 천연가스 수급 모멘텀 지속"
    },
    {
-    "ticker": "COMP",
+    "ticker": "NOG",
     "rank": 5,
-    "verdict": "관찰",
-    "why": "부동산 테마 동조"
+    "verdict": "선택",
+    "why": "가치주 매수세 유입 및 실적 기대감"
    },
    {
-    "ticker": "INTA",
+    "ticker": "SM",
     "rank": 6,
     "verdict": "관찰",
-    "why": "AI 기대감"
+    "why": "에너지 섹터 전반의 흐름 추종"
    },
    {
-    "ticker": "SIG",
+    "ticker": "OVV",
     "rank": 7,
-    "verdict": "관찰",
-    "why": "수급 개선"
+    "verdict": "선택",
+    "why": "RBC 목표가 상향 및 현금흐름 호조"
    },
    {
-    "ticker": "WULF",
+    "ticker": "MUR",
     "rank": 8,
-    "verdict": "관찰",
-    "why": "낙폭과대 반등"
+    "verdict": "선택",
+    "why": "생산 성장 및 펀더멘털 양호"
    },
    {
-    "ticker": "ZG",
+    "ticker": "TALO",
     "rank": 9,
-    "verdict": "제외",
-    "why": "Z와 중복"
+    "verdict": "선택",
+    "why": "소형주 잠재력 및 저가 매수세"
    },
    {
-    "ticker": "ARQT",
+    "ticker": "EQNR",
     "rank": 10,
-    "verdict": "제외",
-    "why": "바이오 섹터 회피"
+    "verdict": "관찰",
+    "why": "유럽 ADR 추종 흐름"
    },
    {
-    "ticker": "RGC",
+    "ticker": "FMX",
     "rank": 11,
-    "verdict": "제외",
-    "why": "바이오 섹터 회피"
+    "verdict": "관찰",
+    "why": "개별 애널리스트 레이팅 영향"
    },
    {
-    "ticker": "KD",
+    "ticker": "DNOW",
     "rank": 12,
-    "verdict": "제외",
-    "why": "기술적 불확실성"
+    "verdict": "관찰",
+    "why": "투자자 컨퍼런스 개최 예정"
    },
    {
-    "ticker": "FIGR",
+    "ticker": "TRGP",
     "rank": 13,
-    "verdict": "제외",
-    "why": "섹터 매력 부족"
+    "verdict": "관찰",
+    "why": "지수 선물 하락 압력 영향 경계"
    },
    {
-    "ticker": "KRMN",
+    "ticker": "VET",
     "rank": 14,
-    "verdict": "제외",
-    "why": "단기 급등 경계"
+    "verdict": "선택",
+    "why": "매출 호조에 따른 저평가 해소 기대"
    },
    {
-    "ticker": "CRWV",
+    "ticker": "INTC",
     "rank": 15,
     "verdict": "제외",
-    "why": "단기 급등 경계"
+    "why": "실적 및 실행력 이슈 모니터링 필요"
    },
    {
     "ticker": "NVDA",
     "rank": 16,
     "verdict": "제외",
-    "why": "반도체 섹터 회피"
-   },
-   {
-    "ticker": "INTC",
-    "rank": 17,
-    "verdict": "제외",
-    "why": "반도체 섹터 회피"
+    "why": "지수 약세 속 반도체 섹터 회피 권고"
    },
    {
     "ticker": "CCC",
+    "rank": 17,
+    "verdict": "제외",
+    "why": "실적 리스크 잠재"
+   },
+   {
+    "ticker": "CRWV",
     "rank": 18,
     "verdict": "제외",
-    "why": "등급 하향"
+    "why": "기술주 급락 여파로 변동성 과도"
    }
   ],
   "mkt": {
-   "dir": "상승",
-   "conf": 55,
-   "why": "VIX 하락과 금리 안정세가 증시 상승 지지"
-  },
-  "day_picks": [],
-  "day_at": "22:34",
-  "day_brief": "개장 후 시가 대비 급락이나 유의미한 변동성을 보인 종목이 없고, 대부분 0.1~0.7% 소폭 상승에 그쳐 단타 모멘텀이 확인되지 않아 전 종목 제외합니다."
+   "dir": "횡보",
+   "conf": 45,
+   "why": "전일 지수 하락과 선물 반등이 엇갈리며 방향성 탐색 국면 지속"
+  }
  }
 }
