@@ -31361,12 +31361,14 @@
      "p0": 259750,
      "r1": -0.8,
      "r5": 3.9,
-     "r20": null,
+     "r20": -14.7,
      "tv": 1043774,
      "tvx": 0.2,
      "b": 261000,
      "gap": 0.5,
-     "idx": null
+     "idx": null,
+     "mfe": 9.4,
+     "mae": -21.6
     },
     {
      "kind": "swing",
@@ -31408,12 +31410,14 @@
      "p0": 253500,
      "r1": -0.4,
      "r5": -1.6,
-     "r20": null,
+     "r20": -7,
      "tv": 22026,
      "tvx": 0.1,
      "b": 256000,
      "gap": 1,
-     "idx": null
+     "idx": null,
+     "mfe": 4.7,
+     "mae": -18.4
     },
     {
      "kind": "swing",
@@ -31455,12 +31459,14 @@
      "p0": 1819000,
      "r1": 0.9,
      "r5": -1.6,
-     "r20": null,
+     "r20": -29.1,
      "tv": 1827961,
      "tvx": 0.3,
      "b": 1810000,
      "gap": -0.5,
-     "idx": null
+     "idx": null,
+     "mfe": 6.9,
+     "mae": -34.6
     }
    ],
    "cstat": {
@@ -41373,7 +41379,8 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": -4.3
+     "r1": -4.3,
+     "r5": -9
     },
     {
      "ticker": "INFY",
@@ -41381,7 +41388,8 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": -1
+     "r1": -1,
+     "r5": 9.1
     },
     {
      "ticker": "TTMI",
@@ -41389,7 +41397,8 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": -8.9
+     "r1": -8.9,
+     "r5": -15.8
     },
     {
      "ticker": "VRNS",
@@ -41397,7 +41406,8 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": -1.7
+     "r1": -1.7,
+     "r5": 1.7
     },
     {
      "ticker": "ECPG",
@@ -42094,7 +42104,7 @@
      "b": 94.05000305175781,
      "gap": 1,
      "idx": -0.41,
-     "simOpen": -0.5
+     "simOpen": -1.5
     },
     {
      "kind": "swing",
@@ -42546,7 +42556,7 @@
      "b": 31.31999969482422,
      "gap": -0.4,
      "idx": 0.09,
-     "simOpen": -1.8
+     "simOpen": 2.9
     },
     {
      "kind": "swing",
@@ -42644,7 +42654,7 @@
      "b": 10.569999694824219,
      "gap": -1.3,
      "idx": 0.09,
-     "simOpen": -2.2
+     "simOpen": 0.8
     }
    ],
    "day2": {
@@ -43138,77 +43148,77 @@
      "rank": 1,
      "verdict": "관찰",
      "why": "임상 성공 및 유증 발표로 변동성 확대.",
-     "r1": null
+     "r1": 0.3
     },
     {
      "ticker": "CLF",
      "rank": 2,
      "verdict": "관찰",
      "why": "철강 가격 상승 및 가이드라인 상향.",
-     "r1": null
+     "r1": -0.2
     },
     {
      "ticker": "MANE",
      "rank": 3,
      "verdict": "관찰",
      "why": "탈모 치료제 임상 3상 성공 모멘텀.",
-     "r1": null
+     "r1": 5.4
     },
     {
      "ticker": "AGIO",
      "rank": 4,
      "verdict": "관찰",
      "why": "FDA 의약품 승인 이슈 대기 중.",
-     "r1": null
+     "r1": 4.6
     },
     {
      "ticker": "PBLS",
      "rank": 5,
      "verdict": "관찰",
      "why": "ESMO 데이터 발표 기대감.",
-     "r1": null
+     "r1": 6.6
     },
     {
      "ticker": "ARQT",
      "rank": 6,
      "verdict": "관찰",
      "why": "애널리스트 상향 조정.",
-     "r1": null
+     "r1": 2.9
     },
     {
      "ticker": "AXTI",
      "rank": 7,
      "verdict": "관찰",
      "why": "데이터센터 관련 저평가 수혜 기대.",
-     "r1": null
+     "r1": 4.6
     },
     {
      "ticker": "VRDN",
      "rank": 8,
      "verdict": "관찰",
      "why": "신제품 초기 매출 호조.",
-     "r1": null
+     "r1": 6.3
     },
     {
      "ticker": "MXL",
      "rank": 9,
      "verdict": "제외",
      "why": "AI 투자 우려 및 반도체 섹터 회피.",
-     "r1": null
+     "r1": -1.5
     },
     {
      "ticker": "FROG",
      "rank": 10,
      "verdict": "관찰",
      "why": "성장주 전반 강세 연동.",
-     "r1": null
+     "r1": 2.5
     },
     {
      "ticker": "CLDX",
      "rank": 11,
      "verdict": "제외",
      "why": "주주 조사 이슈로 고평가 부담.",
-     "r1": null
+     "r1": 1
     },
     {
      "ticker": "PRAX",
