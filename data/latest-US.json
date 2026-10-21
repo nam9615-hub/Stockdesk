@@ -302,6 +302,90 @@
    "dir": "횡보",
    "conf": 45,
    "why": "혼조세 장세와 매크로 지표 변동성으로 방향성 탐색 국면"
-  }
+  },
+  "day_picks": [
+   {
+    "name": "National Energy Services Reunited",
+    "ticker": "NESR",
+    "score": 75,
+    "target_pct": 3,
+    "sector": "에너지",
+    "basis": [
+     "낙폭과대"
+    ],
+    "reason": "사전 근거인 기술적 반등 시나리오가 개장 후 +3.4% 상승하며 정확히 일치함. 시장 충격에도 유일하게 유의미한 양봉 흐름을 보임.",
+    "risk": "급격한 변동성 주의",
+    "plan": {
+     "engine": "R2.0",
+     "strategy": "day",
+     "atrPct": 6.08,
+     "stopPct": 4,
+     "targetPct": 5.4,
+     "rr": 1.35,
+     "maxHoldDays": 0,
+     "riskPct": 0.5,
+     "maxWeightPct": 8,
+     "weightPct": 7.89,
+     "qty": 18,
+     "notional": 395,
+     "decision": {
+      "version": "S2.0",
+      "action": "conditional",
+      "strategy": "day",
+      "reasons": [
+       "개장 후 가격·수급 확인이 필요한 당일 전략"
+      ],
+      "plannedHoldDays": 0,
+      "reviewAfterDays": 0,
+      "maxHoldDays": 0,
+      "entryRule": "확정 시점 이후 가격만 사용 · 갭 과열·시가 붕괴 시 보류",
+      "exitRule": "손절·목표 중 먼저 도달한 조건 또는 당일 종가",
+      "allowAutoOrder": false
+     }
+    }
+   },
+   {
+    "name": "Klaviyo, Inc. Series A",
+    "ticker": "KVYO",
+    "score": 60,
+    "target_pct": 4,
+    "sector": "소프트웨어",
+    "basis": [
+     "섹터동조화"
+    ],
+    "reason": "개장 후 마이너스 출발했으나 즉각 플러스 전환하며 세일즈포스 인수 여파에 따른 동종 업계 수혜 기대감이 시장에 반영되고 있음.",
+    "risk": "거래량 감소 시 추세 이탈 가능성",
+    "plan": {
+     "engine": "R2.0",
+     "strategy": "day",
+     "atrPct": 5.28,
+     "stopPct": 4,
+     "targetPct": 5.4,
+     "rr": 1.35,
+     "maxHoldDays": 0,
+     "riskPct": 0.5,
+     "maxWeightPct": 8,
+     "weightPct": 7.84,
+     "qty": 20,
+     "notional": 392,
+     "decision": {
+      "version": "S2.0",
+      "action": "conditional",
+      "strategy": "day",
+      "reasons": [
+       "개장 후 가격·수급 확인이 필요한 당일 전략"
+      ],
+      "plannedHoldDays": 0,
+      "reviewAfterDays": 0,
+      "maxHoldDays": 0,
+      "entryRule": "확정 시점 이후 가격만 사용 · 갭 과열·시가 붕괴 시 보류",
+      "exitRule": "손절·목표 중 먼저 도달한 조건 또는 당일 종가",
+      "allowAutoOrder": false
+     }
+    }
+   }
+  ],
+  "day_at": "22:34",
+  "day_brief": "개장 후 데이터가 선정 논리와 부합하며 기술적 반등 및 추세 유지가 확인되는 종목을 선별했습니다. 나머지 종목들은 데이터상 모멘텀 지속성이 불분명하여 배제했습니다."
  }
 }
