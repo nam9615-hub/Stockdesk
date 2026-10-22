@@ -1,73 +1,38 @@
 {
- "date": "2026-10-21",
+ "date": "2026-10-22",
  "at": "21:29",
  "data": {
-  "brief": "혼조세 장세 속에서 인수합병(M&A) 및 실적 기대주를 선별하여 스윙 및 단타 후보로 구성했습니다. 과거 검증 통계에 기반하여 바이오 및 반도체 섹터는 제외하고 안정적인 실적 및 모멘텀 종목을 우선했습니다.",
+  "brief": "전일 S&P500 상승에도 지수선물이 하락하고 VIX가 급등하여 변동성이 확대되는 혼조 국면입니다. 과거 실측 통계와 과도한 확신 교정(80대 확신도 0% 적중)을 반영하여 보수적이고 선별적인 접근을 취합니다.",
+  "mkt": {
+   "dir": "횡보",
+   "conf": 45,
+   "why": "선물 하락과 VIX 급등으로 인한 변동성 장세 예상"
+  },
   "picks": [
    {
-    "name": "Hasbro, Inc.",
-    "ticker": "HAS",
-    "score": 55,
-    "sector": "완구",
+    "name": "Alamar Biosciences, Inc.",
+    "ticker": "ALMR",
+    "score": 45,
+    "sector": "바이오",
     "basis": [
      "뉴스재료"
     ],
-    "reason": "시티그룹의 목표가 상향과 매직 모멘텀 및 라이선스 확장을 통한 실적 호조 기대감이 긍정적입니다. 비용 통제를 통한 이익률 개선세가 지속될 것으로 보입니다.",
-    "catalyst": "목표가 상향 및 실적 모멘텀",
-    "risk": "소비재 섹터 전반의 변동성 주의",
+    "reason": "창업자 런닝 스톡 및 주요 기관 동향 뉴스가 주목받고 있습니다. 단, 과거 바이오 섹터의 낮은 성공률을 감안해 보수적으로 접근합니다.",
+    "catalyst": "창업자 관련 지분 및 성장 모멘텀",
+    "risk": "변동성 확대 및 섹터 약세",
     "plan": {
      "engine": "R2.0",
      "strategy": "swing",
-     "atrPct": 2.97,
-     "stopPct": 4.46,
-     "targetPct": 8.91,
+     "atrPct": 10.3,
+     "stopPct": 9,
+     "targetPct": 18,
      "rr": 2,
      "maxHoldDays": 5,
      "riskPct": 0.5,
      "maxWeightPct": 10,
-     "weightPct": 8.76,
-     "qty": 4,
-     "notional": 438,
-     "decision": {
-      "version": "S2.0",
-      "action": "conditional",
-      "strategy": "swing",
-      "reasons": [
-       "추세 중심의 짧은 스윙"
-      ],
-      "plannedHoldDays": 5,
-      "reviewAfterDays": 3,
-      "maxHoldDays": 5,
-      "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
-      "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
-      "allowAutoOrder": false
-     }
-    }
-   },
-   {
-    "name": "Equifax, Inc.",
-    "ticker": "EFX",
-    "sector": "금융",
-    "basis": [
-     "뉴스재료"
-    ],
-    "reason": "도이체방크의 매수 의견 유지 및 목표가 상향 조정이 주가에 긍정적으로 작용하고 있습니다. AI 기반 비용 효율성이 마감 실적에 기여할 것으로 기대됩니다.",
-    "catalyst": "목표가 상향 및 AI 비용 효율성",
-    "risk": "모기지 시장 역풍에 따른 실적 둔화 우려",
-    "score": 50,
-    "plan": {
-     "engine": "R2.0",
-     "strategy": "swing",
-     "atrPct": 3.16,
-     "stopPct": 4.74,
-     "targetPct": 9.48,
-     "rr": 2,
-     "maxHoldDays": 5,
-     "riskPct": 0.5,
-     "maxWeightPct": 10,
-     "weightPct": 7.06,
-     "qty": 2,
-     "notional": 353,
+     "weightPct": 5.03,
+     "qty": 8,
+     "notional": 252,
      "decision": {
       "version": "S2.0",
       "action": "watch",
@@ -85,29 +50,69 @@
     }
    },
    {
-    "name": "EquipmentShare.com Inc",
-    "ticker": "EQPT",
-    "sector": "산업재",
-    "basis": [
-     "실적"
-    ],
-    "reason": "2026년 재무 전망 상향 조정과 강력한 고객 수요가 주가 상승 동력으로 작용하고 있습니다. 연속적인 업계 수상으로 경쟁력을 입증했습니다.",
-    "catalyst": "가이드라인 상향 및 고객 수요",
-    "risk": "경기 사이클 민감도 주의",
+    "name": "Appian Corporation",
+    "ticker": "APPN",
     "score": 50,
+    "sector": "소프트웨어",
+    "basis": [
+     "추세지속"
+    ],
+    "reason": "기업용 소프트웨어 리더로서 매수 구간 근처에서 반등을 시도하고 있습니다. 소프트웨어 섹터의 단기 모멘텀을 활용합니다.",
+    "catalyst": "소프트웨어 섹터 반등 및 매수세 유입",
+    "risk": "단기 박스권 저항",
     "plan": {
      "engine": "R2.0",
      "strategy": "swing",
-     "atrPct": 9.58,
-     "stopPct": 9,
-     "targetPct": 18,
+     "atrPct": 5.49,
+     "stopPct": 8.23,
+     "targetPct": 16.47,
+     "rr": 2,
+     "maxHoldDays": 5,
+     "riskPct": 0.5,
+     "maxWeightPct": 10,
+     "weightPct": 5.85,
+     "qty": 6,
+     "notional": 292,
+     "decision": {
+      "version": "S2.0",
+      "action": "conditional",
+      "strategy": "swing",
+      "reasons": [
+       "추세 중심의 짧은 스윙"
+      ],
+      "plannedHoldDays": 5,
+      "reviewAfterDays": 3,
+      "maxHoldDays": 5,
+      "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+      "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+      "allowAutoOrder": false
+     }
+    }
+   },
+   {
+    "name": "Cadeler A/S",
+    "ticker": "CDLR",
+    "score": 48,
+    "sector": "에너지",
+    "basis": [
+     "수주계약"
+    ],
+    "reason": "해상 풍력 유지보수 협력 및 MoU 체결 소식이 긍정적입니다. 친환경 인프라 관련 실질적 계약 재료가 뒷받침됩니다.",
+    "catalyst": "해상 풍력 유지보수 계약 체결",
+    "risk": "시장 전체 리스크에 따른 변동성",
+    "plan": {
+     "engine": "R2.0",
+     "strategy": "swing",
+     "atrPct": 3.11,
+     "stopPct": 4.67,
+     "targetPct": 9.33,
      "rr": 2,
      "maxHoldDays": 10,
      "riskPct": 0.5,
      "maxWeightPct": 10,
-     "weightPct": 5.3,
-     "qty": 17,
-     "notional": 265,
+     "weightPct": 9.93,
+     "qty": 20,
+     "notional": 497,
      "decision": {
       "version": "S2.0",
       "action": "conditional",
@@ -127,265 +132,175 @@
   ],
   "day_cands": [
    {
-    "name": "Lionsgate Studios Corp",
-    "ticker": "LION",
-    "score": 50,
+    "name": "Strive, Inc.",
+    "ticker": "ASST",
+    "score": 40,
+    "target_pct": 4,
+    "sector": "금융",
+    "basis": [
+     "정책테말"
+    ],
+    "reason": "스테이블코인 규제 관련 명확한 프레임워크 기대감으로 크립토 관련주가 강세를 보이고 있습니다. 단기 모멘텀 추종에 주의합니다.",
+    "risk": "정책 불확실성"
+   },
+   {
+    "name": "Skydance Corporation",
+    "ticker": "SKYD",
+    "score": 42,
     "target_pct": 4,
     "sector": "엔터테인먼트",
     "basis": [
      "뉴스재료"
     ],
-    "reason": "레전더리 엔터테인먼트의 인수 제안 보도로 인해 단기 모멘텀이 강하게 유입되었습니다. 추가 인수전 가능성이 주목됩니다.",
-    "risk": "인수 무산 시 급락 가능성"
+    "reason": "잠재적 대규모 투자 유치 소식으로 급등세를 보이고 있습니다. 다만 엔터테인먼트 섹터의 과거 통계를 고려해 짧게 대응합니다.",
+    "risk": "급등 후 변동성"
    },
    {
-    "name": "SELLAS Life Sciences Group, Inc",
-    "ticker": "SLS",
+    "name": "Netskope, Inc.",
+    "ticker": "NTSK",
     "score": 45,
-    "target_pct": 3,
-    "sector": "제약",
-    "basis": [
-     "뉴스재료"
-    ],
-    "reason": "CEO의 근속 기념 메시지와 함께 리테일 투자자들의 매수세가 집중되고 있습니다. 프리마켓 급등 이후 변동성 거래가 예상됩니다.",
-    "risk": "바이오 섹터 회피 성향 및 변동성"
-   },
-   {
-    "name": "Braze, Inc.",
-    "ticker": "BRZE",
-    "score": 55,
     "target_pct": 5,
-    "sector": "소프트웨어",
+    "sector": "보안",
     "basis": [
-     "뉴스재료"
+     "추세지속"
     ],
-    "reason": "세일즈포스의 대규모 인수 발표로 주가가 급등했으며 추가 소프트웨어 인수 기대감이 형성되었습니다. 거래량 유입에 따른 단기 트레이딩이 유효합니다.",
-    "risk": "급등에 따른 차익실현 매물 압박"
+    "reason": "사이버 보안 섹터 내 유망 종목으로 부각되며 상승 흐름을 보이고 있습니다. 섹터 내 동반 매수세를 활용합니다.",
+    "risk": "차익실현 매물 출회"
    },
    {
-    "name": "Klaviyo, Inc. Series A",
-    "ticker": "KVYO",
-    "score": 50,
+    "name": "Innodata Inc.",
+    "ticker": "INOD",
+    "score": 46,
+    "target_pct": 5,
+    "sector": "AI",
+    "basis": [
+     "추세지속"
+    ],
+    "reason": "12분기 연속 성장 스트릭과 실적 기대감이 지속되고 있습니다. 견조한 펀더멘털을 바탕으로 단기 반등을 노립니다.",
+    "risk": "밸류에이션 부담"
+   },
+   {
+    "name": "Firefly Aerospace Inc.",
+    "ticker": "FLY",
+    "score": 43,
     "target_pct": 4,
-    "sector": "소프트웨어",
+    "sector": "우주항공",
     "basis": [
      "뉴스재료"
     ],
-    "reason": "세일즈포스의 브레이즈 인수 여파로 동종 소프트웨어 기업들에 대한 인수 기대감이 확산되고 있습니다. 섹터 전반의 온기가 유지될 수 있습니다.",
-    "risk": "뉴스 소멸 시 되돌림 가능성"
-   },
-   {
-    "name": "National Energy Services Reunited",
-    "ticker": "NESR",
-    "score": 40,
-    "target_pct": 3,
-    "sector": "에너지",
-    "basis": [
-     "뉴스재료"
-    ],
-    "reason": "아람코의 리튬 프로젝트 수주 소식에도 불구하고 주가 하락 반응이 있었으나 낙폭 과대에 따른 기술적 반등을 노릴 수 있습니다.",
-    "risk": "수주 실적 대비 단기 주가 하방 압력"
+    "reason": "NASA 달 임무 진척 소식으로 상승세를 기록 중입니다. 모멘텀 지속 여부를 장중 확인해야 합니다.",
+    "risk": "단기 재료 소멸 가능성"
    }
   ],
   "cands": [
    {
-    "ticker": "BRZE",
+    "ticker": "ASST",
     "rank": 1,
-    "verdict": "선택",
-    "why": "세일즈포스 피인수 모멘텀 지속"
+    "verdict": "관찰",
+    "why": "크립토 규제 기대감이나 단기 과열 주의"
    },
    {
-    "tockernull": null,
-    "ticker": "LION",
+    "ticker": "ALMR",
     "rank": 2,
     "verdict": "선택",
-    "why": "인수 제안 보도에 따른 강한 모멘텀"
+    "why": "창업자 관련 모멘텀 및 안정적 상승세"
    },
    {
-    "ticker": "SLS",
+    "ticker": "SKYD",
     "rank": 3,
     "verdict": "관찰",
-    "why": "리테일 중심 변동성, 추격 주의"
+    "why": "투자 유치 호재이나 섹터 특성 감안"
    },
    {
-    "ticker": "KVYO",
+    "ticker": "NTSK",
     "rank": 4,
+    "verdict": "관찰",
+    "why": "보안 섹터 관심이나 추가 확인 필요"
+   },
+   {
+    "ticker": "INOD",
+    "rank": 5,
+    "verdict": "관찰",
+    "why": "지속 성장세이나 단기 이격 주의"
+   },
+   {
+    "ticker": "SMCI",
+    "rank": 6,
+    "verdict": "관찰",
+    "why": "AI 랙 신제품 발표이나 지수 선물 하락 부담"
+   },
+   {
+    "ticker": "SEI",
+    "rank": 7,
+    "verdict": "관찰",
+    "why": "펀더멘털 양호하나 2000 소형주 특성 유의"
+   },
+   {
+    "ticker": "APPN",
+    "rank": 8,
     "verdict": "선택",
-    "why": "소프트웨어 M&A 기대감 수혜"
+    "why": "소프트웨어 리더 반등 시도"
+   },
+   {
+    "ticker": "CDLR",
+    "rank": 9,
+    "verdict": "선택",
+    "why": "해상풍력 수주 및 협력 재료 유효"
+   },
+   {
+    "ticker": "CRL",
+    "rank": 10,
+    "verdict": "관찰",
+    "why": "헬스케어 섹터 전반 온기이나 대형주 흐름 관망"
+   },
+   {
+    "ticker": "KYIV",
+    "rank": 11,
+    "verdict": "제외",
+    "why": "실적 발표 대기 중으로 모멘텀 대기"
+   },
+   {
+    "ticker": "APLD",
+    "rank": 12,
+    "verdict": "관찰",
+    "why": "변동성 큰 디지털 인프라 종목"
+   },
+   {
+    "ticker": "FLY",
+    "rank": 13,
+    "verdict": "관찰",
+    "why": "NASA 모멘텀이나 단기 급등 부담"
    },
    {
     "ticker": "EQPT",
-    "rank": 5,
-    "verdict": "선택",
-    "why": "실적 전망 상향 및 견조한 수요"
-   },
-   {
-    "ticker": "TLK",
-    "rank": 6,
-    "verdict": "제외",
-    "why": "국채 금리 상승에 따른 거시적 부담"
-   },
-   {
-    "ticker": "EFX",
-    "rank": 7,
-    "verdict": "선택",
-    "why": "목표가 상향 및 AI 비용 효율성"
-   },
-   {
-    "ticker": "HAS",
-    "rank": 8,
-    "verdict": "선택",
-    "why": "애널리스트 목표가 상향 및 실적 기대"
-   },
-   {
-    "ticker": "NESR",
-    "rank": 9,
-    "verdict": "관찰",
-    "why": "수주 후 주가 하락세 진정 여부 확인 필요"
-   },
-   {
-    "ticker": "SPHR",
-    "rank": 10,
-    "verdict": "제외",
-    "why": "매도 의견 리포트 우세"
-   },
-   {
-    "ticker": "HTFL",
-    "rank": 11,
-    "verdict": "관찰",
-    "why": "실적 발표 대기 중"
-   },
-   {
-    "ticker": "BB",
-    "rank": 12,
-    "verdict": "관찰",
-    "why": "자동차 소프트웨어 연구 결과 발표 모멘텀 약함"
-   },
-   {
-    "ticker": "HSAI",
-    "rank": 13,
-    "verdict": "관찰",
-    "why": "실적 발표 일정 대기"
-   },
-   {
-    "ticker": "SRPT",
     "rank": 14,
     "verdict": "제외",
-    "why": "바이오 섹터 회피 지침 적용"
-   },
-   {
-    "ticker": "CRWV",
-    "rank": 15,
-    "verdict": "관찰",
-    "why": "AI 인프라 테마 소폭 상승 중"
-   },
-   {
-    "ticker": "INTC",
-    "rank": 16,
-    "verdict": "제외",
-    "why": "반도체 섹터 회피 지침 적용 및 하락세"
+    "why": "개별 수상 재료의 단발성 가능성"
    },
    {
     "ticker": "SPCX",
+    "rank": 15,
+    "verdict": "제외",
+    "why": "테슬라 실적 부진 여파 연동 우려"
+   },
+   {
+    "ticker": "NFLX",
+    "rank": 16,
+    "verdict": "제외",
+    "why": "목표가 하향 및 하락세(-5.3%)"
+   },
+   {
+    "ticker": "NVDA",
     "rank": 17,
     "verdict": "관찰",
-    "why": "실적 호조이나 모멘텀 제한적"
+    "why": "AI 섹터 연동이나 지수 압박"
    },
    {
-    "ticker": "NU",
+    "ticker": "AAL",
     "rank": 18,
     "verdict": "제외",
-    "why": "레버리지 ETF 청산 이슈"
+    "why": "약한 가이드라인으로 상승 모멘텀 부족"
    }
-  ],
-  "mkt": {
-   "dir": "횡보",
-   "conf": 45,
-   "why": "혼조세 장세와 매크로 지표 변동성으로 방향성 탐색 국면"
-  },
-  "day_picks": [
-   {
-    "name": "National Energy Services Reunited",
-    "ticker": "NESR",
-    "score": 75,
-    "target_pct": 3,
-    "sector": "에너지",
-    "basis": [
-     "낙폭과대"
-    ],
-    "reason": "사전 근거인 기술적 반등 시나리오가 개장 후 +3.4% 상승하며 정확히 일치함. 시장 충격에도 유일하게 유의미한 양봉 흐름을 보임.",
-    "risk": "급격한 변동성 주의",
-    "plan": {
-     "engine": "R2.0",
-     "strategy": "day",
-     "atrPct": 6.08,
-     "stopPct": 4,
-     "targetPct": 5.4,
-     "rr": 1.35,
-     "maxHoldDays": 0,
-     "riskPct": 0.5,
-     "maxWeightPct": 8,
-     "weightPct": 7.89,
-     "qty": 18,
-     "notional": 395,
-     "decision": {
-      "version": "S2.0",
-      "action": "conditional",
-      "strategy": "day",
-      "reasons": [
-       "개장 후 가격·수급 확인이 필요한 당일 전략"
-      ],
-      "plannedHoldDays": 0,
-      "reviewAfterDays": 0,
-      "maxHoldDays": 0,
-      "entryRule": "확정 시점 이후 가격만 사용 · 갭 과열·시가 붕괴 시 보류",
-      "exitRule": "손절·목표 중 먼저 도달한 조건 또는 당일 종가",
-      "allowAutoOrder": false
-     }
-    }
-   },
-   {
-    "name": "Klaviyo, Inc. Series A",
-    "ticker": "KVYO",
-    "score": 60,
-    "target_pct": 4,
-    "sector": "소프트웨어",
-    "basis": [
-     "섹터동조화"
-    ],
-    "reason": "개장 후 마이너스 출발했으나 즉각 플러스 전환하며 세일즈포스 인수 여파에 따른 동종 업계 수혜 기대감이 시장에 반영되고 있음.",
-    "risk": "거래량 감소 시 추세 이탈 가능성",
-    "plan": {
-     "engine": "R2.0",
-     "strategy": "day",
-     "atrPct": 5.28,
-     "stopPct": 4,
-     "targetPct": 5.4,
-     "rr": 1.35,
-     "maxHoldDays": 0,
-     "riskPct": 0.5,
-     "maxWeightPct": 8,
-     "weightPct": 7.84,
-     "qty": 20,
-     "notional": 392,
-     "decision": {
-      "version": "S2.0",
-      "action": "conditional",
-      "strategy": "day",
-      "reasons": [
-       "개장 후 가격·수급 확인이 필요한 당일 전략"
-      ],
-      "plannedHoldDays": 0,
-      "reviewAfterDays": 0,
-      "maxHoldDays": 0,
-      "entryRule": "확정 시점 이후 가격만 사용 · 갭 과열·시가 붕괴 시 보류",
-      "exitRule": "손절·목표 중 먼저 도달한 조건 또는 당일 종가",
-      "allowAutoOrder": false
-     }
-    }
-   }
-  ],
-  "day_at": "22:34",
-  "day_brief": "개장 후 데이터가 선정 논리와 부합하며 기술적 반등 및 추세 유지가 확인되는 종목을 선별했습니다. 나머지 종목들은 데이터상 모멘텀 지속성이 불분명하여 배제했습니다."
+  ]
  }
 }
