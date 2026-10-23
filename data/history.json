@@ -42855,28 +42855,32 @@
      "rank": 8,
      "verdict": "선택",
      "why": "생산 성장 및 펀더멘털 양호",
-     "r1": 2
+     "r1": 2,
+     "r5": 6.3
     },
     {
      "ticker": "TALO",
      "rank": 9,
      "verdict": "선택",
      "why": "소형주 잠재력 및 저가 매수세",
-     "r1": 2.2
+     "r1": 2.2,
+     "r5": 4.1
     },
     {
      "ticker": "EQNR",
      "rank": 10,
      "verdict": "관찰",
      "why": "유럽 ADR 추종 흐름",
-     "r1": -0.2
+     "r1": -0.2,
+     "r5": 5.6
     },
     {
      "ticker": "FMX",
      "rank": 11,
      "verdict": "관찰",
      "why": "개별 애널리스트 레이팅 영향",
-     "r1": 0.1
+     "r1": 0.1,
+     "r5": 1.4
     },
     {
      "ticker": "DNOW",
@@ -44465,77 +44469,77 @@
      "rank": 1,
      "verdict": "선택",
      "why": "FDA 수용 및 목표가 상향으로 강한 상승 모멘텀 보유",
-     "r1": null
+     "r1": -8.8
     },
     {
      "ticker": "CNXC",
      "rank": 3,
      "verdict": "제외",
      "why": "배당 관련 단기 모멘텀 제한적",
-     "r1": null
+     "r1": -0.2
     },
     {
      "ticker": "BMI",
      "rank": 4,
      "verdict": "선택",
      "why": "마진 개선 및 소프트웨어 성장에 따른 실적 호조",
-     "r1": null
+     "r1": 1.6
     },
     {
      "ticker": "KSS",
      "rank": 5,
      "verdict": "선택",
      "why": "큰 폭의 상승 흐름 속 단기 트레이딩 가능",
-     "r1": null
+     "r1": 0.9
     },
     {
      "ticker": "SPOT",
      "rank": 6,
      "verdict": "선택",
      "why": "목표가 상향 및 실적 기대감 유효",
-     "r1": null
+     "r1": 0.2
     },
     {
      "ticker": "ALLE",
      "rank": 7,
      "verdict": "선택",
      "why": "연간 전망 상향 조정으로 투자심리 개선",
-     "r1": null
+     "r1": 0.1
     },
     {
      "ticker": "R",
      "rank": 8,
      "verdict": "선택",
      "why": "연속 EPS 성장 기록 등 펀더멘털 탄탄",
-     "r1": null
+     "r1": 0.3
     },
     {
      "ticker": "WCN",
      "rank": 9,
      "verdict": "관찰",
      "why": "방어적 성격이나 상승폭 제한적 가능성",
-     "r1": null
+     "r1": 1.2
     },
     {
      "ticker": "ROP",
      "rank": 10,
      "verdict": "관찰",
      "why": "목표가 상향 조정 있으나 단기 모멘텀 모호",
-     "r1": null
+     "r1": -0.4
     },
     {
      "ticker": "RH",
      "rank": 11,
      "verdict": "제외",
      "why": "뚜렷한 실적 촉매 부족",
-     "r1": null
+     "r1": -0.6
     },
     {
      "ticker": "WDFC",
      "rank": 12,
      "verdict": "제외",
      "why": "밸류에이션 부담 구간 진입",
-     "r1": null
+     "r1": 1.3
     },
     {
      "ticker": "LEN-B",
