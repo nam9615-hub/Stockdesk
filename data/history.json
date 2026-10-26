@@ -33758,7 +33758,7 @@
      "p0": 350500,
      "r1": -0.6,
      "r5": 2,
-     "r20": null,
+     "r20": 6.1,
      "b": 353500,
      "gap": 0.9,
      "simOpen": 10.3,
@@ -33769,7 +33769,9 @@
      "simExit": "target",
      "simD": "2026-10-08",
      "simT": "13:08",
-     "live": 1
+     "live": 1,
+     "mfe": 22.5,
+     "mae": -1.4
     },
     {
      "kind": "swing",
@@ -33812,7 +33814,7 @@
      "p0": 1486000,
      "r1": -2.3,
      "r5": 1.2,
-     "r20": null,
+     "r20": -27.5,
      "b": 1543000,
      "gap": 3.8,
      "simOpen": -3,
@@ -33823,7 +33825,9 @@
      "simExit": "stop",
      "simD": "2026-10-13",
      "simT": "11:43",
-     "live": 1
+     "live": 1,
+     "mfe": 10.1,
+     "mae": -32.1
     },
     {
      "kind": "swing",
@@ -33865,12 +33869,14 @@
      "p0": 360500,
      "r1": -2.9,
      "r5": -4.1,
-     "r20": null,
+     "r20": -20.9,
      "tv": 209991,
      "tvx": 1,
      "b": 364000,
      "gap": 1,
-     "idx": null
+     "idx": null,
+     "mfe": 0.4,
+     "mae": -22
     }
    ],
    "day2": {
@@ -44800,6 +44806,361 @@
      "mom": -2.4
     }
    }
+  },
+  {
+   "date": "2026-10-26",
+   "market": "US",
+   "regime": "하락",
+   "rules": [
+    "단타 실패 분해: 시장충격11·목표과다2·선정25 → 선정 강화",
+    "강도80+ 실측 0%(10) — 확신도 과장, 보수화",
+    "근거'거래량급증' 성공30%(23) → 단독추천 지양",
+    "근거'정책테마' 성공33%(21) → 단독추천 지양",
+    "근거'낙폭과대' 성공25%(8) → 단독추천 지양",
+    "섹터'반도체' 성공40%(15) → 회피"
+   ],
+   "cands": [
+    {
+     "ticker": "RHI",
+     "rank": 1,
+     "verdict": "선택",
+     "why": "실적 마진 우려 해소로 강세",
+     "r1": null
+    },
+    {
+     "ticker": "GMAB",
+     "rank": 2,
+     "verdict": "선택",
+     "why": "임상 데이터 호조",
+     "r1": null
+    },
+    {
+     "ticker": "NTSK",
+     "rank": 3,
+     "verdict": "관찰",
+     "why": "보안 섹터 동조화",
+     "r1": null
+    },
+    {
+     "ticker": "VG",
+     "rank": 4,
+     "verdict": "관찰",
+     "why": "LNG 공급 계약 뉴스",
+     "r1": null
+    },
+    {
+     "ticker": "CART",
+     "rank": 5,
+     "verdict": "제외",
+     "why": "내부자 매도 물량 출회",
+     "r1": null
+    },
+    {
+     "ticker": "CCI",
+     "rank": 6,
+     "verdict": "관찰",
+     "why": "통신 타워 REITs 강세",
+     "r1": null
+    },
+    {
+     "ticker": "ZLAB",
+     "rank": 7,
+     "verdict": "선택",
+     "why": "폐암 연구 우수 반응률",
+     "r1": null
+    },
+    {
+     "ticker": "FSLY",
+     "rank": 8,
+     "verdict": "선택",
+     "why": "클라우드 반등 수혜",
+     "r1": null
+    },
+    {
+     "ticker": "SAIL",
+     "rank": 9,
+     "verdict": "선택",
+     "why": "보안주 랠리 주도",
+     "r1": null
+    },
+    {
+     "ticker": "NE",
+     "rank": 10,
+     "verdict": "선택",
+     "why": "유가 강세 및 실적 기대",
+     "r1": null
+    },
+    {
+     "ticker": "TTMI",
+     "rank": 11,
+     "verdict": "선택",
+     "why": "레코드 실적 발표",
+     "r1": null
+    },
+    {
+     "ticker": "CRWD",
+     "rank": 12,
+     "verdict": "관찰",
+     "why": "AI 보안 모멘텀",
+     "r1": null
+    },
+    {
+     "ticker": "RITM",
+     "rank": 13,
+     "verdict": "선택",
+     "why": "어닝 서프라이즈",
+     "r1": null
+    },
+    {
+     "ticker": "HSAI",
+     "rank": 14,
+     "verdict": "관찰",
+     "why": "실적 발표 앞둔 경계감",
+     "r1": null
+    },
+    {
+     "ticker": "SPCX",
+     "rank": 15,
+     "verdict": "제외",
+     "why": "상승률 제한적",
+     "r1": null
+    },
+    {
+     "ticker": "T",
+     "rank": 16,
+     "verdict": "제외",
+     "why": "하락세 전환",
+     "r1": null
+    },
+    {
+     "ticker": "NU",
+     "rank": 17,
+     "verdict": "제외",
+     "why": "브라질 정국 리스크",
+     "r1": null
+    },
+    {
+     "ticker": "NOK",
+     "rank": 18,
+     "verdict": "관찰",
+     "why": "R&D 계약 모멘텀",
+     "r1": null
+    }
+   ],
+   "bl": {
+    "rand": [
+     "TTMI",
+     "NU",
+     "RHI"
+    ],
+    "mom": [
+     "RHI",
+     "GMAB",
+     "NTSK"
+    ]
+   },
+   "dayCands": [
+    {
+     "name": "Robert Half Inc.",
+     "ticker": "RHI",
+     "score": 52,
+     "target_pct": 4,
+     "sector": "서비스",
+     "basis": [
+      "뉴스재료"
+     ],
+     "reason": "Q3 실적이 마진 우려를 해소하며 시장의 주목을 받아 강한 거래량이 유입되었습니다.",
+     "risk": "마진 관련 불확실성 잔존"
+    },
+    {
+     "name": "Genmab A/S",
+     "ticker": "GMAB",
+     "score": 50,
+     "target_pct": 4,
+     "sector": "바이오",
+     "basis": [
+      "뉴스재료"
+     ],
+     "reason": "임상 시험에서 긍정적인 생존 기간 데이터를 발표하며 바이오 섹터 내 모멘텀을 확보했습니다.",
+     "risk": "바이오 종목 특유의 변동성"
+    },
+    {
+     "name": "Zai Lab Limited",
+     "ticker": "ZLAB",
+     "score": 49,
+     "target_pct": 3,
+     "sector": "바이오",
+     "basis": [
+      "뉴스재료"
+     ],
+     "reason": "조기 폐암 연구에서 높은 반응률을 기록하며 투자심리를 자극했습니다.",
+     "risk": "글로벌 증시 내 ADR 관련 수급 변동"
+    },
+    {
+     "name": "Fastly, Inc.",
+     "ticker": "FSLY",
+     "score": 47,
+     "target_pct": 3,
+     "sector": "기술",
+     "basis": [
+      "뉴스재료"
+     ],
+     "reason": "클라우드 반등 흐름에 힘입어 웹사이트 보안 및 인프라 관련주로 매수세가 유입되었습니다.",
+     "risk": "단기 급등 후 변동성 확대"
+    },
+    {
+     "name": "Noble Corporation plc A",
+     "ticker": "NE",
+     "score": 45,
+     "target_pct": 3,
+     "sector": "에너지",
+     "basis": [
+      "뉴스재료"
+     ],
+     "reason": "브렌트유 가격의 강세와 실적 기대감이 맞물려 에너지 섹터 내 단기 모멘텀이 유효합니다.",
+     "risk": "유가 변동성에 따른 민감한 주가 반응"
+    }
+   ],
+   "hold": 0,
+   "v": {
+    "m": "gemini-3.5-flash-lite",
+    "pv": "J1.0-S2.0",
+    "policy": "S2.0"
+   },
+   "mktF": {
+    "dir": "횡보",
+    "conf": 45,
+    "why": "선물 지수는 반등 중이나 전일 현물 하락과 VIX 19 수준의 경계감이 공존합니다.",
+    "ok": null
+   },
+   "picks": [
+    {
+     "kind": "swing",
+     "name": "TTM Technologies, Inc.",
+     "ticker": "TTMI",
+     "score": 55,
+     "sector": "기술",
+     "basis": [
+      "실적"
+     ],
+     "plan": {
+      "engine": "R2.0",
+      "strategy": "swing",
+      "atrPct": 13.47,
+      "stopPct": 9,
+      "targetPct": 18,
+      "rr": 2,
+      "maxHoldDays": 10,
+      "riskPct": 0.5,
+      "maxWeightPct": 10,
+      "weightPct": 4.81,
+      "qty": 3,
+      "notional": 240,
+      "decision": {
+       "version": "S2.0",
+       "action": "watch",
+       "strategy": "swing",
+       "reasons": [
+        "하락 국면: 신규 진입 보류"
+       ],
+       "plannedHoldDays": 10,
+       "reviewAfterDays": 3,
+       "maxHoldDays": 10,
+       "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+       "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+       "allowAutoOrder": false
+      }
+     },
+     "p0": 80.11,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "Rithm Capital Corp.",
+     "ticker": "RITM",
+     "score": 50,
+     "sector": "금융",
+     "basis": [
+      "실적"
+     ],
+     "plan": {
+      "engine": "R2.0",
+      "strategy": "swing",
+      "atrPct": 3.1,
+      "stopPct": 4.65,
+      "targetPct": 9.3,
+      "rr": 2,
+      "maxHoldDays": 10,
+      "riskPct": 0.5,
+      "maxWeightPct": 10,
+      "weightPct": 9.95,
+      "qty": 53,
+      "notional": 498,
+      "decision": {
+       "version": "S2.0",
+       "action": "watch",
+       "strategy": "swing",
+       "reasons": [
+        "하락 국면: 신규 진입 보류"
+       ],
+       "plannedHoldDays": 10,
+       "reviewAfterDays": 3,
+       "maxHoldDays": 10,
+       "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+       "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+       "allowAutoOrder": false
+      }
+     },
+     "p0": 9.39,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "SailPoint, Inc.",
+     "ticker": "SAIL",
+     "score": 48,
+     "sector": "보안",
+     "basis": [
+      "뉴스재료"
+     ],
+     "plan": {
+      "engine": "R2.0",
+      "strategy": "swing",
+      "atrPct": 5.18,
+      "stopPct": 7.77,
+      "targetPct": 15.54,
+      "rr": 2,
+      "maxHoldDays": 5,
+      "riskPct": 0.5,
+      "maxWeightPct": 10,
+      "weightPct": 6.1,
+      "qty": 14,
+      "notional": 305,
+      "decision": {
+       "version": "S2.0",
+       "action": "watch",
+       "strategy": "swing",
+       "reasons": [
+        "하락 국면: 신규 진입 보류"
+       ],
+       "plannedHoldDays": 5,
+       "reviewAfterDays": 3,
+       "maxHoldDays": 5,
+       "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+       "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+       "allowAutoOrder": false
+      }
+     },
+     "p0": 21.79,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    }
+   ]
   }
  ],
  "monAt": 1792788560640
