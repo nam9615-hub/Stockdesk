@@ -42986,28 +42986,32 @@
      "rank": 9,
      "verdict": "제외",
      "why": "AI 투자 우려 및 반도체 섹터 회피.",
-     "r1": -1.5
+     "r1": -1.5,
+     "r5": -10.9
     },
     {
      "ticker": "FROG",
      "rank": 10,
      "verdict": "관찰",
      "why": "성장주 전반 강세 연동.",
-     "r1": 2.5
+     "r1": 2.5,
+     "r5": 10.6
     },
     {
      "ticker": "CLDX",
      "rank": 11,
      "verdict": "제외",
      "why": "주주 조사 이슈로 고평가 부담.",
-     "r1": 1
+     "r1": 1,
+     "r5": -1.6
     },
     {
      "ticker": "PRAX",
      "rank": 12,
      "verdict": "제외",
      "why": "장부가 대비 고평가 우려.",
-     "r1": 2
+     "r1": 2,
+     "r5": 3.1
     },
     {
      "ticker": "PHVS",
@@ -43049,7 +43053,8 @@
      "rank": 18,
      "verdict": "제외",
      "why": "실적 발표 경계감.",
-     "r1": 1.1
+     "r1": 1.1,
+     "r5": 0.5
     }
    ],
    "bl": {
@@ -44665,49 +44670,49 @@
      "rank": 12,
      "verdict": "관찰",
      "why": "AI 보안 모멘텀",
-     "r1": null
+     "r1": 1.1
     },
     {
      "ticker": "RITM",
      "rank": 13,
      "verdict": "선택",
      "why": "어닝 서프라이즈",
-     "r1": null
+     "r1": -0.9
     },
     {
      "ticker": "HSAI",
      "rank": 14,
      "verdict": "관찰",
      "why": "실적 발표 앞둔 경계감",
-     "r1": null
+     "r1": -0.4
     },
     {
      "ticker": "SPCX",
      "rank": 15,
      "verdict": "제외",
      "why": "상승률 제한적",
-     "r1": null
+     "r1": 0
     },
     {
      "ticker": "T",
      "rank": 16,
      "verdict": "제외",
      "why": "하락세 전환",
-     "r1": null
+     "r1": 0.7
     },
     {
      "ticker": "NU",
      "rank": 17,
      "verdict": "제외",
      "why": "브라질 정국 리스크",
-     "r1": null
+     "r1": 7.7
     },
     {
      "ticker": "NOK",
      "rank": 18,
      "verdict": "관찰",
      "why": "R&D 계약 모멘텀",
-     "r1": null
+     "r1": 3.7
     }
    ],
    "bl": {
@@ -45008,7 +45013,19 @@
     "brief": "개장 후 모든 후보가 선정 논리를 충분히 확인시켜 주지 못하거나 하방 압력을 보여 보수적으로 제외합니다.",
     "n": 0
    },
-   "dayHold": 1
+   "dayHold": 1,
+   "cstat": {
+    "n": 18,
+    "med": 1.1,
+    "ex": null,
+    "exD": null,
+    "rg": null,
+    "rej": 4,
+    "blr": {
+     "rand": 3.5,
+     "mom": 0
+    }
+   }
   },
   {
    "date": "2026-10-27",
