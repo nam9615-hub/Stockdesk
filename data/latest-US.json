@@ -1,118 +1,115 @@
 {
- "date": "2026-10-26",
+ "date": "2026-10-27",
  "at": "21:29",
  "data": {
-  "brief": "전일 S&P500 지수가 하락 마감했으나 선물 지수가 반등하고 VIX가 하락하며 변동성이 완화되는 국면입니다. 과거 실측 통계상 고확신 예측의 적중률이 낮았던 점을 감안해, 철저히 개별 실적과 모멘텀이 검증된 종목 중심의 보수적 접근을 취합니다.",
-  "mkt": {
-   "dir": "횡보",
-   "conf": 45,
-   "why": "선물 지수는 반등 중이나 전일 현물 하락과 VIX 19 수준의 경계감이 공존합니다."
-  },
+  "brief": "시장 전반이 완만한 상승 흐름을 보이고 있으나, 과거 실적 데이터와 과열 신호를 반영하여 보수적인 관점에서 종목을 선별합니다. 특히 고확신 구간의 오류를 교정하고 변동성이 큰 종목은 배제하여 리스크를 관리합니다.",
   "picks": [
    {
-    "name": "TTM Technologies, Inc.",
-    "ticker": "TTMI",
-    "score": 55,
-    "sector": "기술",
+    "name": "Xencor, Inc.",
+    "ticker": "XNCR",
+    "score": 45,
+    "sector": "바이오",
     "basis": [
-     "실적"
+     "뉴스재료",
+     "추세지속"
     ],
-    "reason": "3분기 실적 발표에서 호실적과 함께 레코드 기록을 달성하며 펀더멘털을 입증했습니다. 낙관적인 가이던스와 지속되는 IT 인프라 수요가 주가 하방을 지지할 것입니다.",
-    "catalyst": "Q3 실적 호조 및 레코드 매출",
-    "risk": "단기 급등에 따른 차익실현 매물 출회 가능성",
+    "reason": "RBC의 목표가 상향 조정과 신장암 임상 업데이트 호재로 매수세가 유입되었습니다. 단기 급등에 따른 밸류에이션 부담을 고려하여 보수적으로 접근합니다.",
+    "catalyst": "목표가 대폭 상향 및 임상 결과",
+    "risk": "단기 급등에 따른 차익실현 매물 출화 우려",
     "plan": {
      "engine": "R2.0",
      "strategy": "swing",
-     "atrPct": 13.47,
+     "atrPct": 6.36,
      "stopPct": 9,
      "targetPct": 18,
-     "rr": 2,
-     "maxHoldDays": 10,
-     "riskPct": 0.5,
-     "maxWeightPct": 10,
-     "weightPct": 4.81,
-     "qty": 3,
-     "notional": 240,
-     "decision": {
-      "version": "S2.0",
-      "action": "watch",
-      "strategy": "swing",
-      "reasons": [
-       "하락 국면: 신규 진입 보류"
-      ],
-      "plannedHoldDays": 10,
-      "reviewAfterDays": 3,
-      "maxHoldDays": 10,
-      "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
-      "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
-      "allowAutoOrder": false
-     }
-    }
-   },
-   {
-    "name": "Rithm Capital Corp.",
-    "ticker": "RITM",
-    "score": 50,
-    "sector": "금융",
-    "basis": [
-     "실적"
-    ],
-    "reason": "3분기 어닝 서프라이즈를 기록하며 주가가 큰 폭으로 반등했습니다. 안정적인 배당 매력과 실적 개선세가 중기 스윙 관점에서 긍정적입니다.",
-    "catalyst": "어닝 서프라이즈 및 견조한 실적",
-    "risk": "금리 환경 변화에 따른 모기지 및 금융 부문 변동성",
-    "plan": {
-     "engine": "R2.0",
-     "strategy": "swing",
-     "atrPct": 3.1,
-     "stopPct": 4.65,
-     "targetPct": 9.3,
-     "rr": 2,
-     "maxHoldDays": 10,
-     "riskPct": 0.5,
-     "maxWeightPct": 10,
-     "weightPct": 9.95,
-     "qty": 53,
-     "notional": 498,
-     "decision": {
-      "version": "S2.0",
-      "action": "watch",
-      "strategy": "swing",
-      "reasons": [
-       "하락 국면: 신규 진입 보류"
-      ],
-      "plannedHoldDays": 10,
-      "reviewAfterDays": 3,
-      "maxHoldDays": 10,
-      "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
-      "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
-      "allowAutoOrder": false
-     }
-    }
-   },
-   {
-    "name": "SailPoint, Inc.",
-    "ticker": "SAIL",
-    "score": 48,
-    "sector": "보안",
-    "basis": [
-     "뉴스재료"
-    ],
-    "reason": "사이버보안 섹터 전반의 랠리와 함께 강한 상승 모멘텀을 보여주었습니다. 기업들의 보안 투자가 지속되는 한 우상향 흐름이 기대됩니다.",
-    "catalyst": "사이버보안 섹터 동반 강세",
-    "risk": "섹터 전반의 수급 변동성 및 단기 과열",
-    "plan": {
-     "engine": "R2.0",
-     "strategy": "swing",
-     "atrPct": 5.18,
-     "stopPct": 7.77,
-     "targetPct": 15.54,
      "rr": 2,
      "maxHoldDays": 5,
      "riskPct": 0.5,
      "maxWeightPct": 10,
-     "weightPct": 6.1,
-     "qty": 14,
-     "notional": 305,
+     "weightPct": 5.25,
+     "qty": 9,
+     "notional": 263,
+     "decision": {
+      "version": "S2.0",
+      "action": "watch",
+      "strategy": "swing",
+      "reasons": [
+       "하락 국면: 신규 진입 보류"
+      ],
+      "plannedHoldDays": 5,
+      "reviewAfterDays": 3,
+      "maxHoldDays": 5,
+      "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+      "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+      "allowAutoOrder": false
+     }
+    }
+   },
+   {
+    "name": "Oruka Therapeutics, Inc.",
+    "ticker": "ORKA",
+    "score": 42,
+    "sector": "바이오",
+    "basis": [
+     "뉴스재료"
+    ],
+    "reason": "건선 임상 2b상에서 우수한 피부 개선 효과를 입증하며 투자 심리가 개선되었습니다. 바이오 섹터의 특성상 변동성에 유의해야 합니다.",
+    "catalyst": "임상 2b상 피부 깨끗함 달성",
+    "risk": "바이오 섹터 변동성 및 단기 과열",
+    "plan": {
+     "engine": "R2.0",
+     "strategy": "swing",
+     "atrPct": 4.87,
+     "stopPct": 7.3,
+     "targetPct": 14.61,
+     "rr": 2,
+     "maxHoldDays": 5,
+     "riskPct": 0.5,
+     "maxWeightPct": 10,
+     "weightPct": 5.42,
+     "qty": 3,
+     "notional": 271,
+     "decision": {
+      "version": "S2.0",
+      "action": "watch",
+      "strategy": "watch",
+      "reasons": [
+       "하락 국면: 신규 진입 보류",
+       "지속 재료·추세 확인 전 관찰"
+      ],
+      "plannedHoldDays": 5,
+      "reviewAfterDays": 3,
+      "maxHoldDays": 5,
+      "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+      "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+      "allowAutoOrder": false
+     }
+    }
+   },
+   {
+    "name": "Maplebear Inc.",
+    "ticker": "CART",
+    "score": 40,
+    "sector": "유통",
+    "basis": [
+     "뉴스재료"
+    ],
+    "reason": "도어대시의 인스타카트 인수 관련 대규모 M&A 보도가 나오며 주가가 급등했습니다. 딜 진행 상황에 따른 변동성에 주의가 필요합니다.",
+    "catalyst": "인수합병(M&A) 루머 및 협상 보도",
+    "risk": "딜 무산 시 급락 가능성",
+    "plan": {
+     "engine": "R2.0",
+     "strategy": "swing",
+     "atrPct": 4.2,
+     "stopPct": 6.3,
+     "targetPct": 12.6,
+     "rr": 2,
+     "maxHoldDays": 5,
+     "riskPct": 0.5,
+     "maxWeightPct": 10,
+     "weightPct": 7.31,
+     "qty": 6,
+     "notional": 365,
      "decision": {
       "version": "S2.0",
       "action": "watch",
@@ -132,178 +129,181 @@
   ],
   "day_cands": [
    {
-    "name": "Robert Half Inc.",
-    "ticker": "RHI",
-    "score": 52,
-    "target_pct": 4,
-    "sector": "서비스",
-    "basis": [
-     "뉴스재료"
-    ],
-    "reason": "Q3 실적이 마진 우려를 해소하며 시장의 주목을 받아 강한 거래량이 유입되었습니다.",
-    "risk": "마진 관련 불확실성 잔존"
-   },
-   {
-    "name": "Genmab A/S",
-    "ticker": "GMAB",
-    "score": 50,
-    "target_pct": 4,
-    "sector": "바이오",
-    "basis": [
-     "뉴스재료"
-    ],
-    "reason": "임상 시험에서 긍정적인 생존 기간 데이터를 발표하며 바이오 섹터 내 모멘텀을 확보했습니다.",
-    "risk": "바이오 종목 특유의 변동성"
-   },
-   {
-    "name": "Zai Lab Limited",
-    "ticker": "ZLAB",
-    "score": 49,
-    "target_pct": 3,
-    "sector": "바이오",
-    "basis": [
-     "뉴스재료"
-    ],
-    "reason": "조기 폐암 연구에서 높은 반응률을 기록하며 투자심리를 자극했습니다.",
-    "risk": "글로벌 증시 내 ADR 관련 수급 변동"
-   },
-   {
-    "name": "Fastly, Inc.",
-    "ticker": "FSLY",
-    "score": 47,
-    "target_pct": 3,
-    "sector": "기술",
-    "basis": [
-     "뉴스재료"
-    ],
-    "reason": "클라우드 반등 흐름에 힘입어 웹사이트 보안 및 인프라 관련주로 매수세가 유입되었습니다.",
-    "risk": "단기 급등 후 변동성 확대"
-   },
-   {
-    "name": "Noble Corporation plc A",
-    "ticker": "NE",
-    "score": 45,
+    "name": "Range Resources Corporation",
+    "ticker": "RRC",
+    "score": 40,
     "target_pct": 3,
     "sector": "에너지",
     "basis": [
      "뉴스재료"
     ],
-    "reason": "브렌트유 가격의 강세와 실적 기대감이 맞물려 에너지 섹터 내 단기 모멘텀이 유효합니다.",
-    "risk": "유가 변동성에 따른 민감한 주가 반응"
+    "reason": "월스트리트 애널리스트들의 긍정적인 리서치 콜이 이어지며 모멘텀이 형성되었습니다. 철저히 짧은 구간을 목표로 대응합니다.",
+    "risk": "에너지 가격 변동성"
+   },
+   {
+    "name": "Vicor Corporation",
+    "ticker": "VICR",
+    "score": 38,
+    "target_pct": 3,
+    "sector": "반도체",
+    "basis": [
+     "뉴스재료"
+    ],
+    "reason": "칩 섹터의 전반적 혼조세 속에서도 개별 뉴스에 반응하며 반등 시도가 나타났습니다. 과거 반도체 섹터 승률 부진을 감안해 비중을 낮춥니다.",
+    "risk": "반도체 업종 투자 심리 악화"
+   },
+   {
+    "name": "INNIO N.V.",
+    "ticker": "INIO",
+    "score": 38,
+    "target_pct": 3,
+    "sector": "기계",
+    "basis": [
+     "실적"
+    ],
+    "reason": "3분기 호실적과 함께 2026년 매출 전망을 상향 조정한 점이 긍정적으로 작용했습니다. 실적 모멘텀의 지속성을 확인해야 합니다.",
+    "risk": "시장 전체 수급 약화 시 동반 조정"
+   },
+   {
+    "name": "Lumentum Holdings Inc.",
+    "ticker": "LITE",
+    "score": 36,
+    "target_pct": 3,
+    "sector": "기술",
+    "basis": [
+     "추세지속"
+    ],
+    "reason": "최근 가파른 상승세를 보이며 저가 매수세와 추세 추종 자금이 유입되고 있습니다. 높은 주가 수준으로 인한 변동성에 주의합니다.",
+    "risk": "고가 매물대 소화 과정에서의 눌림"
+   },
+   {
+    "name": "Tenable Holdings, Inc.",
+    "ticker": "TENB",
+    "score": 35,
+    "target_pct": 3,
+    "sector": "보안",
+    "basis": [
+     "뉴스재료"
+    ],
+    "reason": "사이버보안 수요 증가와 관련 섹터 전반의 강세 흐름에 편승하고 있습니다. 단기 상승 폭이 커 추격 매수는 자제합니다.",
+    "risk": "단기 변동성 확대 및 차익실현"
    }
   ],
   "cands": [
    {
-    "ticker": "RHI",
+    "ticker": "SGRY",
     "rank": 1,
-    "verdict": "선택",
-    "why": "실적 마진 우려 해소로 강세"
+    "verdict": "관찰",
+    "why": "인수합병 프리미엄 반영 중으로 추가 상승 여력 점검 필요"
    },
    {
-    "ticker": "GMAB",
+    "graphic": null,
+    "ticker": "RRC",
     "rank": 2,
     "verdict": "선택",
-    "why": "임상 데이터 호조"
+    "why": "애널리스트 호평 및 수급 유입"
    },
    {
-    "ticker": "NTSK",
+    "ticker": "XNCR",
     "rank": 3,
-    "verdict": "관찰",
-    "why": "보안 섹터 동조화"
+    "verdict": "선택",
+    "why": "목표가 상향 및 임상 호재로 모멘텀 지속"
    },
    {
-    "ticker": "VG",
+    "ticker": "ORKA",
     "rank": 4,
+    "verdict": "선택",
+    "why": "임상 성공 발표에 따른 강한 매수세"
+   },
+   {
+    "ticker": "VICR",
+    "rank": 5,
     "verdict": "관찰",
-    "why": "LNG 공급 계약 뉴스"
+    "why": "반도체 섹터 약세로 신중한 접근 필요"
+   },
+   {
+    "ticker": "INIO",
+    "rank": 6,
+    "verdict": "관찰",
+    "why": "실적 호조이나 단기 과열 부담"
+   },
+   {
+    "ticker": "LITE",
+    "rank": 7,
+    "verdict": "관찰",
+    "why": "상승 추세이나 고가 부담 존재"
+   },
+   {
+    "ticker": "TENB",
+    "rank": 8,
+    "verdict": "관찰",
+    "why": "보안 테마 강세이나 변동성 유의"
+   },
+   {
+    "ticker": "AXTI",
+    "rank": 9,
+    "verdict": "관찰",
+    "why": "매출 대비 프리미엄 및 리스크 공존"
+   },
+   {
+    "ticker": "VSAT",
+    "rank": 10,
+    "verdict": "관찰",
+    "why": "나사 발사 모멘텀 소화 국면"
    },
    {
     "ticker": "CART",
-    "rank": 5,
-    "verdict": "제외",
-    "why": "내부자 매도 물량 출회"
-   },
-   {
-    "ticker": "CCI",
-    "rank": 6,
-    "verdict": "관찰",
-    "why": "통신 타워 REITs 강세"
-   },
-   {
-    "ticker": "ZLAB",
-    "rank": 7,
-    "verdict": "선택",
-    "why": "폐암 연구 우수 반응률"
-   },
-   {
-    "ticker": "FSLY",
-    "rank": 8,
-    "verdict": "선택",
-    "why": "클라우드 반등 수혜"
-   },
-   {
-    "ticker": "SAIL",
-    "rank": 9,
-    "verdict": "선택",
-    "why": "보안주 랠리 주도"
-   },
-   {
-    "ticker": "NE",
-    "rank": 10,
-    "verdict": "선택",
-    "why": "유가 강세 및 실적 기대"
-   },
-   {
-    "ticker": "TTMI",
     "rank": 11,
     "verdict": "선택",
-    "why": "레코드 실적 발표"
+    "why": "M&A 관련 뉴스 모멘텀 발생"
    },
    {
-    "ticker": "CRWD",
+    "ticker": "PARR",
     "rank": 12,
     "verdict": "관찰",
-    "why": "AI 보안 모멘텀"
+    "why": "실적 발표 대기 중인 정유/에너지주"
    },
    {
-    "ticker": "RITM",
+    "ticker": "FIX",
     "rank": 13,
-    "verdict": "선택",
-    "why": "어닝 서프라이즈"
-   },
-   {
-    "ticker": "HSAI",
-    "rank": 14,
     "verdict": "관찰",
-    "why": "실적 발표 앞둔 경계감"
+    "why": "지수 선물 혼조 속 관망세"
    },
    {
-    "ticker": "SPCX",
-    "rank": 15,
+    "ticker": "GLXY",
+    "rank": 14,
     "verdict": "제외",
-    "why": "상승률 제한적"
-   },
-   {
-    "ticker": "T",
-    "rank": 16,
-    "verdict": "제외",
-    "why": "하락세 전환"
+    "why": "실적 부진 영향으로 상승 모멘텀 제한적"
    },
    {
     "ticker": "NU",
-    "rank": 17,
+    "rank": 15,
     "verdict": "제외",
-    "why": "브라질 정국 리스크"
+    "why": "급락세로 추세 이탈"
    },
    {
-    "ticker": "NOK",
+    "ticker": "BBD",
+    "rank": 16,
+    "verdict": "제외",
+    "why": "대폭 하락 종목으로 리스크 과다"
+   },
+   {
+    "ticker": "ITUB",
+    "rank": 17,
+    "verdict": "제외",
+    "why": "하락 추세로 단기 스윙 부적합"
+   },
+   {
+    "ticker": "XP",
     "rank": 18,
-    "verdict": "관찰",
-    "why": "R&D 계약 모멘텀"
+    "verdict": "제외",
+    "why": "극심한 하락폭으로 투기적 성격 농후"
    }
   ],
-  "day_picks": [],
-  "day_at": "22:34",
-  "day_brief": "개장 후 모든 후보가 선정 논리를 충분히 확인시켜 주지 못하거나 하방 압력을 보여 보수적으로 제외합니다."
+  "mkt": {
+   "dir": "횡보",
+   "conf": 45,
+   "why": "선물 지수 미반등과 과거 예측 적중률 한계를 고려해 보수적 횡보 관점 유지"
+  }
  }
 }
