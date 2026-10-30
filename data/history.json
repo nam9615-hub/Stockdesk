@@ -44068,28 +44068,32 @@
      "rank": 9,
      "verdict": "선택",
      "why": "보안주 랠리 주도",
-     "r1": -0.2
+     "r1": -0.2,
+     "r5": -3.4
     },
     {
      "ticker": "NE",
      "rank": 10,
      "verdict": "선택",
      "why": "유가 강세 및 실적 기대",
-     "r1": 1.9
+     "r1": 1.9,
+     "r5": 4.4
     },
     {
      "ticker": "TTMI",
      "rank": 11,
      "verdict": "선택",
      "why": "레코드 실적 발표",
-     "r1": 6.3
+     "r1": 6.3,
+     "r5": 3.1
     },
     {
      "ticker": "CRWD",
      "rank": 12,
      "verdict": "관찰",
      "why": "AI 보안 모멘텀",
-     "r1": 1.1
+     "r1": 1.1,
+     "r5": -3.3
     },
     {
      "ticker": "RITM",
@@ -44436,7 +44440,7 @@
    "cstat": {
     "n": 18,
     "med": 1.1,
-    "ex": null,
+    "ex": -4,
     "exD": null,
     "rg": null,
     "rej": 4,
@@ -45287,7 +45291,7 @@
      "b": 88,
      "gap": -1.3,
      "idx": 0.22,
-     "simOpen": 5.1
+     "simOpen": 4.8
     },
     {
      "kind": "swing",
@@ -45335,7 +45339,9 @@
      "b": 61.0099983215332,
      "gap": -2.1,
      "idx": 0.22,
-     "simOpen": 8.4
+     "simR": 8.67,
+     "simExit": "target",
+     "simD": "2026-10-30"
     },
     {
      "kind": "day",
@@ -45946,77 +45952,77 @@
      "rank": 1,
      "verdict": "선택",
      "why": "어닝 서프라이즈와 신고가 경신 모멘텀 보유",
-     "r1": null
+     "r1": -2
     },
     {
      "ticker": "ADT",
      "rank": 2,
      "verdict": "선택",
      "why": "대규모 현금 인수합병 딜 발표",
-     "r1": null
+     "r1": -0.1
     },
     {
      "ticker": "BHC",
      "rank": 3,
      "verdict": "선택",
      "why": "실적 호조 및 가이드 상향",
-     "r1": null
+     "r1": -8.2
     },
     {
      "ticker": "PRCH",
      "rank": 4,
      "verdict": "관찰",
      "why": "실적 개선에 따른 모멘텀 지속 여부 확인 필요",
-     "r1": null
+     "r1": 0.3
     },
     {
      "ticker": "CROX",
      "rank": 5,
      "verdict": "관찰",
      "why": "기록적 매출 달성 후 주가 안착 과정 주시",
-     "r1": null
+     "r1": -1
     },
     {
      "ticker": "PURR",
      "rank": 6,
      "verdict": "관찰",
      "why": "유명 투자자 백업 관련 수급 지속성 확인 필요",
-     "r1": null
+     "r1": -4.5
     },
     {
      "ticker": "FTAI",
      "rank": 7,
      "verdict": "관찰",
      "why": "목표가 상향에 따른 추세 연장 여부 관찰",
-     "r1": null
+     "r1": -0.9
     },
     {
      "ticker": "MESO",
      "rank": 8,
      "verdict": "관찰",
      "why": "헬스케어 섹터 개별 이슈 모니터링 필요",
-     "r1": null
+     "r1": -1.4
     },
     {
      "ticker": "MSGR",
      "rank": 9,
      "verdict": "관찰",
      "why": "시장 전반 약세 속 개별 동향 주시",
-     "r1": null
+     "r1": 0.2
     },
     {
      "ticker": "GEN",
      "rank": 10,
      "verdict": "관찰",
      "why": "마진 개선 효과의 지속 가능성 확인",
-     "r1": null
+     "r1": 1.8
     },
     {
      "ticker": "CVNA",
      "rank": 11,
      "verdict": "관찰",
      "why": "파트너십 발표에 따른 주가 반응 관찰",
-     "r1": null
+     "r1": 0.5
     },
     {
      "ticker": "BOOT",
