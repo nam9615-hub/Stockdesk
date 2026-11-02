@@ -2672,7 +2672,6 @@
      "ticker": "005930.KS",
      "rank": 1,
      "verdict": "선택",
-     "why": "외인 수급 양호하나 환율 압력으로 신중 접근",
      "r1": -3.4,
      "r5": -6.9
     },
@@ -2680,7 +2679,6 @@
      "ticker": "373220.KS",
      "rank": 13,
      "verdict": "제외",
-     "why": "트럼프 리스크 및 환율 악재 영향",
      "r1": -2.3,
      "r5": 11.3
     },
@@ -2688,7 +2686,6 @@
      "ticker": "240810.KQ",
      "rank": 14,
      "verdict": "제외",
-     "why": "집중형 ETF 역풍 및 수급 부재",
      "r1": -0.2,
      "r5": -6
     },
@@ -2696,7 +2693,6 @@
      "ticker": "207940.KS",
      "rank": 15,
      "verdict": "제외",
-     "why": "유사 국면 실적 부진 사례 및 하방 압력",
      "r1": -3.4,
      "r5": 5.6
     },
@@ -2704,7 +2700,6 @@
      "ticker": "028300.KQ",
      "rank": 16,
      "verdict": "제외",
-     "why": "변동성 과도 및 단기 급등 후유증",
      "r1": 4,
      "r5": 25.6
     },
@@ -2712,7 +2707,6 @@
      "ticker": "196170.KQ",
      "rank": 91,
      "verdict": "관찰",
-     "why": "LLM 평가 누락",
      "miss": 1,
      "r1": 4.8,
      "r5": 30.9
@@ -2721,7 +2715,6 @@
      "ticker": "000660.KS",
      "rank": 92,
      "verdict": "관찰",
-     "why": "LLM 평가 누락",
      "miss": 1,
      "r1": -4.6,
      "r5": -13.4
@@ -2730,7 +2723,6 @@
      "ticker": "086520.KQ",
      "rank": 93,
      "verdict": "관찰",
-     "why": "LLM 평가 누락",
      "miss": 1,
      "r1": 0.4,
      "r5": 11.5
@@ -2739,7 +2731,6 @@
      "ticker": "005935.KS",
      "rank": 94,
      "verdict": "관찰",
-     "why": "LLM 평가 누락",
      "miss": 1,
      "r1": -2.7,
      "r5": -7
@@ -2748,7 +2739,6 @@
      "ticker": "247540.KQ",
      "rank": 95,
      "verdict": "관찰",
-     "why": "LLM 평가 누락",
      "miss": 1,
      "r1": -1.9,
      "r5": 8.4
@@ -2757,7 +2747,6 @@
      "ticker": "402340.KS",
      "rank": 96,
      "verdict": "관찰",
-     "why": "LLM 평가 누락",
      "miss": 1,
      "r1": -4.2,
      "r5": -12.2
@@ -2766,7 +2755,6 @@
      "ticker": "277810.KQ",
      "rank": 97,
      "verdict": "관찰",
-     "why": "LLM 평가 누락",
      "miss": 1,
      "r1": 3.7,
      "r5": 5.2
@@ -2775,7 +2763,6 @@
      "ticker": "009150.KS",
      "rank": 98,
      "verdict": "관찰",
-     "why": "LLM 평가 누락",
      "miss": 1,
      "r1": -3.3,
      "r5": 4.7
@@ -2784,7 +2771,6 @@
      "ticker": "036930.KQ",
      "rank": 99,
      "verdict": "관찰",
-     "why": "LLM 평가 누락",
      "miss": 1,
      "r1": 2.6,
      "r5": 2.6
@@ -2793,7 +2779,6 @@
      "ticker": "005380.KS",
      "rank": 100,
      "verdict": "관찰",
-     "why": "LLM 평가 누락",
      "miss": 1,
      "r1": 2.6,
      "r5": 3.3
@@ -2802,7 +2787,6 @@
      "ticker": "058470.KQ",
      "rank": 101,
      "verdict": "관찰",
-     "why": "LLM 평가 누락",
      "miss": 1,
      "r1": -0.5,
      "r5": 6.5
@@ -2820,107 +2804,6 @@
      "000660.KS"
     ]
    },
-   "dayCands": [
-    {
-     "name": "삼성전자",
-     "ticker": "005930.KS",
-     "score": 68,
-     "target_pct": 3,
-     "sector": "반도체",
-     "basis": [
-      "뉴스재료",
-      "수급(3일)"
-     ],
-     "reason": "빅테크 어닝서프라이즈 및 AI 투자 둔화 우려 완화 재료가 있으나 프리마켓 약세로 당일 초반 눌림목 공략이 유효하다.",
-     "risk": "환율 1440원 돌파에 따른 외인 수급 이탈",
-     "o": {
-      "px": 245750,
-      "op": 248000,
-      "gap": -5.5,
-      "mom": -0.9
-     },
-     "m1": []
-    },
-    {
-     "name": "SK하이닉스",
-     "ticker": "000660.KS",
-     "score": 65,
-     "target_pct": 4,
-     "sector": "반도체",
-     "basis": [
-      "수급(3일)",
-      "뉴스재료"
-     ],
-     "reason": "외인 연속 순매수 기조가 유지되고 있으나 프리마켓 하락 출발로 장 초반 변동성 활용 단타 접근이 가능하다.",
-     "risk": "글로벌 반도체주 차익실현 매물 출회",
-     "o": {
-      "px": 1608000,
-      "op": 1642000,
-      "gap": -4.4,
-      "mom": -2.1
-     },
-     "m1": []
-    },
-    {
-     "name": "현대차",
-     "ticker": "005380.KS",
-     "score": 60,
-     "target_pct": 3,
-     "sector": "자동차",
-     "basis": [
-      "뉴스재료",
-      "추세지속"
-     ],
-     "reason": "총수 관련 이슈 및 피지컬 AI 협력 재료가 혼조세를 이루며 당일 수급 집중 시 단기 트레이딩 기회를 제공한다.",
-     "risk": "기관의 지속적인 매도세 우위",
-     "o": {
-      "px": 384000,
-      "op": 383000,
-      "gap": -1.3,
-      "mom": 0.3
-     },
-     "m1": []
-    },
-    {
-     "name": "주성엔지니어링",
-     "ticker": "036930.KQ",
-     "score": 58,
-     "target_pct": 5,
-     "sector": "반도체장비",
-     "basis": [
-      "뉴스재료",
-      "낙폭과대"
-     ],
-     "reason": "데이터센터 칩 교체주기 및 인큐베이팅 기간 언급 등 장기 성장 재료가 부각되며 저가 매수세 유입 가능성이 있다.",
-     "risk": "반도체 섹터 전반의 단기 약세 심리",
-     "o": {
-      "px": 126500,
-      "op": 124600,
-      "gap": 0.1,
-      "mom": 1.5
-     },
-     "m1": []
-    },
-    {
-     "name": "알테오젠",
-     "ticker": "196170.KQ",
-     "score": 55,
-     "target_pct": 4,
-     "sector": "바이오",
-     "basis": [
-      "뉴스재료"
-     ],
-     "reason": "코스닥 1부리그 직행 추진 및 커버드콜 ETF 상륙 등 개별 이벤트 모멘텀이 존재한다.",
-     "risk": "기관 수급 약세 및 지수 하방 압력",
-     "o": {
-      "px": 305000,
-      "op": 303000,
-      "gap": -1.8,
-      "mom": 0.7
-     },
-     "m1": []
-    }
-   ],
    "hold": 0,
    "v": {
     "m": "gemini-3.5-flash-lite",
@@ -3048,7 +2931,6 @@
      "ticker": "IESC",
      "rank": 1,
      "verdict": "선택",
-     "why": "데이터센터 실적 및 분할 모멘텀 우수",
      "r1": -4.6,
      "r5": 0.4
     },
@@ -3056,7 +2938,6 @@
      "ticker": "AXTI",
      "rank": 2,
      "verdict": "선택",
-     "why": "흑자 전환 및 AI 수요 부각",
      "r1": 20.7,
      "r5": 55.7
     },
@@ -3064,7 +2945,6 @@
      "ticker": "ITGR",
      "rank": 3,
      "verdict": "선택",
-     "why": "KKR 대규모 인수합병 프리미엄",
      "r1": -0.5,
      "r5": 0.1
     },
@@ -3072,7 +2952,6 @@
      "ticker": "AMBA",
      "rank": 4,
      "verdict": "관찰",
-     "why": "인수설 관련 변동성 모니터링 필요",
      "r1": -1.6,
      "r5": 3.3
     },
@@ -3080,7 +2959,6 @@
      "ticker": "AMZN",
      "rank": 5,
      "verdict": "관찰",
-     "why": "대형주 수급 및 지수 연동성 체크",
      "r1": 2.1,
      "r5": -1.4
     },
@@ -3088,7 +2966,6 @@
      "ticker": "CDNA",
      "rank": 6,
      "verdict": "관찰",
-     "why": "유상증자 및 일반 뉴스 혼재",
      "r1": 1.3,
      "r5": -1.1
     },
@@ -3096,7 +2973,6 @@
      "ticker": "BHC",
      "rank": 7,
      "verdict": "관찰",
-     "why": "턴어라운드 단기 급등 후 추이 확인",
      "r1": 0,
      "r5": -10.7
     },
@@ -3104,7 +2980,6 @@
      "ticker": "DLB",
      "rank": 8,
      "verdict": "관찰",
-     "why": "가이드라인 상향 후 호가창 확인 필요",
      "r1": 1.4,
      "r5": 4.9
     },
@@ -3112,7 +2987,6 @@
      "ticker": "BSBR",
      "rank": 9,
      "verdict": "관찰",
-     "why": "인수 관련 뉴스 세부사항 분석 필요",
      "r1": 0.7,
      "r5": 1.9
     },
@@ -3120,7 +2994,6 @@
      "ticker": "DXCM",
      "rank": 10,
      "verdict": "관찰",
-     "why": "전망 상향 모멘텀 지속 여부 확인",
      "r1": 2.4,
      "r5": -0.6
     },
@@ -3128,7 +3001,6 @@
      "ticker": "SPSC",
      "rank": 11,
      "verdict": "제외",
-     "why": "가이드라인 대비 밸류에이션 부담",
      "r1": 0,
      "r5": -2.8
     },
@@ -3136,7 +3008,6 @@
      "ticker": "ARXS",
      "rank": 12,
      "verdict": "제외",
-     "why": "단기 모멘텀 및 유동성 부족",
      "r1": -1.4,
      "r5": 9.3
     },
@@ -3144,7 +3015,6 @@
      "ticker": "SPXC",
      "rank": 13,
      "verdict": "제외",
-     "why": "목표가 상향이나 탄력성 제한적",
      "r1": -1.9,
      "r5": -1.2
     },
@@ -3152,7 +3022,6 @@
      "ticker": "KC",
      "rank": 14,
      "verdict": "제외",
-     "why": "ADR 전반의 변동성 영향",
      "r1": 2.9,
      "r5": 6.8
     },
@@ -3160,7 +3029,6 @@
      "ticker": "NVDA",
      "rank": 15,
      "verdict": "제외",
-     "why": "상승 폭 제한적이며 관망 필요",
      "r1": 4.5,
      "r5": 13.3
     },
@@ -3168,7 +3036,6 @@
      "ticker": "AAPL",
      "rank": 16,
      "verdict": "제외",
-     "why": "핵심 투자은행의 부정적 전망 및 약세",
      "r1": -2,
      "r5": 1.2
     },
@@ -3176,7 +3043,6 @@
      "ticker": "INTC",
      "rank": 17,
      "verdict": "제외",
-     "why": "반도체 섹터 내 관망세 우세",
      "r1": 2.9,
      "r5": 15
     },
@@ -3184,7 +3050,6 @@
      "ticker": "NOK",
      "rank": 18,
      "verdict": "제외",
-     "why": "테마성 움직임으로 리스크 관리 필요",
      "r1": 5.5,
      "r5": 5.4
     }
@@ -3201,136 +3066,6 @@
      "ITGR"
     ]
    },
-   "dayCands": [
-    {
-     "name": "Amazon.com, Inc.",
-     "ticker": "AMZN",
-     "score": 80,
-     "target_pct": 4,
-     "sector": "유통",
-     "basis": [
-      "뉴스재료",
-      "추세지속"
-     ],
-     "reason": "골드만삭스의 AI 투자 관련 메시지와 함께 대형 기술주 전반의 모멘텀을 활용한 단기 트레이딩이 가능합니다. 견고한 거래대금을 바탕으로 한 기술적 반등을 노립니다.",
-     "risk": "대형주 수급 이탈 시 지연 가능성",
-     "o": {
-      "px": 283.305,
-      "op": 279.125,
-      "gap": 2.8,
-      "mom": 1.5
-     },
-     "m1": [
-      -0.04,
-      1.08,
-      1.24,
-      1.2,
-      1.52
-     ]
-    },
-    {
-     "name": "Bausch Health Companies Inc.",
-     "ticker": "BHC",
-     "score": 77,
-     "sector": "헬스케어",
-     "basis": [
-      "실적/재무",
-      "낙폭과대"
-     ],
-     "reason": "2분기 턴어라운드 실적이 회복 기대감을 자극하며 강한 거래량을 동반해 급등했습니다. 단기 낙폭 과대 구간에서의 모멘텀 추종 매매에 적합합니다.",
-     "risk": "헬스케어 섹터 전반의 오후장 약세 흐름 주의",
-     "target_pct": 3,
-     "o": {
-      "px": 7.14,
-      "op": 6.989999771118164,
-      "gap": 1.3,
-      "mom": 2.1
-     },
-     "m1": [
-      2.36,
-      3.58,
-      2.52,
-      2.59,
-      2.15
-     ]
-    },
-    {
-     "name": "Dolby Laboratories",
-     "ticker": "DLB",
-     "score": 75,
-     "sector": "기술",
-     "basis": [
-      "실적/재무",
-      "뉴스재료"
-     ],
-     "reason": "3분기 실적 호조와 함께 자사주 매입 확대 및 가이드라인 상향으로 매수세가 유입되었습니다. 실적 발표 이후의 추세적 모멘텀을 활용합니다.",
-     "risk": "단기 차익실현 매물 압박",
-     "target_pct": 3,
-     "o": {
-      "px": 60.307,
-      "op": 58.970001220703125,
-      "gap": 0.2,
-      "mom": 2.3
-     },
-     "m1": [
-      0.19,
-      0.83,
-      2.27
-     ]
-    },
-    {
-     "name": "DexCom, Inc.",
-     "ticker": "DXCM",
-     "score": 74,
-     "sector": "헬스케어",
-     "basis": [
-      "뉴스재료",
-      "추세지속"
-     ],
-     "reason": "2026년 전망 상향과 제2형 당뇨 접근성 확대 뉴스로 분석가 목표주가 상향 조치가 이어졌습니다. 양호한 수급을 바탕으로 단기 모멘텀이 유효합니다.",
-     "risk": "종목 자체 변동성 및 섹터 순환매",
-     "target_pct": 3,
-     "o": {
-      "px": 85.055,
-      "op": 85.94000244140625,
-      "gap": 3,
-      "mom": -1
-     },
-     "m1": [
-      -0.03,
-      -1.62,
-      -1.71,
-      -1,
-      -1.03
-     ]
-    },
-    {
-     "name": "AXT Inc",
-     "ticker": "AXTI",
-     "score": 72,
-     "sector": "반도체",
-     "basis": [
-      "실적/재무",
-      "거래량급증"
-     ],
-     "reason": "AI 수요 스토리와 흑자 전환 모멘텀이 당일에도 거래량을 동반하며 이어질 가능성이 높습니다. 초반 눌림목 구간에서의 단타 접근이 유리합니다.",
-     "risk": "급등에 따른 높은 변동성",
-     "target_pct": 3,
-     "o": {
-      "px": 55.015,
-      "op": 56.88999938964844,
-      "gap": -5.9,
-      "mom": -3.3
-     },
-     "m1": [
-      -5.52,
-      -3.94,
-      -3.61,
-      -3.96,
-      -3.48
-     ]
-    }
-   ],
    "hold": 0,
    "v": {
     "m": "gemini-3.5-flash-lite",
@@ -46395,6 +46130,364 @@
      "mom": -2.9
     }
    }
+  },
+  {
+   "date": "2026-11-02",
+   "market": "US",
+   "regime": "하락",
+   "rules": [
+    "단타 실패 분해: 시장충격12·목표과다2·선정26 → 선정 강화",
+    "강도80+ 실측 0%(10) — 확신도 과장, 보수화",
+    "근거'거래량급증' 성공30%(23) → 단독추천 지양",
+    "근거'정책테마' 성공36%(22) → 단독추천 지양",
+    "근거'낙폭과대' 성공25%(8) → 단독추천 지양",
+    "섹터'반도체' 성공40%(15) → 회피"
+   ],
+   "cands": [
+    {
+     "ticker": "CDNA",
+     "rank": 1,
+     "verdict": "선택",
+     "why": "강한 상승세 유지 및 추가 모멘텀 기대",
+     "r1": null
+    },
+    {
+     "ticker": "FDXF",
+     "rank": 2,
+     "verdict": "선택",
+     "why": "실적 리셋 효과 반영 중",
+     "r1": null
+    },
+    {
+     "ticker": "MEOH",
+     "rank": 3,
+     "verdict": "선택",
+     "why": "탄탄한 Q3 실적과 현금 흐름",
+     "r1": null
+    },
+    {
+     "ticker": "REGN",
+     "rank": 4,
+     "verdict": "선택",
+     "why": "월가 목표가 상향 릴레이",
+     "r1": null
+    },
+    {
+     "ticker": "CVCO",
+     "rank": 5,
+     "verdict": "관찰",
+     "why": "레코드 실적 발표 이후 밸류에이션 점검 필요",
+     "r1": null
+    },
+    {
+     "ticker": "GPN",
+     "rank": 6,
+     "verdict": "선택",
+     "why": "인수(Take-private) 기대감 유효",
+     "r1": null
+    },
+    {
+     "ticker": "BTSG",
+     "rank": 7,
+     "verdict": "관찰",
+     "why": "지수 편입 및 실적 컨퍼런스 후속 주시",
+     "r1": null
+    },
+    {
+     "ticker": "GDDY",
+     "rank": 8,
+     "verdict": "선택",
+     "why": "목표주가 큰 폭 상향 조정",
+     "r1": null
+    },
+    {
+     "ticker": "OLN",
+     "rank": 9,
+     "verdict": "관찰",
+     "why": "실적 턴어라운드이나 Q4 가이던스 둔화",
+     "r1": null
+    },
+    {
+     "ticker": "INTA",
+     "rank": 10,
+     "verdict": "관찰",
+     "why": "AI 관련 수혜 기대감 지속",
+     "r1": null
+    },
+    {
+     "ticker": "HGV",
+     "rank": 12,
+     "verdict": "제외",
+     "why": "목표주가 하향 조정 발생",
+     "r1": null
+    },
+    {
+     "ticker": "RKT",
+     "rank": 13,
+     "verdict": "관찰",
+     "why": "실적 호조이나 밸류에이션 리스크 상존",
+     "r1": null
+    },
+    {
+     "ticker": "MHK",
+     "rank": 14,
+     "verdict": "관찰",
+     "why": "마진 회복력 부각되나 추세 확인 필요",
+     "r1": null
+    },
+    {
+     "ticker": "INTC",
+     "rank": 15,
+     "verdict": "제외",
+     "why": "급락 종목 회피",
+     "r1": null
+    },
+    {
+     "ticker": "NVDA",
+     "rank": 16,
+     "verdict": "제외",
+     "why": "반도체 섹터 회피 및 하락 흐름",
+     "r1": null
+    },
+    {
+     "ticker": "SPCX",
+     "rank": 17,
+     "verdict": "제외",
+     "why": "부진한 모멘텀",
+     "r1": null
+    },
+    {
+     "ticker": "AMZN",
+     "rank": 18,
+     "verdict": "제외",
+     "why": "하락세 진입",
+     "r1": null
+    },
+    {
+     "ticker": "CDLR",
+     "rank": 100,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    }
+   ],
+   "bl": {
+    "rand": [
+     "GDDY",
+     "CDLR",
+     "SPCX"
+    ],
+    "mom": [
+     "CDNA",
+     "FDXF",
+     "MEOH"
+    ]
+   },
+   "dayCands": [
+    {
+     "name": "CareDx, Inc.",
+     "ticker": "CDNA",
+     "score": 55,
+     "target_pct": 4,
+     "sector": "의료",
+     "basis": [
+      "추세지속"
+     ],
+     "reason": "대규모 상승 랠리 이후에도 밸류에이션이 합리적이라는 평가와 함께 강한 모멘텀을 유지하고 있습니다. 단기 변동성을 활용한 접근이 가능합니다.",
+     "risk": "급등 후 차익실현 매물 출회"
+    },
+    {
+     "name": "FedEx Freight Holding Company",
+     "ticker": "FDXF",
+     "score": 53,
+     "target_pct": 3,
+     "sector": "물류",
+     "basis": [
+      "실적"
+     ],
+     "reason": "실적 리셋과 함께 가이던스 및 밸류에이션 재평가가 진행되며 큰 폭으로 상승했습니다. 당일 모멘텀 지속 여부를 체크합니다.",
+     "risk": "단기 과열에 따른 되돌림 위험"
+    },
+    {
+     "name": "GoDaddy Inc.",
+     "ticker": "GDDY",
+     "score": 52,
+     "target_pct": 3,
+     "sector": "기술",
+     "basis": [
+      "추세지속"
+     ],
+     "reason": "씨티그룹과 웨드부시 등 주요 기관의 목표주가 대폭 상향 조정이 단기 수급을 견인하고 있습니다.",
+     "risk": "지수 선물 변동성에 따른 영향"
+    },
+    {
+     "name": "Olin Corporation",
+     "ticker": "OLN",
+     "score": 50,
+     "target_pct": 3,
+     "sector": "소재",
+     "basis": [
+      "실적"
+     ],
+     "reason": "Q3 실적이 흑자 전환에 성공하며 주가 반등을 이끌었습니다. 다만 Q4 가이던스 하향 우려가 있어 보수적 접근이 필요합니다.",
+     "risk": "Q4 가이던스 둔화 우려"
+    },
+    {
+     "name": "Rocket Companies, Inc.",
+     "ticker": "RKT",
+     "score": 48,
+     "target_pct": 3,
+     "sector": "금융",
+     "basis": [
+      "실적"
+     ],
+     "reason": "Q3 실적 호조가 주가 랠리를 지지하고 있으나 밸류에이션 리스크가 잔존합니다.",
+     "risk": "밸류에이션 부담 및 변동성"
+    }
+   ],
+   "hold": 0,
+   "v": {
+    "m": "gemini-3.5-flash-lite",
+    "pv": "J1.0-S2.0",
+    "policy": "S2.0"
+   },
+   "mktF": {
+    "dir": "횡보",
+    "conf": 45,
+    "why": "전일 S&P500 하락 후 지수선물이 소폭 반등 중이나 방향성이 명확하지 않음",
+    "ok": null
+   },
+   "picks": [
+    {
+     "kind": "swing",
+     "name": "Methanex Corporation",
+     "ticker": "MEOH",
+     "score": 62,
+     "sector": "화학",
+     "basis": [
+      "실적"
+     ],
+     "plan": {
+      "engine": "R2.0",
+      "strategy": "swing",
+      "atrPct": 3.81,
+      "stopPct": 5.71,
+      "targetPct": 11.43,
+      "rr": 2,
+      "maxHoldDays": 15,
+      "riskPct": 0.5,
+      "maxWeightPct": 10,
+      "weightPct": 8.59,
+      "qty": 6,
+      "notional": 429,
+      "decision": {
+       "version": "S2.0",
+       "action": "watch",
+       "strategy": "swing",
+       "reasons": [
+        "하락 국면: 신규 진입 보류"
+       ],
+       "plannedHoldDays": 15,
+       "reviewAfterDays": 3,
+       "maxHoldDays": 15,
+       "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+       "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+       "allowAutoOrder": false
+      }
+     },
+     "p0": 71.57,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "Global Payments Inc.",
+     "ticker": "GPN",
+     "score": 60,
+     "sector": "핀테크",
+     "basis": [
+      "뉴스재료"
+     ],
+     "plan": {
+      "engine": "R2.0",
+      "strategy": "swing",
+      "atrPct": 3.61,
+      "stopPct": 5.42,
+      "targetPct": 10.83,
+      "rr": 2,
+      "maxHoldDays": 5,
+      "riskPct": 0.5,
+      "maxWeightPct": 10,
+      "weightPct": 7.75,
+      "qty": 4,
+      "notional": 387,
+      "decision": {
+       "version": "S2.0",
+       "action": "watch",
+       "strategy": "watch",
+       "reasons": [
+        "하락 국면: 신규 진입 보류",
+        "지속 재료·추세 확인 전 관찰"
+       ],
+       "plannedHoldDays": 5,
+       "reviewAfterDays": 3,
+       "maxHoldDays": 5,
+       "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+       "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+       "allowAutoOrder": false
+      }
+     },
+     "p0": 96.84,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "Regeneron Pharmaceuticals, Inc.",
+     "ticker": "REGN",
+     "score": 58,
+     "sector": "제약",
+     "basis": [
+      "추세지속"
+     ],
+     "plan": {
+      "engine": "R2.0",
+      "strategy": "swing",
+      "atrPct": 2.98,
+      "stopPct": 4.47,
+      "targetPct": 8.94,
+      "rr": 2,
+      "maxHoldDays": 5,
+      "riskPct": 0.5,
+      "maxWeightPct": 10,
+      "weightPct": 0,
+      "qty": 0,
+      "notional": 0,
+      "decision": {
+       "version": "S2.0",
+       "action": "watch",
+       "strategy": "day-watch",
+       "reasons": [
+        "하락 국면: 신규 진입 보류",
+        "단기 수급만 확인: 단타 재평가 후보, 자동 전환 아님"
+       ],
+       "plannedHoldDays": 5,
+       "reviewAfterDays": 3,
+       "maxHoldDays": 5,
+       "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+       "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+       "allowAutoOrder": false
+      }
+     },
+     "p0": 927.89,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    }
+   ]
   }
  ],
  "monAt": 1793385100693
