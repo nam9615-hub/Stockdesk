@@ -1,74 +1,38 @@
 {
- "date": "2026-11-03",
+ "date": "2026-11-04",
  "at": "21:29",
  "data": {
-  "brief": "S&P500 하락세와 VIX 상승 등 위험 회피 심리가 우세한 국면이나, 개별 실적 호조 및 가이드라인 상향 종목을 중심으로 모멘텀이 유지되고 있습니다. 과거 통계상 과도한 확신을 경계하며 실적과 가이드라인 상향이 명확한 종목 중심으로 선별 대응합니다.",
+  "brief": "전일 S&P500 상승과 VIX 하락 등 우호적인 시장 환경에도 과거 실측된 낮은 적중률과 과도한 확신 보정 규칙을 엄격히 적용해 보수적으로 접근한다. 실적 개선 및 흑자 전환 모멘텀이 확인된 종목 위주로 선별하고, 변동성이 큰 테마주는 제외 및 관찰로 분류한다.",
+  "mkt": {
+   "dir": "상승",
+   "conf": 45,
+   "why": "전일 S&P500과 지수선물의 상승 흐름이 이어지고 있으나 과거 예측 적중률을 고려해 신중한 접근이 필요하다."
+  },
   "picks": [
    {
-    "name": "IDEXX Laboratories, Inc.",
-    "ticker": "IDXX",
+    "name": "Aehr Test Systems",
+    "ticker": "AEHR",
     "score": 55,
-    "sector": "헬스케어",
+    "sector": "반도체",
     "basis": [
      "실적"
     ],
-    "reason": "골드만삭스의 목표가 상향 조정과 견조한 실적 모멘텀이 이어지며 방어적 매수세가 유입되고 있습니다. 실적 발표 이후 가시성이 높아져 스윙 관점의 접근이 유리합니다.",
-    "catalyst": "목표가 상향 및 실적 모멘텀",
-    "risk": "지수 하락에 따른 변동성 확대",
+    "reason": "레코드 매출 기록과 가이드라인 상향 조정으로 펀더멘털 개선이 확인되었다. 흑자 전환에 따른 모멘텀이 스윙 관점에서 유효하다.",
+    "catalyst": "Q1 2027 실적 서프라이즈 및 가이드라인 상향",
+    "risk": "반도체 섹터 전반의 변동성 확대 주의",
     "plan": {
      "engine": "R2.0",
      "strategy": "swing",
-     "atrPct": 3.47,
-     "stopPct": 5.21,
-     "targetPct": 10.41,
-     "rr": 2,
-     "maxHoldDays": 15,
-     "riskPct": 0.5,
-     "maxWeightPct": 10,
-     "weightPct": 0,
-     "qty": 0,
-     "notional": 0,
-     "decision": {
-      "version": "S2.0",
-      "action": "watch",
-      "strategy": "swing",
-      "reasons": [
-       "하락 국면: 신규 진입 보류"
-      ],
-      "plannedHoldDays": 15,
-      "reviewAfterDays": 3,
-      "maxHoldDays": 15,
-      "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
-      "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
-      "allowAutoOrder": false
-     }
-    }
-   },
-   {
-    "name": "Nextpower Inc.",
-    "ticker": "NXT",
-    "score": 52,
-    "sector": "유틸리티",
-    "basis": [
-     "실적",
-     "수주계약"
-    ],
-    "reason": "Q2 실적 호조와 가이드라인 상향이 성장에 대한 기대감을 자극하고 있습니다. 견고한 펀더멘털을 바탕으로 추가 상승 여력이 존재합니다.",
-    "catalyst": "실적 서프라이즈 및 가이드 상향",
-    "risk": "밸류에이션 부담 및 시장 조정",
-    "plan": {
-     "engine": "R2.0",
-     "strategy": "swing",
-     "atrPct": 5.85,
-     "stopPct": 8.77,
-     "targetPct": 17.55,
+     "atrPct": 10.74,
+     "stopPct": 9,
+     "targetPct": 18,
      "rr": 2,
      "maxHoldDays": 10,
      "riskPct": 0.5,
      "maxWeightPct": 10,
-     "weightPct": 5.47,
-     "qty": 3,
-     "notional": 273,
+     "weightPct": 5.21,
+     "qty": 4,
+     "notional": 260,
      "decision": {
       "version": "S2.0",
       "action": "watch",
@@ -86,29 +50,69 @@
     }
    },
    {
-    "name": "PHINIA Inc.",
-    "ticker": "PHIN",
-    "score": 50,
-    "sector": "소재",
+    "name": "Xometry, Inc.",
+    "ticker": "XMTR",
+    "score": 52,
+    "sector": "소프트웨어",
     "basis": [
      "실적"
     ],
-    "reason": "2026년 가이드라인 상향과 기록적인 조정 EPS 기록이 투자 심리를 개선하고 있습니다. 실적 기반의 펀더멘털 매력이 돋보입니다.",
-    "catalyst": "가이드라인 상향 및 실적 호조",
-    "risk": "거시경제 둔화 우려",
+    "reason": "첫 분기 흑자 달성과 함께 연간 실적 전망을 상향 조정하며 투자 심리가 개선되었다. 실적 턴어라운드 초기 국면으로 추가 상승 여력이 있다.",
+    "catalyst": "첫 분기 흑자 달성 및 풀이어 전망 상향",
+    "risk": "단기 급등에 따른 차익실현 매물 출하 가능성",
     "plan": {
      "engine": "R2.0",
      "strategy": "swing",
-     "atrPct": 3.39,
-     "stopPct": 5.08,
-     "targetPct": 10.17,
+     "atrPct": 7.57,
+     "stopPct": 9,
+     "targetPct": 18,
+     "rr": 2,
+     "maxHoldDays": 15,
+     "riskPct": 0.5,
+     "maxWeightPct": 10,
+     "weightPct": 4.45,
+     "qty": 2,
+     "notional": 223,
+     "decision": {
+      "version": "S2.0",
+      "action": "watch",
+      "strategy": "swing",
+      "reasons": [
+       "하락 국면: 신규 진입 보류"
+      ],
+      "plannedHoldDays": 15,
+      "reviewAfterDays": 3,
+      "maxHoldDays": 15,
+      "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+      "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+      "allowAutoOrder": false
+     }
+    }
+   },
+   {
+    "name": "Fabrinet",
+    "ticker": "FN",
+    "score": 50,
+    "sector": "장비",
+    "basis": [
+     "실적"
+    ],
+    "reason": "기록적인 실적을 기록하며 시장의 이목을 끌었으나 마진 관련 질문들이 제기되고 있다. 견고한 실적 바탕의 추세 지속성이 기대된다.",
+    "catalyst": "기록적 실적 및 마진 개선 추세",
+    "risk": "마진 우려에 따른 주가 변동성",
+    "plan": {
+     "engine": "R2.0",
+     "strategy": "swing",
+     "atrPct": 7.31,
+     "stopPct": 9,
+     "targetPct": 18,
      "rr": 2,
      "maxHoldDays": 10,
      "riskPct": 0.5,
      "maxWeightPct": 10,
-     "weightPct": 8.49,
-     "qty": 6,
-     "notional": 425,
+     "weightPct": 0,
+     "qty": 0,
+     "notional": 0,
      "decision": {
       "version": "S2.0",
       "action": "watch",
@@ -128,184 +132,175 @@
   ],
   "day_cands": [
    {
-    "name": "Newell Brands Inc.",
-    "ticker": "NWL",
-    "score": 50,
-    "target_pct": 4,
-    "sector": "소비재",
-    "basis": [
-     "실적",
-     "추세지속"
-    ],
-    "reason": "실적 호조와 함께 애널리스트들의 목표가 상향이 이어지며 급등세를 보이고 있습니다. 단기 모멘텀이 강하게 작용하는 구간입니다.",
-    "risk": "급등에 따른 차익실현 매물 출회"
-   },
-   {
-    "name": "Loar Holdings Inc.",
-    "ticker": "LOAR",
-    "score": 48,
-    "target_pct": 3,
-    "sector": "산업재",
-    "basis": [
-     "정책테마"
-    ],
-    "reason": "S&P SmallCap 600 지수 편입 이슈로 인해 수급 유입이 기대됩니다. 지수 편입에 따른 단기 수급 모멘텀을 활용할 수 있습니다.",
-    "risk": "지수 편입 효과 소멸 후 변동성"
-   },
-   {
-    "name": "Sprouts Farmers Market, Inc.",
-    "ticker": "SFM",
+    "name": "Riot Platforms, Inc.",
+    "ticker": "RIOT",
     "score": 45,
-    "target_pct": 3,
-    "sector": "유통",
+    "target_pct": 4,
+    "sector": "가상자산",
     "basis": [
-     "실적"
+     "뉴스재료"
     ],
-    "reason": "가격 재설정 및 접근성 투자 관련 뉴스 속에서도 주가 상승 탄력이 유지되고 있습니다. 다만 유통 섹터 통계상 신중한 접근이 필요합니다.",
-    "risk": "신중한 실적 전망 및 유통 섹터 약세"
+    "reason": "대출 만기 임박 및 비트코인 채굴주 반등 흐름 속에서 모멘텀이 형성되고 있다. 단기 트레이딩 관점의 접근이 가능하다.",
+    "risk": "부채 관련 불확실성과 변동성"
    },
    {
-    "name": "McGrath RentCorp",
-    "ticker": "MGRC",
-    "score": 44,
-    "target_pct": 3,
-    "sector": "산업재",
+    "name": "TeraWulf Inc.",
+    "ticker": "WULF",
+    "score": 45,
+    "target_pct": 4,
+    "sector": "인프라",
     "basis": [
-     "실적"
+     "뉴스재료"
     ],
-    "reason": "견고한 Q3 성장세를 바탕으로 매수세가 유입되며 주가가 반등하고 있습니다. 긍정적인 실적 뉴스가 단기 모멘텀을 지지합니다.",
-    "risk": "전체 시장 하락 압력"
+    "reason": "신용 한도 확대 소식과 AI 호스팅 관련 리스크가 부각되며 거래량이 유입되고 있다. 단기 반등 모멘텀을 활용할 수 있다.",
+    "risk": "AI 호스팅 리스크 지속"
    },
    {
-    "name": "Wingstop Inc.",
-    "ticker": "WING",
+    "name": "Graphic Packaging Holding Company",
+    "ticker": "GPK",
     "score": 42,
     "target_pct": 3,
-    "sector": "요식업",
+    "sector": "소재",
     "basis": [
      "추세지속"
     ],
-    "reason": "패스트푸드 업계의 부진 속에서도 독보적인 상승세를 보이며 모멘텀을 유지하고 있습니다. 강한 추세가 단기 반등을 지지합니다.",
-    "risk": "밸류에이션 부담 및 섹터 차별화"
+    "reason": "목표가 상향 조정 리포트와 신제품 패키징 관련 뉴스가 동반되었다. 안정적인 박스권 흐름 속 단기 상승을 노린다.",
+    "risk": "보수적 투자의견(Hold) 유지"
+   },
+   {
+    "name": "Neurocrine Biosciences, Inc.",
+    "ticker": "NBIX",
+    "score": 40,
+    "target_pct": 3,
+    "sector": "제약",
+    "basis": [
+     "뉴스재료"
+    ],
+    "reason": "학회에서의 파이프라인 스포트라이트 기대감이 작용하고 있다. 제약 섹터 우위 통계를 참고하여 단기 접근한다.",
+    "risk": "이벤트 소멸 후 차익실현"
+   },
+   {
+    "name": "Hut 8 Corp.",
+    "ticker": "HUT",
+    "score": 40,
+    "target_pct": 4,
+    "sector": "가상자산",
+    "basis": [
+     "실적"
+    ],
+    "reason": "실적 발표 전후로 채굴주 전반의 반등세와 함께 강한 변동성을 보이고 있다. 단기 모멘텀 트레이딩 대상이다.",
+    "risk": "매출 감소 및 실적 세부 지표 확인 필요"
    }
   ],
   "cands": [
    {
-    "ticker": "IDXX",
+    "ticker": "AEHR",
     "rank": 1,
     "verdict": "선택",
-    "why": "골드만삭스 목표가 상향 및 실적 모멘텀 보유"
+    "why": "기록적 매출과 가이드 상향으로 실적 모멘텀 보유"
    },
    {
-    "name": "NWL",
+    "ticker": "XMTR",
     "rank": 2,
     "verdict": "선택",
-    "why": "실적 호조 및 목표가 상향으로 급등세"
+    "why": "첫 분기 흑자 달성 및 연간 전망 상향"
    },
    {
-    "name": "NXT",
+    "ticker": "FN",
     "rank": 3,
     "verdict": "선택",
-    "why": "Q2 실적 호조 및 가이드라인 상향"
+    "why": "기록적 실적 기록"
    },
    {
-    "name": "PHIN",
+    "ticker": "GPK",
     "rank": 4,
-    "verdict": "선택",
-    "why": "기록적 EPS와 2026년 가이드 상향"
+    "verdict": "관찰",
+    "why": "목표가 상향 및 신제품 모멘텀"
    },
    {
-    "name": "SFM",
+    "ticker": "RIOT",
     "rank": 5,
     "verdict": "관찰",
-    "why": "Q3 딥다이브와 가격 재설정 이슈 공존"
+    "why": "채굴주 반등 및 대출 이슈"
    },
    {
-    "name": "SAM",
+    "ticker": "WULF",
     "rank": 6,
     "verdict": "관찰",
-    "why": "계절성 마케팅 및 실적 기대감"
+    "why": "신용 한도 확대 및 AI 호스팅 리스크"
    },
    {
-    "name": "AIN",
+    "ticker": "HUT",
     "rank": 7,
     "verdict": "관찰",
-    "why": "어닝 서프라이즈 이후 스토리 변화 관찰"
+    "why": "채굴주 동반 상승 및 실적 발표"
    },
    {
-    "name": "MGRC",
+    "ticker": "CIFR",
     "rank": 8,
     "verdict": "관찰",
-    "why": "Q3 강한 성장세이나 시장 환경 고려"
+    "why": "목표가 하향 조정이나 채굴주 섹터 연동"
    },
    {
-    "name": "ESAB",
+    "ticker": "GLXY",
     "rank": 9,
     "verdict": "관찰",
-    "why": "상승 모멘텀 지속 여부 확인 필요"
+    "why": "목표가 상향 및 암호화폐 연동"
    },
    {
-    "name": "LOAR",
+    "ticker": "CLSK",
     "rank": 10,
-    "verdict": "선택",
-    "why": "S&P SmallCap 600 지수 편입 모멘텀"
+    "verdict": "제외",
+    "why": "투자의견 하향 조정 반영"
    },
    {
-    "name": "NSP",
+    "ticker": "CORZ",
     "rank": 11,
     "verdict": "관찰",
-    "why": "실적 발표 내용 점검 필요"
+    "why": "정치적 이벤트 및 AI 데이터센터 변동성"
    },
    {
-    "name": "WING",
+    "ticker": "NBIX",
     "rank": 12,
     "verdict": "관찰",
-    "why": "강한 상승세이나 섹터 리스크 주의"
+    "why": "학회 파이프라인 소개 예정"
    },
    {
-    "name": "ENPH",
+    "ticker": "FRVO",
     "rank": 13,
     "verdict": "관찰",
-    "why": "신재생 섹터 변동성 확인 필요"
+    "why": "공매도 리포트 이후 반등 잠재력"
    },
    {
-    "name": "TEM",
+    "ticker": "GRAB",
     "rank": 14,
-    "verdict": "관찰",
-    "why": "제프리스 투자의견 상향 조정 반영"
+    "verdict": "제외",
+    "why": "상승 모멘텀 부족 및 장기 관점 필요"
    },
    {
-    "name": "INTC",
+    "ticker": "INTC",
     "rank": 15,
     "verdict": "제외",
-    "why": "반도체 섹터 약세 및 실적 부진"
+    "why": "반도체 섹터 회피 원칙 적용"
    },
    {
-    "name": "NVDA",
+    "ticker": "NU",
     "rank": 16,
     "verdict": "제외",
-    "why": "반도체 섹터 하락 압력 및 모멘텀 부족"
+    "why": "핀테크 섹터 회피 및 하락 추세"
    },
    {
-    "name": "SPCX",
+    "ticker": "ORCL",
     "rank": 17,
-    "verdict": "관찰",
-    "why": "테슬라/스페이스X 관련 뉴스 영향 제한적"
+    "verdict": "제외",
+    "why": "딜 취소 악재로 인한 주가 슬립"
    },
    {
-    "name": "AAL",
+    "ticker": "BETA",
     "rank": 18,
-    "verdict": "관찰",
-    "why": "유가 하락에 따른 항공주 반등이나 업종 한계"
+    "verdict": "제외",
+    "why": "연초 대비 하락폭 과다 및 관찰 필요"
    }
-  ],
-  "mkt": {
-   "dir": "하락",
-   "conf": 40,
-   "why": "S&P500 선물 하락 및 VIX 상승으로 약세 압력이 우세함"
-  },
-  "day_picks": [],
-  "day_at": "23:34",
-  "day_brief": "제시된 5개 종목 모두 개장 후 마이너스(-) 전환 또는 보합세를 보이며 사전 선정 논리를 확인해주지 못했고, 실패 분해 통계 및 원칙에 따라 확률 우위가 없어 모두 제외함."
+  ]
  }
 }
