@@ -44468,28 +44468,32 @@
      "rank": 5,
      "verdict": "관찰",
      "why": "실적 콜 이후 모멘텀 지속 여부 확인",
-     "r1": 2.3
+     "r1": 2.3,
+     "r5": 0.9
     },
     {
      "ticker": "ABG",
      "rank": 6,
      "verdict": "관찰",
      "why": "투자의견 상향에 따른 수급 유입 체크",
-     "r1": -0.8
+     "r1": -0.8,
+     "r5": 1.4
     },
     {
      "ticker": "HWKN",
      "rank": 7,
      "verdict": "관찰",
      "why": "현금 흐름 양호하나 밸류에이션 점검 필요",
-     "r1": 1.2
+     "r1": 1.2,
+     "r5": 0.4
     },
     {
      "ticker": "AEHR",
      "rank": 8,
      "verdict": "제외",
      "why": "반도체 섹터 과거 실측 성적 부진 및 고평가 우려",
-     "r1": -0.7
+     "r1": -0.7,
+     "r5": 0.2
     },
     {
      "ticker": "INFQ",
@@ -45885,7 +45889,9 @@
      "b": 7.659999847412109,
      "gap": -14,
      "idx": -1.25,
-     "simOpen": 5.2
+     "simR": 14.19,
+     "simExit": "target",
+     "simD": "2026-10-30"
     }
    ],
    "day2": {
@@ -46381,7 +46387,7 @@
      "rank": 1,
      "verdict": "선택",
      "why": "골드만삭스 목표가 상향 및 실적 모멘텀 보유",
-     "r1": null
+     "r1": 1.5
     },
     {
      "ticker": "NWL",
@@ -46389,7 +46395,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": -6
     },
     {
      "ticker": "NXT",
@@ -46397,7 +46403,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": 2.7
     },
     {
      "ticker": "PHIN",
@@ -46405,7 +46411,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": -3
     },
     {
      "ticker": "SFM",
@@ -46413,7 +46419,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": -4.1
     },
     {
      "ticker": "SAM",
@@ -46421,7 +46427,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": -0.9
     },
     {
      "ticker": "AIN",
@@ -46429,7 +46435,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": -0.2
     },
     {
      "ticker": "MGRC",
@@ -46437,7 +46443,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": 2.5
     },
     {
      "ticker": "ESAB",
@@ -46445,7 +46451,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": -0.1
     },
     {
      "ticker": "LOAR",
@@ -46453,7 +46459,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": 1.1
     },
     {
      "ticker": "NSP",
@@ -46461,7 +46467,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": -3.5
     },
     {
      "ticker": "WING",
