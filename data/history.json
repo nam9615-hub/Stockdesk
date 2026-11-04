@@ -3883,7 +3883,6 @@
      "ticker": "005930.KS",
      "rank": 1,
      "verdict": "관찰",
-     "why": "필라델피아반도체 급등에도 수급 불일치 및 반도체 회피 성향 반영",
      "r1": -3.1,
      "r5": -5.7
     },
@@ -3891,7 +3890,6 @@
      "ticker": "196170.KQ",
      "rank": 91,
      "verdict": "관찰",
-     "why": "LLM 평가 누락",
      "miss": 1,
      "r1": -4.3,
      "r5": 13.1
@@ -3900,7 +3898,6 @@
      "ticker": "000660.KS",
      "rank": 92,
      "verdict": "관찰",
-     "why": "LLM 평가 누락",
      "miss": 1,
      "r1": -1.5,
      "r5": -15.8
@@ -3909,7 +3906,6 @@
      "ticker": "086520.KQ",
      "rank": 93,
      "verdict": "관찰",
-     "why": "LLM 평가 누락",
      "miss": 1,
      "r1": -2.7,
      "r5": 6.7
@@ -3918,7 +3914,6 @@
      "ticker": "005935.KS",
      "rank": 94,
      "verdict": "관찰",
-     "why": "LLM 평가 누락",
      "miss": 1,
      "r1": -0.7,
      "r5": -2.7
@@ -3927,7 +3922,6 @@
      "ticker": "247540.KQ",
      "rank": 95,
      "verdict": "관찰",
-     "why": "LLM 평가 누락",
      "miss": 1,
      "r1": -3.1,
      "r5": 4.6
@@ -3936,7 +3930,6 @@
      "ticker": "402340.KS",
      "rank": 96,
      "verdict": "관찰",
-     "why": "LLM 평가 누락",
      "miss": 1,
      "r1": -2.1,
      "r5": -17.3
@@ -3945,7 +3938,6 @@
      "ticker": "277810.KQ",
      "rank": 97,
      "verdict": "관찰",
-     "why": "LLM 평가 누락",
      "miss": 1,
      "r1": 1.5,
      "r5": 0.6
@@ -3954,7 +3946,6 @@
      "ticker": "009150.KS",
      "rank": 98,
      "verdict": "관찰",
-     "why": "LLM 평가 누락",
      "miss": 1,
      "r1": 0.4,
      "r5": -6.6
@@ -3963,7 +3954,6 @@
      "ticker": "036930.KQ",
      "rank": 99,
      "verdict": "관찰",
-     "why": "LLM 평가 누락",
      "miss": 1,
      "r1": -2,
      "r5": 11.4
@@ -3972,7 +3962,6 @@
      "ticker": "005380.KS",
      "rank": 100,
      "verdict": "관찰",
-     "why": "LLM 평가 누락",
      "miss": 1,
      "r1": 0.7,
      "r5": 0.4
@@ -3981,7 +3970,6 @@
      "ticker": "058470.KQ",
      "rank": 101,
      "verdict": "관찰",
-     "why": "LLM 평가 누락",
      "miss": 1,
      "r1": -1.2,
      "r5": 5.6
@@ -3990,7 +3978,6 @@
      "ticker": "373220.KS",
      "rank": 102,
      "verdict": "관찰",
-     "why": "LLM 평가 누락",
      "miss": 1,
      "r1": -0.1,
      "r5": 5.5
@@ -3999,7 +3986,6 @@
      "ticker": "240810.KQ",
      "rank": 103,
      "verdict": "관찰",
-     "why": "LLM 평가 누락",
      "miss": 1,
      "r1": -5.4,
      "r5": 1.4
@@ -4008,7 +3994,6 @@
      "ticker": "207940.KS",
      "rank": 104,
      "verdict": "관찰",
-     "why": "LLM 평가 누락",
      "miss": 1,
      "r1": 1.2,
      "r5": 9.2
@@ -4017,7 +4002,6 @@
      "ticker": "028300.KQ",
      "rank": 105,
      "verdict": "관찰",
-     "why": "LLM 평가 누락",
      "miss": 1,
      "r1": 1.2,
      "r5": 21.6
@@ -4035,106 +4019,6 @@
      "000660.KS"
     ]
    },
-   "dayCands": [
-    {
-     "name": "레인보우로보틱스",
-     "ticker": "277810.KQ",
-     "score": 70,
-     "target_pct": 5,
-     "sector": "로봇",
-     "basis": [
-      "정책테마",
-      "거래량급증"
-     ],
-     "reason": "미국의 중국산 로봇 규제 반사이익 및 기관의 연속 순매수 유입이 포착됩니다. 당일 변동성을 활용한 단기 트레이딩 관점에서 유리합니다.",
-     "risk": "단기 급등에 따른 차익실현 매물",
-     "o": {
-      "px": 458500,
-      "op": 477000,
-      "gap": 2.1,
-      "mom": -3.9
-     },
-     "m1": []
-    },
-    {
-     "name": "주성엔지니어링",
-     "ticker": "036930.KQ",
-     "score": 60,
-     "target_pct": 4,
-     "sector": "반도체",
-     "basis": [
-      "낙폭과대",
-      "거래량급증"
-     ],
-     "reason": "기관의 연속 순매수가 유입되며 낙폭 과대 이후 기술적 반등 여건이 조성되었습니다. 다만 반도체 섹터 전반의 회피 성향을 감안해 짧은 대응이 필요합니다.",
-     "risk": "반도체 섹터 투자 심리 회복 지연",
-     "o": {
-      "px": 139000,
-      "op": 145800,
-      "gap": 7.2,
-      "mom": -4.7
-     },
-     "m1": []
-    },
-    {
-     "name": "에코프로비엠",
-     "ticker": "247540.KQ",
-     "score": 58,
-     "target_pct": 4,
-     "sector": "이차전지",
-     "basis": [
-      "실적",
-      "거래량급증"
-     ],
-     "reason": "실적 개선 가시화와 함께 코스닥 매수세 유입 시 탄력적인 반등이 예상됩니다. 이차전지 섹터의 과거 승률을 고려해 보수적으로 접근합니다.",
-     "risk": "이차전지 업종 전반의 수급 부진",
-     "o": {
-      "px": 103300,
-      "op": 105000,
-      "gap": 2.4,
-      "mom": -1.6
-     },
-     "m1": []
-    },
-    {
-     "name": "SK스퀘어",
-     "ticker": "402340.KS",
-     "score": 55,
-     "target_pct": 3,
-     "sector": "지주사",
-     "basis": [
-      "낙폭과대"
-     ],
-     "reason": "최근 주가 변동성 속에서 저가 매수세와 기관 유입이 일부 관찰됩니다. 변동성 장세에서 방어적 단기 트레이딩이 가능합니다.",
-     "risk": "상승 모멘텀의 지속성 부족",
-     "o": {
-      "px": 1144000,
-      "op": 1143000,
-      "gap": 7.8,
-      "mom": 0.1
-     },
-     "m1": []
-    },
-    {
-     "name": "삼성전기",
-     "ticker": "009150.KS",
-     "score": 52,
-     "target_pct": 3,
-     "sector": "부품",
-     "basis": [
-      "정책테마"
-     ],
-     "reason": "미국의 중국산 로봇 규제 반사이익 기대로 부품주 모멘텀이 유효합니다. 기관 연속 순매수가 있으나 과거 하락 실식을 감안해 엄격한 손절 관리가 필요합니다.",
-     "risk": "전일 대비 변동성 및 외인 매도세",
-     "o": {
-      "px": 1342000,
-      "op": 1351000,
-      "gap": 14,
-      "mom": -0.7
-     },
-     "m1": []
-    }
-   ],
    "hold": 0,
    "v": {
     "m": "gemini-3.5-flash-lite",
@@ -4265,7 +4149,6 @@
      "ticker": "W",
      "rank": 1,
      "verdict": "선택",
-     "why": "목표가 상향 및 수요 회복 모멘텀",
      "r1": -6.4,
      "r5": -10.2
     },
@@ -4273,7 +4156,6 @@
      "ticker": "PLTR",
      "rank": 2,
      "verdict": "선택",
-     "why": "강한 거래량과 시장 추종 상승",
      "r1": -2.2,
      "r5": 8
     },
@@ -4281,7 +4163,6 @@
      "ticker": "PAY",
      "rank": 3,
      "verdict": "선택",
-     "why": "기록적 매출 실적 호조",
      "r1": -7.3,
      "r5": -5.8
     },
@@ -4289,7 +4170,6 @@
      "ticker": "ZBRA",
      "rank": 4,
      "verdict": "선택",
-     "why": "다수의 목표가 상향 조정",
      "r1": 0.1,
      "r5": 4.5
     },
@@ -4297,7 +4177,6 @@
      "ticker": "UFPT",
      "rank": 5,
      "verdict": "선택",
-     "why": "역대급 실적 및 밸류에이션 매력",
      "r1": -2,
      "r5": -2
     },
@@ -4305,7 +4184,6 @@
      "ticker": "IT",
      "rank": 6,
      "verdict": "선택",
-     "why": "증권사 목표가 상향 및 리서치 모멘텀",
      "r1": -0.9,
      "r5": -0.4
     },
@@ -4313,7 +4191,6 @@
      "ticker": "AEHR",
      "rank": 7,
      "verdict": "선택",
-     "why": "AI 트렌드 연동 반도체 장비 모멘텀",
      "r1": -8,
      "r5": 9.1
     },
@@ -4321,7 +4198,6 @@
      "ticker": "AAOI",
      "rank": 8,
      "verdict": "관찰",
-     "why": "중국 광수신기 금지 관련 노이즈 상존",
      "r1": 0.1,
      "r5": 4.6
     },
@@ -4329,7 +4205,6 @@
      "ticker": "PLPC",
      "rank": 9,
      "verdict": "관찰",
-     "why": "시가총액 대비 거래대금 확인 필요",
      "r1": 9.6,
      "r5": 11.8
     },
@@ -4337,7 +4212,6 @@
      "ticker": "TDW",
      "rank": 10,
      "verdict": "선택",
-     "why": "어닝 서프라이즈 및 실적 호조",
      "r1": -7.8,
      "r5": 8.7
     },
@@ -4345,7 +4219,6 @@
      "ticker": "WIX",
      "rank": 11,
      "verdict": "관찰",
-     "why": "실적 호조이나 추가 모멘텀 대기",
      "r1": -3.3,
      "r5": -0.4
     },
@@ -4353,7 +4226,6 @@
      "ticker": "ARM",
      "rank": 12,
      "verdict": "관찰",
-     "why": "지수 선물 연동 흐름 관찰 필요",
      "r1": 0,
      "r5": -2.1
     },
@@ -4361,7 +4233,6 @@
      "ticker": "EWTX",
      "rank": 13,
      "verdict": "제외",
-     "why": "바이오 섹터 과거 승률 부진 및 고평가 논란",
      "r1": 0.3,
      "r5": -1.2
     },
@@ -4369,7 +4240,6 @@
      "ticker": "FN",
      "rank": 14,
      "verdict": "관찰",
-     "why": "광네트워킹 섹터 연동 확인",
      "r1": 0,
      "r5": 0.7
     },
@@ -4377,7 +4247,6 @@
      "ticker": "SPCX",
      "rank": 15,
      "verdict": "제외",
-     "why": "어닝 발표 후 주가 급락세 포착",
      "r1": -3.6,
      "r5": 18.6
     },
@@ -4385,7 +4254,6 @@
      "ticker": "GRAB",
      "rank": 16,
      "verdict": "제외",
-     "why": "상승률 미미하여 모멘텀 부족",
      "r1": 0.5,
      "r5": 0.3
     },
@@ -4393,7 +4261,6 @@
      "ticker": "NVDA",
      "rank": 17,
      "verdict": "관찰",
-     "why": "대형주로 스윙 탄력 제한적",
      "r1": 1.1,
      "r5": 0.3
     },
@@ -4401,7 +4268,6 @@
      "ticker": "NOK",
      "rank": 18,
      "verdict": "제외",
-     "why": "상승률 및 모멘텀 상대적 열위",
      "r1": -2.4,
      "r5": -3.9
     }
@@ -4418,131 +4284,6 @@
      "PAY"
     ]
    },
-   "dayCands": [
-    {
-     "name": "Palantir Technologies Inc.",
-     "ticker": "PLTR",
-     "score": 78,
-     "target_pct": 5,
-     "sector": "소프트웨어",
-     "basis": [
-      "뉴스재료",
-      "거래량급증"
-     ],
-     "reason": "어닝 시즌 훈풍과 우호적인 시장 환경 속에서 거래량이 동반되며 강한 상승 탄력을 보이고 있습니다. 단기 모멘텀 트레이딩에 적합합니다.",
-     "risk": "높은 밸류에이션으로 인한 장중 변동성",
-     "o": {
-      "px": 165.46,
-      "op": 162.0500030517578,
-      "gap": -0.4,
-      "mom": 2.1
-     },
-     "m1": [
-      0.44,
-      1.61,
-      1.67,
-      2.07,
-      2.07
-     ]
-    },
-    {
-     "name": "Paymentus Holdings, Inc.",
-     "ticker": "PAY",
-     "score": 76,
-     "target_pct": 4,
-     "sector": "핀테크",
-     "basis": [
-      "실적",
-      "뉴스재료"
-     ],
-     "reason": "2분기 실적발표에서 기록적인 매출을 달성하며 상위 상승률 종목으로 부각되었습니다. 당일 거래 집중도가 높아 단기 반등 공략이 가능합니다.",
-     "risk": "시총 규모에 따른 호가창 얇음",
-     "o": {
-      "px": 40.41,
-      "op": 43.2599983215332,
-      "gap": -3.1,
-      "mom": -6.6
-     },
-     "m1": [
-      -3.54,
-      -6.15,
-      -6.31,
-      -6.59,
-      -6.59
-     ]
-    },
-    {
-     "name": "Tidewater Inc.",
-     "ticker": "TDW",
-     "score": 75,
-     "target_pct": 4,
-     "sector": "에너지",
-     "basis": [
-      "실적",
-      "추세지속"
-     ],
-     "reason": "기록적인 매출과 강세장 전망을 담은 실적 컨퍼런스콜 이후 매수세가 유입되고 있습니다. 실적 모멘텀이 당일 주가에 긍정적으로 작용할 것입니다.",
-     "risk": "에너지 섹터 전반의 수급 변동",
-     "o": {
-      "px": 82.03,
-      "op": 82.02999877929688,
-      "gap": -2.6,
-      "mom": 0
-     },
-     "m1": [
-      0
-     ]
-    },
-    {
-     "name": "Gartner, Inc.",
-     "ticker": "IT",
-     "score": 74,
-     "target_pct": 3,
-     "sector": "서비스",
-     "basis": [
-      "뉴스재료"
-     ],
-     "reason": "Truist의 목표가 상향(205달러)과 AI 관련 리서치 인사이트가 호재로 작용하고 있습니다. 안정적인 우상향 흐름 속 단기 트레이딩 구간이 나옵니다.",
-     "risk": "제한적인 변동성 폭",
-     "o": {
-      "px": 191.87,
-      "op": 189,
-      "gap": 1.7,
-      "mom": 1.5
-     },
-     "m1": [
-      -0.84,
-      -0.17,
-      1.14,
-      1.52
-     ]
-    },
-    {
-     "name": "Aehr Test Systems",
-     "ticker": "AEHR",
-     "score": 72,
-     "target_pct": 3,
-     "sector": "반도체",
-     "basis": [
-      "추세지속"
-     ],
-     "reason": "AI 반도체 트렌드와 맞물려 관련 수혜 기대감이 작용하며 주가가 강세를 보이고 있습니다. 기술주 전반의 투심 개선 효과를 누릴 수 있습니다.",
-     "risk": "내부자 매도 공시 존재",
-     "o": {
-      "px": 108,
-      "op": 107.41000366210938,
-      "gap": -2.3,
-      "mom": 0.5
-     },
-     "m1": [
-      1.6,
-      0.34,
-      0.32,
-      0.55,
-      0.55
-     ]
-    }
-   ],
    "hold": 0,
    "v": {
     "m": "gemini-3.5-flash-lite",
@@ -44500,28 +44241,32 @@
      "rank": 9,
      "verdict": "제외",
      "why": "퀀텀 관련 장기 과제 및 리스크 상존",
-     "r1": -1.2
+     "r1": -1.2,
+     "r5": -13.4
     },
     {
      "ticker": "MXL",
      "rank": 10,
      "verdict": "제외",
      "why": "주가 변동성 대비 명확한 단기 모멘텀 부족",
-     "r1": -2.4
+     "r1": -2.4,
+     "r5": -16.9
     },
     {
      "ticker": "CLS",
      "rank": 11,
      "verdict": "제외",
      "why": "캐나다 시장 및 거시 변수 대기 중",
-     "r1": 5.1
+     "r1": 5.1,
+     "r5": -8.8
     },
     {
      "ticker": "NVTS",
      "rank": 12,
      "verdict": "제외",
      "why": "반도체 관련주로 보수적 접근 필요",
-     "r1": -0.4
+     "r1": -0.4,
+     "r5": -8.9
     },
     {
      "ticker": "CHRN",
@@ -44542,7 +44287,8 @@
      "rank": 15,
      "verdict": "제외",
      "why": "변동성 미미 및 관망세",
-     "r1": -1.5
+     "r1": -1.5,
+     "r5": -4.1
     },
     {
      "ticker": "NU",
@@ -44556,14 +44302,16 @@
      "rank": 17,
      "verdict": "제외",
      "why": "혼조세 속 반도체 섹터 회피 원칙 적용",
-     "r1": 0.5
+     "r1": 0.5,
+     "r5": -36.3
     },
     {
      "ticker": "NVDA",
      "rank": 18,
      "verdict": "제외",
      "why": "상승 폭 제한적 및 반도체 섹터 리스크",
-     "r1": -2.1
+     "r1": -2.1,
+     "r5": -6
     }
    ],
    "bl": {
@@ -46475,7 +46223,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": -0.6
     },
     {
      "ticker": "ENPH",
@@ -46483,7 +46231,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": 7.6
     },
     {
      "ticker": "TEM",
@@ -46491,7 +46239,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": -3.7
     },
     {
      "ticker": "INTC",
@@ -46499,7 +46247,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": -1.3
     },
     {
      "ticker": "NVDA",
@@ -46507,7 +46255,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": -0.6
     },
     {
      "ticker": "SPCX",
@@ -46515,7 +46263,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": 2.7
     },
     {
      "ticker": "AAL",
@@ -46523,7 +46271,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": -2.3
     }
    ],
    "bl": {
@@ -46826,7 +46574,374 @@
     "brief": "제시된 5개 종목 모두 개장 후 마이너스(-) 전환 또는 보합세를 보이며 사전 선정 논리를 확인해주지 못했고, 실패 분해 통계 및 원칙에 따라 확률 우위가 없어 모두 제외함.",
     "n": 0
    },
-   "dayHold": 1
+   "dayHold": 1,
+   "cstat": {
+    "n": 18,
+    "med": -0.6,
+    "ex": null,
+    "exD": null,
+    "rg": null,
+    "rej": null,
+    "blr": {
+     "rand": 0,
+     "mom": 0
+    }
+   }
+  },
+  {
+   "date": "2026-11-04",
+   "market": "US",
+   "regime": "하락",
+   "rules": [
+    "단타 실패 분해: 시장충격12·목표과다2·선정26 → 선정 강화",
+    "강도80+ 실측 0%(10) — 확신도 과장, 보수화",
+    "근거'거래량급증' 성공30%(23) → 단독추천 지양",
+    "근거'정책테마' 성공36%(22) → 단독추천 지양",
+    "근거'낙폭과대' 성공25%(8) → 단독추천 지양",
+    "섹터'반도체' 성공40%(15) → 회피"
+   ],
+   "cands": [
+    {
+     "ticker": "AEHR",
+     "rank": 1,
+     "verdict": "선택",
+     "why": "기록적 매출과 가이드 상향으로 실적 모멘텀 보유",
+     "r1": null
+    },
+    {
+     "ticker": "XMTR",
+     "rank": 2,
+     "verdict": "선택",
+     "why": "첫 분기 흑자 달성 및 연간 전망 상향",
+     "r1": null
+    },
+    {
+     "ticker": "FN",
+     "rank": 3,
+     "verdict": "선택",
+     "why": "기록적 실적 기록",
+     "r1": null
+    },
+    {
+     "ticker": "GPK",
+     "rank": 4,
+     "verdict": "관찰",
+     "why": "목표가 상향 및 신제품 모멘텀",
+     "r1": null
+    },
+    {
+     "ticker": "RIOT",
+     "rank": 5,
+     "verdict": "관찰",
+     "why": "채굴주 반등 및 대출 이슈",
+     "r1": null
+    },
+    {
+     "ticker": "WULF",
+     "rank": 6,
+     "verdict": "관찰",
+     "why": "신용 한도 확대 및 AI 호스팅 리스크",
+     "r1": null
+    },
+    {
+     "ticker": "HUT",
+     "rank": 7,
+     "verdict": "관찰",
+     "why": "채굴주 동반 상승 및 실적 발표",
+     "r1": null
+    },
+    {
+     "ticker": "CIFR",
+     "rank": 8,
+     "verdict": "관찰",
+     "why": "목표가 하향 조정이나 채굴주 섹터 연동",
+     "r1": null
+    },
+    {
+     "ticker": "GLXY",
+     "rank": 9,
+     "verdict": "관찰",
+     "why": "목표가 상향 및 암호화폐 연동",
+     "r1": null
+    },
+    {
+     "ticker": "CLSK",
+     "rank": 10,
+     "verdict": "제외",
+     "why": "투자의견 하향 조정 반영",
+     "r1": null
+    },
+    {
+     "ticker": "CORZ",
+     "rank": 11,
+     "verdict": "관찰",
+     "why": "정치적 이벤트 및 AI 데이터센터 변동성",
+     "r1": null
+    },
+    {
+     "ticker": "NBIX",
+     "rank": 12,
+     "verdict": "관찰",
+     "why": "학회 파이프라인 소개 예정",
+     "r1": null
+    },
+    {
+     "ticker": "FRVO",
+     "rank": 13,
+     "verdict": "관찰",
+     "why": "공매도 리포트 이후 반등 잠재력",
+     "r1": null
+    },
+    {
+     "ticker": "GRAB",
+     "rank": 14,
+     "verdict": "제외",
+     "why": "상승 모멘텀 부족 및 장기 관점 필요",
+     "r1": null
+    },
+    {
+     "ticker": "INTC",
+     "rank": 15,
+     "verdict": "제외",
+     "why": "반도체 섹터 회피 원칙 적용",
+     "r1": null
+    },
+    {
+     "ticker": "NU",
+     "rank": 16,
+     "verdict": "제외",
+     "why": "핀테크 섹터 회피 및 하락 추세",
+     "r1": null
+    },
+    {
+     "ticker": "ORCL",
+     "rank": 17,
+     "verdict": "제외",
+     "why": "딜 취소 악재로 인한 주가 슬립",
+     "r1": null
+    },
+    {
+     "ticker": "BETA",
+     "rank": 18,
+     "verdict": "제외",
+     "why": "연초 대비 하락폭 과다 및 관찰 필요",
+     "r1": null
+    }
+   ],
+   "bl": {
+    "rand": [
+     "NBIX",
+     "GPK",
+     "HUT"
+    ],
+    "mom": [
+     "AEHR",
+     "GPK",
+     "RIOT"
+    ]
+   },
+   "dayCands": [
+    {
+     "name": "Riot Platforms, Inc.",
+     "ticker": "RIOT",
+     "score": 45,
+     "target_pct": 4,
+     "sector": "가상자산",
+     "basis": [
+      "뉴스재료"
+     ],
+     "reason": "대출 만기 임박 및 비트코인 채굴주 반등 흐름 속에서 모멘텀이 형성되고 있다. 단기 트레이딩 관점의 접근이 가능하다.",
+     "risk": "부채 관련 불확실성과 변동성"
+    },
+    {
+     "name": "TeraWulf Inc.",
+     "ticker": "WULF",
+     "score": 45,
+     "target_pct": 4,
+     "sector": "인프라",
+     "basis": [
+      "뉴스재료"
+     ],
+     "reason": "신용 한도 확대 소식과 AI 호스팅 관련 리스크가 부각되며 거래량이 유입되고 있다. 단기 반등 모멘텀을 활용할 수 있다.",
+     "risk": "AI 호스팅 리스크 지속"
+    },
+    {
+     "name": "Graphic Packaging Holding Company",
+     "ticker": "GPK",
+     "score": 42,
+     "target_pct": 3,
+     "sector": "소재",
+     "basis": [
+      "추세지속"
+     ],
+     "reason": "목표가 상향 조정 리포트와 신제품 패키징 관련 뉴스가 동반되었다. 안정적인 박스권 흐름 속 단기 상승을 노린다.",
+     "risk": "보수적 투자의견(Hold) 유지"
+    },
+    {
+     "name": "Neurocrine Biosciences, Inc.",
+     "ticker": "NBIX",
+     "score": 40,
+     "target_pct": 3,
+     "sector": "제약",
+     "basis": [
+      "뉴스재료"
+     ],
+     "reason": "학회에서의 파이프라인 스포트라이트 기대감이 작용하고 있다. 제약 섹터 우위 통계를 참고하여 단기 접근한다.",
+     "risk": "이벤트 소멸 후 차익실현"
+    },
+    {
+     "name": "Hut 8 Corp.",
+     "ticker": "HUT",
+     "score": 40,
+     "target_pct": 4,
+     "sector": "가상자산",
+     "basis": [
+      "실적"
+     ],
+     "reason": "실적 발표 전후로 채굴주 전반의 반등세와 함께 강한 변동성을 보이고 있다. 단기 모멘텀 트레이딩 대상이다.",
+     "risk": "매출 감소 및 실적 세부 지표 확인 필요"
+    }
+   ],
+   "hold": 0,
+   "v": {
+    "m": "gemini-3.5-flash-lite",
+    "pv": "J1.0-S2.0",
+    "policy": "S2.0"
+   },
+   "mktF": {
+    "dir": "상승",
+    "conf": 45,
+    "why": "전일 S&P500과 지수선물의 상승 흐름이 이어지고 있으나 과거 예측 적중률을 고려해 신중한 접근이 필요하다.",
+    "ok": null
+   },
+   "picks": [
+    {
+     "kind": "swing",
+     "name": "Aehr Test Systems",
+     "ticker": "AEHR",
+     "score": 55,
+     "sector": "반도체",
+     "basis": [
+      "실적"
+     ],
+     "plan": {
+      "engine": "R2.0",
+      "strategy": "swing",
+      "atrPct": 10.74,
+      "stopPct": 9,
+      "targetPct": 18,
+      "rr": 2,
+      "maxHoldDays": 10,
+      "riskPct": 0.5,
+      "maxWeightPct": 10,
+      "weightPct": 5.21,
+      "qty": 4,
+      "notional": 260,
+      "decision": {
+       "version": "S2.0",
+       "action": "watch",
+       "strategy": "swing",
+       "reasons": [
+        "하락 국면: 신규 진입 보류"
+       ],
+       "plannedHoldDays": 10,
+       "reviewAfterDays": 3,
+       "maxHoldDays": 10,
+       "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+       "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+       "allowAutoOrder": false
+      }
+     },
+     "p0": 65.11,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "Xometry, Inc.",
+     "ticker": "XMTR",
+     "score": 52,
+     "sector": "소프트웨어",
+     "basis": [
+      "실적"
+     ],
+     "plan": {
+      "engine": "R2.0",
+      "strategy": "swing",
+      "atrPct": 7.57,
+      "stopPct": 9,
+      "targetPct": 18,
+      "rr": 2,
+      "maxHoldDays": 15,
+      "riskPct": 0.5,
+      "maxWeightPct": 10,
+      "weightPct": 4.45,
+      "qty": 2,
+      "notional": 223,
+      "decision": {
+       "version": "S2.0",
+       "action": "watch",
+       "strategy": "swing",
+       "reasons": [
+        "하락 국면: 신규 진입 보류"
+       ],
+       "plannedHoldDays": 15,
+       "reviewAfterDays": 3,
+       "maxHoldDays": 15,
+       "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+       "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+       "allowAutoOrder": false
+      }
+     },
+     "p0": 111.29,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "Fabrinet",
+     "ticker": "FN",
+     "score": 50,
+     "sector": "장비",
+     "basis": [
+      "실적"
+     ],
+     "plan": {
+      "engine": "R2.0",
+      "strategy": "swing",
+      "atrPct": 7.31,
+      "stopPct": 9,
+      "targetPct": 18,
+      "rr": 2,
+      "maxHoldDays": 10,
+      "riskPct": 0.5,
+      "maxWeightPct": 10,
+      "weightPct": 0,
+      "qty": 0,
+      "notional": 0,
+      "decision": {
+       "version": "S2.0",
+       "action": "watch",
+       "strategy": "swing",
+       "reasons": [
+        "하락 국면: 신규 진입 보류"
+       ],
+       "plannedHoldDays": 10,
+       "reviewAfterDays": 3,
+       "maxHoldDays": 10,
+       "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+       "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+       "allowAutoOrder": false
+      }
+     },
+     "p0": 363.33,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    }
+   ]
   }
  ],
  "monAt": 1793736126860
