@@ -44809,28 +44809,32 @@
      "rank": 5,
      "verdict": "관찰",
      "why": "목표가 상향이나 중립 의견 존재",
-     "r1": -2.3
+     "r1": -2.3,
+     "r5": -1.4
     },
     {
      "ticker": "BEAM",
      "rank": 6,
      "verdict": "선택",
      "why": "급등 및 거래량 유입으로 단타 후보 선정",
-     "r1": 0.4
+     "r1": 0.4,
+     "r5": -3.2
     },
     {
      "ticker": "SDGR",
      "rank": 7,
      "verdict": "관찰",
      "why": "AI 낙관론 있으나 실적 하락 전망 공존",
-     "r1": -1.4
+     "r1": -1.4,
+     "r5": -6.2
     },
     {
      "ticker": "HAYW",
      "rank": 8,
      "verdict": "선택",
      "why": "급등 모멘텀 반영 단타 후보",
-     "r1": 5.3
+     "r1": 5.3,
+     "r5": 14.8
     },
     {
      "ticker": "SKHY",
@@ -46622,77 +46626,77 @@
      "rank": 1,
      "verdict": "선택",
      "why": "기록적 매출과 가이드 상향으로 실적 모멘텀 보유",
-     "r1": null
+     "r1": -5.4
     },
     {
      "ticker": "XMTR",
      "rank": 2,
      "verdict": "선택",
      "why": "첫 분기 흑자 달성 및 연간 전망 상향",
-     "r1": null
+     "r1": 2.7
     },
     {
      "ticker": "FN",
      "rank": 3,
      "verdict": "선택",
      "why": "기록적 실적 기록",
-     "r1": null
+     "r1": -2.7
     },
     {
      "ticker": "GPK",
      "rank": 4,
      "verdict": "관찰",
      "why": "목표가 상향 및 신제품 모멘텀",
-     "r1": null
+     "r1": 1.5
     },
     {
      "ticker": "RIOT",
      "rank": 5,
      "verdict": "관찰",
      "why": "채굴주 반등 및 대출 이슈",
-     "r1": null
+     "r1": -1.6
     },
     {
      "ticker": "WULF",
      "rank": 6,
      "verdict": "관찰",
      "why": "신용 한도 확대 및 AI 호스팅 리스크",
-     "r1": null
+     "r1": -8.7
     },
     {
      "ticker": "HUT",
      "rank": 7,
      "verdict": "관찰",
      "why": "채굴주 동반 상승 및 실적 발표",
-     "r1": null
+     "r1": -8.4
     },
     {
      "ticker": "CIFR",
      "rank": 8,
      "verdict": "관찰",
      "why": "목표가 하향 조정이나 채굴주 섹터 연동",
-     "r1": null
+     "r1": -7
     },
     {
      "ticker": "GLXY",
      "rank": 9,
      "verdict": "관찰",
      "why": "목표가 상향 및 암호화폐 연동",
-     "r1": null
+     "r1": -10
     },
     {
      "ticker": "CLSK",
      "rank": 10,
      "verdict": "제외",
      "why": "투자의견 하향 조정 반영",
-     "r1": null
+     "r1": -4.9
     },
     {
      "ticker": "CORZ",
      "rank": 11,
      "verdict": "관찰",
      "why": "정치적 이벤트 및 AI 데이터센터 변동성",
-     "r1": null
+     "r1": -2.6
     },
     {
      "ticker": "NBIX",
