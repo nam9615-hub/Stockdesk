@@ -45038,28 +45038,32 @@
      "rank": 5,
      "verdict": "관찰",
      "why": "기록적 매출 달성 후 주가 안착 과정 주시",
-     "r1": -1
+     "r1": -1,
+     "r5": 0.8
     },
     {
      "ticker": "PURR",
      "rank": 6,
      "verdict": "관찰",
      "why": "유명 투자자 백업 관련 수급 지속성 확인 필요",
-     "r1": -4.5
+     "r1": -4.5,
+     "r5": -24
     },
     {
      "ticker": "FTAI",
      "rank": 7,
      "verdict": "관찰",
      "why": "목표가 상향에 따른 추세 연장 여부 관찰",
-     "r1": -0.9
+     "r1": -0.9,
+     "r5": -14
     },
     {
      "ticker": "MESO",
      "rank": 8,
      "verdict": "관찰",
      "why": "헬스케어 섹터 개별 이슈 모니터링 필요",
-     "r1": -1.4
+     "r1": -1.4,
+     "r5": -8.3
     },
     {
      "ticker": "MSGR",
@@ -46848,77 +46852,77 @@
      "rank": 1,
      "verdict": "선택",
      "why": "섹터 우위 및 인수 재료",
-     "r1": null
+     "r1": -3.4
     },
     {
      "ticker": "LIVN",
      "rank": 2,
      "verdict": "선택",
      "why": "섹터 우위 및 실적",
-     "r1": null
+     "r1": -2.8
     },
     {
      "ticker": "VRDN",
      "rank": 3,
      "verdict": "선택",
      "why": "섹터 우위",
-     "r1": null
+     "r1": -3.5
     },
     {
      "ticker": "MDLN",
      "rank": 4,
      "verdict": "선택",
      "why": "자사주 매입 모멘텀",
-     "r1": null
+     "r1": -1.1
     },
     {
      "ticker": "PCOR",
      "rank": 5,
      "verdict": "선택",
      "why": "성장 가속",
-     "r1": null
+     "r1": -2.7
     },
     {
      "ticker": "TREX",
      "rank": 6,
      "verdict": "선택",
      "why": "가이던스 상향",
-     "r1": null
+     "r1": -5.2
     },
     {
      "ticker": "OUST",
      "rank": 7,
      "verdict": "선택",
      "why": "실적 서프라이즈",
-     "r1": null
+     "r1": -3.1
     },
     {
      "ticker": "KD",
      "rank": 8,
      "verdict": "선택",
      "why": "AI 파트너십",
-     "r1": null
+     "r1": -4.8
     },
     {
      "ticker": "DUOL",
      "rank": 9,
      "verdict": "제외",
      "why": "내부자 매도 영향",
-     "r1": null
+     "r1": -3.2
     },
     {
      "ticker": "YOU",
      "rank": 10,
      "verdict": "제외",
      "why": "모멘텀 부족",
-     "r1": null
+     "r1": -3.9
     },
     {
      "ticker": "UFPT",
      "rank": 11,
      "verdict": "제외",
      "why": "변동성 과다",
-     "r1": null
+     "r1": -8.1
     },
     {
      "ticker": "MOS",
@@ -47308,8 +47312,18 @@
      "cAt": "23:34",
      "eTs": "2026-11-05T14:34:13.826Z",
      "cm": 4,
-     "r1": null,
-     "hit": null
+     "r1": -3.6,
+     "hit": false,
+     "mfe": -0.2,
+     "mae": -5.6,
+     "tv": 565,
+     "tvx": 1.6,
+     "touch": "stop",
+     "idx": -4.36,
+     "simExit": "stop",
+     "simR": -3.62,
+     "seq": "stop-first",
+     "postFixed": 1
     },
     {
      "kind": "day",
@@ -47356,8 +47370,18 @@
      "cAt": "23:34",
      "eTs": "2026-11-05T14:34:13.881Z",
      "cm": 4,
-     "r1": null,
-     "hit": null
+     "r1": -6.3,
+     "hit": false,
+     "mfe": 0.7,
+     "mae": -6.5,
+     "tv": 278,
+     "tvx": 2.7,
+     "touch": "stop",
+     "idx": -4.36,
+     "simExit": "stop",
+     "simR": -3.5,
+     "seq": "stop-first",
+     "postFixed": 1
     }
    ],
    "day2": {
