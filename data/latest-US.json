@@ -1,34 +1,117 @@
 {
- "date": "2026-11-06",
+ "date": "2026-11-09",
  "at": "21:29",
  "data": {
-  "brief": "전일 S&P500의 급락(-4.4%)과 VIX 급등(27)으로 시장 변동성이 극도로 확대된 하락장 국면입니다. 과거 실측 통계상 확신도를 대폭 낮추고 실적 기반의 안정적인 모멘텀 종목 중심으로 보수적인 접근이 필요합니다.",
+  "brief": "전일 S&P500 반등과 선물 강세에도 불구하고 VIX가 여전히 높고 과거 실측 통계에서 확신도 과장 및 특정 테마·섹터의 부진이 확인되어 보수적인 접근이 필요합니다. 실적 호재와 강력한 클라우드 및 보안 모멘텀을 가진 종목 위주로 엄선하되, 철저한 리스크 관리를 동반합니다.",
   "picks": [
    {
-    "name": "Applovin Corporation",
-    "ticker": "APP",
-    "score": 55,
+    "name": "JFrog Ltd.",
+    "ticker": "FROG",
+    "score": 35,
     "sector": "소프트웨어",
     "basis": [
-     "뉴스재료",
-     "실적"
+     "실적/수주계약",
+     "추세지속"
     ],
-    "reason": "Q3 실적 호조와 마진 서프라이즈에 힘입어 애널리스트들의 목표가 상향 조정이 이어지고 있습니다. 강력한 상승 모멘텀을 유지하고 있으나 지수 하락 압력에 유의해야 합니다.",
-    "catalyst": "Q3 실적 서프라이즈 및 목표가 상향",
-    "risk": "시장 전반의 하락 압력 및 밸류에이션 부담",
+    "reason": "Q3 어닝 서프라이즈와 AI 및 보안 수요 확대로 클라우드 및 엔터프라이즈 부문이 큰 폭으로 성장했습니다. 강력한 실적 기반의 추세 지속성이 돋보이지만 과거 고확신 오류 통계를 반영해 보수적으로 평가합니다.",
+    "catalyst": "Q3 실적 호조 및 클라우드/보안 성장",
+    "risk": "시장 변동성에 따른 단기 차익실현 매물",
     "plan": {
      "engine": "R2.0",
      "strategy": "swing",
-     "atrPct": 5.15,
-     "stopPct": 7.73,
-     "targetPct": 15.45,
+     "atrPct": 8.1,
+     "stopPct": 9,
+     "targetPct": 18,
+     "rr": 2,
+     "maxHoldDays": 5,
+     "riskPct": 0.5,
+     "maxWeightPct": 10,
+     "weightPct": 4.04,
+     "qty": 2,
+     "notional": 202,
+     "decision": {
+      "version": "S2.0",
+      "action": "watch",
+      "strategy": "swing",
+      "reasons": [
+       "하락 국면: 신규 진입 보류"
+      ],
+      "plannedHoldDays": 5,
+      "reviewAfterDays": 3,
+      "maxHoldDays": 5,
+      "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+      "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+      "allowAutoOrder": false
+     }
+    }
+   },
+   {
+    "name": "TransMedics Group, Inc.",
+    "ticker": "TMDX",
+    "score": 30,
+    "sector": "헬스케어",
+    "basis": [
+     "실적/수주계약",
+     "추세지속"
+    ],
+    "reason": "기증 장기 보존 분야에서의 독점적 지위와 견조한 Q3 실적 발표로 시장의 주목을 받고 있습니다. 펀더멘털이 탄탄하나 최근 하락장 데이터와 섹터 주의보를 고려하여 스코어를 낮췄습니다.",
+    "catalyst": "장기 보존 독점력 및 어닝 컨퍼런스 호조",
+    "risk": "바이오/헬스케어 섹터 전반의 투자 심리 위축",
+    "plan": {
+     "engine": "R2.0",
+     "strategy": "swing",
+     "atrPct": 5.69,
+     "stopPct": 8.54,
+     "targetPct": 17.07,
+     "rr": 2,
+     "maxHoldDays": 5,
+     "riskPct": 0.5,
+     "maxWeightPct": 10,
+     "weightPct": 5.29,
+     "qty": 3,
+     "notional": 265,
+     "decision": {
+      "version": "S2.0",
+      "action": "watch",
+      "strategy": "day-watch",
+      "reasons": [
+       "하락 국면: 신규 진입 보류",
+       "단기 수급만 확인: 단타 재평가 후보, 자동 전환 아님"
+      ],
+      "plannedHoldDays": 5,
+      "reviewAfterDays": 3,
+      "maxHoldDays": 5,
+      "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+      "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+      "allowAutoOrder": false
+     }
+    }
+   },
+   {
+    "name": "Firefly Aerospace Inc.",
+    "ticker": "FLY",
+    "score": 28,
+    "sector": "항공우주",
+    "basis": [
+     "실적/수주계약",
+     "정책테마"
+    ],
+    "reason": "NASA의 100억 달러 규모 CLPS 2 달 배송 프로그램에 합류하며 강력한 수주 모멘텀을 확보했습니다. 대형 계약이라는 호재가 있으나 과거 정책/수주 테마의 낮은 실적 성공률을 반영해 신중히 접근합니다.",
+    "catalyst": "NASA 100억 달러 CLPS 2 프로그램 선정",
+    "risk": "단기 급등에 따른 변동성 확대",
+    "plan": {
+     "engine": "R2.0",
+     "strategy": "swing",
+     "atrPct": 8.51,
+     "stopPct": 9,
+     "targetPct": 18,
      "rr": 2,
      "maxHoldDays": 10,
      "riskPct": 0.5,
      "maxWeightPct": 10,
-     "weightPct": 0,
-     "qty": 0,
-     "notional": 0,
+     "weightPct": 5.4,
+     "qty": 13,
+     "notional": 270,
      "decision": {
       "version": "S2.0",
       "action": "watch",
@@ -44,264 +127,191 @@
       "allowAutoOrder": false
      }
     }
-   },
-   {
-    "name": "Encore Capital Group Inc",
-    "ticker": "ECPG",
-    "score": 50,
-    "sector": "금융",
-    "basis": [
-     "실적"
-    ],
-    "reason": "견조한 Q3 실적 발표와 컨퍼런스 콜 이후 실적 개선 기대감이 부각되고 있습니다. 시장 하락 국면에서도 개별 실적 모멘텀으로 방어력을 보여주고 있습니다.",
-    "catalyst": "Q3 실적 및 컨퍼런스 콜 호조",
-    "risk": "변동성 장세 속 금융 섹터 동반 부진 위험",
-    "plan": {
-     "engine": "R2.0",
-     "strategy": "swing",
-     "atrPct": 3.9,
-     "stopPct": 5.85,
-     "targetPct": 11.7,
-     "rr": 2,
-     "maxHoldDays": 15,
-     "riskPct": 0.5,
-     "maxWeightPct": 10,
-     "weightPct": 7.57,
-     "qty": 3,
-     "notional": 379,
-     "decision": {
-      "version": "S2.0",
-      "action": "watch",
-      "strategy": "swing",
-      "reasons": [
-       "하락 국면: 신규 진입 보류"
-      ],
-      "plannedHoldDays": 15,
-      "reviewAfterDays": 3,
-      "maxHoldDays": 15,
-      "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
-      "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
-      "allowAutoOrder": false
-     }
-    }
-   },
-   {
-    "name": "ADMA Biologics Inc",
-    "ticker": "ADMA",
-    "score": 48,
-    "sector": "바이오",
-    "basis": [
-     "실적"
-    ],
-    "reason": "Q3 어닝 서프라이즈를 기록하며 기업 펀더멘털 개선 기대감이 커지고 있습니다. 실적 기반의 매수세가 유입되며 주가 하방 경직성을 확보했습니다.",
-    "catalyst": "Q3 어닝 서프라이즈",
-    "risk": "제약·바이오 섹터 센티멘트 악화 시 변동성 확대",
-    "plan": {
-     "engine": "R2.0",
-     "strategy": "swing",
-     "atrPct": 5.22,
-     "stopPct": 7.83,
-     "targetPct": 15.66,
-     "rr": 2,
-     "maxHoldDays": 15,
-     "riskPct": 0.5,
-     "maxWeightPct": 10,
-     "weightPct": 6.34,
-     "qty": 24,
-     "notional": 317,
-     "decision": {
-      "version": "S2.0",
-      "action": "watch",
-      "strategy": "swing",
-      "reasons": [
-       "하락 국면: 신규 진입 보류"
-      ],
-      "plannedHoldDays": 15,
-      "reviewAfterDays": 3,
-      "maxHoldDays": 15,
-      "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
-      "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
-      "allowAutoOrder": false
-     }
-    }
    }
   ],
   "day_cands": [
    {
-    "name": "Warby Parker Inc.",
-    "ticker": "WRBY",
+    "name": "Karman Holdings Inc.",
+    "ticker": "KRMN",
+    "score": 25,
     "target_pct": 4,
-    "sector": "유통",
+    "sector": "제조업",
+    "basis": [
+     "실적/수주계약",
+     "거래량급증"
+    ],
+    "reason": "Q3 실적 컨퍼런스 호조에 힘입어 42% 폭등세를 기록하며 강한 거래량이 유입되었습니다. 단기 모멘텀이 이어질 수 있으나 갭상승 추격 매매 리스크를 관리해야 합니다.",
+    "risk": "대형 갭상승 이후 되돌림 가능성"
+   },
+   {
+    "name": "nLIGHT, Inc.",
+    "ticker": "LASR",
+    "score": 22,
+    "sector": "방산",
     "basis": [
      "뉴스재료",
-     "실적"
+     "낙폭과대"
     ],
-    "reason": "매출이 10% 이상 증가하는 등 호실적을 바탕으로 주가가 강한 상승세를 보였습니다. 당일 단기 모멘텀을 활용한 트레이딩이 가능합니다.",
-    "risk": "유통 섹터 과거 실측 성과 부진",
-    "score": 50
+    "reason": "미국 방산 관련주로 엔비디아 관련 국가 안보 이슈와 맞물려 주목받고 있습니다. 방산 섹터 주의보가 있으나 단기 수급 유입 가능성을 열어두고 관찰합니다.",
+    "risk": "방산 섹터에 대한 보수적 접근 필요",
+    "target_pct": 3
    },
    {
-    "name": "Ardent Health, Inc.",
-    "ticker": "ARDT",
-    "target_pct": 4,
-    "sector": "의료",
-    "basis": [
-     "실적",
-     "뉴스재료"
-    ],
-    "reason": "흑자 전환 성공 및 가이드라인 상향 조정으로 투자 심리가 개선되었습니다. 실적 개선 모멘텀이 당일 추가 상승을 지지할 수 있습니다.",
-    "risk": "하락장 내 단기 차익실현 매물 출회",
-    "score": 50
-   },
-   {
-    "name": "Magnite, Inc.",
-    "ticker": "MGNI",
-    "target_pct": 5,
-    "sector": "미디어",
+    "name": "IonQ, Inc.",
+    "ticker": "IONQ",
+    "score": 20,
+    "sector": "양자컴퓨팅",
     "basis": [
      "뉴스재료",
-     "실적"
+     "추세지속"
     ],
-    "reason": "실적 호조와 함께 주요 투자기관의 목표가 상향 조정이 이어지고 있습니다. 거래대금이 유입되며 단기 탄력이 우수합니다.",
-    "risk": "지수 선물 방향성 변화에 따른 급등락",
-    "score": 50
+    "reason": "가이던스 상향 조정 발표와 함께 관련 양자 컴퓨팅 종목들의 동반 상승을 이끌었습니다. 다만 과거 테마주 실측 성적이 부진하므로 목표 수익률을 낮게 설정합니다.",
+    "risk": "변동성이 극심한 양자 테마 특유의 리스크",
+    "target_pct": 3
    },
    {
-    "name": "Sezzle Inc.",
-    "ticker": "SEZL",
-    "target_pct": 4,
-    "sector": "핀테크",
+    "name": "Oklo Inc.",
+    "ticker": "OKLO",
+    "score": 18,
+    "sector": "에너지",
     "basis": [
-     "실적"
+     "추세지속"
     ],
-    "reason": "매출이 42% 급증하는 폭발적인 성장세를 증명하며 시장의 주목을 받았습니다. 단기 모멘텀이 강하지만 변동성이 매우 큽니다.",
-    "risk": "핀테크 섹터 과거 실측 성과 부진 및 고가 주가 부담",
-    "score": 50
+    "reason": "원자력 및 클린에너지 관련 장기 성장 기대감으로 주가가 강세를 보였습니다. 모멘텀은 살아 있으나 단기 과열 구간에 진입해 있어 보수적 대응이 요구됩니다.",
+    "risk": "단기 차익 실현 매물 출회 위험",
+    "target_pct": 3
    },
    {
-    "name": "Vericel Corporation",
-    "ticker": "VCEL",
-    "target_pct": 4,
-    "sector": "의료",
+    "name": "Centrus Energy Corp.",
+    "ticker": "LEU",
+    "score": 18,
+    "sector": "에너지",
     "basis": [
-     "실적"
+     "실적/수주계약"
     ],
-    "reason": "역대 최고 매출과 순이익 3배 증가라는 강력한 실적 재료를 보유하고 있습니다. 실적 모멘텀에 기반한 단기 반등을 노릴 수 있습니다.",
-    "risk": "시장 하락세 지속 시 매수세 약화",
-    "score": 50
+    "reason": "Q3 실적 발표와 애널리스트 질의응답을 통해 에너지 수급 불균형 속에서 관심을 받고 있습니다. 실적 모멘텀이 유효하나 전체 시장 하락장 국면의 영향을 받을 수 있습니다.",
+    "risk": "에너지 원자재 가격 변동성",
+    "target_pct": 3
    }
   ],
   "cands": [
    {
-    "ticker": "APP",
+    "ticker": "KRMN",
     "rank": 1,
     "verdict": "선택",
-    "why": "실적 서프라이즈와 목표가 상향으로 상위 후보 중 가장 강한 모멘텀 유지"
+    "why": "Q3 실적 호조 및 42% 급등 모멘텀"
    },
    {
-    "ticker": "ECPG",
+    "name": "FLY",
+    "ticker": "FLY",
     "rank": 2,
     "verdict": "선택",
-    "why": "견조한 실적 발표로 하락장에서 방어력과 상승 여력 동시 입증"
+    "why": "NASA 100억 달러 CLPS 2 달 배송 프로그램 합류"
    },
    {
-    "ticker": "ADMA",
+    "name": "FROG",
+    "ticker": "FROG",
     "rank": 3,
     "verdict": "선택",
-    "why": "어닝 서프라이즈 기반의 펀더멘털 개선세가 뚜렷함"
+    "why": "어닝 서프라이즈 및 클라우드·보안 고성장"
    },
    {
-    "ticker": "WRBY",
+    "name": "LASR",
+    "ticker": "LASR",
     "rank": 4,
     "verdict": "관찰",
-    "why": "매출 성장세 우수하나 유통 섹터 주의 필요"
+    "why": "방산 및 국가 안보 수혜 기대감"
    },
    {
-    "ticker": "ARDT",
+    "name": "TMDX",
     "rank": 5,
-    "verdict": "관찰",
-    "why": "흑자 전환 및 가이드 상향 있으나 하락장 영향 점검 필요"
+    "verdict": "선택",
+    "why": "기증 장기 보존 독점력 및 견조한 실적"
    },
    {
-    "ticker": "MGNI",
+    "name": "IONQ",
+    "ticker": "IONQ",
     "rank": 6,
     "verdict": "관찰",
-    "why": "목표가 상향 및 실적 호조 있으나 변동성 주의"
+    "why": "가이던스 상향 및 양자 테마 리더십"
    },
    {
-    "ticker": "EPAM",
+    "name": "OKLO",
     "rank": 7,
     "verdict": "관찰",
-    "why": "목표가 상향 조정되었으나 중립 의견 유지 중"
+    "why": "원자력 에너지 장기 성장성 부각"
    },
    {
-    "ticker": "U",
+    "name": "IREN",
     "rank": 8,
     "verdict": "관찰",
-    "why": "인수설 및 목표가 상향 있으나 시장 충격 고려 관찰 필요"
+    "why": "디지털 인프라 및 채굴/데이터센터 테마 연동"
    },
    {
-    "ticker": "PGNY",
+    "name": "INFQ",
     "rank": 9,
-    "verdict": "관찰",
-    "why": "실적 발표 모멘텀 있으나 후속 매수세 확인 필요"
+    "verdict": "제외",
+    "why": "양자주 전반의 엇갈린 월가 평가 및 변동성 심화"
    },
    {
-    "ticker": "VCEL",
+    "name": "RGTI",
     "rank": 10,
     "verdict": "관찰",
-    "why": "기록적 실적 달성했으나 시장 전반 하락세 영향 주시"
+    "why": "CHIPS 법안 수혜 기대와 IonQ 연동성"
    },
    {
-    "ticker": "SEZL",
+    "name": "ONDS",
     "rank": 11,
-    "verdict": "관찰",
-    "why": "매출 급증에도 불구하고 핀테크 섹터 과거 통계 고려 보수적 접근"
+    "verdict": "제외",
+    "why": "숏스퀴즈 기대감에 의존한 투기적 성격"
    },
    {
-    "ticker": "RUN",
+    "name": "QBTS",
     "rank": 12,
     "verdict": "제외",
-    "why": "태양광 섹터의 높은 변동성과 급등락 반복 패턴"
+    "why": "동종업체(IONQ) 가이던스 연동 상승으로 독자 모멘텀 부족"
    },
    {
-    "ticker": "VERX",
+    "name": "CIFR",
     "rank": 13,
     "verdict": "제외",
-    "why": "실적 발표 외에 뚜렷한 주도 모멘텀 부족"
+    "why": "텍사스 리스크 및 애널리스트 목표가 하향"
    },
    {
-    "ticker": "NVDA",
+    "name": "LEU",
     "rank": 14,
-    "verdict": "제외",
-    "why": "나스닥 급락 및 반도체 섹터 회피 통계 반영"
+    "verdict": "관찰",
+    "why": "Q3 실적 이후 수급 관찰 필요"
    },
    {
-    "ticker": "INTC",
+    "name": "NVDA",
     "rank": 15,
     "verdict": "제외",
-    "why": "뚜렷한 뉴스 없이 주가 급락 및 반도체 섹터 약세"
+    "why": "CEO 관련 조사 보도 및 하락세 진입 회피"
    },
    {
-    "ticker": "SPCX",
+    "name": "INTC",
     "rank": 16,
-    "verdict": "제외",
-    "why": "AI 및 관련 기술주 동반 하락 영향권"
+    "verdict": "관찰",
+    "why": "반도체 섹터 회피 권고이나 낙폭 과대 분석 상존"
    },
    {
-    "ticker": "GRAB",
+    "name": "SPCX",
     "rank": 17,
     "verdict": "제외",
-    "why": "상승 폭 제한적이며 지수 하락장 대응 부적합"
+    "why": "빅테크 규제 및 부채 리스크 발언 악재"
+   },
+   {
+    "name": "WULF",
+    "rank": 18,
+    "verdict": "관찰",
+    "why": "데이터센터 프로젝트 수혜이나 단기 모멘텀 부족"
    }
   ],
   "mkt": {
-   "dir": "하락",
-   "conf": 50,
-   "why": "전일 S&P500의 급락(-4.4%)과 VIX 27의 높은 변동성 속에서 하락장 국면이 지속되고 있음"
-  },
-  "day_picks": [],
-  "day_at": "23:34",
-  "day_brief": "제시된 5개 후보 모두 개장 직후 시가 대비 -0.3%에서 -3.2% 하락하며 약세를 보였고, 특히 WRBY는 -3.2% 하락하여 원칙에 부합하지 않으며, 전반적으로 실측 데이터상 단타 확률 우위를 확보한 종목이 없어 전량 보류합니다."
+   "dir": "횡보",
+   "conf": 45,
+   "why": "전일 지수 반등에도 불구하고 높은 VIX와 과거 예측 적중률 부진을 고려해 신중한 횡보장으로 판단함"
+  }
  }
 }
