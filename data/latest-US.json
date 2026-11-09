@@ -1,21 +1,63 @@
 {
  "date": "2026-11-09",
- "at": "21:29",
+ "at": "21:35",
  "data": {
-  "brief": "전일 S&P500 반등과 선물 강세에도 불구하고 VIX가 여전히 높고 과거 실측 통계에서 확신도 과장 및 특정 테마·섹터의 부진이 확인되어 보수적인 접근이 필요합니다. 실적 호재와 강력한 클라우드 및 보안 모멘텀을 가진 종목 위주로 엄선하되, 철저한 리스크 관리를 동반합니다.",
+  "brief": "미국 증시는 S&P 500과 지수 선물의 완만한 상승세 속에서 VIX가 급감하며 투자 심리가 개선되는 모습입니다. 실적 호조 및 우주·양자컴퓨팅 등 테마성 모멘텀이 강한 종목들을 중심으로 단기 스윙 및 트레이딩 기회를 모색합니다.",
   "picks": [
+   {
+    "name": "Karman Holdings Inc.",
+    "ticker": "KRMN",
+    "score": 92,
+    "sector": "우주항공",
+    "basis": [
+     "실적/수주계약",
+     "추세지속"
+    ],
+    "reason": "Q3 어닝 서프라이즈와 함께 42% 이상 급등하며 강력한 매수세를 증명했습니다. 단기 모멘텀이 이어질 가능성이 높아 스윙 관점에서 유리합니다.",
+    "catalyst": "Q3 실적 호조 및 어닝 콜 모멘텀",
+    "risk": "급등에 따른 단기 차익 실현 매물 출화",
+    "plan": {
+     "engine": "R2.0",
+     "strategy": "swing",
+     "atrPct": 8.03,
+     "stopPct": 9,
+     "targetPct": 18,
+     "rr": 2,
+     "maxHoldDays": 5,
+     "riskPct": 0.5,
+     "maxWeightPct": 10,
+     "weightPct": 5.47,
+     "qty": 6,
+     "notional": 274,
+     "decision": {
+      "version": "S2.0",
+      "action": "watch",
+      "strategy": "day-watch",
+      "reasons": [
+       "하락 국면: 신규 진입 보류",
+       "단기 수급만 확인: 단타 재평가 후보, 자동 전환 아님"
+      ],
+      "plannedHoldDays": 5,
+      "reviewAfterDays": 3,
+      "maxHoldDays": 5,
+      "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+      "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+      "allowAutoOrder": false
+     }
+    }
+   },
    {
     "name": "JFrog Ltd.",
     "ticker": "FROG",
-    "score": 35,
+    "score": 88,
     "sector": "소프트웨어",
     "basis": [
      "실적/수주계약",
      "추세지속"
     ],
-    "reason": "Q3 어닝 서프라이즈와 AI 및 보안 수요 확대로 클라우드 및 엔터프라이즈 부문이 큰 폭으로 성장했습니다. 강력한 실적 기반의 추세 지속성이 돋보이지만 과거 고확신 오류 통계를 반영해 보수적으로 평가합니다.",
-    "catalyst": "Q3 실적 호조 및 클라우드/보안 성장",
-    "risk": "시장 변동성에 따른 단기 차익실현 매물",
+    "reason": "클라우드 및 엔터프라이즈 부문의 견조한 확장세와 AI 보안 수요가 실적 서프라이즈로 직결되었습니다. 견고한 펀더멘털을 바탕으로 추가 상승 여력이 충분합니다.",
+    "catalyst": "AI 및 클라우드 부문 어닝 비트",
+    "risk": "기술주 전반의 변동성 확대",
     "plan": {
      "engine": "R2.0",
      "strategy": "swing",
@@ -48,15 +90,15 @@
    {
     "name": "TransMedics Group, Inc.",
     "ticker": "TMDX",
-    "score": 30,
+    "score": 85,
     "sector": "헬스케어",
     "basis": [
      "실적/수주계약",
-     "추세지속"
+     "신고가"
     ],
-    "reason": "기증 장기 보존 분야에서의 독점적 지위와 견조한 Q3 실적 발표로 시장의 주목을 받고 있습니다. 펀더멘털이 탄탄하나 최근 하락장 데이터와 섹터 주의보를 고려하여 스코어를 낮췄습니다.",
-    "catalyst": "장기 보존 독점력 및 어닝 컨퍼런스 호조",
-    "risk": "바이오/헬스케어 섹터 전반의 투자 심리 위축",
+    "reason": "장기 보존 시장에서의 준독점적 지위와 탄탄한 Q3 실적 발표로 시장의 이목을 집중시키고 있습니다. 안정적인 우상향 흐름이 기대됩니다.",
+    "catalyst": "Q3 실적 호조 및 독점적 시장 지위",
+    "risk": "높은 밸류에이션 부담",
     "plan": {
      "engine": "R2.0",
      "strategy": "swing",
@@ -86,112 +128,73 @@
       "allowAutoOrder": false
      }
     }
-   },
-   {
-    "name": "Firefly Aerospace Inc.",
-    "ticker": "FLY",
-    "score": 28,
-    "sector": "항공우주",
-    "basis": [
-     "실적/수주계약",
-     "정책테마"
-    ],
-    "reason": "NASA의 100억 달러 규모 CLPS 2 달 배송 프로그램에 합류하며 강력한 수주 모멘텀을 확보했습니다. 대형 계약이라는 호재가 있으나 과거 정책/수주 테마의 낮은 실적 성공률을 반영해 신중히 접근합니다.",
-    "catalyst": "NASA 100억 달러 CLPS 2 프로그램 선정",
-    "risk": "단기 급등에 따른 변동성 확대",
-    "plan": {
-     "engine": "R2.0",
-     "strategy": "swing",
-     "atrPct": 8.51,
-     "stopPct": 9,
-     "targetPct": 18,
-     "rr": 2,
-     "maxHoldDays": 10,
-     "riskPct": 0.5,
-     "maxWeightPct": 10,
-     "weightPct": 5.4,
-     "qty": 13,
-     "notional": 270,
-     "decision": {
-      "version": "S2.0",
-      "action": "watch",
-      "strategy": "swing",
-      "reasons": [
-       "하락 국면: 신규 진입 보류"
-      ],
-      "plannedHoldDays": 10,
-      "reviewAfterDays": 3,
-      "maxHoldDays": 10,
-      "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
-      "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
-      "allowAutoOrder": false
-     }
-    }
    }
   ],
   "day_cands": [
    {
-    "name": "Karman Holdings Inc.",
-    "ticker": "KRMN",
-    "score": 25,
-    "target_pct": 4,
-    "sector": "제조업",
+    "name": "Firefly Aerospace Inc.",
+    "ticker": "FLY",
+    "score": 84,
+    "target_pct": 8,
+    "sector": "우주항공",
     "basis": [
      "실적/수주계약",
      "거래량급증"
     ],
-    "reason": "Q3 실적 컨퍼런스 호조에 힘입어 42% 폭등세를 기록하며 강한 거래량이 유입되었습니다. 단기 모멘텀이 이어질 수 있으나 갭상승 추격 매매 리스크를 관리해야 합니다.",
-    "risk": "대형 갭상승 이후 되돌림 가능성"
-   },
-   {
-    "name": "nLIGHT, Inc.",
-    "ticker": "LASR",
-    "score": 22,
-    "sector": "방산",
-    "basis": [
-     "뉴스재료",
-     "낙폭과대"
-    ],
-    "reason": "미국 방산 관련주로 엔비디아 관련 국가 안보 이슈와 맞물려 주목받고 있습니다. 방산 섹터 주의보가 있으나 단기 수급 유입 가능성을 열어두고 관찰합니다.",
-    "risk": "방산 섹터에 대한 보수적 접근 필요",
-    "target_pct": 3
+    "reason": "NASA의 100억 달러 규모 CLPS 2 프로그램 참여 소식으로 강력한 수급 유입이 기대됩니다. 당일 변동성을 활용한 단타 매매에 적합합니다.",
+    "risk": "뉴스 발표 직후 변동성 및 갭상승 부담"
    },
    {
     "name": "IonQ, Inc.",
     "ticker": "IONQ",
-    "score": 20,
+    "score": 81,
+    "target_pct": 7,
     "sector": "양자컴퓨팅",
     "basis": [
-     "뉴스재료",
+     "정책테마",
+     "거래량급증"
+    ],
+    "reason": "가이던스 상향 발표 이후 동종 업계 전반으로 훈풍이 확산되며 높은 모멘텀을 형성했습니다. 수급 집중 구간에서 단기 트레이딩 기회가 큽니다.",
+    "risk": "차익실현 매물 및 높은 주가 변동성"
+   },
+   {
+    "name": "nLIGHT, Inc.",
+    "ticker": "LASR",
+    "score": 79,
+    "target_pct": 6,
+    "sector": "방산",
+    "basis": [
+     "정책테마",
      "추세지속"
     ],
-    "reason": "가이던스 상향 조정 발표와 함께 관련 양자 컴퓨팅 종목들의 동반 상승을 이끌었습니다. 다만 과거 테마주 실측 성적이 부진하므로 목표 수익률을 낮게 설정합니다.",
-    "risk": "변동성이 극심한 양자 테마 특유의 리스크",
-    "target_pct": 3
+    "reason": "국가 안보 및 미국 방산 주식에 대한 관심이 집중되면서 수혜를 받고 있습니다. 견고한 수급을 바탕으로 한 단기 시세 포착이 유효합니다.",
+    "risk": "테마 순환매에 따른 빠른 변동성"
    },
    {
     "name": "Oklo Inc.",
     "ticker": "OKLO",
-    "score": 18,
-    "sector": "에너지",
+    "score": 77,
+    "target_pct": 5,
+    "sector": "원자력",
     "basis": [
-     "추세지속"
+     "정책테마",
+     "낙폭과대"
     ],
-    "reason": "원자력 및 클린에너지 관련 장기 성장 기대감으로 주가가 강세를 보였습니다. 모멘텀은 살아 있으나 단기 과열 구간에 진입해 있어 보수적 대응이 요구됩니다.",
-    "risk": "단기 차익 실현 매물 출회 위험",
-    "target_pct": 3
+    "reason": "원자력 및 클린에너지 관련 장기 성장성과 함께 단기 반등 모멘텀이 부각되고 있습니다. 기술적 반등 구간을 노린 단타 접근이 가능합니다.",
+    "risk": "에너지 섹터 전반의 수급 이탈 가능성"
    },
    {
-    "name": "Centrus Energy Corp.",
-    "ticker": "LEU",
-    "score": 18,
-    "sector": "에너지",
+    "name": "D-Wave Quantum Inc.",
+    "ticker": "QBTS",
+    "score": 76,
+    "target_pct": 6,
+    "sector": "양자컴퓨팅",
     "basis": [
-     "실적/수주계약"
+     "정책테마",
+     "거래량급증"
     ],
-    "reason": "Q3 실적 발표와 애널리스트 질의응답을 통해 에너지 수급 불균형 속에서 관심을 받고 있습니다. 실적 모멘텀이 유효하나 전체 시장 하락장 국면의 영향을 받을 수 있습니다.",
-    "risk": "에너지 원자재 가격 변동성",
-    "target_pct": 3
+    "reason": "경영진 가이던스 상향 여파로 양자 섹터 전반의 동반 상승 흐름에 올라탔습니다. 활발한 거래량을 동반한 단기 트레이딩 대상입니다.",
+    "risk": "실적 발표(11월 10일) 전후 불확실성"
    }
   ],
   "cands": [
@@ -199,119 +202,116 @@
     "ticker": "KRMN",
     "rank": 1,
     "verdict": "선택",
-    "why": "Q3 실적 호조 및 42% 급등 모멘텀"
+    "why": "실적 호조와 함께 압도적인 상승률 기록"
    },
    {
-    "name": "FLY",
+    "exact": 2,
     "ticker": "FLY",
     "rank": 2,
-    "verdict": "선택",
-    "why": "NASA 100억 달러 CLPS 2 달 배송 프로그램 합류"
+    "verdict": "관찰",
+    "why": "NASA 계약 모멘텀 지속 여부 확인 필요"
    },
    {
-    "name": "FROG",
     "ticker": "FROG",
     "rank": 3,
     "verdict": "선택",
-    "why": "어닝 서프라이즈 및 클라우드·보안 고성장"
+    "why": "클라우드 확장 및 AI 보안 수요 확인"
    },
    {
-    "name": "LASR",
     "ticker": "LASR",
     "rank": 4,
     "verdict": "관찰",
-    "why": "방산 및 국가 안보 수혜 기대감"
+    "why": "방산 테마 수급 집중도 체크"
    },
    {
-    "name": "TMDX",
+    "ticker": "TMDX",
     "rank": 5,
     "verdict": "선택",
-    "why": "기증 장기 보존 독점력 및 견조한 실적"
+    "why": "독점력 기반 실적 성장세 뚜렷"
    },
    {
-    "name": "IONQ",
     "ticker": "IONQ",
     "rank": 6,
     "verdict": "관찰",
-    "why": "가이던스 상향 및 양자 테마 리더십"
+    "why": "양자 섹터 대장주 변동성 대응"
    },
    {
-    "name": "OKLO",
+    "ticker": "OKLO",
     "rank": 7,
     "verdict": "관찰",
-    "why": "원자력 에너지 장기 성장성 부각"
+    "why": "원자력 테마 수급 유입 여부 모니터링"
    },
    {
-    "name": "IREN",
+    "ticker": "IREN",
     "rank": 8,
-    "verdict": "관찰",
-    "why": "디지털 인프라 및 채굴/데이터센터 테마 연동"
+    "verdict": "제외",
+    "why": "부채 및 실적 관련 리스크 관리 필요"
    },
    {
-    "name": "INFQ",
+    "ticker": "INFQ",
     "rank": 9,
     "verdict": "제외",
-    "why": "양자주 전반의 엇갈린 월가 평가 및 변동성 심화"
+    "why": "월가 목표가 하향 리스크 존재"
    },
    {
-    "name": "RGTI",
+    "ticker": "RGTI",
     "rank": 10,
     "verdict": "관찰",
-    "why": "CHIPS 법안 수혜 기대와 IonQ 연동성"
+    "why": "실적 발표 앞두고 변동성 주의"
    },
    {
-    "name": "ONDS",
+    "ticker": "ONDS",
     "rank": 11,
     "verdict": "제외",
-    "why": "숏스퀴즈 기대감에 의존한 투기적 성격"
+    "why": "숏스퀴즈 기대감 외 뚜렷한 펀더멘털 부족"
    },
    {
-    "name": "QBTS",
+    "ticker": "QBTS",
     "rank": 12,
-    "verdict": "제외",
-    "why": "동종업체(IONQ) 가이던스 연동 상승으로 독자 모멘텀 부족"
+    "verdict": "관찰",
+    "why": "양자 테마 단기 트레이딩 대상"
    },
    {
-    "name": "CIFR",
+    "ticker": "CIFR",
     "rank": 13,
     "verdict": "제외",
-    "why": "텍사스 리스크 및 애널리스트 목표가 하향"
+    "why": "목표가 하향 및 리스크 부각"
    },
    {
-    "name": "LEU",
+    "ticker": "LEU",
     "rank": 14,
     "verdict": "관찰",
-    "why": "Q3 실적 이후 수급 관찰 필요"
+    "why": "실적 콜 이후 방향성 탐색"
    },
    {
-    "name": "NVDA",
+    "ticker": "NVDA",
     "rank": 15,
-    "verdict": "제외",
-    "why": "CEO 관련 조사 보도 및 하락세 진입 회피"
-   },
-   {
-    "name": "INTC",
-    "rank": 16,
     "verdict": "관찰",
-    "why": "반도체 섹터 회피 권고이나 낙폭 과대 분석 상존"
+    "why": "시장 지수 연동성 높으나 상방 제한적"
    },
    {
-    "name": "SPCX",
+    "ticker": "INTC",
+    "rank": 16,
+    "verdict": "제외",
+    "why": "AI 경쟁력 우려 상존"
+   },
+   {
+    "ticker": "SPCX",
     "rank": 17,
     "verdict": "제외",
-    "why": "빅테크 규제 및 부채 리스크 발언 악재"
+    "why": "규제 및 빅테크 부채 리스크 경계"
    },
    {
-    "name": "WULF",
+    "ticker": "WULF",
     "rank": 18,
-    "verdict": "관찰",
-    "why": "데이터센터 프로젝트 수혜이나 단기 모멘텀 부족"
+    "verdict": "제외",
+    "why": "프로젝트 뉴스 영향 제한적"
    }
   ],
   "mkt": {
-   "dir": "횡보",
-   "conf": 45,
-   "why": "전일 지수 반등에도 불구하고 높은 VIX와 과거 예측 적중률 부진을 고려해 신중한 횡보장으로 판단함"
+   "dir": "상승",
+   "conf": 75,
+   "why": "지수 선물 강세와 VIX 급감으로 위험 자산 선호 심리 회복"
   }
  }
 }
