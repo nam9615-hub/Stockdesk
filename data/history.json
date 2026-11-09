@@ -47374,6 +47374,381 @@
      "mom": -0.4
     }
    }
+  },
+  {
+   "date": "2026-11-09",
+   "market": "US",
+   "regime": "하락",
+   "rules": [
+    "단타 실패 분해: 시장충격13·목표과다2·선정27 → 선정 강화",
+    "강도80+ 실측 0%(12) — 확신도 과장, 보수화",
+    "근거'거래량급증' 성공30%(23) → 단독추천 지양",
+    "근거'정책테마' 성공36%(22) → 단독추천 지양",
+    "근거'낙폭과대' 성공25%(8) → 단독추천 지양",
+    "섹터'반도체' 성공38%(16) → 회피"
+   ],
+   "cands": [
+    {
+     "ticker": "KRMN",
+     "rank": 1,
+     "verdict": "선택",
+     "why": "Q3 실적 호조 및 42% 급등 모멘텀",
+     "r1": null
+    },
+    {
+     "ticker": "FLY",
+     "rank": 2,
+     "verdict": "선택",
+     "why": "NASA 100억 달러 CLPS 2 달 배송 프로그램 합류",
+     "r1": null
+    },
+    {
+     "ticker": "FROG",
+     "rank": 3,
+     "verdict": "선택",
+     "why": "어닝 서프라이즈 및 클라우드·보안 고성장",
+     "r1": null
+    },
+    {
+     "ticker": "LASR",
+     "rank": 4,
+     "verdict": "관찰",
+     "why": "방산 및 국가 안보 수혜 기대감",
+     "r1": null
+    },
+    {
+     "ticker": "IONQ",
+     "rank": 6,
+     "verdict": "관찰",
+     "why": "가이던스 상향 및 양자 테마 리더십",
+     "r1": null
+    },
+    {
+     "ticker": "TMDX",
+     "rank": 94,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "OKLO",
+     "rank": 96,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "IREN",
+     "rank": 97,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "INFQ",
+     "rank": 98,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "RGTI",
+     "rank": 99,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "ONDS",
+     "rank": 100,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "QBTS",
+     "rank": 101,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "CIFR",
+     "rank": 102,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "LEU",
+     "rank": 103,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "NVDA",
+     "rank": 104,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "INTC",
+     "rank": 105,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "SPCX",
+     "rank": 106,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "WULF",
+     "rank": 107,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    }
+   ],
+   "bl": {
+    "rand": [
+     "RGTI",
+     "KRMN",
+     "INTC"
+    ],
+    "mom": [
+     "KRMN",
+     "FLY",
+     "FROG"
+    ]
+   },
+   "dayCands": [
+    {
+     "name": "Karman Holdings Inc.",
+     "ticker": "KRMN",
+     "score": 25,
+     "target_pct": 4,
+     "sector": "제조업",
+     "basis": [
+      "실적/수주계약",
+      "거래량급증"
+     ],
+     "reason": "Q3 실적 컨퍼런스 호조에 힘입어 42% 폭등세를 기록하며 강한 거래량이 유입되었습니다. 단기 모멘텀이 이어질 수 있으나 갭상승 추격 매매 리스크를 관리해야 합니다.",
+     "risk": "대형 갭상승 이후 되돌림 가능성"
+    },
+    {
+     "name": "nLIGHT, Inc.",
+     "ticker": "LASR",
+     "score": 22,
+     "sector": "방산",
+     "basis": [
+      "뉴스재료",
+      "낙폭과대"
+     ],
+     "reason": "미국 방산 관련주로 엔비디아 관련 국가 안보 이슈와 맞물려 주목받고 있습니다. 방산 섹터 주의보가 있으나 단기 수급 유입 가능성을 열어두고 관찰합니다.",
+     "risk": "방산 섹터에 대한 보수적 접근 필요",
+     "target_pct": 3
+    },
+    {
+     "name": "IonQ, Inc.",
+     "ticker": "IONQ",
+     "score": 20,
+     "sector": "양자컴퓨팅",
+     "basis": [
+      "뉴스재료",
+      "추세지속"
+     ],
+     "reason": "가이던스 상향 조정 발표와 함께 관련 양자 컴퓨팅 종목들의 동반 상승을 이끌었습니다. 다만 과거 테마주 실측 성적이 부진하므로 목표 수익률을 낮게 설정합니다.",
+     "risk": "변동성이 극심한 양자 테마 특유의 리스크",
+     "target_pct": 3
+    },
+    {
+     "name": "Oklo Inc.",
+     "ticker": "OKLO",
+     "score": 18,
+     "sector": "에너지",
+     "basis": [
+      "추세지속"
+     ],
+     "reason": "원자력 및 클린에너지 관련 장기 성장 기대감으로 주가가 강세를 보였습니다. 모멘텀은 살아 있으나 단기 과열 구간에 진입해 있어 보수적 대응이 요구됩니다.",
+     "risk": "단기 차익 실현 매물 출회 위험",
+     "target_pct": 3
+    },
+    {
+     "name": "Centrus Energy Corp.",
+     "ticker": "LEU",
+     "score": 18,
+     "sector": "에너지",
+     "basis": [
+      "실적/수주계약"
+     ],
+     "reason": "Q3 실적 발표와 애널리스트 질의응답을 통해 에너지 수급 불균형 속에서 관심을 받고 있습니다. 실적 모멘텀이 유효하나 전체 시장 하락장 국면의 영향을 받을 수 있습니다.",
+     "risk": "에너지 원자재 가격 변동성",
+     "target_pct": 3
+    }
+   ],
+   "hold": 0,
+   "v": {
+    "m": "gemini-3.5-flash-lite",
+    "pv": "J1.0-S2.0",
+    "policy": "S2.0"
+   },
+   "mktF": {
+    "dir": "횡보",
+    "conf": 45,
+    "why": "전일 지수 반등에도 불구하고 높은 VIX와 과거 예측 적중률 부진을 고려해 신중한 횡보장으로 판단함",
+    "ok": null
+   },
+   "picks": [
+    {
+     "kind": "swing",
+     "name": "JFrog Ltd.",
+     "ticker": "FROG",
+     "score": 35,
+     "sector": "소프트웨어",
+     "basis": [
+      "실적/수주계약",
+      "추세지속"
+     ],
+     "plan": {
+      "engine": "R2.0",
+      "strategy": "swing",
+      "atrPct": 8.1,
+      "stopPct": 9,
+      "targetPct": 18,
+      "rr": 2,
+      "maxHoldDays": 5,
+      "riskPct": 0.5,
+      "maxWeightPct": 10,
+      "weightPct": 4.04,
+      "qty": 2,
+      "notional": 202,
+      "decision": {
+       "version": "S2.0",
+       "action": "watch",
+       "strategy": "swing",
+       "reasons": [
+        "하락 국면: 신규 진입 보류"
+       ],
+       "plannedHoldDays": 5,
+       "reviewAfterDays": 3,
+       "maxHoldDays": 5,
+       "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+       "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+       "allowAutoOrder": false
+      }
+     },
+     "p0": 100.98,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "TransMedics Group, Inc.",
+     "ticker": "TMDX",
+     "score": 30,
+     "sector": "헬스케어",
+     "basis": [
+      "실적/수주계약",
+      "추세지속"
+     ],
+     "plan": {
+      "engine": "R2.0",
+      "strategy": "swing",
+      "atrPct": 5.69,
+      "stopPct": 8.54,
+      "targetPct": 17.07,
+      "rr": 2,
+      "maxHoldDays": 5,
+      "riskPct": 0.5,
+      "maxWeightPct": 10,
+      "weightPct": 5.29,
+      "qty": 3,
+      "notional": 265,
+      "decision": {
+       "version": "S2.0",
+       "action": "watch",
+       "strategy": "day-watch",
+       "reasons": [
+        "하락 국면: 신규 진입 보류",
+        "단기 수급만 확인: 단타 재평가 후보, 자동 전환 아님"
+       ],
+       "plannedHoldDays": 5,
+       "reviewAfterDays": 3,
+       "maxHoldDays": 5,
+       "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+       "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+       "allowAutoOrder": false
+      }
+     },
+     "p0": 88.24,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "Firefly Aerospace Inc.",
+     "ticker": "FLY",
+     "score": 28,
+     "sector": "항공우주",
+     "basis": [
+      "실적/수주계약",
+      "정책테마"
+     ],
+     "plan": {
+      "engine": "R2.0",
+      "strategy": "swing",
+      "atrPct": 8.51,
+      "stopPct": 9,
+      "targetPct": 18,
+      "rr": 2,
+      "maxHoldDays": 10,
+      "riskPct": 0.5,
+      "maxWeightPct": 10,
+      "weightPct": 5.4,
+      "qty": 13,
+      "notional": 270,
+      "decision": {
+       "version": "S2.0",
+       "action": "watch",
+       "strategy": "swing",
+       "reasons": [
+        "하락 국면: 신규 진입 보류"
+       ],
+       "plannedHoldDays": 10,
+       "reviewAfterDays": 3,
+       "maxHoldDays": 10,
+       "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+       "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+       "allowAutoOrder": false
+      }
+     },
+     "p0": 20.76,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    }
+   ]
   }
  ],
  "monAt": 1793994926778
