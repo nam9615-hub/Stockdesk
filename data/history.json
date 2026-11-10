@@ -95,42 +95,42 @@
      "rank": 13,
      "verdict": "제외",
      "why": "목표가 하향 및 리스크 부각",
-     "r1": null
+     "r1": 5.9
     },
     {
      "ticker": "LEU",
      "rank": 14,
      "verdict": "관찰",
      "why": "실적 콜 이후 방향성 탐색",
-     "r1": null
+     "r1": 9.2
     },
     {
      "ticker": "NVDA",
      "rank": 15,
      "verdict": "관찰",
      "why": "시장 지수 연동성 높으나 상방 제한적",
-     "r1": null
+     "r1": 3.2
     },
     {
      "ticker": "INTC",
      "rank": 16,
      "verdict": "제외",
      "why": "AI 경쟁력 우려 상존",
-     "r1": null
+     "r1": 4.4
     },
     {
      "ticker": "SPCX",
      "rank": 17,
      "verdict": "제외",
      "why": "규제 및 빅테크 부채 리스크 경계",
-     "r1": null
+     "r1": 4.1
     },
     {
      "ticker": "WULF",
      "rank": 18,
      "verdict": "제외",
      "why": "프로젝트 뉴스 영향 제한적",
-     "r1": null
+     "r1": 7.4
     }
    ],
    "bl": {
@@ -443,7 +443,371 @@
     "brief": "시가갭과 개장 후 흐름을 기준으로 원칙에 부합하는 종목을 선별한 결과, 모든 후보가 기준을 충족하지 못해 보류합니다.",
     "n": 0
    },
-   "dayHold": 1
+   "dayHold": 1,
+   "cstat": {
+    "n": 18,
+    "med": 7.1,
+    "ex": null,
+    "exD": null,
+    "rg": null,
+    "rej": -1.6,
+    "blr": {
+     "rand": 1.7,
+     "mom": -0.1
+    }
+   }
+  },
+  {
+   "date": "2026-11-10",
+   "market": "US",
+   "regime": "하락",
+   "rules": [],
+   "cands": [
+    {
+     "ticker": "VSAT",
+     "rank": 1,
+     "verdict": "선택",
+     "why": "확실한 대형 수주 재료",
+     "r1": null
+    },
+    {
+     "ticker": "QXO",
+     "rank": 2,
+     "verdict": "선택",
+     "why": "강력한 거래량 동반 추세",
+     "r1": null
+    },
+    {
+     "ticker": "FRVO",
+     "rank": 3,
+     "verdict": "선택",
+     "why": "에너지 섹터 내 실적 모멘텀",
+     "r1": null
+    },
+    {
+     "ticker": "WRBY",
+     "rank": 4,
+     "verdict": "관찰",
+     "why": "실적 기반 우상향",
+     "r1": null
+    },
+    {
+     "ticker": "FLY",
+     "rank": 5,
+     "verdict": "관찰",
+     "why": "섹터 수급 이동",
+     "r1": null
+    },
+    {
+     "ticker": "TTD",
+     "rank": 6,
+     "verdict": "관찰",
+     "why": "실적 돌파형",
+     "r1": null
+    },
+    {
+     "ticker": "COHR",
+     "rank": 7,
+     "verdict": "관찰",
+     "why": "기술적 추세 양호",
+     "r1": null
+    },
+    {
+     "ticker": "UI",
+     "rank": 8,
+     "verdict": "관찰",
+     "why": "배당 메리트 부각",
+     "r1": null
+    },
+    {
+     "ticker": "IMVT",
+     "rank": 9,
+     "verdict": "제외",
+     "why": "단기 과열",
+     "r1": null
+    },
+    {
+     "ticker": "LGN",
+     "rank": 10,
+     "verdict": "제외",
+     "why": "데이터센터 재료 소멸",
+     "r1": null
+    },
+    {
+     "ticker": "FPS",
+     "rank": 11,
+     "verdict": "제외",
+     "why": "변동성 과다",
+     "r1": null
+    },
+    {
+     "ticker": "PRAX",
+     "rank": 12,
+     "verdict": "제외",
+     "why": "밸류에이션 부담",
+     "r1": null
+    },
+    {
+     "ticker": "CECO",
+     "rank": 13,
+     "verdict": "제외",
+     "why": "CEO 이슈 악재",
+     "r1": null
+    },
+    {
+     "ticker": "MPWR",
+     "rank": 14,
+     "verdict": "제외",
+     "why": "기관 매도세",
+     "r1": null
+    },
+    {
+     "ticker": "NVDA",
+     "rank": 15,
+     "verdict": "제외",
+     "why": "하락 추세 전환",
+     "r1": null
+    },
+    {
+     "ticker": "INTC",
+     "rank": 16,
+     "verdict": "제외",
+     "why": "손실 이슈",
+     "r1": null
+    },
+    {
+     "ticker": "SPCX",
+     "rank": 17,
+     "verdict": "제외",
+     "why": "뉴스 재료 약함",
+     "r1": null
+    },
+    {
+     "ticker": "GRAB",
+     "rank": 18,
+     "verdict": "제외",
+     "why": "상승 탄력 부족",
+     "r1": null
+    }
+   ],
+   "bl": {
+    "rand": [
+     "QXO",
+     "IMVT",
+     "CECO"
+    ],
+    "mom": [
+     "FRVO",
+     "PRAX",
+     "QXO"
+    ]
+   },
+   "dayCands": [
+    {
+     "name": "Warby Parker Inc.",
+     "ticker": "WRBY",
+     "score": 90,
+     "target_pct": 5,
+     "sector": "소비재",
+     "basis": [
+      "실적"
+     ],
+     "reason": "실적 발표 후 시장의 긍정적인 반응이 이어지고 있어 장 초반 강한 매수세가 예상됩니다.",
+     "risk": "오전 고점 이후 차익 매물 출회"
+    },
+    {
+     "name": "Firefly Aerospace Inc.",
+     "ticker": "FLY",
+     "score": 85,
+     "target_pct": 7,
+     "sector": "항공우주",
+     "basis": [
+      "정책테마"
+     ],
+     "reason": "NASA의 달 기지 프로젝트 경쟁 테마에 편승하여 섹터 전반의 수급이 몰리고 있습니다.",
+     "risk": "우주 섹터 내 뉴스 의존도 높음"
+    },
+    {
+     "name": "The Trade Desk, Inc.",
+     "ticker": "TTD",
+     "score": 82,
+     "target_pct": 4,
+     "sector": "기술",
+     "basis": [
+      "실적"
+     ],
+     "reason": "애널리스트들의 부정적 전망을 비웃듯 실적 서프라이즈를 달성하며 기술적 돌파를 시도하고 있습니다.",
+     "risk": "상위 저항선 돌파 여부"
+    },
+    {
+     "name": "Coherent Corp.",
+     "ticker": "COHR",
+     "score": 80,
+     "target_pct": 3,
+     "sector": "기술",
+     "basis": [
+      "추세지속"
+     ],
+     "reason": "최근 꾸준한 상승 흐름을 보이고 있으며 Buffett 관련 이슈가 투자 심리를 자극하고 있습니다.",
+     "risk": "지수 선물 정체에 따른 동반 조정"
+    },
+    {
+     "name": "Ubiquiti Inc.",
+     "ticker": "UI",
+     "score": 78,
+     "target_pct": 5,
+     "sector": "통신",
+     "basis": [
+      "실적"
+     ],
+     "reason": "실적 발표와 함께 발표된 배당 공시가 단기 모멘텀을 강화하고 있습니다.",
+     "risk": "이미 급등한 시가 갭상승 가능성"
+    }
+   ],
+   "hold": 0,
+   "v": {
+    "m": "gemini-3.1-flash-lite",
+    "pv": "J1.0-S2.0",
+    "policy": "S2.0"
+   },
+   "mktF": {
+    "dir": "횡보",
+    "conf": 65,
+    "why": "지수 급등 후 CPI 발표를 앞두고 있어 방향성 결정 전 관망세가 우세함",
+    "ok": null
+   },
+   "picks": [
+    {
+     "kind": "swing",
+     "name": "ViaSat, Inc.",
+     "ticker": "VSAT",
+     "score": 92,
+     "sector": "통신",
+     "basis": [
+      "수주계약",
+      "뉴스재료"
+     ],
+     "plan": {
+      "engine": "R2.0",
+      "strategy": "swing",
+      "atrPct": 9,
+      "stopPct": 9,
+      "targetPct": 18,
+      "rr": 2,
+      "maxHoldDays": 10,
+      "riskPct": 0.5,
+      "maxWeightPct": 10,
+      "weightPct": 4.46,
+      "qty": 3,
+      "notional": 223,
+      "decision": {
+       "version": "S2.0",
+       "action": "watch",
+       "strategy": "swing",
+       "reasons": [
+        "하락 국면: 신규 진입 보류"
+       ],
+       "plannedHoldDays": 10,
+       "reviewAfterDays": 3,
+       "maxHoldDays": 10,
+       "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+       "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+       "allowAutoOrder": false
+      }
+     },
+     "p0": 74.37,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "QXO, Inc.",
+     "ticker": "QXO",
+     "score": 88,
+     "sector": "산업재",
+     "basis": [
+      "뉴스재료",
+      "거래량급증"
+     ],
+     "plan": {
+      "engine": "R2.0",
+      "strategy": "swing",
+      "atrPct": 6.02,
+      "stopPct": 9,
+      "targetPct": 18,
+      "rr": 2,
+      "maxHoldDays": 5,
+      "riskPct": 0.5,
+      "maxWeightPct": 10,
+      "weightPct": 5.51,
+      "qty": 20,
+      "notional": 276,
+      "decision": {
+       "version": "S2.0",
+       "action": "watch",
+       "strategy": "day-watch",
+       "reasons": [
+        "하락 국면: 신규 진입 보류",
+        "단기 수급만 확인: 단타 재평가 후보, 자동 전환 아님"
+       ],
+       "plannedHoldDays": 5,
+       "reviewAfterDays": 3,
+       "maxHoldDays": 5,
+       "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+       "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+       "allowAutoOrder": false
+      }
+     },
+     "p0": 13.78,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "Fervo Energy Company",
+     "ticker": "FRVO",
+     "score": 85,
+     "sector": "에너지",
+     "basis": [
+      "실적",
+      "추세지속"
+     ],
+     "plan": {
+      "engine": "R2.0",
+      "strategy": "swing",
+      "atrPct": 8.59,
+      "stopPct": 9,
+      "targetPct": 18,
+      "rr": 2,
+      "maxHoldDays": 10,
+      "riskPct": 0.5,
+      "maxWeightPct": 10,
+      "weightPct": 5.46,
+      "qty": 24,
+      "notional": 273,
+      "decision": {
+       "version": "S2.0",
+       "action": "watch",
+       "strategy": "swing",
+       "reasons": [
+        "하락 국면: 신규 진입 보류"
+       ],
+       "plannedHoldDays": 10,
+       "reviewAfterDays": 3,
+       "maxHoldDays": 10,
+       "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+       "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+       "allowAutoOrder": false
+      }
+     },
+     "p0": 11.38,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    }
+   ]
   }
  ]
 }
