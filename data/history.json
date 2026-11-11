@@ -468,84 +468,84 @@
      "rank": 1,
      "verdict": "선택",
      "why": "확실한 대형 수주 재료",
-     "r1": null
+     "r1": 1.4
     },
     {
      "ticker": "QXO",
      "rank": 2,
      "verdict": "선택",
      "why": "강력한 거래량 동반 추세",
-     "r1": null
+     "r1": 1.2
     },
     {
      "ticker": "FRVO",
      "rank": 3,
      "verdict": "선택",
      "why": "에너지 섹터 내 실적 모멘텀",
-     "r1": null
+     "r1": -0.5
     },
     {
      "ticker": "WRBY",
      "rank": 4,
      "verdict": "관찰",
      "why": "실적 기반 우상향",
-     "r1": null
+     "r1": 0.2
     },
     {
      "ticker": "FLY",
      "rank": 5,
      "verdict": "관찰",
      "why": "섹터 수급 이동",
-     "r1": null
+     "r1": 0.8
     },
     {
      "ticker": "TTD",
      "rank": 6,
      "verdict": "관찰",
      "why": "실적 돌파형",
-     "r1": null
+     "r1": 5.6
     },
     {
      "ticker": "COHR",
      "rank": 7,
      "verdict": "관찰",
      "why": "기술적 추세 양호",
-     "r1": null
+     "r1": -0.1
     },
     {
      "ticker": "UI",
      "rank": 8,
      "verdict": "관찰",
      "why": "배당 메리트 부각",
-     "r1": null
+     "r1": 0
     },
     {
      "ticker": "IMVT",
      "rank": 9,
      "verdict": "제외",
      "why": "단기 과열",
-     "r1": null
+     "r1": 1.6
     },
     {
      "ticker": "LGN",
      "rank": 10,
      "verdict": "제외",
      "why": "데이터센터 재료 소멸",
-     "r1": null
+     "r1": 0.1
     },
     {
      "ticker": "FPS",
      "rank": 11,
      "verdict": "제외",
      "why": "변동성 과다",
-     "r1": null
+     "r1": -0.4
     },
     {
      "ticker": "PRAX",
      "rank": 12,
      "verdict": "제외",
      "why": "밸류에이션 부담",
-     "r1": null
+     "r1": 2.2
     },
     {
      "ticker": "CECO",
