@@ -552,42 +552,42 @@
      "rank": 13,
      "verdict": "제외",
      "why": "CEO 이슈 악재",
-     "r1": null
+     "r1": -1
     },
     {
      "ticker": "MPWR",
      "rank": 14,
      "verdict": "제외",
      "why": "기관 매도세",
-     "r1": null
+     "r1": -0.6
     },
     {
      "ticker": "NVDA",
      "rank": 15,
      "verdict": "제외",
      "why": "하락 추세 전환",
-     "r1": null
+     "r1": -2.9
     },
     {
      "ticker": "INTC",
      "rank": 16,
      "verdict": "제외",
      "why": "손실 이슈",
-     "r1": null
+     "r1": 0.3
     },
     {
      "ticker": "SPCX",
      "rank": 17,
      "verdict": "제외",
      "why": "뉴스 재료 약함",
-     "r1": null
+     "r1": 2.8
     },
     {
      "ticker": "GRAB",
      "rank": 18,
      "verdict": "제외",
      "why": "상승 탄력 부족",
-     "r1": null
+     "r1": 0.3
     }
    ],
    "bl": {
@@ -891,7 +891,367 @@
     "brief": "전 종목 시가 갭 마이너스 출발 및 개장 후 상승 전환 또는 모멘텀 유지를 확인했으나, 갭 +5% 이상 조건 등 당사 트레이딩 기준에 부합하는 종목이 없어 보류합니다.",
     "n": 0
    },
-   "dayHold": 1
+   "dayHold": 1,
+   "cstat": {
+    "n": 18,
+    "med": 0.3,
+    "ex": null,
+    "exD": null,
+    "rg": null,
+    "rej": -0.1,
+    "blr": {
+     "rand": 0.3,
+     "mom": 0.7
+    }
+   }
+  },
+  {
+   "date": "2026-11-11",
+   "market": "US",
+   "regime": "하락",
+   "rules": [],
+   "cands": [
+    {
+     "ticker": "TTWO",
+     "rank": 1,
+     "verdict": "선택",
+     "why": "확실한 이벤트 모멘텀",
+     "r1": null
+    },
+    {
+     "ticker": "ZETA",
+     "rank": 2,
+     "verdict": "선택",
+     "why": "수익성 개선 입증",
+     "r1": null
+    },
+    {
+     "ticker": "LQDA",
+     "rank": 3,
+     "verdict": "선택",
+     "why": "매출 성장세 견고",
+     "r1": null
+    },
+    {
+     "ticker": "MARA",
+     "rank": 4,
+     "verdict": "관찰",
+     "why": "기술적 반등",
+     "r1": null
+    },
+    {
+     "ticker": "RKLB",
+     "rank": 5,
+     "verdict": "관찰",
+     "why": "기관 매수 유입",
+     "r1": null
+    },
+    {
+     "ticker": "AAON",
+     "rank": 6,
+     "verdict": "관찰",
+     "why": "AI 인프라 테마",
+     "r1": null
+    },
+    {
+     "ticker": "GEO",
+     "rank": 7,
+     "verdict": "관찰",
+     "why": "실적 대비 저평가",
+     "r1": null
+    },
+    {
+     "ticker": "CSQR",
+     "rank": 8,
+     "verdict": "관찰",
+     "why": "섹터 회복세",
+     "r1": null
+    },
+    {
+     "ticker": "CHTR",
+     "rank": 9,
+     "verdict": "제외",
+     "why": "섹터 매력도 낮음",
+     "r1": null
+    },
+    {
+     "ticker": "ACAD",
+     "rank": 10,
+     "verdict": "제외",
+     "why": "악재 우세",
+     "r1": null
+    },
+    {
+     "ticker": "EMBJ",
+     "rank": 11,
+     "verdict": "제외",
+     "why": "뉴스 모호함",
+     "r1": null
+    },
+    {
+     "ticker": "TNGX",
+     "rank": 12,
+     "verdict": "제외",
+     "why": "실적 부진",
+     "r1": null
+    },
+    {
+     "ticker": "PRCH",
+     "rank": 13,
+     "verdict": "제외",
+     "why": "내부자 매도",
+     "r1": null
+    },
+    {
+     "ticker": "GRDN",
+     "rank": 14,
+     "verdict": "제외",
+     "why": "변동성 낮음",
+     "r1": null
+    },
+    {
+     "ticker": "NVDA",
+     "rank": 15,
+     "verdict": "제외",
+     "why": "지수 역행",
+     "r1": null
+    },
+    {
+     "ticker": "JHX",
+     "rank": 16,
+     "verdict": "제외",
+     "why": "하락 추세",
+     "r1": null
+    },
+    {
+     "ticker": "INTC",
+     "rank": 17,
+     "verdict": "제외",
+     "why": "반등 제한",
+     "r1": null
+    },
+    {
+     "ticker": "GRAB",
+     "rank": 18,
+     "verdict": "제외",
+     "why": "내부자 매도",
+     "r1": null
+    }
+   ],
+   "bl": {
+    "rand": [
+     "JHX",
+     "AAON",
+     "GRDN"
+    ],
+    "mom": [
+     "AAON",
+     "CSQR",
+     "ACAD"
+    ]
+   },
+   "dayCands": [
+    {
+     "name": "MARA Holdings, Inc.",
+     "ticker": "MARA",
+     "score": 80,
+     "target_pct": 8,
+     "sector": "가상화폐",
+     "basis": [
+      "낙폭과대"
+     ],
+     "reason": "과도한 투매 후 강한 기술적 반등이 나오고 있으며 투자은행의 목표가 상향 리포트가 호재로 작용 중입니다.",
+     "risk": "비트코인 가격 변동성"
+    },
+    {
+     "name": "Rocket Lab Corporation",
+     "ticker": "RKLB",
+     "score": 78,
+     "target_pct": 5,
+     "sector": "우주항공",
+     "basis": [
+      "거래량급증"
+     ],
+     "reason": "캐시 우드의 ARK 투자 유입 소식으로 개인 투자자들의 매수세가 집중되고 있습니다. 신고가 영역에서의 강한 흐름이 예상됩니다.",
+     "risk": "단기 과열 현상"
+    },
+    {
+     "name": "AAON, Inc.",
+     "ticker": "AAON",
+     "score": 75,
+     "target_pct": 6,
+     "sector": "산업재",
+     "basis": [
+      "실적"
+     ],
+     "reason": "AI 인프라 관련주로서 큰 폭의 상승 후 횡보 중이나, 거래량이 실리며 추가 상승 시도 가능성이 큽니다.",
+     "risk": "박스권 돌파 실패 가능성"
+    },
+    {
+     "name": "Geo Group Inc",
+     "ticker": "GEO",
+     "score": 72,
+     "target_pct": 4,
+     "sector": "부동산",
+     "basis": [
+      "실적"
+     ],
+     "reason": "기록적인 Q3 실적을 바탕으로 가치 재평가가 이루어지고 있습니다. 하방 경직성이 강해 단타로 적합합니다.",
+     "risk": "REIT 관련 금리 민감도"
+    },
+    {
+     "name": "Csquare, Inc.",
+     "ticker": "CSQR",
+     "score": 70,
+     "target_pct": 7,
+     "sector": "데이터센터",
+     "basis": [
+      "실적"
+     ],
+     "reason": "데이터센터 섹터에 대한 우려를 실적으로 불식시켰습니다. 시장 관심이 집중되는 종목으로 당일 모멘텀이 좋습니다.",
+     "risk": "섹터 전반의 수급 불안정"
+    }
+   ],
+   "hold": 0,
+   "v": {
+    "m": "gemini-3.1-flash-lite",
+    "pv": "J1.0-S2.0",
+    "policy": "S2.0"
+   },
+   "mktF": {
+    "dir": "상승",
+    "conf": 75,
+    "why": "지수 선물 플러스 전환과 VIX 하락은 투자 심리 개선을 나타냅니다.",
+    "ok": null
+   },
+   "picks": [
+    {
+     "kind": "swing",
+     "name": "Take-Two Interactive Software",
+     "ticker": "TTWO",
+     "score": 92,
+     "sector": "게임",
+     "basis": [
+      "실적"
+     ],
+     "plan": {
+      "engine": "R2.0",
+      "strategy": "swing",
+      "atrPct": 3.91,
+      "stopPct": 5.87,
+      "targetPct": 11.73,
+      "rr": 2,
+      "maxHoldDays": 10,
+      "riskPct": 0.5,
+      "maxWeightPct": 10,
+      "weightPct": 4.49,
+      "qty": 1,
+      "notional": 225,
+      "decision": {
+       "version": "S2.0",
+       "action": "watch",
+       "strategy": "swing",
+       "reasons": [
+        "하락 국면: 신규 진입 보류"
+       ],
+       "plannedHoldDays": 10,
+       "reviewAfterDays": 3,
+       "maxHoldDays": 10,
+       "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+       "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+       "allowAutoOrder": false
+      }
+     },
+     "p0": 224.64,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "Zeta Global Holdings Corp.",
+     "ticker": "ZETA",
+     "score": 88,
+     "sector": "소프트웨어",
+     "basis": [
+      "실적"
+     ],
+     "plan": {
+      "engine": "R2.0",
+      "strategy": "swing",
+      "atrPct": 4.98,
+      "stopPct": 7.47,
+      "targetPct": 14.94,
+      "rr": 2,
+      "maxHoldDays": 15,
+      "riskPct": 0.5,
+      "maxWeightPct": 10,
+      "weightPct": 6.31,
+      "qty": 9,
+      "notional": 316,
+      "decision": {
+       "version": "S2.0",
+       "action": "watch",
+       "strategy": "swing",
+       "reasons": [
+        "하락 국면: 신규 진입 보류"
+       ],
+       "plannedHoldDays": 15,
+       "reviewAfterDays": 3,
+       "maxHoldDays": 15,
+       "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+       "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+       "allowAutoOrder": false
+      }
+     },
+     "p0": 35.07,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "Liquidia Corporation",
+     "ticker": "LQDA",
+     "score": 85,
+     "sector": "바이오",
+     "basis": [
+      "실적"
+     ],
+     "plan": {
+      "engine": "R2.0",
+      "strategy": "swing",
+      "atrPct": 6.66,
+      "stopPct": 9,
+      "targetPct": 18,
+      "rr": 2,
+      "maxHoldDays": 10,
+      "riskPct": 0.5,
+      "maxWeightPct": 10,
+      "weightPct": 5.14,
+      "qty": 5,
+      "notional": 257,
+      "decision": {
+       "version": "S2.0",
+       "action": "watch",
+       "strategy": "swing",
+       "reasons": [
+        "하락 국면: 신규 진입 보류"
+       ],
+       "plannedHoldDays": 10,
+       "reviewAfterDays": 3,
+       "maxHoldDays": 10,
+       "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+       "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+       "allowAutoOrder": false
+      }
+     },
+     "p0": 51.4,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    }
+   ]
   }
  ]
 }
