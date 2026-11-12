@@ -916,84 +916,84 @@
      "rank": 1,
      "verdict": "선택",
      "why": "확실한 이벤트 모멘텀",
-     "r1": null
+     "r1": 1.6
     },
     {
      "ticker": "ZETA",
      "rank": 2,
      "verdict": "선택",
      "why": "수익성 개선 입증",
-     "r1": null
+     "r1": 4.8
     },
     {
      "ticker": "LQDA",
      "rank": 3,
      "verdict": "선택",
      "why": "매출 성장세 견고",
-     "r1": null
+     "r1": 2.2
     },
     {
      "ticker": "MARA",
      "rank": 4,
      "verdict": "관찰",
      "why": "기술적 반등",
-     "r1": null
+     "r1": -0.2
     },
     {
      "ticker": "RKLB",
      "rank": 5,
      "verdict": "관찰",
      "why": "기관 매수 유입",
-     "r1": null
+     "r1": 2.9
     },
     {
      "ticker": "AAON",
      "rank": 6,
      "verdict": "관찰",
      "why": "AI 인프라 테마",
-     "r1": null
+     "r1": 0
     },
     {
      "ticker": "GEO",
      "rank": 7,
      "verdict": "관찰",
      "why": "실적 대비 저평가",
-     "r1": null
+     "r1": 1.4
     },
     {
      "ticker": "CSQR",
      "rank": 8,
      "verdict": "관찰",
      "why": "섹터 회복세",
-     "r1": null
+     "r1": -6.1
     },
     {
      "ticker": "CHTR",
      "rank": 9,
      "verdict": "제외",
      "why": "섹터 매력도 낮음",
-     "r1": null
+     "r1": 2.4
     },
     {
      "ticker": "ACAD",
      "rank": 10,
      "verdict": "제외",
      "why": "악재 우세",
-     "r1": null
+     "r1": 1.3
     },
     {
      "ticker": "EMBJ",
      "rank": 11,
      "verdict": "제외",
      "why": "뉴스 모호함",
-     "r1": null
+     "r1": 0
     },
     {
      "ticker": "TNGX",
      "rank": 12,
      "verdict": "제외",
      "why": "실적 부진",
-     "r1": null
+     "r1": 4.3
     },
     {
      "ticker": "PRCH",
@@ -1373,8 +1373,17 @@
      "cAt": "23:34",
      "eTs": "2026-11-11T14:34:33.286Z",
      "cm": 4,
-     "r1": null,
-     "hit": null
+     "r1": -0.6,
+     "hit": false,
+     "mfe": 2.6,
+     "mae": -3.1,
+     "tv": 1588,
+     "tvx": 1.4,
+     "touch": "none",
+     "idx": 1.31,
+     "simExit": "close",
+     "simR": -0.6,
+     "postFixed": 1
     },
     {
      "kind": "day",
@@ -1420,8 +1429,17 @@
      "cAt": "23:34",
      "eTs": "2026-11-11T14:34:33.383Z",
      "cm": 4,
-     "r1": null,
-     "hit": null
+     "r1": -2.3,
+     "hit": false,
+     "mfe": 2.3,
+     "mae": -2.8,
+     "tv": 117,
+     "tvx": 1.1,
+     "touch": "none",
+     "idx": 1.31,
+     "simExit": "close",
+     "simR": -2.3,
+     "postFixed": 1
     }
    ],
    "day2": {
