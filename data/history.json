@@ -1000,42 +1000,42 @@
      "rank": 13,
      "verdict": "제외",
      "why": "내부자 매도",
-     "r1": null
+     "r1": -0.1
     },
     {
      "ticker": "GRDN",
      "rank": 14,
      "verdict": "제외",
      "why": "변동성 낮음",
-     "r1": null
+     "r1": 0.5
     },
     {
      "ticker": "NVDA",
      "rank": 15,
      "verdict": "제외",
      "why": "지수 역행",
-     "r1": null
+     "r1": 0.5
     },
     {
      "ticker": "JHX",
      "rank": 16,
      "verdict": "제외",
      "why": "하락 추세",
-     "r1": null
+     "r1": -2.8
     },
     {
      "ticker": "INTC",
      "rank": 17,
      "verdict": "제외",
      "why": "반등 제한",
-     "r1": null
+     "r1": 1.3
     },
     {
      "ticker": "GRAB",
      "rank": 18,
      "verdict": "제외",
      "why": "내부자 매도",
-     "r1": null
+     "r1": 0.5
     }
    ],
    "bl": {
@@ -1446,7 +1446,374 @@
     "at": "23:34",
     "brief": "개장 후 시가 대비 급락이나 과도한 이탈 없이 사전 논리를 뒷받침하는 RKLB와 AAON을 선정합니다.",
     "n": 2
+   },
+   "cstat": {
+    "n": 18,
+    "med": 1.3,
+    "ex": null,
+    "exD": 0.1,
+    "rg": 3.3,
+    "rej": -0.5,
+    "blr": {
+     "rand": -2.1,
+     "mom": -2.9
+    }
    }
+  },
+  {
+   "date": "2026-11-12",
+   "market": "US",
+   "regime": "하락",
+   "rules": [],
+   "cands": [
+    {
+     "ticker": "CRWV",
+     "rank": 1,
+     "verdict": "관찰",
+     "why": "엔비디아 관련 불확실성 속 급등으로 변동성 주의",
+     "r1": null
+    },
+    {
+     "ticker": "AZTA",
+     "rank": 2,
+     "verdict": "선택",
+     "why": "목표가 상향 및 실적 모멘텀 우수",
+     "r1": null
+    },
+    {
+     "ticker": "AXTI",
+     "rank": 3,
+     "verdict": "선택",
+     "why": "AI 데이터 센터 기판 수요로 강한 추세",
+     "r1": null
+    },
+    {
+     "ticker": "REZI",
+     "rank": 4,
+     "verdict": "관찰",
+     "why": "실적 호조이나 지수 환경 고려 관찰",
+     "r1": null
+    },
+    {
+     "ticker": "EQPT",
+     "rank": 5,
+     "verdict": "관찰",
+     "why": "매출 급증에도 목표가 하향 리스크 존재",
+     "r1": null
+    },
+    {
+     "ticker": "RUM",
+     "rank": 6,
+     "verdict": "관찰",
+     "why": "AI 매출 호조이나 추가 수급 확인 필요",
+     "r1": null
+    },
+    {
+     "ticker": "LGN",
+     "rank": 7,
+     "verdict": "관찰",
+     "why": "인프라 수혜주이나 지수 영향 주시",
+     "r1": null
+    },
+    {
+     "ticker": "NBIS",
+     "rank": 8,
+     "verdict": "관찰",
+     "why": "실적 발표 후 변동성 대응 필요",
+     "r1": null
+    },
+    {
+     "ticker": "AAOI",
+     "rank": 9,
+     "verdict": "선택",
+     "why": "대규모 랠리와 저평가 메리트 공존",
+     "r1": null
+    },
+    {
+     "ticker": "AXGN",
+     "rank": 10,
+     "verdict": "제외",
+     "why": "고평가 우려 존재",
+     "r1": null
+    },
+    {
+     "ticker": "FPS",
+     "rank": 11,
+     "verdict": "제외",
+     "why": "프리마켓 하락세 기록",
+     "r1": null
+    },
+    {
+     "ticker": "FRVO",
+     "rank": 12,
+     "verdict": "제외",
+     "why": "목표가 하향 조정 반영",
+     "r1": null
+    },
+    {
+     "ticker": "SNDK",
+     "rank": 13,
+     "verdict": "제외",
+     "why": "지수 하락 및 고가 부담",
+     "r1": null
+    },
+    {
+     "ticker": "GLXY",
+     "rank": 14,
+     "verdict": "제외",
+     "why": "목표가 하향 및 정치적 이슈",
+     "r1": null
+    },
+    {
+     "ticker": "NVDA",
+     "rank": 15,
+     "verdict": "제외",
+     "why": "CEO 관련 불확실성 및 월가 이탈",
+     "r1": null
+    },
+    {
+     "ticker": "INTC",
+     "rank": 16,
+     "verdict": "제외",
+     "why": "박스권 횡보 국면",
+     "r1": null
+    },
+    {
+     "ticker": "SPCX",
+     "rank": 17,
+     "verdict": "제외",
+     "why": "전일 하락세 및 모멘텀 부족",
+     "r1": null
+    },
+    {
+     "ticker": "IREN",
+     "rank": 18,
+     "verdict": "제외",
+     "why": "개별 재료 연동성 제한적",
+     "r1": null
+    }
+   ],
+   "bl": {
+    "rand": [
+     "NBIS",
+     "LGN",
+     "INTC"
+    ],
+    "mom": [
+     "CRWV",
+     "AZTA",
+     "AXTI"
+    ]
+   },
+   "dayCands": [
+    {
+     "name": "Resideo Technologies, Inc.",
+     "ticker": "REZI",
+     "score": 78,
+     "target_pct": 5,
+     "sector": "주거장비",
+     "basis": [
+      "실적"
+     ],
+     "reason": "코어 매출이 6% 성장하며 3분기 호실적을 발표했습니다. 실적 모멘텀을 바탕으로 단기 반등을 노릴 수 있습니다.",
+     "risk": "전체 시장 하방 압력"
+    },
+    {
+     "name": "RUM Group Inc.",
+     "ticker": "RUM",
+     "score": 75,
+     "target_pct": 4,
+     "sector": "미디어",
+     "basis": [
+      "실적",
+      "낙폭과대"
+     ],
+     "reason": "AI 관련 매출 호조로 급등세를 보였으나 저평가 구간에 머물러 있습니다. 단기 변동성을 이용한 트레이딩이 유효합니다.",
+     "risk": "수익성 지속성에 대한 검증 필요"
+    },
+    {
+     "name": "Legence Corp.",
+     "ticker": "LGN",
+     "score": 73,
+     "target_pct": 4,
+     "sector": "건설",
+     "basis": [
+      "실적",
+      "추세지속"
+     ],
+     "reason": "3분기 실적 발표와 함께 AI 인프라 관련주로 주목받고 있습니다. 견조한 실적이 단기 모멘텀을 지지합니다.",
+     "risk": "섹터 순환매 변동성"
+    },
+    {
+     "name": "Nebius Group N.V.",
+     "ticker": "NBIS",
+     "score": 72,
+     "target_pct": 3,
+     "sector": "기술",
+     "basis": [
+      "실적",
+      "추세지속"
+     ],
+     "reason": "3분기 실적 호실적 발표 이후 견조한 흐름을 유지하고 있습니다. 글로벌 기술주 약세 속에서도 개별 모멘텀이 유효합니다.",
+     "risk": "지수 하락에 따른 동반 조정을 주의"
+    },
+    {
+     "name": "EquipmentShare.com Inc",
+     "ticker": "EQPT",
+     "score": 70,
+     "target_pct": 3,
+     "sector": "산업재",
+     "basis": [
+      "실적"
+     ],
+     "reason": "매출이 55% 급증하는 등 폭발적인 성장을 기록했습니다. 목표가 하향 조정에도 불구하고 실적 자체의 서프라이즈가 부각됩니다.",
+     "risk": "목표가 조정에 따른 투심 악화"
+    }
+   ],
+   "hold": 0,
+   "v": {
+    "m": "gemini-3.5-flash-lite",
+    "pv": "J1.0-S2.0",
+    "policy": "S2.0"
+   },
+   "mktF": {
+    "dir": "하락",
+    "conf": 65,
+    "why": "선물 지수 하락과 VIX 상승으로 인해 보수적인 접근이 필요한 장세입니다.",
+    "ok": null
+   },
+   "picks": [
+    {
+     "kind": "swing",
+     "name": "Azenta, Inc.",
+     "ticker": "AZTA",
+     "score": 85,
+     "sector": "의료기기",
+     "basis": [
+      "실적",
+      "추세지속"
+     ],
+     "plan": {
+      "engine": "R2.0",
+      "strategy": "swing",
+      "atrPct": 5.61,
+      "stopPct": 8.42,
+      "targetPct": 16.83,
+      "rr": 2,
+      "maxHoldDays": 15,
+      "riskPct": 0.5,
+      "maxWeightPct": 10,
+      "weightPct": 5.87,
+      "qty": 6,
+      "notional": 293,
+      "decision": {
+       "version": "S2.0",
+       "action": "watch",
+       "strategy": "swing",
+       "reasons": [
+        "하락 국면: 신규 진입 보류"
+       ],
+       "plannedHoldDays": 15,
+       "reviewAfterDays": 3,
+       "maxHoldDays": 15,
+       "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+       "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+       "allowAutoOrder": false
+      }
+     },
+     "p0": 48.9,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "AXT Inc",
+     "ticker": "AXTI",
+     "score": 82,
+     "sector": "반도체",
+     "basis": [
+      "실적",
+      "거래량급증"
+     ],
+     "plan": {
+      "engine": "R2.0",
+      "strategy": "swing",
+      "atrPct": 14.58,
+      "stopPct": 9,
+      "targetPct": 18,
+      "rr": 2,
+      "maxHoldDays": 10,
+      "riskPct": 0.5,
+      "maxWeightPct": 10,
+      "weightPct": 4.7,
+      "qty": 5,
+      "notional": 235,
+      "decision": {
+       "version": "S2.0",
+       "action": "watch",
+       "strategy": "swing",
+       "reasons": [
+        "하락 국면: 신규 진입 보류"
+       ],
+       "plannedHoldDays": 10,
+       "reviewAfterDays": 3,
+       "maxHoldDays": 10,
+       "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+       "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+       "allowAutoOrder": false
+      }
+     },
+     "p0": 46.97,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "Applied Optoelectronics, Inc.",
+     "ticker": "AAOI",
+     "score": 80,
+     "sector": "통신장비",
+     "basis": [
+      "추세지속",
+      "거래량급증"
+     ],
+     "plan": {
+      "engine": "R2.0",
+      "strategy": "swing",
+      "atrPct": 13.46,
+      "stopPct": 9,
+      "targetPct": 18,
+      "rr": 2,
+      "maxHoldDays": 5,
+      "riskPct": 0.5,
+      "maxWeightPct": 10,
+      "weightPct": 4.47,
+      "qty": 4,
+      "notional": 223,
+      "decision": {
+       "version": "S2.0",
+       "action": "watch",
+       "strategy": "day-watch",
+       "reasons": [
+        "하락 국면: 신규 진입 보류",
+        "단기 수급만 확인: 단타 재평가 후보, 자동 전환 아님"
+       ],
+       "plannedHoldDays": 5,
+       "reviewAfterDays": 3,
+       "maxHoldDays": 5,
+       "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+       "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+       "allowAutoOrder": false
+      }
+     },
+     "p0": 55.86,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    }
+   ]
   }
  ]
 }
