@@ -1471,84 +1471,84 @@
      "rank": 1,
      "verdict": "관찰",
      "why": "엔비디아 관련 불확실성 속 급등으로 변동성 주의",
-     "r1": null
+     "r1": 11.2
     },
     {
      "ticker": "AZTA",
      "rank": 2,
      "verdict": "선택",
      "why": "목표가 상향 및 실적 모멘텀 우수",
-     "r1": null
+     "r1": -5.9
     },
     {
      "ticker": "AXTI",
      "rank": 3,
      "verdict": "선택",
      "why": "AI 데이터 센터 기판 수요로 강한 추세",
-     "r1": null
+     "r1": 2.2
     },
     {
      "ticker": "REZI",
      "rank": 4,
      "verdict": "관찰",
      "why": "실적 호조이나 지수 환경 고려 관찰",
-     "r1": null
+     "r1": -8.3
     },
     {
      "ticker": "EQPT",
      "rank": 5,
      "verdict": "관찰",
      "why": "매출 급증에도 목표가 하향 리스크 존재",
-     "r1": null
+     "r1": -1.6
     },
     {
      "ticker": "RUM",
      "rank": 6,
      "verdict": "관찰",
      "why": "AI 매출 호조이나 추가 수급 확인 필요",
-     "r1": null
+     "r1": 0.7
     },
     {
      "ticker": "LGN",
      "rank": 7,
      "verdict": "관찰",
      "why": "인프라 수혜주이나 지수 영향 주시",
-     "r1": null
+     "r1": -0.3
     },
     {
      "ticker": "NBIS",
      "rank": 8,
      "verdict": "관찰",
      "why": "실적 발표 후 변동성 대응 필요",
-     "r1": null
+     "r1": 7.3
     },
     {
      "ticker": "AAOI",
      "rank": 9,
      "verdict": "선택",
      "why": "대규모 랠리와 저평가 메리트 공존",
-     "r1": null
+     "r1": 3.2
     },
     {
      "ticker": "AXGN",
      "rank": 10,
      "verdict": "제외",
      "why": "고평가 우려 존재",
-     "r1": null
+     "r1": -4.1
     },
     {
      "ticker": "FPS",
      "rank": 11,
      "verdict": "제외",
      "why": "프리마켓 하락세 기록",
-     "r1": null
+     "r1": 4.2
     },
     {
      "ticker": "FRVO",
      "rank": 12,
      "verdict": "제외",
      "why": "목표가 하향 조정 반영",
-     "r1": null
+     "r1": -5.5
     },
     {
      "ticker": "SNDK",
@@ -1590,7 +1590,7 @@
      "rank": 18,
      "verdict": "제외",
      "why": "개별 재료 연동성 제한적",
-     "r1": null
+     "r1": 2.4
     }
    ],
    "bl": {
