@@ -1555,35 +1555,35 @@
      "rank": 13,
      "verdict": "제외",
      "why": "지수 하락 및 고가 부담",
-     "r1": null
+     "r1": 5.6
     },
     {
      "ticker": "GLXY",
      "rank": 14,
      "verdict": "제외",
      "why": "목표가 하향 및 정치적 이슈",
-     "r1": null
+     "r1": 2.8
     },
     {
      "ticker": "NVDA",
      "rank": 15,
      "verdict": "제외",
      "why": "CEO 관련 불확실성 및 월가 이탈",
-     "r1": null
+     "r1": 10.1
     },
     {
      "ticker": "INTC",
      "rank": 16,
      "verdict": "제외",
      "why": "박스권 횡보 국면",
-     "r1": null
+     "r1": 2.5
     },
     {
      "ticker": "SPCX",
      "rank": 17,
      "verdict": "제외",
      "why": "전일 하락세 및 모멘텀 부족",
-     "r1": null
+     "r1": 1.5
     },
     {
      "ticker": "IREN",
@@ -1898,7 +1898,387 @@
     "brief": "주어진 후보 중 개장 직후 시가 대비 -2% 이하로 급락하거나 갭 조건에 부합하지 않는 종목이 많아 확률 우위가 있는 종목이 없습니다. 따라서 모든 종목을 제외합니다.",
     "n": 0
    },
-   "dayHold": 1
+   "dayHold": 1,
+   "cstat": {
+    "n": 18,
+    "med": 2.4,
+    "ex": null,
+    "exD": null,
+    "rg": null,
+    "rej": -0.2,
+    "blr": {
+     "rand": 0.8,
+     "mom": 0.1
+    }
+   }
+  },
+  {
+   "date": "2026-11-13",
+   "market": "US",
+   "regime": "하락",
+   "rules": [],
+   "cands": [
+    {
+     "ticker": "PLBL",
+     "rank": 1,
+     "verdict": "선택",
+     "why": "텐센트 AI 협력으로 글로벌 시장 진출 모멘텀 부각",
+     "r1": null
+    },
+    {
+     "ticker": "MBGL",
+     "rank": 91,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "CHA",
+     "rank": 92,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "BLTE",
+     "rank": 93,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "DPC",
+     "rank": 94,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "LUNR",
+     "rank": 95,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "IBP",
+     "rank": 96,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "HUBS",
+     "rank": 97,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "FIGR",
+     "rank": 98,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "AMD",
+     "rank": 99,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "LMND",
+     "rank": 100,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "AVGO",
+     "rank": 101,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "IRTC",
+     "rank": 102,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "CDLR",
+     "rank": 103,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "NVDA",
+     "rank": 104,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "SMCI",
+     "rank": 105,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "CRWV",
+     "rank": 106,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    },
+    {
+     "ticker": "GRAB",
+     "rank": 107,
+     "verdict": "관찰",
+     "why": "LLM 평가 누락",
+     "miss": 1,
+     "r1": null
+    }
+   ],
+   "bl": {
+    "rand": [
+     "MBGL",
+     "AMD",
+     "AVGO"
+    ],
+    "mom": [
+     "PLBL",
+     "MBGL",
+     "CHA"
+    ]
+   },
+   "dayCands": [
+    {
+     "name": "Intuitive Machines, Inc.",
+     "ticker": "LUNR",
+     "score": 75,
+     "target_pct": 5,
+     "sector": "우주항공",
+     "basis": [
+      "재료재료/실적/수주계약/정책테마/거래량급증/추세지속/낙폭과대/신고가"
+     ],
+     "reason": "우주 관련 주들의 강세 흐름 속에서 탄탄한 수주 잔고와 모멘텀을 보유하고 있습니다. 당일 모멘텀을 활용한 단기 트레이딩에 적합합니다.",
+     "risk": "우주 섹터 테마 순환매 이탈 가능성"
+    },
+    {
+     "name": "Mobility Global Inc.",
+     "ticker": "MBGL",
+     "score": 72,
+     "target_pct": 4,
+     "sector": "모빌리티",
+     "basis": [
+      "재료재료/실적/수주계약/정책테마/거래량급증/추세지속/낙폭과대/신고가"
+     ],
+     "reason": "Q3 실적 호조 및 컨퍼런스 콜 하이라이트로 투자자들의 관심이 집중되었습니다. 실적 발표 직후의 변동성을 이용한 단타 접근이 유효합니다.",
+     "risk": "실적 재료 소멸 후 변동성 확대"
+    },
+    {
+     "name": "Chagee Holdings Limited",
+     "ticker": "CHA",
+     "score": 70,
+     "target_pct": 3,
+     "sector": "유통",
+     "basis": [
+      "재료재료/실적/수주계약/정책테마/거래량급증/추세지속/낙폭과대/신고가"
+     ],
+     "reason": "특별 현금 배당 선언과 3개년 배당 정책 발표로 주주환원 모멘텀이 부각되었습니다. 배당 관련 수급으로 당일 단기 반등이 기대됩니다.",
+     "risk": "배당 이슈 외 추가 상승 모멘텀 부족"
+    },
+    {
+     "name": "Cadeler plc",
+     "ticker": "CDLR",
+     "score": 68,
+     "target_pct": 4,
+     "sector": "신재생에너지",
+     "basis": [
+      "재료재료/실적/수주계약/정책테마/거래량급증/추세지속/낙폭과대/신고가"
+     ],
+     "reason": "영국 풍력 발전소 설치 관련 독점 계약(Exclusivity Pact)을 체결했습니다. 수주 계약에 따른 단기 모멘텀이 작용할 수 있습니다.",
+     "risk": "프로젝트 지연 및 시장 관심 환기 필요"
+    },
+    {
+     "name": "Advanced Micro Devices, Inc.",
+     "ticker": "AMD",
+     "score": 65,
+     "target_pct": 3,
+     "sector": "반도체",
+     "basis": [
+      "재료재료/실적/수주계약/정책테마/거래량급증/추세지속/낙폭과대/신고가"
+     ],
+     "reason": "반도체 섹터 내 순환매와 엔비디아 관련 뉴스 영향으로 변동성이 확대되었습니다. 기술적 반등 구간을 노린 단기 트레이딩이 가능합니다.",
+     "risk": "지수 하락 시 반도체 전반 동반 하락 위험"
+    }
+   ],
+   "hold": 0,
+   "v": {
+    "m": "gemini-3.5-flash-lite",
+    "pv": "J1.0-S2.0",
+    "policy": "S2.0"
+   },
+   "mktF": {
+    "dir": "횡보",
+    "conf": 60,
+    "why": "전일 지수 하락 후 선물 반등 시도이나 변동성 지수가 높아 횡보세가 예상됨",
+    "ok": null
+   },
+   "picks": [
+    {
+     "kind": "swing",
+     "name": "Polibeli Group Ltd",
+     "ticker": "PLBL",
+     "score": 85,
+     "sector": "인공지능",
+     "basis": [
+      "재료재료/실적/수주계약/정책테마/거래량급증/추세지속/낙폭과대/신고가"
+     ],
+     "plan": {
+      "engine": "R2.0",
+      "strategy": "swing",
+      "atrPct": 4.68,
+      "stopPct": 7.02,
+      "targetPct": 14.04,
+      "rr": 2,
+      "maxHoldDays": 5,
+      "riskPct": 0.5,
+      "maxWeightPct": 10,
+      "weightPct": 6.98,
+      "qty": 48,
+      "notional": 349,
+      "decision": {
+       "version": "S2.0",
+       "action": "watch",
+       "strategy": "watch",
+       "reasons": [
+        "하락 국면: 신규 진입 보류",
+        "지속 재료·추세 확인 전 관찰"
+       ],
+       "plannedHoldDays": 5,
+       "reviewAfterDays": 3,
+       "maxHoldDays": 5,
+       "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+       "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+       "allowAutoOrder": false
+      }
+     },
+     "p0": 7.27,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "Belite Bio, Inc",
+     "ticker": "BLTE",
+     "score": 80,
+     "sector": "바이오",
+     "basis": [
+      "재료재료/실적/수주계약/정책테마/거래량급증/추세지속/낙폭과대/신고가"
+     ],
+     "plan": {
+      "engine": "R2.0",
+      "strategy": "swing",
+      "atrPct": 4.75,
+      "stopPct": 7.13,
+      "targetPct": 14.25,
+      "rr": 2,
+      "maxHoldDays": 5,
+      "riskPct": 0.5,
+      "maxWeightPct": 10,
+      "weightPct": 6.8,
+      "qty": 2,
+      "notional": 340,
+      "decision": {
+       "version": "S2.0",
+       "action": "watch",
+       "strategy": "watch",
+       "reasons": [
+        "하락 국면: 신규 진입 보류",
+        "지속 재료·추세 확인 전 관찰"
+       ],
+       "plannedHoldDays": 5,
+       "reviewAfterDays": 3,
+       "maxHoldDays": 5,
+       "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+       "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+       "allowAutoOrder": false
+      }
+     },
+     "p0": 169.96,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "Installed Building Products, In",
+     "ticker": "IBP",
+     "score": 78,
+     "sector": "건설자재",
+     "basis": [
+      "재료재료/실적/수주계약/정책테마/거래량급증/추세지속/낙폭과대/신고가"
+     ],
+     "plan": {
+      "engine": "R2.0",
+      "strategy": "swing",
+      "atrPct": 4.96,
+      "stopPct": 7.44,
+      "targetPct": 14.88,
+      "rr": 2,
+      "maxHoldDays": 5,
+      "riskPct": 0.5,
+      "maxWeightPct": 10,
+      "weightPct": 4.48,
+      "qty": 1,
+      "notional": 224,
+      "decision": {
+       "version": "S2.0",
+       "action": "watch",
+       "strategy": "watch",
+       "reasons": [
+        "하락 국면: 신규 진입 보류",
+        "지속 재료·추세 확인 전 관찰"
+       ],
+       "plannedHoldDays": 5,
+       "reviewAfterDays": 3,
+       "maxHoldDays": 5,
+       "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+       "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+       "allowAutoOrder": false
+      }
+     },
+     "p0": 223.76,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    }
+   ]
   }
  ]
 }
