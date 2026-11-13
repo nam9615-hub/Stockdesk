@@ -107,42 +107,48 @@
      "rank": 13,
      "verdict": "제외",
      "why": "목표가 하향 및 리스크 부각",
-     "r1": 5.9
+     "r1": 5.9,
+     "r5": 6.7
     },
     {
      "ticker": "LEU",
      "rank": 14,
      "verdict": "관찰",
      "why": "실적 콜 이후 방향성 탐색",
-     "r1": 9.2
+     "r1": 9.2,
+     "r5": -3.4
     },
     {
      "ticker": "NVDA",
      "rank": 15,
      "verdict": "관찰",
      "why": "시장 지수 연동성 높으나 상방 제한적",
-     "r1": 3.2
+     "r1": 3.2,
+     "r5": -5.9
     },
     {
      "ticker": "INTC",
      "rank": 16,
      "verdict": "제외",
      "why": "AI 경쟁력 우려 상존",
-     "r1": 4.4
+     "r1": 4.4,
+     "r5": 4.9
     },
     {
      "ticker": "SPCX",
      "rank": 17,
      "verdict": "제외",
      "why": "규제 및 빅테크 부채 리스크 경계",
-     "r1": 4.1
+     "r1": 4.1,
+     "r5": 1.9
     },
     {
      "ticker": "WULF",
      "rank": 18,
      "verdict": "제외",
      "why": "프로젝트 뉴스 영향 제한적",
-     "r1": 7.4
+     "r1": 7.4,
+     "r5": 9.5
     }
    ],
    "bl": {
@@ -1935,7 +1941,7 @@
      "rank": 1,
      "verdict": "선택",
      "why": "텐센트 AI 협력으로 글로벌 시장 진출 모멘텀 부각",
-     "r1": null
+     "r1": -0.5
     },
     {
      "ticker": "MBGL",
@@ -1943,7 +1949,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": 0.5
     },
     {
      "ticker": "CHA",
@@ -1951,7 +1957,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": 4.6
     },
     {
      "ticker": "BLTE",
@@ -1959,7 +1965,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": -3.7
     },
     {
      "ticker": "DPC",
@@ -1967,7 +1973,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": -0.4
     },
     {
      "ticker": "LUNR",
@@ -1975,7 +1981,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": -1
     },
     {
      "ticker": "IBP",
@@ -1983,7 +1989,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": -1.7
     },
     {
      "ticker": "HUBS",
@@ -1991,7 +1997,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": 0.3
     },
     {
      "ticker": "FIGR",
@@ -1999,7 +2005,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": -3.1
     },
     {
      "ticker": "AMD",
@@ -2007,7 +2013,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": -5.8
     },
     {
      "ticker": "LMND",
@@ -2015,7 +2021,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": 3
     },
     {
      "ticker": "AVGO",
@@ -2023,7 +2029,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": -2.7
     },
     {
      "ticker": "IRTC",
@@ -2047,7 +2053,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": -4.1
     },
     {
      "ticker": "SMCI",
