@@ -2037,7 +2037,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": -2.2
     },
     {
      "ticker": "CDLR",
@@ -2045,7 +2045,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": -0.7
     },
     {
      "ticker": "NVDA",
@@ -2061,7 +2061,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": -0.5
     },
     {
      "ticker": "CRWV",
@@ -2069,7 +2069,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": -5.1
     },
     {
      "ticker": "GRAB",
@@ -2077,7 +2077,7 @@
      "verdict": "관찰",
      "why": "LLM 평가 누락",
      "miss": 1,
-     "r1": null
+     "r1": 0
     }
    ],
    "bl": {
@@ -2378,7 +2378,19 @@
     "brief": "제시된 5개 종목 모두 갭 상승 조건 미달 및 개장 후 하락세로 원칙에 부합하지 않아 단타 후보에서 제외합니다.",
     "n": 0
    },
-   "dayHold": 1
+   "dayHold": 1,
+   "cstat": {
+    "n": 18,
+    "med": -0.7,
+    "ex": null,
+    "exD": null,
+    "rg": null,
+    "rej": null,
+    "blr": {
+     "rand": -2,
+     "mom": 2.2
+    }
+   }
   }
  ]
 }
