@@ -2391,6 +2391,358 @@
      "mom": 2.2
     }
    }
+  },
+  {
+   "date": "2026-11-16",
+   "market": "US",
+   "regime": "하락",
+   "rules": [],
+   "cands": [
+    {
+     "ticker": "LFTO",
+     "rank": 1,
+     "verdict": "선택",
+     "why": "3일 연속 거래량 동반 급등세",
+     "r1": null
+    },
+    {
+     "ticker": "MOD",
+     "rank": 2,
+     "verdict": "선택",
+     "why": "데이터 센터 냉각 사업 협상 호재",
+     "r1": null
+    },
+    {
+     "ticker": "STN",
+     "rank": 3,
+     "verdict": "선택",
+     "why": "실적 호조 및 가이던스 상향",
+     "r1": null
+    },
+    {
+     "ticker": "NU",
+     "rank": 4,
+     "verdict": "관찰",
+     "why": "핀테크 수익성 부각 지속 관찰",
+     "r1": null
+    },
+    {
+     "ticker": "CBRS",
+     "rank": 5,
+     "verdict": "관찰",
+     "why": "AI 칩 관련 재료 모니터링 필요",
+     "r1": null
+    },
+    {
+     "ticker": "TOP",
+     "rank": 6,
+     "verdict": "관찰",
+     "why": "실적 모멘텀 단기 추이 확인",
+     "r1": null
+    },
+    {
+     "ticker": "STVN",
+     "rank": 7,
+     "verdict": "관찰",
+     "why": "바이오로직스 장기 성장성 체크",
+     "r1": null
+    },
+    {
+     "ticker": "WWW",
+     "rank": 8,
+     "verdict": "제외",
+     "why": "뚜렷한 개별 재료 부재",
+     "r1": null
+    },
+    {
+     "ticker": "KLAR",
+     "rank": 9,
+     "verdict": "관찰",
+     "why": "경영진 개편 후 주가 반응 주시",
+     "r1": null
+    },
+    {
+     "ticker": "FOUR",
+     "rank": 10,
+     "verdict": "관찰",
+     "why": "신규 파트너십 후속 효과 대기",
+     "r1": null
+    },
+    {
+     "ticker": "ALM",
+     "rank": 11,
+     "verdict": "관찰",
+     "why": "급등 후 지지선 형성 여부 확인",
+     "r1": null
+    },
+    {
+     "ticker": "BROS",
+     "rank": 12,
+     "verdict": "제외",
+     "why": "단기 모멘텀 상대적 열위",
+     "r1": null
+    },
+    {
+     "ticker": "IONS",
+     "rank": 13,
+     "verdict": "제외",
+     "why": "임상 실패 리스크 반영",
+     "r1": null
+    },
+    {
+     "ticker": "CHA",
+     "rank": 14,
+     "verdict": "제외",
+     "why": "배당 이슈 외 성장 동력 제한적",
+     "r1": null
+    },
+    {
+     "ticker": "NVDA",
+     "rank": 15,
+     "verdict": "제외",
+     "why": "CEO 관련 노이즈 및 AI 매도세 영향",
+     "r1": null
+    },
+    {
+     "ticker": "INTC",
+     "rank": 16,
+     "verdict": "제외",
+     "why": "AI 칩 셀오프 동조화 하락",
+     "r1": null
+    },
+    {
+     "ticker": "CRWV",
+     "rank": 17,
+     "verdict": "제외",
+     "why": "최근 급락 추세로 하방 압력 큼",
+     "r1": null
+    },
+    {
+     "ticker": "SPCX",
+     "rank": 18,
+     "verdict": "제외",
+     "why": "지수 하락 및 복합 노이즈 영향",
+     "r1": null
+    }
+   ],
+   "bl": {
+    "rand": [
+     "WWW",
+     "ALM",
+     "IONS"
+    ],
+    "mom": [
+     "LFTO",
+     "MOD",
+     "STN"
+    ]
+   },
+   "dayCands": [
+    {
+     "name": "Nu Holdings Ltd.",
+     "ticker": "NU",
+     "score": 78,
+     "target_pct": 5,
+     "sector": "금융",
+     "basis": [
+      "실적"
+     ],
+     "reason": "핀테크 부문에서 가장 명확한 수익 창출 경로를 보여주며 견조한 상승세를 기록했습니다. 장 초반 모멘텀을 활용한 단기 트레이딩에 적합합니다.",
+     "risk": "금리 환경 변화 및 섹터 변동성"
+    },
+    {
+     "name": "Klarna Group plc",
+     "ticker": "KLAR",
+     "score": 76,
+     "target_pct": 4,
+     "sector": "금융",
+     "basis": [
+      "추세지속"
+     ],
+     "reason": "C-suite 개편 등 연말 성수기를 앞둔 체질 개선 기대감이 부각되며 급등세를 보였습니다. 변동성 장세에서 단기 트레이딩 기회를 제공합니다.",
+     "risk": "연말 소비 심리 지표에 민감"
+    },
+    {
+     "name": "Shift4 Payments, Inc.",
+     "ticker": "FOUR",
+     "score": 74,
+     "target_pct": 4,
+     "sector": "기술",
+     "basis": [
+      "수주계약"
+     ],
+     "reason": "스포츠 팀 및 가맹점 결제와 로열티를 연결하는 신규 파트너십(Bilt Neighborhood OS) 합류가 호재로 작용했습니다.",
+     "risk": "기술주 전반의 수급 악영향 가능성"
+    },
+    {
+     "name": "TOP Financial Group Limited",
+     "ticker": "TOP",
+     "score": 72,
+     "target_pct": 6,
+     "sector": "금융",
+     "basis": [
+      "실적"
+     ],
+     "reason": "강한 분기 실적 발표 이후 높은 변동성과 함께 단기 거래량이 집중되고 있습니다.",
+     "risk": "급등락 반복에 따른 높은 리스크"
+    },
+    {
+     "name": "Stevanato Group S.p.A.",
+     "ticker": "STVN",
+     "score": 70,
+     "target_pct": 3,
+     "sector": "헬스케어",
+     "basis": [
+      "추세지속"
+     ],
+     "reason": "광범위한 바이오로직스 성장세가 장기 아웃룩을 강화하며 안정적인 상승 탄력을 유지 중입니다.",
+     "risk": "경쟁사 관련 악재 뉴스 및 섹터 순환매"
+    }
+   ],
+   "hold": 0,
+   "v": {
+    "m": "gemini-3.5-flash-lite",
+    "pv": "J1.0-S2.0",
+    "policy": "S2.0"
+   },
+   "mktF": {
+    "dir": "하락",
+    "conf": 65,
+    "why": "전일 S&P500 하락 및 VIX 급등에 따른 위험 회피 심리 우세",
+    "ok": null
+   },
+   "picks": [
+    {
+     "kind": "swing",
+     "name": "Modine Manufacturing Company",
+     "ticker": "MOD",
+     "score": 88,
+     "sector": "산업재",
+     "basis": [
+      "수주계약",
+      "추세지속"
+     ],
+     "plan": {
+      "engine": "R2.0",
+      "strategy": "swing",
+      "atrPct": 9.46,
+      "stopPct": 9,
+      "targetPct": 18,
+      "rr": 2,
+      "maxHoldDays": 10,
+      "riskPct": 0.5,
+      "maxWeightPct": 10,
+      "weightPct": 5.43,
+      "qty": 2,
+      "notional": 271,
+      "decision": {
+       "version": "S2.0",
+       "action": "watch",
+       "strategy": "swing",
+       "reasons": [
+        "하락 국면: 신규 진입 보류"
+       ],
+       "plannedHoldDays": 10,
+       "reviewAfterDays": 3,
+       "maxHoldDays": 10,
+       "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+       "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+       "allowAutoOrder": false
+      }
+     },
+     "p0": 135.66,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "Stantec Inc",
+     "ticker": "STN",
+     "score": 85,
+     "sector": "유틸리티",
+     "basis": [
+      "실적",
+      "추세지속"
+     ],
+     "plan": {
+      "engine": "R2.0",
+      "strategy": "swing",
+      "atrPct": 3.42,
+      "stopPct": 5.13,
+      "targetPct": 10.26,
+      "rr": 2,
+      "maxHoldDays": 15,
+      "riskPct": 0.5,
+      "maxWeightPct": 10,
+      "weightPct": 8.57,
+      "qty": 5,
+      "notional": 428,
+      "decision": {
+       "version": "S2.0",
+       "action": "watch",
+       "strategy": "swing",
+       "reasons": [
+        "하락 국면: 신규 진입 보류"
+       ],
+       "plannedHoldDays": 15,
+       "reviewAfterDays": 3,
+       "maxHoldDays": 15,
+       "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+       "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+       "allowAutoOrder": false
+      }
+     },
+     "p0": 85.69,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "Liftoff Mobile, Inc.",
+     "ticker": "LFTO",
+     "score": 82,
+     "sector": "기술",
+     "basis": [
+      "거래량급증",
+      "추세지속"
+     ],
+     "plan": {
+      "engine": "R2.0",
+      "strategy": "swing",
+      "atrPct": 6.47,
+      "stopPct": 9,
+      "targetPct": 18,
+      "rr": 2,
+      "maxHoldDays": 5,
+      "riskPct": 0.5,
+      "maxWeightPct": 10,
+      "weightPct": 5.38,
+      "qty": 11,
+      "notional": 269,
+      "decision": {
+       "version": "S2.0",
+       "action": "watch",
+       "strategy": "day-watch",
+       "reasons": [
+        "하락 국면: 신규 진입 보류",
+        "단기 수급만 확인: 단타 재평가 후보, 자동 전환 아님"
+       ],
+       "plannedHoldDays": 5,
+       "reviewAfterDays": 3,
+       "maxHoldDays": 5,
+       "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+       "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+       "allowAutoOrder": false
+      }
+     },
+     "p0": 24.44,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    }
+   ]
   }
  ]
 }
