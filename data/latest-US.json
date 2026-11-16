@@ -305,6 +305,50 @@
    "dir": "하락",
    "conf": 65,
    "why": "전일 S&P500 하락 및 VIX 급등에 따른 위험 회피 심리 우세"
-  }
+  },
+  "day_picks": [
+   {
+    "name": "TOP Financial Group Limited",
+    "ticker": "TOP",
+    "score": 75,
+    "target_pct": 6,
+    "sector": "금융",
+    "basis": [
+     "VOL_SURGE"
+    ],
+    "reason": "시가갭 -4.1%로 출발했으나 개장 후 +2.8% 상승하며 강한 변동성과 단기 매수세를 확인했습니다.",
+    "risk": "높은 변동성으로 인한 빠른 손절 관리 필요",
+    "plan": {
+     "engine": "R2.0",
+     "strategy": "day",
+     "atrPct": 12.07,
+     "stopPct": 4,
+     "targetPct": 5.4,
+     "rr": 1.35,
+     "maxHoldDays": 0,
+     "riskPct": 0.5,
+     "maxWeightPct": 8,
+     "weightPct": 7.71,
+     "qty": 23,
+     "notional": 386,
+     "decision": {
+      "version": "S2.0",
+      "action": "watch",
+      "strategy": "day",
+      "reasons": [
+       "하락 국면: 신규 진입 보류"
+      ],
+      "plannedHoldDays": 0,
+      "reviewAfterDays": 0,
+      "maxHoldDays": 0,
+      "entryRule": "확정 시점 이후 가격만 사용 · 갭 과열·시가 붕괴 시 보류",
+      "exitRule": "손절·목표 중 먼저 도달한 조건 또는 당일 종가",
+      "allowAutoOrder": false
+     }
+    }
+   }
+  ],
+  "day_at": "23:34",
+  "day_brief": "TOP Financial Group은 시가갭 하락 후 강한 반등으로 모멘텀을 확인했으나, 나머지 종목들은 마이너스 흐름을 보이며 제외했습니다."
  }
 }
