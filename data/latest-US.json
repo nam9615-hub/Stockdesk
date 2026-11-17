@@ -1,123 +1,122 @@
 {
- "date": "2026-11-16",
+ "date": "2026-11-17",
  "at": "21:29",
  "data": {
-  "brief": "전일 S&P 500 하락 및 VIX 상승으로 시장 변동성이 확대된 국면입니다. AI 칩 섹터 전반의 조정 속에서도 데이터 센터 및 M&A 관련 모멘텀을 보유한 개별 종목 위주로 선별 접근이 필요합니다.",
+  "brief": "전일 S&P500의 하락과 VIX 23의 변동성 장세 속에서 신중한 접근이 필요합니다. 실적 및 리더십 변화, 애널리스트 목표가 상향 등 강력한 모멘텀을 가진 개별 종목 중심의 선별적 스윙 전략을 취합니다.",
   "picks": [
    {
-    "name": "Modine Manufacturing Company",
-    "ticker": "MOD",
-    "score": 88,
-    "sector": "산업재",
-    "basis": [
-     "수주계약",
-     "추세지속"
-    ],
-    "reason": "데이터 센터 냉각 사업 관련 인수합병 및 파트너십 협상 소식이 전해지며 주가가 급등했습니다. 구조적인 AI 인프라 수요와 맞물려 스윙 관점의 상승 추세 지속 가능성이 높습니다.",
-    "catalyst": "데이터 센터 냉각 사업 협상",
-    "risk": "협상 무산 시 단기 변동성 확대",
-    "plan": {
-     "engine": "R2.0",
-     "strategy": "swing",
-     "atrPct": 9.46,
-     "stopPct": 9,
-     "targetPct": 18,
-     "rr": 2,
-     "maxHoldDays": 10,
-     "riskPct": 0.5,
-     "maxWeightPct": 10,
-     "weightPct": 5.43,
-     "qty": 2,
-     "notional": 271,
-     "decision": {
-      "version": "S2.0",
-      "action": "watch",
-      "strategy": "swing",
-      "reasons": [
-       "하락 국면: 신규 진입 보류"
-      ],
-      "plannedHoldDays": 10,
-      "reviewAfterDays": 3,
-      "maxHoldDays": 10,
-      "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
-      "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
-      "allowAutoOrder": false
-     }
-    }
-   },
-   {
-    "name": "Stantec Inc",
-    "ticker": "STN",
+    "name": "CG Oncology, Inc.",
+    "ticker": "CGON",
     "score": 85,
-    "sector": "유틸리티",
+    "sector": "바이오",
     "basis": [
-     "실적",
-     "추세지속"
+     "뉴스재료"
     ],
-    "reason": "3분기 호실적 발표와 함께 강력한 유기적 성장세가 확인되었고 연간 가이던스가 상향되었습니다. 안정적인 실적 모멘텀을 바탕으로 견조한 주가 흐름이 기대됩니다.",
-    "catalyst": "Q3 실적 호조 및 가이던스 상향",
-    "risk": "전반적인 시장 하락 압력 동조화",
+    "reason": "HC 웨인라이트의 목표가 대폭 상향(115달러)과 매수 유지 의견이 주가 상승 모멘텀을 지속시키고 있습니다. 기관의 긍정적인 평가가 이어지며 추가 상승 여력이 충분합니다.",
+    "catalyst": "목표가 상향 및 매수 유지",
+    "risk": "바이오 섹터 특유의 높은 변동성과 RBC의 일부 보수적 의견",
     "plan": {
      "engine": "R2.0",
      "strategy": "swing",
-     "atrPct": 3.42,
-     "stopPct": 5.13,
-     "targetPct": 10.26,
-     "rr": 2,
-     "maxHoldDays": 15,
-     "riskPct": 0.5,
-     "maxWeightPct": 10,
-     "weightPct": 8.57,
-     "qty": 5,
-     "notional": 428,
-     "decision": {
-      "version": "S2.0",
-      "action": "watch",
-      "strategy": "swing",
-      "reasons": [
-       "하락 국면: 신규 진입 보류"
-      ],
-      "plannedHoldDays": 15,
-      "reviewAfterDays": 3,
-      "maxHoldDays": 15,
-      "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
-      "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
-      "allowAutoOrder": false
-     }
-    }
-   },
-   {
-    "name": "Liftoff Mobile, Inc.",
-    "ticker": "LFTO",
-    "score": 82,
-    "sector": "기술",
-    "basis": [
-     "거래량급증",
-     "추세지속"
-    ],
-    "reason": "3거래일 연속 강한 매수세가 유입되며 단기 모멘텀이 극대화된 상태입니다. 견고한 거래량을 동반한 상승세로 스윙 트레이딩 관점에서 단기 탄력을 활용하기에 적합합니다.",
-    "catalyst": "속행되는 투자자 매수세 집중",
-    "risk": "급등에 따른 차익실현 물량 출회 가능성",
-    "plan": {
-     "engine": "R2.0",
-     "strategy": "swing",
-     "atrPct": 6.47,
+     "atrPct": 7.2,
      "stopPct": 9,
      "targetPct": 18,
      "rr": 2,
      "maxHoldDays": 5,
      "riskPct": 0.5,
      "maxWeightPct": 10,
-     "weightPct": 5.38,
-     "qty": 11,
-     "notional": 269,
+     "weightPct": 5.09,
+     "qty": 3,
+     "notional": 254,
      "decision": {
       "version": "S2.0",
       "action": "watch",
-      "strategy": "day-watch",
+      "strategy": "watch",
       "reasons": [
        "하락 국면: 신규 진입 보류",
-       "단기 수급만 확인: 단타 재평가 후보, 자동 전환 아님"
+       "지속 재료·추세 확인 전 관찰"
+      ],
+      "plannedHoldDays": 5,
+      "reviewAfterDays": 3,
+      "maxHoldDays": 5,
+      "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+      "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+      "allowAutoOrder": false
+     }
+    }
+   },
+   {
+    "name": "HubSpot, Inc.",
+    "ticker": "HUBS",
+    "score": 80,
+    "sector": "기술",
+    "basis": [
+     "뉴스재료",
+     "실적/수주계약"
+    ],
+    "reason": "창업자 복귀와 신임 CFO 합류라는 리더십 재설정 뉴스로 시장의 집중적인 관심을 받고 있습니다. 공정가치 대비 저평가 분석과 함께 턴어라운드 기대감이 큽니다.",
+    "catalyst": "창업자 복귀 및 경영진 개편",
+    "risk": "기술주 전반의 하락 압력 및 매크로 불확실성",
+    "plan": {
+     "engine": "R2.0",
+     "strategy": "swing",
+     "atrPct": 6.34,
+     "stopPct": 9,
+     "targetPct": 18,
+     "rr": 2,
+     "maxHoldDays": 5,
+     "riskPct": 0.5,
+     "maxWeightPct": 10,
+     "weightPct": 4.64,
+     "qty": 1,
+     "notional": 232,
+     "decision": {
+      "version": "S2.0",
+      "action": "watch",
+      "strategy": "swing",
+      "reasons": [
+       "하락 국면: 신규 진입 보류"
+      ],
+      "plannedHoldDays": 5,
+      "reviewAfterDays": 3,
+      "maxHoldDays": 5,
+      "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+      "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+      "allowAutoOrder": false
+     }
+    }
+   },
+   {
+    "name": "BILL Holdings, Inc.",
+    "ticker": "BILL",
+    "score": 78,
+    "sector": "핀테크",
+    "basis": [
+     "뉴스재료",
+     "실적/수주계약"
+    ],
+    "reason": "윌리엄 블레어의 상향 조정과 마진 및 수익화 순풍에 대한 기대감이 유효합니다. 대형 고객 타겟팅과 AI 도입을 통한 비용 절감 및 성장 반등이 기대됩니다.",
+    "catalyst": "증권사 업그레이드 및 AI 기반 성장 전략",
+    "risk": "성장주 투자 심리 악화 시 조정 가능성",
+    "plan": {
+     "engine": "R2.0",
+     "strategy": "swing",
+     "atrPct": 3.86,
+     "stopPct": 5.79,
+     "targetPct": 11.58,
+     "rr": 2,
+     "maxHoldDays": 5,
+     "riskPct": 0.5,
+     "maxWeightPct": 10,
+     "weightPct": 8.07,
+     "qty": 7,
+     "notional": 403,
+     "decision": {
+      "version": "S2.0",
+      "action": "watch",
+      "strategy": "swing",
+      "reasons": [
+       "하락 국면: 신규 진입 보류"
       ],
       "plannedHoldDays": 5,
       "reviewAfterDays": 3,
@@ -131,224 +130,180 @@
   ],
   "day_cands": [
    {
-    "name": "Nu Holdings Ltd.",
-    "ticker": "NU",
-    "score": 78,
-    "target_pct": 5,
-    "sector": "금융",
-    "basis": [
-     "실적"
-    ],
-    "reason": "핀테크 부문에서 가장 명확한 수익 창출 경로를 보여주며 견조한 상승세를 기록했습니다. 장 초반 모멘텀을 활용한 단기 트레이딩에 적합합니다.",
-    "risk": "금리 환경 변화 및 섹터 변동성"
-   },
-   {
-    "name": "Klarna Group plc",
-    "ticker": "KLAR",
-    "score": 76,
+    "name": "H World Group Limited",
+    "ticker": "HTHT",
+    "score": 72,
     "target_pct": 4,
-    "sector": "금융",
+    "sector": "임의소비재",
     "basis": [
      "추세지속"
     ],
-    "reason": "C-suite 개편 등 연말 성수기를 앞둔 체질 개선 기대감이 부각되며 급등세를 보였습니다. 변동성 장세에서 단기 트레이딩 기회를 제공합니다.",
-    "risk": "연말 소비 심리 지표에 민감"
+    "reason": "별도 특별한 뉴스 없이도 견조한 상승률을 기록하며 강한 추세를 유지하고 있습니다. 당일 거래량 유입 시 단기 모멘텀 매매가 가능합니다.",
+    "risk": "뚜렷한 재료 부재로 인한 빠른 차익실현 매물 출회"
    },
    {
-    "name": "Shift4 Payments, Inc.",
-    "ticker": "FOUR",
-    "score": 74,
-    "target_pct": 4,
+    "name": "Sezzle Inc.",
+    "ticker": "SEZL",
+    "score": 70,
+    "sector": "금융",
+    "basis": [
+     "정책테마"
+    ],
+    "reason": "홀리데이 시즌 '선구매 후결제(BNPL)'에 대한 대규모 전망치 뉴스가 단기 모멘텀을 자극할 수 있습니다. 소비 시즌 기대감이 주가 변동성을 높이는 구간입니다.",
+    "risk": "테마성 수급에 의존하여 장중 변동성 큼",
+    "target_pct": 3
+   },
+   {
+    "name": "Tyson Foods, Inc.",
+    "ticker": "TSN",
+    "score": 68,
+    "sector": "필수소비재",
+    "basis": [
+     "낙폭과대"
+    ],
+    "reason": "하락장 환경에서 방어주 성격을 띠는 필수소비재 섹터로 자금이 유입될 가능성이 있습니다. 안정적인 실적 기반의 견조한 흐름이 예상됩니다.",
+    "risk": "상승 모멘텀의 지속성 부족",
+    "target_pct": 3
+   },
+   {
+    "name": "Qualys, Inc.",
+    "ticker": "QLYS",
+    "score": 67,
     "sector": "기술",
     "basis": [
-     "수주계약"
+     "실적/수주계약"
     ],
-    "reason": "스포츠 팀 및 가맹점 결제와 로열티를 연결하는 신규 파트너십(Bilt Neighborhood OS) 합류가 호재로 작용했습니다.",
-    "risk": "기술주 전반의 수급 악영향 가능성"
+    "reason": "최근 실적 발표에서 두 자리 수 매출 성장과 연방 정부 관련 기록적인 성과를 보였습니다. 보안 섹터 내에서 개별 모멘텀을 보유하고 있습니다.",
+    "risk": "전반적인 기술주 하락 트렌드의 영향",
+    "target_pct": 3
    },
    {
-    "name": "TOP Financial Group Limited",
-    "ticker": "TOP",
-    "score": 72,
-    "target_pct": 6,
-    "sector": "금융",
+    "name": "GXO Logistics, Inc.",
+    "ticker": "GXO",
+    "score": 65,
+    "sector": "산업재",
     "basis": [
-     "실적"
+     "뉴스재료"
     ],
-    "reason": "강한 분기 실적 발표 이후 높은 변동성과 함께 단기 거래량이 집중되고 있습니다.",
-    "risk": "급등락 반복에 따른 높은 리스크"
-   },
-   {
-    "name": "Stevanato Group S.p.A.",
-    "ticker": "STVN",
-    "score": 70,
-    "target_pct": 3,
-    "sector": "헬스케어",
-    "basis": [
-     "추세지속"
-    ],
-    "reason": "광범위한 바이오로직스 성장세가 장기 아웃룩을 강화하며 안정적인 상승 탄력을 유지 중입니다.",
-    "risk": "경쟁사 관련 악재 뉴스 및 섹터 순환매"
+    "reason": "경기 침체 수혜 가능성을 언급한 독자적인 뉴스가 있으며, 방어적 물류 기업으로서의 매력이 부각될 수 있습니다. 당일 수급 집중 여부를 모니터링해야 합니다.",
+    "risk": "매크로 경기 둔화 우려에 따른 물동량 감소 리스크",
+    "target_pct": 3
    }
   ],
   "cands": [
    {
-    "ticker": "LFTO",
+    "ticker": "CGON",
     "rank": 1,
     "verdict": "선택",
-    "why": "3일 연속 거래량 동반 급등세"
+    "why": "목표가 상향 및 강력한 매수세 유지"
    },
    {
-    "ticker": "MOD",
+    "ticker": "HUBS",
     "rank": 2,
     "verdict": "선택",
-    "why": "데이터 센터 냉각 사업 협상 호재"
+    "why": "창업자 복귀 및 리더십 재설정 모멘텀"
    },
    {
-    "ticker": "STN",
+    "ticker": "BILL",
     "rank": 3,
     "verdict": "선택",
-    "why": "실적 호조 및 가이던스 상향"
+    "why": "증권사 업그레이드 및 AI 성장 전략"
    },
    {
-    "ticker": "NU",
+    "ticker": "HTHT",
     "rank": 4,
     "verdict": "관찰",
-    "why": "핀테크 수익성 부각 지속 관찰"
+    "why": "견조한 상승세이나 뉴스 부재"
    },
    {
-    "ticker": "CBRS",
+    "ticker": "TSN",
     "rank": 5,
     "verdict": "관찰",
-    "why": "AI 칩 관련 재료 모니터링 필요"
+    "why": "필수소비재 방어주 흐름 관찰"
    },
    {
-    "ticker": "TOP",
+    "ticker": "POWL",
     "rank": 6,
     "verdict": "관찰",
-    "why": "실적 모멘텀 단기 추이 확인"
+    "why": "상승 흐름 지속 여부 확인 필요"
    },
    {
-    "ticker": "STVN",
+    "ticker": "QLYS",
     "rank": 7,
     "verdict": "관찰",
-    "why": "바이오로직스 장기 성장성 체크"
+    "why": "실적 호조에도 기술주 분위기 영향 체크"
    },
    {
-    "ticker": "WWW",
+    "ticker": "SEZL",
     "rank": 8,
-    "verdict": "제외",
-    "why": "뚜렷한 개별 재료 부재"
+    "verdict": "관찰",
+    "why": "시즌 테마 단기 모멘텀 추적"
    },
    {
-    "ticker": "KLAR",
+    "ticker": "HNGE",
     "rank": 9,
     "verdict": "관찰",
-    "why": "경영진 개편 후 주가 반응 주시"
+    "why": "액티브 종목군 추이 확인"
    },
    {
-    "ticker": "FOUR",
+    "ticker": "CNC",
     "rank": 10,
     "verdict": "관찰",
-    "why": "신규 파트너십 후속 효과 대기"
+    "why": "헬스케어 섹터 개별 이슈"
    },
    {
-    "ticker": "ALM",
+    "ticker": "GXO",
     "rank": 11,
     "verdict": "관찰",
-    "why": "급등 후 지지선 형성 여부 확인"
+    "why": "물류 섹터 방어력 테스트"
    },
    {
-    "ticker": "BROS",
+    "ticker": "MSGR",
     "rank": 12,
-    "verdict": "제외",
-    "why": "단기 모멘텀 상대적 열위"
+    "verdict": "관찰",
+    "why": "ETF 매수세 유입 여부 확인"
    },
    {
-    "ticker": "IONS",
+    "ticker": "TU",
     "rank": 13,
     "verdict": "제외",
-    "why": "임상 실패 리스크 반영"
+    "why": "상승폭 대비 모멘텀 재료 부족"
    },
    {
-    "ticker": "CHA",
+    "ticker": "MOH",
     "rank": 14,
     "verdict": "제외",
-    "why": "배당 이슈 외 성장 동력 제한적"
-   },
-   {
-    "ticker": "NVDA",
-    "rank": 15,
-    "verdict": "제외",
-    "why": "CEO 관련 노이즈 및 AI 매도세 영향"
-   },
-   {
-    "ticker": "INTC",
-    "rank": 16,
-    "verdict": "제외",
-    "why": "AI 칩 셀오프 동조화 하락"
-   },
-   {
-    "ticker": "CRWV",
-    "rank": 17,
-    "verdict": "제외",
-    "why": "최근 급락 추세로 하방 압력 큼"
+    "why": "뚜렷한 촉매제 부재"
    },
    {
     "ticker": "SPCX",
+    "rank": 15,
+    "verdict": "제외",
+    "why": "머스크 관련 부정적 뉴스 및 약세"
+   },
+   {
+    "ticker": "NU",
+    "rank": 16,
+    "verdict": "제외",
+    "why": "하락 추세"
+   },
+   {
+    "ticker": "NVDA",
+    "rank": 17,
+    "verdict": "제외",
+    "why": "대형 기술주 하락 주도"
+   },
+   {
+    "ticker": "INTC",
     "rank": 18,
     "verdict": "제외",
-    "why": "지수 하락 및 복합 노이즈 영향"
+    "why": "급락세로 리스크 과다"
    }
   ],
   "mkt": {
    "dir": "하락",
    "conf": 65,
-   "why": "전일 S&P500 하락 및 VIX 급등에 따른 위험 회피 심리 우세"
-  },
-  "day_picks": [
-   {
-    "name": "TOP Financial Group Limited",
-    "ticker": "TOP",
-    "score": 75,
-    "target_pct": 6,
-    "sector": "금융",
-    "basis": [
-     "VOL_SURGE"
-    ],
-    "reason": "시가갭 -4.1%로 출발했으나 개장 후 +2.8% 상승하며 강한 변동성과 단기 매수세를 확인했습니다.",
-    "risk": "높은 변동성으로 인한 빠른 손절 관리 필요",
-    "plan": {
-     "engine": "R2.0",
-     "strategy": "day",
-     "atrPct": 12.07,
-     "stopPct": 4,
-     "targetPct": 5.4,
-     "rr": 1.35,
-     "maxHoldDays": 0,
-     "riskPct": 0.5,
-     "maxWeightPct": 8,
-     "weightPct": 7.71,
-     "qty": 23,
-     "notional": 386,
-     "decision": {
-      "version": "S2.0",
-      "action": "watch",
-      "strategy": "day",
-      "reasons": [
-       "하락 국면: 신규 진입 보류"
-      ],
-      "plannedHoldDays": 0,
-      "reviewAfterDays": 0,
-      "maxHoldDays": 0,
-      "entryRule": "확정 시점 이후 가격만 사용 · 갭 과열·시가 붕괴 시 보류",
-      "exitRule": "손절·목표 중 먼저 도달한 조건 또는 당일 종가",
-      "allowAutoOrder": false
-     }
-    }
-   }
-  ],
-  "day_at": "23:34",
-  "day_brief": "TOP Financial Group은 시가갭 하락 후 강한 반등으로 모멘텀을 확인했으나, 나머지 종목들은 마이너스 흐름을 보이며 제외했습니다."
+   "why": "전일 S&P500의 큰 폭 하락과 VIX 23대의 변동성 장세가 이어지며 지수 전반의 하방 압력이 우세함"
+  }
  }
 }
