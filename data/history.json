@@ -2505,14 +2505,14 @@
      "rank": 13,
      "verdict": "제외",
      "why": "임상 실패 리스크 반영",
-     "r1": null
+     "r1": -6.3
     },
     {
      "ticker": "CHA",
      "rank": 14,
      "verdict": "제외",
      "why": "배당 이슈 외 성장 동력 제한적",
-     "r1": null
+     "r1": -1.7
     },
     {
      "ticker": "NVDA",
@@ -2533,7 +2533,7 @@
      "rank": 17,
      "verdict": "제외",
      "why": "최근 급락 추세로 하방 압력 큼",
-     "r1": null
+     "r1": 1.1
     },
     {
      "ticker": "SPCX",
@@ -2901,17 +2901,368 @@
     "n": 1
    },
    "cstat": {
-    "n": 15,
+    "n": 18,
     "med": -0.9,
     "ex": null,
     "exD": 2.5,
     "rg": 1.4,
-    "rej": 0.3,
+    "rej": -0.3,
     "blr": {
-     "rand": 3,
+     "rand": 0.2,
      "mom": -0.1
     }
    }
+  },
+  {
+   "date": "2026-11-17",
+   "market": "US",
+   "regime": "하락",
+   "rules": [],
+   "cands": [
+    {
+     "ticker": "CGON",
+     "rank": 1,
+     "verdict": "선택",
+     "why": "목표가 상향 및 강력한 매수세 유지",
+     "r1": null
+    },
+    {
+     "ticker": "HUBS",
+     "rank": 2,
+     "verdict": "선택",
+     "why": "창업자 복귀 및 리더십 재설정 모멘텀",
+     "r1": null
+    },
+    {
+     "ticker": "BILL",
+     "rank": 3,
+     "verdict": "선택",
+     "why": "증권사 업그레이드 및 AI 성장 전략",
+     "r1": null
+    },
+    {
+     "ticker": "HTHT",
+     "rank": 4,
+     "verdict": "관찰",
+     "why": "견조한 상승세이나 뉴스 부재",
+     "r1": null
+    },
+    {
+     "ticker": "TSN",
+     "rank": 5,
+     "verdict": "관찰",
+     "why": "필수소비재 방어주 흐름 관찰",
+     "r1": null
+    },
+    {
+     "ticker": "POWL",
+     "rank": 6,
+     "verdict": "관찰",
+     "why": "상승 흐름 지속 여부 확인 필요",
+     "r1": null
+    },
+    {
+     "ticker": "QLYS",
+     "rank": 7,
+     "verdict": "관찰",
+     "why": "실적 호조에도 기술주 분위기 영향 체크",
+     "r1": null
+    },
+    {
+     "ticker": "SEZL",
+     "rank": 8,
+     "verdict": "관찰",
+     "why": "시즌 테마 단기 모멘텀 추적",
+     "r1": null
+    },
+    {
+     "ticker": "HNGE",
+     "rank": 9,
+     "verdict": "관찰",
+     "why": "액티브 종목군 추이 확인",
+     "r1": null
+    },
+    {
+     "ticker": "CNC",
+     "rank": 10,
+     "verdict": "관찰",
+     "why": "헬스케어 섹터 개별 이슈",
+     "r1": null
+    },
+    {
+     "ticker": "GXO",
+     "rank": 11,
+     "verdict": "관찰",
+     "why": "물류 섹터 방어력 테스트",
+     "r1": null
+    },
+    {
+     "ticker": "MSGR",
+     "rank": 12,
+     "verdict": "관찰",
+     "why": "ETF 매수세 유입 여부 확인",
+     "r1": null
+    },
+    {
+     "ticker": "TU",
+     "rank": 13,
+     "verdict": "제외",
+     "why": "상승폭 대비 모멘텀 재료 부족",
+     "r1": null
+    },
+    {
+     "ticker": "MOH",
+     "rank": 14,
+     "verdict": "제외",
+     "why": "뚜렷한 촉매제 부재",
+     "r1": null
+    },
+    {
+     "ticker": "SPCX",
+     "rank": 15,
+     "verdict": "제외",
+     "why": "머스크 관련 부정적 뉴스 및 약세",
+     "r1": null
+    },
+    {
+     "ticker": "NU",
+     "rank": 16,
+     "verdict": "제외",
+     "why": "하락 추세",
+     "r1": null
+    },
+    {
+     "ticker": "NVDA",
+     "rank": 17,
+     "verdict": "제외",
+     "why": "대형 기술주 하락 주도",
+     "r1": null
+    },
+    {
+     "ticker": "INTC",
+     "rank": 18,
+     "verdict": "제외",
+     "why": "급락세로 리스크 과다",
+     "r1": null
+    }
+   ],
+   "bl": {
+    "rand": [
+     "TU",
+     "NU",
+     "NVDA"
+    ],
+    "mom": [
+     "CGON",
+     "TU",
+     "MOH"
+    ]
+   },
+   "dayCands": [
+    {
+     "name": "H World Group Limited",
+     "ticker": "HTHT",
+     "score": 72,
+     "target_pct": 4,
+     "sector": "임의소비재",
+     "basis": [
+      "추세지속"
+     ],
+     "reason": "별도 특별한 뉴스 없이도 견조한 상승률을 기록하며 강한 추세를 유지하고 있습니다. 당일 거래량 유입 시 단기 모멘텀 매매가 가능합니다.",
+     "risk": "뚜렷한 재료 부재로 인한 빠른 차익실현 매물 출회"
+    },
+    {
+     "name": "Sezzle Inc.",
+     "ticker": "SEZL",
+     "score": 70,
+     "sector": "금융",
+     "basis": [
+      "정책테마"
+     ],
+     "reason": "홀리데이 시즌 '선구매 후결제(BNPL)'에 대한 대규모 전망치 뉴스가 단기 모멘텀을 자극할 수 있습니다. 소비 시즌 기대감이 주가 변동성을 높이는 구간입니다.",
+     "risk": "테마성 수급에 의존하여 장중 변동성 큼",
+     "target_pct": 3
+    },
+    {
+     "name": "Tyson Foods, Inc.",
+     "ticker": "TSN",
+     "score": 68,
+     "sector": "필수소비재",
+     "basis": [
+      "낙폭과대"
+     ],
+     "reason": "하락장 환경에서 방어주 성격을 띠는 필수소비재 섹터로 자금이 유입될 가능성이 있습니다. 안정적인 실적 기반의 견조한 흐름이 예상됩니다.",
+     "risk": "상승 모멘텀의 지속성 부족",
+     "target_pct": 3
+    },
+    {
+     "name": "Qualys, Inc.",
+     "ticker": "QLYS",
+     "score": 67,
+     "sector": "기술",
+     "basis": [
+      "실적/수주계약"
+     ],
+     "reason": "최근 실적 발표에서 두 자리 수 매출 성장과 연방 정부 관련 기록적인 성과를 보였습니다. 보안 섹터 내에서 개별 모멘텀을 보유하고 있습니다.",
+     "risk": "전반적인 기술주 하락 트렌드의 영향",
+     "target_pct": 3
+    },
+    {
+     "name": "GXO Logistics, Inc.",
+     "ticker": "GXO",
+     "score": 65,
+     "sector": "산업재",
+     "basis": [
+      "뉴스재료"
+     ],
+     "reason": "경기 침체 수혜 가능성을 언급한 독자적인 뉴스가 있으며, 방어적 물류 기업으로서의 매력이 부각될 수 있습니다. 당일 수급 집중 여부를 모니터링해야 합니다.",
+     "risk": "매크로 경기 둔화 우려에 따른 물동량 감소 리스크",
+     "target_pct": 3
+    }
+   ],
+   "hold": 0,
+   "v": {
+    "m": "gemini-3.5-flash-lite",
+    "pv": "J1.0-S2.0",
+    "policy": "S2.0"
+   },
+   "mktF": {
+    "dir": "하락",
+    "conf": 65,
+    "why": "전일 S&P500의 큰 폭 하락과 VIX 23대의 변동성 장세가 이어지며 지수 전반의 하방 압력이 우세함",
+    "ok": null
+   },
+   "picks": [
+    {
+     "kind": "swing",
+     "name": "CG Oncology, Inc.",
+     "ticker": "CGON",
+     "score": 85,
+     "sector": "바이오",
+     "basis": [
+      "뉴스재료"
+     ],
+     "plan": {
+      "engine": "R2.0",
+      "strategy": "swing",
+      "atrPct": 7.2,
+      "stopPct": 9,
+      "targetPct": 18,
+      "rr": 2,
+      "maxHoldDays": 5,
+      "riskPct": 0.5,
+      "maxWeightPct": 10,
+      "weightPct": 5.09,
+      "qty": 3,
+      "notional": 254,
+      "decision": {
+       "version": "S2.0",
+       "action": "watch",
+       "strategy": "watch",
+       "reasons": [
+        "하락 국면: 신규 진입 보류",
+        "지속 재료·추세 확인 전 관찰"
+       ],
+       "plannedHoldDays": 5,
+       "reviewAfterDays": 3,
+       "maxHoldDays": 5,
+       "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+       "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+       "allowAutoOrder": false
+      }
+     },
+     "p0": 84.78,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "HubSpot, Inc.",
+     "ticker": "HUBS",
+     "score": 80,
+     "sector": "기술",
+     "basis": [
+      "뉴스재료",
+      "실적/수주계약"
+     ],
+     "plan": {
+      "engine": "R2.0",
+      "strategy": "swing",
+      "atrPct": 6.34,
+      "stopPct": 9,
+      "targetPct": 18,
+      "rr": 2,
+      "maxHoldDays": 5,
+      "riskPct": 0.5,
+      "maxWeightPct": 10,
+      "weightPct": 4.64,
+      "qty": 1,
+      "notional": 232,
+      "decision": {
+       "version": "S2.0",
+       "action": "watch",
+       "strategy": "swing",
+       "reasons": [
+        "하락 국면: 신규 진입 보류"
+       ],
+       "plannedHoldDays": 5,
+       "reviewAfterDays": 3,
+       "maxHoldDays": 5,
+       "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+       "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+       "allowAutoOrder": false
+      }
+     },
+     "p0": 231.98,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "BILL Holdings, Inc.",
+     "ticker": "BILL",
+     "score": 78,
+     "sector": "핀테크",
+     "basis": [
+      "뉴스재료",
+      "실적/수주계약"
+     ],
+     "plan": {
+      "engine": "R2.0",
+      "strategy": "swing",
+      "atrPct": 3.86,
+      "stopPct": 5.79,
+      "targetPct": 11.58,
+      "rr": 2,
+      "maxHoldDays": 5,
+      "riskPct": 0.5,
+      "maxWeightPct": 10,
+      "weightPct": 8.07,
+      "qty": 7,
+      "notional": 403,
+      "decision": {
+       "version": "S2.0",
+       "action": "watch",
+       "strategy": "swing",
+       "reasons": [
+        "하락 국면: 신규 진입 보류"
+       ],
+       "plannedHoldDays": 5,
+       "reviewAfterDays": 3,
+       "maxHoldDays": 5,
+       "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+       "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+       "allowAutoOrder": false
+      }
+     },
+     "p0": 57.63,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    }
+   ]
   }
  ]
 }
