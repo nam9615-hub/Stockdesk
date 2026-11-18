@@ -1047,42 +1047,48 @@
      "rank": 13,
      "verdict": "제외",
      "why": "내부자 매도",
-     "r1": -0.1
+     "r1": -0.1,
+     "r5": -7.5
     },
     {
      "ticker": "GRDN",
      "rank": 14,
      "verdict": "제외",
      "why": "변동성 낮음",
-     "r1": 0.5
+     "r1": 0.5,
+     "r5": 1.2
     },
     {
      "ticker": "NVDA",
      "rank": 15,
      "verdict": "제외",
      "why": "지수 역행",
-     "r1": 0.5
+     "r1": 0.5,
+     "r5": -10
     },
     {
      "ticker": "JHX",
      "rank": 16,
      "verdict": "제외",
      "why": "하락 추세",
-     "r1": -2.8
+     "r1": -2.8,
+     "r5": -9
     },
     {
      "ticker": "INTC",
      "rank": 17,
      "verdict": "제외",
      "why": "반등 제한",
-     "r1": 1.3
+     "r1": 1.3,
+     "r5": -10.5
     },
     {
      "ticker": "GRAB",
      "rank": 18,
      "verdict": "제외",
      "why": "내부자 매도",
-     "r1": 0.5
+     "r1": 0.5,
+     "r5": -4.1
     }
    ],
    "bl": {
@@ -2935,84 +2941,84 @@
      "rank": 1,
      "verdict": "선택",
      "why": "목표가 상향 및 강력한 매수세 유지",
-     "r1": null
+     "r1": -4.3
     },
     {
      "ticker": "HUBS",
      "rank": 2,
      "verdict": "선택",
      "why": "창업자 복귀 및 리더십 재설정 모멘텀",
-     "r1": null
+     "r1": -4.3
     },
     {
      "ticker": "BILL",
      "rank": 3,
      "verdict": "선택",
      "why": "증권사 업그레이드 및 AI 성장 전략",
-     "r1": null
+     "r1": 14.3
     },
     {
      "ticker": "HTHT",
      "rank": 4,
      "verdict": "관찰",
      "why": "견조한 상승세이나 뉴스 부재",
-     "r1": null
+     "r1": -0.9
     },
     {
      "ticker": "TSN",
      "rank": 5,
      "verdict": "관찰",
      "why": "필수소비재 방어주 흐름 관찰",
-     "r1": null
+     "r1": 1
     },
     {
      "ticker": "POWL",
      "rank": 6,
      "verdict": "관찰",
      "why": "상승 흐름 지속 여부 확인 필요",
-     "r1": null
+     "r1": 0
     },
     {
      "ticker": "QLYS",
      "rank": 7,
      "verdict": "관찰",
      "why": "실적 호조에도 기술주 분위기 영향 체크",
-     "r1": null
+     "r1": -2.7
     },
     {
      "ticker": "SEZL",
      "rank": 8,
      "verdict": "관찰",
      "why": "시즌 테마 단기 모멘텀 추적",
-     "r1": null
+     "r1": -3.8
     },
     {
      "ticker": "HNGE",
      "rank": 9,
      "verdict": "관찰",
      "why": "액티브 종목군 추이 확인",
-     "r1": null
+     "r1": -5.4
     },
     {
      "ticker": "CNC",
      "rank": 10,
      "verdict": "관찰",
      "why": "헬스케어 섹터 개별 이슈",
-     "r1": null
+     "r1": -0.8
     },
     {
      "ticker": "GXO",
      "rank": 11,
      "verdict": "관찰",
      "why": "물류 섹터 방어력 테스트",
-     "r1": null
+     "r1": -4.7
     },
     {
      "ticker": "MSGR",
      "rank": 12,
      "verdict": "관찰",
      "why": "ETF 매수세 유입 여부 확인",
-     "r1": null
+     "r1": 0.5
     },
     {
      "ticker": "TU",
@@ -3047,14 +3053,14 @@
      "rank": 17,
      "verdict": "제외",
      "why": "대형 기술주 하락 주도",
-     "r1": null
+     "r1": -0.9
     },
     {
      "ticker": "INTC",
      "rank": 18,
      "verdict": "제외",
      "why": "급락세로 리스크 과다",
-     "r1": null
+     "r1": 0
     }
    ],
    "bl": {
