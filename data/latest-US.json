@@ -1,113 +1,117 @@
 {
- "date": "2026-11-18",
+ "date": "2026-11-19",
  "at": "21:29",
  "data": {
-  "brief": "전일 S&P500 하락과 VIX 24대의 높은 변동성 속에서도 지수 선물이 반등하며 제한적인 반발 매수세가 예상됩니다. 과거 하락장 국면과 유사하게 뉴스 재료 기반 단독 추천보다는 실적과 수주 계약 모멘텀을 보유한 종목 중심의 선별적 접근이 유리합니다.",
+  "brief": "지수선물 반등(+1.1%)과 VIX 하락(-9.6%)에도 S&P500 전일 약세 및 과거 스윙 성적 부진을 반영해 신중한 선별 접근이 요구됩니다. 실적 호조와 강력한 파트너십 재료를 보유한 사이버보안·AI 인프라 종목 중심으로 압축 대응합니다.",
   "picks": [
    {
-    "name": "AECOM",
-    "ticker": "ACM",
-    "score": 78,
-    "sector": "건설",
+    "name": "Qualys, Inc.",
+    "ticker": "QLYS",
+    "score": 88,
+    "sector": "사이버보안",
     "basis": [
+     "실적",
      "수주계약"
     ],
-    "reason": "캘리포니아 델타 수송 프로젝트의 프로그래밍 지반 탐사 및 보고 서비스 제공 기업으로 선정되어 안정적인 수주 모멘텀을 확보했습니다. 인프라 투자 관련 실적 가시성이 높아 스윙 관점에서 방어력과 상승 여력을 동시에 지닙니다.",
-    "catalyst": "대규모 인프라 수주 계약",
-    "risk": "거시경제 둔화에 따른 공공 예산 집행 지연 가능성",
+    "reason": "어닝 서프라이즈와 Cognizant 글로벌 mROC 얼라이언스 파트너십 확장으로 펀더멘털 모멘텀이 매우 견고합니다. 기관 관심도가 집중되며 강한 추세 지속이 기대되는 종목입니다.",
+    "catalyst": "실적 호조 및 AI 파트너십 확장",
+    "risk": "지수 급변동 시 기술주 전반의 변동성 노출",
     "plan": {
      "engine": "R2.0",
      "strategy": "swing",
-     "atrPct": 3.66,
-     "stopPct": 5.49,
-     "targetPct": 10.98,
+     "atrPct": 8.06,
+     "stopPct": 9,
+     "targetPct": 18,
+     "rr": 2,
+     "maxHoldDays": 10,
+     "riskPct": 0.5,
+     "maxWeightPct": 10,
+     "weightPct": 3.94,
+     "qty": 1,
+     "notional": 197,
+     "decision": {
+      "version": "S2.0",
+      "action": "watch",
+      "strategy": "swing",
+      "reasons": [
+       "하락 국면: 신규 진입 보류"
+      ],
+      "plannedHoldDays": 10,
+      "reviewAfterDays": 3,
+      "maxHoldDays": 10,
+      "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+      "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+      "allowAutoOrder": false
+     }
+    }
+   },
+   {
+    "name": "Tenable Holdings, Inc.",
+    "ticker": "TENB",
+    "score": 85,
+    "sector": "사이버보안",
+    "basis": [
+     "뉴스재료",
+     "추세지속"
+    ],
+    "reason": "투자자들의 관심이 재차 집중되며 가파른 상승 흐름을 보여주고 있습니다. 디지털 방어 수요 증가와 맞물려 상승 여력이 충분합니다.",
+    "catalyst": "투자자 심리 개선 및 기관 재유입",
+    "risk": "단기 급등에 따른 차익실현 매물 출화 가능성",
+    "plan": {
+     "engine": "R2.0",
+     "strategy": "swing",
+     "atrPct": 7.25,
+     "stopPct": 9,
+     "targetPct": 18,
+     "rr": 2,
+     "maxHoldDays": 5,
+     "riskPct": 0.5,
+     "maxWeightPct": 10,
+     "weightPct": 5.36,
+     "qty": 6,
+     "notional": 268,
+     "decision": {
+      "version": "S2.0",
+      "action": "watch",
+      "strategy": "day-watch",
+      "reasons": [
+       "하락 국면: 신규 진입 보류",
+       "단기 수급만 확인: 단타 재평가 후보, 자동 전환 아님"
+      ],
+      "plannedHoldDays": 5,
+      "reviewAfterDays": 3,
+      "maxHoldDays": 5,
+      "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+      "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+      "allowAutoOrder": false
+     }
+    }
+   },
+   {
+    "name": "Midera Food Processing, Inc.",
+    "ticker": "MFP",
+    "score": 82,
+    "sector": "식품가공",
+    "basis": [
+     "실적",
+     "추세지속"
+    ],
+    "reason": "두 자릿수 유기적 주문 증가세를 지속하며 연간 가이던스를 상향 조정한 실적 모멘텀 보유주입니다. 공정가치 대비 할인 거래되어 가치 매력도 높습니다.",
+    "catalyst": "실적 서프라이즈 및 가이던스 상향",
+    "risk": "성장주 전반의 매크로 센티먼트 영향",
+    "plan": {
+     "engine": "R2.0",
+     "strategy": "swing",
+     "atrPct": 6.09,
+     "stopPct": 9,
+     "targetPct": 18,
      "rr": 2,
      "maxHoldDays": 15,
      "riskPct": 0.5,
      "maxWeightPct": 10,
-     "weightPct": 8.05,
+     "weightPct": 4.83,
      "qty": 5,
-     "notional": 403,
-     "decision": {
-      "version": "S2.0",
-      "action": "watch",
-      "strategy": "swing",
-      "reasons": [
-       "하락 국면: 신규 진입 보류"
-      ],
-      "plannedHoldDays": 15,
-      "reviewAfterDays": 3,
-      "maxHoldDays": 15,
-      "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
-      "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
-      "allowAutoOrder": false
-     }
-    }
-   },
-   {
-    "name": "MINISO Group Holding Limited",
-    "ticker": "MNSO",
-    "score": 75,
-    "sector": "유통",
-    "basis": [
-     "실적"
-    ],
-    "reason": "노무라가 목표주가를 상향 조정한 가운데, 3분기 매출이 전년 동기 대비 14.3% 증가한 66.3억 위안을 기록하며 시장 예상치를 상회했습니다. 견고한 실적 성장을 바탕으로 주가 회복 흐름이 지속될 것으로 기대됩니다.",
-    "catalyst": "어닝 서프라이즈 및 목표주가 상향",
-    "risk": "소비 심리 위축 및 환율 변동성",
-    "plan": {
-     "engine": "R2.0",
-     "strategy": "swing",
-     "atrPct": 3.37,
-     "stopPct": 5.05,
-     "targetPct": 10.11,
-     "rr": 2,
-     "maxHoldDays": 15,
-     "riskPct": 0.5,
-     "maxWeightPct": 10,
-     "weightPct": 9.74,
-     "qty": 40,
-     "notional": 487,
-     "decision": {
-      "version": "S2.0",
-      "action": "watch",
-      "strategy": "swing",
-      "reasons": [
-       "하락 국면: 신규 진입 보류"
-      ],
-      "plannedHoldDays": 15,
-      "reviewAfterDays": 3,
-      "maxHoldDays": 15,
-      "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
-      "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
-      "allowAutoOrder": false
-     }
-    }
-   },
-   {
-    "name": "Griffon Corporation",
-    "ticker": "GFF",
-    "score": 72,
-    "sector": "제조",
-    "basis": [
-     "실적"
-    ],
-    "reason": "4분기 실적 발표에서 강력한 현금 흐름과 전략적 경영 성과가 강조되며 긍정적인 평가를 받고 있습니다. 안정적인 펀더멘털을 기반으로 하락장에서도 주가 방어력이 우수할 것으로 판단됩니다.",
-    "catalyst": "강력한 현금 흐름 및 실적 호조",
-    "risk": "경기 민감 업종 특성상 수요 둔화 리스크",
-    "plan": {
-     "engine": "R2.0",
-     "strategy": "swing",
-     "atrPct": 4.38,
-     "stopPct": 6.57,
-     "targetPct": 13.14,
-     "rr": 2,
-     "maxHoldDays": 15,
-     "riskPct": 0.5,
-     "maxWeightPct": 10,
-     "weightPct": 6.29,
-     "qty": 3,
-     "notional": 314,
+     "notional": 241,
      "decision": {
       "version": "S2.0",
       "action": "watch",
@@ -127,186 +131,180 @@
   ],
   "day_cands": [
    {
-    "name": "SELLAS Life Sciences Group, Inc",
-    "ticker": "SLS",
-    "score": 85,
-    "target_pct": 7,
-    "sector": "바이오",
-    "basis": [
-     "거래량급증",
-     "뉴스재료"
-    ],
-    "reason": "월스트리트베츠 등 리테일 투자자의 강한 유입과 함께 주가가 급등하며 압도적인 모멘텀을 형성했습니다. 단기 변동성이 매우 크나 장 초반 강한 수급 유입을 활용한 트레이딩이 가능합니다.",
-    "risk": "급등 후 차익실현 매물 출하 주의"
-   },
-   {
-    "name": "Rhythm Pharmaceuticals, Inc.",
-    "ticker": "RYTM",
+    "name": "Polibeli Group Ltd",
+    "ticker": "PLBL",
     "score": 80,
     "target_pct": 5,
-    "sector": "바이오",
-    "basis": [
-     "뉴스재료",
-     "추세지속"
-    ],
-    "reason": "희귀 비만 치료제의 2년 지속 BMI 감소 효과 발표에 힘입어 주가가 강한 상승세를 이어가고 있습니다. 후속 뉴스에 따른 추가 탄력성이 기대됩니다.",
-    "risk": "바이오 섹터 단기 변동성 및 차익실현 압박"
-   },
-   {
-    "name": "BILL Holdings, Inc.",
-    "ticker": "BILL",
-    "score": 76,
-    "target_pct": 4,
-    "sector": "핀테크",
-    "basis": [
-     "낙폭과대",
-     "추세지속"
-    ],
-    "reason": "과거 급락 이후 저평가 인식이 확산되며 반발 매수세가 유입되고 있어 단기 기술적 반등 여력이 큽니다.",
-    "risk": "성장주 투자 심리 악화 시 변동성 확대"
-   },
-   {
-    "name": "AECOM",
-    "ticker": "ACM",
-    "score": 74,
-    "target_pct": 3,
-    "sector": "건설",
+    "sector": "AI",
     "basis": [
      "수주계약"
     ],
-    "reason": "대규모 수주 뉴스를 모멘텀 삼아 장 초반 안정적인 우상향 흐름을 보일 가능성이 높습니다.",
-    "risk": "지수 연동성 부족 시 횡보 마감 가능성"
+    "reason": "텐센트 워크버디와의 글로벌 AI 에이전트 시장 협력 재료로 강력한 모멘텀이 발생했습니다.",
+    "risk": "변동성이 극심한 소형 테마주 특성 유의"
    },
    {
-    "name": "Snap Inc.",
-    "ticker": "SNAP",
-    "score": 70,
-    "target_pct": 3,
-    "sector": "미디어",
+    "name": "A10 Networks, Inc.",
+    "ticker": "ATEN",
+    "score": 78,
+    "target_pct": 4,
+    "sector": "네트워크",
     "basis": [
-     "거래량급증"
+     "뉴스재료"
     ],
-    "reason": "특별한 대형 악재 없이 거래량이 유입되며 반등세를 보이고 있어 단기 트레이딩 관점의 접근이 유효합니다.",
-    "risk": "디지털 광고 시장 불확실성 및 실적 모멘텀 부족"
+    "reason": "스트롱 바이 상향 조정과 디지털 방어 수요 집중으로 단기 수급 유입이 유리합니다.",
+    "risk": "저항선 부근 차익실현 압력"
+   },
+   {
+    "name": "Okta, Inc.",
+    "ticker": "OKTA",
+    "score": 76,
+    "target_pct": 3,
+    "sector": "보안",
+    "basis": [
+     "뉴스재료"
+    ],
+    "reason": "마찰 없는 신원 인증 및 AI 보안 베팅으로 사이버보안 섹터 강세 시 동반 상승 기대.",
+    "risk": "밸류에이션 부담 상존"
+   },
+   {
+    "name": "Warby Parker Inc.",
+    "ticker": "WRBY",
+    "score": 74,
+    "target_pct": 4,
+    "sector": "소비재",
+    "basis": [
+     "뉴스재료"
+    ],
+    "reason": "스마트 안경 출시 기대감이 새로운 촉매로 작용하며 거래량이 유입되고 있습니다.",
+    "risk": "본장 개장 후 변동성 확대"
+   },
+   {
+    "name": "SailPoint, Inc.",
+    "ticker": "SAIL",
+    "score": 72,
+    "target_pct": 3,
+    "sector": "보안",
+    "basis": [
+     "뉴스재료"
+    ],
+    "reason": "투자자 레이더에 급부상하며 기관 중심의 수급 유입 가능성이 높습니다.",
+    "risk": "단기 모멘텀 둔화 시 빠른 이탈 필요"
    }
   ],
   "cands": [
    {
-    "ticker": "SLS",
+    "ticker": "PLBL",
     "rank": 1,
     "verdict": "선택",
-    "why": "압도적인 거래량과 리테일 관심 집중"
+    "why": "텐센트 AI 협력 대형 모멘텀"
    },
    {
-    "ticker": "BILL",
+    "ticker": "TENB",
     "rank": 2,
     "verdict": "선택",
-    "why": "낙폭 과대 속 저가 매수세 유입"
+    "why": "투자자 심리 개선 및 강한 추세"
    },
    {
-    "ticker": "ACM",
+    "ticker": "MFP",
     "rank": 3,
     "verdict": "선택",
-    "why": "확실한 인프라 수주 계약 모멘텀"
+    "why": "실적 호조 및 가이던스 상향"
    },
    {
-    "ticker": "RYTM",
+    "ticker": "QLYS",
     "rank": 4,
     "verdict": "선택",
-    "why": "약물 임상 및 실효성 데이터 지속 부각"
+    "why": "어닝 서프라이즈 및 파트너십 확장"
    },
    {
-    "ticker": "MNSO",
+    "ticker": "NTSK",
     "rank": 5,
-    "verdict": "선택",
-    "why": "어닝 서프라이즈 및 목표가 상향"
-   },
-   {
-    "ticker": "SNAP",
-    "rank": 6,
     "verdict": "관찰",
-    "why": "단기 거래량 증가이나 추가 재료 확인 필요"
+    "why": "월가 주목도 상승 중"
    },
    {
-    "ticker": "UNFI",
+    "ticker": "FSLY",
+    "rank": 6,
+    "verdict": "제외",
+    "why": "섹터 내 타 종목 우선"
+   },
+   {
+    "ticker": "OKTA",
     "rank": 7,
     "verdict": "관찰",
-    "why": "적정 가치 평가 논란 속 관망 필요"
+    "why": "사이버보안 모멘텀 연동"
    },
    {
-    "ticker": "SA",
+    "ticker": "ATEN",
     "rank": 8,
     "verdict": "관찰",
-    "why": "캐나다 증시 및 원자재 연동성 주시"
+    "why": "투자의견 상향 반영 확인 필요"
    },
    {
-    "ticker": "TME",
+    "ticker": "S",
     "rank": 9,
-    "verdict": "관찰",
-    "why": "실적 발표 후 방향성 탐색 국면"
+    "verdict": "제외",
+    "why": "밸류에이션 및 변동성 주의"
    },
    {
-    "ticker": "TWST",
+    "ticker": "SAIL",
     "rank": 10,
     "verdict": "관찰",
-    "why": "캐시우드 매매 동향에 따른 변동성"
+    "why": "단기 수급 집중 여부 관찰"
    },
    {
-    "ticker": "ESLT",
+    "ticker": "GNRC",
     "rank": 11,
-    "verdict": "관찰",
-    "why": "실적 발표 이후 매물 소화 과정"
+    "verdict": "제외",
+    "why": "목표가 상향이나 상승폭 제한적"
    },
    {
-    "ticker": "CXW",
+    "ticker": "RBRK",
     "rank": 12,
-    "verdict": "관찰",
-    "why": "자산 매각 및 자사주 매입 효과 점검 필요"
+    "verdict": "제외",
+    "why": "뚜렷한 추가 촉매 부재"
    },
    {
-    "ticker": "GFF",
+    "ticker": "WRBY",
     "rank": 13,
-    "verdict": "선택",
-    "why": "탄탄한 현금흐름과 실적 호조 부각"
+    "verdict": "관찰",
+    "why": "스마트 안경 테마 단기성"
    },
    {
-    "ticker": "BELFB",
+    "ticker": "FROG",
     "rank": 14,
-    "verdict": "관찰",
-    "why": "실적 발표 후 변동성 관망"
+    "verdict": "제외",
+    "why": "주변 종목 관망"
    },
    {
     "ticker": "NVDA",
     "rank": 15,
     "verdict": "제외",
-    "why": "실적 앞둔 관망세 및 지수 영향 주시"
+    "why": "하락 마감 및 지수 연동성 대기"
    },
    {
-    "ticker": "GRAB",
+    "ticker": "AES",
     "rank": 16,
     "verdict": "제외",
-    "why": "동종 업계 비교 속 모멘텀 부족"
+    "why": "변동성 미달"
    },
    {
-    "ticker": "INTC",
+    "ticker": "IREN",
     "rank": 17,
     "verdict": "제외",
-    "why": "뚜렷한 모멘텀 부재"
+    "why": "하락 마감 종목"
    },
    {
-    "ticker": "NOK",
+    "ticker": "SPCX",
     "rank": 18,
     "verdict": "제외",
-    "why": "하락 압력 우세"
+    "why": "관심도 분산"
    }
   ],
   "mkt": {
-   "dir": "횡보",
-   "conf": 60,
-   "why": "전일 지수 하락과 선물 반등이 혼조세를 보이며 뚜렷한 방향성 탐색이 예상됨"
-  },
-  "day_picks": [],
-  "day_at": "23:34",
-  "day_brief": "개장 후 시가 대비 급락 및 모멘텀 약화로 인해 모든 후보 종목이 원칙에 부합하지 않아 당일 단타 매매 대상에서 제외합니다."
+   "dir": "상승",
+   "conf": 65,
+   "why": "지수선물 강세(+1.1%)와 VIX 하락(-9.6%)으로 기술주 중심의 반등 시도가 유력함."
+  }
  }
 }
