@@ -305,6 +305,90 @@
    "dir": "상승",
    "conf": 65,
    "why": "지수선물 강세(+1.1%)와 VIX 하락(-9.6%)으로 기술주 중심의 반등 시도가 유력함."
-  }
+  },
+  "day_picks": [
+   {
+    "name": "Okta, Inc.",
+    "ticker": "OKTA",
+    "score": 78,
+    "target_pct": 3,
+    "sector": "사이버보안",
+    "basis": [
+     "OKTA_GAP_UP"
+    ],
+    "reason": "시가갭 +3.9%로 출발 후 개장 후 추가 +3.7% 상승을 기록하며 매수세가 집중됨.",
+    "risk": "급등에 따른 단기 차익실현 물량 출회 주의",
+    "plan": {
+     "engine": "R2.0",
+     "strategy": "day",
+     "atrPct": 7.62,
+     "stopPct": 4,
+     "targetPct": 5.4,
+     "rr": 1.35,
+     "maxHoldDays": 0,
+     "riskPct": 0.5,
+     "maxWeightPct": 8,
+     "weightPct": 4.22,
+     "qty": 1,
+     "notional": 211,
+     "decision": {
+      "version": "S2.0",
+      "action": "watch",
+      "strategy": "day",
+      "reasons": [
+       "하락 국면: 신규 진입 보류"
+      ],
+      "plannedHoldDays": 0,
+      "reviewAfterDays": 0,
+      "maxHoldDays": 0,
+      "entryRule": "확정 시점 이후 가격만 사용 · 갭 과열·시가 붕괴 시 보류",
+      "exitRule": "손절·목표 중 먼저 도달한 조건 또는 당일 종가",
+      "allowAutoOrder": false
+     }
+    }
+   },
+   {
+    "name": "SailPoint, Inc.",
+    "ticker": "SAIL",
+    "score": 74,
+    "target_pct": 3,
+    "sector": "보안",
+    "basis": [
+     "SAIL_MOMENTUM"
+    ],
+    "reason": "시가갭 1.3% 및 개장 후 +1.7% 추가 상승으로 안정적인 우상향 흐름을 보임.",
+    "risk": "거래대금 감소 시 탄력 둔화 가능성",
+    "plan": {
+     "engine": "R2.0",
+     "strategy": "day",
+     "atrPct": 6.09,
+     "stopPct": 4,
+     "targetPct": 5.4,
+     "rr": 1.35,
+     "maxHoldDays": 0,
+     "riskPct": 0.5,
+     "maxWeightPct": 8,
+     "weightPct": 7.8,
+     "qty": 17,
+     "notional": 390,
+     "decision": {
+      "version": "S2.0",
+      "action": "watch",
+      "strategy": "day",
+      "reasons": [
+       "하락 국면: 신규 진입 보류"
+      ],
+      "plannedHoldDays": 0,
+      "reviewAfterDays": 0,
+      "maxHoldDays": 0,
+      "entryRule": "확정 시점 이후 가격만 사용 · 갭 과열·시가 붕괴 시 보류",
+      "exitRule": "손절·목표 중 먼저 도달한 조건 또는 당일 종가",
+      "allowAutoOrder": false
+     }
+    }
+   }
+  ],
+  "day_at": "23:34",
+  "day_brief": "OKTA와 SAIL은 개장 후 상승세를 유지하며 수급이 확인되었으나, 나머지 종목은 갭하락 및 모멘텀 부족으로 제외함."
  }
 }
