@@ -4525,14 +4525,14 @@
      "rank": 13,
      "verdict": "관찰",
      "why": "실적 발표 모멘텀 단기성",
-     "r1": null
+     "r1": -8.1
     },
     {
      "ticker": "CPA",
      "rank": 14,
      "verdict": "관찰",
      "why": "어닝 콜 이후 추세 확인 필요",
-     "r1": null
+     "r1": -2.1
     },
     {
      "ticker": "NVDA",
@@ -4553,7 +4553,7 @@
      "rank": 18,
      "verdict": "제외",
      "why": "지수 선물 하락 및 기술주 급락 피해 대상",
-     "r1": null
+     "r1": -16
     },
     {
      "ticker": "SPCX",
@@ -4864,14 +4864,14 @@
    },
    "dayHold": 1,
    "cstat": {
-    "n": 15,
+    "n": 18,
     "med": -3.9,
     "ex": null,
     "exD": null,
     "rg": null,
-    "rej": -1.7,
+    "rej": -3.8,
     "blr": {
-     "rand": -0.1,
+     "rand": 0.5,
      "mom": 3.3
     }
    }
