@@ -301,6 +301,50 @@
    "dir": "하락",
    "conf": 85,
    "why": "VIX 급등 및 주요 기술주 악재로 인해 시장 투자 심리가 크게 위축된 상태입니다."
-  }
+  },
+  "day_picks": [
+   {
+    "name": "Amentum Holdings, Inc.",
+    "ticker": "AMTM",
+    "score": 55,
+    "target_pct": 5,
+    "sector": "방산",
+    "basis": [
+     "TECH_BOUNCE"
+    ],
+    "reason": "시가갭 -1.9%로 출발했으나 개장 후 +1.2%로 반전하여 과도한 하락 후 기술적 반등 논리를 실측 데이터로 확인시켜 줌.",
+    "risk": "추세지속 성공률 통계가 낮으므로 빠른 익절 및 본전 스탑로스 설정 필수",
+    "plan": {
+     "engine": "R2.0",
+     "strategy": "day",
+     "atrPct": 4.88,
+     "stopPct": 4,
+     "targetPct": 5.4,
+     "rr": 1.35,
+     "maxHoldDays": 0,
+     "riskPct": 0.5,
+     "maxWeightPct": 8,
+     "weightPct": 7.87,
+     "qty": 16,
+     "notional": 394,
+     "decision": {
+      "version": "S2.0",
+      "action": "watch",
+      "strategy": "day",
+      "reasons": [
+       "하락 국면: 신규 진입 보류"
+      ],
+      "plannedHoldDays": 0,
+      "reviewAfterDays": 0,
+      "maxHoldDays": 0,
+      "entryRule": "확정 시점 이후 가격만 사용 · 갭 과열·시가 붕괴 시 보류",
+      "exitRule": "손절·목표 중 먼저 도달한 조건 또는 당일 종가",
+      "allowAutoOrder": false
+     }
+    }
+   }
+  ],
+  "day_at": "23:34",
+  "day_brief": "제시된 5개 후보 중 대다수가 개장 후 마이너스 흐름을 보이고 있으며, 원칙에 따라 확률 우위가 부족하거나 개장 데이터가 부정적입니다. 유일하게 AMTM만 시가 대비 플러스 전환하며 기술적 반등 흐름을 확인해주었습니다."
  }
 }
