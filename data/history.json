@@ -5437,28 +5437,28 @@
      "rank": 12,
      "verdict": "제외",
      "why": "프리마켓 지수 하락 영향 큼",
-     "r1": null
+     "r1": -7.7
     },
     {
      "ticker": "APLD",
      "rank": 13,
      "verdict": "관찰",
      "why": "리스 계약 재료 유효하나 단기 과열",
-     "r1": null
+     "r1": -8.5
     },
     {
      "ticker": "SKHY",
      "rank": 14,
      "verdict": "제외",
      "why": "국내 상장 주식 연동 확인 필요",
-     "r1": null
+     "r1": -5.9
     },
     {
      "ticker": "ANT",
      "rank": 15,
      "verdict": "제외",
      "why": "하락 마감 및 구조적 불확실성",
-     "r1": null
+     "r1": -1.8
     },
     {
      "ticker": "INTC",
@@ -5479,7 +5479,7 @@
      "rank": 18,
      "verdict": "제외",
      "why": "합병 루머성 움직임으로 리스크 높음",
-     "r1": null
+     "r1": -4.6
     }
    ],
    "bl": {
@@ -5786,7 +5786,367 @@
     "brief": "모든 후보가 개장 후 시가 대비 -2% 이상 하락하여 원칙에 부합하지 않습니다.",
     "n": 0
    },
-   "dayHold": 1
+   "dayHold": 1,
+   "cstat": {
+    "n": 17,
+    "med": -7.7,
+    "ex": null,
+    "exD": null,
+    "rg": null,
+    "rej": 2.8,
+    "blr": {
+     "rand": 2.6,
+     "mom": 5.5
+    }
+   }
+  },
+  {
+   "date": "2026-11-25",
+   "market": "US",
+   "regime": "하락",
+   "rules": [],
+   "cands": [
+    {
+     "ticker": "KSS",
+     "rank": 1,
+     "verdict": "선택",
+     "why": "실적 우수",
+     "r1": null
+    },
+    {
+     "ticker": "COGT",
+     "rank": 2,
+     "verdict": "선택",
+     "why": "신약 승인 재료",
+     "r1": null
+    },
+    {
+     "ticker": "DKS",
+     "rank": 3,
+     "verdict": "선택",
+     "why": "목표가 상향",
+     "r1": null
+    },
+    {
+     "ticker": "NAMS",
+     "rank": 4,
+     "verdict": "관찰",
+     "why": "바이오 랠리 주도",
+     "r1": null
+    },
+    {
+     "ticker": "KYMR",
+     "rank": 5,
+     "verdict": "관찰",
+     "why": "기관 매수세",
+     "r1": null
+    },
+    {
+     "ticker": "STOK",
+     "rank": 6,
+     "verdict": "관찰",
+     "why": "섹터 온기",
+     "r1": null
+    },
+    {
+     "ticker": "AMTM",
+     "rank": 7,
+     "verdict": "관찰",
+     "why": "기술적 저평가",
+     "r1": null
+    },
+    {
+     "ticker": "ERAS",
+     "rank": 8,
+     "verdict": "관찰",
+     "why": "이벤트 기대감",
+     "r1": null
+    },
+    {
+     "ticker": "IRON",
+     "rank": 9,
+     "verdict": "제외",
+     "why": "거래량 기반 불명확",
+     "r1": null
+    },
+    {
+     "ticker": "CELC",
+     "rank": 10,
+     "verdict": "제외",
+     "why": "근거 부재",
+     "r1": null
+    },
+    {
+     "ticker": "IMNM",
+     "rank": 11,
+     "verdict": "제외",
+     "why": "밸류에이션 부담",
+     "r1": null
+    },
+    {
+     "ticker": "MMED",
+     "rank": 12,
+     "verdict": "제외",
+     "why": "단기 급등 부담",
+     "r1": null
+    },
+    {
+     "ticker": "INSM",
+     "rank": 13,
+     "verdict": "제외",
+     "why": "투자의견 하향",
+     "r1": null
+    },
+    {
+     "ticker": "ANF",
+     "rank": 14,
+     "verdict": "제외",
+     "why": "투자의견 하향",
+     "r1": null
+    },
+    {
+     "ticker": "NVDA",
+     "rank": 15,
+     "verdict": "제외",
+     "why": "기술주 악재",
+     "r1": null
+    },
+    {
+     "ticker": "ANT",
+     "rank": 16,
+     "verdict": "제외",
+     "why": "기술주 악재",
+     "r1": null
+    },
+    {
+     "ticker": "INTC",
+     "rank": 17,
+     "verdict": "제외",
+     "why": "섹터 악재",
+     "r1": null
+    },
+    {
+     "ticker": "SPCX",
+     "rank": 18,
+     "verdict": "제외",
+     "why": "지수 하락 영향",
+     "r1": null
+    }
+   ],
+   "bl": {
+    "rand": [
+     "AMTM",
+     "IRON",
+     "MMED"
+    ],
+    "mom": [
+     "AMTM",
+     "ANF",
+     "KSS"
+    ]
+   },
+   "dayCands": [
+    {
+     "name": "NewAmsterdam Pharma Company N.V",
+     "ticker": "NAMS",
+     "score": 70,
+     "target_pct": 8,
+     "sector": "바이오",
+     "basis": [
+      "추세지속"
+     ],
+     "reason": "바이오 섹터 전반의 랠리 분위기와 맞물려 당일 상승 탄력이 강합니다.",
+     "risk": "급등 후 차익실현 매물"
+    },
+    {
+     "name": "Kymera Therapeutics, Inc.",
+     "ticker": "KYMR",
+     "score": 65,
+     "target_pct": 7,
+     "sector": "바이오",
+     "basis": [
+      "추세지속"
+     ],
+     "reason": "월가의 긍정적인 평가가 이어지며 기관 자금이 유입되는 흐름입니다.",
+     "risk": "단기 과매수 구간"
+    },
+    {
+     "name": "Stoke Therapeutics, Inc.",
+     "ticker": "STOK",
+     "score": 60,
+     "target_pct": 6,
+     "sector": "바이오",
+     "basis": [
+      "추세지속"
+     ],
+     "reason": "Insmed 거래와 연동된 바이오 섹터 수급 유입이 기대됩니다.",
+     "risk": "재료 소멸성"
+    },
+    {
+     "name": "Amentum Holdings, Inc.",
+     "ticker": "AMTM",
+     "score": 55,
+     "target_pct": 5,
+     "sector": "서비스",
+     "basis": [
+      "낙폭과대"
+     ],
+     "reason": "과도한 하락 후 기술적 반등 시점이 도래했으며 가격 메리트가 부각됩니다.",
+     "risk": "하락 추세 반전 여부 불확실"
+    },
+    {
+     "name": "Erasca, Inc.",
+     "ticker": "ERAS",
+     "score": 50,
+     "target_pct": 5,
+     "sector": "바이오",
+     "basis": [
+      "정책테마"
+     ],
+     "reason": "주요 촉매(Catalysts) 발표를 앞두고 선제적 매수세가 유입 중입니다.",
+     "risk": "발표 전 변동성"
+    }
+   ],
+   "hold": 0,
+   "v": {
+    "m": "gemini-3.1-flash-lite",
+    "pv": "J1.0-S2.0",
+    "policy": "S2.0"
+   },
+   "mktF": {
+    "dir": "하락",
+    "conf": 85,
+    "why": "VIX 급등 및 주요 기술주 악재로 인해 시장 투자 심리가 크게 위축된 상태입니다.",
+    "ok": null
+   },
+   "picks": [
+    {
+     "kind": "swing",
+     "name": "Kohl's Corporation",
+     "ticker": "KSS",
+     "score": 85,
+     "sector": "유통",
+     "basis": [
+      "실적"
+     ],
+     "plan": {
+      "engine": "R2.0",
+      "strategy": "swing",
+      "atrPct": 6.18,
+      "stopPct": 9,
+      "targetPct": 18,
+      "rr": 2,
+      "maxHoldDays": 15,
+      "riskPct": 0.5,
+      "maxWeightPct": 10,
+      "weightPct": 5.07,
+      "qty": 10,
+      "notional": 253,
+      "decision": {
+       "version": "S2.0",
+       "action": "watch",
+       "strategy": "swing",
+       "reasons": [
+        "하락 국면: 신규 진입 보류"
+       ],
+       "plannedHoldDays": 15,
+       "reviewAfterDays": 3,
+       "maxHoldDays": 15,
+       "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+       "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+       "allowAutoOrder": false
+      }
+     },
+     "p0": 25.33,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "Cogent Biosciences, Inc.",
+     "ticker": "COGT",
+     "score": 80,
+     "sector": "바이오",
+     "basis": [
+      "수주계약"
+     ],
+     "plan": {
+      "engine": "R2.0",
+      "strategy": "swing",
+      "atrPct": 6.7,
+      "stopPct": 9,
+      "targetPct": 18,
+      "rr": 2,
+      "maxHoldDays": 10,
+      "riskPct": 0.5,
+      "maxWeightPct": 10,
+      "weightPct": 5.28,
+      "qty": 8,
+      "notional": 264,
+      "decision": {
+       "version": "S2.0",
+       "action": "watch",
+       "strategy": "swing",
+       "reasons": [
+        "하락 국면: 신규 진입 보류"
+       ],
+       "plannedHoldDays": 10,
+       "reviewAfterDays": 3,
+       "maxHoldDays": 10,
+       "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+       "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+       "allowAutoOrder": false
+      }
+     },
+     "p0": 33.01,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "Dick's Sporting Goods Inc",
+     "ticker": "DKS",
+     "score": 75,
+     "sector": "유통",
+     "basis": [
+      "실적"
+     ],
+     "plan": {
+      "engine": "R2.0",
+      "strategy": "swing",
+      "atrPct": 4.91,
+      "stopPct": 7.37,
+      "targetPct": 14.73,
+      "rr": 2,
+      "maxHoldDays": 15,
+      "riskPct": 0.5,
+      "maxWeightPct": 10,
+      "weightPct": 6.13,
+      "qty": 2,
+      "notional": 306,
+      "decision": {
+       "version": "S2.0",
+       "action": "watch",
+       "strategy": "swing",
+       "reasons": [
+        "하락 국면: 신규 진입 보류"
+       ],
+       "plannedHoldDays": 15,
+       "reviewAfterDays": 3,
+       "maxHoldDays": 15,
+       "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+       "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+       "allowAutoOrder": false
+      }
+     },
+     "p0": 153.17,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    }
+   ]
   }
  ]
 }
