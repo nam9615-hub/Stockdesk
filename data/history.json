@@ -4018,42 +4018,48 @@
      "rank": 13,
      "verdict": "관찰",
      "why": "스마트 안경 테마 단기성",
-     "r1": -13
+     "r1": -13,
+     "r5": -17.8
     },
     {
      "ticker": "FROG",
      "rank": 14,
      "verdict": "제외",
      "why": "주변 종목 관망",
-     "r1": -7.4
+     "r1": -7.4,
+     "r5": -11.2
     },
     {
      "ticker": "NVDA",
      "rank": 15,
      "verdict": "제외",
      "why": "하락 마감 및 지수 연동성 대기",
-     "r1": -4.5
+     "r1": -4.5,
+     "r5": -2.4
     },
     {
      "ticker": "AES",
      "rank": 16,
      "verdict": "제외",
      "why": "변동성 미달",
-     "r1": -0.1
+     "r1": -0.1,
+     "r5": -0.1
     },
     {
      "ticker": "IREN",
      "rank": 17,
      "verdict": "제외",
      "why": "하락 마감 종목",
-     "r1": -9.8
+     "r1": -9.8,
+     "r5": -19.5
     },
     {
      "ticker": "SPCX",
      "rank": 18,
      "verdict": "제외",
      "why": "관심도 분산",
-     "r1": -4.5
+     "r1": -4.5,
+     "r5": -12.1
     }
    ],
    "bl": {
@@ -5823,77 +5829,77 @@
      "rank": 1,
      "verdict": "선택",
      "why": "실적 우수",
-     "r1": null
+     "r1": 5.5
     },
     {
      "ticker": "COGT",
      "rank": 2,
      "verdict": "선택",
      "why": "신약 승인 재료",
-     "r1": null
+     "r1": 8
     },
     {
      "ticker": "DKS",
      "rank": 3,
      "verdict": "선택",
      "why": "목표가 상향",
-     "r1": null
+     "r1": 3
     },
     {
      "ticker": "NAMS",
      "rank": 4,
      "verdict": "관찰",
      "why": "바이오 랠리 주도",
-     "r1": null
+     "r1": 0.8
     },
     {
      "ticker": "KYMR",
      "rank": 5,
      "verdict": "관찰",
      "why": "기관 매수세",
-     "r1": null
+     "r1": 0.3
     },
     {
      "ticker": "STOK",
      "rank": 6,
      "verdict": "관찰",
      "why": "섹터 온기",
-     "r1": null
+     "r1": 8.1
     },
     {
      "ticker": "AMTM",
      "rank": 7,
      "verdict": "관찰",
      "why": "기술적 저평가",
-     "r1": null
+     "r1": 1.4
     },
     {
      "ticker": "ERAS",
      "rank": 8,
      "verdict": "관찰",
      "why": "이벤트 기대감",
-     "r1": null
+     "r1": 2.7
     },
     {
      "ticker": "IRON",
      "rank": 9,
      "verdict": "제외",
      "why": "거래량 기반 불명확",
-     "r1": null
+     "r1": 2.5
     },
     {
      "ticker": "CELC",
      "rank": 10,
      "verdict": "제외",
      "why": "근거 부재",
-     "r1": null
+     "r1": 6.8
     },
     {
      "ticker": "IMNM",
      "rank": 11,
      "verdict": "제외",
      "why": "밸류에이션 부담",
-     "r1": null
+     "r1": 1.3
     },
     {
      "ticker": "MMED",
@@ -5907,7 +5913,7 @@
      "rank": 13,
      "verdict": "제외",
      "why": "투자의견 하향",
-     "r1": null
+     "r1": 0.1
     },
     {
      "ticker": "ANF",
@@ -5921,14 +5927,14 @@
      "rank": 15,
      "verdict": "제외",
      "why": "기술주 악재",
-     "r1": null
+     "r1": 3.7
     },
     {
      "ticker": "ANT",
      "rank": 16,
      "verdict": "제외",
      "why": "기술주 악재",
-     "r1": null
+     "r1": 6.2
     },
     {
      "ticker": "INTC",
@@ -5942,7 +5948,7 @@
      "rank": 18,
      "verdict": "제외",
      "why": "지수 하락 영향",
-     "r1": null
+     "r1": 7.6
     }
    ],
    "bl": {
@@ -6281,14 +6287,35 @@
      "cAt": "23:34",
      "eTs": "2026-11-25T14:34:11.537Z",
      "cm": 4,
-     "r1": null,
-     "hit": null
+     "r1": 1.1,
+     "hit": false,
+     "mfe": 3.9,
+     "mae": -2.1,
+     "tv": 139,
+     "tvx": 2.7,
+     "touch": "none",
+     "idx": -0.25,
+     "simExit": "close",
+     "simR": 1.1,
+     "postFixed": 1
     }
    ],
    "day2": {
     "at": "23:34",
     "brief": "제시된 5개 후보 중 대다수가 개장 후 마이너스 흐름을 보이고 있으며, 원칙에 따라 확률 우위가 부족하거나 개장 데이터가 부정적입니다. 유일하게 AMTM만 시가 대비 플러스 전환하며 기술적 반등 흐름을 확인해주었습니다.",
     "n": 1
+   },
+   "cstat": {
+    "n": 15,
+    "med": 3,
+    "ex": null,
+    "exD": -1.6,
+    "rg": 6.7,
+    "rej": 1,
+    "blr": {
+     "rand": -1.1,
+     "mom": 0.5
+    }
    }
   }
  ]
