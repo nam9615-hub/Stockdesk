@@ -6317,6 +6317,357 @@
      "mom": 0.9
     }
    }
+  },
+  {
+   "date": "2026-11-27",
+   "market": "US",
+   "regime": "하락",
+   "rules": [
+    "근거'추세지속' 성공33%(12) → 단독추천 지양"
+   ],
+   "cands": [
+    {
+     "ticker": "BZ",
+     "rank": 1,
+     "verdict": "선택",
+     "why": "자사주 매입과 실적 재료 보유",
+     "r1": null
+    },
+    {
+     "ticker": "LBTYB",
+     "rank": 2,
+     "verdict": "관찰",
+     "why": "회사 뉴스 없이 변동성 커 제외",
+     "r1": null
+    },
+    {
+     "ticker": "HPQ",
+     "rank": 3,
+     "verdict": "선택",
+     "why": "실적 호조 및 강한 추세 지속",
+     "r1": null
+    },
+    {
+     "ticker": "LI",
+     "rank": 4,
+     "verdict": "선택",
+     "why": "인도량 성장 실적 뒷받침",
+     "r1": null
+    },
+    {
+     "ticker": "ASTS",
+     "rank": 5,
+     "verdict": "관찰",
+     "why": "목표가 하향 조정 및 변동성 주의",
+     "r1": null
+    },
+    {
+     "ticker": "CAR",
+     "rank": 6,
+     "verdict": "관찰",
+     "why": "중고차 아울렛 확장 단기 모멘텀",
+     "r1": null
+    },
+    {
+     "ticker": "DKNG",
+     "rank": 7,
+     "verdict": "관찰",
+     "why": "낙폭 과대이나 추가 관찰 필요",
+     "r1": null
+    },
+    {
+     "ticker": "COGT",
+     "rank": 8,
+     "verdict": "선택",
+     "why": "FDA 승인 및 고가 신약 런칭 재료 강력",
+     "r1": null
+    },
+    {
+     "ticker": "RH",
+     "rank": 9,
+     "verdict": "제외",
+     "why": "뚜렷한 재료 부재 및 변동성 과도",
+     "r1": null
+    },
+    {
+     "ticker": "QXO",
+     "rank": 10,
+     "verdict": "관찰",
+     "why": "월가 호평에 따른 단기 수급 유입",
+     "r1": null
+    },
+    {
+     "ticker": "CHTR",
+     "rank": 11,
+     "verdict": "관찰",
+     "why": "비용 절감 계획 발표 모멘텀",
+     "r1": null
+    },
+    {
+     "ticker": "ABVX",
+     "rank": 12,
+     "verdict": "관찰",
+     "why": "임상 진행 상황 주시 필요",
+     "r1": null
+    },
+    {
+     "ticker": "INIO",
+     "rank": 13,
+     "verdict": "제외",
+     "why": "바닥권 반등이나 불확실성 큼",
+     "r1": null
+    },
+    {
+     "ticker": "BSP",
+     "rank": 14,
+     "verdict": "제외",
+     "why": "단순 거래량 스크린 종목",
+     "r1": null
+    },
+    {
+     "ticker": "NVDA",
+     "rank": 15,
+     "verdict": "제외",
+     "why": "반도체 섹터 회피 및 하락세",
+     "r1": null
+    },
+    {
+     "ticker": "ANT",
+     "rank": 16,
+     "verdict": "제외",
+     "why": "상승 모멘텀 미흡",
+     "r1": null
+    },
+    {
+     "ticker": "SPCX",
+     "rank": 17,
+     "verdict": "제외",
+     "why": "월간 하락 폭 큼",
+     "r1": null
+    },
+    {
+     "ticker": "INTC",
+     "rank": 18,
+     "verdict": "제외",
+     "why": "반도체 섹터 회피 및 재료 없음",
+     "r1": null
+    }
+   ],
+   "bl": {
+    "rand": [
+     "INIO",
+     "ANT",
+     "BZ"
+    ],
+    "mom": [
+     "BZ",
+     "LBTYB",
+     "HPQ"
+    ]
+   },
+   "dayCands": [
+    {
+     "name": "Cogent Biosciences, Inc.",
+     "ticker": "COGT",
+     "score": 82,
+     "target_pct": 7,
+     "sector": "바이오",
+     "basis": [
+      "뉴스재료"
+     ],
+     "reason": "첫 신약 FDA 승인과 함께 월 4만9천 달러 규모의 고가 신약 런칭 계획이 발표되며 강력한 거래 동력을 확보했습니다. 단기 변동성을 활용한 모멘텀 매매에 적합합니다.",
+     "risk": "고가 신약 수용성 및 바이오 섹터 변동성"
+    },
+    {
+     "name": "Charter Communications, Inc.",
+     "ticker": "CHTR",
+     "score": 75,
+     "sector": "통신",
+     "basis": [
+      "뉴스재료"
+     ],
+     "reason": "20억 달러 규모의 대규모 비용 절감 계획 발표로 수익성 개선 기대감이 집중되고 있습니다. 구조적 비용 효율화가 단기 주가 상승의 촉매로 작용합니다.",
+     "risk": "매크로 환경에 따른 가입자 추이 변동",
+     "target_pct": 3
+    },
+    {
+     "name": "Avis Budget Group, Inc.",
+     "ticker": "CAR",
+     "score": 73,
+     "sector": "유통",
+     "basis": [
+      "뉴스재료"
+     ],
+     "reason": "중고차 아울렛 확장 전략이 가시화되면서 밸류에이션 재평가 기대감이 유입되고 있습니다. 유통 섹터 우위 통계와 결합된 단기 반등 모멘텀이 기대됩니다.",
+     "risk": "중고차 시장 가격 변동성",
+     "target_pct": 3
+    },
+    {
+     "name": "AST SpaceMobile, Inc.",
+     "ticker": "ASTS",
+     "score": 68,
+     "sector": "통신",
+     "basis": [
+      "뉴스재료"
+     ],
+     "reason": "목표가 하향 조정 리포트와 스페이스X 관련 노이즈가 혼재되어 있으나, 우주항공 테마 내 높은 대중적 관심으로 일시적 변동성 매매 기회가 발생합니다.",
+     "risk": "투자의견 하향 및 급격한 변동성",
+     "target_pct": 3
+    },
+    {
+     "name": "QXO, Inc.",
+     "ticker": "QXO",
+     "score": 66,
+     "sector": "산업재",
+     "basis": [
+      "뉴스재료"
+     ],
+     "reason": "월가의 긍정적인 평가와 함께 9% 급등세를 보이며 기관 매수 유입 흔적이 포착되었습니다. 추가 모멘텀 이어질지 관찰이 필요합니다.",
+     "risk": "단기 급등 후 변동성 확대 위험",
+     "target_pct": 3
+    }
+   ],
+   "hold": 0,
+   "v": {
+    "m": "gemini-3.5-flash-lite",
+    "pv": "J1.0-S2.0",
+    "policy": "S2.0"
+   },
+   "mktF": {
+    "dir": "상승",
+    "conf": 65,
+    "why": "지수선물 강세와 VIX 하락으로 기술적 반등 기대감 유효",
+    "ok": null
+   },
+   "picks": [
+    {
+     "kind": "swing",
+     "name": "HP Inc.",
+     "ticker": "HPQ",
+     "score": 78,
+     "sector": "기술",
+     "basis": [
+      "실적"
+     ],
+     "plan": {
+      "engine": "R2.0",
+      "strategy": "swing",
+      "atrPct": 3.9,
+      "stopPct": 5.85,
+      "targetPct": 11.7,
+      "rr": 2,
+      "maxHoldDays": 10,
+      "riskPct": 0.5,
+      "maxWeightPct": 10,
+      "weightPct": 8.1,
+      "qty": 13,
+      "notional": 405,
+      "decision": {
+       "version": "S2.0",
+       "action": "watch",
+       "strategy": "swing",
+       "reasons": [
+        "하락 국면: 신규 진입 보류"
+       ],
+       "plannedHoldDays": 10,
+       "reviewAfterDays": 3,
+       "maxHoldDays": 10,
+       "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+       "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+       "allowAutoOrder": false
+      }
+     },
+     "p0": 31.15,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "KANZHUN LIMITED",
+     "ticker": "BZ",
+     "score": 72,
+     "sector": "서비스",
+     "basis": [
+      "실적",
+      "뉴스재료"
+     ],
+     "plan": {
+      "engine": "R2.0",
+      "strategy": "swing",
+      "atrPct": 6.48,
+      "stopPct": 9,
+      "targetPct": 18,
+      "rr": 2,
+      "maxHoldDays": 10,
+      "riskPct": 0.5,
+      "maxWeightPct": 10,
+      "weightPct": 5.45,
+      "qty": 19,
+      "notional": 272,
+      "decision": {
+       "version": "S2.0",
+       "action": "watch",
+       "strategy": "swing",
+       "reasons": [
+        "하락 국면: 신규 진입 보류"
+       ],
+       "plannedHoldDays": 10,
+       "reviewAfterDays": 3,
+       "maxHoldDays": 10,
+       "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+       "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+       "allowAutoOrder": false
+      }
+     },
+     "p0": 14.34,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    },
+    {
+     "kind": "swing",
+     "name": "Li Auto Inc.",
+     "ticker": "LI",
+     "score": 70,
+     "sector": "자동차",
+     "basis": [
+      "실적"
+     ],
+     "plan": {
+      "engine": "R2.0",
+      "strategy": "swing",
+      "atrPct": 4.16,
+      "stopPct": 6.24,
+      "targetPct": 12.48,
+      "rr": 2,
+      "maxHoldDays": 10,
+      "riskPct": 0.5,
+      "maxWeightPct": 10,
+      "weightPct": 7.84,
+      "qty": 33,
+      "notional": 392,
+      "decision": {
+       "version": "S2.0",
+       "action": "watch",
+       "strategy": "swing",
+       "reasons": [
+        "하락 국면: 신규 진입 보류"
+       ],
+       "plannedHoldDays": 10,
+       "reviewAfterDays": 3,
+       "maxHoldDays": 10,
+       "entryRule": "개장 후 지지·추세 확인 · 추천시점 가격에서 급등하면 추격 금지",
+       "exitRule": "손절·목표 중 먼저 도달한 조건 또는 보유 기한 · 추세 훼손 시 재검토",
+       "allowAutoOrder": false
+      }
+     },
+     "p0": 11.88,
+     "r1": null,
+     "r5": null,
+     "r20": null
+    }
+   ]
   }
  ]
 }
